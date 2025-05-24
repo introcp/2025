@@ -1,0 +1,1174 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Course overview &#8212; Introduction to computer programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/intro/00-Introduction';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Introduction to computer programming" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Introduction to computer programming</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    <b style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</b>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><b style="font-family: 'LUISS', 'Lato'">Course overview</b></a></li>
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ercoppa/labds/blob/master/src/intro/00-Introduction.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+
+<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://ercoppa.github.io/labds/_sources/rc/intro/00-Introduction.ipynb" target="_blank"
+  class="btn btn-sm dropdown-item"
+  title="Launch on JupyterLite"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+ 
+
+<span class="btn__icon-container">
+ 
+   <img alt="JupyterLite logo" src="https://avatars.githubusercontent.com/u/81094398?s=200&v=4">
+ </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+    
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/intro/00-Introduction.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.open(window.location.pathname.replace('.html', '.pdf'));"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+    <button onclick="window.open(window.location.pathname.replace('.html', '.slides.html'));"
+    class="btn btn-sm btn-fullscreen-button"
+    title="Slide"
+    data-bs-placement="bottom" data-bs-toggle="tooltip"
+    >
+    
+    <span class="btn__icon-container">
+        <i class="fa-brands fa-slideshare"></i>
+    </span>
+
+    </button>
+
+    <button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><b style="font-family: 'LUISS', 'Lato'">Course overview</b></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><b style="font-family: 'LUISS', 'Lato'">Course overview</b></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-we-are">Who we are</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-care-about-data-science">Why do we care about <em><strong>Data Science</strong></em>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#but-more-concretely">But, more concretely?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-computer-programming">Why computer programming?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-you-need-to-learn-computer-programming">Why do <em><strong>you</strong></em> need to learn computer programming?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-a-task-algorithm-recipe-followed-by-a-computer">Solving a task =&gt; Algorithm =&gt; Recipe followed by a computer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#most-popular-programming-languages">Most Popular Programming Languages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-computer-programming-language">Which Computer Programming Language?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-and-where">How and Where</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-run-python-code">How can we run Python code?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-run-python-code-cont-d">How can we run Python code? (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-code-can-be-very-cryptic-can-we-add-some-notes-around-it">The code can be very cryptic…<br/>Can we add some notes around it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">Jupyter Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-do-we-run-our-code-notebooks">Where do we run our code/notebooks?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#local-setup">Local Setup</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#only-on-windows-11-disable-windows-store-aliases">[<strong>Only on Windows 11</strong>]<br/>Disable Windows Store Aliases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#only-on-windows-11-enable-script-cmdlet">[<strong>Only on Windows 11</strong>]<br/>Enable script cmdlet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-python">Download Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer">Launch the installer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer-cont-d">Launch the installer (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-a-good-code-editor-visual-studio-code">Install a (good) code editor: <strong>Visual Studio Code</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code-windows">Start <strong>Visual Studio Code</strong> (Windows)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code-mac-os-x">Start <strong>Visual Studio Code</strong> (Mac OS X)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-python-integration">VSCode extension: Python integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-python-environment-manager">VSCode extension: Python Environment Manager</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-jupyter">VSCode extension: Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-install-python-packages-from-the-community">Where to install Python packages from the community</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-virtual-environment">Create a new virtual environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-the-default-virtual-environment">Pick the default virtual environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-python-packages-in-the-virtual-environment">Installation of Python packages in the virtual environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-setup">Cloud Setup</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab-i-e-the-lazy-approach"><strong>Google Colab</strong>, i.e., the lazy approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-google-drive">From <strong>Google Drive</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">Environments</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-local-setup-with-vscode">Environment: local setup with VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-local-setup-with-jupyerlab">Environment: local setup with JupyerLab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-cloud-setup-with-colab">Environment: cloud setup with Colab</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#course-material">Course Material</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-need">What you need</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#each-page-is-a-notebook">Each page is a <em>Notebook</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-replay-and-extend-my-notebooks">You can replay and extend my notebooks!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-vscode">When opening a notebook on <strong>VSCode</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-jupyerlab">When opening a notebook on <strong>JupyerLab</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-colab">When opening a notebook on <strong>Colab</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replaying-or-updating-a-notebook">Replaying or updating a notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-what">Now, what?</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div align="center">
+<section class="tex2jax_ignore mathjax_ignore" id="course-overview">
+<h1><b style="font-family: 'LUISS', 'Lato'">Course overview</b><a class="headerlink" href="#course-overview" title="Link to this heading">#</a></h1>
+<h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
+<img src="https://ercoppa.github.io/labds/dist/img/cliente-luiss.png">
+<p><br><br><br></p>
+</div><section id="who-we-are">
+<h2>Who we are<a class="headerlink" href="#who-we-are" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Teacher: <strong>Emilio Coppa</strong></p>
+<ul>
+<li><p>Position: Assistant Professor &#64; LUISS</p></li>
+<li><p>Research topics: software testing, vulnerability detection</p></li>
+<li><p>Extra: Team Manager of TeamItaly, the italian cybersecurity team</p></li>
+<li><p>Other info: <a class="reference external" href="https://ecoppa.github.io">https://ecoppa.github.io</a></p></li>
+<li><p>Contanct: <strong><a class="reference external" href="mailto:ecoppa&#37;&#52;&#48;luiss&#46;it">ecoppa<span>&#64;</span>luiss<span>&#46;</span>it</a></strong><br><br></p></li>
+</ul>
+</li>
+<li><p>Teacher: <strong>Alessio Martino</strong></p></li>
+<li><p>Teaching Assistant for Python: <strong>Lorenzo Ariemma</strong></p>
+<ul>
+<li><p>PhD in Computer Science and Automation</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="why-do-we-care-about-data-science">
+<h2>Why do we care about <em><strong>Data Science</strong></em>?<a class="headerlink" href="#why-do-we-care-about-data-science" title="Link to this heading">#</a></h2>
+<p>We can understant a lot of our everyday life  by <em><strong>analyzing</strong></em> the existing <em><strong>data</strong></em> from our world.
+Such approach is called <strong>Data Science</strong>:</p>
+<center>
+<img src="img/ds.webp" width="200">
+</center>
+<p>An interdisciplinary field that uses:</p>
+<ul class="simple">
+<li><p>statistics and processes</p></li>
+<li><p>scientific computing and methods</p></li>
+<li><p>scientific visualization</p></li>
+<li><p>algorithms and systems</p></li>
+</ul>
+<p>to extract or <strong>extrapolate knowledge and insights from</strong> potentially noisy, structured, or unstructured <strong>data</strong>.</p>
+</section>
+<section id="but-more-concretely">
+<h2>But, more concretely?<a class="headerlink" href="#but-more-concretely" title="Link to this heading">#</a></h2>
+<p>We need to learn a bit of:</p>
+<ul class="simple">
+<li><p>computer programming</p></li>
+<li><p>data science frameworks for:</p>
+<ul>
+<li><p>data processing</p></li>
+<li><p>data visualization</p></li>
+<li><p>data learning</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="why-computer-programming">
+<h2>Why computer programming?<a class="headerlink" href="#why-computer-programming" title="Link to this heading">#</a></h2>
+<p>Most everyday tasks require to perform:</p>
+<ul class="simple">
+<li><p>repetitive…</p></li>
+<li><p>long sequences of…</p></li>
+<li><p>simple steps</p></li>
+</ul>
+<p>This scenario is <em>exactly</em> where a computer excels!</p>
+<blockquote>
+<div><p>Computers are incredibly fast, accurate, and stupid. Human beings are incredibly slow, inaccurate, and brilliant. Together they are powerful beyond imagination.<br><br>– Albert Einstein</p>
+</div></blockquote>
+</section>
+<section id="why-do-you-need-to-learn-computer-programming">
+<h2>Why do <em><strong>you</strong></em> need to learn computer programming?<a class="headerlink" href="#why-do-you-need-to-learn-computer-programming" title="Link to this heading">#</a></h2>
+<center>
+<img src="img/program.drawio.png" width="600">
+</center>
+<p>It give us the means to <strong>automatically</strong> analyze the data and extract knowledge from it.</p>
+</section>
+<section id="solving-a-task-algorithm-recipe-followed-by-a-computer">
+<h2>Solving a task =&gt; Algorithm =&gt; Recipe followed by a computer<a class="headerlink" href="#solving-a-task-algorithm-recipe-followed-by-a-computer" title="Link to this heading">#</a></h2>
+<p>An algorithm features:</p>
+<ul class="simple">
+<li><p>a sequence of simple steps</p></li>
+<li><p>flow of control to specify when each step must be executed</p></li>
+<li><p>a way of determining when to stop.</p></li>
+</ul>
+<p>…just like a recipe!</p>
+<p>However, we cannot write an algorithm in our own natural language (e.g., english). To make an algorithm interpretable by a computer, we need to learn a <strong>programming language</strong>.</p>
+</section>
+<section id="most-popular-programming-languages">
+<h2>Most Popular Programming Languages<a class="headerlink" href="#most-popular-programming-languages" title="Link to this heading">#</a></h2>
+<center>
+<img src="img/popular-programming-languages.png" width="700">
+</center></section>
+<section id="which-computer-programming-language">
+<h2>Which Computer Programming Language?<a class="headerlink" href="#which-computer-programming-language" title="Link to this heading">#</a></h2>
+<br>
+<center>
+<a class="reference internal image-reference" href="../../_images/Python_logo_and_wordmark.svg.png"><img alt="../../_images/Python_logo_and_wordmark.svg.png" src="../../_images/Python_logo_and_wordmark.svg.png" style="width: 400px;" />
+</a>
+</center>
+<p>Benefits:</p>
+<ul class="simple">
+<li><p><strong>Easy to learn</strong>: designed to be readable, quick to learn</p></li>
+<li><p><strong>High-level language</strong>: abstracting away most low-level aspects of a computer</p></li>
+<li><p><strong>Large community and great support</strong>: several libraries allow to build complex projects with just a few lines of code</p></li>
+<li><p><strong>Adequate for most tasks</strong>: it shows its limits when performance is essential and low-level details play a role. You will hardly work on anything that cannot be implemented in Python</p></li>
+</ul>
+<p><br><br></p>
+<center>
+<a class="reference internal image-reference" href="../../_images/cat.png"><img alt="../../_images/cat.png" src="../../_images/cat.png" style="width: 400px;" />
+</a>
+</center>
+<p><br><br></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="how-and-where">
+<h1>How and Where<a class="headerlink" href="#how-and-where" title="Link to this heading">#</a></h1>
+<section id="how-can-we-run-python-code">
+<h2>How can we run Python code?<a class="headerlink" href="#how-can-we-run-python-code" title="Link to this heading">#</a></h2>
+<p>Two approaches:</p>
+<ol class="arabic">
+<li><p>Interactive shell:</p>
+ <center>
+ <img src="img/python-interpreter.png" width="600">
+ </center>
+<ul class="simple">
+<li><p>workflow:</p>
+<ul>
+<li><p>start the interactive Python shell</p></li>
+<li><p>write one line of code in the prompt after the symbols <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code></p></li>
+<li><p>push enter to execute it and get the results</p></li>
+<li><p>repeat as musch as needed</p></li>
+</ul>
+</li>
+<li><p><strong>not very user-friendly</strong></p></li>
+<li><p>appropriate only for quick tests</p></li>
+<li><p>nothing is saved: you will lose your code when exiting the shell!</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="how-can-we-run-python-code-cont-d">
+<h2>How can we run Python code? (cont’d)<a class="headerlink" href="#how-can-we-run-python-code-cont-d" title="Link to this heading">#</a></h2>
+<p>Two approaches:</p>
+<ol class="arabic" start="2">
+<li><p>Write the code into a textual file and then execute it:</p>
+ <center>
+ <img src="img/python-run.svg" width="600">
+ </center>
+<ul class="simple">
+<li><p>workflow:</p>
+<ul>
+<li><p>write the code into a textual file with extension <code class="docutils literal notranslate"><span class="pre">.py</span></code></p></li>
+<li><p>execute the file with the Python VM</p></li>
+</ul>
+</li>
+<li><p><strong>This is what you want to do!</strong></p></li>
+<li><p>Still <em>iterative</em> approach: write the code, check if it works, refine the code, …</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="the-code-can-be-very-cryptic-can-we-add-some-notes-around-it">
+<h2>The code can be very cryptic…<br>Can we add some notes around it?<a class="headerlink" href="#the-code-can-be-very-cryptic-can-we-add-some-notes-around-it" title="Link to this heading">#</a></h2>
+<p>It could be hard to remember why we have written a piece of code, what are its effects and downsides.</p>
+<p>It is often convenient to organize our code into “sections” and then add some text to describe what the code is expected to do. This is called:</p>
+<center>
+<img src="img/jupyter-logo.drawio.png" width="400">
+</center></section>
+<section id="jupyter-notebook">
+<h2>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Link to this heading">#</a></h2>
+<p>Using the environment <strong>JupyterLab</strong> we can create a new notebook:</p>
+<center>
+<img src="img/jupyterlab.png" width="750">
+</center></section>
+<section id="where-do-we-run-our-code-notebooks">
+<h2>Where do we run our code/notebooks?<a class="headerlink" href="#where-do-we-run-our-code-notebooks" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Local setup</strong>: your computer!</p>
+ <center><img src="img/local.png" width="130"></center>
+<ul class="simple">
+<li><p>you have to install Python and all the other bits</p></li>
+<li><p>limited by your computational power</p></li>
+</ul>
+</li>
+<li><p><strong>Cloud setup</strong>:</p>
+ <center><img src="img/cloud.png" width="130"></center>
+<ul class="simple">
+<li><p>no need to install everything</p></li>
+<li><p>limited by your money</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="local-setup">
+<h1>Local Setup<a class="headerlink" href="#local-setup" title="Link to this heading">#</a></h1>
+<section id="only-on-windows-11-disable-windows-store-aliases">
+<h2>[<strong>Only on Windows 11</strong>]<br>Disable Windows Store Aliases<a class="headerlink" href="#only-on-windows-11-disable-windows-store-aliases" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>From the start menu, search and then open <em>Manage app execution aliases</em> (<em>Alias di esecuzione delle app</em>)</p></li>
+<li><p>Disables aleases for <em>python.exe</em> and <em>python3.exe</em>:</p></li>
+</ol>
+<center>
+<img src="img/win11-disable-aliases.png" width="400">
+</center></section>
+<section id="only-on-windows-11-enable-script-cmdlet">
+<h2>[<strong>Only on Windows 11</strong>]<br>Enable script cmdlet<a class="headerlink" href="#only-on-windows-11-enable-script-cmdlet" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>From the start menu, search <em>Windows Powershell</em>, then using the right-click select <em>Run as administrator</em>:</p></li>
+</ol>
+<center>
+<img src="img/win11-launch-powershell.png" width="400">
+</center>
+<ol class="arabic simple" start="2">
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">Set-ExecutionPolicy</span> <span class="pre">unrestricted</span></code>, then run it and reply <em>y</em> (or “s” if your Windows is in italian) :</p></li>
+</ol>
+<center>
+<img src="img/win11-set-execution-policy.png" width="400">
+</center></section>
+<section id="download-python">
+<h2>Download Python<a class="headerlink" href="#download-python" title="Link to this heading">#</a></h2>
+<p>Visit: <strong><a class="reference external" href="https://www.python.org/">https://www.python.org/</a></strong></p>
+<center>
+<img src="img/python-download-win.png" width="700">
+<img src="img/python-download-mac.png" width="700">
+</center></section>
+<section id="launch-the-installer">
+<h2>Launch the installer<a class="headerlink" href="#launch-the-installer" title="Link to this heading">#</a></h2>
+<p>Double click on the downloaded file, e.g., on Windows:</p>
+<ol class="arabic">
+<li><h3>Enable <b><i>Add python.exe to PATH</i></b></3>
+</li>
+<li><p>Click <em><strong>Install now</strong></em></p></li>
+</ol>
+<center>
+<img src="img/python-installer-win.drawio.png" width="500">
+</center></section>
+<section id="launch-the-installer-cont-d">
+<h2>Launch the installer (cont’d)<a class="headerlink" href="#launch-the-installer-cont-d" title="Link to this heading">#</a></h2>
+<p>Similarly on Mac OS X:</p>
+<center>
+<img src="img/python-installer-mac.png" width="500">
+</center></section>
+<section id="install-a-good-code-editor-visual-studio-code">
+<h2>Install a (good) code editor: <strong>Visual Studio Code</strong><a class="headerlink" href="#install-a-good-code-editor-visual-studio-code" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Visit: <strong><a class="reference external" href="https://code.visualstudio.com/Download">https://code.visualstudio.com/Download</a></strong></p></li>
+<li><p>Download the latest version for your OS</p></li>
+</ol>
+<center>
+<img src="img/download-vscode.png">
+</center></section>
+<section id="start-visual-studio-code-windows">
+<h2>Start <strong>Visual Studio Code</strong> (Windows)<a class="headerlink" href="#start-visual-studio-code-windows" title="Link to this heading">#</a></h2>
+<center>
+<img src="img/vscode.png" width="650">
+</center></section>
+<section id="start-visual-studio-code-mac-os-x">
+<h2>Start <strong>Visual Studio Code</strong> (Mac OS X)<a class="headerlink" href="#start-visual-studio-code-mac-os-x" title="Link to this heading">#</a></h2>
+<center>
+<img src="img/vscode-mac.png" width="650">
+</center></section>
+<section id="vscode-extension-python-integration">
+<h2>VSCode extension: Python integration<a class="headerlink" href="#vscode-extension-python-integration" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>From the side bar, open the <em><strong>Extension</strong></em> tab</p></li>
+<li><p>Search for <em><strong>Python</strong></em></p></li>
+<li><p>Install the extension</p></li>
+</ol>
+<center>
+<img src="img/vscode-extension-python.png" width="500">
+</center></section>
+<section id="vscode-extension-python-environment-manager">
+<h2>VSCode extension: Python Environment Manager<a class="headerlink" href="#vscode-extension-python-environment-manager" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>From the side bar, open the <em><strong>Extension</strong></em> tab</p></li>
+<li><p>Search for <em><strong>Python Environment Manager</strong></em></p></li>
+<li><p>Install the extension</p></li>
+</ol>
+<center>
+<img src="img/vscode-extension-python-venv-manager.png" width="500">
+</center></section>
+<section id="vscode-extension-jupyter">
+<h2>VSCode extension: Jupyter<a class="headerlink" href="#vscode-extension-jupyter" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>From the side bar, open the <em><strong>Extension</strong></em> tab</p></li>
+<li><p>Search for <em><strong>Jupyter</strong></em></p></li>
+<li><p>Install the extension</p></li>
+</ol>
+<center>
+<img src="img/vscode-jupyter.png">
+</center>
+</section>
+<section id="where-to-install-python-packages-from-the-community">
+<h2>Where to install Python packages from the community<a class="headerlink" href="#where-to-install-python-packages-from-the-community" title="Link to this heading">#</a></h2>
+<p>We can install Python packages from the community following two strategies:</p>
+<ul>
+<li><p><em><strong>System-wide</strong></em>: this may create conflicts between different projects using Python.</p>
+<ul class="simple">
+<li><p>pros: you need to install a package only once for all projects</p></li>
+<li><p>cons: one project may break due to a package installed/updated for another project</p></li>
+</ul>
+<p><em><strong>It is now the deprecated approach.</strong></em></p>
+</li>
+<li><p><em><strong>Project-wide</strong></em>: each project has its own <em><strong>Virtual Environment</strong></em>.</p>
+<ul class="simple">
+<li><p>pros: no conflicts across packages of different projects</p></li>
+<li><p>cons: a package must be installed again for each project</p></li>
+</ul>
+<p>This is nowadays the suggested approach and <strong>we will follow it</strong>.</p>
+</li>
+</ul>
+</section>
+<section id="create-a-new-virtual-environment">
+<h2>Create a new virtual environment<a class="headerlink" href="#create-a-new-virtual-environment" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Create a new folder (e.g., <code class="docutils literal notranslate"><span class="pre">labds</span></code> within <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> folder)</p></li>
+<li><p>Open the folder from VSCode:</p></li>
+</ol>
+<center>
+<img src="img/vscode-open-folder.png" width="250">
+</center>
+<ol class="arabic simple" start="3">
+<li><p>Start the terminal: <em><strong>View &gt; Terminal</strong></em></p></li>
+<li><p>Type in the terminal:<br>
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">.venv</span></code>
+<br>or:<br>
+<code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">.venv</span></code></p></li>
+</ol>
+</section>
+<section id="pick-the-default-virtual-environment">
+<h2>Pick the default virtual environment<a class="headerlink" href="#pick-the-default-virtual-environment" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>From the side bar, open the Python logo</p></li>
+<li><p>Click on the <em>star</em> to select the virtual environment</p></li>
+</ol>
+<center>
+<img src="img/vscode-pick-venv.png" width="250">
+</center>
+<ol class="arabic simple" start="3">
+<li><p>Close VSCode and then re-open your project folder in VSCode</p></li>
+</ol>
+</section>
+<section id="installation-of-python-packages-in-the-virtual-environment">
+<h2>Installation of Python packages in the virtual environment<a class="headerlink" href="#installation-of-python-packages-in-the-virtual-environment" title="Link to this heading">#</a></h2>
+<p>We will use some extra Python bits from the community, including:<br>
+<code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, and <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code>.</p>
+<p>From VSCode:</p>
+<ol class="arabic simple">
+<li><p>Start a new terminal using the menu: <em><strong>Terminal &gt; New Terminal</strong></em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span> <span class="pre">matplotlib</span> <span class="pre">seaborn</span> <span class="pre">scikit-learn</span> <span class="pre">jupyterlab</span></code></p></li>
+</ol>
+<center>
+<img src="img/vscode-install-with-pip.png">
+</center>
+</section>
+<section id="troubleshooting-on-windows-python-is-not-recognized">
+<h2>Troubleshooting on Windows:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code><a class="headerlink" href="#troubleshooting-on-windows-python-is-not-recognized" title="Link to this heading">#</a></h2>
+<p>If, when when running <code class="docutils literal notranslate"><span class="pre">python</span></code> in the terminal of VSCode, you get the following error:</p>
+<center>
+<img src="img/win11-unrecognized-python.png">
+</center>
+<p>Then, you have to:</p>
+</section>
+<section id="troubleshooting-on-windows-python-is-not-recognized-cont-d">
+<h2>Troubleshooting on Windows:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)<a class="headerlink" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Uninstall Python: run again the installer of Python and select <em>Uninstall</em>:</p></li>
+</ol>
+<center>
+<img src="img/win11-uninstall-python.drawio.png" width="450">
+</center>
+</section>
+<section id="id1">
+<h2>Troubleshooting on Windows:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="2">
+<li><p>Start the Python installer</p></li>
+<li><p>Select <em><strong>Add to path</strong></em> at the bottom</p></li>
+</ol>
+<center>
+<img src="img/python-installer-win.drawio.png" width="400">
+</center>
+<ol class="arabic simple" start="4">
+<li><p>Proceed with <em><strong>Install now</strong></em></p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="cloud-setup">
+<h1>Cloud Setup<a class="headerlink" href="#cloud-setup" title="Link to this heading">#</a></h1>
+<section id="google-colab-i-e-the-lazy-approach">
+<h2><strong>Google Colab</strong>, i.e., the lazy approach<a class="headerlink" href="#google-colab-i-e-the-lazy-approach" title="Link to this heading">#</a></h2>
+<center>
+<img src="img/colab.jpg" width="450">
+</center>
+<ul class="simple">
+<li><p>Platform from Google</p></li>
+<li><p><strong>Google Account is required</strong></p></li>
+<li><p>Free of charge to use for the basic plan</p></li>
+<li><p>Write code in the browser (no extra is needed)</p></li>
+<li><p>Code executed on Google cloud servers</p></li>
+<li><p>Low/medium performance, privacy issues</p></li>
+<li><p><strong>No need to install anything</strong></p></li>
+</ul>
+</section>
+<section id="from-google-drive">
+<h2>From <strong>Google Drive</strong><a class="headerlink" href="#from-google-drive" title="Link to this heading">#</a></h2>
+<center>
+<img src="img/drive-colab.png" width="500">>
+</center></section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="environments">
+<h1>Environments<a class="headerlink" href="#environments" title="Link to this heading">#</a></h1>
+<section id="environment-local-setup-with-vscode">
+<h2>Environment: local setup with VSCode<a class="headerlink" href="#environment-local-setup-with-vscode" title="Link to this heading">#</a></h2>
+<p>Use VSCode:</p>
+<ul class="simple">
+<li><p>Quickly write and execute python files (<code class="docutils literal notranslate"><span class="pre">.py</span></code>)</p></li>
+<li><p>Quick access to the local terminal</p></li>
+<li><p>Write and execute notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). Some advanced features of JupyterLab (that we do not need) may have limited support.</p></li>
+<li><p>Good editor with several extensions (integrations with third-party services)</p></li>
+<li><p>Everything runs on your machine</p></li>
+</ul>
+<p><em><strong>This is the environment that we suggest you to use.</strong></em></p>
+</section>
+<section id="environment-local-setup-with-jupyerlab">
+<h2>Environment: local setup with JupyerLab<a class="headerlink" href="#environment-local-setup-with-jupyerlab" title="Link to this heading">#</a></h2>
+<p>Use JupyterLab:</p>
+<ul class="simple">
+<li><p>Start it from any terminal (e.g., from VSCode) with:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">jupyterlab</span></code></p></li>
+<li><p>Write and execute notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) with support even for advanced and weird features.</p></li>
+<li><p>Basic editor</p></li>
+<li><p>Everything runs on your machine</p></li>
+</ul>
+<p><em><strong>We suggest to use JupterLab only when you need to run advanced Jupyter notebooks obtained from the external world</strong></em></p>
+</section>
+<section id="environment-cloud-setup-with-colab">
+<h2>Environment: cloud setup with Colab<a class="headerlink" href="#environment-cloud-setup-with-colab" title="Link to this heading">#</a></h2>
+<p>Use Google Colab:</p>
+<ul class="simple">
+<li><p>You can work from any computer. Even your tablet (although, it is a bit inconvenient!)</p></li>
+<li><p>Write and execute on the cloud notebooks (.pynb).  Some advanced features of JupyterLab (that we do not need) may have limited support.</p></li>
+<li><p>Basic editor</p></li>
+<li><p>Everything must be saved on Google Drive</p></li>
+<li><p><strong>Not adequate in future courses where you need a bit of computational power</strong> (assuming you do not want to pay Google).</p></li>
+</ul>
+<p><em><strong>We suggest to use Colab only if you issues with your local setup</strong></em></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="course-material">
+<h1>Course Material<a class="headerlink" href="#course-material" title="Link to this heading">#</a></h1>
+<section id="what-you-need">
+<h2>What you need<a class="headerlink" href="#what-you-need" title="Link to this heading">#</a></h2>
+<br>
+<center>Scan the qrcode to get everything:</center>
+<center><img src="img/qrcode.png" width="300" alt="qrcode"></center>
+<br>
+<div align="center">
+<b><a href="https://ercoppa.github.io/labds">https://ercoppa.github.io/labds</a></b>
+</div></section>
+<section id="each-page-is-a-notebook">
+<h2>Each page is a <em>Notebook</em><a class="headerlink" href="#each-page-is-a-notebook" title="Link to this heading">#</a></h2>
+<p>For instance: <em><strong><a class="reference external" href="https://ercoppa.github.io/labds/00/00-myFirstNotebook">https://ercoppa.github.io/labds/00/00-myFirstNotebook</a></strong></em></p>
+<center>
+<img src="img/notebook.drawio.png">
+</center>
+<p>A <em>notebook</em> mixes:</p>
+<ol class="arabic simple">
+<li><p><em><strong>code</strong></em>: something that we can run</p></li>
+<li><p><em><strong>result of the code</strong></em>: we can observe the output of the code execution</p></li>
+<li><p><em><strong>text</strong></em>: used to describe what the code does</p></li>
+</ol>
+</section>
+<section id="you-can-replay-and-extend-my-notebooks">
+<h2>You can replay and extend my notebooks!<a class="headerlink" href="#you-can-replay-and-extend-my-notebooks" title="Link to this heading">#</a></h2>
+<p>Depending on your setup:</p>
+<ol class="arabic">
+<li><p><strong>Local setup</strong>. Run each notebook on your machine. Download the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> is easy from the website:</p>
+ <center>
+ <img src="img/notebook-download.drawio.png" width="500">
+ </center>
+<p>then open it with VSCode or JupyterLab.</p>
+</li>
+<li><p><strong>Cloud setup</strong>. Run each notebook on <strong>Google Colab</strong> (i.e., Google servers). Everything within the browser. To run it on Google Colab:</p></li>
+</ol>
+<center>
+<img src="img/notebook-colab.drawio.png" width="500">
+</center>
+</section>
+<section id="when-opening-a-notebook-on-vscode">
+<h2>When opening a notebook on <strong>VSCode</strong><a class="headerlink" href="#when-opening-a-notebook-on-vscode" title="Link to this heading">#</a></h2>
+<p>We get the same structure as before:</p>
+<center>
+<img src="img/vscode-notebook.drawio.png" width="600">
+</center>
+<p>However, now you can interact with the notebook in several ways.</p>
+</section>
+<section id="when-opening-a-notebook-on-jupyerlab">
+<h2>When opening a notebook on <strong>JupyerLab</strong><a class="headerlink" href="#when-opening-a-notebook-on-jupyerlab" title="Link to this heading">#</a></h2>
+<p>We get the same structure as before:</p>
+<center>
+<img src="img/jupterlab.drawio.png" width="600">
+</center>
+<p>However, now you can interact with the notebook in several ways.</p>
+</section>
+<section id="when-opening-a-notebook-on-colab">
+<h2>When opening a notebook on <strong>Colab</strong><a class="headerlink" href="#when-opening-a-notebook-on-colab" title="Link to this heading">#</a></h2>
+<p>We get the same structure as before:</p>
+<center>
+<img src="img/colab.drawio.png">
+</center>
+<p>However, now you can interact with the notebook in several ways.</p>
+</section>
+<section id="replaying-or-updating-a-notebook">
+<h2>Replaying or updating a notebook<a class="headerlink" href="#replaying-or-updating-a-notebook" title="Link to this heading">#</a></h2>
+<p>Regardless of the environment (VSCode, JupyterLab, or Colab), we can perform similar interactations with the notebook.</p>
+<p>For instance, on Google Colab, if we select a code <em>cell</em>, then we get a <strong>play</strong> button:
+<br><a class="reference internal" href="../../_images/colab-play.png"><img alt="../../_images/colab-play.png" src="../../_images/colab-play.png" style="width: 320px;" /></a><br>
+If we push it, we can run the code and (re)<strong>generate</strong> the <strong>execution output</strong>:
+<br><a class="reference internal" href="../../_images/colab-run.png"><img alt="../../_images/colab-run.png" src="../../_images/colab-run.png" style="width: 380px;" /></a><br></p>
+<p>Moreover, we can modify the notebook:</p>
+<ul class="simple">
+<li><p>double click on existing cells: change their content</p></li>
+<li><p>add new code or text cells:
+<br><a class="reference internal" href="../../_images/colab-edit.png"><img alt="../../_images/colab-edit.png" src="../../_images/colab-edit.png" style="width: 300px;" /></a><br></p></li>
+</ul>
+</section>
+<section id="now-what">
+<h2>Now, what?<a class="headerlink" href="#now-what" title="Link to this heading">#</a></h2>
+<br>
+<p>Now, we need to learn a bit of Python!</p>
+<p>Check out the page/notebook <em><strong>Python Basics</strong></em>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src/intro"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</b></p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><b style="font-family: 'LUISS', 'Lato'">Course overview</b></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-we-are">Who we are</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-care-about-data-science">Why do we care about <em><strong>Data Science</strong></em>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#but-more-concretely">But, more concretely?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-computer-programming">Why computer programming?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-you-need-to-learn-computer-programming">Why do <em><strong>you</strong></em> need to learn computer programming?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-a-task-algorithm-recipe-followed-by-a-computer">Solving a task =&gt; Algorithm =&gt; Recipe followed by a computer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#most-popular-programming-languages">Most Popular Programming Languages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-computer-programming-language">Which Computer Programming Language?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-and-where">How and Where</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-run-python-code">How can we run Python code?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-run-python-code-cont-d">How can we run Python code? (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-code-can-be-very-cryptic-can-we-add-some-notes-around-it">The code can be very cryptic…<br/>Can we add some notes around it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">Jupyter Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-do-we-run-our-code-notebooks">Where do we run our code/notebooks?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#local-setup">Local Setup</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#only-on-windows-11-disable-windows-store-aliases">[<strong>Only on Windows 11</strong>]<br/>Disable Windows Store Aliases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#only-on-windows-11-enable-script-cmdlet">[<strong>Only on Windows 11</strong>]<br/>Enable script cmdlet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-python">Download Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer">Launch the installer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer-cont-d">Launch the installer (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-a-good-code-editor-visual-studio-code">Install a (good) code editor: <strong>Visual Studio Code</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code-windows">Start <strong>Visual Studio Code</strong> (Windows)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code-mac-os-x">Start <strong>Visual Studio Code</strong> (Mac OS X)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-python-integration">VSCode extension: Python integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-python-environment-manager">VSCode extension: Python Environment Manager</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-jupyter">VSCode extension: Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-install-python-packages-from-the-community">Where to install Python packages from the community</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-virtual-environment">Create a new virtual environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-the-default-virtual-environment">Pick the default virtual environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-python-packages-in-the-virtual-environment">Installation of Python packages in the virtual environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-setup">Cloud Setup</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab-i-e-the-lazy-approach"><strong>Google Colab</strong>, i.e., the lazy approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-google-drive">From <strong>Google Drive</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">Environments</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-local-setup-with-vscode">Environment: local setup with VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-local-setup-with-jupyerlab">Environment: local setup with JupyerLab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-cloud-setup-with-colab">Environment: cloud setup with Colab</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#course-material">Course Material</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-need">What you need</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#each-page-is-a-notebook">Each page is a <em>Notebook</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-replay-and-extend-my-notebooks">You can replay and extend my notebooks!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-vscode">When opening a notebook on <strong>VSCode</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-jupyerlab">When opening a notebook on <strong>JupyerLab</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-opening-a-notebook-on-colab">When opening a notebook on <strong>Colab</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replaying-or-updating-a-notebook">Replaying or updating a notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-what">Now, what?</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Emilio Coppa
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
