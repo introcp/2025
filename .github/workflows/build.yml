@@ -2,7 +2,7 @@ name: Rebuild website
 
 on:
   push:
-    branches: ["main"]
+    branches: ["2025"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
