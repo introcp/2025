@@ -61,7 +61,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: 2025
+          ref: '2025'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
