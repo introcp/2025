@@ -264,6 +264,22 @@
 <span class="btn__text-container">Colab</span>
 </a>
 </li>
+
+<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://ercoppa.github.io/labds/_sources/rc/P00/P00-Python-Getting-Started.ipynb" target="_blank"
+  class="btn btn-sm dropdown-item"
+  title="Launch on JupyterLite"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+ 
+
+<span class="btn__icon-container">
+ 
+   <img alt="JupyterLite logo" src="https://avatars.githubusercontent.com/u/81094398?s=200&v=4">
+ </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+    
       
   </ul>
 </div>
@@ -299,7 +315,7 @@
       
       
       <li>
-<button onclick="window.print()"
+<button onclick="window.open(window.location.pathname.replace('.html', '.pdf'));"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
   title="Print to PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +335,21 @@
 
 
 
-<button onclick="toggleFullScreen()"
+
+
+    <button onclick="window.open(window.location.pathname.replace('.html', '.slides.html'));"
+    class="btn btn-sm btn-fullscreen-button"
+    title="Slide"
+    data-bs-placement="bottom" data-bs-toggle="tooltip"
+    >
+    
+    <span class="btn__icon-container">
+        <i class="fa-brands fa-slideshare"></i>
+    </span>
+
+    </button>
+
+    <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
