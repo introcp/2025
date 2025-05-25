@@ -62,7 +62,7 @@ for filename in glob.glob(sys.argv[1] + '/src/*/*.html'):
         )
         data = data.replace(
             pivot2,
-            jupyterlite_button.replace("<PATH>", filename.replace("/docs", "").replace(".html", ".ipynb"))
+            jupyterlite_button.replace("<PATH>", filename.replace("docs", "").replace(".html", ".ipynb"))
         )
 
     open(filename, 'w').write(data)
