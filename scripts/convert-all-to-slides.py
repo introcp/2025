@@ -11,7 +11,7 @@ def file_hash(path):
     return hasher.hexdigest()
 
 if not os.path.exists("docs/.hashes"):
-    os.makedirs("src/.hashes")
+    os.makedirs("docs/.hashes")
 
 cached_hashes = set()
 for hash in glob.glob("docs/.hashes/*.hash"):
