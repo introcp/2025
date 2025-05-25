@@ -18,7 +18,7 @@ docker-run:
 			-w /home/user/introcp \
 			--ipc=host --cap-add=SYS_ADMIN --init \
 			--name introcp \
-			introcp \
+			ercoppa/introcp \
 			bash
 
 docker-build-book:
@@ -28,7 +28,7 @@ docker-build-book:
 			-w /home/user/introcp \
 			--ipc=host --cap-add=SYS_ADMIN --init \
 			--name introcp \
-			introcp \
+			ercoppa/introcp \
 			bash -c "make build-book"
 
 docker-push:
