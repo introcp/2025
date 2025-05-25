@@ -46,7 +46,7 @@ build-book:
 	. ~/.venv/bin/activate; python3 scripts/copy-slides-to-book.py docs
 	. ~/.venv/bin/activate; python3 scripts/fix-absolute-img-url.py
 	rm -rf docs/src/dist; cp -a src/dist docs/src/
-	rm -rf docs/dist; cp -a src/dist docs/
+	# rm -rf docs/dist; cp -a src/dist docs/
 	cp -a src/dist/plugin docs/src/
 	rm -rf docs/docs
 
