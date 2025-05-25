@@ -6,6 +6,7 @@ for filename in sorted(glob.glob('src/*/*.ipynb')):
     if 'ALL' not in os.environ and os.path.exists(filename.replace(".ipynb", ".pdf")) \
         and os.path.getmtime(filename) < os.path.getmtime(filename.replace(".ipynb", ".slides.html")) \
         and os.path.getmtime(filename) < os.path.getmtime(filename.replace(".ipynb", ".pdf")):
+        print("Skipping conversion into slide:", filename)
         continue
     else:
         print("Converting into slide:", filename)
