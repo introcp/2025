@@ -6,7 +6,7 @@ root: src/index
 parts:
   - caption: Introduction
     chapters:
-      - file: src/A00/A0-Introduction.ipynb
+      - file: src/A00/A00-Introduction.ipynb
   - caption: Python
     chapters:
       - file: src/P00/P00-Python-Getting-Started.ipynb
