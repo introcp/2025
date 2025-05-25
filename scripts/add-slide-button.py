@@ -32,7 +32,7 @@ for filename in glob.glob(sys.argv[1] + '/src/*/*.html'):
 </a>
 </li>
 
-<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://ercoppa.github.io/labds/_sources/<PATH>" target="_blank"
+<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://introcp.github.io/_sources/<PATH>" target="_blank"
   class="btn btn-sm dropdown-item"
   title="Launch on JupyterLite"
   data-bs-placement="left" data-bs-toggle="tooltip"
