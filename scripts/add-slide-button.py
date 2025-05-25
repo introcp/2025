@@ -5,7 +5,7 @@ import os
 for filename in glob.glob(sys.argv[1] + '/src/*/*.html'):
     if 'slides' in filename:
         continue
-    if not os.path.basename(filename)[0].isdigit():
+    if not os.path.basename(filename)[1].isdigit():
         continue
 
     print("add slide button to:", filename)

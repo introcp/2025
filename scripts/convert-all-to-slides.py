@@ -10,11 +10,11 @@ def file_hash(path):
         hasher.update(f.read())
     return hasher.hexdigest()
 
-if not os.path.exists("src/.hashes"):
+if not os.path.exists("docs/.hashes"):
     os.makedirs("src/.hashes")
 
 cached_hashes = set()
-for hash in glob.glob("src/.hashes/*.hash"):
+for hash in glob.glob("docs/.hashes/*.hash"):
     h = os.path.basename(hash).replace(".hash", "")
     cached_hashes.add(h)
 
@@ -80,7 +80,7 @@ for filename in sorted(glob.glob('src/*/*.ipynb')):
         )
         browser.close()
 
-        os.system("touch src/.hashes/" + file_hash(filename) + ".hash")
+        os.system("touch docs/.hashes/" + file_hash(filename) + ".hash")
 
     with sync_playwright() as playwright:
         run(playwright)
