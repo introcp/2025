@@ -1,0 +1,120 @@
+/**
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme. The accent color is darkblue.
+ *
+ * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+@font-face {
+    font-family: "LUISS";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/LuissSans-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "LUISS";
+  font-weight: bold;
+  font-style: normal;
+  src: url("../fonts/LuissSans-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "LUISS";
+  font-weight: normal;
+  font-style: italic;
+  src: url("../fonts/LuissSans-italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: LUISS;
+  font-weight: bold;
+  font-style: italic;
+  src: url("../fonts/LuissSans-BoldItalic.otf") format("opentype");
+}
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+
+// Override theme settings (see ../template/settings.scss)
+// $mainFont: 'LUISS', sans-serif;
+$mainFont: 'Lato', sans-serif;
+$mainColor: #000;
+// $headingFont: 'LUISS', Impact, sans-serif;
+$headingFont: 'News Cycle', Impact, sans-serif;
+$headingColor: #000;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$backgroundColor: #fff;
+$linkColor: #00008B;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: rgba(0, 0, 0, 0.99);
+
+$overlayElementBgColor: 0, 0, 0;
+$overlayElementFgColor: 240, 240, 240;
+
+// Change text colors against dark slide backgrounds
+@include dark-bg-text-color(#fff);
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+// .jp-RenderedHTMLCommon h1 code {
+// font-size: calc(var(--jp-content-font-size1) + 50px);
+// }
+
+// .jp-RenderedHTMLCommon h2 code {
+// font-size: calc(var(--jp-content-font-size1) + 16px);
+// }
+
+// .jp-RenderedHTMLCommon p code {
+// font-size: calc(var(--jp-code-font-size) + 4px);
+// }
+
+// .jp-RenderedHTMLCommon ul code {
+// font-size: calc(var(--jp-code-font-size) + 4px);
+// }
+
+// .reveal table {
+// font-size: calc(var(--jp-ui-font-size1) + 6px);
+// }
+
+// .reveal strong {
+// font-size: 29px;
+// }
+
+// .jp-RenderedHTMLCommon {
+//   display: inline;
+// }
+
+.jp-RenderedHTMLCommon h1 {
+  padding-bottom: 5px;
+}
+
+.jp-RenderedHTMLCommon h2 {
+  padding-bottom: 2px;
+}
+
+.jp-RenderedHTMLCommon h3 {
+  padding-bottom: 2px;
+}
+
+.jp-RenderedHTMLCommon h4 {
+  padding-bottom: 2px;
+}
+
+.reveal pre {
+  font-size: 0.65em;
+}
