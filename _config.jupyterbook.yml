@@ -3,7 +3,7 @@
 
 title: Introduction to computer programming
 author: Emilio Coppa
-logo: dist/img/logo.png
+logo: src/dist/img/logo.png
 copyright: "2025"
 
 exclude_patterns: [ docs, book, old, scripts, README.md, oldbook, dist, plugin, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", venv, venv2, .cache, .venv, temp, 08/extra]
