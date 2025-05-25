@@ -2,7 +2,7 @@ import sys
 import glob
 import os
 
-for filename in glob.glob('docs/_sources/*/*.ipynb'):
+for filename in glob.glob('docs/_sources/src/*/*.ipynb'):
     print("Processing", filename)
     data = open(filename).read()
     d = os.path.basename(os.path.dirname(filename))
