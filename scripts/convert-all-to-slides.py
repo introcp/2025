@@ -1,19 +1,33 @@
 import glob
 import os
+import hashlib
+import glob
+from playwright.sync_api import sync_playwright, Playwright
+
+def file_hash(path):
+    hasher = hashlib.sha256()
+    with open(path, 'rb') as f:
+        hasher.update(f.read())
+    return hasher.hexdigest()
+
+if not os.path.exists("src/.hashes"):
+    os.makedirs("src/.hashes")
+
+cached_hashes = set()
+for hash in glob.glob("src/.hashes/*.hash"):
+    h = os.path.basename(hash).replace(".hash", "")
+    cached_hashes.add(h)
 
 for filename in sorted(glob.glob('src/*/*.ipynb')):
 
     if 'ALL' not in os.environ and os.path.exists(filename.replace(".ipynb", ".pdf")) \
-        and os.path.getmtime(filename) < os.path.getmtime(filename.replace(".ipynb", ".slides.html")) \
-        and os.path.getmtime(filename) < os.path.getmtime(filename.replace(".ipynb", ".pdf")):
+        and file_hash(filename) in cached_hashes:
         print("Skipping conversion into slide:", filename)
         continue
     else:
         print("Converting into slide:", filename)
 
     os.system('SCROLLABLE=False bash scripts/process.sh ' + filename)
-
-    from playwright.sync_api import sync_playwright, Playwright
 
     def run(playwright: Playwright, verbose=False):
 
@@ -65,6 +79,8 @@ for filename in sorted(glob.glob('src/*/*.ipynb')):
             # width="1200",
         )
         browser.close()
+
+        os.system("touch src/.hashes/" + file_hash(filename) + ".hash")
 
     with sync_playwright() as playwright:
         run(playwright)
