@@ -5,7 +5,7 @@
 <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<title>P00-Python-Getting-Started slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>P01-Python-Expressions-and-Types slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
@@ -7441,7 +7441,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div align="center">
-<h1 id="Getting-Started"><b style="font-family: 'LUISS', 'Lato'">Getting Started</b><a class="anchor-link" href="#Getting-Started">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h1 id="Expressions-and-Data-Types"><b style="font-family: 'LUISS', 'Lato'">Expressions and Data Types</b><a class="anchor-link" href="#Expressions-and-Data-Types">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
 <h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
 <img alt="No description has been provided for this image" src="https://introcp.github.io/dist/img/cliente-luiss.png"/>
 <p><br/><br/><br/></p>
@@ -7456,41 +7456,25 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="How-and-Where">How and Where<a class="anchor-link" href="#How-and-Where">¶</a></h1>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="How-can-we-run-Python-code?">How can we run Python code?<a class="anchor-link" href="#How-can-we-run-Python-code?">¶</a></h2><p>Two approaches:</p>
-<ol>
-<li><p>Interactive shell:</p>
-<center>
-<img alt="No description has been provided for this image" src="img/python-interpreter.png" width="600"/>
-</center>
-<ul>
-<li><p>workflow:</p>
-<ul>
-<li>start the interactive Python shell</li>
-<li>write one line of code in the prompt after the symbols <code>&gt;&gt;&gt;</code></li>
-<li>push enter to execute it and get the results</li>
-<li>repeat as musch as needed</li>
-</ul>
+<h2 id="Why-Python?">Why Python?<a class="anchor-link" href="#Why-Python?">¶</a></h2><ul>
+<li><p>A <strong>high-level</strong> language for <strong>beginners</strong></p>
 </li>
-<li><p><strong>not very user-friendly</strong></p>
+<li><p>with a <strong>clean syntax</strong>, but...</p>
 </li>
-<li><p>appropriate only for quick tests</p>
+<li><p><strong>Industrial strength</strong> programming
+language used at thousands of companies (one of three official Google
+languages)</p>
 </li>
-<li><p>nothing is saved: you will lose your code when exiting the shell!</p>
+<li><p>Free, well documented, well supported</p>
 </li>
 </ul>
-</li>
-</ol>
+<br/>
+<br/>
+<div class="alert alert-block alert-info">
+Recall We will use Python 3 (there are non-backwards compatible
+differences with respect to Python 2). Further, Python 2 is now
+unsupported.
+</div>
 </div>
 </div>
 </div>
@@ -7501,304 +7485,73 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="How-can-we-run-Python-code?-(cont'd)">How can we run Python code? (cont'd)<a class="anchor-link" href="#How-can-we-run-Python-code?-(cont'd)">¶</a></h2><p>Two approaches:</p>
-<ol start="2">
-<li><p>Write the code into a textual file and then execute it:</p>
-<center>
-<img alt="No description has been provided for this image" src="img/python-run.svg" width="600"/>
-</center>
+<h2 id="Expressions-and-Statements">Expressions and Statements<a class="anchor-link" href="#Expressions-and-Statements">¶</a></h2><p>A (Python) program is composed by a sequence of:</p>
 <ul>
-<li><p>workflow:</p>
-<ul>
-<li>write the code into a textual file with extension <code>.py</code></li>
-<li>execute the file with the Python VM</li>
+<li><strong>definitions</strong> (also
+<strong>expressions</strong>) which are
+<strong>evaluated</strong></li>
+<li><strong>statements</strong> (also
+<strong>commands</strong>) which are
+<strong>executed</strong></li>
 </ul>
+<p>In plain terms...</p>
+<ul>
+<li><strong>expressions</strong> yield some results (e.g.,
+<code>5 * 5</code>)</li>
+<li><strong>statements</strong> instruct the interpreter to
+do something (e.g., print on screen, assign to variable)</li>
+</ul>
+<p>Expressions and statements can either</p>
+<ul>
+<li>be directly written into a shell (<strong>interactive mode</strong>)</li>
+<li>be written into a text file and then loaded into the shell
+(<strong>script mode</strong>).</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Interactive-vs.-Script-Mode">Interactive vs. Script Mode<a class="anchor-link" href="#Interactive-vs.-Script-Mode">¶</a></h2><ul>
+<li><strong>Interactive Mode</strong>: perfectly fine for testing and learning.<br>
+Type your commands/expressions into the shell and Python will
+execute/evaluate those immediately:</br></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>&gt;&gt;&gt; 5 * 5</code></td>
+<td style="text-align:left">$\leftarrow$input</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>25</code></td>
+<td style="text-align:left">$\leftarrow$output</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<ul>
+<li><p><strong>Script Mode</strong>:
+is what you normally do.</p>
+<ul>
+<li><p>write the entire source code in a text file ending with the <code>.py</code>
+extension (say <code>myscript.py</code>)</p>
 </li>
-<li><p><strong>This is what you want to do!</strong></p>
-</li>
-<li><p>Still <em>iterative</em> approach: write the code, check if it works, refine the code, ...</p>
+<li><p><code>myscript.py</code> will be executed in its entirety by the Python
+interpreter</p>
 </li>
 </ul>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2>The code can be very cryptic…<br/>Can we add some notes around it?</h2>
-<p>It could be hard to remember why we have written a piece of code, what are its effects and downsides.</p>
-<p>It is often convenient to organize our code into "sections" and then add some text to describe what the code is expected to do. This is called:</p>
-<center>
-<img alt="No description has been provided for this image" src="img/jupyter-logo.drawio.png" width="400"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Jupyter-Notebook">Jupyter Notebook<a class="anchor-link" href="#Jupyter-Notebook">¶</a></h2><p>Using the environment <strong>JupyterLab</strong> we can create a new notebook:</p>
-<center>
-<img alt="No description has been provided for this image" src="img/jupyterlab.png" width="750"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Where-do-we-run-our-code/notebooks?">Where do we run our code/notebooks?<a class="anchor-link" href="#Where-do-we-run-our-code/notebooks?">¶</a></h2><ol>
-<li><p><strong>Local setup</strong>: your computer!</p>
-<center><img alt="No description has been provided for this image" src="img/local.png" width="130"/></center>
-<ul>
-<li>you have to install Python and all the other bits</li>
-<li>limited by your computational power</li>
-</ul>
-</li>
-<li><p><strong>Cloud setup</strong>:</p>
-<center><img alt="No description has been provided for this image" src="img/cloud.png" width="130"/></center>
-<ul>
-<li>no need to install everything</li>
-<li>limited by your money</li>
-</ul>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Local-Setup">Local Setup<a class="anchor-link" href="#Local-Setup">¶</a></h1>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2>[<strong>Only on Windows 11</strong>]<br/>Disable Windows Store Aliases</h2>
-<ol>
-<li>From the start menu, search and then open <em>Manage app execution aliases</em> (<em>Alias di esecuzione delle app</em>)</li>
-<li>Disables aleases for <em>python.exe</em> and <em>python3.exe</em>:</li>
-</ol>
-<center>
-<img alt="No description has been provided for this image" src="img/win11-disable-aliases.png" width="400"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2>[<strong>Only on Windows 11</strong>]<br/>Enable script cmdlet</h2>
-<ol>
-<li>From the start menu, search <em>Windows Powershell</em>, then using the right-click select <em>Run as administrator</em>:</li>
-</ol>
-<center>
-<img alt="No description has been provided for this image" src="img/win11-launch-powershell.png" width="400"/>
-</center>
-<ol start="2">
-<li>Type <code>Set-ExecutionPolicy unrestricted</code>, then run it and reply <em>y</em> (or "s" if your Windows is in italian) :</li>
-</ol>
-<center>
-<img alt="No description has been provided for this image" src="img/win11-set-execution-policy.png" width="400"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Download-Python">Download Python<a class="anchor-link" href="#Download-Python">¶</a></h2><p>Visit: <strong><a href="https://www.python.org/">https://www.python.org/</a></strong></p>
-<center>
-<img alt="No description has been provided for this image" src="img/python-download-win.png" width="700"/>
-<img alt="No description has been provided for this image" src="img/python-download-mac.png" width="700"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Launch-the-installer">Launch the installer<a class="anchor-link" href="#Launch-the-installer">¶</a></h2><p>Double click on the downloaded file, e.g., on Windows:</p>
-<ol>
-<li><h3>Enable <b><i>Add python.exe to PATH</i></b><!--3-->
-</h3></li>
-<li>Click <em><strong>Install now</strong></em></li>
-</ol>
-<center>
-<img alt="No description has been provided for this image" src="img/python-installer-win.drawio.png" width="500"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Launch-the-installer-(cont'd)">Launch the installer (cont'd)<a class="anchor-link" href="#Launch-the-installer-(cont'd)">¶</a></h2><p>Similarly on Mac OS X:</p>
-<center>
-<img alt="No description has been provided for this image" src="img/python-installer-mac.png" width="500"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Install-a-(good)-code-editor:-Visual-Studio-Code">Install a (good) code editor: <strong>Visual Studio Code</strong><a class="anchor-link" href="#Install-a-(good)-code-editor:-Visual-Studio-Code">¶</a></h2><ol>
-<li>Visit: <strong><a href="https://code.visualstudio.com/Download">https://code.visualstudio.com/Download</a></strong></li>
-<li>Download the latest version for your OS</li>
-</ol>
-<center>
-<img alt="No description has been provided for this image" src="img/download-vscode.png"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Start-Visual-Studio-Code-(Windows)">Start <strong>Visual Studio Code</strong> (Windows)<a class="anchor-link" href="#Start-Visual-Studio-Code-(Windows)">¶</a></h2><center>
-<img alt="No description has been provided for this image" src="img/vscode.png" width="650"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Start-Visual-Studio-Code-(Mac-OS-X)">Start <strong>Visual Studio Code</strong> (Mac OS X)<a class="anchor-link" href="#Start-Visual-Studio-Code-(Mac-OS-X)">¶</a></h2><center>
-<img alt="No description has been provided for this image" src="img/vscode-mac.png" width="650"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="VSCode-extension:-Python-integration">VSCode extension: Python integration<a class="anchor-link" href="#VSCode-extension:-Python-integration">¶</a></h2><ol>
-<li>From the side bar, open the <em><strong>Extension</strong></em> tab</li>
-<li>Search for <em><strong>Python</strong></em></li>
-<li>Install the extension</li>
-</ol>
-<center>
-<img alt="No description has been provided for this image" src="img/vscode-extension-python.png" width="500"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="VSCode-extension:-Python-Environment-Manager">VSCode extension: Python Environment Manager<a class="anchor-link" href="#VSCode-extension:-Python-Environment-Manager">¶</a></h2><ol>
-<li>From the side bar, open the <em><strong>Extension</strong></em> tab</li>
-<li>Search for <em><strong>Python Environment Manager</strong></em></li>
-<li>Install the extension</li>
-</ol>
-<center>
-<img alt="No description has been provided for this image" src="img/vscode-extension-python-venv-manager.png" width="500"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="VSCode-extension:-Jupyter">VSCode extension: Jupyter<a class="anchor-link" href="#VSCode-extension:-Jupyter">¶</a></h2><ol>
-<li>From the side bar, open the <em><strong>Extension</strong></em> tab</li>
-<li>Search for <em><strong>Jupyter</strong></em></li>
-<li>Install the extension</li>
-</ol>
-<center>
-<img alt="No description has been provided for this image" src="img/vscode-jupyter.png"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Where-to-install-Python-packages-from-the-community">Where to install Python packages from the community<a class="anchor-link" href="#Where-to-install-Python-packages-from-the-community">¶</a></h2><p>We can install Python packages from the community following two strategies:</p>
-<ul>
-<li><p><em><strong>System-wide</strong></em>: this may create conflicts between different projects using Python.</p>
-<ul>
-<li>pros: you need to install a package only once for all projects</li>
-<li>cons: one project may break due to a package installed/updated for another project</li>
-</ul>
-<p><em><strong>It is now the deprecated approach.</strong></em></p>
-</li>
-<li><p><em><strong>Project-wide</strong></em>: each project has its own <em><strong>Virtual Environment</strong></em>.</p>
-<ul>
-<li>pros: no conflicts across packages of different projects</li>
-<li>cons: a package must be installed again for each project</li>
-</ul>
-<p>This is nowadays the suggested approach and <strong>we will follow it</strong>.</p>
 </li>
 </ul>
 </div>
@@ -7811,147 +7564,20 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Create-a-new-virtual-environment">Create a new virtual environment<a class="anchor-link" href="#Create-a-new-virtual-environment">¶</a></h2><ol>
-<li>Create a new folder (e.g., <code>labds</code> within <code>Desktop</code> folder)</li>
-<li>Open the folder from VSCode:</li>
-</ol>
-<center>
-<img alt="No description has been provided for this image" src="img/vscode-open-folder.png" width="250"/>
-</center>
-<ol start="3">
-<li>Start the terminal: <em><strong>View &gt; Terminal</strong></em></li>
-<li>Type in the terminal:<br/>
-<code>python -m venv .venv</code>
-<br/>or:<br/>
-<code>python3 -m venv .venv</code></li>
-</ol>
+<h2 id="Programming-in-Python">Programming in Python<a class="anchor-link" href="#Programming-in-Python">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/PythonBasics.png" width="400"/>
 </div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Pick-the-default-virtual-environment">Pick the default virtual environment<a class="anchor-link" href="#Pick-the-default-virtual-environment">¶</a></h2><ol>
-<li>From the side bar, open the Python logo</li>
-<li>Click on the <em>star</em> to select the virtual environment</li>
-</ol>
-<center>
-<img alt="No description has been provided for this image" src="img/vscode-pick-venv.png" width="250"/>
-</center>
-<ol start="3">
-<li>Close VSCode and then re-open your project folder in VSCode</li>
-</ol>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Installation-of-Python-packages-in-the-virtual-environment">Installation of Python packages in the virtual environment<a class="anchor-link" href="#Installation-of-Python-packages-in-the-virtual-environment">¶</a></h2><p>We will use some extra Python bits from the community, including:<br/>
-<code>numpy</code>, <code>matplotlib</code>, <code>seaborn</code>, <code>scikit-learn</code>, and <code>jupyterlab</code>.</p>
-<p>From VSCode:</p>
-<ol>
-<li>Start a new terminal using the menu: <em><strong>Terminal &gt; New Terminal</strong></em></li>
-<li><code>python -m pip install numpy matplotlib seaborn scikit-learn jupyterlab</code></li>
-</ol>
-<center>
-<img alt="No description has been provided for this image" src="img/vscode-install-with-pip.png"/>
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2>Troubleshooting on Windows:<br/><code>python is not recognized</code></h2>
-<p>If, when when running <code>python</code> in the terminal of VSCode, you get the following error:</p>
-<center>
-<img alt="No description has been provided for this image" src="img/win11-unrecognized-python.png"/>
-</center>
-<p>Then, you have to:</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2>Troubleshooting on Windows:<br/><code>python is not recognized</code> (cont'd)</h2>
-<ol>
-<li>Uninstall Python: run again the installer of Python and select <em>Uninstall</em>:<center>
-<img alt="No description has been provided for this image" src="img/win11-uninstall-python.drawio.png" width="450"/>
-</center>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2>Troubleshooting on Windows:<br/><code>python is not recognized</code> (cont'd)</h2>
-<ol start="2">
-<li><p>Start the Python installer</p>
-</li>
-<li><p>Select <em><strong>Add to path</strong></em> at the bottom</p>
-<center>
-<img alt="No description has been provided for this image" src="img/python-installer-win.drawio.png" width="400"/>
-</center>
-</li>
-<li><p>Proceed with <em><strong>Install now</strong></em></p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Cloud-Setup">Cloud Setup<a class="anchor-link" href="#Cloud-Setup">¶</a></h1>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Google-Colab,-i.e.,-the-lazy-approach"><strong>Google Colab</strong>, i.e., the lazy approach<a class="anchor-link" href="#Google-Colab,-i.e.,-the-lazy-approach">¶</a></h2><center>
-<img alt="No description has been provided for this image" src="img/colab.jpg" width="450"/>
-</center>
 <ul>
-<li>Platform from Google</li>
-<li><strong>Google Account is required</strong></li>
-<li>Free of charge to use for the basic plan</li>
-<li>Write code in the browser (no extra is needed)</li>
-<li>Code executed on Google cloud servers</li>
-<li>Low/medium performance, privacy issues</li>
-<li><strong>No need to install anything</strong></li>
+<li><p>programs manipulate <strong>data objects</strong></p>
+</li>
+<li><p>each data object has its own <strong>type</strong>, which defines the type of operations that can be done with them</p>
+</li>
+<li><p>objects can either be:</p>
+<ul>
+<li><strong>Scalar</strong>: cannot be subdivided</li>
+<li><strong>Non-scalar</strong>: have an inner structure that can be</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -7963,39 +7589,56 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="From-Google-Drive">From <strong>Google Drive</strong><a class="anchor-link" href="#From-Google-Drive">¶</a></h2><center>
-<img alt="No description has been provided for this image" src="img/drive-colab.png" width="500"/>&gt;
-</center>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Environments">Environments<a class="anchor-link" href="#Environments">¶</a></h1>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Environment:-local-setup-with-VSCode">Environment: local setup with VSCode<a class="anchor-link" href="#Environment:-local-setup-with-VSCode">¶</a></h2><p>Use VSCode:</p>
-<ul>
-<li>Quickly write and execute python files (<code>.py</code>)</li>
-<li>Quick access to the local terminal</li>
-<li>Write and execute notebooks (<code>.ipynb</code>). Some advanced features of JupyterLab (that we do not need) may have limited support.</li>
-<li>Good editor with several extensions (integrations with third-party services)</li>
-<li>Everything runs on your machine</li>
+<h2 id="Scalar-Objects">Scalar Objects<a class="anchor-link" href="#Scalar-Objects">¶</a></h2><ul>
+<li><code>int</code>: represents integers (e.g., <code>5</code>)</li>
+<li><code>float</code>: represents real numbers (e.g., <code>3.14</code>)</li>
+<li><code>bool</code>: represents Boolean values (<code>True</code> or <code>False</code>)</li>
+<li><code>NoneType</code>: special with only one value (<code>None</code>)\</li>
 </ul>
-<p><em><strong>This is the environment that we suggest you to use.</strong></em></p>
+<br/>
+<br/>
+<div class="alert alert-block alert-info">
+<b>Hint</b>: Use the `type()` function if you are not sure about the data type.
+</div>
+<br/>
+<p>Examples:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>&gt;&gt;&gt; type(109)</code></td>
+<td style="text-align:left">$\leftarrow$input</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&lt;class 'int'&gt;</code></td>
+<td style="text-align:left">$\leftarrow$output</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>&gt;&gt;&gt; type(10.9)</code></td>
+<td style="text-align:left">$\leftarrow$input</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&lt;class ’float’&gt;</code></td>
+<td style="text-align:left">$\leftarrow$output</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -8006,14 +7649,47 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Environment:-local-setup-with-JupyerLab">Environment: local setup with JupyerLab<a class="anchor-link" href="#Environment:-local-setup-with-JupyerLab">¶</a></h2><p>Use JupyterLab:</p>
+<h2 id="Type-int()">Type <code>int()</code><a class="anchor-link" href="#Type-int()">¶</a></h2><p>Values:  $~~~~~~~~~~~~~\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots$</p>
+<p>Integer literals look like a sequence of numbers with no periods nor
+commas.</p>
+<p>Operations:</p>
 <ul>
-<li>Start it from any terminal (e.g., from VSCode) with:<br/><code>python -m jupyterlab</code></li>
-<li>Write and execute notebooks (<code>.ipynb</code>) with support even for advanced and weird features.</li>
-<li>Basic editor</li>
-<li>Everything runs on your machine</li>
+<li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>//</code> (floot division), <code>%</code> (modulus, remainder),
+<code>**</code> (exponentiation)</li>
+<li><code>-</code> (unary minus, to negate a number)</li>
+<li><code>**</code> (exponentiation)</li>
 </ul>
-<p><em><strong>We suggest to use JupterLab only when you need to run advanced Jupyter notebooks obtained from the external world</strong></em></p>
+<p>Examples:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>&gt;&gt;&gt; 7/5</code></td>
+<td style="text-align:left">$\leftarrow$input</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>1.4</code></td>
+<td style="text-align:left">$\leftarrow$output</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&gt;&gt;&gt; 7//5</code></td>
+<td style="text-align:left">$\leftarrow$ <code>//</code> is the floor division!</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>1</code></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<br/>
+<div class="alert alert-block alert-info">
+Note In Python 3, operations between integers may not yield an integer.
+</div>
 </div>
 </div>
 </div>
@@ -8024,15 +7700,245 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Environment:-cloud-setup-with-Colab">Environment: cloud setup with Colab<a class="anchor-link" href="#Environment:-cloud-setup-with-Colab">¶</a></h2><p>Use Google Colab:</p>
+<h2 id="Type-float()">Type <code>float()</code><a class="anchor-link" href="#Type-float()">¶</a></h2><p>Values: $~~~~~~~~~~~~~~$ some (approximated) range of $\mathbb{R}$<br>
+Note that:</br></p>
 <ul>
-<li>You can work from any computer. Even your tablet (although, it is a bit inconvenient!)</li>
-<li>Write and execute on the cloud notebooks (.pynb).  Some advanced features of JupyterLab (that we do not need) may have limited support.</li>
-<li>Basic editor</li>
-<li>Everything must be saved on Google Drive</li>
-<li><strong>Not adequate in future courses where you need a bit of computational power</strong> (assuming you do not want to pay Google).</li>
+<li>numbers with a "<code>.</code>" are decimals (e.g., <code>2.0</code>)</li>
+<li>numbers with no decimal separator are integers (e.g., <code>2</code>)</li>
 </ul>
-<p><em><strong>We suggest to use Colab only if you issues with your local setup</strong></em></p>
+<p>Operations:</p>
+<ul>
+<li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulus, remainder of division)</li>
+<li><code>**</code> (exponentiation)</li>
+<li><code>-</code> (unary, invert sign)</li>
+</ul>
+<br/>
+<br/>
+<div class="alert alert-block alert-info">
+Operations between floats or between a float and an
+integer, always yield a float.
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>&gt;&gt;&gt; 7.0/5.0</code></td>
+<td style="text-align:left">$\leftarrow$input</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>1.4</code></td>
+<td style="text-align:left">$\leftarrow$output</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&gt;&gt;&gt; 7.0//5</code></td>
+<td style="text-align:left">$\leftarrow$ <code>//</code> is the floor division!</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>1.0</code></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Python stores floating point numbers as base 2 (binary) fractions:
+$$\text{\{number\}} = \text{\{integer mantissa\}} \cdot 2^{-\text{\{exponent\}}}$$
+For example:
+$0.125 = 1 \cdot 2^{-3} = 1\cdot \frac{1}{2^3}=1\cdot \frac{1}{8}$.</p>
+<div class="alert alert-block alert-info">
+<b>Warning</b>: Not all numbers can be represented in base 2 fractions. Python
+chooses the best approximation it can. The same also holds for some
+numbers in base 10 fraction: e.g., what about 1/3?
+</div>
+<p>Python may yield some <strong>approximation errors</strong>, that propagate as expressions go through.</p>
+<p>Example:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>&gt;&gt;&gt; 0.1+0.2</code></td>
+<td style="text-align:left">$\leftarrow$input</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>0.30000000000000004</code></td>
+<td style="text-align:left">$\leftarrow$output</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&gt;&gt;&gt; 0.1+0.2+0.1+0.2</code></td>
+<td style="text-align:left">$\leftarrow$input</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>0.6000000000000001</code></td>
+<td style="text-align:left">$\leftarrow$output</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&gt;&gt;&gt; 0.1+0.2+0.1+0.2+0.1+0.2+0.1+0.2</code></td>
+<td style="text-align:left">$\leftarrow$input</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>1.2000000000000002</code></td>
+<td style="text-align:left">$\leftarrow$output</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Type-bool">Type <code>bool</code><a class="anchor-link" href="#Type-bool">¶</a></h2><p>Values:</p>
+<p>$~~~~~~~~~~~~~~~$ <code>True</code> and <code>False</code> (capitalized!)</p>
+<p>Operations:</p>
+<p><code>not a</code> = $\begin{cases}
+          \texttt{True} &amp; \text{if} \texttt{ a } \text{is} \texttt{ False }\\
+          \texttt{False} &amp; \text{if} \texttt{ a } \text{is} \texttt{ True }
+      \end{cases}$</p>
+<p><code>a and b</code> = $\begin{cases}
+          \texttt{True} &amp; \text{if both} \texttt{ b } \text{and} \texttt{ a } \text{are} \texttt{ True}\\
+          \texttt{False} &amp; \text{otherwise}
+      \end{cases}$</p>
+<p><code>a or b</code> = $\begin{cases}
+          \texttt{True} &amp; \text{if} \texttt{ a } \text{is} \texttt{ True } \text{or} \texttt{ b } \text{is} \texttt{ True }\\
+          \texttt{False} &amp; \text{otherwise}
+      \end{cases}$</p>
+<p>Booleans are the output of comparisons between items (e.g., <code>int</code> or
+<code>float</code>):</p>
+<ul>
+<li>Order:  <code>i&lt;j</code>, <code>i&gt;j</code>, <code>i&lt;=j</code>, <code>i&gt;=j</code></li>
+<li>(In)equality: <code>i!=j</code>, <code>i==j</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Truth-Table-between-two-Boolean-variables">Truth Table between two Boolean variables<a class="anchor-link" href="#Truth-Table-between-two-Boolean-variables">¶</a></h2><br/>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><code>a</code></th>
+<th style="text-align:center"><code>b</code></th>
+<th style="text-align:center">not <code>a</code></th>
+<th style="text-align:center">not <code>b</code></th>
+<th style="text-align:center"><code>a</code> and <code>b</code></th>
+<th style="text-align:center"><code>a</code> or <code>b</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>True</code></td>
+<td style="text-align:center"><code>True</code></td>
+<td style="text-align:center"><code>False</code></td>
+<td style="text-align:center"><code>False</code></td>
+<td style="text-align:center"><code>True</code></td>
+<td style="text-align:center"><code>True</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>False</code></td>
+<td style="text-align:center"><code>False</code></td>
+<td style="text-align:center"><code>True</code></td>
+<td style="text-align:center"><code>True</code></td>
+<td style="text-align:center"><code>False</code></td>
+<td style="text-align:center"><code>False</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>True</code></td>
+<td style="text-align:center"><code>False</code></td>
+<td style="text-align:center"><code>False</code></td>
+<td style="text-align:center"><code>True</code></td>
+<td style="text-align:center"><code>False</code></td>
+<td style="text-align:center"><code>True</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>False</code></td>
+<td style="text-align:center"><code>True</code></td>
+<td style="text-align:center"><code>True</code></td>
+<td style="text-align:center"><code>False</code></td>
+<td style="text-align:center"><code>False</code></td>
+<td style="text-align:center"><code>True</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Type-Conversions">Type Conversions<a class="anchor-link" href="#Type-Conversions">¶</a></h2><p>Switching between <code>float</code> and <code>int</code> can be performed via <strong>casting</strong> (<strong>explicit</strong> conversion):</p>
+<ul>
+<li><code>float(2)</code> converts value <code>2</code> (integer) to <code>2.0</code> (floating point)</li>
+<li><code>int(2.9)</code> converts value <code>2.9</code> (floating point) to <code>2</code> (integer)</li>
+</ul>
+<br/>
+<br/>
+<div class="alert alert-block alert-info">
+<b>Warning</b> <code>int()</code> does not round to the nearest integer: rather, it
+truncates the decimal part. To round to the nearest integer, use
+<code>round()</code> instead.
+</div>
+<p>Python supports <strong>widening</strong> automatically (<strong>implicit</strong> conversion):
+$$\underbrace{\texttt{bool} \rightarrow \texttt{int} \rightarrow \texttt{float}}_\text{narrow to wide}$$</p>
+<ul>
+<li><p><strong>Widening</strong>: Python does it automatically, if needed. Example:</p>
+<p><code>1/0.5=2.0</code> because Python casts <code>1</code> to <code>float</code></p>
+</li>
+<li><p><strong>Narrowing</strong>: Python never does it automatically. Because narrowing leads to information loss!</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Expressions">Expressions<a class="anchor-link" href="#Expressions">¶</a></h2><ul>
+<li><p><strong>Expressions</strong> are combinations of <strong>objects</strong> and <strong>operators</strong></p>
+</li>
+<li><p>an expression yields a <strong>value</strong>, which has its own <strong>type</strong></p>
+</li>
+<li><p>the simplest expression has the form:</p>
+</li>
+</ul>
+<div align="center">
+  &lt;<code>object</code>, <code>operator</code>, <code>object</code>&gt;
+</div>
 </div>
 </div>
 </div>
