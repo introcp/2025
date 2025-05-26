@@ -35,8 +35,9 @@ html:
 parse:
   myst_enable_extensions:
     - html_image
-    - dollarmath
     - linkify
+
+# - dollarmath
 
 launch_buttons:
   colab_url: "https://colab.research.google.com"
