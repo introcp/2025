@@ -42,7 +42,7 @@ build-book:
 	# DEBUG="pw:browser"
 	. ~/.venv/bin/activate; python3 scripts/convert-all-to-slides.py
 	cp -r docs/.hashes . || true
-	rm -rf docs ; mkdir docs && cp -r _build/html/* docs && mv .hashes docs/
+	rm -rf docs ; mkdir docs && cp -r _build/html/* docs && mv .hashes docs || true
 	. ~/.venv/bin/activate; python3 scripts/add-slide-button.py docs
 	. ~/.venv/bin/activate; python3 scripts/copy-slides-to-book.py docs
 	. ~/.venv/bin/activate; python3 scripts/fix-absolute-img-url.py
