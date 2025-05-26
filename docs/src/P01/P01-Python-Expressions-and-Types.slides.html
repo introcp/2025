@@ -7909,8 +7909,10 @@ numbers in base 10 fraction: e.g., what about 1/3?
 truncates the decimal part. To round to the nearest integer, use
 <code>round()</code> instead.
 </div>
-<p>Python supports <strong>widening</strong> automatically (<strong>implicit</strong> conversion):
-$$\underbrace{\texttt{bool} \rightarrow \texttt{int} \rightarrow \texttt{float}}_\text{narrow to wide}$$</p>
+<p>Python supports <strong>widening</strong> automatically (<strong>implicit</strong> conversion):</p>
+<div align="center">
+<p>$\underbrace{\texttt{bool} \rightarrow \texttt{int} \rightarrow \texttt{float}}_\text{narrow to wide}$</p>
+</div>
 <ul>
 <li><p><strong>Widening</strong>: Python does it automatically, if needed. Example:</p>
 <p><code>1/0.5=2.0</code> because Python casts <code>1</code> to <code>float</code></p>
