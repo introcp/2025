@@ -7,6 +7,6 @@ docker run --rm -ti \
     -v ${SCRIPT_DIR}/..:/home/user/introcp \
     -w /home/user/introcp \
     --ipc=host --cap-add=SYS_ADMIN --init \
-    --name introcp \
+    --name introcp-preview \
     ercoppa/introcp \
     bash -c ". ~/.venv/bin/activate; bash scripts/run.sh ${1}"

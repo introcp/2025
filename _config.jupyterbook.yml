@@ -6,7 +6,7 @@ author: Emilio Coppa and Alessio Martino
 logo: src/dist/img/logo.png
 copyright: "2025"
 
-exclude_patterns: [ docs, book, old, scripts, README.md, oldbook, dist, plugin, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", venv, venv2, .cache, .venv, temp, 08/extra]
+exclude_patterns: [ docs, book, old, scripts, README.md, oldbook, dist, plugin, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", venv, venv2, .cache, .venv, temp, extra]
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

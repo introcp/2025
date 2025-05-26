@@ -10,20 +10,28 @@ def file_hash(path):
         hasher.update(f.read())
     return hasher.hexdigest()
 
+def name_hash(path):
+    hasher = hashlib.sha256()
+    hasher.update(path.encode('utf-8'))
+    return hasher.hexdigest()
+
 HASHED_DIR = "docs/.hashes/"
 
 if not os.path.exists(HASHED_DIR):
     os.makedirs(HASHED_DIR)
 
-cached_hashes = set()
+cached_hashes = {}
 for hash in glob.glob(HASHED_DIR + "/*.hash"):
-    h = os.path.basename(hash).replace(".hash", "")
-    cached_hashes.add(h)
+    hf = os.path.basename(hash).replace(".hash", "")
+    h = open(hash, 'r').read().strip()
+    cached_hashes[hf] = h
 
 for filename in sorted(glob.glob('src/*/*.ipynb')):
+    
+    hash_name = name_hash(filename)
 
     if 'ALL' not in os.environ and os.path.exists(filename.replace(".ipynb", ".pdf")) \
-        and file_hash(filename) in cached_hashes:
+        and hash_name in cached_hashes and file_hash(filename) in cached_hashes[hash_name]:
         print("Skipping conversion into slide:", filename)
         continue
     else:
@@ -82,7 +90,8 @@ for filename in sorted(glob.glob('src/*/*.ipynb')):
         )
         browser.close()
 
-        os.system("touch " + HASHED_DIR + file_hash(filename) + ".hash")
+        with open(HASHED_DIR + hash_name + ".hash", 'w') as f:
+            f.write(file_hash(filename))
 
     with sync_playwright() as playwright:
         run(playwright)
