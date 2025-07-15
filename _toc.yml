@@ -10,3 +10,4 @@ parts:
   - caption: Python
     chapters:
       - file: src/P00/P00-Python-Getting-Started.ipynb
+      - file: src/P01/P01-Python-Expressions-and-Types.ipynb
