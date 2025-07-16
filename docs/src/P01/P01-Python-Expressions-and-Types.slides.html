@@ -7471,7 +7471,7 @@ languages)</p>
 <br/>
 <br/>
 <div class="alert alert-block alert-info">
-Recall We will use Python 3 (there are non-backwards compatible
+<b>Recall</b>: We will use Python 3 (there are non-backwards compatible
 differences with respect to Python 2). Further, Python 2 is now
 unsupported.
 </div>
@@ -7575,7 +7575,7 @@ interpreter</p>
 <li><p>objects can either be:</p>
 <ul>
 <li><strong>Scalar</strong>: cannot be subdivided</li>
-<li><strong>Non-scalar</strong>: have an inner structure that can be</li>
+<li><strong>Non-scalar</strong>: have an inner structure that can be accessed</li>
 </ul>
 </li>
 </ul>
@@ -7598,7 +7598,7 @@ interpreter</p>
 <br/>
 <br/>
 <div class="alert alert-block alert-info">
-<b>Hint</b>: Use the `type()` function if you are not sure about the data type.
+<b>Hint</b>: Use the <code>type()</code> function if you are not sure about the data type.
 </div>
 <br/>
 <p>Examples:</p>
@@ -7654,10 +7654,9 @@ interpreter</p>
 commas.</p>
 <p>Operations:</p>
 <ul>
-<li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>//</code> (floot division), <code>%</code> (modulus, remainder),
+<li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>//</code> (floor division), <code>%</code> (modulus, remainder),
 <code>**</code> (exponentiation)</li>
 <li><code>-</code> (unary minus, to negate a number)</li>
-<li><code>**</code> (exponentiation)</li>
 </ul>
 <p>Examples:</p>
 <table>
@@ -7682,7 +7681,7 @@ commas.</p>
 </tr>
 <tr>
 <td style="text-align:left"><code>1</code></td>
-<td style="text-align:left"></td>
+<td style="text-align:left">$\leftarrow$output</td>
 </tr>
 </tbody>
 </table>
@@ -7703,7 +7702,7 @@ Note In Python 3, operations between integers may not yield an integer.
 <h2 id="Type-float()">Type <code>float()</code><a class="anchor-link" href="#Type-float()">¶</a></h2><p>Values: $~~~~~~~~~~~~~~$ some (approximated) range of $\mathbb{R}$<br>
 Note that:</br></p>
 <ul>
-<li>numbers with a "<code>.</code>" are decimals (e.g., <code>2.0</code>)</li>
+<li>numbers with a "." are decimals (e.g., <code>2.0</code>)</li>
 <li>numbers with no decimal separator are integers (e.g., <code>2</code>)</li>
 </ul>
 <p>Operations:</p>
@@ -7817,7 +7816,7 @@ numbers in base 10 fraction: e.g., what about 1/3?
           \texttt{False} &amp; \text{if} \texttt{ a } \text{is} \texttt{ True }
       \end{cases}$</p>
 <p><code>a and b</code> = $\begin{cases}
-          \texttt{True} &amp; \text{if both} \texttt{ b } \text{and} \texttt{ a } \text{are} \texttt{ True}\\
+          \texttt{True} &amp; \text{if both} \texttt{ b } \text{and} \texttt{ a } \text{are} \texttt{ True}\\\n
           \texttt{False} &amp; \text{otherwise}
       \end{cases}$</p>
 <p><code>a or b</code> = $\begin{cases}
@@ -7939,7 +7938,179 @@ $$</p>
 </li>
 </ul>
 <div align="center">
-  &lt;<code>object</code>, <code>operator</code>, <code>object</code>&gt;
+<p><code>&lt;object, operator, object&gt;</code></p>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Arithmetic-Operations-on-int-and-float:-a-Recap">Arithmetic Operations on <code>int</code> and <code>float</code>: a Recap<a class="anchor-link" href="#Arithmetic-Operations-on-int-and-float:-a-Recap">¶</a></h2><table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Syntax</strong></th>
+<th style="text-align:center"><strong>Operator</strong></th>
+<th style="text-align:left"><strong>Output Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>i+j</code></td>
+<td style="text-align:center">Sum</td>
+<td style="text-align:left">if both of them are floats, result is float</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>i-j</code></td>
+<td style="text-align:center">Difference</td>
+<td style="text-align:left">if both of them are int, result is int</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>i*j</code></td>
+<td style="text-align:center">Product</td>
+<td style="text-align:left">if either of them is float, result is float</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>i/j</code></td>
+<td style="text-align:center">Division</td>
+<td style="text-align:left">result is float (always)</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>i%j</code></td>
+<td style="text-align:center">Remainder (Modulo)</td>
+<td style="text-align:left">if both of them are floats, result is float</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>i**j</code></td>
+<td style="text-align:center">Power of</td>
+<td style="text-align:left">if both of them are int, result is int</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>i//j</code></td>
+<td style="text-align:center">Floor division</td>
+<td style="text-align:left">if either of them is float, result is float</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Comparison-Between-ints-and-floats:-a-Recap">Comparison Between <code>int</code>s and <code>float</code>s: a Recap<a class="anchor-link" href="#Comparison-Between-ints-and-floats:-a-Recap">¶</a></h2><div class="alert alert-block alert-info">
+<b>NOTE</b>: Comparisons below evaluate to a <code>bool</code>.
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Expression</th>
+<th style="text-align:left"></th>
+<th style="text-align:left">Evaluation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>i&lt;j</code></td>
+<td style="text-align:left">$\rightarrow$</td>
+<td style="text-align:left"><code>True</code> if <code>i</code> is smaller than <code>j</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>i&lt;=j</code></td>
+<td style="text-align:left">$\rightarrow$</td>
+<td style="text-align:left"><code>True</code> if <code>i</code> is smaller than or equal to <code>j</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>i&gt;j</code></td>
+<td style="text-align:left">$\rightarrow$</td>
+<td style="text-align:left"><code>True</code> if <code>i</code> is greater than <code>j</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>i&gt;=j</code></td>
+<td style="text-align:left">$\rightarrow$</td>
+<td style="text-align:left"><code>True</code> if <code>i</code> is greater than or equal to <code>j</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>i==j</code></td>
+<td style="text-align:left">$\rightarrow$</td>
+<td style="text-align:left"><code>True</code> if <code>i</code> is equal to <code>j</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>i!=j</code></td>
+<td style="text-align:left">$\rightarrow$</td>
+<td style="text-align:left"><code>True</code> if <code>i</code> is not equal to <code>j</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Chained-Comparisons">Chained Comparisons<a class="anchor-link" href="#Chained-Comparisons">¶</a></h2><p>Comparisons can be chained arbitrarily and comparisons have the same priority:</p>
+<div align="center"><code>i&lt;j&lt;k</code> is the same as <code>i&lt;j</code> and <code>j&lt;k</code></div>
+<p>Since comparisons do not act in a pairwise fashion, 'weird' comparisons like</p>
+<div align="center"><code>i&lt;j&gt;k</code></div>
+<p>are perfectly valid.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Operator-Precedence">Operator Precedence<a class="anchor-link" href="#Operator-Precedence">¶</a></h2><p>Precedence between operators can be 'forced' via parenthesis.</p>
+<p>In principle, operators follow the <strong>PEMDAS</strong> order:</p>
+<ol>
+<li><strong>P</strong>arenthesis</li>
+<li><strong>E</strong>xponential</li>
+<li><strong>M</strong>ultiplication and <strong>D</strong>ivision</li>
+<li><strong>A</strong>ddition and <strong>S</strong>ubtraction</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="The-Big-Picture">The Big Picture<a class="anchor-link" href="#The-Big-Picture">¶</a></h2><ol>
+<li>Parenthesis: <code>(...)</code></li>
+<li>Exponentiation: <code>**</code></li>
+<li>Unary operators: <code>+</code> and <code>-</code></li>
+<li>Binary arithmetic:  <code>*</code>, <code>/</code>, <code>//</code> and <code>%</code></li>
+<li>Binary arithmetic: <code>+</code> and <code>-</code></li>
+<li>Comparisons: <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code></li>
+<li>Logical not</li>
+<li>Logical and</li>
+<li>Logical or</li>
+</ol>
+<br/>
+<br/>
+<div class="alert alert-block alert-info">
+<b>NOTE</b>: Same line means same precedence. Read ties left to right.
+</div>
+<div class="alert alert-block alert-info">
+<b>HINT</b>: In case of emergency, use parenthesis!
 </div>
 </div>
 </div>
