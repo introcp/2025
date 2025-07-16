@@ -15,3 +15,4 @@ parts:
       - file: src/P03/P03-Python-Branching.ipynb
       - file: src/P04/P04-Python-Functions.ipynb
       - file: src/P05/P05-Python-Iteration.ipynb
+      - file: src/P06/P06-Python-Strings.ipynb
