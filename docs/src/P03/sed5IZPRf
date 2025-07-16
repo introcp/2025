@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><meta charset="utf-8"/>
+<meta content="chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<title>P03-Python-Branching slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+  import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+<!-- General and theme style sheets -->
+<link href="../dist/reveal.css" rel="stylesheet"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+}
+</script>
+<style type="text/css">
+    pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: var(--jp-cell-editor-active-background) }
+.highlight { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
+.highlight .c { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment */
+.highlight .err { color: var(--jp-mirror-editor-error-color) } /* Error */
+.highlight .k { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword */
+.highlight .o { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator */
+.highlight .p { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation */
+.highlight .ch { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Preproc */
+.highlight .cpf { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Single */
+.highlight .cs { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment.Special */
+.highlight .kc { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword.Type */
+.highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
+.highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
+.highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
+.highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
+.highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
+.highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
+.highlight .mh { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Hex */
+.highlight .mi { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer */
+.highlight .mo { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Oct */
+.highlight .sa { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Affix */
+.highlight .sb { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Backtick */
+.highlight .sc { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Char */
+.highlight .dl { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Delimiter */
+.highlight .sd { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Doc */
+.highlight .s2 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Double */
+.highlight .se { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Escape */
+.highlight .sh { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Heredoc */
+.highlight .si { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Interpol */
+.highlight .sx { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Other */
+.highlight .sr { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Regex */
+.highlight .s1 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Single */
+.highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
+.highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
+  </style>
+<style type="text/css">
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*
+ * Mozilla scrollbar styling
+ */
+
+/* use standard opaque scrollbars for most nodes */
+[data-jp-theme-scrollbars='true'] {
+  scrollbar-color: rgb(var(--jp-scrollbar-thumb-color))
+    var(--jp-scrollbar-background-color);
+}
+
+/* for code nodes, use a transparent style of scrollbar. These selectors
+ * will match lower in the tree, and so will override the above */
+[data-jp-theme-scrollbars='true'] .CodeMirror-hscrollbar,
+[data-jp-theme-scrollbars='true'] .CodeMirror-vscrollbar {
+  scrollbar-color: rgba(var(--jp-scrollbar-thumb-color), 0.5) transparent;
+}
+
+/* tiny scrollbar */
+
+.jp-scrollbar-tiny {
+  scrollbar-color: rgba(var(--jp-scrollbar-thumb-color), 0.5) transparent;
+  scrollbar-width: thin;
+}
+
+/* tiny scrollbar */
+
+.jp-scrollbar-tiny::-webkit-scrollbar,
+.jp-scrollbar-tiny::-webkit-scrollbar-corner {
+  background-color: transparent;
+  height: 4px;
+  width: 4px;
+}
+
+.jp-scrollbar-tiny::-webkit-scrollbar-thumb {
+  background: rgba(var(--jp-scrollbar-thumb-color), 0.5);
+}
+
+.jp-scrollbar-tiny::-webkit-scrollbar-track:horizontal {
+  border-left: 0 solid transparent;
+  border-right: 0 solid transparent;
+}
+
+.jp-scrollbar-tiny::-webkit-scrollbar-track:vertical {
+  border-top: 0 solid transparent;
+  border-bottom: 0 solid transparent;
+}
+
+/*
+ * Lumino
+ */
+
+.lm-ScrollBar[data-orientation='horizontal'] {
+  min-height: 16px;
+  max-height: 16px;
+  min-width: 45px;
+  border-top: 1px solid #a0a0a0;
+}
+
+.lm-ScrollBar[data-orientation='vertical'] {
+  min-width: 16px;
+  max-width: 16px;
+  min-height: 45px;
+  border-left: 1px solid #a0a0a0;
+}
+
+.lm-ScrollBar-button {
+  background-color: #f0f0f0;
+  background-position: center center;
+  min-height: 15px;
+  max-height: 15px;
+  min-width: 15px;
+  max-width: 15px;
+}
+
+.lm-ScrollBar-button:hover {
+  background-color: #dadada;
+}
+
+.lm-ScrollBar-button.lm-mod-active {
+  background-color: #cdcdcd;
+}
+
+.lm-ScrollBar-track {
+  background: #f0f0f0;
+}
+
+.lm-ScrollBar-thumb {
+  background: #cdcdcd;
+}
+
+.lm-ScrollBar-thumb:hover {
+  background: #bababa;
+}
+
+.lm-ScrollBar-thumb.lm-mod-active {
+  background: #a0a0a0;
+}
+
+.lm-ScrollBar[data-orientation='horizontal'] .lm-ScrollBar-thumb {
+  height: 100%;
+  min-width: 15px;
+  border-left: 1px solid #a0a0a0;
+  border-right: 1px solid #a0a0a0;
+}
+
+.lm-ScrollBar[data-orientation='vertical'] .lm-ScrollBar-thumb {
+  width: 100%;
+  min-height: 15px;
+  border-top: 1px solid #a0a0a0;
+  border-bottom: 1px solid #a0a0a0;
+}
+
+.lm-ScrollBar[data-orientation='horizontal']
+  .lm-ScrollBar-button[data-action='decrement'] {
+  background-image: var(--jp-icon-caret-left);
+  background-size: 17px;
+}
+
+.lm-ScrollBar[data-orientation='horizontal']
+  .lm-ScrollBar-button[data-action='increment'] {
+  background-image: var(--jp-icon-caret-right);
+  background-size: 17px;
+}
+
+.lm-ScrollBar[data-orientation='vertical']
+  .lm-ScrollBar-button[data-action='decrement'] {
+  background-image: var(--jp-icon-caret-up);
+  background-size: 17px;
+}
+
+.lm-ScrollBar[data-orientation='vertical']
+  .lm-ScrollBar-button[data-action='increment'] {
+  background-image: var(--jp-icon-caret-down);
+  background-size: 17px;
+}
+
+/*
+ * Copyright (c) Jupyter Development Team.
+ * Distributed under the terms of the Modified BSD License.
+ */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+.lm-Widget {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.lm-Widget.lm-mod-hidden {
+  display: none !important;
+}
+
+/*
+ * Copyright (c) Jupyter Development Team.
+ * Distributed under the terms of the Modified BSD License.
+ */
+
+.lm-AccordionPanel[data-orientation='horizontal'] > .lm-AccordionPanel-title {
+  /* Title is rotated for horizontal accordion panel using CSS */
+  display: block;
+  transform-origin: top left;
+  transform: rotate(-90deg) translate(-100%);
+}
+
+/*
+ * Copyright (c) Jupyter Development Team.
+ * Distributed under the terms of the Modified BSD License.
+ */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+.lm-CommandPalette {
+  display: flex;
+  flex-direction: column;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.lm-CommandPalette-search {
+  flex: 0 0 auto;
+}
+
+.lm-CommandPalette-content {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+  overflow: auto;
+  list-style-type: none;
+}
+
+.lm-CommandPalette-header {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.lm-CommandPalette-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.lm-CommandPalette-itemIcon {
+  flex: 0 0 auto;
+}
+
+.lm-CommandPalette-itemContent {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.lm-CommandPalette-itemShortcut {
+  flex: 0 0 auto;
+}
+
+.lm-CommandPalette-itemLabel {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.lm-close-icon {
+  border: 1px solid transparent;
+  background-color: transparent;
+  position: absolute;
+  z-index: 1;
+  right: 3%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 7px 0;
+  display: none;
+  vertical-align: middle;
+  outline: 0;
+  cursor: pointer;
+}
+.lm-close-icon:after {
+  content: 'X';
+  display: block;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  color: #000;
+  font-weight: normal;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/*
+ * Copyright (c) Jupyter Development Team.
+ * Distributed under the terms of the Modified BSD License.
+ */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+.lm-DockPanel {
+  z-index: 0;
+}
+
+.lm-DockPanel-widget {
+  z-index: 0;
+}
+
+.lm-DockPanel-tabBar {
+  z-index: 1;
+}
+
+.lm-DockPanel-handle {
+  z-index: 2;
+}
+
+.lm-DockPanel-handle.lm-mod-hidden {
+  display: none !important;
+}
+
+.lm-DockPanel-handle:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+}
+
+.lm-DockPanel-handle[data-orientation='horizontal'] {
+  cursor: ew-resize;
+}
+
+.lm-DockPanel-handle[data-orientation='vertical'] {
+  cursor: ns-resize;
+}
+
+.lm-DockPanel-handle[data-orientation='horizontal']:after {
+  left: 50%;
+  min-width: 8px;
+  transform: translateX(-50%);
+}
+
+.lm-DockPanel-handle[data-orientation='vertical']:after {
+  top: 50%;
+  min-height: 8px;
+  transform: translateY(-50%);
+}
+
+.lm-DockPanel-overlay {
+  z-index: 3;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.lm-DockPanel-overlay.lm-mod-hidden {
+  display: none !important;
+}
+
+/*
+ * Copyright (c) Jupyter Development Team.
+ * Distributed under the terms of the Modified BSD License.
+ */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+.lm-Menu {
+  z-index: 10000;
+  position: absolute;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.lm-Menu-content {
+  margin: 0;
+  padding: 0;
+  display: table;
+  list-style-type: none;
+}
+
+.lm-Menu-item {
+  display: table-row;
+}
+
+.lm-Menu-item.lm-mod-hidden,
+.lm-Menu-item.lm-mod-collapsed {
+  display: none !important;
+}
+
+.lm-Menu-itemIcon,
+.lm-Menu-itemSubmenuIcon {
+  display: table-cell;
+  text-align: center;
+}
+
+.lm-Menu-itemLabel {
+  display: table-cell;
+  text-align: left;
+}
+
+.lm-Menu-itemShortcut {
+  display: table-cell;
+  text-align: right;
+}
+
+/*
+ * Copyright (c) Jupyter Development Team.
+ * Distributed under the terms of the Modified BSD License.
+ */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+.lm-MenuBar {
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.lm-MenuBar-content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.lm-MenuBar-item {
+  box-sizing: border-box;
+}
+
+.lm-MenuBar-itemIcon,
+.lm-MenuBar-itemLabel {
+  display: inline-block;
+}
+
+/*
+ * Copyright (c) Jupyter Development Team.
+ * Distributed under the terms of the Modified BSD License.
+ */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+.lm-ScrollBar {
+  display: flex;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.lm-ScrollBar[data-orientation='horizontal'] {
+  flex-direction: row;
+}
+
+.lm-ScrollBar[data-orientation='vertical'] {
+  flex-direction: column;
+}
+
+.lm-ScrollBar-button {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+}
+
+.lm-ScrollBar-track {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 auto;
+}
+
+.lm-ScrollBar-thumb {
+  box-sizing: border-box;
+  position: absolute;
+}
+
+/*
+ * Copyright (c) Jupyter Development Team.
+ * Distributed under the terms of the Modified BSD License.
+ */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+.lm-SplitPanel-child {
+  z-index: 0;
+}
+
+.lm-SplitPanel-handle {
+  z-index: 1;
+}
+
+.lm-SplitPanel-handle.lm-mod-hidden {
+  display: none !important;
+}
+
+.lm-SplitPanel-handle:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+}
+
+.lm-SplitPanel[data-orientation='horizontal'] > .lm-SplitPanel-handle {
+  cursor: ew-resize;
+}
+
+.lm-SplitPanel[data-orientation='vertical'] > .lm-SplitPanel-handle {
+  cursor: ns-resize;
+}
+
+.lm-SplitPanel[data-orientation='horizontal'] > .lm-SplitPanel-handle:after {
+  left: 50%;
+  min-width: 8px;
+  transform: translateX(-50%);
+}
+
+.lm-SplitPanel[data-orientation='vertical'] > .lm-SplitPanel-handle:after {
+  top: 50%;
+  min-height: 8px;
+  transform: translateY(-50%);
+}
+
+/*
+ * Copyright (c) Jupyter Development Team.
+ * Distributed under the terms of the Modified BSD License.
+ */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+.lm-TabBar {
+  display: flex;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.lm-TabBar[data-orientation='horizontal'] {
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.lm-TabBar[data-orientation='vertical'] {
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.lm-TabBar-content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 1 1 auto;
+  list-style-type: none;
+}
+
+.lm-TabBar[data-orientation='horizontal'] > .lm-TabBar-content {
+  flex-direction: row;
+}
+
+.lm-TabBar[data-orientation='vertical'] > .lm-TabBar-content {
+  flex-direction: column;
+}
+
+.lm-TabBar-tab {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  overflow: hidden;
+  touch-action: none; /* Disable native Drag/Drop */
+}
+
+.lm-TabBar-tabIcon,
+.lm-TabBar-tabCloseIcon {
+  flex: 0 0 auto;
+}
+
+.lm-TabBar-tabLabel {
+  flex: 1 1 auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.lm-TabBar-tabInput {
+  user-select: all;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.lm-TabBar-tab.lm-mod-hidden {
+  display: none !important;
+}
+
+.lm-TabBar-addButton.lm-mod-hidden {
+  display: none !important;
+}
+
+.lm-TabBar.lm-mod-dragging .lm-TabBar-tab {
+  position: relative;
+}
+
+.lm-TabBar.lm-mod-dragging[data-orientation='horizontal'] .lm-TabBar-tab {
+  left: 0;
+  transition: left 150ms ease;
+}
+
+.lm-TabBar.lm-mod-dragging[data-orientation='vertical'] .lm-TabBar-tab {
+  top: 0;
+  transition: top 150ms ease;
+}
+
+.lm-TabBar.lm-mod-dragging .lm-TabBar-tab.lm-mod-dragging {
+  transition: none;
+}
+
+.lm-TabBar-tabLabel .lm-TabBar-tabInput {
+  user-select: all;
+  width: 100%;
+  box-sizing: border-box;
+  background: inherit;
+}
+
+/*
+ * Copyright (c) Jupyter Development Team.
+ * Distributed under the terms of the Modified BSD License.
+ */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+.lm-TabPanel-tabBar {
+  z-index: 1;
+}
+
+.lm-TabPanel-stackedPanel {
+  z-index: 0;
+}
+
+/*
+ * Copyright (c) Jupyter Development Team.
+ * Distributed under the terms of the Modified BSD License.
+ */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+.jp-Collapse {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.jp-Collapse-header {
+  padding: 1px 12px;
+  background-color: var(--jp-layout-color1);
+  border-bottom: solid var(--jp-border-width) var(--jp-border-color2);
+  color: var(--jp-ui-font-color1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: var(--jp-ui-font-size0);
+  font-weight: 600;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.jp-Collapser-icon {
+  height: 16px;
+}
+
+.jp-Collapse-header-collapsed .jp-Collapser-icon {
+  transform: rotate(-90deg);
+  margin: auto 0;
+}
+
+.jp-Collapser-title {
+  line-height: 25px;
+}
+
+.jp-Collapse-contents {
+  padding: 0 12px;
+  background-color: var(--jp-layout-color1);
+  color: var(--jp-ui-font-color1);
+  overflow: auto;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/* This file was auto-generated by ensureUiComponents() in @jupyterlab/buildutils */
+
+/**
+ * (DEPRECATED) Support for consuming icons as CSS background images
+ */
+
+/* Icons urls */
+
+:root {
+  --jp-icon-add-above: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzEzN18xOTQ5MikiPgo8cGF0aCBjbGFzcz0ianAtaWNvbjMiIGQ9Ik00Ljc1IDQuOTMwNjZINi42MjVWNi44MDU2NkM2LjYyNSA3LjAxMTkxIDYuNzkzNzUgNy4xODA2NiA3IDcuMTgwNjZDNy4yMDYyNSA3LjE4MDY2IDcuMzc1IDcuMDExOTEgNy4zNzUgNi44MDU2NlY0LjkzMDY2SDkuMjVDOS40NTYyNSA0LjkzMDY2IDkuNjI1IDQuNzYxOTEgOS42MjUgNC41NTU2NkM5LjYyNSA0LjM0OTQxIDkuNDU2MjUgNC4xODA2NiA5LjI1IDQuMTgwNjZINy4zNzVWMi4zMDU2NkM3LjM3NSAyLjA5OTQxIDcuMjA2MjUgMS45MzA2NiA3IDEuOTMwNjZDNi43OTM3NSAxLjkzMDY2IDYuNjI1IDIuMDk5NDEgNi42MjUgMi4zMDU2NlY0LjE4MDY2SDQuNzVDNC41NDM3NSA0LjE4MDY2IDQuMzc1IDQuMzQ5NDEgNC4zNzUgNC41NTU2NkM0LjM3NSA0Ljc2MTkxIDQuNTQzNzUgNC45MzA2NiA0Ljc1IDQuOTMwNjZaIiBmaWxsPSIjNjE2MTYxIiBzdHJva2U9IiM2MTYxNjEiIHN0cm9rZS13aWR0aD0iMC43Ii8+CjwvZz4KPHBhdGggY2xhc3M9ImpwLWljb24zIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTExLjUgOS41VjExLjVMMi41IDExLjVWOS41TDExLjUgOS41Wk0xMiA4QzEyLjU1MjMgOCAxMyA4LjQ0NzcyIDEzIDlWMTJDMTMgMTIuNTUyMyAxMi41NTIzIDEzIDEyIDEzTDIgMTNDMS40NDc3MiAxMyAxIDEyLjU1MjMgMSAxMlY5QzEgOC40NDc3MiAxLjQ0NzcxIDggMiA4TDEyIDhaIiBmaWxsPSIjNjE2MTYxIi8+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzEzN18xOTQ5MiI+CjxyZWN0IGNsYXNzPSJqcC1pY29uMyIgd2lkdGg9IjYiIGhlaWdodD0iNiIgZmlsbD0id2hpdGUiIHRyYW5zZm9ybT0ibWF0cml4KC0xIDAgMCAxIDEwIDEuNTU1NjYpIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==);
+  --jp-icon-add-below: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzEzN18xOTQ5OCkiPgo8cGF0aCBjbGFzcz0ianAtaWNvbjMiIGQ9Ik05LjI1IDEwLjA2OTNMNy4zNzUgMTAuMDY5M0w3LjM3NSA4LjE5NDM0QzcuMzc1IDcuOTg4MDkgNy4yMDYyNSA3LjgxOTM0IDcgNy44MTkzNEM2Ljc5Mzc1IDcuODE5MzQgNi42MjUgNy45ODgwOSA2LjYyNSA4LjE5NDM0TDYuNjI1IDEwLjA2OTNMNC43NSAxMC4wNjkzQzQuNTQzNzUgMTAuMDY5MyA0LjM3NSAxMC4yMzgxIDQuMzc1IDEwLjQ0NDNDNC4zNzUgMTAuNjUwNiA0LjU0Mzc1IDEwLjgxOTMgNC43NSAxMC44MTkzTDYuNjI1IDEwLjgxOTNMNi42MjUgMTIuNjk0M0M2LjYyNSAxMi45MDA2IDYuNzkzNzUgMTMuMDY5MyA3IDEzLjA2OTNDNy4yMDYyNSAxMy4wNjkzIDcuMzc1IDEyLjkwMDYgNy4zNzUgMTIuNjk0M0w3LjM3NSAxMC44MTkzTDkuMjUgMTAuODE5M0M5LjQ1NjI1IDEwLjgxOTMgOS42MjUgMTAuNjUwNiA5LjYyNSAxMC40NDQzQzkuNjI1IDEwLjIzODEgOS40NTYyNSAxMC4wNjkzIDkuMjUgMTAuMDY5M1oiIGZpbGw9IiM2MTYxNjEiIHN0cm9rZT0iIzYxNjE2MSIgc3Ryb2tlLXdpZHRoPSIwLjciLz4KPC9nPgo8cGF0aCBjbGFzcz0ianAtaWNvbjMiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMi41IDUuNUwyLjUgMy41TDExLjUgMy41TDExLjUgNS41TDIuNSA1LjVaTTIgN0MxLjQ0NzcyIDcgMSA2LjU1MjI4IDEgNkwxIDNDMSAyLjQ0NzcyIDEuNDQ3NzIgMiAyIDJMMTIgMkMxMi41NTIzIDIgMTMgMi40NDc3MiAxMyAzTDEzIDZDMTMgNi41NTIyOSAxMi41NTIzIDcgMTIgN0wyIDdaIiBmaWxsPSIjNjE2MTYxIi8+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzEzN18xOTQ5OCI+CjxyZWN0IGNsYXNzPSJqcC1pY29uMyIgd2lkdGg9IjYiIGhlaWdodD0iNiIgZmlsbD0id2hpdGUiIHRyYW5zZm9ybT0ibWF0cml4KDEgMS43NDg0NmUtMDcgMS43NDg0NmUtMDcgLTEgNCAxMy40NDQzKSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=);
+  --jp-icon-add: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICA8ZyBjbGFzcz0ianAtaWNvbjMiIGZpbGw9IiM2MTYxNjEiPgogICAgPHBhdGggZD0iTTE5IDEzaC02djZoLTJ2LTZINXYtMmg2VjVoMnY2aDZ2MnoiLz4KICA8L2c+Cjwvc3ZnPgo=);
+  --jp-icon-bell: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgdmlld0JveD0iMCAwIDE2IDE2IiB2ZXJzaW9uPSIxLjEiPgogICA8cGF0aCBjbGFzcz0ianAtaWNvbjIganAtaWNvbi1zZWxlY3RhYmxlIiBmaWxsPSIjMzMzMzMzIgogICAgICBkPSJtOCAwLjI5Yy0xLjQgMC0yLjcgMC43My0zLjYgMS44LTEuMiAxLjUtMS40IDMuNC0xLjUgNS4yLTAuMTggMi4yLTAuNDQgNC0yLjMgNS4zbDAuMjggMS4zaDVjMC4wMjYgMC42NiAwLjMyIDEuMSAwLjcxIDEuNSAwLjg0IDAuNjEgMiAwLjYxIDIuOCAwIDAuNTItMC40IDAuNi0xIDAuNzEtMS41aDVsMC4yOC0xLjNjLTEuOS0wLjk3LTIuMi0zLjMtMi4zLTUuMy0wLjEzLTEuOC0wLjI2LTMuNy0xLjUtNS4yLTAuODUtMS0yLjItMS44LTMuNi0xLjh6bTAgMS40YzAuODggMCAxLjkgMC41NSAyLjUgMS4zIDAuODggMS4xIDEuMSAyLjcgMS4yIDQuNCAwLjEzIDEuNyAwLjIzIDMuNiAxLjMgNS4yaC0xMGMxLjEtMS42IDEuMi0zLjQgMS4zLTUuMiAwLjEzLTEuNyAwLjMtMy4zIDEuMi00LjQgMC41OS0wLjcyIDEuNi0xLjMgMi41LTEuM3ptLTAuNzQgMTJoMS41Yy0wLjAwMTUgMC4yOCAwLjAxNSAwLjc5LTAuNzQgMC43OS0wLjczIDAuMDAxNi0wLjcyLTAuNTMtMC43NC0wLjc5eiIgLz4KPC9zdmc+Cg==);
+  --jp-icon-bug-dot: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGNsYXNzPSJqcC1pY29uMyBqcC1pY29uLXNlbGVjdGFibGUiIGZpbGw9IiM2MTYxNjEiPgogICAgICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTcuMTkgOEgyMFYxMEgxNy45MUMxNy45NiAxMC4zMyAxOCAxMC42NiAxOCAxMVYxMkgyMFYxNEgxOC41SDE4VjE0LjAyNzVDMTUuNzUgMTQuMjc2MiAxNCAxNi4xODM3IDE0IDE4LjVDMTQgMTkuMjA4IDE0LjE2MzUgMTkuODc3OSAxNC40NTQ5IDIwLjQ3MzlDMTMuNzA2MyAyMC44MTE3IDEyLjg3NTcgMjEgMTIgMjFDOS43OCAyMSA3Ljg1IDE5Ljc5IDYuODEgMThINFYxNkg2LjA5QzYuMDQgMTUuNjcgNiAxNS4zNCA2IDE1VjE0SDRWMTJINlYxMUM2IDEwLjY2IDYuMDQgMTAuMzMgNi4wOSAxMEg0VjhINi44MUM3LjI2IDcuMjIgNy44OCA2LjU1IDguNjIgNi4wNEw3IDQuNDFMOC40MSAzTDEwLjU5IDUuMTdDMTEuMDQgNS4wNiAxMS41MSA1IDEyIDVDMTIuNDkgNSAxMi45NiA1LjA2IDEzLjQyIDUuMTdMMTUuNTkgM0wxNyA0LjQxTDE1LjM3IDYuMDRDMTYuMTIgNi41NSAxNi43NCA3LjIyIDE3LjE5IDhaTTEwIDE2SDE0VjE0SDEwVjE2Wk0xMCAxMkgxNFYxMEgxMFYxMloiIGZpbGw9IiM2MTYxNjEiLz4KICAgICAgICA8cGF0aCBkPSJNMjIgMTguNUMyMiAyMC40MzMgMjAuNDMzIDIyIDE4LjUgMjJDMTYuNTY3IDIyIDE1IDIwLjQzMyAxNSAxOC41QzE1IDE2LjU2NyAxNi41NjcgMTUgMTguNSAxNUMyMC40MzMgMTUgMjIgMTYuNTY3IDIyIDE4LjVaIiBmaWxsPSIjNjE2MTYxIi8+CiAgICA8L2c+Cjwvc3ZnPgo=);
+  --jp-icon-bug: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBjbGFzcz0ianAtaWNvbjMganAtaWNvbi1zZWxlY3RhYmxlIiBmaWxsPSIjNjE2MTYxIj4KICAgIDxwYXRoIGQ9Ik0yMCA4aC0yLjgxYy0uNDUtLjc4LTEuMDctMS40NS0xLjgyLTEuOTZMMTcgNC40MSAxNS41OSAzbC0yLjE3IDIuMTdDMTIuOTYgNS4wNiAxMi40OSA1IDEyIDVjLS40OSAwLS45Ni4wNi0xLjQxLjE3TDguNDEgMyA3IDQuNDFsMS42MiAxLjYzQzcuODggNi41NSA3LjI2IDcuMjIgNi44MSA4SDR2MmgyLjA5Yy0uMDUuMzMtLjA5LjY2LS4wOSAxdjFINHYyaDJ2MWMwIC4zNC4wNC42Ny4wOSAxSDR2MmgyLjgxYzEuMDQgMS43OSAyLjk3IDMgNS4xOSAzczQuMTUtMS4yMSA1LjE5LTNIMjB2LTJoLTIuMDljLjA1LS4zMy4wOS0uNjYuMDktMXYtMWgydi0yaC0ydi0xYzAtLjM0LS4wNC0uNjctLjA5LTFIMjBWOHptLTYgOGgtNHYtMmg0djJ6bTAtNGgtNHYtMmg0djJ6Ii8+CiAgPC9nPgo8L3N2Zz4K);
+  --jp-icon-build: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBjbGFzcz0ianAtaWNvbjMiIGZpbGw9IiM2MTYxNjEiPgogICAgPHBhdGggZD0iTTE0LjkgMTcuNDVDMTYuMjUgMTcuNDUgMTcuMzUgMTYuMzUgMTcuMzUgMTVDMTcuMzUgMTMuNjUgMTYuMjUgMTIuNTUgMTQuOSAxMi41NUMxMy41NCAxMi41NSAxMi40NSAxMy42NSAxMi40NSAxNUMxMi40NSAxNi4zNSAxMy41NCAxNy40NSAxNC45IDE3LjQ1Wk0yMC4xIDE1LjY4TDIxLjU4IDE2Ljg0QzIxLjcxIDE2Ljk1IDIxLjc1IDE3LjEzIDIxLjY2IDE3LjI5TDIwLjI2IDE5LjcxQzIwLjE3IDE5Ljg2IDIwIDE5LjkyIDE5LjgzIDE5Ljg2TDE4LjA5IDE5LjE2QzE3LjczIDE5LjQ0IDE3LjMzIDE5LjY3IDE2LjkxIDE5Ljg1TDE2LjY0IDIxLjdDMTYuNjIgMjEuODcgMTYuNDcgMjIgMTYuMyAyMkgxMy41QzEzLjMyIDIyIDEzLjE4IDIxLjg3IDEzLjE1IDIxLjdMMTIuODkgMTkuODVDMTIuNDYgMTkuNjcgMTIuMDcgMTkuNDQgMTEuNzEgMTkuMTZMOS45NjAwMiAxOS44NkM5LjgxMDAyIDE5LjkyIDkuNjIwMDIgMTkuODYgOS41NDAwMiAxOS43MUw4LjE0MDAyIDE3LjI5QzguMDUwMDIgMTcuMTMgOC4wOTAwMiAxNi45NSA4LjIyMDAyIDE2Ljg0TDkuNzAwMDIgMTUuNjhMOS42NTAwMSAxNUw5LjcwMDAyIDE0LjMxTDguMjIwMDIgMTMuMTZDOC4wOTAwMiAxMy4wNSA4LjA1MDAyIDEyLjg2IDguMTQwMDIgMTIuNzFMOS41NDAwMiAxMC4yOUM5LjYyMDAyIDEwLjEzIDkuODEwMDIgMTAuMDcgOS45NjAwMiAxMC4xM0wxMS43MSAxMC44NEMxMi4wNyAxMC41NiAxMi40NiAxMC4zMiAxMi44OSAxMC4xNUwxMy4xNSA4LjI4OTk4QzEzLjE4IDguMTI5OTggMTMuMzIgNy45OTk5OCAxMy41IDcuOTk5OThIMTYuM0MxNi40NyA3Ljk5OTk4IDE2LjYyIDguMTI5OTggMTYuNjQgOC4yODk5OEwxNi45MSAxMC4xNUMxNy4zMyAxMC4zMiAxNy43MyAxMC41NiAxOC4wOSAxMC44NEwxOS44MyAxMC4xM0MyMCAxMC4wNyAyMC4xNyAxMC4xMyAyMC4yNiAxMC4yOUwyMS42NiAxMi43MUMyMS43NSAxMi44NiAyMS43MSAxMy4wNSAyMS41OCAxMy4xNkwyMC4xIDE0LjMxTDIwLjE1IDE1TDIwLjEgMTUuNjhaIi8+CiAgICA8cGF0aCBkPSJNNy4zMjk2NiA3LjQ0NDU0QzguMDgzMSA3LjAwOTU0IDguMzM5MzIgNi4wNTMzMiA3LjkwNDMyIDUuMjk5ODhDNy40NjkzMiA0LjU0NjQzIDYuNTA4MSA0LjI4MTU2IDUuNzU0NjYgNC43MTY1NkM1LjM5MTc2IDQuOTI2MDggNS4xMjY5NSA1LjI3MTE4IDUuMDE4NDkgNS42NzU5NEM0LjkxMDA0IDYuMDgwNzEgNC45NjY4MiA2LjUxMTk4IDUuMTc2MzQgNi44NzQ4OEM1LjYxMTM0IDcuNjI4MzIgNi41NzYyMiA3Ljg3OTU0IDcuMzI5NjYgNy40NDQ1NFpNOS42NTcxOCA0Ljc5NTkzTDEwLjg2NzIgNC45NTE3OUMxMC45NjI4IDQuOTc3NDEgMTEuMDQwMiA1LjA3MTMzIDExLjAzODIgNS4xODc5M0wxMS4wMzg4IDYuOTg4OTNDMTEuMDQ1NSA3LjEwMDU0IDEwLjk2MTYgNy4xOTUxOCAxMC44NTUgNy4yMTA1NEw5LjY2MDAxIDcuMzgwODNMOS4yMzkxNSA4LjEzMTg4TDkuNjY5NjEgOS4yNTc0NUM5LjcwNzI5IDkuMzYyNzEgOS42NjkzNCA5LjQ3Njk5IDkuNTc0MDggOS41MzE5OUw4LjAxNTIzIDEwLjQzMkM3LjkxMTMxIDEwLjQ5MiA3Ljc5MzM3IDEwLjQ2NzcgNy43MjEwNSAxMC4zODI0TDYuOTg3NDggOS40MzE4OEw2LjEwOTMxIDkuNDMwODNMNS4zNDcwNCAxMC4zOTA1QzUuMjg5MDkgMTAuNDcwMiA1LjE3MzgzIDEwLjQ5MDUgNS4wNzE4NyAxMC40MzM5TDMuNTEyNDUgOS41MzI5M0MzLjQxMDQ5IDkuNDc2MzMgMy4zNzY0NyA5LjM1NzQxIDMuNDEwNzUgOS4yNTY3OUwzLjg2MzQ3IDguMTQwOTNMMy42MTc0OSA3Ljc3NDg4TDMuNDIzNDcgNy4zNzg4M0wyLjIzMDc1IDcuMjEyOTdDMi4xMjY0NyA3LjE5MjM1IDIuMDQwNDkgNy4xMDM0MiAyLjA0MjQ1IDYuOTg2ODJMMi4wNDE4NyA1LjE4NTgyQzIuMDQzODMgNS4wNjkyMiAyLjExOTA5IDQuOTc5NTggMi4yMTcwNCA0Ljk2OTIyTDMuNDIwNjUgNC43OTM5M0wzLjg2NzQ5IDQuMDI3ODhMMy40MTEwNSAyLjkxNzMxQzMuMzczMzcgMi44MTIwNCAzLjQxMTMxIDIuNjk3NzYgMy41MTUyMyAyLjYzNzc2TDUuMDc0MDggMS43Mzc3NkM1LjE2OTM0IDEuNjgyNzYgNS4yODcyOSAxLjcwNzA0IDUuMzU5NjEgMS43OTIzMUw2LjExOTE1IDIuNzI3ODhMNi45ODAwMSAyLjczODkzTDcuNzI0OTYgMS43ODkyMkM3Ljc5MTU2IDEuNzA0NTggNy45MTU0OCAxLjY3OTIyIDguMDA4NzkgMS43NDA4Mkw5LjU2ODIxIDIuNjQxODJDOS42NzAxNyAyLjY5ODQyIDkuNzEyODUgMi44MTIzNCA5LjY4NzIzIDIuOTA3OTdMOS4yMTcxOCA0LjAzMzgzTDkuNDYzMTYgNC4zOTk4OEw5LjY1NzE4IDQuNzk1OTNaIi8+CiAgPC9nPgo8L3N2Zz4K);
+  --jp-icon-caret-down-empty-thin: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgdmlld0JveD0iMCAwIDIwIDIwIj4KCTxnIGNsYXNzPSJqcC1pY29uMyIgZmlsbD0iIzYxNjE2MSIgc2hhcGUtcmVuZGVyaW5nPSJnZW9tZXRyaWNQcmVjaXNpb24iPgoJCTxwb2x5Z29uIGNsYXNzPSJzdDEiIHBvaW50cz0iOS45LDEzLjYgMy42LDcuNCA0LjQsNi42IDkuOSwxMi4yIDE1LjQsNi43IDE2LjEsNy40ICIvPgoJPC9nPgo8L3N2Zz4K);
+  --jp-icon-caret-down-empty: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICA8ZyBjbGFzcz0ianAtaWNvbjMiIGZpbGw9IiM2MTYxNjEiIHNoYXBlLXJlbmRlcmluZz0iZ2VvbWV0cmljUHJlY2lzaW9uIj4KICAgIDxwYXRoIGQ9Ik01LjIsNS45TDksOS43bDMuOC0zLjhsMS4yLDEuMmwtNC45LDVsLTQuOS01TDUuMiw1Ljl6Ii8+CiAgPC9nPgo8L3N2Zz4K);
+  --jp-icon-caret-down: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgdmlld0JveD0iMCAwIDE4ID
