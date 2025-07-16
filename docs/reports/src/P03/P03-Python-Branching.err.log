@@ -18,25 +18,27 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-num = input()
-num = float(num) # recall: input() returns a string
-print("You entered: ", num)
-if num >= 0:
-    if num == 0:
-        print("Number is zero")
-    else:
-        print("Number is positive")
+x = float(input("Enter a value for x: "))
+y = float(input("Enter a value for y: "))
+print("x is", x)
+print("y is", y)
+if x == y:
+    print("y and x are equal")
+    if y != 0:
+        print("Finally, x/y is", x / y)
+elif x > y:
+    print("y is smaller")
 else:
-    print("Number is negative")
+    print("x is smaller")
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
 [31mStdinNotImplementedError[39m                  Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[9][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m num = [38;5;28;43minput[39;49m[43m([49m[43m)[49m
-[32m      2[39m num = [38;5;28mfloat[39m(num) [38;5;66;03m# recall: input() returns a string[39;00m
-[32m      3[39m [38;5;28mprint[39m([33m"[39m[33mYou entered: [39m[33m"[39m, num)
+[36mCell[39m[36m [39m[32mIn[10][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m x = [38;5;28mfloat[39m([38;5;28;43minput[39;49m[43m([49m[33;43m"[39;49m[33;43mEnter a value for x: [39;49m[33;43m"[39;49m[43m)[49m)
+[32m      2[39m y = [38;5;28mfloat[39m([38;5;28minput[39m([33m"[39m[33mEnter a value for y: [39m[33m"[39m))
+[32m      3[39m [38;5;28mprint[39m([33m"[39m[33mx is[39m[33m"[39m, x)
 
 [36mFile [39m[32m/home/user/.venv/lib/python3.12/site-packages/ipykernel/kernelbase.py:1281[39m, in [36mKernel.raw_input[39m[34m(self, prompt)[39m
 [32m   1279[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m._allow_stdin:
