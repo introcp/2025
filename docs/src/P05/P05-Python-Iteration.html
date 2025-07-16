@@ -430,6 +430,21 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-loops-with-break-an-example">Nested loops with <code class="docutils literal notranslate"><span class="pre">break</span></code>, an example:</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-coin-flipping">Exercise 1: Coin flipping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-sum-of-sequence">Exercise 2: Sum of sequence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-odd-or-even">Exercise 3: Odd or even?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-the-fibonacci-sequence">Exercise 4: The Fibonacci Sequence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-multiples">Exercise 5: Multiples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-print-a-subset">Exercise 6: Print a subset</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-1">Solution 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-2">Solution 2</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-primality-test">Exercise 7: Primality test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-pythagorean-triples">Exercise 8: Pythagorean triples</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -748,6 +763,335 @@ Done!
 <p>What’s going on here?</p>
 </section>
 </section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<section id="exercise-1-coin-flipping">
+<h3>Exercise 1: Coin flipping<a class="headerlink" href="#exercise-1-coin-flipping" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ask the user how many coin tosses have to be performed</p></li>
+<li><p>Keep track of the number of times we get heads and tails</p></li>
+<li><p>We assume a <em>fair coin</em> (i.e., unbiased 50% change of getting head and tail at each toss)</p></li>
+</ul>
+<br>
+<br>
+<div class="alert alert-block alert-info"><b>HINT</b>: You may use the <code>random.randint()</code> function to simulate a single coin toss.</div><br><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">tail</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">head</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># number of coin tosses</span>
+<span class="c1"># n = int(input(&quot;How many coin tosses? &quot;))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">head</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of heads: &quot;</span><span class="p">,</span> <span class="n">head</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of tails: &quot;</span><span class="p">,</span> <span class="n">tail</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of heads:  2
+Number of tails:  1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-sum-of-sequence">
+<h3>Exercise 2: Sum of sequence<a class="headerlink" href="#exercise-2-sum-of-sequence" title="Link to this heading">#</a></h3>
+<p>Write a function named <code class="docutils literal notranslate"><span class="pre">rolling_sum()</span></code> that:</p>
+<ul class="simple">
+<li><p>repeatedly asks the user to insert a number</p></li>
+<li><p>we assume integer numbers</p></li>
+<li><p>keeps track of the sum of the numbers inserted so far</p></li>
+<li><p>if the user inserts 0, then exit and return the sum</p></li>
+</ul>
+<br><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">script</span> echo skipping
+
+def rolling_sum():
+    this_number = int(input(&quot;Insert a number: &quot;))
+    my_sum = this_number
+
+    while this_number != 0:
+        this_number = int(input(&quot;Insert a number: &quot;))
+        my_sum = my_sum + this_number
+
+    return my_sum
+
+print(&quot;Total sum is: &quot;, rolling_sum())
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>skipping
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-odd-or-even">
+<h3>Exercise 3: Odd or even?<a class="headerlink" href="#exercise-3-odd-or-even" title="Link to this heading">#</a></h3>
+<p>Write a function named <code class="docutils literal notranslate"><span class="pre">odd_or_even()</span></code> that:</p>
+<ul class="simple">
+<li><p>accepts an integer number, say n</p></li>
+<li><p>prints the number of odd numbers in range [1,n] (i.e., both included)</p></li>
+<li><p>prints the number of even numbers in range [1,n] (i.e., both included)</p></li>
+</ul>
+<br><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">odd_or_even</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">odd</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">even</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">even</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">odd</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of odd elements: &quot;</span><span class="p">,</span> <span class="n">odd</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of even elements: &quot;</span><span class="p">,</span> <span class="n">even</span><span class="p">)</span>
+
+<span class="n">odd_or_even</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of odd elements:  5
+Number of even elements:  5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-4-the-fibonacci-sequence">
+<h3>Exercise 4: The Fibonacci Sequence<a class="headerlink" href="#exercise-4-the-fibonacci-sequence" title="Link to this heading">#</a></h3>
+<p>Write a function named <code class="docutils literal notranslate"><span class="pre">fibonacci1()</span></code> that:</p>
+<ul class="simple">
+<li><p>accepts an integer number, say n</p></li>
+<li><p>prints the first n elements of the Fibonacci sequence.</p></li>
+</ul>
+<br>
+<br>
+<div class="alert alert-block alert-info"><b>Definition</b>: Each number in the Fibonacci sequence is given by the sum of the two preceding ones.\The Fibonacci sequence starts with two 'seed' numbers <code>0</code> and <code>1</code>) and then the proper sequence starts: <code>0, 1, <b style="color:blue">1, 2, 3, 5, 8, 13, 21, ...</b></code></div><br><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">second_to_last</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">last</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">second_to_last</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">last</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">new</span> <span class="o">=</span> <span class="n">last</span> <span class="o">+</span> <span class="n">second_to_last</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+        <span class="n">second_to_last</span> <span class="o">=</span> <span class="n">last</span>
+        <span class="n">last</span> <span class="o">=</span> <span class="n">new</span>
+
+<span class="n">fibonacci1</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-5-multiples">
+<h3>Exercise 5: Multiples<a class="headerlink" href="#exercise-5-multiples" title="Link to this heading">#</a></h3>
+<p>Write a function named <code class="docutils literal notranslate"><span class="pre">multiples()</span></code> that:</p>
+<ul class="simple">
+<li><p>accepts an integer number, say n</p></li>
+<li><p>iterates the integers in [1, n]</p></li>
+<li><p>for multiples of 3, print <code class="docutils literal notranslate"><span class="pre">'Mult3'</span></code> instead of the number</p></li>
+<li><p>for multiples of 5, print <code class="docutils literal notranslate"><span class="pre">'Mult5'</span></code> instead of the number</p></li>
+<li><p>for multiples of 5 and 3, print <code class="docutils literal notranslate"><span class="pre">'Mult35'</span></code> instead of the number</p></li>
+</ul>
+<br><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">multiples</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mult35&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mult3&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mult5&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+<span class="n">multiples</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+Mult3
+4
+Mult5
+Mult3
+7
+8
+Mult3
+Mult5
+11
+Mult3
+13
+14
+Mult35
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-6-print-a-subset">
+<h3>Exercise 6: Print a subset<a class="headerlink" href="#exercise-6-print-a-subset" title="Link to this heading">#</a></h3>
+<p>Write a function named <code class="docutils literal notranslate"><span class="pre">print_subset()</span></code> that:</p>
+<ul class="simple">
+<li><p>accepts an integer number, say n</p></li>
+<li><p>accepts an integer number, say m &lt;= n</p></li>
+<li><p>scans all integer numbers in range [1, n], but prints all numbers in range [1, m]</p></li>
+</ul>
+<section id="solution-1">
+<h4>Solution 1<a class="headerlink" href="#solution-1" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_subset</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+<span class="n">print_subset</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="solution-2">
+<h4>Solution 2<a class="headerlink" href="#solution-2" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_subset</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="n">m</span><span class="p">:</span>
+            <span class="k">break</span>
+
+<span class="n">print_subset</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-info"><b>Stop and think</b>: Under some circumstances, the second solution is more efficient than the first. What are those circumstances and why is it more efficient?</div></section>
+</section>
+<section id="exercise-7-primality-test">
+<h3>Exercise 7: Primality test<a class="headerlink" href="#exercise-7-primality-test" title="Link to this heading">#</a></h3>
+<p>Write a function named <code class="docutils literal notranslate"><span class="pre">smallerPrimes()</span></code> that:</p>
+<ul class="simple">
+<li><p>accepts a positive integer number, say n</p></li>
+<li><p>prints all positive integer prime numbers smaller than n</p></li>
+</ul>
+<br>
+<br>
+<div class="alert alert-block alert-info"><b>Recall</b>: A *prime* number is a natural number greater than 1 that has no positive divisors other than 1 and itself.</div>
+<br>
+<div class="alert alert-block alert-info"><b>Hint</b>: The simplest primality test aims at checking whether n is evenly divisible (i.e., division with no remainder) by any number in range [2, n/2]. If so, the number is not prime.</div><br><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_prime</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">smallerPrimes</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="n">smallerPrimes</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+3
+5
+7
+11
+13
+17
+19
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-8-pythagorean-triples">
+<h3>Exercise 8: Pythagorean triples<a class="headerlink" href="#exercise-8-pythagorean-triples" title="Link to this heading">#</a></h3>
+<p>Write a function named <code class="docutils literal notranslate"><span class="pre">pythagoreanTriples()</span></code> that:</p>
+<ul class="simple">
+<li><p>accepts an integer positive number, say n</p></li>
+<li><p>prints all x and y pairs such that x<sup>2</sup> + y<sup>2</sup> = n<sup>2</sup></p></li>
+</ul>
+<br>
+<br>
+<div class="alert alert-block alert-info"><b>Recall</b>: The Pythagorean triple consists of three positive integers x, y and n, with x,y &le; n, such that: x<sup>2</sup> + y<sup>2</sup> = n<sup>2</sup></div><br><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pythagoreanTriples</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">==</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">pythagoreanTriples</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 4
+4 3
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -823,6 +1167,21 @@ Done!
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-statement"><code class="docutils literal notranslate"><span class="pre">break</span></code> statement</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-loops-with-break-an-example">Nested loops with <code class="docutils literal notranslate"><span class="pre">break</span></code>, an example:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-coin-flipping">Exercise 1: Coin flipping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-sum-of-sequence">Exercise 2: Sum of sequence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-odd-or-even">Exercise 3: Odd or even?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-the-fibonacci-sequence">Exercise 4: The Fibonacci Sequence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-multiples">Exercise 5: Multiples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-print-a-subset">Exercise 6: Print a subset</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-1">Solution 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-2">Solution 2</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-primality-test">Exercise 7: Primality test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8-pythagorean-triples">Exercise 8: Pythagorean triples</a></li>
 </ul>
 </li>
 </ul>
