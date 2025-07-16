@@ -14,3 +14,4 @@ parts:
       - file: src/P02/P02-Python-Types-Strings.ipynb
       - file: src/P03/P03-Python-Branching.ipynb
       - file: src/P04/P04-Python-Functions.ipynb
+      - file: src/P05/P05-Python-Iteration.ipynb
