@@ -7924,11 +7924,12 @@ This is always printed. It's outside of the block.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-<span class="n">num</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="c1"># recall: input() returns a string</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="c1"># or interactive:</span>
+<span class="c1"># num = float(input()) # recall: input() returns a string</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"You entered: "</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -7949,7 +7950,7 @@ This is always printed. It's outside of the block.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>You entered:  10.0
+<pre>You entered:  10
 Number is positive
 </pre>
 </div>
@@ -8322,10 +8323,12 @@ Number 15 is also divisible by 5.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">h_age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Input a dog's age in human years: "</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">h_age</span> <span class="o">=</span> <span class="mi">19</span>
+<span class="c1"># or interactive:</span>
+<span class="c1"># h_age = int(input("Input a dog's age in human years: "))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Inserted age:"</span><span class="p">,</span> <span class="n">h_age</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">h_age</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Age must be a positive number."</span><span class="p">)</span>
@@ -8347,8 +8350,8 @@ Number 15 is also divisible by 5.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Inserted age: 20
-The dog's age in dog's years is: 93.0
+<pre>Inserted age: 19
+The dog's age in dog's years is: 89.0
 </pre>
 </div>
 </div>
