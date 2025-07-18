@@ -8530,8 +8530,18 @@ Key is: spam and Value is: 500
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Tuples">Tuples<a class="anchor-link" href="#Tuples">¶</a></h2><p>Tuples, like lists, are <strong>ordered collections</strong> of items.<br/>
-You can create a tuple by enclosing items in round brackets:</p>
+<h2 id="Tuples">Tuples<a class="anchor-link" href="#Tuples">¶</a></h2><p>Tuples, like lists, are <strong>ordered collections</strong> of items.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Creating-Tuples">Creating Tuples<a class="anchor-link" href="#Creating-Tuples">¶</a></h3><p>You can create a tuple by enclosing items in round brackets:</p>
 </div>
 </div>
 </div>
@@ -8628,7 +8638,7 @@ You can create a tuple by enclosing items in round brackets:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Tuples (and lists) can also be <em>unpacked</em>*:</p>
+<h3 id="Unpacking">Unpacking<a class="anchor-link" href="#Unpacking">¶</a></h3><p>Tuples (and lists) can also be <em>unpacked</em>*:</p>
 </div>
 </div>
 </div>
@@ -8720,7 +8730,7 @@ You can create a tuple by enclosing items in round brackets:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Tuples support all of the common operations we have for lists, notably:</p>
+<h3 id="Common-operations">Common operations<a class="anchor-link" href="#Common-operations">¶</a></h3><p>Tuples support all of the common operations we have for lists, notably:</p>
 <ul>
 <li>indexing:<br/> <code>t[1]</code> yields <code>7</code> when <code>t=(98, 7, ’hello’)</code></li>
 <li>slicing:<br/> <code>t[1:3]</code> yields <code>(7, ’hello’)</code> when <code>t=(98, 7, ’hello’)</code></li>
@@ -8729,7 +8739,17 @@ You can create a tuple by enclosing items in round brackets:</p>
 <li>the <code>in</code> (and <code>not in</code>) operator for membership checking:<br/> <code>7 in (98, 7, ’hello’)</code> yields <code>True</code></li>
 <li>the <code>len()</code> function to calculate the length of a tuple:<br/> <code>len((98, 7, ’hello’))</code> yields <code>3</code></li>
 </ul>
-<p>And you can also iterate over tuples, e.g. via <code>for</code> loops:</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Iterating-over-Tuples">Iterating over Tuples<a class="anchor-link" href="#Iterating-over-Tuples">¶</a></h3><p>You can also iterate over tuples, e.g. via <code>for</code> loops:</p>
 </div>
 </div>
 </div>
@@ -8764,6 +8784,50 @@ hello
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Or, via a <code>while</code> loop by index:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">98</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>98
+7
+hello
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8771,7 +8835,7 @@ hello
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Yet, <strong>tuples are immutable</strong>, whereas <strong>lists are mutable</strong>.</p>
+<h3 id="Immutability">Immutability<a class="anchor-link" href="#Immutability">¶</a></h3><p>Yet, <strong>tuples are immutable</strong>, whereas <strong>lists are mutable</strong>.</p>
 </div>
 </div>
 </div>
@@ -8827,8 +8891,7 @@ Cell <span class="ansi-green-fg">In[25], line 2</span>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<br/>
-<p>Workarounds:</p>
+<h3 id="Workaround-tuple-immutability">Workaround tuple immutability<a class="anchor-link" href="#Workaround-tuple-immutability">¶</a></h3><p>Workarounds:</p>
 <ul>
 <li>create a new tuple that contains the manipulation of the original tuple</li>
 <li>cast tuple to list, change the list, cast list to tuple</li>
@@ -8871,6 +8934,191 @@ Cell <span class="ansi-green-fg">In[25], line 2</span>
 (98, 7, 'hello', 1)
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Sets">Sets<a class="anchor-link" href="#Sets">¶</a></h2><p>A set is an <strong>unordered</strong> (unindexed) collection of items with <strong>no</strong> repetitions.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Creating-sets">Creating sets<a class="anchor-link" href="#Creating-sets">¶</a></h3><p>You can create an empty set thanks to the <code>set()</code> function.</p>
+<p>And you can create a non-empty set thanks to the <code>set()</code> function or curly
+brackets.</p>
+<p>For example:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># empty set</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="c1"># non-empty set with curly brackets</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'a'</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
+<span class="c1"># non-empty set with set()</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<br/>
+<div class="alert alert-block alert-warning">
+<b>WARNING</b>: To not confuse the curly brackets to create dicts with the curly brackets to
+create sets.
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Data-types-storable-in-a-set">Data types storable in a set<a class="anchor-link" href="#Data-types-storable-in-a-set">¶</a></h3><p>A set can contain only <em><strong>hashable</strong></em> items, notably:</p>
+<ul>
+<li>numbers</li>
+<li>strings</li>
+<li>tuples only if they do not contain mutable objects</li>
+</ul>
+<p>and in no way they can contain mutable objects, notably:</p>
+<ul>
+<li>dictionaries</li>
+<li>lists</li>
+<li>tuples that contain mutable objects</li>
+</ul>
+<p>In Python, the majority of immutable objects are also hashable.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Hashable">Hashable<a class="anchor-link" href="#Hashable">¶</a></h3><p>Hashing is a concept in computer science which is used to create high
+performance, pseudo random access data structures where large amount of
+data is to be stored and accessed quickly.</p>
+<p>The hash of some data is deterministic by design and will never change if the
+data does not change</p>
+<ul>
+<li>this is why mutable objects are not hashable...</li>
+</ul>
+<p>Also, matching the hashes of the data is usually faster than matching the
+data itself.</p>
+<p>Sets and dictionary keys use hashing for fast access and look-up.</p>
+<br/>
+<p><strong>EXAMPLE</strong>: <code>if x in X</code></p>
+<ul>
+<li>If <code>X</code> is a list, then Python scans the entire list until <code>x</code> is found: $O(n)$</li>
+<li>If <code>X</code> is a dictionary or set, <code>hash(x)</code> gives the position in memory: $O(1)$.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Common-operations">Common operations<a class="anchor-link" href="#Common-operations">¶</a></h3><ul>
+<li><p>membership: <code>x in S</code></p>
+</li>
+<li><p>the <code>len(s)</code> function to calculate the cardinality (size) of a set <code>s</code></p>
+</li>
+<li><p>union (new set with elements in either <code>s1</code> or <code>s2</code>): <code>s1 | s2</code> or <code>s1.union(s2)</code></p>
+</li>
+<li><p>intersection (new set with elements in both <code>s1</code> and <code>s2</code>): <code>s1 &amp; s2</code> or <code>s1.intersection(s2)</code></p>
+</li>
+<li><p>difference (new set with elements in <code>s1</code> but not in <code>s2</code>): <code>s1 - s2</code> or <code>s1.difference(s2)</code></p>
+</li>
+<li><p>symmetric difference (new set with elements in <code>s1</code> or <code>s2</code>, but not both): <code>s1 ^ s2</code> or <code>s1.symmetric_difference(s2)</code></p>
+</li>
+</ul>
+<br/>
+<br/>
+<div class="alert alert-info">
+<b>NOTE</b>: Set operations yield a brand new set.
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Set-methods">Set methods<a class="anchor-link" href="#Set-methods">¶</a></h3><ul>
+<li><p><code>s.add(x)</code>: adds <code>x</code> to the set <code>s</code> (if <code>x</code> already in <code>s</code>, nothing happens)</p>
+</li>
+<li><p><code>s.remove(x)</code>: removes <code>x</code> from the set <code>s</code> (if <code>x</code> is not in <code>s</code>, a <code>KeyError</code> is raised)</p>
+</li>
+<li><p><code>s.discard(x)</code>: removes <code>x</code> from the set <code>s</code> (if <code>x</code> is not in <code>s</code>, nothing happens)</p>
+</li>
+<li><p><code>s.update(x)</code>: adds elements from <code>x</code> into the set <code>s</code> (<code>x</code> can be any iterable, e.g., list, tuple or another set)</p>
+</li>
+<li><p><code>s.clear()</code>: removes all elements from <code>s</code></p>
+</li>
+<li><p><code>s.pop()</code>: removes (and returns) an arbitrary item from <code>s</code></p>
+</li>
+</ul>
+<br/>
+<br/>
+<div class="alert alert-info">
+<b>NOTE</b>: Set methods change the set in-place.
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Recap-on-Collections">Recap on Collections<a class="anchor-link" href="#Recap-on-Collections">¶</a></h2><ul>
+<li><code>list</code> and <code>tuple</code> keep order; <code>set</code> and <code>dict</code> do not</li>
+<li><code>dict</code> associates a key with a value; <code>set</code>, <code>tuple</code> and <code>list</code> contain just values</li>
+<li><code>set</code> and <code>dict</code> keys only require items to be hashable; <code>list</code>, <code>tuples</code> and <code>dict</code> values do not</li>
+<li><code>set</code> and <code>dict</code> keys forbid duplicates; <code>list</code>, <code>tuples</code> and <code>dict</code> values allow duplicates.</li>
+</ul>
+<p>Checking for membership inside a <code>set</code> or <code>dict</code> is super-fast thanks to hashing.</p>
+<p><code>tuple</code> and <code>list</code> require scanning the list/tuple until the element is found.</p>
 </div>
 </div>
 </div>
