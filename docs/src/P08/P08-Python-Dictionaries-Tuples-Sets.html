@@ -415,10 +415,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collections">Collections</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-story-of-two-collections">A Story of Two Collections</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dictionary">Creating a Dictionary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-manipulating-a-dictionary">Indexing and Manipulating a Dictionary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-methods">Dict Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dictionary">Creating a Dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-manipulating-a-dictionary">Indexing and Manipulating a Dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-methods">Dict Methods</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-keys"><code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-items-and-dict-values"><code class="docutils literal notranslate"><span class="pre">dict.items()</span></code> and <code class="docutils literal notranslate"><span class="pre">dict.values()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-get"><code class="docutils literal notranslate"><span class="pre">dict.get()</span></code></a></li>
@@ -426,9 +426,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-clear"><code class="docutils literal notranslate"><span class="pre">dict.clear()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-pop"><code class="docutils literal notranslate"><span class="pre">dict.pop()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-update"><code class="docutils literal notranslate"><span class="pre">dict.update()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-over-dicts">Iterating over Dicts</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-over-dicts">Iterating over Dicts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">Tuples</a></li>
 </ul>
             </nav>
@@ -514,9 +514,8 @@ document.write(`
 </ul>
 </li>
 </ul>
-</section>
 <section id="creating-a-dictionary">
-<h2>Creating a Dictionary<a class="headerlink" href="#creating-a-dictionary" title="Link to this heading">#</a></h2>
+<h3>Creating a Dictionary<a class="headerlink" href="#creating-a-dictionary" title="Link to this heading">#</a></h3>
 <p>There are two ways for creating a dictionary:</p>
 <ol class="arabic simple">
 <li><p><strong>Step-by-step</strong></p></li>
@@ -555,7 +554,7 @@ document.write(`
 </div>
 </section>
 <section id="indexing-and-manipulating-a-dictionary">
-<h2>Indexing and Manipulating a Dictionary<a class="headerlink" href="#indexing-and-manipulating-a-dictionary" title="Link to this heading">#</a></h2>
+<h3>Indexing and Manipulating a Dictionary<a class="headerlink" href="#indexing-and-manipulating-a-dictionary" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Dictionary Query</strong></p></li>
 </ul>
@@ -673,7 +672,8 @@ True
 </div>
 </section>
 <section id="dict-methods">
-<h2>Dict Methods<a class="headerlink" href="#dict-methods" title="Link to this heading">#</a></h2>
+<h3>Dict Methods<a class="headerlink" href="#dict-methods" title="Link to this heading">#</a></h3>
+</section>
 <section id="dict-keys">
 <h3><code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code><a class="headerlink" href="#dict-keys" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code> returns a <em>view object</em>* containing all the keys of a dictionary.</p>
@@ -871,9 +871,8 @@ overwrites the one in <code>dict</code>.
 </div>
 </div>
 </section>
-</section>
 <section id="iterating-over-dicts">
-<h2>Iterating over Dicts<a class="headerlink" href="#iterating-over-dicts" title="Link to this heading">#</a></h2>
+<h3>Iterating over Dicts<a class="headerlink" href="#iterating-over-dicts" title="Link to this heading">#</a></h3>
 <p>You can iterate over a dictionary with a very simple <code class="docutils literal notranslate"><span class="pre">for</span></code> loop:</p>
 <ul class="simple">
 <li><p>over its keys (way common)</p></li>
@@ -929,6 +928,7 @@ Key is: spam and Value is: 500
 <li><p>the first loop variable, namely <code class="docutils literal notranslate"><span class="pre">k</span></code>, contains the key in the key-value pair</p></li>
 <li><p>the second loop variable, namely <code class="docutils literal notranslate"><span class="pre">v</span></code>, contains the corresponding value in the key-value pair</p></li>
 </ul>
+</section>
 </section>
 <section id="tuples">
 <h2>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h2>
@@ -1138,10 +1138,10 @@ hello
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collections">Collections</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-story-of-two-collections">A Story of Two Collections</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dictionary">Creating a Dictionary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-manipulating-a-dictionary">Indexing and Manipulating a Dictionary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-methods">Dict Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dictionary">Creating a Dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-manipulating-a-dictionary">Indexing and Manipulating a Dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-methods">Dict Methods</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-keys"><code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-items-and-dict-values"><code class="docutils literal notranslate"><span class="pre">dict.items()</span></code> and <code class="docutils literal notranslate"><span class="pre">dict.values()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-get"><code class="docutils literal notranslate"><span class="pre">dict.get()</span></code></a></li>
@@ -1149,9 +1149,9 @@ hello
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-clear"><code class="docutils literal notranslate"><span class="pre">dict.clear()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-pop"><code class="docutils literal notranslate"><span class="pre">dict.pop()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict-update"><code class="docutils literal notranslate"><span class="pre">dict.update()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-over-dicts">Iterating over Dicts</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-over-dicts">Iterating over Dicts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">Tuples</a></li>
 </ul>
   </nav></div>

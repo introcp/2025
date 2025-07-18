@@ -118,3 +118,13 @@ $overlayElementFgColor: 240, 240, 240;
 .reveal pre {
   font-size: 0.65em;
 }
+
+/* Custom styles to center slides */
+.jp-InputPrompt,
+.jp-OutputPrompt {
+    display: none !important;
+}
+
+.jp-InputArea {
+    padding: 0 !important;
+}

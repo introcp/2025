@@ -340,4 +340,12 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .reveal pre {
   font-size: 0.65em; }
 
+/* Custom styles to center slides */
+.jp-InputPrompt,
+.jp-OutputPrompt {
+  display: none !important; }
+
+.jp-InputArea {
+  padding: 0 !important; }
+
 /*# sourceMappingURL=luiss.css.map */
