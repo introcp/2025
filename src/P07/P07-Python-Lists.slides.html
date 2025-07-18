@@ -7931,12 +7931,23 @@ L1 after extend: [2, 1, 3, 4, 5, 6]
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<br/>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
@@ -7959,6 +7970,24 @@ L1 after extend: [2, 1, 3, 4, 5, 6]
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Original L: [2, 1, 3, 6, 3, 7, 0]
+After L.remove(2): [1, 3, 6, 3, 7, 0]
+After L.remove(3): [1, 6, 3, 7, 0]
+After del(L[1]): [1, 3, 7, 0]
+After a = L.pop(): [1, 3, 7]
+a = 0
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7966,6 +7995,7 @@ L1 after extend: [2, 1, 3, 4, 5, 6]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<br/>
 <div class="alert alert-block alert-info"><b>NOTE</b>: 
 
 <ol>
@@ -7988,19 +8018,135 @@ L1 after extend: [2, 1, 3, 4, 5, 6]
 <li>this yields a list where each element is a character from <code>s</code></li>
 </ul>
 </li>
-<li>Split a string <code>s</code> on a character parameter using <code>s.split()</code> (splits on whitespace if called with no parameters)<ul>
+<li>Split a string <code>s</code> on a character parameter* using <code>s.split()</code> (splits on whitespace if called with no parameters)<ul>
 <li>this yields a list where each element is a portion of <code>s</code></li>
 </ul>
 </li>
 <li>Merge a list of characters/strings <code>L</code> using <code>''.join(L)</code><ul>
-<li>this yields a string which sees the concatenation of items in <code>L</code> with a given character in-between (you can specify a character between quotes to add between every element)</li>
+<li>this yields a string which sees the concatenation of items in <code>L</code> with a given character** in-between (you can specify a character between quotes to add between every element)</li>
 </ul>
 </li>
 </ul>
+<p><small>* Splits on whitespace if called with no parameters</small><br/>
+<small>** You can specify a character (between quotes) to add between every element</small></p>
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"I &lt;3 Python"</span>
+<span class="n">L</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'list(s): </span><span class="si">{</span><span class="n">L</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>list(s): ['I', ' ', '&lt;', '3', ' ', 'P', 'y', 't', 'h', 'o', 'n']
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">L_split</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'s.split(): </span><span class="si">{</span><span class="n">L_split</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>s.split(): ['I', '&lt;3', 'Python']
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">L_split_custom</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'&lt;'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"s.split('&lt;'): </span><span class="si">{</span><span class="n">L_split_custom</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>s.split('&lt;'): ['I ', '3 Python']
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">L_join</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Hello'</span><span class="p">,</span> <span class="s1">'World'</span><span class="p">]</span>
+<span class="n">s_join</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">L_join</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"''.join(['Hello', 'World']): </span><span class="si">{</span><span class="n">s_join</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>''.join(['Hello', 'World']): HelloWorld
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8008,23 +8154,22 @@ L1 after extend: [2, 1, 3, 4, 5, 6]
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"I &lt;3 Python"</span>
-<span class="n">L</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'list(s): </span><span class="si">{</span><span class="n">L</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-
-<span class="n">L_split</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'s.split(): </span><span class="si">{</span><span class="n">L_split</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-
-<span class="n">L_split_custom</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'&lt;'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"s.split('&lt;'): </span><span class="si">{</span><span class="n">L_split_custom</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-<span class="n">L_join</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Hello'</span><span class="p">,</span> <span class="s1">'World'</span><span class="p">]</span>
-<span class="n">s_join</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">L_join</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"''.join(['Hello', 'World']): </span><span class="si">{</span><span class="n">s_join</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-<span class="n">s_join_custom</span> <span class="o">=</span> <span class="s1">'_'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">L_join</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s_join_custom</span> <span class="o">=</span> <span class="s1">'_'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">L_join</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"'_'.join(['Hello', 'World']): </span><span class="si">{</span><span class="n">s_join_custom</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>'_'.join(['Hello', 'World']): Hello_World
+</pre>
 </div>
 </div>
 </div>
@@ -8036,11 +8181,11 @@ L1 after extend: [2, 1, 3, 4, 5, 6]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Other-Operations">Other Operations<a class="anchor-link" href="#Other-Operations">¶</a></h2><p>Python has a set of built-in methods that you can use on lists.
-You can find the full list at <a href="https://docs.python.org/3/tutorial/datastructures.html">https://docs.python.org/3/tutorial/datastructures.html</a></p>
-<blockquote>
-<p><strong>Note:</strong> Some list methods return new values. All main list methods mutate the list in-place.</p>
-</blockquote>
+<h2 id="Other-Operations">Other Operations<a class="anchor-link" href="#Other-Operations">¶</a></h2><p>Python has a set of built-in methods that you can use on lists.</p>
+<p>You can find the full list at <a href="https://docs.python.org/3/tutorial/datastructures.html">https://docs.python.org/3/tutorial/datastructures.html</a></p>
+<br/>
+<div class="alert alert-block alert-info"><b>NOTE</b>:<br/> Some list methods return new values. All main list methods mutate the list in-place.</div>
+<br/>
 <p>Let's go through the most popular ones, shall we?</p>
 </div>
 </div>
@@ -8052,34 +8197,125 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<br/>
 <ul>
 <li>sort elements in a list: <code>sort()</code> and <code>sorted()</code></li>
 <li>flip elements last-to-first in a list: <code>reverse()</code></li>
 </ul>
+<p>Examples:</p>
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Original L: </span><span class="si">{</span><span class="n">L</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-
-<span class="n">L1</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="c1"># returns sorted list in L1, does not change L</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Original L: [9, 6, 0, 3]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">L1</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="c1"># returns sorted list in L1, does not change L</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'L after sorted(L): </span><span class="si">{</span><span class="n">L</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'L1: </span><span class="si">{</span><span class="n">L1</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-
-<span class="n">L</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># L is now mutated (sorted)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>L after sorted(L): [9, 6, 0, 3]
+L1: [0, 3, 6, 9]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">L</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># L is now mutated (sorted)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'L after L.sort(): </span><span class="si">{</span><span class="n">L</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-
-<span class="n">L</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span> <span class="c1"># L is now mutated (flipped)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>L after L.sort(): [0, 3, 6, 9]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">L</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span> <span class="c1"># L is now mutated (flipped)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'L after L.reverse(): </span><span class="si">{</span><span class="n">L</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>L after L.reverse(): [9, 6, 3, 0]
+</pre>
 </div>
 </div>
 </div>
@@ -8091,46 +8327,48 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="To-mutate-or-not-to-mutate,-that-is-the-question.">To mutate or not to mutate, that is the question.<a class="anchor-link" href="#To-mutate-or-not-to-mutate,-that-is-the-question.">¶</a></h3><ul>
+<h3 id="To-mutate-or-not-to-mutate,-that-is-the-question."><em>To mutate or not to mutate, that is the question.</em><a class="anchor-link" href="#To-mutate-or-not-to-mutate,-that-is-the-question.">¶</a></h3><ul>
 <li>calling <code>sort()</code> mutates the list, returns nothing (<code>None</code>)</li>
 <li>calling <code>sorted()</code> does not mutate the list, must assign to a new variable</li>
 </ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># sort() mutates</span>
-<span class="n">warm</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'red'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">]</span>
+<table>
+<tr>
+<td align="center" style="width: 50%">
+<p><code>sort()</code> mutates:</p>
+</td>
+<td align="center" style="width: 50%">
+<p><code>sorted()</code> does not mutate:</p>
+</td>
+</tr>
+<tr>
+<td>
+<div class="highlight"><pre><span></span><span class="n">warm</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'red'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">]</span>
 <span class="n">sortedwarm</span> <span class="o">=</span> <span class="n">warm</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'warm: </span><span class="si">{</span><span class="n">warm</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'sortedwarm: </span><span class="si">{</span><span class="n">sortedwarm</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># sorted() does not mutate</span>
-<span class="n">cool</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'grey'</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">]</span>
-<span class="n">sortedcool</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">cool</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'cool: </span><span class="si">{</span><span class="n">cool</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'sortedcool: </span><span class="si">{</span><span class="n">sortedcool</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</td>
+<td>
+<div class="highlight"><pre><span></span><span class="n">warm</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'red'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">]</span>
+<span class="n">sortedwarm</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">warm</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'warm: </span><span class="si">{</span><span class="n">warm</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'sortedwarm: </span><span class="si">{</span><span class="n">sortedwarm</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
+</td>
+</tr>
+<tr>
+<td>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/warm.png"/>
 </div>
+</td>
+<td>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/clone.png"/>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -8142,15 +8380,18 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Aliasing-&amp;-Cloning">Aliasing &amp; Cloning<a class="anchor-link" href="#Aliasing-&amp;-Cloning">¶</a></h2><p><strong>Aliasing</strong>: if <code>a</code> refers to an object and you assign <code>b = a</code>, then both variables refer to the same object.</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/aliasing.png"/>
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -8161,7 +8402,20 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>b is a: True
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8186,12 +8440,12 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -8204,6 +8458,36 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>b: [42, 2, 3]
+a: [42, 2, 3]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="alert alert-block alert-warning">
+<b>WARNING:</b> This aspect can be useful, but <b>error-prone</b>!
+</div>
+<div class="alert alert-block alert-info">
+<b>HINT:</b> To be safe, <b>avoid aliasing</b> when working <b>with mutable objects</b>.
+</div>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8211,14 +8495,11 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<blockquote>
-<p><strong>Warning:</strong> This aspect can be useful, but <font color="red">error-prone</font>!
-<strong>Hint:</strong> To be safe, <font color="red">avoid aliasing</font> when working <font color="red">with mutable objects</font>.</p>
-</blockquote>
+<p>The aliasing side-effect also holds for list methods we saw earlier:</p>
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8227,16 +8508,60 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">warm</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'red'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">]</span>
-<span class="n">hot</span> <span class="o">=</span> <span class="n">warm</span>  <span class="c1"># we have an alias here</span>
+<span class="n">hot</span> <span class="o">=</span> <span class="n">warm</span>                          <span class="c1"># we have an alias here</span>
 <span class="n">hot</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'pink'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'hot: </span><span class="si">{</span><span class="n">hot</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'warm: </span><span class="si">{</span><span class="n">warm</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'warm: </span><span class="si">{</span><span class="n">warm</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>              <span class="c1"># breakpoint #1</span>
 
 <span class="n">warm</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'hot after sort: </span><span class="si">{</span><span class="n">hot</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'warm after sort: </span><span class="si">{</span><span class="n">warm</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'warm after sort: </span><span class="si">{</span><span class="n">warm</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>   <span class="c1"># breakpoint #2</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>hot: ['red', 'yellow', 'orange', 'pink']
+warm: ['red', 'yellow', 'orange', 'pink']
+hot after sort: ['orange', 'pink', 'red', 'yellow']
+warm after sort: ['orange', 'pink', 'red', 'yellow']
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<table>
+<tr>
+<td>
+<div align="center">
+        Breakpoint #1
+        <br/>
+<img alt="No description has been provided for this image" src="img/snap1.png" style="height: 50%;"/>
+</div>
+</td>
+<td>
+<div align="center">
+        Breakpoint #2
+        <br/>
+<img alt="No description has been provided for this image" src="img/snap2.png" style="height: 50%;"/>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -8251,12 +8576,12 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">cool</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'blue'</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">,</span> <span class="s1">'grey'</span><span class="p">]</span>
@@ -8269,6 +8594,33 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>cool: ['blue', 'green', 'grey']
+chill: ['blue', 'green', 'grey', 'black']
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div align="center">
+<img alt="No description has been provided for this image" src="img/clone.png" style="height: 50%;"/>
+</div>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8276,13 +8628,15 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<blockquote>
-<p><strong>Warning:</strong> Never mutate a list as you iterate through it.</p>
-</blockquote>
+<br/>
+<div class="alert alert-warning">
+<b>WARNING:</b>
+Never mutate a list as you iterate through it.
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8293,7 +8647,7 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8301,8 +8655,7 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Incorrect way - mutating while iterating</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">remove_dups_buggy</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">remove_dups_buggy</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">L1</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">L2</span><span class="p">:</span>
             <span class="n">L1</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
@@ -8316,14 +8669,27 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Result (buggy): [2, 3, 4]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The left panel is incorrect. Why?</p>
+<p>This is incorrect. Why?</p>
 <ul>
 <li>Python uses an internal counter to keep track of the position in the loop</li>
 <li>Mutation changes the length, but Python does not update the counter</li>
@@ -8332,16 +8698,26 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The correct way:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Correct way - iterate over a clone</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">remove_dups_correct</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">remove_dups_correct</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">):</span>
     <span class="n">L1copy</span> <span class="o">=</span> <span class="n">L1</span><span class="p">[:]</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">L1copy</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">L2</span><span class="p">:</span>
@@ -8356,6 +8732,19 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Result (correct): [3, 4]
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8363,32 +8752,53 @@ You can find the full list at <a href="https://docs.python.org/3/tutorial/datast
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Nesting">Nesting<a class="anchor-link" href="#Nesting">¶</a></h2><blockquote>
-<p><strong>Recall:</strong> Lists can be heterogeneous. An element of a list can itself be a list.
-<strong>Warning:</strong> Mutation and aliasing affect also nested lists.</p>
-</blockquote>
+<h2 id="Nesting">Nesting<a class="anchor-link" href="#Nesting">¶</a></h2><div style="display: flex; flex-direction: row;">
+<div style="width: 30%;">
+<br/>
+<div class="alert alert-info">
+<b>RECALL:</b>
+Lists can be heterogeneous. An element of a list can itself be a list.
+</div>
+<br/>
+<div class="alert alert-warning">
+<b>WARNING:</b>
+Mutation and aliasing affect also nested lists.
+</div>
+</div>
+<div align="center" style="width: 10%;">
+</div>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/nested.png" style="height: 330px;"/>
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">warm</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">]</span>
 <span class="n">hot</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'red'</span><span class="p">]</span>
 <span class="n">brightcolors</span> <span class="o">=</span> <span class="p">[</span><span class="n">warm</span><span class="p">]</span>
-<span class="n">brightcolors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hot</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'brightcolors: </span><span class="si">{</span><span class="n">brightcolors</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-
-<span class="n">hot</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'pink'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'hot: </span><span class="si">{</span><span class="n">hot</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'brightcolors after hot mutation: </span><span class="si">{</span><span class="n">brightcolors</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="n">brightcolors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hot</span><span class="p">)</span> <span class="c1"># brightcolors: [['yellow', 'orange'], ['red']]</span>
+<span class="n">hot</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'pink'</span><span class="p">)</span> <span class="c1"># hot: ['red', 'pink']</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 </div>
 </div>
 </div>
