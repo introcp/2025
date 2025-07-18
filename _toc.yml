@@ -18,3 +18,4 @@ parts:
       - file: src/P06/P06-Python-Strings.ipynb
       - file: src/P07/P07-Python-Lists.ipynb
       - file: src/P08/P08-Python-Dictionaries-Tuples-Sets.ipynb
+      - file: src/P09/P09-Python-Classes.ipynb
