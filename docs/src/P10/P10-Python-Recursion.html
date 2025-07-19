@@ -1,0 +1,1068 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Recursion &#8212; Introduction to computer programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2445107f" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/P10/P10-Python-Recursion';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Classes and Objects" href="../P09/P09-Python-Classes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Introduction to computer programming - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Introduction to computer programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    <b style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</b>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../A00/A00-Introduction.html"><b style="font-family: 'LUISS', 'Lato'">Course overview</b></a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../P00/P00-Python-Getting-Started.html"><b style="font-family: 'LUISS', 'Lato'">Getting Started</b></a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../P01/P01-Python-Expressions-and-Types.html"><b style="font-family: 'LUISS', 'Lato'">Expressions and Data Types</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P02/P02-Python-Types-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Variables and Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P03/P03-Python-Branching.html"><b style="font-family: 'LUISS', 'Lato'">Branching</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P04/P04-Python-Functions.html"><b style="font-family: 'LUISS', 'Lato'">Functions</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P05/P05-Python-Iteration.html"><b style="font-family: 'LUISS', 'Lato'">Iteration</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P06/P06-Python-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P07/P07-Python-Lists.html"><b style="font-family: 'LUISS', 'Lato'">Lists</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P08/P08-Python-Dictionaries-Tuples-Sets.html"><b style="font-family: 'LUISS', 'Lato'">Dictionaries, Tuples, and Sets</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P09/P09-Python-Classes.html"><b style="font-family: 'LUISS', 'Lato'">Classes and Objects</b></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><b style="font-family: 'LUISS', 'Lato'">Recursion</b></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/introcp/introcp.github.io/blob/2025/src/P10/P10-Python-Recursion.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+
+<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://introcp.github.io/_sources//src/P10/P10-Python-Recursion.ipynb" target="_blank"
+  class="btn btn-sm dropdown-item"
+  title="Launch on JupyterLite"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+ 
+
+<span class="btn__icon-container">
+ 
+   <img alt="JupyterLite logo" src="https://avatars.githubusercontent.com/u/81094398?s=200&v=4">
+ </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+    
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/P10/P10-Python-Recursion.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.open(window.location.pathname.replace('.html', '.pdf'));"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+    <button onclick="window.open(window.location.pathname.replace('.html', '.slides.html'));"
+    class="btn btn-sm btn-fullscreen-button"
+    title="Slide"
+    data-bs-placement="bottom" data-bs-toggle="tooltip"
+    >
+    
+    <span class="btn__icon-container">
+        <i class="fa-brands fa-slideshare"></i>
+    </span>
+
+    </button>
+
+    <button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><b style="font-family: 'LUISS', 'Lato'">Recursion</b></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stacks">Stacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-a-stack">Simulating a Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queues">Queues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-a-queue">Simulating a Queue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queue-vs-stack">Queue vs. Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Recursion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-and-problem-solving">Recursion and Problem Solving</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-recursion">Real-world recursion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-and-problem-solving-cont-d">Recursion and Problem Solving (cont’d)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-with-recursion">Issues with Recursion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management">Memory Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-countdown">Case Study: <code class="docutils literal notranslate"><span class="pre">countdown</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial"><code class="docutils literal notranslate"><span class="pre">factorial</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#palindrome"><code class="docutils literal notranslate"><span class="pre">palindrome</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci"><code class="docutils literal notranslate"><span class="pre">fibonacci</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div align="center">
+<section class="tex2jax_ignore mathjax_ignore" id="recursion">
+<h1><b style="font-family: 'LUISS', 'Lato'">Recursion</b><a class="headerlink" href="#recursion" title="Link to this heading">#</a></h1>
+<h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
+<img src="https://introcp.github.io/dist/img/cliente-luiss.png">
+<p><br><br><br></p>
+</div><section id="stacks">
+<h2>Stacks<a class="headerlink" href="#stacks" title="Link to this heading">#</a></h2>
+<p>The <strong>stack</strong> is one of the most popular abstract data types in computer science.</p>
+<p>A stack is a sequence (collection) of elements where only the “last” element (i.e., the one at the “top” of the stack) can be accessed.</p>
+<p>The allowed operations on a stack <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> are the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">push(</span></code><span class="math notranslate nohighlight">\(e\)</span><code class="docutils literal notranslate"><span class="pre">,</span> </code><span class="math notranslate nohighlight">\(\mathcal{S}\)</span><code class="docutils literal notranslate"><span class="pre">)</span></code>: adds a new element <span class="math notranslate nohighlight">\(e \in V\)</span>, for any domain <span class="math notranslate nohighlight">\(V\)</span>, at the top of the stack <span class="math notranslate nohighlight">\(\mathcal{S}\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop(</span></code><span class="math notranslate nohighlight">\(\mathcal{S}\)</span><code class="docutils literal notranslate"><span class="pre">)</span></code>: returns and removes the current element at the top of the stack <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>.</p></li>
+</ul>
+<p>Optionally, it is possible to define an additional operation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">peek(</span></code><span class="math notranslate nohighlight">\(\mathcal{S}\)</span><code class="docutils literal notranslate"><span class="pre">)</span></code>: reads the top element without modifying the stack.</p></li>
+</ul>
+<p>A special domain value is <span class="math notranslate nohighlight">\(\mathcal{S}_\emptyset\)</span>, namely the empty stack.</p>
+<p>As <span class="math notranslate nohighlight">\(\mathcal{S}_{\emptyset}\)</span> has no elements:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pop()</span></code> is not allowed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">peek()</span></code> is not allowed.</p></li>
+</ul>
+<p>The stack is a <strong>LIFO</strong> (<strong>L</strong>ast-<strong>I</strong>n, <strong>F</strong>irst-<strong>O</strong>ut) data structure, because:</p>
+<ul class="simple">
+<li><p>the last element that entered the stack (i.e., via <code class="docutils literal notranslate"><span class="pre">push()</span></code>)</p></li>
+<li><p>…is the one that will be removed first (i.e., via <code class="docutils literal notranslate"><span class="pre">pop()</span></code>)</p></li>
+</ul>
+<p>Effect of <code>push()</code> and <code>pop()</code> over a stack:</p>
+<div align="center">
+    <img src="img/Lifo_stack.png" width="80%">
+</div></section>
+<section id="simulating-a-stack">
+<h2>Simulating a Stack<a class="headerlink" href="#simulating-a-stack" title="Link to this heading">#</a></h2>
+<p>You can simulate the behaviour of a stack with lists.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="p">[]</span>          <span class="c1"># start with an empty stack</span>
+<span class="n">S</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># step 1 in previous slide</span>
+<span class="n">S</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># step 2 in previous slide</span>
+<span class="n">S</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># step 3 in previous slide</span>
+<span class="n">S</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1"># step 4 in previous slide</span>
+<span class="n">S</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># step 5 in previous slide</span>
+<span class="n">S</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># step 6 in previous slide</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>        <span class="c1"># step 7 in previous slide</span>
+<span class="n">S</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>        <span class="c1"># step 8 in previous slide</span>
+<span class="n">S</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>        <span class="c1"># step 9 in previous slide</span>
+<span class="n">S</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>        <span class="c1"># step 10 in previous slide</span>
+<span class="n">S</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>        <span class="c1"># step 11 in previous slide</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 5, 4, 3, 2, 1]
+[1]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-info">
+<b>RECALL</b>: <code>lst.insert(x, y)</code> inserts value <code>y</code> at position <code>x</code> in list <code>lst</code>.
+</div><br>
+<div class="alert alert-block alert-info">
+<b>NOTE</b>: Previously, we supposed that the head of the list is the top of the stack. You can also assume that the tail of the list is the head of the stack.
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="p">[]</span>      <span class="c1"># start with an empty stack</span>
+<span class="n">S</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># step 1 in slide 4</span>
+<span class="n">S</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># step 2 in slide 4</span>
+<span class="n">S</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># step 3 in slide 4</span>
+<span class="n">S</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># step 4 in slide 4</span>
+<span class="n">S</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># step 5 in slide 4</span>
+<span class="n">S</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># step 6 in slide 4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>     <span class="c1"># step 7 in slide 4</span>
+<span class="n">S</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>     <span class="c1"># step 8 in slide 4</span>
+<span class="n">S</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>     <span class="c1"># step 9 in slide 4</span>
+<span class="n">S</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>     <span class="c1"># step 10 in slide 4</span>
+<span class="n">S</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>     <span class="c1"># step 11 in slide 4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
+[1]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="queues">
+<h2>Queues<a class="headerlink" href="#queues" title="Link to this heading">#</a></h2>
+<p>The <strong>queue</strong> is another popular abstract data type in computer science.</p>
+<p>A queue is a sequence (collection) of elements where only the “oldest” element can be accessed.</p>
+<p>The allowed operations on a queue <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span> are the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">enqueue(</span></code><span class="math notranslate nohighlight">\(e\)</span><code class="docutils literal notranslate"><span class="pre">,</span></code><span class="math notranslate nohighlight">\(\mathcal{Q}\)</span><code class="docutils literal notranslate"><span class="pre">)</span></code>: adds a new element <span class="math notranslate nohighlight">\(e \in V\)</span>, for any domain <span class="math notranslate nohighlight">\(V\)</span>, at the beginning (back) of the queue <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dequeue(</span></code><span class="math notranslate nohighlight">\(\mathcal{Q}\)</span><code class="docutils literal notranslate"><span class="pre">)</span></code>: returns and removes the current element at the end (front) of the queue <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span>.</p></li>
+</ul>
+<p>Optionally, it is possible to define an additional operation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">peek(</span></code><span class="math notranslate nohighlight">\(\mathcal{Q}\)</span><code class="docutils literal notranslate"><span class="pre">)</span></code>: reads the last element without modifying the queue.</p></li>
+</ul>
+<p>A special domain value is <span class="math notranslate nohighlight">\(\mathcal{Q}_\emptyset\)</span>, namely the empty queue.</p>
+<p>As <span class="math notranslate nohighlight">\(\mathcal{Q}_\emptyset\)</span> has no elements:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dequeue()</span></code> is not allowed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">peek()</span></code> is not allowed.</p></li>
+</ul>
+<p>The queue is a FIFO (First-In, First-Out) data structure, because:</p>
+<ul class="simple">
+<li><p>the first element that entered the queue (i.e., via <code class="docutils literal notranslate"><span class="pre">enqueue()</span></code>)</p></li>
+<li><p>…is the one that will be removed first (i.e., via <code class="docutils literal notranslate"><span class="pre">dequeue()</span></code>)</p></li>
+</ul>
+<p>Visual representation of a queue:</p>
+<div align="center">
+    <img src="img/Data_Queue.svg.png" width="80%">
+</div></section>
+<section id="simulating-a-queue">
+<h2>Simulating a Queue<a class="headerlink" href="#simulating-a-queue" title="Link to this heading">#</a></h2>
+<p>You can simulate the behaviour of a queue with lists.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="p">[]</span>          <span class="c1"># start with an empty queue</span>
+<span class="n">Q</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># insert at the beginning = enqueue</span>
+<span class="n">Q</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">Q</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">Q</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">Q</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">Q</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+<span class="n">Q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>         <span class="c1"># pop at the end = dequeue</span>
+<span class="n">Q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="n">Q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="n">Q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="n">Q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 5, 4, 3, 2, 1]
+[6]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-info">
+<b>NOTE</b>: Here we suppose that the head of the list is the beginning (back) of the queue and that the tail of the list is the end (front) of the queue.
+</div></section>
+<section id="queue-vs-stack">
+<h2>Queue vs. Stack<a class="headerlink" href="#queue-vs-stack" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data Structure</p></th>
+<th class="head text-center"><p>Visual Representation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stack</p></td>
+<td class="text-center"><p><a class="reference internal" href="../../_images/l8r4ic2gedi0j9obd7ix.jpg"><img alt="../../_images/l8r4ic2gedi0j9obd7ix.jpg" src="../../_images/l8r4ic2gedi0j9obd7ix.jpg" style="width: 100%;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Queue</p></td>
+<td class="text-center"><p><a class="reference internal" href="../../_images/fcxri84smzo9m1pxbxj9.png"><img alt="../../_images/fcxri84smzo9m1pxbxj9.png" src="../../_images/fcxri84smzo9m1pxbxj9.png" style="width: 100%;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Or, more informally:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Stack</p></th>
+<th class="head text-center"><p>Queue</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="../../_images/Tallrik_-_Ystad-2018.jpg"><img alt="../../_images/Tallrik_-_Ystad-2018.jpg" src="../../_images/Tallrik_-_Ystad-2018.jpg" style="width: 70%;" /></a></p></td>
+<td class="text-center"><p><a class="reference internal" href="../../_images/0_25203CE7-A5F0-48DF-8882-165CB0F63B2Fjpeg.jpg"><img alt="../../_images/0_25203CE7-A5F0-48DF-8882-165CB0F63B2Fjpeg.jpg" src="../../_images/0_25203CE7-A5F0-48DF-8882-165CB0F63B2Fjpeg.jpg" style="width: 150%;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id1">
+<h2>Recursion<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div align="center">
+    <img src="img/recursionimage.jpg" width="60%">
+</div><section id="recursion-and-problem-solving">
+<h3>Recursion and Problem Solving<a class="headerlink" href="#recursion-and-problem-solving" title="Link to this heading">#</a></h3>
+<p>When designing the solution of a problem</p>
+<div align="center">
+    <span style="color:red">...try to solve the problem assuming that you have <i>already solved it</i>!</span>
+</div>
+<p>How is that possible?</p>
+<div align="center">
+    <span style="color:red">Define the solution of a problem instance in terms of the solution of <i>smaller</i> problem instances.</span>
+</div>
+<p>Practically speaking:</p>
+<div align="center">
+    <span style="color:red">The function that computes the solution will <i>invoke itself</i> (once or more than once) from inside its body.</span>
+</div></section>
+<section id="real-world-recursion">
+<h3>Real-world recursion<a class="headerlink" href="#real-world-recursion" title="Link to this heading">#</a></h3>
+<div align="center" style="display: flex; justify-content: center;">
+    <figure>
+        <img src="img/800px-Mandel_zoom_08_satellite_antenna.jpg" width="200px">
+        <figcaption>Mandelbrot Set</figcaption>
+    </figure>
+    <figure>
+        <img src="img/escher-fish.jpg" width="200px">
+        <figcaption>Escher's Circle Limit III</figcaption>
+    </figure>
+</div>
+<div align="center" style="display: flex; justify-content: center;">
+    <figure>
+        <img src="img/An-image-of-the-Koch-snowflake-a-fractal-with-fractal-dimension-d-126-From_W640.jpg" width="200px">
+        <figcaption>Koch Snowflake</figcaption>
+    </figure>
+    <figure>
+        <img src="img/Infinity_Mirror_Effect.jpg" width="200px">
+        <figcaption>Parallel Mirrors</figcaption>
+    </figure>
+</div><p>A more practical example? Computing the factorial of a number <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[ n! = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 1 \]</div>
+<p>Back-of-the-envelope calculation: <span class="math notranslate nohighlight">\(5!\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+	5! = \underbrace{5 \cdot \underbrace{4 \cdot \underbrace{3 \cdot \underbrace{2 \cdot \underbrace{1}_\text{$1!$}}_\text{$2 \cdot 1!$}}_\text{$3 \cdot 2!$}}_\text{$4 \cdot 3!$}}_\text{$5 \cdot 4!$}
+\end{equation*}
+\]</div>
+<p>We can spot the following pattern:</p>
+<div class="math notranslate nohighlight">
+\[ n! = n \cdot (n-1)! \]</div>
+<p>with base case:</p>
+<div class="math notranslate nohighlight">
+\[ 0! = 1 \]</div>
+</section>
+<section id="recursion-and-problem-solving-cont-d">
+<h3>Recursion and Problem Solving (cont’d)<a class="headerlink" href="#recursion-and-problem-solving-cont-d" title="Link to this heading">#</a></h3>
+<p>In order to use a recursive approach:</p>
+<ol class="arabic simple">
+<li><p>you must be able to <span style="color:red">decompose</span> the problem into problems of the same type</p></li>
+<li><p>you must find a <span style="color:red">relation</span> that connects a given problem to the solution of similar subproblems</p></li>
+<li><p>you need to know the solution of a special case of the problem (the <span style="color:red">base case</span>, where the recursion terminates).</p></li>
+</ol>
+<p>Take the factorial example:</p>
+<ol class="arabic simple">
+<li><p>multiplication between two numbers</p></li>
+<li><p>multiplication between <span class="math notranslate nohighlight">\(n\)</span> and the already-known <span class="math notranslate nohighlight">\((n-1)!\)</span></p></li>
+<li><p>the base case is <span class="math notranslate nohighlight">\(0!=1\)</span></p></li>
+</ol>
+</section>
+<section id="issues-with-recursion">
+<h3>Issues with Recursion<a class="headerlink" href="#issues-with-recursion" title="Link to this heading">#</a></h3>
+<p>There are two major issues with recursion:</p>
+<ol class="arabic simple">
+<li><p><span style="color:red"><b>Infinite recursion</b></span></p>
+<ul class="simple">
+<li><p>missing base case?</p></li>
+<li><p>function called with wrong arguments?
+For example, what happens if we do <code class="docutils literal notranslate"><span class="pre">(-1)!</span></code>?
+… more on this later</p></li>
+</ul>
+</li>
+<li><p><span style="color:red"><b>Un-responsiveness</b></span></p>
+<ul class="simple">
+<li><p>your code can easily become very slow, also with “easy” input parameters</p></li>
+<li><p>… more on memory management later</p></li>
+</ul>
+</li>
+</ol>
+<br>
+<br>
+<div class="alert alert-block alert-info">
+<b>NOTE</b>: Python is quite good at catching infinite recursions: it has a dedicated error:
+<br>
+<span style="color:red"><b><code>RecursionError: maximum recursion depth exceeded in comparison</code></b></span>
+</div></section>
+</section>
+<section id="memory-management">
+<h2>Memory Management<a class="headerlink" href="#memory-management" title="Link to this heading">#</a></h2>
+<section id="case-study-countdown">
+<h3>Case Study: <code class="docutils literal notranslate"><span class="pre">countdown</span></code><a class="headerlink" href="#case-study-countdown" title="Link to this heading">#</a></h3>
+<p>Write a recursive function <code class="docutils literal notranslate"><span class="pre">countdown(n)</span></code> that takes a positive integer <code class="docutils literal notranslate"><span class="pre">n</span></code> and prints the countdown. As the countdown reaches 0, prints <code class="docutils literal notranslate"><span class="pre">Blastoff!</span></code> and quits.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Blastoff!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">countdown</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">countdown</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+2
+1
+Blastoff!
+</pre></div>
+</div>
+</div>
+</div>
+<p>What’s going on here?</p>
+<ul class="simple">
+<li><p>(1) The execution of <code class="docutils literal notranslate"><span class="pre">countdown</span></code> begins with <code class="docutils literal notranslate"><span class="pre">n=3</span></code>, and since <code class="docutils literal notranslate"><span class="pre">n</span></code> is greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it outputs the value <code class="docutils literal notranslate"><span class="pre">3</span></code>, and then calls itself…</p>
+<ul>
+<li><p>(2) The execution of <code class="docutils literal notranslate"><span class="pre">countdown</span></code> begins with <code class="docutils literal notranslate"><span class="pre">n=2</span></code>, and since <code class="docutils literal notranslate"><span class="pre">n</span></code> is greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it outputs the value <code class="docutils literal notranslate"><span class="pre">2</span></code>, and then calls itself…</p>
+<ul>
+<li><p>(3) The execution of <code class="docutils literal notranslate"><span class="pre">countdown</span></code> begins with <code class="docutils literal notranslate"><span class="pre">n=1</span></code>, and since <code class="docutils literal notranslate"><span class="pre">n</span></code> is greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it outputs the value <code class="docutils literal notranslate"><span class="pre">1</span></code>, and then calls itself…</p>
+<ul>
+<li><p>(4) The execution of <code class="docutils literal notranslate"><span class="pre">countdown</span></code> begins with <code class="docutils literal notranslate"><span class="pre">n=0</span></code>, and since <code class="docutils literal notranslate"><span class="pre">n</span></code> is not greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it outputs <code class="docutils literal notranslate"><span class="pre">Blastoff!</span></code> and then returns.</p></li>
+</ul>
+</li>
+<li><p>(5) The countdown that got <code class="docutils literal notranslate"><span class="pre">n=1</span></code> returns.</p></li>
+</ul>
+</li>
+<li><p>(6) The countdown that got <code class="docutils literal notranslate"><span class="pre">n=2</span></code> returns.</p></li>
+</ul>
+</li>
+<li><p>(7) The countdown that got <code class="docutils literal notranslate"><span class="pre">n=3</span></code> returns.
+And we are back into the <code class="docutils literal notranslate"><span class="pre">main</span></code> script.</p></li>
+</ul>
+<br>
+<div class="alert alert-block alert-info">
+<b>RECALL</b>: Every time a function gets called, Python creates a new function frame, which contains the function's local variables and parameters.
+</div>
+<p>For a recursive function, there might be more than one frame at the same time. Python organises those frames as a <span style="color:red">stack</span>.</p>
+<p>For instance, the stack diagram for <code>countdown(3)</code> is:</p>
+<div align="center">
+    <img src="img/book007.png" width="30%">
+</div><p>How does the stack in Figure 10 works?</p>
+<ol class="arabic simple">
+<li><p>(as usual) at the top of the stack is the frame for the <code class="docutils literal notranslate"><span class="pre">main</span></code>*</p></li>
+<li><p>we call <code class="docutils literal notranslate"><span class="pre">countdown(3)</span></code>, so there is a new frame in the stack</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">countdown(3)</span></code> calls <code class="docutils literal notranslate"><span class="pre">countdown(2)</span></code>, so there is a new frame in the stack</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">countdown(2)</span></code> calls <code class="docutils literal notranslate"><span class="pre">countdown(1)</span></code>, so there is a new frame in the stack</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">countdown(1)</span></code> calls <code class="docutils literal notranslate"><span class="pre">countdown(0)</span></code>, so there is a new frame in the stack</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">countdown(0)</span></code> does not make any further calls, so no more frames</p></li>
+</ol>
+<p>We did a bunch of <code class="docutils literal notranslate"><span class="pre">push</span></code>es, now we must do some <code class="docutils literal notranslate"><span class="pre">pop</span></code>s:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">countdown(0)</span></code> finishes its execution (i.e., prints <code class="docutils literal notranslate"><span class="pre">Blastoff!</span></code> without doing anything else). Its frame is erased.</p></li>
+<li><p>the control goes back to <code class="docutils literal notranslate"><span class="pre">countdown(1)</span></code>, which finishes its execution. Its frame is erased.</p></li>
+<li><p>the control goes back to <code class="docutils literal notranslate"><span class="pre">countdown(2)</span></code>, which finishes its execution. Its frame is erased.</p></li>
+<li><p>the control goes back to <code class="docutils literal notranslate"><span class="pre">countdown(3)</span></code>, which finishes its execution. Its frame is erased.</p></li>
+<li><p>the control goes back to the <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+</ol>
+<p><small>* In our case, it is empty because we did not create any variables in main or pass any arguments to it.</small></p>
+</section>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<section id="factorial">
+<h3><code class="docutils literal notranslate"><span class="pre">factorial</span></code><a class="headerlink" href="#factorial" title="Link to this heading">#</a></h3>
+<p>Write a recursive function <code class="docutils literal notranslate"><span class="pre">factorial(n)</span></code> that takes as input a positive integer <code class="docutils literal notranslate"><span class="pre">n</span></code> and returns <span class="math notranslate nohighlight">\(n!\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-danger">
+<b>WARNING</b>: What happens when calling `factorial(-1)`?
+</div><p>Stack diagram for <code class="docutils literal notranslate"><span class="pre">factorial(3)</span></code>:</p>
+<div align="center">
+    <img src="img/stackframes_factorial.png" width="50%">
+</div></section>
+<section id="palindrome">
+<h3><code class="docutils literal notranslate"><span class="pre">palindrome</span></code><a class="headerlink" href="#palindrome" title="Link to this heading">#</a></h3>
+<p>Write a recursive function <code class="docutils literal notranslate"><span class="pre">palindrome(s)</span></code> that takes as input a string <code class="docutils literal notranslate"><span class="pre">s</span></code> and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">s</span></code> is palindrome and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+<p>Decomposition strategy: let <code class="docutils literal notranslate"><span class="pre">s</span></code> be <code class="docutils literal notranslate"><span class="pre">&quot;racecar&quot;</span></code></p>
+<ul class="simple">
+<li><p><span style="color:red">r</span>aceca<span style="color:red">r</span> -&gt; same letter ✓</p></li>
+<li><p><span style="color:blue">a</span>cec<span style="color:blue">a</span> -&gt; same letter ✓</p></li>
+<li><p><span style="color:magenta">c</span>e<span style="color:magenta">c</span> -&gt; same letter ✓</p></li>
+<li><p>e -&gt; trivial ✓</p></li>
+</ul>
+<p>and now let <code class="docutils literal notranslate"><span class="pre">s</span></code> be <code class="docutils literal notranslate"><span class="pre">&quot;rediviuer&quot;</span></code></p>
+<ul class="simple">
+<li><p><span style="color:red">r</span>ediviue<span style="color:red">r</span> -&gt; same letter ✓</p></li>
+<li><p><span style="color:blue">e</span>diviu<span style="color:blue">e</span> -&gt; same letter ✓</p></li>
+<li><p><span style="color:magenta">d</span>ivi<span style="color:magenta">u</span> -&gt; different letter ✗</p></li>
+</ul>
+<p>Hence, <code class="docutils literal notranslate"><span class="pre">&quot;racecar&quot;</span></code> is palindrome, but <code class="docutils literal notranslate"><span class="pre">&quot;rediviuer&quot;</span></code> it’s not.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">palindrome</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="ow">and</span> <span class="n">palindrome</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">output1</span> <span class="o">=</span> <span class="n">palindrome</span><span class="p">(</span><span class="s2">&quot;racecar&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output1</span><span class="p">)</span>
+<span class="n">output2</span> <span class="o">=</span> <span class="n">palindrome</span><span class="p">(</span><span class="s2">&quot;rediviuer&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Stack diagram for <code class="docutils literal notranslate"><span class="pre">palindrome(&quot;racecar&quot;)</span></code>:</p>
+<div align="center">
+    <img src="img/stackframes_palindrome.png" width="80%">
+</div><p>Stack diagram for <code class="docutils literal notranslate"><span class="pre">palindrome(&quot;rediviuer&quot;)</span></code>:</p>
+<div align="center">
+    <img src="img/stackframes_palindrome2.png" width="85%">
+</div></section>
+<section id="fibonacci">
+<h3><code class="docutils literal notranslate"><span class="pre">fibonacci</span></code><a class="headerlink" href="#fibonacci" title="Link to this heading">#</a></h3>
+<p>Write a recursive function <code class="docutils literal notranslate"><span class="pre">fibonacci(n)</span></code> that takes as input a positive integer <code class="docutils literal notranslate"><span class="pre">n</span></code> and returns the <span class="math notranslate nohighlight">\(n\)</span>-th Fibonacci number.</p>
+<br>
+<div class="alert alert-block alert-info">
+<b>RECALL</b>: Each number in the Fibonacci sequence is given by the sum of the two preceding ones:<br>
+0 1 <span style="color:blue">1 2 3 5 8 11 ...</span>
+</div>
+<br>
+<p>Decomposition strategy: <code class="docutils literal notranslate"><span class="pre">fibonacci(n)</span></code> with <code class="docutils literal notranslate"><span class="pre">n=5</span></code>*:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+	\underbrace{5}_{\textstyle \underbrace{3}_{\textstyle\underbrace{2}_{\textstyle 1+1}+1} + \underbrace{2}_{\textstyle 1+1}}
+\end{equation*}
+\]</div>
+<p><small>* By coincidence, the 5th Fibonacci number is 5.</small></p>
+<br><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Call Stack diagram for <code class="docutils literal notranslate"><span class="pre">fibonacci(5)</span></code>:</p>
+<div align="center">
+    <img src="img/stackframes_fibonacci.png" width="100%">
+</div><p>Return Stack diagram for <code class="docutils literal notranslate"><span class="pre">fibonacci(5)</span></code>:</p>
+<div align="center">
+    <img src="img/stackframes_fibonacci2.png" width="100%">
+</div></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src/P10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../P09/P09-Python-Classes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Classes and Objects</b></p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stacks">Stacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-a-stack">Simulating a Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queues">Queues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-a-queue">Simulating a Queue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queue-vs-stack">Queue vs. Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Recursion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-and-problem-solving">Recursion and Problem Solving</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-recursion">Real-world recursion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-and-problem-solving-cont-d">Recursion and Problem Solving (cont’d)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-with-recursion">Issues with Recursion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management">Memory Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-countdown">Case Study: <code class="docutils literal notranslate"><span class="pre">countdown</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial"><code class="docutils literal notranslate"><span class="pre">factorial</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#palindrome"><code class="docutils literal notranslate"><span class="pre">palindrome</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci"><code class="docutils literal notranslate"><span class="pre">fibonacci</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Emilio Coppa and Alessio Martino
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
