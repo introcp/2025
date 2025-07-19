@@ -1,0 +1,849 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Iterating Over a File &#8212; Introduction to computer programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2445107f" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/P11/P11-Python-Files2';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Introduction to computer programming - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Introduction to computer programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    <b style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</b>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../A00/A00-Introduction.html"><b style="font-family: 'LUISS', 'Lato'">Course overview</b></a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../P00/P00-Python-Getting-Started.html"><b style="font-family: 'LUISS', 'Lato'">Getting Started</b></a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../P01/P01-Python-Expressions-and-Types.html"><b style="font-family: 'LUISS', 'Lato'">Expressions and Data Types</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P02/P02-Python-Types-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Variables and Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P03/P03-Python-Branching.html"><b style="font-family: 'LUISS', 'Lato'">Branching</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P04/P04-Python-Functions.html"><b style="font-family: 'LUISS', 'Lato'">Functions</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P05/P05-Python-Iteration.html"><b style="font-family: 'LUISS', 'Lato'">Iteration</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P06/P06-Python-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P07/P07-Python-Lists.html"><b style="font-family: 'LUISS', 'Lato'">Lists</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P08/P08-Python-Dictionaries-Tuples-Sets.html"><b style="font-family: 'LUISS', 'Lato'">Dictionaries, Tuples, and Sets</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P09/P09-Python-Classes.html"><b style="font-family: 'LUISS', 'Lato'">Classes and Objects</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P10/P10-Python-Recursion.html"><b style="font-family: 'LUISS', 'Lato'">Recursion</b></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/introcp/introcp.github.io/blob/2025/src/P11/P11-Python-Files2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+
+<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://introcp.github.io/_sources//src/P11/P11-Python-Files2.ipynb" target="_blank"
+  class="btn btn-sm dropdown-item"
+  title="Launch on JupyterLite"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+ 
+
+<span class="btn__icon-container">
+ 
+   <img alt="JupyterLite logo" src="https://avatars.githubusercontent.com/u/81094398?s=200&v=4">
+ </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+    
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/P11/P11-Python-Files2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.open(window.location.pathname.replace('.html', '.pdf'));"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+    <button onclick="window.open(window.location.pathname.replace('.html', '.slides.html'));"
+    class="btn btn-sm btn-fullscreen-button"
+    title="Slide"
+    data-bs-placement="bottom" data-bs-toggle="tooltip"
+    >
+    
+    <span class="btn__icon-container">
+        <i class="fa-brands fa-slideshare"></i>
+    </span>
+
+    </button>
+
+    <button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Iterating Over a File</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Iterating Over a File</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#final-remarks">Final Remarks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-text-data">Writing Text Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pickle-files">Pickle Files</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-pickles">Writing <code class="docutils literal notranslate"><span class="pre">pickle</span></code>s</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-pickles">Reading <code class="docutils literal notranslate"><span class="pre">pickle</span></code>s</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#compressing-pickle-files">Compressing Pickle Files</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-compressed-pickle-file">Writing a Compressed Pickle File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-compressed-pickle-file">Reading a Compressed Pickle File</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><code class="docutils literal notranslate"><span class="pre">fID.readlines([size])</span></code> reads the file contents in such a way that each line is a list item:</p>
+<ul class="simple">
+<li><p>if the optional parameter <code class="docutils literal notranslate"><span class="pre">size</span></code> is given, whole lines totalling approximately <code class="docutils literal notranslate"><span class="pre">size</span></code> bytes (possibly after rounding up to an internal buffer size) are read</p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">size</span></code> is not given, it goes up until EOF (end-of-file)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/path/to/file/words.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fileData</span> <span class="o">=</span> <span class="n">fID</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">fileData</span><span class="p">)</span>
+<span class="go">[&#39;aa\n&#39;, ...    # first line in fID</span>
+<span class="go">&#39;aah\n&#39;, ...   # second line in fID</span>
+<span class="go">&#39;aahed\n&#39;, ...  # third line in fID</span>
+<span class="go">&#39;aahing\n&#39;, ... # fourth line in fID</span>
+<span class="go">&#39;aahs\n&#39;, ...    # fifth line in fID</span>
+<span class="go">&#39;aal\n&#39;, ...     # sixth line in fID</span>
+<span class="go">... and so on until ...</span>
+<span class="go">&#39;zymurgy\n&#39;]     # last line in fID</span>
+</pre></div>
+</div>
+<section id="iterating-over-a-file">
+<h1>Iterating Over a File<a class="headerlink" href="#iterating-over-a-file" title="Link to this heading">#</a></h1>
+<p>Finally, you can also read a file, line by line, by iterating over its handle with a very simple <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/path/to/file/words.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fID</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>At each loop iteration, a new line from the text file is fetched into <code class="docutils literal notranslate"><span class="pre">line</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop automatically stops when it reaches EOF.</p>
+<div class="alert alert-block alert-info">
+<b>Note</b>: This is (possibly) the most efficient solution, especially when dealing with large text files since:
+<ul>
+    <li>it's fully automatic</li>
+    <li>each line is read, processed and then discarded.</li>
+</ul>
+</div></section>
+<section id="final-remarks">
+<h1>Final Remarks<a class="headerlink" href="#final-remarks" title="Link to this heading">#</a></h1>
+<p>It is customary to close the file after processing:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/path/to/file/words.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># do something with fID</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>If you do not close the file, Python automatically close it for you when the program ends.
+If you feel you may forget to close the file, use the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/path/to/file/words.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fID</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="c1"># do something with fID</span>
+</pre></div>
+</div>
+<p>and <code class="docutils literal notranslate"><span class="pre">fID</span></code> is automatically closed at the end of the <code class="docutils literal notranslate"><span class="pre">with</span></code> block.</p>
+<div class="alert alert-block alert-info">
+<b>Note</b>: The `with` keyword is powerful. It can create context managers for several resources: scheduling threads for parallel processing, reading/writing data, exception handling and others. Yet it's quite an advanced topic.
+</div><p>As you may have noted, every line is treated as a string (regardless of its content).</p>
+<p>In order to parse the content of each line, you have to use</p>
+<ul class="simple">
+<li><p>casting</p></li>
+<li><p>regular expressions</p></li>
+<li><p>string methods.</p></li>
+</ul>
+<p>As the latter is concerned, notable examples include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">s.rstrip([chars])</span></code>: returns a copy of a string <code class="docutils literal notranslate"><span class="pre">s</span></code> with trailing characters removed. <code class="docutils literal notranslate"><span class="pre">[chars]</span></code> specifies the set of characters to be removed. It defaults to whitespaces and escape characters (e.g., <code class="docutils literal notranslate"><span class="pre">\n</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.lstrip([chars])</span></code>: same as above, but it treats leading characters</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.strip([chars])</span></code>: same as above, but it treats both leading and tailing characters</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.split([char])</span></code>: splits a string <code class="docutils literal notranslate"><span class="pre">s</span></code> over a given <code class="docutils literal notranslate"><span class="pre">[char]</span></code>. It defaults to whitespaces.</p></li>
+</ul>
+</section>
+<section id="writing-text-data">
+<h1>Writing Text Data<a class="headerlink" href="#writing-text-data" title="Link to this heading">#</a></h1>
+<p>In order to write data to a text file you first have to open a file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/path/to/file/myFile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">open()</span></code> function takes the following inputs:</p>
+<ol class="arabic simple">
+<li><p>the path on your disk where you file will be saved (i.e., <code class="docutils literal notranslate"><span class="pre">myFile.txt</span></code>);</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> flag, that means that file has to be opened in <em>write mode</em>.
+and returns</p></li>
+<li><p>the file handle (i.e., <code class="docutils literal notranslate"><span class="pre">fID</span></code>).</p></li>
+</ol>
+<div class="alert alert-block alert-warning">
+<b>Warning</b>: If `/path/to/file/myFile.txt` already exists and you open it in write mode, all of its former contents are gone!
+</div><p>Writing some data to a text file is just as easy as doing:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="o">&lt;</span><span class="n">some</span> <span class="n">content</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;This is the first line </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;This is the second line </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="alert alert-block alert-info">
+<b>Note</b>: `write()` argument must be a string. So make sure you cast your data to a string.
+</div>
+<div class="alert alert-block alert-info">
+<b>Note</b>: You have to close the file especially when you open it in write mode to make sure that all your data are flushed to the disk.
+</div><p>You can also add new contents to an already-existing file by opening it in <em>append mode</em> (flag <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/path/to/file/myFile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you open a file in append mode, any call to the <code class="docutils literal notranslate"><span class="pre">write()</span></code> method will write data to the end of the file.
+For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;This is a new line </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;This is another new line </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="pickle-files">
+<h1>Pickle Files<a class="headerlink" href="#pickle-files" title="Link to this heading">#</a></h1>
+<p>Text files are a great option for saving your variables in a human-readable form.
+But what happens when you have:</p>
+<ul class="simple">
+<li><p>very complex lists-of-lists (or list-of-tuples)?</p></li>
+<li><p>very complex dictionaries?</p></li>
+<li><p>instances of a user-defined class?</p></li>
+</ul>
+<p>It can be quite hard to parse these heterogeneous data structures into a text file.
+Not to mention that in order to load them again, you have also to write a quite complex loader.</p>
+<p>In this regard, Pickle files are a great option.</p>
+<p>The <span style="color:red">serialisation</span> process is a way to convert a data structure into a linear form that can be stored on disk or transmitted over a network.</p>
+<p>The Python <code class="docutils literal notranslate"><span class="pre">pickle</span></code> module allows you to serialise objects in a <span style="color:red">binary</span> format:</p>
+<ul class="simple">
+<li><p>✓ the Pickle protocol allows to easily read (<em>unpickle</em>) and write (<em>pickle</em>) Python data objects with 1 line of code</p></li>
+<li><p>✓ you can serialise the vast majority of Python objects, including:</p>
+<ul>
+<li><p>booleans</p></li>
+<li><p>integers, floats, complex numbers</p></li>
+<li><p>strings</p></li>
+<li><p>tuples, lists, dictionaries, sets (if they contain pickable objects)</p></li>
+<li><p>instances of user-defined classes</p></li>
+</ul>
+</li>
+<li><p>✗ Pickle file contents are not human-readable: you can only read a Pickle file thanks to the <code class="docutils literal notranslate"><span class="pre">pickle</span></code> module in Python</p></li>
+<li><p>✗ Pickle files are only Python-related: cannot be used in other programming languages</p></li>
+<li><p>✗ the Pickle protocol changed across Python versions: unpickling a file that was pickled in a different version of Python may not always work properly</p></li>
+</ul>
+<section id="writing-pickles">
+<h2>Writing <code class="docutils literal notranslate"><span class="pre">pickle</span></code>s<a class="headerlink" href="#writing-pickles" title="Link to this heading">#</a></h2>
+<p>In order to write a Pickle file, you must first <code class="docutils literal notranslate"><span class="pre">import</span></code> the <code class="docutils literal notranslate"><span class="pre">pickle</span></code> module:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+</pre></div>
+</div>
+<p>Then, choose the object(s) that you want to save, e.g. <code class="docutils literal notranslate"><span class="pre">Lnew</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Lnew</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
+<span class="gp">... </span>    <span class="n">Lnew</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and then, the magic happens:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">Lnew</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>What’s going on in the last code snippet?</p>
+<ol class="arabic simple">
+<li><p>we <code class="docutils literal notranslate"><span class="pre">open()</span></code> a file named <code class="docutils literal notranslate"><span class="pre">myfile.pkl</span></code> in <code class="docutils literal notranslate"><span class="pre">wb</span></code> mode (<em>write binary</em>) and let <code class="docutils literal notranslate"><span class="pre">outfile</span></code> be its file handle</p></li>
+<li><p>we write <code class="docutils literal notranslate"><span class="pre">Lnew</span></code> to the file</p></li>
+<li><p>we close the file</p></li>
+</ol>
+<p>You can also save multiple objects by “packing” them into a list or tuple, e.g.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile2.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">([</span><span class="n">Lnew</span><span class="p">,</span> <span class="n">L</span><span class="p">],</span> <span class="n">outfile</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="alert alert-block alert-warning">
+<b>Warning</b>: When you read a file with a list/tuple that contains multiple items, you must remember their order!
+</div>
+<div class="alert alert-block alert-info">
+<b>Note</b>: The `wb` flag is mandatory to tell Python to write a (serialised) binary file. Do not confuse `w` with `wb`!
+</div>
+<div class="alert alert-block alert-info">
+<b>Note</b>: The file can be saved also without extension (i.e., `myfile` instead of `myfile.pkl`) and in principle you can also use the extension you prefer (i.e., `myfile.pickle` instead of `myfile.pkl`): Python will still understand that's a Pickle file.
+</div></section>
+<section id="reading-pickles">
+<h2>Reading <code class="docutils literal notranslate"><span class="pre">pickle</span></code>s<a class="headerlink" href="#reading-pickles" title="Link to this heading">#</a></h2>
+<p>In order to read a Pickle file, you must first <code class="docutils literal notranslate"><span class="pre">import</span></code> the <code class="docutils literal notranslate"><span class="pre">pickle</span></code> module:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+</pre></div>
+</div>
+<p>and then, the magic happens:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">infile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>What’s going on in the last code snippet?</p>
+<ol class="arabic simple">
+<li><p>we <code class="docutils literal notranslate"><span class="pre">open()</span></code> a file named <code class="docutils literal notranslate"><span class="pre">myfile.pkl</span></code> in <code class="docutils literal notranslate"><span class="pre">rb</span></code> mode (<em>read binary</em>) and let <code class="docutils literal notranslate"><span class="pre">infile</span></code> be its file handle</p></li>
+<li><p>we read the contents of <code class="docutils literal notranslate"><span class="pre">infile</span></code> into variable <code class="docutils literal notranslate"><span class="pre">X</span></code></p></li>
+<li><p>we close the file</p></li>
+</ol>
+</section>
+</section>
+<section id="compressing-pickle-files">
+<h1>Compressing Pickle Files<a class="headerlink" href="#compressing-pickle-files" title="Link to this heading">#</a></h1>
+<p>If you have to save large data structures, Pickle files may take a lot of space on your hard drive.</p>
+<p>Workaround? <span style="color:red">Compression</span>.</p>
+<p>Compression is the art of encoding (hence, saving) data with fewer bits in order to save disk space.</p>
+<div class="alert alert-block alert-warning">
+<b>Warning</b>: Do not confuse serialisation with compression!
+</div>
+Since there is no free lunch, compression is driven by a trade-off:
+- saves disk space by encoding data with fewer bits
+- the encoding stage can be costly (i.e., in terms of running times)<p>Python in its standard library provides two well-known compression algorithms:</p>
+<ul class="simple">
+<li><p><em>gzip</em>, in the <code class="docutils literal notranslate"><span class="pre">gzip</span></code> module</p></li>
+<li><p><em>bzip2</em>, in the <code class="docutils literal notranslate"><span class="pre">bz2</span></code> module</p></li>
+</ul>
+<p>Again, since there is no free lunch, compression algorithms themselves do have some trade-offs:</p>
+<ul class="simple">
+<li><p><em>bzip2</em> is slower than <em>gzip</em></p></li>
+<li><p><em>gzip</em> yields files with larger size</p></li>
+</ul>
+<p>For the sake of example, let us consider <em>bzip2</em> (although similar interfaces hold for <em>gzip</em>).</p>
+<section id="writing-a-compressed-pickle-file">
+<h2>Writing a Compressed Pickle File<a class="headerlink" href="#writing-a-compressed-pickle-file" title="Link to this heading">#</a></h2>
+<p>In order to write a compressed Pickle file with <em>bzip2</em>, you must <code class="docutils literal notranslate"><span class="pre">import</span></code> both modules:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">bz2</span>
+</pre></div>
+</div>
+<p>Let’s consider a big list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;words.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fileData</span> <span class="o">=</span> <span class="n">fID</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="c1"># fileData is a list with 113783 words</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># we don&#39;t need words.txt anymore</span>
+</pre></div>
+</div>
+<p>Now, let’s save the list with <code class="docutils literal notranslate"><span class="pre">pickle</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fileData</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;words.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Now, let’s save the list with a <code class="docutils literal notranslate"><span class="pre">bz2</span></code>-compressed <code class="docutils literal notranslate"><span class="pre">pickle</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bz2file</span> <span class="o">=</span> <span class="n">bz2</span><span class="o">.</span><span class="n">BZ2File</span><span class="p">(</span><span class="s2">&quot;words.bz2&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fileData</span><span class="p">,</span> <span class="n">bz2file</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bz2file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>What’s going on in the last code snippet?</p>
+<ol class="arabic simple">
+<li><p>from the <code class="docutils literal notranslate"><span class="pre">bz2</span></code> module, we call <code class="docutils literal notranslate"><span class="pre">BZ2File</span></code> to create a file called <code class="docutils literal notranslate"><span class="pre">words.bz2</span></code> in <em>write mode</em> (flag <code class="docutils literal notranslate"><span class="pre">w</span></code>). This yields a file handle named <code class="docutils literal notranslate"><span class="pre">bz2file</span></code>.</p></li>
+<li><p>we use the already-known <code class="docutils literal notranslate"><span class="pre">pickle.dump()</span></code> to save our variable <code class="docutils literal notranslate"><span class="pre">fileData</span></code>. However, instead of passing as argument a file handle obtained via <code class="docutils literal notranslate"><span class="pre">open()</span></code>, we pass the file handle obtained via <code class="docutils literal notranslate"><span class="pre">bz2.BZ2File()</span></code></p></li>
+<li><p>we close the <code class="docutils literal notranslate"><span class="pre">bzip2</span></code> file.</p></li>
+</ol>
+<p>Result?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">words.pkl</span></code> takes 1.2MB (=1200KB) on disk</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">words.bz2</span></code> takes 403KB on disk</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">bz2</span></code> file takes 1/3rd of the space with respect to the original <code class="docutils literal notranslate"><span class="pre">pkl</span></code> file.</p>
+</section>
+<section id="reading-a-compressed-pickle-file">
+<h2>Reading a Compressed Pickle File<a class="headerlink" href="#reading-a-compressed-pickle-file" title="Link to this heading">#</a></h2>
+<p>In order to read a compressed Pickle file with <em>bzip2</em>, you must <code class="docutils literal notranslate"><span class="pre">import</span></code> both modules:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">bz2</span>
+</pre></div>
+</div>
+<p>and then:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bz2file</span> <span class="o">=</span> <span class="n">bz2</span><span class="o">.</span><span class="n">BZ2File</span><span class="p">(</span><span class="s2">&quot;words.bz2&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">bz2file</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bz2file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>What’s going on in the last code snippet?</p>
+<ol class="arabic simple">
+<li><p>from the <code class="docutils literal notranslate"><span class="pre">bz2</span></code> module, we call <code class="docutils literal notranslate"><span class="pre">BZ2File</span></code> to read a file called <code class="docutils literal notranslate"><span class="pre">words.bz2</span></code> in <em>read mode</em> (flag <code class="docutils literal notranslate"><span class="pre">r</span></code>). This yields a file handle named <code class="docutils literal notranslate"><span class="pre">bz2file</span></code>.</p></li>
+<li><p>we use the already-known <code class="docutils literal notranslate"><span class="pre">pickle.load()</span></code> to import the contents of <code class="docutils literal notranslate"><span class="pre">bz2file</span></code> into a variable <code class="docutils literal notranslate"><span class="pre">X</span></code>. However, instead of passing as argument a file handle obtained via <code class="docutils literal notranslate"><span class="pre">open()</span></code>, we pass the file handle obtained via <code class="docutils literal notranslate"><span class="pre">bz2.BZ2File()</span></code></p></li>
+<li><p>we close the <code class="docutils literal notranslate"><span class="pre">bzip2</span></code> file.</p></li>
+</ol>
+</section>
+</section>
+<section id="references">
+<h1>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Guttag, J. V. (2013). <em>Introduction to Computation and Programming using Python (Revised and Expanded Edition)</em>. MIT Press. [Section 4.6]</p></li>
+<li><p>Downey, A. (2015). <em>Think Python</em>. Green Tea Press ed. 2nd. [Sections 9.1, 14.1–14.3, 14.5, 14.7]</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3.9/library/pickle.html">https://docs.python.org/3.9/library/pickle.html</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3.9/library/bz2.html">https://docs.python.org/3.9/library/bz2.html</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3.9/library/gzip.html">https://docs.python.org/3.9/library/gzip.html</a></p></li>
+<li><p><a class="reference external" href="https://raw.githubusercontent.com/AllenDowney/ThinkPython2/master/code/words.txt">https://raw.githubusercontent.com/AllenDowney/ThinkPython2/master/code/words.txt</a></p></li>
+<li><p><a class="reference external" href="https://www.datacamp.com/community/tutorials/pickle-python-tutorial">https://www.datacamp.com/community/tutorials/pickle-python-tutorial</a></p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src/P11"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Iterating Over a File</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#final-remarks">Final Remarks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-text-data">Writing Text Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pickle-files">Pickle Files</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-pickles">Writing <code class="docutils literal notranslate"><span class="pre">pickle</span></code>s</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-pickles">Reading <code class="docutils literal notranslate"><span class="pre">pickle</span></code>s</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#compressing-pickle-files">Compressing Pickle Files</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-compressed-pickle-file">Writing a Compressed Pickle File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-compressed-pickle-file">Reading a Compressed Pickle File</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Emilio Coppa and Alessio Martino
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
