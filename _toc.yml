@@ -22,3 +22,9 @@ parts:
       - file: src/P09/P09-Python-Classes.ipynb
       - file: src/P10/P10-Python-Recursion.ipynb
       - file: src/P11/P11-Python-Files.ipynb
+
+  - caption: Exercises
+    chapters:
+      - file: src/E01/E01-Python-Exercises-Branching.ipynb
+        title: Branching
+
