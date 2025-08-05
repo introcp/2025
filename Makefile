@@ -37,7 +37,7 @@ docker-push:
 
 build-book:
 	rm -rf _build/html || echo "nothing to clean"
-	. ~/.venv/bin/activate; python scripts/gen-notebook-no-solution.py
+	# . ~/.venv/bin/activate; python scripts/gen-notebook-no-solution.py
 	. ~/.venv/bin/activate; jupyter-book build --config _config.jupyterbook.yml .
 	# DEBUG="pw:browser"
 	. ~/.venv/bin/activate; python3 scripts/convert-all-to-slides.py
