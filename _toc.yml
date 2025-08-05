@@ -4,10 +4,10 @@
 format: jb-book
 root: src/index
 parts:
-  - caption: <b style="font-family: 'LUISS', 'Lato'">Introduction</b>
+  - caption: Introduction
     chapters:
       - file: src/A00/A00-Introduction.ipynb
-  - caption: <b style="font-family: 'LUISS', 'Lato'">Python</b>
+  - caption: Python
     chapters:
       - file: src/P00/P00-Python-Getting-Started.ipynb
       - file: src/P01/P01-Python-Expressions-and-Types.ipynb
@@ -23,8 +23,8 @@ parts:
       - file: src/P10/P10-Python-Recursion.ipynb
       - file: src/P11/P11-Python-Files.ipynb
 
-  - caption: <b style="font-family: 'LUISS', 'Lato'">Exercises</b>
+  - caption: Exercises
     chapters:
       - file: src/E01/E01-Python-Exercises-Branching.ipynb
-        title: <b style="font-family: 'LUISS', 'Lato'">Branching</b>
+        title: Branching
 
