@@ -11,6 +11,7 @@ parts:
     chapters:
       - file: src/P00/P00-Python-Getting-Started.ipynb
       - file: src/P01/P01-Python-Expressions-and-Types.ipynb
+      - file: src/E00/E00-Python-Errors.ipynb
       - file: src/P02/P02-Python-Types-Strings.ipynb
       - file: src/P03/P03-Python-Branching.ipynb
       - file: src/P04/P04-Python-Functions.ipynb
