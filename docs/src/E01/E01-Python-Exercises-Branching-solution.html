@@ -505,6 +505,41 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id43">Debug your solution</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-bmi-calculator-with-categories">Exercise: BMI Calculator with Categories</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id44">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id45">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id46">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id47">Debug your solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-rock-paper-scissors-game">Exercise: Rock Paper Scissors Game</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id48">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id49">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id50">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id51">Debug your solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-temperature-converter">Exercise: Temperature Converter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id52">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id53">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id54">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id55">Debug your solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-movie-ticket-price-calculator">Exercise: Movie Ticket Price Calculator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id56">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id57">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id58">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id59">Debug your solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-traffic-light-simulator">Exercise: Traffic Light Simulator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id60">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id61">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id62">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id63">Debug your solution</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -1111,6 +1146,285 @@ document.write(`
 </div>
 </section>
 </section>
+<hr class="docutils" />
+<section id="exercise-bmi-calculator-with-categories">
+<h2>Exercise: BMI Calculator with Categories<a class="headerlink" href="#exercise-bmi-calculator-with-categories" title="Link to this heading">#</a></h2>
+<section id="id44">
+<h3>Exercise Description<a class="headerlink" href="#id44" title="Link to this heading">#</a></h3>
+<p>Calculate the Body Mass Index (BMI) and categorize it according to standard health categories:</p>
+<ul class="simple">
+<li><p>Underweight: BMI &lt; 18.5</p></li>
+<li><p>Normal weight: 18.5 ≤ BMI &lt; 25</p></li>
+<li><p>Overweight: 25 ≤ BMI &lt; 30</p></li>
+<li><p>Obese: BMI ≥ 30</p></li>
+</ul>
+<p>BMI formula: weight (kg) / (height (m))²</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">weight</span> <span class="pre">=</span> <span class="pre">70</span></code> kg and <code class="docutils literal notranslate"><span class="pre">height</span> <span class="pre">=</span> <span class="pre">1.75</span></code> m. Store the BMI category in variable <code class="docutils literal notranslate"><span class="pre">result</span></code>.</p>
+</section>
+<section id="id45">
+<h3>Your solution<a class="headerlink" href="#id45" title="Link to this heading">#</a></h3>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span> <span class="o">=</span> <span class="mi">70</span>  <span class="c1"># kg</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mf">1.75</span>  <span class="c1"># m</span>
+<span class="n">bmi</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mf">18.5</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Underweight&quot;</span>
+<span class="k">elif</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Normal weight&quot;</span>
+<span class="k">elif</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Overweight&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Obese&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id46">
+<h3>Test your solution<a class="headerlink" href="#id46" title="Link to this heading">#</a></h3>
+<div class="cell tag_tests docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="s2">&quot;Normal weight&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id47">
+<h3>Debug your solution<a class="headerlink" href="#id47" title="Link to this heading">#</a></h3>
+<p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;a href=&quot;https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false&quot; target=&quot;_blank&quot; style=&quot;font-size:16px;color:blue;text-decoration:underline;&quot;&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">assert result == </span><span class="se">\&quot;</span><span class="s2">Normal weight</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;assert&quot;</span><span class="p">,</span><span class="s2">&quot;print(&quot;</span><span class="p">,</span><span class="s2">&quot;HTML(&quot;</span><span class="p">,</span><span class="s2">&quot;display(&quot;</span><span class="p">,</span><span class="s2">&quot;import&quot;</span><span class="p">,</span><span class="s2">&quot;from IPython&quot;</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;# No code&quot;</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="exercise-rock-paper-scissors-game">
+<h2>Exercise: Rock Paper Scissors Game<a class="headerlink" href="#exercise-rock-paper-scissors-game" title="Link to this heading">#</a></h2>
+<section id="id48">
+<h3>Exercise Description<a class="headerlink" href="#id48" title="Link to this heading">#</a></h3>
+<p>Implement the logic for a Rock Paper Scissors game. Determine the winner based on the classic rules:</p>
+<ul class="simple">
+<li><p>Rock beats Scissors</p></li>
+<li><p>Scissors beats Paper</p></li>
+<li><p>Paper beats Rock</p></li>
+<li><p>Same choice results in a tie</p></li>
+</ul>
+<p>Use <code class="docutils literal notranslate"><span class="pre">player1</span> <span class="pre">=</span> <span class="pre">&quot;rock&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">player2</span> <span class="pre">=</span> <span class="pre">&quot;scissors&quot;</span></code>. Store the result in variable <code class="docutils literal notranslate"><span class="pre">result</span></code> (“Player 1 wins”, “Player 2 wins”, or “It’s a tie”).</p>
+</section>
+<section id="id49">
+<h3>Your solution<a class="headerlink" href="#id49" title="Link to this heading">#</a></h3>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">player1</span> <span class="o">=</span> <span class="s2">&quot;rock&quot;</span>
+<span class="n">player2</span> <span class="o">=</span> <span class="s2">&quot;scissors&quot;</span>
+<span class="k">if</span> <span class="n">player1</span> <span class="o">==</span> <span class="n">player2</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;It&#39;s a tie&quot;</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">player1</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span> <span class="ow">and</span> <span class="n">player2</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">player1</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span> <span class="ow">and</span> <span class="n">player2</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">player1</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span> <span class="ow">and</span> <span class="n">player2</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Player 1 wins&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Player 2 wins&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id50">
+<h3>Test your solution<a class="headerlink" href="#id50" title="Link to this heading">#</a></h3>
+<div class="cell tag_tests docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="s2">&quot;Player 1 wins&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id51">
+<h3>Debug your solution<a class="headerlink" href="#id51" title="Link to this heading">#</a></h3>
+<p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;a href=&quot;https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false&quot; target=&quot;_blank&quot; style=&quot;font-size:16px;color:blue;text-decoration:underline;&quot;&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">assert result == </span><span class="se">\&quot;</span><span class="s2">Player 1 wins</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;assert&quot;</span><span class="p">,</span><span class="s2">&quot;print(&quot;</span><span class="p">,</span><span class="s2">&quot;HTML(&quot;</span><span class="p">,</span><span class="s2">&quot;display(&quot;</span><span class="p">,</span><span class="s2">&quot;import&quot;</span><span class="p">,</span><span class="s2">&quot;from IPython&quot;</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;# No code&quot;</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="exercise-temperature-converter">
+<h2>Exercise: Temperature Converter<a class="headerlink" href="#exercise-temperature-converter" title="Link to this heading">#</a></h2>
+<section id="id52">
+<h3>Exercise Description<a class="headerlink" href="#id52" title="Link to this heading">#</a></h3>
+<p>Create a temperature converter that converts between Celsius and Fahrenheit based on the conversion type:</p>
+<ul class="simple">
+<li><p>“C to F”: Convert Celsius to Fahrenheit using F = (C × 9/5) + 32</p></li>
+<li><p>“F to C”: Convert Fahrenheit to Celsius using C = (F - 32) × 5/9</p></li>
+</ul>
+<p>Use <code class="docutils literal notranslate"><span class="pre">temperature</span> <span class="pre">=</span> <span class="pre">25.0</span></code> and <code class="docutils literal notranslate"><span class="pre">conversion_type</span> <span class="pre">=</span> <span class="pre">&quot;C</span> <span class="pre">to</span> <span class="pre">F&quot;</span></code>. Store the converted temperature in variable <code class="docutils literal notranslate"><span class="pre">result</span></code>.</p>
+</section>
+<section id="id53">
+<h3>Your solution<a class="headerlink" href="#id53" title="Link to this heading">#</a></h3>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="mf">25.0</span>
+<span class="n">conversion_type</span> <span class="o">=</span> <span class="s2">&quot;C to F&quot;</span>
+<span class="k">if</span> <span class="n">conversion_type</span> <span class="o">==</span> <span class="s2">&quot;C to F&quot;</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">temperature</span> <span class="o">*</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span>
+<span class="k">elif</span> <span class="n">conversion_type</span> <span class="o">==</span> <span class="s2">&quot;F to C&quot;</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">temperature</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id54">
+<h3>Test your solution<a class="headerlink" href="#id54" title="Link to this heading">#</a></h3>
+<div class="cell tag_tests docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="mf">77.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id55">
+<h3>Debug your solution<a class="headerlink" href="#id55" title="Link to this heading">#</a></h3>
+<p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;a href=&quot;https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false&quot; target=&quot;_blank&quot; style=&quot;font-size:16px;color:blue;text-decoration:underline;&quot;&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">assert result == 77.0&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;assert&quot;</span><span class="p">,</span><span class="s2">&quot;print(&quot;</span><span class="p">,</span><span class="s2">&quot;HTML(&quot;</span><span class="p">,</span><span class="s2">&quot;display(&quot;</span><span class="p">,</span><span class="s2">&quot;import&quot;</span><span class="p">,</span><span class="s2">&quot;from IPython&quot;</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;# No code&quot;</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="exercise-movie-ticket-price-calculator">
+<h2>Exercise: Movie Ticket Price Calculator<a class="headerlink" href="#exercise-movie-ticket-price-calculator" title="Link to this heading">#</a></h2>
+<section id="id56">
+<h3>Exercise Description<a class="headerlink" href="#id56" title="Link to this heading">#</a></h3>
+<p>Calculate movie ticket price based on age and day of the week:</p>
+<ul class="simple">
+<li><p>Regular price: $12</p></li>
+<li><p>Child (under 12): $8</p></li>
+<li><p>Senior (65 and over): $10</p></li>
+<li><p>Tuesday discount: 20% off all tickets</p></li>
+<li><p>Weekend surcharge (Saturday/Sunday): $2 extra</p></li>
+</ul>
+<p>Use <code class="docutils literal notranslate"><span class="pre">age</span> <span class="pre">=</span> <span class="pre">25</span></code> and <code class="docutils literal notranslate"><span class="pre">day</span> <span class="pre">=</span> <span class="pre">&quot;Tuesday&quot;</span></code>. Store the ticket price in variable <code class="docutils literal notranslate"><span class="pre">result</span></code>.</p>
+</section>
+<section id="id57">
+<h3>Your solution<a class="headerlink" href="#id57" title="Link to this heading">#</a></h3>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">day</span> <span class="o">=</span> <span class="s2">&quot;Tuesday&quot;</span>
+
+<span class="c1"># Determine base price based on age</span>
+<span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+    <span class="n">base_price</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="k">elif</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">65</span><span class="p">:</span>
+    <span class="n">base_price</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">base_price</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="c1"># Apply day-specific adjustments</span>
+<span class="k">if</span> <span class="n">day</span> <span class="o">==</span> <span class="s2">&quot;Tuesday&quot;</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">base_price</span> <span class="o">*</span> <span class="mf">0.8</span>  <span class="c1"># 20% discount</span>
+<span class="k">elif</span> <span class="n">day</span> <span class="o">==</span> <span class="s2">&quot;Saturday&quot;</span> <span class="ow">or</span> <span class="n">day</span> <span class="o">==</span> <span class="s2">&quot;Sunday&quot;</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">base_price</span> <span class="o">+</span> <span class="mi">2</span>  <span class="c1"># Weekend surcharge</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">base_price</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id58">
+<h3>Test your solution<a class="headerlink" href="#id58" title="Link to this heading">#</a></h3>
+<div class="cell tag_tests docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="mf">9.6</span>  <span class="c1"># $12 * 0.8 = $9.60</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id59">
+<h3>Debug your solution<a class="headerlink" href="#id59" title="Link to this heading">#</a></h3>
+<p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;a href=&quot;https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false&quot; target=&quot;_blank&quot; style=&quot;font-size:16px;color:blue;text-decoration:underline;&quot;&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">assert result == 9.6  # $12 * 0.8 = $9.60&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;assert&quot;</span><span class="p">,</span><span class="s2">&quot;print(&quot;</span><span class="p">,</span><span class="s2">&quot;HTML(&quot;</span><span class="p">,</span><span class="s2">&quot;display(&quot;</span><span class="p">,</span><span class="s2">&quot;import&quot;</span><span class="p">,</span><span class="s2">&quot;from IPython&quot;</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;# No code&quot;</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="exercise-traffic-light-simulator">
+<h2>Exercise: Traffic Light Simulator<a class="headerlink" href="#exercise-traffic-light-simulator" title="Link to this heading">#</a></h2>
+<section id="id60">
+<h3>Exercise Description<a class="headerlink" href="#id60" title="Link to this heading">#</a></h3>
+<p>Simulate a traffic light system that determines the action based on the current light color:</p>
+<ul class="simple">
+<li><p>“red”: “Stop”</p></li>
+<li><p>“yellow”: “Prepare to stop”</p></li>
+<li><p>“green”: “Go”</p></li>
+<li><p>Any other color: “Invalid light color”</p></li>
+</ul>
+<p>Use <code class="docutils literal notranslate"><span class="pre">light_color</span> <span class="pre">=</span> <span class="pre">&quot;green&quot;</span></code> and store the action in variable <code class="docutils literal notranslate"><span class="pre">result</span></code>.</p>
+</section>
+<section id="id61">
+<h3>Your solution<a class="headerlink" href="#id61" title="Link to this heading">#</a></h3>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">light_color</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
+<span class="k">if</span> <span class="n">light_color</span> <span class="o">==</span> <span class="s2">&quot;red&quot;</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Stop&quot;</span>
+<span class="k">elif</span> <span class="n">light_color</span> <span class="o">==</span> <span class="s2">&quot;yellow&quot;</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Prepare to stop&quot;</span>
+<span class="k">elif</span> <span class="n">light_color</span> <span class="o">==</span> <span class="s2">&quot;green&quot;</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Go&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Invalid light color&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id62">
+<h3>Test your solution<a class="headerlink" href="#id62" title="Link to this heading">#</a></h3>
+<div class="cell tag_tests docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="s2">&quot;Go&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id63">
+<h3>Debug your solution<a class="headerlink" href="#id63" title="Link to this heading">#</a></h3>
+<p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;a href=&quot;https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false&quot; target=&quot;_blank&quot; style=&quot;font-size:16px;color:blue;text-decoration:underline;&quot;&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">assert result == </span><span class="se">\&quot;</span><span class="s2">Go</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;assert&quot;</span><span class="p">,</span><span class="s2">&quot;print(&quot;</span><span class="p">,</span><span class="s2">&quot;HTML(&quot;</span><span class="p">,</span><span class="s2">&quot;display(&quot;</span><span class="p">,</span><span class="s2">&quot;import&quot;</span><span class="p">,</span><span class="s2">&quot;from IPython&quot;</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;# No code&quot;</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1240,6 +1554,41 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id41">Your solution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id42">Test your solution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id43">Debug your solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-bmi-calculator-with-categories">Exercise: BMI Calculator with Categories</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id44">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id45">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id46">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id47">Debug your solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-rock-paper-scissors-game">Exercise: Rock Paper Scissors Game</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id48">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id49">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id50">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id51">Debug your solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-temperature-converter">Exercise: Temperature Converter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id52">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id53">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id54">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id55">Debug your solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-movie-ticket-price-calculator">Exercise: Movie Ticket Price Calculator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id56">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id57">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id58">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id59">Debug your solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-traffic-light-simulator">Exercise: Traffic Light Simulator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id60">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id61">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id62">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id63">Debug your solution</a></li>
 </ul>
 </li>
 </ul>
