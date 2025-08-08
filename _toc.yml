@@ -27,4 +27,6 @@ parts:
     chapters:
       - file: src/E01/E01-Python-Exercises-Branching.ipynb
         title: Branching
+      - file: src/E02/E02-Python-Exercises-Functions.ipynb
+        title: Functions
 
