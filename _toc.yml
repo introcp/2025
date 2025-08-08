@@ -29,6 +29,6 @@ parts:
         title: Branching
       - file: src/E02/E02-Python-Exercises-Functions.ipynb
         title: Functions
-      - file: src/E04/E04-Python-Exercises-Iteration.ipynb
+      - file: src/E05/E05-Python-Exercises-Iteration.ipynb
         title: Iteration
 
