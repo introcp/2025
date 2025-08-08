@@ -5,7 +5,7 @@
 <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<title>E02-Python-Exercises-Iteration slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>E05-Python-Iteration-Exercises-student slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
@@ -7435,32 +7435,2271 @@ main {
 <main>
 <div class="reveal">
 <div class="slides"><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7ba101a9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div align="center">
-<h1 id="Exercises:-Iteration"><b style="font-family: 'LUISS', 'Lato'">Exercises: Iteration</b><a class="anchor-link" href="#Exercises:-Iteration">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
-<h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
-<img alt="No description has been provided for this image" src="https://introcp.github.io/dist/img/cliente-luiss.png"/>
-<p><br/><br/><br/></p>
+<h1 id="Python:-exercises-on-iteration">Python: exercises on iteration<a class="anchor-link" href="#Python:-exercises-on-iteration">¶</a></h1><p>This notebook was generated in <strong>student</strong> mode.</p>
 </div>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e7d66715">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">¶</a></h2><ul>
-<li><a href="E04-Python-Iteration-Exercises-student.ipynb">Notebook with exercises on iteration (no hints)</a></li>
-<li><a href="E04-Python-Iteration-Exercises-pseudocode.ipynb">Notebook with exercises on iteration (with pseudocode)</a></li>
-<li><a href="E04-Python-Iteration-Exercises-solution.ipynb">Notebook with exercises on iteration (with solutions)</a></li>
-</ul>
+<hr/>
+<h2 id="Exercise:-Print-Numbers-from-1-to-N">Exercise: Print Numbers from 1 to N<a class="anchor-link" href="#Exercise:-Print-Numbers-from-1-to-N">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3a8b944b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f4a1091e50ae490eb3e7b33851dc25c6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function that prints all numbers from 1 to N using a for loop and range.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=46ea58ac">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=33f016eafc5142d0b3b4d1a9619cafce">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_numbers</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=295715cd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=e10649fff0da44a7b78aacf6c4e3f777">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test case 1: Test with small number</span>
+<span class="n">print_numbers</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f9991c20">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=85839567">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2"># Test case 1: Test with small number</span><span class="se">\n</span><span class="s2">print_numbers(5)"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0986e2ac">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Sum-of-First-N-Natural-Numbers">Exercise: Sum of First N Natural Numbers<a class="anchor-link" href="#Exercise:-Sum-of-First-N-Natural-Numbers">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3cc2ee0f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=24760a1dfbf241f99501c9adca1d81f0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function to calculate the sum of the first N natural numbers (1 + 2 + 3 + ... + N) using a while loop.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0f3e2a49">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=499b0f5825e54c7abefc13143ad89293">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_natural_numbers</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=67dd7d91">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=954d778007c8497fba25f4acc8fadb4c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test case 2: Test with another number</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">sum_natural_numbers</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">expected</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>  <span class="c1"># 6</span>
+<span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"Expected </span><span class="si">{</span><span class="n">expected</span><span class="si">}</span><span class="s2">, got </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"✓ sum_natural_numbers(3) = </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=54e5b171">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=a11fc66361de4bd8acea8d67235bf736">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test case: Example from solution</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">sum_natural_numbers</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Sum of first 5 natural numbers: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># 15</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7a4697f3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e6f5af87">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2"># Test case 2: Test with another number</span><span class="se">\n</span><span class="s2">result = sum_natural_numbers(3)</span><span class="se">\n</span><span class="s2">expected = 1 + 2 + 3  # 6</span><span class="se">\n</span><span class="s2">assert result == expected, f</span><span class="se">\"</span><span class="s2">Expected </span><span class="si">{expected}</span><span class="s2">, got </span><span class="si">{result}</span><span class="se">\"\n</span><span class="s2">print(f</span><span class="se">\"</span><span class="s2">✓ sum_natural_numbers(3) = </span><span class="si">{result}</span><span class="se">\"</span><span class="s2">)</span><span class="se">\n\n</span><span class="s2"># Test case: Example from solution</span><span class="se">\n</span><span class="s2">result = sum_natural_numbers(5)</span><span class="se">\n</span><span class="s2">print(f</span><span class="se">\"</span><span class="s2">Sum of first 5 natural numbers: </span><span class="si">{result}</span><span class="se">\"</span><span class="s2">)  # 15"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f675390e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Print-Even-Numbers-from-2-to-20">Exercise: Print Even Numbers from 2 to 20<a class="anchor-link" href="#Exercise:-Print-Even-Numbers-from-2-to-20">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6a02f76e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c6d8b8009f4242209bc3f6a0740a7178">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function that prints all even numbers between 2 and 20 using a for loop and range.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3afb6fc8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=25c8cacc94a74fd89c4fa4ed13ee00bc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_even_numbers</span><span class="p">():</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=09c23544">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=625482d5513f4294bc666e071613a578">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test case 2: Verify range and step</span>
+<span class="c1"># Expected: prints 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 (each on new line)</span>
+<span class="n">print_even_numbers</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aefcabbc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=efbef4cf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2"># Test case 2: Verify range and step</span><span class="se">\n</span><span class="s2"># Expected: prints 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 (each on new line)</span><span class="se">\n</span><span class="s2">print_even_numbers()"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=21380e52">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Count-Down-from-N-to-1-(If-Even)">Exercise: Count Down from N to 1 (If Even)<a class="anchor-link" href="#Exercise:-Count-Down-from-N-to-1-(If-Even)">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=27400c66">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=373b70aa8c6e4f1491345afdba9c6594">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function to print numbers from N to 1 using a while loop, but only if N is even.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=25f2537b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=64975372b31b43958b9d4ae8d0833df1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">countdown_if_even</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f4a855c9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=6685a07f37944226bb7b8fdad4a36fd0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test case 2: Test with odd number (should print nothing)</span>
+<span class="n">countdown_if_even</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=49c6c992">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=b540eb01a0a44389addbd8f4b6f48bf5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test case 2 (assert)</span>
+<span class="n">countdown_if_even</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>  <span class="c1"># Prints 6, 5, 4, 3, 2, 1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d0f1f850">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b980136c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2"># Test case 2: Test with odd number (should print nothing)</span><span class="se">\n</span><span class="s2">countdown_if_even(3)</span><span class="se">\n\n</span><span class="s2"># Test case 2 (assert)</span><span class="se">\n</span><span class="s2">countdown_if_even(6)  # Prints 6, 5, 4, 3, 2, 1"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1985796c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Multiplication-Table-of-3">Exercise: Multiplication Table of 3<a class="anchor-link" href="#Exercise:-Multiplication-Table-of-3">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=61c07c96">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=56ccbc7987784eeabbe59e6a279eecc4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function that prints the multiplication table of 3 (from 3x1 to 3x10) using a for loop.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=da548086">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=8814bb2e6db5411a871bcd2523ff9c4e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">multiplication_table_3</span><span class="p">():</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ec54ba4b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=6dfc3ccfc64b40ffaa23025d73feea9d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test case 2: Verify format</span>
+<span class="c1"># Expected: prints 3 x 1 = 3, 3 x 2 = 6, ..., 3 x 10 = 30</span>
+<span class="n">multiplication_table_3</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=220f2982">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=66a5a977">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2"># Test case 2: Verify format</span><span class="se">\n</span><span class="s2"># Expected: prints 3 x 1 = 3, 3 x 2 = 6, ..., 3 x 10 = 30</span><span class="se">\n</span><span class="s2">multiplication_table_3()"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=609d9961">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Sum-of-First-N-Even-Numbers">Exercise: Sum of First N Even Numbers<a class="anchor-link" href="#Exercise:-Sum-of-First-N-Even-Numbers">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2fc39531">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e51133084df348f7922c219f3df967b2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function to calculate the sum of the first N even numbers (2 + 4 + 6 + ...) using a while loop.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=442eb23e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=c7b8427887e14711998aa8805bde817e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_first_n_even</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9e8fc523">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=5a9c141a7a034e2eb5c440006df2505f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test case 2: Test with another number</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">sum_first_n_even</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">expected</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">+</span> <span class="mi">10</span>  <span class="c1"># 30</span>
+<span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"Expected </span><span class="si">{</span><span class="n">expected</span><span class="si">}</span><span class="s2">, got </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"✓ sum_first_n_even(5) = </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4a225337">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8d1c3b39">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2"># Test case 2: Test with another number</span><span class="se">\n</span><span class="s2">result = sum_first_n_even(5)</span><span class="se">\n</span><span class="s2">expected = 2 + 4 + 6 + 8 + 10  # 30</span><span class="se">\n</span><span class="s2">assert result == expected, f</span><span class="se">\"</span><span class="s2">Expected </span><span class="si">{expected}</span><span class="s2">, got </span><span class="si">{result}</span><span class="se">\"\n</span><span class="s2">print(f</span><span class="se">\"</span><span class="s2">✓ sum_first_n_even(5) = </span><span class="si">{result}</span><span class="se">\"</span><span class="s2">)"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ee47c315">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Numbers-Divisible-by-5-(1-to-50)">Exercise: Numbers Divisible by 5 (1 to 50)<a class="anchor-link" href="#Exercise:-Numbers-Divisible-by-5-(1-to-50)">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cf264882">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cc5e912cfe1b4e34b87f6836997832de">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function that prints all numbers divisible by 5 between 1 and 50 using a for loop and range.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2a868838">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=83f5b8a78d2a43fdab5450cf7ac2e086">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_divisible_by_5</span><span class="p">():</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a5341cc4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=3d4243f543ba443cadaf052a183e96ca">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test case 2: Verify range</span>
+<span class="c1"># Expected: prints 5, 10, 15, 20, 25, 30, 35, 40, 45, 50</span>
+<span class="n">print_divisible_by_5</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4d531125">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ea87e8db">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2"># Test case 2: Verify range</span><span class="se">\n</span><span class="s2"># Expected: prints 5, 10, 15, 20, 25, 30, 35, 40, 45, 50</span><span class="se">\n</span><span class="s2">print_divisible_by_5()"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=18fefc5a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Factorial-of-5">Exercise: Factorial of 5<a class="anchor-link" href="#Exercise:-Factorial-of-5">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3690ba2d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ba7dc31cf6c04915856f113aaba17fa6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function to find the factorial of 5 using a while loop.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3b9c0ade">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=84624709e5514e64965e32833d22ad6f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">factorial_5</span><span class="p">():</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=05b8a31a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=d55bb8969e0d4162a9156a332ee58352">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test case 2: Verify result</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">factorial_5</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">120</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"Expected 120, got </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"✓ Factorial of 5 is </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9f9f4555">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=685f82fb">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2"># Test case 2: Verify result</span><span class="se">\n</span><span class="s2">result = factorial_5()</span><span class="se">\n</span><span class="s2">assert result == 120, f</span><span class="se">\"</span><span class="s2">Expected 120, got </span><span class="si">{result}</span><span class="se">\"\n</span><span class="s2">print(f</span><span class="se">\"</span><span class="s2">✓ Factorial of 5 is </span><span class="si">{result}</span><span class="se">\"</span><span class="s2">)"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c20422bf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Sum-of-Odd-Numbers-(1-to-20)">Exercise: Sum of Odd Numbers (1 to 20)<a class="anchor-link" href="#Exercise:-Sum-of-Odd-Numbers-(1-to-20)">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=94c64490">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5ecb37368774430b847cfeb53f0104af">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function to calculate the sum of all odd numbers between 1 and 20 using a for loop.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7bd60cd6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=40d7e46ec8c74ba78478993415bbdf02">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_odd_numbers</span><span class="p">():</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1f5e5875">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=80996f7c02884a448b91bd24df781465">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test case 2: Verify result</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">sum_odd_numbers</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">100</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"Expected 100, got </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"✓ Sum of odd numbers 1-20 is </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a4072d50">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=040a57eb4a6b453e8c0da8d14eef62c2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test case: Example from solution</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">sum_odd_numbers</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Sum of odd numbers 1-20: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># 100</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=255c4725">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=89d91815">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2"># Test case 2: Verify result</span><span class="se">\n</span><span class="s2">result = sum_odd_numbers()</span><span class="se">\n</span><span class="s2">assert result == 100, f</span><span class="se">\"</span><span class="s2">Expected 100, got </span><span class="si">{result}</span><span class="se">\"\n</span><span class="s2">print(f</span><span class="se">\"</span><span class="s2">✓ Sum of odd numbers 1-20 is </span><span class="si">{result}</span><span class="se">\"</span><span class="s2">)</span><span class="se">\n\n</span><span class="s2"># Test case: Example from solution</span><span class="se">\n</span><span class="s2">result = sum_odd_numbers()</span><span class="se">\n</span><span class="s2">print(f</span><span class="se">\"</span><span class="s2">Sum of odd numbers 1-20: </span><span class="si">{result}</span><span class="se">\"</span><span class="s2">)  # 100"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=949aad35">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Numbers-Divisible-by-K-(1-to-N)">Exercise: Numbers Divisible by K (1 to N)<a class="anchor-link" href="#Exercise:-Numbers-Divisible-by-K-(1-to-N)">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=83e5be29">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7f8061b267ac49409e0b5f3a8909745e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function to print numbers between 1 and N that are divisible by K using a for loop and range.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4e539896">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=72f0583e47954552876e95c9e9a86b97">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_divisible_by_k</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=77d8fbcc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=b2194660c7034643a84125824b9d485f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test case 2: Test with n=20, k=4</span>
+<span class="c1"># Expected: prints 4, 8, 12, 16, 20</span>
+<span class="n">print_divisible_by_k</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6cc95c3e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=6ff310986d4e479b9a5286a542f13ed7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test case: Example from solution</span>
+<span class="n">print_divisible_by_k</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Prints 3, 6, 9, 12, 15, 18</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=925e7c19">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3acd21b7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2"># Test case 2: Test with n=20, k=4</span><span class="se">\n</span><span class="s2"># Expected: prints 4, 8, 12, 16, 20</span><span class="se">\n</span><span class="s2">print_divisible_by_k(20, 4)</span><span class="se">\n\n</span><span class="s2"># Test case: Example from solution</span><span class="se">\n</span><span class="s2">print_divisible_by_k(20, 3)  # Prints 3, 6, 9, 12, 15, 18"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6d8786fd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Count-Digits-in-a-Number">Exercise: Count Digits in a Number<a class="anchor-link" href="#Exercise:-Count-Digits-in-a-Number">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bde18bfd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9d210284">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function that counts how many digits are in a positive integer.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8a7dd109">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=183164cd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">count_digits</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return the number of digits in positive integer num."""</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aff4e001">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=e9eb01af">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">count_digits</span><span class="p">(</span><span class="mi">123456</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span>
+<span class="k">assert</span> <span class="n">count_digits</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="k">assert</span> <span class="n">count_digits</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"✓ count_digits tests passed"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=109c820f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c6951712">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">assert count_digits(123456) == 6</span><span class="se">\n</span><span class="s2">assert count_digits(7) == 1</span><span class="se">\n</span><span class="s2">assert count_digits(10) == 2</span><span class="se">\n</span><span class="s2">print(</span><span class="se">\"</span><span class="s2">✓ count_digits tests passed</span><span class="se">\"</span><span class="s2">)"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8cd25fdd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Cubes-from-1-to-5">Exercise: Cubes from 1 to 5<a class="anchor-link" href="#Exercise:-Cubes-from-1-to-5">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=85263dd5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=997e1068">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function that returns a list with the cubes of numbers from 1 to 5 using a for loop.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7ffe0582">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=9075fe4e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cubes_1_to_5</span><span class="p">():</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d94cf665">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=002baed9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">cubes_1_to_5</span><span class="p">()</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">125</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"✓ cubes_1_to_5 tests passed"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3ed922ff">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6321c919">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">assert cubes_1_to_5() == [1, 8, 27, 64, 125]</span><span class="se">\n</span><span class="s2">print(</span><span class="se">\"</span><span class="s2">✓ cubes_1_to_5 tests passed</span><span class="se">\"</span><span class="s2">)"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=64b9e737">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Product-of-Numbers-from-1-to-N">Exercise: Product of Numbers from 1 to N<a class="anchor-link" href="#Exercise:-Product-of-Numbers-from-1-to-N">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f4ab80af">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=32223414">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function that returns the product of numbers from 1 to N using a for loop.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c3294b94">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=b17d4986">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">product_1_to_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3a4686ab">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=da5001ff">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">product_1_to_n</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="k">assert</span> <span class="n">product_1_to_n</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span>
+<span class="k">assert</span> <span class="n">product_1_to_n</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="mi">120</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"✓ product_1_to_n tests passed"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=15c017c6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d2935aac">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">assert product_1_to_n(1) == 1</span><span class="se">\n</span><span class="s2">assert product_1_to_n(3) == 6</span><span class="se">\n</span><span class="s2">assert product_1_to_n(5) == 120</span><span class="se">\n</span><span class="s2">print(</span><span class="se">\"</span><span class="s2">✓ product_1_to_n tests passed</span><span class="se">\"</span><span class="s2">)"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c368d091">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Odd-Numbers-from-1-to-15">Exercise: Odd Numbers from 1 to 15<a class="anchor-link" href="#Exercise:-Odd-Numbers-from-1-to-15">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b98d13f0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=02f8da69">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function that returns all odd numbers from 1 to 15 using a while loop.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=da30df75">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=eb98e34f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">odd_1_to_15</span><span class="p">():</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ac7d0ffc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=5ad20c55">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">odd_1_to_15</span><span class="p">()</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"✓ odd_1_to_15 tests passed"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b7a23e16">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=dac43dc3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">assert odd_1_to_15() == [1, 3, 5, 7, 9, 11, 13, 15]</span><span class="se">\n</span><span class="s2">print(</span><span class="se">\"</span><span class="s2">✓ odd_1_to_15 tests passed</span><span class="se">\"</span><span class="s2">)"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=12b50b9e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Print-Numbers-from-5-to-1">Exercise: Print Numbers from 5 to 1<a class="anchor-link" href="#Exercise:-Print-Numbers-from-5-to-1">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ede887a7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=770f3519">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function that returns numbers from 5 to 1 using a for loop with range.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3ab9896e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=5cbd35d8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">countdown_5_to_1</span><span class="p">():</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b6ab67b2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=4d9a2950">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">countdown_5_to_1</span><span class="p">()</span> <span class="o">==</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"✓ countdown_5_to_1 tests passed"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=13c77f0b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fb1f92c8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">assert countdown_5_to_1() == [5, 4, 3, 2, 1]</span><span class="se">\n</span><span class="s2">print(</span><span class="se">\"</span><span class="s2">✓ countdown_5_to_1 tests passed</span><span class="se">\"</span><span class="s2">)"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=029de4cd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Sum-of-the-First-7-Odd-Numbers">Exercise: Sum of the First 7 Odd Numbers<a class="anchor-link" href="#Exercise:-Sum-of-the-First-7-Odd-Numbers">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=222e190f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=50969e37">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function to find the sum of the first 7 odd numbers using a while loop.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3f167cb4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=232c3f98">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_first_7_odds</span><span class="p">():</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=29c614e4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=61e68488">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">sum_first_7_odds</span><span class="p">()</span> <span class="o">==</span> <span class="mi">49</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"✓ sum_first_7_odds tests passed"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4b0e0d56">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=024ea9ee">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">assert sum_first_7_odds() == 49</span><span class="se">\n</span><span class="s2">print(</span><span class="se">\"</span><span class="s2">✓ sum_first_7_odds tests passed</span><span class="se">\"</span><span class="s2">)"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2547b831">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Repeat-Until-%22stop%22">Exercise: Repeat Until "stop"<a class="anchor-link" href="#Exercise:-Repeat-Until-%22stop%22">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=50c6f4f6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=84f2d2c2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function that, given a sequence of strings, counts how many entries occur until the string "stop" appears.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6fc7c538">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=e8e61655">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">until_stop_count</span><span class="p">(</span><span class="n">inputs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return the number of entries until "stop" appears (case-sensitive)."""</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=715bcb4b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=40e4a602">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">until_stop_count</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"stop"</span><span class="p">,</span> <span class="s2">"x"</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="k">assert</span> <span class="n">until_stop_count</span><span class="p">([</span><span class="s2">"stop"</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="n">until_stop_count</span><span class="p">([</span><span class="s2">"hello"</span><span class="p">,</span> <span class="s2">"world"</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"✓ until_stop_count tests passed"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b6030e38">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f70865af">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">assert until_stop_count([</span><span class="se">\"</span><span class="s2">a</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">b</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">stop</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">x</span><span class="se">\"</span><span class="s2">]) == 2</span><span class="se">\n</span><span class="s2">assert until_stop_count([</span><span class="se">\"</span><span class="s2">stop</span><span class="se">\"</span><span class="s2">]) == 0</span><span class="se">\n</span><span class="s2">assert until_stop_count([</span><span class="se">\"</span><span class="s2">hello</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">world</span><span class="se">\"</span><span class="s2">]) == 2</span><span class="se">\n</span><span class="s2">print(</span><span class="se">\"</span><span class="s2">✓ until_stop_count tests passed</span><span class="se">\"</span><span class="s2">)"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2061d24f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Repeat-String-as-Many-Times-as-Its-Length">Exercise: Repeat String as Many Times as Its Length<a class="anchor-link" href="#Exercise:-Repeat-String-as-Many-Times-as-Its-Length">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=10fe4687">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fed788d0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function that takes a string and returns a list with the string repeated as many times as its length.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9abadd9f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=4bcdf081">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">repeat_string_len_times</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8e049886">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=a31fae79">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">repeat_string_len_times</span><span class="p">(</span><span class="s2">"abc"</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"abc"</span><span class="p">,</span> <span class="s2">"abc"</span><span class="p">,</span> <span class="s2">"abc"</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">repeat_string_len_times</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span> <span class="o">==</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"✓ repeat_string_len_times tests passed"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cf21b073">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d82088d4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">assert repeat_string_len_times(</span><span class="se">\"</span><span class="s2">abc</span><span class="se">\"</span><span class="s2">) == [</span><span class="se">\"</span><span class="s2">abc</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">abc</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">abc</span><span class="se">\"</span><span class="s2">]</span><span class="se">\n</span><span class="s2">assert repeat_string_len_times(</span><span class="se">\"\"</span><span class="s2">) == []</span><span class="se">\n</span><span class="s2">print(</span><span class="se">\"</span><span class="s2">✓ repeat_string_len_times tests passed</span><span class="se">\"</span><span class="s2">)"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bd369402">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Exercise:-Ask-for-a-Password">Exercise: Ask for a Password<a class="anchor-link" href="#Exercise:-Ask-for-a-Password">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f9d8cb15">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Exercise-Description">Exercise Description<a class="anchor-link" href="#Exercise-Description">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=47301c49">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput celltag_description" data-mime-type="text/markdown">
+<p>Write a function that, given a sequence of password attempts, returns the number of attempts needed to enter the correct password ("password123"). Return -1 if never entered.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=99cb1cf4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Your-solution">Your solution<a class="anchor-link" href="#Your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student_solution" id="cell-id=53f51cfb">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">password_attempts</span><span class="p">(</span><span class="n">attempts</span><span class="p">,</span> <span class="n">correct</span><span class="o">=</span><span class="s2">"password123"</span><span class="p">):</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=24750d6d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Test-your-solution">Test your solution<a class="anchor-link" href="#Test-your-solution">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_tests" id="cell-id=4be5816c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">password_attempts</span><span class="p">([</span><span class="s2">"x"</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">,</span> <span class="s2">"password123"</span><span class="p">])</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="k">assert</span> <span class="n">password_attempts</span><span class="p">([</span><span class="s2">"password123"</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="k">assert</span> <span class="n">password_attempts</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">])</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"✓ password_attempts tests passed"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=00efe1aa">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Debug-your-solution">Debug your solution<a class="anchor-link" href="#Debug-your-solution">¶</a></h4><p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=60d925d7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;a href="https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;"&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">assert password_attempts([</span><span class="se">\"</span><span class="s2">x</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">y</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">password123</span><span class="se">\"</span><span class="s2">]) == 3</span><span class="se">\n</span><span class="s2">assert password_attempts([</span><span class="se">\"</span><span class="s2">password123</span><span class="se">\"</span><span class="s2">]) == 1</span><span class="se">\n</span><span class="s2">assert password_attempts([</span><span class="se">\"</span><span class="s2">a</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">b</span><span class="se">\"</span><span class="s2">]) == -1</span><span class="se">\n</span><span class="s2">print(</span><span class="se">\"</span><span class="s2">✓ password_attempts tests passed</span><span class="se">\"</span><span class="s2">)"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"assert"</span><span class="p">,</span><span class="s2">"print("</span><span class="p">,</span><span class="s2">"HTML("</span><span class="p">,</span><span class="s2">"display("</span><span class="p">,</span><span class="s2">"import"</span><span class="p">,</span><span class="s2">"from IPython"</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">"="</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">"# No code"</span><span class="p">)))))</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

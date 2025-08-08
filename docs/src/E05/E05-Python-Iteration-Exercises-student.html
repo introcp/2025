@@ -58,7 +58,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'src/E04/E04-Python-Iteration-Exercises-pseudocode';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/E05/E05-Python-Iteration-Exercises-student';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -214,6 +214,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../E01/E01-Python-Exercises-Branching.html">Branching</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../E02/E02-Python-Exercises-Functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E05-Python-Exercises-Iteration.html">Iteration</a></li>
 </ul>
 
     </div>
@@ -268,7 +269,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/introcp/introcp.github.io/blob/2025/src/E04/E04-Python-Iteration-Exercises-pseudocode.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/introcp/introcp.github.io/blob/2025/src/E05/E05-Python-Iteration-Exercises-student.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -283,7 +284,7 @@
 </a>
 </li>
 
-<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://introcp.github.io/_sources//src/E04/E04-Python-Iteration-Exercises-pseudocode.ipynb" target="_blank"
+<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://introcp.github.io/_sources//src/E05/E05-Python-Iteration-Exercises-student.ipynb" target="_blank"
   class="btn btn-sm dropdown-item"
   title="Launch on JupyterLite"
   data-bs-placement="left" data-bs-toggle="tooltip"
@@ -315,7 +316,7 @@
       
       
       
-      <li><a href="../../_sources/src/E04/E04-Python-Iteration-Exercises-pseudocode.ipynb" target="_blank"
+      <li><a href="../../_sources/src/E05/E05-Python-Iteration-Exercises-student.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -573,7 +574,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python-exercises-on-iteration">
 <h1>Python: exercises on iteration<a class="headerlink" href="#python-exercises-on-iteration" title="Link to this heading">#</a></h1>
-<p>This notebook was generated in <strong>pseudocode</strong> mode.</p>
+<p>This notebook was generated in <strong>student</strong> mode.</p>
 <hr class="docutils" />
 <section id="exercise-print-numbers-from-1-to-n">
 <h2>Exercise: Print Numbers from 1 to N<a class="headerlink" href="#exercise-print-numbers-from-1-to-n" title="Link to this heading">#</a></h2>
@@ -586,16 +587,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_numbers</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="c1"># Step 1: Set up a for loop to iterate from 1 to n (inclusive)</span>
-    <span class="c1"># Step 2: For each number in the range, print it</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-    <span class="c1"># Step 2: For each number in the range, print it</span>
-                                                    <span class="o">^</span>
-<span class="ne">SyntaxError</span>: incomplete input
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -621,6 +614,8 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><a href="https://pythontutor.com/visualize.html#code=%23%20Test%20case%201%3A%20Test%20with%20small%20number%0Aprint_numbers%285%29%0A%0A%23%20Test%20case%201%3A%20Test%20with%20small%20number%0Aprint_numbers%285%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&py=3&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;">🔗 Visualize YOUR solution in Python Tutor</a></div></div>
 </div>
 </section>
 </section>
@@ -636,11 +631,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_natural_numbers</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="c1"># Step 1: Initialize sum variable to 0 and counter to 1</span>
-    <span class="c1"># Step 2: Set up while loop that continues while counter &lt;= n</span>
-    <span class="c1"># Step 3: Add current counter value to sum</span>
-    <span class="c1"># Step 4: Increment counter by 1</span>
-    <span class="c1"># Step 5: Return the final sum</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -655,6 +647,19 @@ document.write(`
 <span class="n">expected</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>  <span class="c1"># 6</span>
 <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="si">{</span><span class="n">expected</span><span class="si">}</span><span class="s2">, got </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✓ sum_natural_numbers(3) = </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">result</span> <span class="o">=</span> <span class="n">sum_natural_numbers</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">expected</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>  <span class="c1"># 6</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="si">{</span><span class="n">expected</span><span class="si">}</span><span class="s2">, got </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✓ sum_natural_numbers(3) = </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="ne">AssertionError</span>: Expected 6, got None
 </pre></div>
 </div>
 </div>
@@ -696,8 +701,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_even_numbers</span><span class="p">():</span>
-    <span class="c1"># Step 1: Set up a for loop with start=2, stop=21, step=2</span>
-    <span class="c1"># Step 2: For each even number in the range, print it</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -739,11 +744,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">countdown_if_even</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="c1"># Step 1: Check if n is even using modulo operator</span>
-    <span class="c1"># Step 2: If n is even, set up while loop that continues while n &gt; 0</span>
-    <span class="c1"># Step 3: Print current n value</span>
-    <span class="c1"># Step 4: Decrement n by 1</span>
-    <span class="c1"># Step 5: If n is odd, do nothing</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -795,9 +797,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">multiplication_table_3</span><span class="p">():</span>
-    <span class="c1"># Step 1: Set up a for loop to iterate from 1 to 10</span>
-    <span class="c1"># Step 2: For each multiplier, calculate 3 * multiplier</span>
-    <span class="c1"># Step 3: Print the multiplication equation and result</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -839,12 +840,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_first_n_even</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="c1"># Step 1: Initialize sum to 0, current even number to 2, and count to 0</span>
-    <span class="c1"># Step 2: Set up while loop that continues while count &lt; n</span>
-    <span class="c1"># Step 3: Add current even number to sum</span>
-    <span class="c1"># Step 4: Move to next even number (add 2)</span>
-    <span class="c1"># Step 5: Increment count</span>
-    <span class="c1"># Step 6: Return the final sum</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -888,8 +885,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_divisible_by_5</span><span class="p">():</span>
-    <span class="c1"># Step 1: Set up a for loop with start=5, stop=51, step=5</span>
-    <span class="c1"># Step 2: For each number divisible by 5, print it</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -931,11 +928,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">factorial_5</span><span class="p">():</span>
-    <span class="c1"># Step 1: Initialize factorial to 1 and counter to 5</span>
-    <span class="c1"># Step 2: Set up while loop that continues while counter &gt; 0</span>
-    <span class="c1"># Step 3: Multiply factorial by current counter value</span>
-    <span class="c1"># Step 4: Decrement counter by 1</span>
-    <span class="c1"># Step 5: Return the final factorial</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -978,10 +972,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_odd_numbers</span><span class="p">():</span>
-    <span class="c1"># Step 1: Initialize sum to 0</span>
-    <span class="c1"># Step 2: Set up for loop with start=1, stop=21, step=2 (odd numbers)</span>
-    <span class="c1"># Step 3: Add each odd number to sum</span>
-    <span class="c1"># Step 4: Return the final sum</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1036,8 +1028,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_divisible_by_k</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-    <span class="c1"># Step 1: Set up for loop with start=k, stop=n+1, step=k</span>
-    <span class="c1"># Step 2: For each number divisible by k, print it</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1090,9 +1082,9 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">count_digits</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="c1"># Step 1: Initialize a counter to 0</span>
-    <span class="c1"># Step 2: While num &gt; 0, do integer division by 10 and increment counter</span>
-    <span class="c1"># Step 3: Return the counter</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the number of digits in positive integer num.&quot;&quot;&quot;</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1135,9 +1127,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cubes_1_to_5</span><span class="p">():</span>
-    <span class="c1"># Step 1: Initialize an empty list</span>
-    <span class="c1"># Step 2: For i from 1 to 5 inclusive, append i**3 to the list</span>
-    <span class="c1"># Step 3: Return the list</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1178,9 +1169,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">product_1_to_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="c1"># Step 1: Initialize product to 1</span>
-    <span class="c1"># Step 2: For i from 1 to n inclusive, multiply product by i</span>
-    <span class="c1"># Step 3: Return product</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1223,9 +1213,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">odd_1_to_15</span><span class="p">():</span>
-    <span class="c1"># Step 1: Initialize i to 1 and an empty list</span>
-    <span class="c1"># Step 2: While i &lt;= 15, append i then increment by 2</span>
-    <span class="c1"># Step 3: Return the list</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1266,9 +1255,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">countdown_5_to_1</span><span class="p">():</span>
-    <span class="c1"># Step 1: Initialize an empty list</span>
-    <span class="c1"># Step 2: Use range from 5 down to 1 inclusive and append to list</span>
-    <span class="c1"># Step 3: Return the list</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1309,9 +1297,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_first_7_odds</span><span class="p">():</span>
-    <span class="c1"># Step 1: Initialize i=1, count=0, total=0</span>
-    <span class="c1"># Step 2: While count &lt; 7, add i to total, increment i by 2 and count by 1</span>
-    <span class="c1"># Step 3: Return total</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1352,11 +1339,9 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">until_stop_count</span><span class="p">(</span><span class="n">inputs</span><span class="p">):</span>
-    <span class="c1"># Step 1: Initialize a counter to 0</span>
-    <span class="c1"># Step 2: For each string in inputs:</span>
-    <span class="c1">#    If the string is &quot;stop&quot;, break the loop</span>
-    <span class="c1">#    Otherwise increment the counter</span>
-    <span class="c1"># Step 3: Return the counter</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the number of entries until &quot;stop&quot; appears (case-sensitive).&quot;&quot;&quot;</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1399,9 +1384,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">repeat_string_len_times</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="c1"># Step 1: Initialize an empty list</span>
-    <span class="c1"># Step 2: For i in range(len(s)), append s</span>
-    <span class="c1"># Step 3: Return the list</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1443,11 +1427,8 @@ document.write(`
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">password_attempts</span><span class="p">(</span><span class="n">attempts</span><span class="p">,</span> <span class="n">correct</span><span class="o">=</span><span class="s2">&quot;password123&quot;</span><span class="p">):</span>
-    <span class="c1"># Step 1: Initialize attempts counter to 0</span>
-    <span class="c1"># Step 2: For each attempt in attempts:</span>
-    <span class="c1">#    Increment attempts counter</span>
-    <span class="c1">#    If attempt equals correct, return the counter</span>
-    <span class="c1"># Step 3: If loop finishes without match, return -1</span>
+    <span class="c1"># Write your solution here</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1493,7 +1474,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./src/E04"
+            path: "./src/E05"
         },
         predefinedOutput: true
     }
