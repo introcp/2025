@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exercises: Functions &#8212; Introduction to computer programming</title>
+    <title>Exercises: Iteration &#8212; Introduction to computer programming</title>
   
   
   
@@ -58,11 +58,10 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'src/E02/E02-Python-Exercises-Functions';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/E04/E02-Python-Exercises-Iteration';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Exercises: Branching" href="../E01/E01-Python-Exercises-Branching.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,6 +123,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -210,9 +211,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../P11/P11-Python-Files.html"><b style="font-family: 'LUISS', 'Lato'">Files</b></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../E01/E01-Python-Exercises-Branching.html">Branching</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../E02/E02-Python-Exercises-Functions.html">Functions</a></li>
 </ul>
 
     </div>
@@ -267,7 +268,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/introcp/introcp.github.io/blob/2025/src/E02/E02-Python-Exercises-Functions.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/introcp/introcp.github.io/blob/2025/src/E04/E02-Python-Exercises-Iteration.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -282,7 +283,7 @@
 </a>
 </li>
 
-<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://introcp.github.io/_sources//src/E02/E02-Python-Exercises-Functions.ipynb" target="_blank"
+<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://introcp.github.io/_sources//src/E04/E02-Python-Exercises-Iteration.ipynb" target="_blank"
   class="btn btn-sm dropdown-item"
   title="Launch on JupyterLite"
   data-bs-placement="left" data-bs-toggle="tooltip"
@@ -314,7 +315,7 @@
       
       
       
-      <li><a href="../../_sources/src/E02/E02-Python-Exercises-Functions.ipynb" target="_blank"
+      <li><a href="../../_sources/src/E04/E02-Python-Exercises-Iteration.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -412,7 +413,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><b style="font-family: 'LUISS', 'Lato'">Exercises: Functions</b></h1>
+    <h1><b style="font-family: 'LUISS', 'Lato'">Exercises: Iteration</b></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -435,8 +436,8 @@ document.write(`
                 <article class="bd-article">
                   
   <div align="center">
-<section class="tex2jax_ignore mathjax_ignore" id="exercises-functions">
-<h1><b style="font-family: 'LUISS', 'Lato'">Exercises: Functions</b><a class="headerlink" href="#exercises-functions" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises-iteration">
+<h1><b style="font-family: 'LUISS', 'Lato'">Exercises: Iteration</b><a class="headerlink" href="#exercises-iteration" title="Link to this heading">#</a></h1>
 <h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
 <h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
 <img src="https://introcp.github.io/dist/img/cliente-luiss.png">
@@ -444,9 +445,9 @@ document.write(`
 </div><section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="E02-Python-Exercises-Functions-student.html"><span class="std std-doc">Notebook with exercises on functions (no hints)</span></a></p></li>
-<li><p><a class="reference internal" href="E02-Python-Exercises-Functions-pseudocode.html"><span class="std std-doc">Notebook with exercises on functions (with pseudocode)</span></a></p></li>
-<li><p><a class="reference internal" href="E02-Python-Exercises-Functions-solution.html"><span class="std std-doc">Notebook with exercises on functions (with solutions)</span></a></p></li>
+<li><p><a class="reference internal" href="E04-Python-Iteration-Exercises-student.html"><span class="std std-doc">Notebook with exercises on iteration (no hints)</span></a></p></li>
+<li><p><a class="reference internal" href="E04-Python-Iteration-Exercises-pseudocode.html"><span class="std std-doc">Notebook with exercises on iteration (with pseudocode)</span></a></p></li>
+<li><p><a class="reference internal" href="E04-Python-Iteration-Exercises-solution.html"><span class="std std-doc">Notebook with exercises on iteration (with solutions)</span></a></p></li>
 </ul>
 </section>
 </section>
@@ -464,7 +465,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./src/E02"
+            path: "./src/E04"
         },
         predefinedOutput: true
     }
@@ -481,15 +482,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../E01/E01-Python-Exercises-Branching.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Exercises: Branching</b></p>
-      </div>
-    </a>
 </div>
                 </footer>
               
