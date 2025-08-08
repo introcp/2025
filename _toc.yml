@@ -31,4 +31,6 @@ parts:
         title: Functions
       - file: src/E05/E05-Python-Exercises-Iteration.ipynb
         title: Iteration
+      - file: src/E06/E06-Python-Exercises-Strings-Lists.ipynb
+        title: Strings and Lists
 
