@@ -25,9 +25,9 @@ parts:
 
   - caption: Exercises
     chapters:
-      - file: src/E01/E01-Python-Exercises-Branching.ipynb
+      - file: src/E03/E03-Python-Exercises-Branching.ipynb
         title: Branching
-      - file: src/E02/E02-Python-Exercises-Functions.ipynb
+      - file: src/E04/E04-Python-Exercises-Functions.ipynb
         title: Functions
       - file: src/E05/E05-Python-Exercises-Iteration.ipynb
         title: Iteration
