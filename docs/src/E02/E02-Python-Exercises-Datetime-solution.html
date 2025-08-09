@@ -1,0 +1,852 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python: exercises on datetime module &#8212; Introduction to computer programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2445107f" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/E02/E02-Python-Exercises-Datetime-solution';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Introduction to computer programming - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Introduction to computer programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    <b style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</b>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../A00/A00-Introduction.html"><b style="font-family: 'LUISS', 'Lato'">Course overview</b></a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../P00/P00-Python-Getting-Started.html"><b style="font-family: 'LUISS', 'Lato'">Getting Started</b></a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../P01/P01-Python-Expressions-and-Types.html"><b style="font-family: 'LUISS', 'Lato'">Expressions and Data Types</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P02/P02-Python-Types-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Variables and Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../E00/E00-Python-Errors.html"><b style="font-family: 'LUISS', 'Lato'">Types of Errors</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P03/P03-Python-Branching.html"><b style="font-family: 'LUISS', 'Lato'">Branching</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P04/P04-Python-Functions.html"><b style="font-family: 'LUISS', 'Lato'">Functions</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P05/P05-Python-Iteration.html"><b style="font-family: 'LUISS', 'Lato'">Iteration</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P06/P06-Python-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P07/P07-Python-Lists.html"><b style="font-family: 'LUISS', 'Lato'">Lists</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P08/P08-Python-Dictionaries-Tuples-Sets.html"><b style="font-family: 'LUISS', 'Lato'">Dictionaries, Tuples, and Sets</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P09/P09-Python-Classes.html"><b style="font-family: 'LUISS', 'Lato'">Classes and Objects</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P10/P10-Python-Recursion.html"><b style="font-family: 'LUISS', 'Lato'">Recursion</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P11/P11-Python-Files.html"><b style="font-family: 'LUISS', 'Lato'">Files</b></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/introcp/introcp.github.io/blob/2025/src/E02/E02-Python-Exercises-Datetime-solution.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+
+<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://introcp.github.io/_sources//src/E02/E02-Python-Exercises-Datetime-solution.ipynb" target="_blank"
+  class="btn btn-sm dropdown-item"
+  title="Launch on JupyterLite"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+ 
+
+<span class="btn__icon-container">
+ 
+   <img alt="JupyterLite logo" src="https://avatars.githubusercontent.com/u/81094398?s=200&v=4">
+ </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+    
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/E02/E02-Python-Exercises-Datetime-solution.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.open(window.location.pathname.replace('.html', '.pdf'));"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+    <button onclick="window.open(window.location.pathname.replace('.html', '.slides.html'));"
+    class="btn btn-sm btn-fullscreen-button"
+    title="Slide"
+    data-bs-placement="bottom" data-bs-toggle="tooltip"
+    >
+    
+    <span class="btn__icon-container">
+        <i class="fa-brands fa-slideshare"></i>
+    </span>
+
+    </button>
+
+    <button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python: exercises on datetime module</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-age-calculator">Exercise 1: Age Calculator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-description">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-solution">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-solution">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-your-solution">Debug your solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-days-until-event">Exercise 2: Days Until Event</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Debug your solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-date-range-generator">Exercise 3: Date Range Generator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Debug your solution</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python-exercises-on-datetime-module">
+<h1>Python: exercises on datetime module<a class="headerlink" href="#python-exercises-on-datetime-module" title="Link to this heading">#</a></h1>
+<p>This notebook was generated in <strong>solutions</strong> mode.</p>
+<hr class="docutils" />
+<section id="exercise-1-age-calculator">
+<h2>Exercise 1: Age Calculator<a class="headerlink" href="#exercise-1-age-calculator" title="Link to this heading">#</a></h2>
+<section id="exercise-description">
+<h3>Exercise Description<a class="headerlink" href="#exercise-description" title="Link to this heading">#</a></h3>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">calculate_age(birthdate)</span></code> that takes a date of birth (as a datetime object) and returns the person’s age in years. Use the current date to calculate the age.</p>
+<p>The function should properly handle cases where the birthday hasn’t occurred yet this year.</p>
+<p>The function should return the age as an integer.</p>
+</section>
+<section id="your-solution">
+<h3>Your solution<a class="headerlink" href="#your-solution" title="Link to this heading">#</a></h3>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_age</span><span class="p">(</span><span class="n">birthdate</span><span class="p">):</span>
+    <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">birthdate</span><span class="o">.</span><span class="n">year</span>
+    <span class="c1"># Check if the birthday has occurred this year; if not, subtract one year</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">today</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">birthdate</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">birthdate</span><span class="o">.</span><span class="n">day</span><span class="p">):</span>
+        <span class="n">age</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">age</span>
+
+<span class="c1"># Test the function</span>
+<span class="n">dob</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Age: </span><span class="si">{</span><span class="n">calculate_age</span><span class="p">(</span><span class="n">dob</span><span class="p">)</span><span class="si">}</span><span class="s2"> years&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Age: 35 years
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="test-your-solution">
+<h3>Test your solution<a class="headerlink" href="#test-your-solution" title="Link to this heading">#</a></h3>
+<div class="cell tag_tests docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test the function with known birthdates</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># Test with a birthdate from 30 years ago (birthday already passed this year)</span>
+<span class="n">thirty_years_ago</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">calculate_age</span><span class="p">(</span><span class="n">thirty_years_ago</span><span class="p">)</span> <span class="o">==</span> <span class="mi">30</span>
+
+<span class="c1"># Test with a birthdate from 25 years ago (birthday not yet passed this year)</span>
+<span class="n">twenty_five_years_ago</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="n">expected_age</span> <span class="o">=</span> <span class="mi">24</span> <span class="k">if</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">month</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="ow">or</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">month</span> <span class="o">==</span> <span class="mi">12</span> <span class="ow">and</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">day</span> <span class="o">&lt;</span> <span class="mi">31</span><span class="p">)</span> <span class="k">else</span> <span class="mi">25</span>
+<span class="k">assert</span> <span class="n">calculate_age</span><span class="p">(</span><span class="n">twenty_five_years_ago</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected_age</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>Test your solution<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="cell tag_tests docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test edge cases</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># Test with today&#39;s date (age should be 0)</span>
+<span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">calculate_age</span><span class="p">(</span><span class="n">today</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+
+<span class="c1"># Test with someone born exactly one year ago</span>
+<span class="n">one_year_ago</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">calculate_age</span><span class="p">(</span><span class="n">one_year_ago</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="debug-your-solution">
+<h3>Debug your solution<a class="headerlink" href="#debug-your-solution" title="Link to this heading">#</a></h3>
+<p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;a href=&quot;https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false&quot; target=&quot;_blank&quot; style=&quot;font-size:16px;color:blue;text-decoration:underline;&quot;&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2"># Test the function with known birthdates</span><span class="se">\n</span><span class="s2">from datetime import datetime</span><span class="se">\n\n</span><span class="s2"># Test with a birthdate from 30 years ago (birthday already passed this year)</span><span class="se">\n</span><span class="s2">thirty_years_ago = datetime(datetime.now().year - 30, 1, 1)</span><span class="se">\n</span><span class="s2">assert calculate_age(thirty_years_ago) == 30</span><span class="se">\n\n</span><span class="s2"># Test with a birthdate from 25 years ago (birthday not yet passed this year)</span><span class="se">\n</span><span class="s2">twenty_five_years_ago = datetime(datetime.now().year - 25, 12, 31)</span><span class="se">\n</span><span class="s2">expected_age = 24 if datetime.now().month &lt; 12 or (datetime.now().month == 12 and datetime.now().day &lt; 31) else 25</span><span class="se">\n</span><span class="s2">assert calculate_age(twenty_five_years_ago) == expected_age</span><span class="se">\n\n</span><span class="s2"># Test edge cases</span><span class="se">\n</span><span class="s2">from datetime import datetime</span><span class="se">\n\n</span><span class="s2"># Test with today&#39;s date (age should be 0)</span><span class="se">\n</span><span class="s2">today = datetime.today()</span><span class="se">\n</span><span class="s2">assert calculate_age(today) == 0</span><span class="se">\n\n</span><span class="s2"># Test with someone born exactly one year ago</span><span class="se">\n</span><span class="s2">one_year_ago = datetime(datetime.now().year - 1, datetime.now().month, datetime.now().day)</span><span class="se">\n</span><span class="s2">assert calculate_age(one_year_ago) == 1&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;assert&quot;</span><span class="p">,</span><span class="s2">&quot;print(&quot;</span><span class="p">,</span><span class="s2">&quot;HTML(&quot;</span><span class="p">,</span><span class="s2">&quot;display(&quot;</span><span class="p">,</span><span class="s2">&quot;import&quot;</span><span class="p">,</span><span class="s2">&quot;from IPython&quot;</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;# No code&quot;</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><a href="https://pythontutor.com/visualize.html#code=%23%20Test%20edge%20cases%0Afrom%20datetime%20import%20datetime%0A%0A%23%20Test%20with%20today%27s%20date%20%28age%20should%20be%200%29%0Atoday%20%3D%20datetime.today%28%29%0Aassert%20calculate_age%28today%29%20%3D%3D%200%0A%0A%23%20Test%20with%20someone%20born%20exactly%20one%20year%20ago%0Aone_year_ago%20%3D%20datetime%28datetime.now%28%29.year%20-%201%2C%20datetime.now%28%29.month%2C%20datetime.now%28%29.day%29%0Aassert%20calculate_age%28one_year_ago%29%20%3D%3D%201&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&py=3&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" style="font-size:16px;color:blue;text-decoration:underline;">🔗 Visualize YOUR solution in Python Tutor</a></div></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="exercise-2-days-until-event">
+<h2>Exercise 2: Days Until Event<a class="headerlink" href="#exercise-2-days-until-event" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>Exercise Description<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">days_until_event(event_date)</span></code> that takes a future date (as a datetime object) and calculates the number of days from today until that date.</p>
+<p>The function should return the number of days as an integer. If the event date is in the past, the function should return a negative number.</p>
+</section>
+<section id="id3">
+<h3>Your solution<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">days_until_event</span><span class="p">(</span><span class="n">event_date</span><span class="p">):</span>
+    <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+    <span class="n">difference</span> <span class="o">=</span> <span class="n">event_date</span> <span class="o">-</span> <span class="n">today</span>
+    <span class="k">return</span> <span class="n">difference</span><span class="o">.</span><span class="n">days</span>
+
+<span class="c1"># Test the function</span>
+<span class="n">event</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Days until event: </span><span class="si">{</span><span class="n">days_until_event</span><span class="p">(</span><span class="n">event</span><span class="p">)</span><span class="si">}</span><span class="s2"> days&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Days until event: -228 days
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h3>Test your solution<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="cell tag_tests docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test the function with known future dates</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="c1"># Test with a date 10 days from now</span>
+<span class="n">ten_days_future</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">days_until_event</span><span class="p">(</span><span class="n">ten_days_future</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span>
+
+<span class="c1"># Test with a date 30 days from now</span>
+<span class="n">thirty_days_future</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">days_until_event</span><span class="p">(</span><span class="n">thirty_days_future</span><span class="p">)</span> <span class="o">==</span> <span class="mi">30</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Test with a date 10 days from now</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ten_days_future</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="k">assert</span> <span class="n">days_until_event</span><span class="p">(</span><span class="n">ten_days_future</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Test with a date 30 days from now</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">thirty_days_future</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="ne">AssertionError</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h3>Test your solution<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<div class="cell tag_tests docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test edge cases</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="c1"># Test with today&#39;s date (should be 0)</span>
+<span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">days_until_event</span><span class="p">(</span><span class="n">today</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+
+<span class="c1"># Test with a past date (should be negative)</span>
+<span class="n">past_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">days_until_event</span><span class="p">(</span><span class="n">past_date</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h3>Debug your solution<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;a href=&quot;https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false&quot; target=&quot;_blank&quot; style=&quot;font-size:16px;color:blue;text-decoration:underline;&quot;&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2"># Test the function with known future dates</span><span class="se">\n</span><span class="s2">from datetime import datetime, timedelta</span><span class="se">\n\n</span><span class="s2"># Test with a date 10 days from now</span><span class="se">\n</span><span class="s2">ten_days_future = datetime.today() + timedelta(days=10)</span><span class="se">\n</span><span class="s2">assert days_until_event(ten_days_future) == 10</span><span class="se">\n\n</span><span class="s2"># Test with a date 30 days from now</span><span class="se">\n</span><span class="s2">thirty_days_future = datetime.today() + timedelta(days=30)</span><span class="se">\n</span><span class="s2">assert days_until_event(thirty_days_future) == 30</span><span class="se">\n\n</span><span class="s2"># Test edge cases</span><span class="se">\n</span><span class="s2">from datetime import datetime, timedelta</span><span class="se">\n\n</span><span class="s2"># Test with today&#39;s date (should be 0)</span><span class="se">\n</span><span class="s2">today = datetime.today()</span><span class="se">\n</span><span class="s2">assert days_until_event(today) == 0</span><span class="se">\n\n</span><span class="s2"># Test with a past date (should be negative)</span><span class="se">\n</span><span class="s2">past_date = datetime.today() - timedelta(days=5)</span><span class="se">\n</span><span class="s2">assert days_until_event(past_date) == -5&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;assert&quot;</span><span class="p">,</span><span class="s2">&quot;print(&quot;</span><span class="p">,</span><span class="s2">&quot;HTML(&quot;</span><span class="p">,</span><span class="s2">&quot;display(&quot;</span><span class="p">,</span><span class="s2">&quot;import&quot;</span><span class="p">,</span><span class="s2">&quot;from IPython&quot;</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;# No code&quot;</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="exercise-3-date-range-generator">
+<h2>Exercise 3: Date Range Generator<a class="headerlink" href="#exercise-3-date-range-generator" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h3>Exercise Description<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">generate_date_range(start_date,</span> <span class="pre">end_date)</span></code> that takes two dates and returns a list of all the dates between them (inclusive). Use timedelta to increment each day.</p>
+<p>The function should return a list of date strings in the format “YYYY-MM-DD”.</p>
+<p>Store the result in a variable called <code class="docutils literal notranslate"><span class="pre">result</span></code> so it can be tested.</p>
+</section>
+<section id="id8">
+<h3>Your solution<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_date_range</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">):</span>
+    <span class="n">date_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">current_date</span> <span class="o">=</span> <span class="n">start_date</span>
+    <span class="k">while</span> <span class="n">current_date</span> <span class="o">&lt;=</span> <span class="n">end_date</span><span class="p">:</span>
+        <span class="n">date_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">))</span>
+        <span class="n">current_date</span> <span class="o">+=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">date_list</span>
+
+<span class="c1"># Test the function</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">generate_date_range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">date_str</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h3>Test your solution<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<div class="cell tag_tests docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test the function with the provided dates</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># Test with the example dates (September 15-20, 2024)</span>
+<span class="n">expected_dates</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;2024-09-15&quot;</span><span class="p">,</span> <span class="s2">&quot;2024-09-16&quot;</span><span class="p">,</span> <span class="s2">&quot;2024-09-17&quot;</span><span class="p">,</span> <span class="s2">&quot;2024-09-18&quot;</span><span class="p">,</span> <span class="s2">&quot;2024-09-19&quot;</span><span class="p">,</span> <span class="s2">&quot;2024-09-20&quot;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">expected_dates</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id10">
+<h3>Test your solution<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<div class="cell tag_tests docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test with additional date ranges</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># Test with a single day range</span>
+<span class="n">single_day_result</span> <span class="o">=</span> <span class="n">generate_date_range</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="k">assert</span> <span class="n">single_day_result</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;2024-01-01&quot;</span><span class="p">]</span>
+
+<span class="c1"># Test with a 3-day range</span>
+<span class="n">three_day_result</span> <span class="o">=</span> <span class="n">generate_date_range</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">29</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span>
+<span class="k">assert</span> <span class="n">three_day_result</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;2024-12-29&quot;</span><span class="p">,</span> <span class="s2">&quot;2024-12-30&quot;</span><span class="p">,</span> <span class="s2">&quot;2024-12-31&quot;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">three_day_result</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id11">
+<h3>Debug your solution<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;a href=&quot;https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false&quot; target=&quot;_blank&quot; style=&quot;font-size:16px;color:blue;text-decoration:underline;&quot;&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2"># Test the function with the provided dates</span><span class="se">\n</span><span class="s2">from datetime import datetime</span><span class="se">\n\n</span><span class="s2"># Test with the example dates (September 15-20, 2024)</span><span class="se">\n</span><span class="s2">expected_dates = [</span><span class="se">\&quot;</span><span class="s2">2024-09-15</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">2024-09-16</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">2024-09-17</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">2024-09-18</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">2024-09-19</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">2024-09-20</span><span class="se">\&quot;</span><span class="s2">]</span><span class="se">\n</span><span class="s2">assert result == expected_dates</span><span class="se">\n</span><span class="s2">assert len(result) == 6</span><span class="se">\n\n</span><span class="s2"># Test with additional date ranges</span><span class="se">\n</span><span class="s2">from datetime import datetime</span><span class="se">\n\n</span><span class="s2"># Test with a single day range</span><span class="se">\n</span><span class="s2">single_day_result = generate_date_range(datetime(2024, 1, 1), datetime(2024, 1, 1))</span><span class="se">\n</span><span class="s2">assert single_day_result == [</span><span class="se">\&quot;</span><span class="s2">2024-01-01</span><span class="se">\&quot;</span><span class="s2">]</span><span class="se">\n\n</span><span class="s2"># Test with a 3-day range</span><span class="se">\n</span><span class="s2">three_day_result = generate_date_range(datetime(2024, 12, 29), datetime(2024, 12, 31))</span><span class="se">\n</span><span class="s2">assert three_day_result == [</span><span class="se">\&quot;</span><span class="s2">2024-12-29</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">2024-12-30</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">2024-12-31</span><span class="se">\&quot;</span><span class="s2">]</span><span class="se">\n</span><span class="s2">assert len(three_day_result) == 3&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;assert&quot;</span><span class="p">,</span><span class="s2">&quot;print(&quot;</span><span class="p">,</span><span class="s2">&quot;HTML(&quot;</span><span class="p">,</span><span class="s2">&quot;display(&quot;</span><span class="p">,</span><span class="s2">&quot;import&quot;</span><span class="p">,</span><span class="s2">&quot;from IPython&quot;</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;# No code&quot;</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src/E02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-age-calculator">Exercise 1: Age Calculator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-description">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-solution">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-solution">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-your-solution">Debug your solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-days-until-event">Exercise 2: Days Until Event</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Debug your solution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-date-range-generator">Exercise 3: Date Range Generator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Debug your solution</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Emilio Coppa and Alessio Martino
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
