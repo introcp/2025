@@ -18,19 +18,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-def merge_dicts(dict1, dict2):
-    # Step 1: Create a copy of the first dictionary to avoid modifying the original
-    # Step 2: Iterate through each key-value pair in the second dictionary
-    # Step 3: For each key in the second dictionary:
-    #     - If the key exists in the result, add the values together
-    #     - If the key doesn't exist, add the key-value pair to the result
-    # Step 4: Return the merged dictionary
+def update_score(data, student, subject, new_score):
+    # Step 1: Check if the student is not in the data dictionary
+        # Step 2: If student doesn't exist, create an empty dictionary for the student
+    # Step 3: Set the subject score for the student to the new score
 ------------------
 
 
-  [36mCell[39m[36m [39m[32mIn[1][39m[32m, line 7[39m
-[31m    [39m[31m# Step 4: Return the merged dictionary[39m
-                                          ^
+  [36mCell[39m[36m [39m[32mIn[1][39m[32m, line 4[39m
+[31m    [39m[31m# Step 3: Set the subject score for the student to the new score[39m
+                                                                    ^
 [31mSyntaxError[39m[31m:[39m incomplete input
 
 

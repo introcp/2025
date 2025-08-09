@@ -18,21 +18,19 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Test case 1
-full_set = {1, 2, 3, 4, 5}
-sub_set = {2, 4}
-result = complement(full_set, sub_set)
-print(result)  # Expected: {1, 3, 5}
+# Test case 1: Update existing student's existing subject
+data = {"student1": {"math": 75, "science": 82}, "student2": {"math": 88, "science": 90}}
+update_score(data, "student1", "math", 95)
+assert data["student1"]["math"] == 95
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
-[31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[54][39m[32m, line 4[39m
-[32m      2[39m full_set = {[32m1[39m, [32m2[39m, [32m3[39m, [32m4[39m, [32m5[39m}
-[32m      3[39m sub_set = {[32m2[39m, [32m4[39m}
-[32m----> [39m[32m4[39m result = [43mcomplement[49m(full_set, sub_set)
-[32m      5[39m [38;5;28mprint[39m(result)  [38;5;66;03m# Expected: {1, 3, 5}[39;00m
+[31mAssertionError[39m                            Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 4[39m
+[32m      2[39m data = {[33m"[39m[33mstudent1[39m[33m"[39m: {[33m"[39m[33mmath[39m[33m"[39m: [32m75[39m, [33m"[39m[33mscience[39m[33m"[39m: [32m82[39m}, [33m"[39m[33mstudent2[39m[33m"[39m: {[33m"[39m[33mmath[39m[33m"[39m: [32m88[39m, [33m"[39m[33mscience[39m[33m"[39m: [32m90[39m}}
+[32m      3[39m update_score(data, [33m"[39m[33mstudent1[39m[33m"[39m, [33m"[39m[33mmath[39m[33m"[39m, [32m95[39m)
+[32m----> [39m[32m4[39m [38;5;28;01massert[39;00m data[[33m"[39m[33mstudent1[39m[33m"[39m][[33m"[39m[33mmath[39m[33m"[39m] == [32m95[39m
 
-[31mNameError[39m: name 'complement' is not defined
+[31mAssertionError[39m: 
 
