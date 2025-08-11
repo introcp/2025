@@ -76,9 +76,10 @@ for filename in sorted(glob.glob('src/*/*.ipynb')):
             wait_until="load"
         )
         
-        if verbose: print("Waiting for 800ms")
+        wait_ms = 1000
+        if verbose: print("Waiting for", wait_ms, "ms")
 
-        page.wait_for_timeout(1000);
+        page.wait_for_timeout(wait_ms);
 
         page.pdf(
             path=os.getcwd() + "/" + filename.replace('.ipynb', '.pdf'),
