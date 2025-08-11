@@ -10,6 +10,7 @@ parts:
   - caption: Computer Systems
     chapters:
       - file: src/C00/C00-Bits-and-Bytes.ipynb
+      - file: src/C01/C01-Boolean-Logic.ipynb
   - caption: Python
     chapters:
       - file: src/P00/P00-Python-Getting-Started.ipynb
