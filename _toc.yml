@@ -7,6 +7,9 @@ parts:
   - caption: Introduction
     chapters:
       - file: src/A00/A00-Introduction.ipynb
+  - caption: Computer Systems
+    chapters:
+      - file: src/C00/C00-Bits-and-Bytes.ipynb
   - caption: Python
     chapters:
       - file: src/P00/P00-Python-Getting-Started.ipynb
