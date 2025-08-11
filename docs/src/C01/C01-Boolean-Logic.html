@@ -477,7 +477,7 @@ document.write(`
 </section>
 <section id="unary-and-binary-functions">
 <h2>Unary and Binary Functions<a class="headerlink" href="#unary-and-binary-functions" title="Link to this heading">#</a></h2>
-<p>We need to start from a simpler scenarios:</p>
+<p>We need to start from simpler scenarios:</p>
 <div align="center">
 <img src="img/unary-binary-functions.drawio.png" width="75%"/>
 </div></section>
@@ -803,29 +803,44 @@ document.write(`
 <tr class="row-odd"><td class="text-center"><p>0</p></td>
 <td class="text-center"><p>1</p></td>
 <td class="text-center"><p>1</p></td>
-<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
 <td class="text-center"><p>0</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>1</p></td>
 <td class="text-center"><p>0</p></td>
 <td class="text-center"><p>1</p></td>
-<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
 <td class="text-center"><p>0</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>1</p></td>
 <td class="text-center"><p>1</p></td>
 <td class="text-center"><p>0</p></td>
-<td class="text-center"><p>1</p></td>
-<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>These operators can be derived (implemented) from OR, AND, and NOT:</p>
 <ul class="simple">
-<li><p>XOR = OR(AND(A, NOT(B)), AND(NOT(A), B))</p></li>
-<li><p>NAND = NOT(AND(A, B))</p></li>
-<li><p>NOR = NOT(OR(A, B))</p></li>
+<li><p>XOR (exclusive OR):</p>
+<ul>
+<li><p>equivalent to: OR(AND(A, NOT(B)), AND(NOT(A), B))</p></li>
+<li><p>intuition: A XOR B is true if A and B are different</p></li>
+</ul>
+</li>
+<li><p>NAND (not AND):</p>
+<ul>
+<li><p>equivalent to NOT(AND(A, B))</p></li>
+<li><p>intuition: A NAND B is true if A and B are not both true</p></li>
+</ul>
+</li>
+<li><p>NOR (not OR):</p>
+<ul>
+<li><p>equivalent to NOT(OR(A, B))</p></li>
+<li><p>intuition: A NOR B is true if A and B are both false</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="generic-boolean-formula">
