@@ -1,0 +1,1309 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Computer Systems &#8212; Introduction to computer programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2445107f" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/C00/C00-Bits-and-Bytes';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Getting Started" href="../P00/P00-Python-Getting-Started.html" />
+    <link rel="prev" title="Course overview" href="../A00/A00-Introduction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Introduction to computer programming - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Introduction to computer programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    <b style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</b>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../A00/A00-Introduction.html"><b style="font-family: 'LUISS', 'Lato'">Course overview</b></a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computer Systems</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><b style="font-family: 'LUISS', 'Lato'">Computer Systems</b></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../P00/P00-Python-Getting-Started.html"><b style="font-family: 'LUISS', 'Lato'">Getting Started</b></a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../P01/P01-Python-Expressions-and-Types.html"><b style="font-family: 'LUISS', 'Lato'">Expressions and Data Types</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P02/P02-Python-Types-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Variables and Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../E00/E00-Python-Errors.html"><b style="font-family: 'LUISS', 'Lato'">Types of Errors</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P03/P03-Python-Branching.html"><b style="font-family: 'LUISS', 'Lato'">Branching</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P04/P04-Python-Functions.html"><b style="font-family: 'LUISS', 'Lato'">Functions</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P05/P05-Python-Iteration.html"><b style="font-family: 'LUISS', 'Lato'">Iteration</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P06/P06-Python-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P07/P07-Python-Lists.html"><b style="font-family: 'LUISS', 'Lato'">Lists</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P08/P08-Python-Dictionaries-Tuples-Sets.html"><b style="font-family: 'LUISS', 'Lato'">Dictionaries, Tuples, and Sets</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P09/P09-Python-Classes.html"><b style="font-family: 'LUISS', 'Lato'">Classes and Objects</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P10/P10-Python-Recursion.html"><b style="font-family: 'LUISS', 'Lato'">Recursion</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P11/P11-Python-Files.html"><b style="font-family: 'LUISS', 'Lato'">Files</b></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/introcp/introcp.github.io/blob/2025/src/C00/C00-Bits-and-Bytes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+
+<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://introcp.github.io/_sources//src/C00/C00-Bits-and-Bytes.ipynb" target="_blank"
+  class="btn btn-sm dropdown-item"
+  title="Launch on JupyterLite"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+ 
+
+<span class="btn__icon-container">
+ 
+   <img alt="JupyterLite logo" src="https://avatars.githubusercontent.com/u/81094398?s=200&v=4">
+ </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+    
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/C00/C00-Bits-and-Bytes.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.open(window.location.pathname.replace('.html', '.pdf'));"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+    <button onclick="window.open(window.location.pathname.replace('.html', '.slides.html'));"
+    class="btn btn-sm btn-fullscreen-button"
+    title="Slide"
+    data-bs-placement="bottom" data-bs-toggle="tooltip"
+    >
+    
+    <span class="btn__icon-container">
+        <i class="fa-brands fa-slideshare"></i>
+    </span>
+
+    </button>
+
+    <button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><b style="font-family: 'LUISS', 'Lato'">Computer Systems</b></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-computing-system">What is a Computing System?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computations-manipulate-data">Computations manipulate Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-in-computing-means-bits">Data in computing means <em><strong>bits</strong></em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-notation">Positional Notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-computers-prefer-the-binary-representation">Why computers prefer the binary representation?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humans-and-computers-are-quite-different">Humans and Computers are quite different</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-representation">Binary representation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-binary-to-decimal">Conversion from binary to decimal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-n-binary-numbers-n-16">First <span class="math notranslate nohighlight">\(n\)</span> binary numbers (<span class="math notranslate nohighlight">\(n=16\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interesting-properties-of-binary-numbers">Interesting properties of binary numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Conversion from binary to decimal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-use-hexadecimal-numbers-why">Computers use hexadecimal numbers, why?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hexadecimal-numbers">Hexadecimal numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-binary-to-hexadecimal">Conversion from binary to hexadecimal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-hexadecimal-to-binary">Conversion from hexadecimal to binary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turning-text-into-bits">Turning text into bits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turning-bits-to-text">Turning bits to text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-for-the-text-to-binary-conversion">Tool for the text-to-binary conversion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-is-for-humans-binary-is-for-machines">Text is for humans, binary is for machines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-data-formats">Other data formats</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ppm-image-format">PPM Image format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#byte">Byte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-byte-units">Multiple-byte units</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-growing-world-of-bytes">Understanding The Growing World Of Bytes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fun-time">Fun time</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dad-s-joke-time">Dad’s joke time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wait-a-minute">Wait a minute…</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finger-binary">Finger Binary</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div align="center">
+<section class="tex2jax_ignore mathjax_ignore" id="computer-systems">
+<h1><b style="font-family: 'LUISS', 'Lato'">Computer Systems</b><a class="headerlink" href="#computer-systems" title="Link to this heading">#</a></h1>
+<h2 style="font-family: 'LUISS', 'Lato'">Bits and Bytes</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
+<img src="https://introcp.github.io/dist/img/cliente-luiss.png">
+<p><br><br><br></p>
+</div><section id="what-is-a-computing-system">
+<h2>What is a Computing System?<a class="headerlink" href="#what-is-a-computing-system" title="Link to this heading">#</a></h2>
+<p>A computing system:</p>
+<ul class="simple">
+<li><p>consists of <strong>Software</strong> and <strong>Hardware</strong> working together</p></li>
+<li><p>allows <strong>program computations</strong>, i.e., execution of programs</p></li>
+</ul>
+<div align="center">
+<a class="reference internal image-reference" href="../../_images/examples-2.png"><img alt="../../_images/examples-2.png" src="../../_images/examples-2.png" style="width: 50%;" />
+</a>
+</div>
+<p>Common examples are your desktop PCs, laptops, smartphones, smartwatches, data centers, supercomputers, smart TVs, smart fridges, and so on!</p>
+</section>
+<section id="computations-manipulate-data">
+<h2>Computations manipulate Data<a class="headerlink" href="#computations-manipulate-data" title="Link to this heading">#</a></h2>
+<p>Well, basically:</p>
+<ul class="simple">
+<li><p><strong>performs</strong> calculations: a billion calculations per second!</p></li>
+<li><p><strong>remembers</strong> results: hundreds of GigaBytes of storage!</p></li>
+</ul>
+<p>What kind of <strong>calculations</strong>?</p>
+<ul class="simple">
+<li><p><em>built-in</em> included in the programming language</p></li>
+<li><p>custom and ad-hoc defined by the programmer</p></li>
+</ul>
+<p>The <strong>essence</strong> of a computation: store, manipulate, and move <strong>data</strong>.</p>
+</section>
+<section id="data-in-computing-means-bits">
+<h2>Data in computing means <em><strong>bits</strong></em><a class="headerlink" href="#data-in-computing-means-bits" title="Link to this heading">#</a></h2>
+<p>The <strong>bit</strong> is the most basic unit of information in computing. The name is a portmanteau of <em>binary digit</em>. The bit represents a <em>logical state</em> with one of <strong>two</strong> possible values:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Representation</p></th>
+<th class="head"><p>First value</p></th>
+<th class="head"><p>Second value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Binary digit</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Boolean</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>Electronic</p></td>
+<td><p>on</p></td>
+<td><p>off</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This how your computers see data (pictures, tests, everything!):</p>
+<div align="center">
+<img src="img/bits.png" width="30%">
+</div>
+<p>How can we interpret bits?</p>
+</section>
+<section id="positional-notation">
+<h2>Positional Notation<a class="headerlink" href="#positional-notation" title="Link to this heading">#</a></h2>
+<p>The binary representation is based on a <em><strong>positional notation</strong></em>, which you know from decimal numbers!</p>
+<p>For example, if we consider the numbers 3, 43, 543, and 6543:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+	3_{10} = \underbrace{3 \times 10^0}_\text{first position}
+\end{equation*}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+	43_{10} = \underbrace{4 \times 10^1}_\text{second position} + \underbrace{3 \times 10^0}_\text{first position}
+\end{equation*}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+	543_{10} = \underbrace{5 \times 10^2}_\text{third position} + \underbrace{4 \times 10^1}_\text{second position} + \underbrace{3 \times 10^0}_\text{first position}
+\end{equation*}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+	6543_{10} = \underbrace{6 \times 10^3}_\text{fourth position} + \underbrace{5 \times 10^2}_\text{third position} + \underbrace{4 \times 10^1}_\text{second position} + \underbrace{3 \times 10^0}_\text{first position}
+\end{equation*}
+\]</div>
+<p>We consider digits based on their position, from the rightmost one to the leftmost one. We then mulitply each digit by the base (10 in this case) raised to the power of the position (minus one).</p>
+<p><strong>NOTE</strong>: The subscript 10 indicates that the number is in base 10.</p>
+<br>
+<p>In other words, we assign a different weight to each digit based on its position:</p>
+<table style="width:60%">
+	<tr>
+		<th>Digit</th>
+		<th>6</th>
+		<th>5</th>
+		<th>4</th>
+		<th>3</th>
+	</tr>
+	<tr>
+		<th>Position</th>
+		<th>3</th>
+		<th>2</th>
+		<th>1</th>
+		<th>0</th>
+	</tr>
+	<tr>
+		<th>Weight</th>
+		<th>$10^3$</th>
+		<th>$10^2$</th>
+		<th>$10^1$</th>
+		<th>$10^0$</th>
+	</tr>
+</table>
+<br>
+<p>More in general, we can write for the decimal positional system:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=0}^{n-1} d_i \times 10^i = \text{value}_{10}
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(10\)</span> is the <em><strong>base</strong></em> used for the powers</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_i\)</span> is the digit at position <span class="math notranslate nohighlight">\(i\)</span> (from right to left)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> is the number of digits</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_i \in \{0, 1, \ldots, 9\}\)</span></p></li>
+</ul>
+<p>We can generalize our positional system to any base <span class="math notranslate nohighlight">\(b\)</span>:
+$<span class="math notranslate nohighlight">\(
+\sum_{i=0}^{n-1} d_i \times b^i = \text{value}_{10}
+\)</span>$</p>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(b\)</span> is the base of the powers</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_i\)</span> is the digit at position <span class="math notranslate nohighlight">\(i\)</span> (from right to left)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> is the number of digits</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_i \in \{0, 1, \ldots, b-1\}\)</span></p></li>
+<li><p>for convenience, the result (<span class="math notranslate nohighlight">\(\text{value}_{10}\)</span>) is kept in base 10</p></li>
+</ul>
+<p>The base <span class="math notranslate nohighlight">\(b\)</span> can be any positive integer, but it is common to use powers of 2, 8, 10, and 16.</p>
+<p><strong>Computers works with binary data, so <span class="math notranslate nohighlight">\(b=2\)</span>.</strong></p>
+</section>
+<section id="why-computers-prefer-the-binary-representation">
+<h2>Why computers prefer the binary representation?<a class="headerlink" href="#why-computers-prefer-the-binary-representation" title="Link to this heading">#</a></h2>
+<p>As we will see in the next lecture, computers are devices that work with electric signals with two state levels:</p>
+<div align="center">
+<img src="img/2-level-digital-signal.png" width="50%">
+</div>
+<p>Why the signal has only two levels?</p>
+<p>It makes it more resistant to noise and interference since it uses extreme, easy to identify, cases:</p>
+<ul class="simple">
+<li><p>0: switch off, low signal, no current, or minimum voltage</p></li>
+<li><p>1: switch on, high signal, maximum current, or maximum voltage</p></li>
+</ul>
+<p>Electrical devices can use more levels but it makes the signal harder to interpret. For instance:</p>
+<ul class="simple">
+<li><p>A light bulb with two states (on or off) makes it easier to identify the state.</p></li>
+<li><p>A light bulb with multiple levels of brightness requires high precision when we need to identify the  state: Is it at 10% or 20% of the actual brightness level? Harder (costly) to implement.</p></li>
+</ul>
+</section>
+<section id="humans-and-computers-are-quite-different">
+<h2>Humans and Computers are quite different<a class="headerlink" href="#humans-and-computers-are-quite-different" title="Link to this heading">#</a></h2>
+<p>What is <em>intuitive</em> for humans is not necessarily <em>intuitive</em> for computers:</p>
+<ul class="simple">
+<li><p>In the context of computer systems, <em>intuitive</em> means <em>easy to implement</em>.</p></li>
+<li><p>In the context of humans, <em>intuitive</em> often means <em>easy to understand</em>.</p></li>
+</ul>
+<p>In pratice:</p>
+<ul class="simple">
+<li><p>The decimal system is intuitive for humans, but not for computers.</p></li>
+<li><p>The binary system is intuitive for computers, but not for humans.</p></li>
+</ul>
+</section>
+<section id="binary-representation">
+<h2>Binary representation<a class="headerlink" href="#binary-representation" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=0}^{n-1} d_i \times 2^i = \text{value}_{10}
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(b=2\)</span> is the base of the powers</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_i\)</span> is the digit at position <span class="math notranslate nohighlight">\(i\)</span> (from right to left)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> is the number of digits</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_i \in \{0, 1\}\)</span></p></li>
+<li><p>for convenience, the result (<span class="math notranslate nohighlight">\(\text{value}_{10}\)</span>) is kept in base 10</p></li>
+</ul>
+<p>The powers of <span class="math notranslate nohighlight">\(2\)</span> are:</p>
+<table style="width:100%">
+	<tr>
+		<th>Position:</th>
+        <th>8</th>
+		<th>7</th>
+		<th>6</th>
+		<th>5</th>
+		<th>4</th>
+		<th>3</th>
+		<th>2</th>
+		<th>1</th>
+		<th>0</th>
+	</tr>
+    	<tr>
+		<th>Power of two:</th>
+		<th>$2^8$</th>
+		<th>$2^7$</th>
+		<th>$2^6$</th>
+		<th>$2^5$</th>
+		<th>$2^4$</th>
+		<th>$2^3$</th>
+		<th>$2^2$</th>
+		<th>$2^1$</th>
+		<th>$2^0$</th>
+	</tr>
+	<tr>
+		<th>Value:</th>
+		<th>256</th>
+		<th>128</th>
+		<th>64</th>
+		<th>32</th>
+		<th>16</th>
+		<th>8</th>
+		<th>4</th>
+		<th>2</th>
+		<th>1</th>
+	</tr>
+</table></section>
+<section id="conversion-from-binary-to-decimal">
+<h2>Conversion from binary to decimal<a class="headerlink" href="#conversion-from-binary-to-decimal" title="Link to this heading">#</a></h2>
+<p>We already know how to that based on what we said before :)</p>
+<p>For instance:</p>
+<ul class="simple">
+<li><p>the binary number <span class="math notranslate nohighlight">\(1010\)</span>:
+$<span class="math notranslate nohighlight">\(
+\begin{equation*}
+  1010_{2} = \underbrace{1 \times 2^3}_\text{fourth position} + \underbrace{0 \times 2^2}_\text{third position} + \underbrace{1 \times 2^1}_\text{second position} + \underbrace{0 \times 2^0}_\text{first position} = 10_{10}\\
+  1010_{2} = \underbrace{1 \times 8}_\text{fourth position} + \underbrace{0 \times 4}_\text{third position} + \underbrace{1 \times 2}_\text{second position} + \underbrace{0 \times 1}_\text{first position} = 10_{10}
+\end{equation*}
+\)</span>$</p></li>
+<li><p>the binary number <span class="math notranslate nohighlight">\(1001\)</span>:
+$<span class="math notranslate nohighlight">\(
+\begin{equation*}
+  1001_{2} = \underbrace{1 \times 2^3}_\text{fourth position} + \underbrace{0 \times 2^2}_\text{third position} + \underbrace{0 \times 2^1}_\text{second position} + \underbrace{1 \times 2^0}_\text{first position} = 9_{10}\\
+  1001_{2} = \underbrace{1 \times 8}_\text{fourth position} + \underbrace{0 \times 4}_\text{third position} + \underbrace{0 \times 2}_\text{second position} + \underbrace{1 \times 1}_\text{first position} = 9_{10}
+\end{equation*}
+\)</span>$</p></li>
+</ul>
+<br>
+<ul class="simple">
+<li><p>the binary number <span class="math notranslate nohighlight">\(11010\)</span>:
+$<span class="math notranslate nohighlight">\(
+\begin{equation*}
+  11010_{2} = \underbrace{1 \times 2^4}_\text{fifth position} + \underbrace{1 \times 2^3}_\text{fourth position} + \underbrace{0 \times 2^2}_\text{third position} + \underbrace{1 \times 2^1}_\text{second position} + \underbrace{0 \times 2^0}_\text{first position} = 26_{10}\\
+  11010_{2} = \underbrace{1 \times 16}_\text{fifth position} + \underbrace{1 \times 8}_\text{fourth position} + \underbrace{0 \times 4}_\text{third position} + \underbrace{1 \times 2}_\text{second position} + \underbrace{0 \times 1}_\text{first position} = 26_{10}
+\end{equation*}
+\)</span>$</p></li>
+<li><p>the binary number <span class="math notranslate nohighlight">\(10001\)</span>:
+$<span class="math notranslate nohighlight">\(
+\begin{equation*}
+  10001_{2} = \underbrace{1 \times 2^4}_\text{fifth position} + \underbrace{0 \times 2^3}_\text{fourth position} + \underbrace{0 \times 2^2}_\text{third position} + \underbrace{0 \times 2^1}_\text{second position} + \underbrace{1 \times 2^0}_\text{first position} = 17_{10}\\
+  10001_{2} = \underbrace{1 \times 16}_\text{fifth position} + \underbrace{0 \times 8}_\text{fourth position} + \underbrace{0 \times 4}_\text{third position} + \underbrace{0 \times 2}_\text{second position} + \underbrace{1 \times 1}_\text{first position} = 17_{10}
+\end{equation*}
+\)</span>$</p></li>
+</ul>
+</section>
+<section id="first-n-binary-numbers-n-16">
+<h2>First <span class="math notranslate nohighlight">\(n\)</span> binary numbers (<span class="math notranslate nohighlight">\(n=16\)</span>)<a class="headerlink" href="#first-n-binary-numbers-n-16" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    0_{2} &amp;= 0_{10}\\
+    1_{2} &amp;= 1_{10}\\
+    10_{2} &amp;= 2_{10}\\
+    11_{2} &amp;= 3_{10}\\
+    100_{2} &amp;= 4_{10}\\
+    101_{2} &amp;= 5_{10}\\
+    110_{2} &amp;= 6_{10}\\
+    111_{2} &amp;= 7_{10}\\
+	1000_{2} &amp;= 8_{10}\\
+	1001_{2} &amp;= 9_{10}\\
+	1010_{2} &amp;= 10_{10}\\
+	1011_{2} &amp;= 11_{10}\\
+	1100_{2} &amp;= 12_{10}\\
+	1101_{2} &amp;= 13_{10}\\
+	1110_{2} &amp;= 14_{10}\\
+	1111_{2} &amp;= 15_{10}\\
+\end{align*}
+\end{split}\]</div>
+</section>
+<section id="interesting-properties-of-binary-numbers">
+<h2>Interesting properties of binary numbers<a class="headerlink" href="#interesting-properties-of-binary-numbers" title="Link to this heading">#</a></h2>
+<p><strong>Even</strong> numbers end with 0, <strong>odd</strong> numbers end with 1:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    0_{2} &amp;= 0_{10} &amp; \text{last bit is 0 $\Rightarrow$ even}\\
+    1_{2} &amp;= 1_{10} &amp; \text{last bit is 1 $\Rightarrow$ odd}\\
+    10_{2} &amp;= 2_{10} &amp; \text{last bit is 0 $\Rightarrow$ even}\\
+    11_{2} &amp;= 3_{10} &amp; \text{last bit is 1 $\Rightarrow$ odd}\\
+    100_{2} &amp;= 4_{10} &amp; \text{last bit is 0 $\Rightarrow$ even}\\
+    101_{2} &amp;= 5_{10} &amp; \text{last bit is 1 $\Rightarrow$ odd}\\
+    110_{2} &amp;= 6_{10} &amp; \text{last bit is 0 $\Rightarrow$ even}\\
+    111_{2} &amp;= 7_{10} &amp; \text{last bit is 1 $\Rightarrow$ odd}\\
+	1000_{2} &amp;= 8_{10} &amp; \text{last bit is 0 $\Rightarrow$ even}\\
+	1001_{2} &amp;= 9_{10} &amp; \text{last bit is 1 $\Rightarrow$ odd}\\
+	1010_{2} &amp;= 10_{10} &amp; \text{last bit is 0 $\Rightarrow$ even}\\
+	1011_{2} &amp;= 11_{10} &amp; \text{last bit is 1 $\Rightarrow$ odd}\\
+	1100_{2} &amp;= 12_{10} &amp; \text{last bit is 0 $\Rightarrow$ even}\\
+	1101_{2} &amp;= 13_{10} &amp; \text{last bit is 1 $\Rightarrow$ odd}\\
+	1110_{2} &amp;= 14_{10} &amp; \text{last bit is 0 $\Rightarrow$ even}\\
+	1111_{2} &amp;= 15_{10} &amp; \text{last bit is 1 $\Rightarrow$ odd}\\
+\end{align*}
+\end{split}\]</div>
+<br>
+<p>Binary numbers composed only by <span class="math notranslate nohighlight">\(n\)</span> digits equal to <span class="math notranslate nohighlight">\(1\)</span> are equal to <span class="math notranslate nohighlight">\(2^n-1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    1_{2} &amp;= 1 \times 2^0 &amp; = 1_{10}\\
+	11_{2} &amp;= 1 \times 2^1 + 1 \times 2^0 &amp; = 3_{10}\\
+	111_{2} &amp;= 1 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 &amp; = 7_{10}\\
+	1111_{2} &amp;= 1 \times 2^3 + 1 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 &amp; = 15_{10}\\
+	11111_{2} &amp;= 1 \times 2^4 + 1 \times 2^3 + 1 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 &amp; = 31_{10}\\
+    111111_{2} &amp;= 1 \times 2^5 + 1 \times 2^4 + 1 \times 2^3 + 1 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 &amp; = 63_{10}\\
+	1111111_{2} &amp;= 1 \times 2^6 + 1 \times 2^5 + 1 \times 2^4 + 1 \times 2^3 + 1 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 &amp; = 127_{10}\\
+	11111111_{2} &amp;= 1 \times 2^7 + 1 \times 2^6 + 1 \times 2^5 + 1 \times 2^4 + 1 \times 2^3 + 1 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 &amp; = 255_{10}\\
+\end{align*}
+\end{split}\]</div>
+<br>
+<p>Binary numbers composed only by <span class="math notranslate nohighlight">\(n\)</span> digits equal to <span class="math notranslate nohighlight">\(0\)</span> are equal to <span class="math notranslate nohighlight">\(0\)</span>. This is trivial!</p>
+</section>
+<section id="id1">
+<h2>Conversion from binary to decimal<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Keep divide the number by 2 until the quotient is 0, then take the remainders in reverse order.</p>
+<p>For instance, when converting <span class="math notranslate nohighlight">\(102_{10}\)</span> to binary:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+&amp; \text{quotient} &amp; \text{remainder} \\
+102 \div 2 &amp;= 51 &amp; 0 \\
+51 \div 2 &amp;= 25 &amp; 1 \\
+25 \div 2 &amp;= 12 &amp; 1 \\
+12 \div 2 &amp;= 6 &amp; 0 \\
+6 \div 2 &amp;= 3 &amp; 0 \\
+3 \div 2 &amp;= 1 &amp; 1 \\
+1 \div 2 &amp;= 0 &amp; 1 \\
+\end{align*}
+\end{split}\]</div>
+<p>The result is <span class="math notranslate nohighlight">\(1100110_2\)</span>.</p>
+<br>
+<p>When converting <span class="math notranslate nohighlight">\(1056_{10}\)</span> to binary:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+&amp; \text{quotient} &amp; \text{remainder} \\
+1056 \div 2 &amp;= 528 &amp; 0 \\
+528 \div 2 &amp;= 264 &amp; 0 \\
+264 \div 2 &amp;= 132 &amp; 0 \\
+132 \div 2 &amp;= 66 &amp; 0 \\
+66 \div 2 &amp;= 33 &amp; 0 \\
+33 \div 2 &amp;= 16 &amp; 1 \\
+16 \div 2 &amp;= 8 &amp; 0 \\
+8 \div 2 &amp;= 4 &amp; 0 \\
+4 \div 2 &amp;= 2 &amp; 0 \\
+2 \div 2 &amp;= 1 &amp; 0 \\
+1 \div 2 &amp;= 0 &amp; 1 \\
+\end{align*}
+\end{split}\]</div>
+<p>The result is <span class="math notranslate nohighlight">\(10000100000_2\)</span></p>
+</section>
+<section id="computers-use-hexadecimal-numbers-why">
+<h2>Computers use hexadecimal numbers, why?<a class="headerlink" href="#computers-use-hexadecimal-numbers-why" title="Link to this heading">#</a></h2>
+<p>Internally, computers use binary numbers. However, when data must be represented in a human-readable format, there are two common choices:</p>
+<ul class="simple">
+<li><p>decimal:</p>
+<ul>
+<li><p>pro:</p>
+<ul>
+<li><p>most intuitive and easy for humans</p></li>
+<li><p>more compact (less digits to represent the same number) than binary</p></li>
+</ul>
+</li>
+<li><p>cons:</p>
+<ul>
+<li><p>not compact (more digits to represent the same number) than larger bases</p></li>
+<li><p>hard to convert from binary: we hate divisions!</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>hexadecimal:</p>
+<ul>
+<li><p>pro:</p>
+<ul>
+<li><p>compact (less digits to represent the same number) than binary and decimal</p></li>
+<li><p>easy to convert from binary: we love powers of 2!</p></li>
+</ul>
+</li>
+<li><p>cons:</p>
+<ul>
+<li><p>not intuitive as decimal but not too bad</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>When data must be shown in a raw format, computers show data in hexadecimal.</p>
+</section>
+<section id="hexadecimal-numbers">
+<h2>Hexadecimal numbers<a class="headerlink" href="#hexadecimal-numbers" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=0}^{n-1} d_i \times 16^i = \text{value}_{10}
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(b=16\)</span> is the base of the powers</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_i\)</span> is the digit at position <span class="math notranslate nohighlight">\(i\)</span> (from right to left)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> is the number of digits</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_i \in \{0, 1, \ldots, 9, A, B, C, D,E,F\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(d_i &gt; 9\)</span> are represented with a single digit: <span class="math notranslate nohighlight">\(A=10\)</span>, <span class="math notranslate nohighlight">\(B=11\)</span>, <span class="math notranslate nohighlight">\(C=12\)</span>, <span class="math notranslate nohighlight">\(D=13\)</span>, <span class="math notranslate nohighlight">\(E=14\)</span>, <span class="math notranslate nohighlight">\(F=15\)</span></p></li>
+<li><p>for convenience, the result (<span class="math notranslate nohighlight">\(\text{value}_{10}\)</span>) is kept in base 10</p></li>
+</ul>
+<p>The powers of <span class="math notranslate nohighlight">\(16\)</span> are:</p>
+<table style="width:100%">
+	<tr>
+		<th>Position:</th>
+		<th>5</th>
+		<th>4</th>
+		<th>3</th>
+		<th>2</th>
+		<th>1</th>
+		<th>0</th>
+	</tr>
+    	<tr>
+		<th>Power of two:</th>
+		<th>$16^5$</th>
+		<th>$16^4$</th>
+		<th>$16^3$</th>
+		<th>$16^2$</th>
+		<th>$16^1$</th>
+		<th>$16^0$</th>
+	</tr>
+	<tr>
+		<th>Value:</th>
+		<th>$1048576$</th>
+        <th>$65536$</th>
+		<th>$4096$</th>
+		<th>$256$</th>
+		<th>$16$</th>
+        <th>$1$</th>
+	</tr>
+</table><br>
+<p>For instance, the number <span class="math notranslate nohighlight">\(1A3FA _{16}\)</span> is:</p>
+<p>\begin{equation*}
+1A3FA_{16} = \underbrace{1 \times 16^4}<em>\text{fourth position} + \underbrace{A \times 16^3}</em>\text{third position} + \underbrace{3 \times 16^2}<em>\text{second position} + \underbrace{F \times 16^1}</em>\text{first position} + \underbrace{A \times 16^0}<em>\text{first position} = 107514</em>{10}
+\end{equation*}</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(1A3FA_{16}\)</span> is a 5-digit number in base 16.</p></li>
+<li><p><span class="math notranslate nohighlight">\(1A3FA_{16}\)</span> is a 6-digit number in base 10: <span class="math notranslate nohighlight">\(107514_{10}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1A3FA_{16}\)</span> is a 6-digit number in base 2: <span class="math notranslate nohighlight">\(11010001111111010_{2}\)</span></p></li>
+</ul>
+<p>The difference in number of digits increases as the number increases.</p>
+</section>
+<section id="conversion-from-binary-to-hexadecimal">
+<h2>Conversion from binary to hexadecimal<a class="headerlink" href="#conversion-from-binary-to-hexadecimal" title="Link to this heading">#</a></h2>
+<p>We can convert a binary number to a hexadecimal number by:</p>
+<ol class="arabic simple">
+<li><p>grouping the binary digits into sets of four, starting from the right.</p></li>
+<li><p>Each group of four binary digits can be converted to a single hexadecimal digit.</p></li>
+</ol>
+<p><br><br></p>
+<p>For instance, <span class="math notranslate nohighlight">\(11010001111111010_{2}\)</span>:
+$<span class="math notranslate nohighlight">\(
+    {1_{2}\,\,{1010}_{2}\,\,{0011}_{2}\,\,{1111}_{2}\,\,{1010}_{2}} = \underbrace{1_{2}}_{1_{16}} ~~ \underbrace{1010_{2}}_{A_{16}} ~~ \underbrace{0011_{2}}_{3_{16}} ~~ \underbrace{1111_{2}}_{F_{16}} ~~ \underbrace{1010_{2}}_{A_{16}} = 1A3FA_{16}
+\)</span>$</p>
+</section>
+<section id="conversion-from-hexadecimal-to-binary">
+<h2>Conversion from hexadecimal to binary<a class="headerlink" href="#conversion-from-hexadecimal-to-binary" title="Link to this heading">#</a></h2>
+<p>Opposite strategy:</p>
+<ol class="arabic simple">
+<li><p>Convert each hexadecimal digit to its binary equivalent.</p></li>
+<li><p>Combine the binary digits to form the final binary number.</p></li>
+</ol>
+<p><br><br></p>
+<p>For instance, <span class="math notranslate nohighlight">\(1A3FA_{16}\)</span>:
+$<span class="math notranslate nohighlight">\(
+    {{1}_{16}\,\,A_{16}\,\,3_{16}\,\,F_{16}\,\,A_{16}} = \underbrace{1_{16}}_{1_{2}} ~~ \underbrace{A_{16}}_{1010_{2}} ~~ \underbrace{3_{16}}_{0011_{2}} ~~ \underbrace{F_{16}}_{1111_{2}} ~~ \underbrace{A_{16}}_{1010_{2}} = 11010001111111010_{2}
+\)</span>$</p>
+</section>
+<section id="turning-text-into-bits">
+<h2>Turning text into bits<a class="headerlink" href="#turning-text-into-bits" title="Link to this heading">#</a></h2>
+<p>One way to represent text into bits is to use the <em><strong>ASCII</strong></em> (American Standard Code for Information Interchange) encoding:</p>
+<div align="center">
+<a class="reference internal image-reference" href="../../_images/ascii.png"><img alt="../../_images/ascii.png" src="../../_images/ascii.png" style="width: 80%;" />
+</a>
+</div><br>
+<ol class="arabic simple">
+<li><p>Split the text into characters</p></li>
+<li><p>Take each character of your text and consider the hex value of that character from the ASCII table</p></li>
+<li><p>Convert the hex values to binary</p></li>
+<li><p>Convert the binary values</p></li>
+</ol>
+<p>For instance, the text “Hello LUISS”:</p>
+<ol class="arabic simple">
+<li><p>Characters: <code class="docutils literal notranslate"><span class="pre">H</span></code>, <code class="docutils literal notranslate"><span class="pre">e</span></code>, <code class="docutils literal notranslate"><span class="pre">l</span></code>, <code class="docutils literal notranslate"><span class="pre">l</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code>, <code class="docutils literal notranslate"> </code>, <code class="docutils literal notranslate"><span class="pre">L</span></code>, <code class="docutils literal notranslate"><span class="pre">U</span></code>, <code class="docutils literal notranslate"><span class="pre">I</span></code>, <code class="docutils literal notranslate"><span class="pre">S</span></code>, <code class="docutils literal notranslate"><span class="pre">S</span></code></p></li>
+<li><p>Hex values: <span class="math notranslate nohighlight">\(48_{16}\)</span>, <span class="math notranslate nohighlight">\(65_{16}\)</span>, <span class="math notranslate nohighlight">\(6C_{16}\)</span>, <span class="math notranslate nohighlight">\(6C_{16}\)</span>, <span class="math notranslate nohighlight">\(6F_{16}\)</span>, <span class="math notranslate nohighlight">\(20_{16}\)</span>, <span class="math notranslate nohighlight">\(4C_{16}\)</span>, <span class="math notranslate nohighlight">\(55_{16}\)</span>, <span class="math notranslate nohighlight">\(49_{16}\)</span>, <span class="math notranslate nohighlight">\(53_{16}\)</span>, <span class="math notranslate nohighlight">\(53_{16}\)</span></p></li>
+<li><p>Binary values: <span class="math notranslate nohighlight">\(01001000_{2}\)</span>, <span class="math notranslate nohighlight">\(01100101_{2}\)</span>, <span class="math notranslate nohighlight">\(01101100_{2}\)</span>, <span class="math notranslate nohighlight">\(01101100_{2}\)</span>, <span class="math notranslate nohighlight">\(01101111_{2}\)</span>, <span class="math notranslate nohighlight">\(00100000_{2}\)</span>, <span class="math notranslate nohighlight">\(01001100_{2}\)</span>, <span class="math notranslate nohighlight">\(01010101_{2}\)</span>, <span class="math notranslate nohighlight">\(01001001_{2}\)</span>, <span class="math notranslate nohighlight">\(01001111_{2}\)</span>, <span class="math notranslate nohighlight">\(01001111_{2}\)</span></p></li>
+<li><p>Concatenated binary values: <span class="math notranslate nohighlight">\(0100100001100101011011000110110001101111001000000100110001010101010010010100111101001111_{2}\)</span></p></li>
+</ol>
+</section>
+<section id="turning-bits-to-text">
+<h2>Turning bits to text<a class="headerlink" href="#turning-bits-to-text" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Split the binary bits into groups of 8</p></li>
+<li><p>Convert the binary values to hex</p></li>
+<li><p>Convert the hex values to characters using the ASCII table</p></li>
+<li><p>Convert the characters to obtain the text</p></li>
+</ol>
+<p>For instance, on the previous example:</p>
+<ol class="arabic simple">
+<li><p>Grouped binary values: <span class="math notranslate nohighlight">\(01001000_{2}\,\,01100101_{2}\,\,01101100_{2}\,\,01101100_{2}\,\,01101111_{2}\,\,00100000_{2}\,\,01001100_{2}\,\,01010101_{2}\,\,01001001_{2}\,\,01001111_{2}\,\,01001111_{2}\)</span></p></li>
+<li><p>Hex values: <span class="math notranslate nohighlight">\(48_{16}\)</span>, <span class="math notranslate nohighlight">\(65_{16}\)</span>, <span class="math notranslate nohighlight">\(6C_{16}\)</span>, <span class="math notranslate nohighlight">\(6C_{16}\)</span>, <span class="math notranslate nohighlight">\(6F_{16}\)</span>, <span class="math notranslate nohighlight">\(20_{16}\)</span>, <span class="math notranslate nohighlight">\(4C_{16}\)</span>, <span class="math notranslate nohighlight">\(55_{16}\)</span>, <span class="math notranslate nohighlight">\(49_{16}\)</span>, <span class="math notranslate nohighlight">\(53_{16}\)</span>, <span class="math notranslate nohighlight">\(53_{16}\)</span></p></li>
+<li><p>Characters: <code class="docutils literal notranslate"><span class="pre">H</span></code>, <code class="docutils literal notranslate"><span class="pre">e</span></code>, <code class="docutils literal notranslate"><span class="pre">l</span></code>, <code class="docutils literal notranslate"><span class="pre">l</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code>, <code class="docutils literal notranslate"> </code>, <code class="docutils literal notranslate"><span class="pre">L</span></code>, <code class="docutils literal notranslate"><span class="pre">U</span></code>, <code class="docutils literal notranslate"><span class="pre">I</span></code>, <code class="docutils literal notranslate"><span class="pre">S</span></code>, <code class="docutils literal notranslate"><span class="pre">S</span></code></p></li>
+<li><p>Text: <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">LUISS</span></code></p></li>
+</ol>
+</section>
+<section id="tool-for-the-text-to-binary-conversion">
+<h2>Tool for the text-to-binary conversion<a class="headerlink" href="#tool-for-the-text-to-binary-conversion" title="Link to this heading">#</a></h2>
+<div align="center">
+<a class="reference internal image-reference" href="../../_images/tool-conversion.png"><img alt="../../_images/tool-conversion.png" src="../../_images/tool-conversion.png" style="width: 50%;" />
+</a>
+<p style="text-align: center;"><a href="https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html">https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html</a></p>
+</div>  </section>
+<section id="text-is-for-humans-binary-is-for-machines">
+<h2>Text is for humans, binary is for machines<a class="headerlink" href="#text-is-for-humans-binary-is-for-machines" title="Link to this heading">#</a></h2>
+<p>Computers are fine with binary and do not need to convert between binary and text.</p>
+<p>Computers do convert between binary and text, to help us humans!</p>
+<p>Text is shown on the screen for our benefit, but remember that it is stored in binary!</p>
+</section>
+<section id="other-data-formats">
+<h2>Other data formats<a class="headerlink" href="#other-data-formats" title="Link to this heading">#</a></h2>
+<p>Depending on the specific data type, there is a <strong>standardized</strong> way of turning sequence of bits into a human-readable format.</p>
+<p>For instance, a simple yet inefficient image format:</p>
+<ul class="simple">
+<li><p>split bits into groups of 8</p></li>
+<li><p>each group is a number between 0 and 255</p></li>
+<li><p>each number is seen as a different pixel</p></li>
+<li><p>each pixel value is represented to the screen with a different color</p></li>
+<li><p>there are only 256 colors available</p></li>
+</ul>
+<p>This is a very inefficient way of representing an image, but it is simple to understand. Image formats, such as JPEG or PNG, are much more efficient and effective:</p>
+<ul class="simple">
+<li><p>they can use more than 256 colors… millions of colors!</p></li>
+<li><p>they can use compression to reduce the size of the file: if some <em>close</em> pixels have the same color, they can be represented in a more compact way!</p></li>
+</ul>
+</section>
+<section id="ppm-image-format">
+<h2>PPM Image format<a class="headerlink" href="#ppm-image-format" title="Link to this heading">#</a></h2>
+<p>This is an example of a color RGB image stored in PPM format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">P3</span>
+<span class="c1"># &quot;P3&quot; means this is a RGB color image in ASCII</span>
+<span class="c1"># &quot;3 2&quot; is the width and height of the image in pixels</span>
+<span class="c1"># &quot;255&quot; is the maximum value for each color</span>
+<span class="c1"># This, up through the &quot;255&quot; line below are the header.</span>
+<span class="c1"># Everything after that is the image data: RGB triplets.</span>
+<span class="c1"># In order: red, green, blue, yellow, white, and black.</span>
+<span class="mi">3</span> <span class="mi">2</span>
+<span class="mi">255</span>
+<span class="mi">255</span>   <span class="mi">0</span>   <span class="mi">0</span>
+  <span class="mi">0</span> <span class="mi">255</span>   <span class="mi">0</span>
+  <span class="mi">0</span>   <span class="mi">0</span> <span class="mi">255</span>
+<span class="mi">255</span> <span class="mi">255</span>   <span class="mi">0</span>
+<span class="mi">255</span> <span class="mi">255</span> <span class="mi">255</span>
+  <span class="mi">0</span>   <span class="mi">0</span>   <span class="mi">0</span>
+</pre></div>
+</div>
+<div align="center">
+<a class="reference internal image-reference" href="../../_images/Tiny6pixel.png"><img alt="../../_images/Tiny6pixel.png" src="../../_images/Tiny6pixel.png" style="width: 20%;" />
+</a>
+<p style="text-align: center;"><a href="https://en.wikipedia.org/wiki/Netpbm#File_formats">Wikipedia >PPM format</a></p>
+</div>  </section>
+<section id="byte">
+<h2>Byte<a class="headerlink" href="#byte" title="Link to this heading">#</a></h2>
+<p>A <strong>byte</strong> is a unit of information made up of <strong>8 bits</strong>. Most systems and data formats are designed to process data in bytes, which is the most common unit when dealing with sequences of bits. Indeed, in computer science, bytes are often used to measure the amount of data stored or transmitted.</p>
+<p>Notice that:</p>
+<ul class="simple">
+<li><p>8 bits can represent 256 different values (from 0 to 255)</p></li>
+<li><p>8 bits can be written as 2 hex digits</p></li>
+</ul>
+<p>For instance, <span class="math notranslate nohighlight">\({1110110011}_2\)</span>:
+$<span class="math notranslate nohighlight">\(
+    \underbrace{{10110011}_2}_{8~\text{bits}} = \underbrace{1011_{2}\,0011_2}_{1~\text{byte}} = \underbrace{B_{16}3_{16}}_{2~\text{hex digits}} = 187_{10}
+\)</span>$</p>
+<p>For values larger than 255, we still group by 8 bits, ending with more than one byte. When the number of bits are not a multiple of 8, we add leading zeros to make it a multiple of 8.</p>
+<p>For instance:
+$<span class="math notranslate nohighlight">\(
+     \underbrace{{1110110011}_2}_{10~\text{bits}} = \underbrace{{0000_{2}\,0011_{2}}\,\,{1011_{2}\,0011_2}}_{2~~\text{bytes}} = \underbrace{0_{16}\,3_{16}\,B_{16}\,3_{16}}_{4~\text{hex digits}} = 947_{10}
+\)</span>$</p>
+</section>
+<section id="multiple-byte-units">
+<h2>Multiple-byte units<a class="headerlink" href="#multiple-byte-units" title="Link to this heading">#</a></h2>
+<table border="1" style="border-collapse:collapse; font-size:88%; text-align:left;">
+  <tr>
+    <td style="padding:0;">
+      <table border="1" style="border-collapse:collapse; width:100%;">
+        <tr>
+          <th colspan="3" style="background-color:#ccf; text-align:center;">Decimal</th>
+        </tr>
+        <tr>
+          <th style="background-color: lightgray; text-align:center;">Value</th>
+          <th colspan="2" style="background-color: lightgreen; text-align:center;">Metric</th>
+        </tr>
+        <tr><td>1000</td><td>kB</td><td>kilobyte</td></tr>
+        <tr><td>1000<sup>2</sup></td><td>MB</td><td>megabyte</td></tr>
+        <tr><td>1000<sup>3</sup></td><td>GB</td><td>gigabyte</td></tr>
+        <tr><td>1000<sup>4</sup></td><td>TB</td><td>terabyte</td></tr>
+        <tr><td>1000<sup>5</sup></td><td>PB</td><td>petabyte</td></tr>
+        <tr><td>1000<sup>6</sup></td><td>EB</td><td>exabyte</td></tr>
+        <tr><td>1000<sup>7</sup></td><td>ZB</td><td>zettabyte</td></tr>
+        <tr><td>1000<sup>8</sup></td><td>YB</td><td>yottabyte</td></tr>
+        <tr><td>1000<sup>9</sup></td><td>RB</td><td>ronnabyte</td></tr>
+        <tr><td>1000<sup>10</sup></td><td>QB</td><td>quettabyte</td></tr>
+      </table>
+    </td>
+    <td style="padding:0;">
+      <table border="1" style="border-collapse:collapse; width:100%;">
+        <tr>
+          <th colspan="5" style="background-color:lightyellow; text-align:center;">Binary</th>
+        </tr>
+        <tr>
+          <th style="background-color: red; text-align:center;">Value</th>
+          <th colspan="2" style="background-color:orange; text-align:center;">IEC</th>
+          <th colspan="2" style="background-color: brown; text-align:center;">Memory</th>
+        </tr>
+        <tr><td>1024</td><td>KiB</td><td>kibibyte</td><td>KB</td><td>kilobyte</td></tr>
+        <tr><td>1024<sup>2</sup></td><td>MiB</td><td>mebibyte</td><td>MB</td><td>megabyte</td></tr>
+        <tr><td>1024<sup>3</sup></td><td>GiB</td><td>gibibyte</td><td>GB</td><td>gigabyte</td></tr>
+        <tr><td>1024<sup>4</sup></td><td>TiB</td><td>tebibyte</td><td>TB</td><td>terabyte</td></tr>
+        <tr><td>1024<sup>5</sup></td><td>PiB</td><td>pebibyte</td><td colspan="2" style="text-align:center;">—</td></tr>
+        <tr><td>1024<sup>6</sup></td><td>EiB</td><td>exbibyte</td><td colspan="2" style="text-align:center;">—</td></tr>
+        <tr><td>1024<sup>7</sup></td><td>ZiB</td><td>zebibyte</td><td colspan="2" style="text-align:center;">—</td></tr>
+        <tr><td>1024<sup>8</sup></td><td>YiB</td><td>yobibyte</td><td colspan="2" style="text-align:center;">—</td></tr>
+        <tr><td>1024<sup>9</sup></td><td>RiB</td><td>robibyte</td><td colspan="2" style="text-align:center;">—</td></tr>
+        <tr><td>1024<sup>10</sup></td><td>QiB</td><td>quebibyte</td><td colspan="2" style="text-align:center;">—</td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</section>
+<section id="understanding-the-growing-world-of-bytes">
+<h2>Understanding The Growing World Of Bytes<a class="headerlink" href="#understanding-the-growing-world-of-bytes" title="Link to this heading">#</a></h2>
+<p>An interesting infographic that shows the evolution (and scale) of the world’s data over time:</p>
+<div align="center">
+<a class="reference internal image-reference" href="../../_images/infographic.png"><img alt="../../_images/infographic.png" src="../../_images/infographic.png" style="width: 50%;" />
+</a>
+<p style="text-align: center;">Source: <a href="https://datafloq.com/read/understanding-world-bytes-infographic/">Understanding The Growing World Of Bytes</a></p>
+</div>
+</section>
+<section id="fun-time">
+<h2>Fun time<a class="headerlink" href="#fun-time" title="Link to this heading">#</a></h2>
+<section id="dad-s-joke-time">
+<h3>Dad’s joke time<a class="headerlink" href="#dad-s-joke-time" title="Link to this heading">#</a></h3>
+<div align="center">
+<img src="img/joke.png" width="80%">
+<p style="text-align: center;">If you do not get the joke: <code>10</code> is binary is 2 :)</p>
+</div>
+</section>
+<section id="wait-a-minute">
+<h3>Wait a minute…<a class="headerlink" href="#wait-a-minute" title="Link to this heading">#</a></h3>
+<div align="center">
+<img src="img/Two_hands.jpg" width="60%">
+<p style="text-align: center;">Check out your hands... What do you see?<br><br>I see ten bits! Each finger is either up (<code>1</code>) or down (<code>0</code>). </p>
+</div></section>
+<section id="finger-binary">
+<h3>Finger Binary<a class="headerlink" href="#finger-binary" title="Link to this heading">#</a></h3>
+<div align="center">
+<p style="text-align: center; font-weight: bold"><a href="https://en.wikipedia.org/wiki/Finger_binary">https://en.wikipedia.org/wiki/Finger_binary</a></p>
+<img src="img/finger-counting.png" width="60%">
+<p style="text-align: center; font-weight: bold">Using two hands we can count up to 1023, that is 2<sup>10</sup> – 1!</p>
+</div><br>
+<div align="center">
+<img src="img/finger-counting-2.png" width="80%">
+</div></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src/C00"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../A00/A00-Introduction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Course overview</b></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../P00/P00-Python-Getting-Started.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Getting Started</b></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-computing-system">What is a Computing System?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computations-manipulate-data">Computations manipulate Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-in-computing-means-bits">Data in computing means <em><strong>bits</strong></em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-notation">Positional Notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-computers-prefer-the-binary-representation">Why computers prefer the binary representation?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humans-and-computers-are-quite-different">Humans and Computers are quite different</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-representation">Binary representation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-binary-to-decimal">Conversion from binary to decimal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-n-binary-numbers-n-16">First <span class="math notranslate nohighlight">\(n\)</span> binary numbers (<span class="math notranslate nohighlight">\(n=16\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interesting-properties-of-binary-numbers">Interesting properties of binary numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Conversion from binary to decimal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-use-hexadecimal-numbers-why">Computers use hexadecimal numbers, why?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hexadecimal-numbers">Hexadecimal numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-binary-to-hexadecimal">Conversion from binary to hexadecimal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-hexadecimal-to-binary">Conversion from hexadecimal to binary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turning-text-into-bits">Turning text into bits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turning-bits-to-text">Turning bits to text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-for-the-text-to-binary-conversion">Tool for the text-to-binary conversion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-is-for-humans-binary-is-for-machines">Text is for humans, binary is for machines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-data-formats">Other data formats</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ppm-image-format">PPM Image format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#byte">Byte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-byte-units">Multiple-byte units</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-growing-world-of-bytes">Understanding The Growing World Of Bytes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fun-time">Fun time</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dad-s-joke-time">Dad’s joke time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wait-a-minute">Wait a minute…</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finger-binary">Finger Binary</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Emilio Coppa and Alessio Martino
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
