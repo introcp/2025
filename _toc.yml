@@ -11,6 +11,7 @@ parts:
     chapters:
       - file: src/C00/C00-Bits-and-Bytes.ipynb
       - file: src/C01/C01-Boolean-Logic.ipynb
+      - file: src/C02/C02-Hardware.ipynb
   - caption: Python
     chapters:
       - file: src/P00/P00-Python-Getting-Started.ipynb

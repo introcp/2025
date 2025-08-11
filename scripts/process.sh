@@ -27,7 +27,7 @@ jupyter nbconvert ${1} --to slides \
 # --no-input # --post serve # ?print-pdf
 
 # fix: top vertical alignment
-if [ -z "${SCROLLABLE}" ]; then
+if [ -z "${SCROLLABLE}" ] || [ "${SCROLLABLE}" = "True" ]; then
     sed -i -e 's/controls: true/controls: true, center: false, margin: 0/g' ${1%%.*}.slides.html
 fi
 
