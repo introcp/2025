@@ -3,3 +3,5 @@ _build
 #extra
 #exercises
 extra/old
+.vscode
+.venv

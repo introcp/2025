@@ -9576,14 +9576,14 @@ require(
     function(Reveal, RevealNotes){
         // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
         Reveal.initialize({
-            controls: true, center: false, margin: 0,
+            controls: true,
             progress: true,
             history: true,
             transition: "none",
             slideNumber: "c/t",
             plugins: [RevealNotes],
             width: 960,
-			      height: 700,
+			      height: 800,
 
         });
 
@@ -9596,7 +9596,7 @@ require(
         Reveal.addEventListener('slidechanged', update);
 
         function setScrollingSlide() {
-            var scroll = true
+            var scroll = false
             if (scroll === true) {
               var h = $('.reveal').height() * 0.755;
               $('section.present').find('section')

@@ -1,43 +1,13 @@
-import glob
 import os
-import hashlib
-import glob
+import sys
 from playwright.sync_api import sync_playwright, Playwright
 
-def file_hash(path):
-    hasher = hashlib.sha256()
-    with open(path, 'rb') as f:
-        hasher.update(f.read())
-    return hasher.hexdigest()
+f = sys.argv[1]
+if not os.path.exists(f):
+    print("File does not exist:", f)
+    exit(1)
 
-def name_hash(path):
-    hasher = hashlib.sha256()
-    hasher.update(path.encode('utf-8'))
-    return hasher.hexdigest()
-
-HASHED_DIR = "docs/.hashes/"
-
-if not os.path.exists(HASHED_DIR):
-    os.makedirs(HASHED_DIR)
-
-cached_hashes = {}
-for hash in glob.glob(HASHED_DIR + "/*.hash"):
-    hf = os.path.basename(hash).replace(".hash", "")
-    h = open(hash, 'r').read().strip()
-    cached_hashes[hf] = h
-
-for filename in sorted(glob.glob('src/*/*.ipynb')):
-    
-    hash_name = name_hash(filename)
-
-    if 'ALL' not in os.environ and os.path.exists(filename.replace(".ipynb", ".pdf")) \
-        and hash_name in cached_hashes and file_hash(filename) in cached_hashes[hash_name]:
-        print("Skipping conversion into slide:", filename)
-        continue
-    else:
-        print("Converting into slide:", filename)
-
-    os.system('SCROLLABLE=False bash scripts/process.sh ' + filename)
+for filename in sorted([f]):
 
     def run(playwright: Playwright, verbose=False):
 
@@ -67,6 +37,8 @@ for filename in sorted(glob.glob('src/*/*.ipynb')):
 
         page.emulate_media(media="screen")
 
+        print(filename)
+
         html_file = os.getcwd() + "/" + filename.replace('.ipynb', '.slides.html?print-pdf')
         
         if verbose: print("Visiting the page:", html_file)
@@ -86,15 +58,10 @@ for filename in sorted(glob.glob('src/*/*.ipynb')):
             print_background=True,
             margin=[],
             format="A4",
-            height="680",
-            # width="1200",
+            # height="900",
+            # width="1500",
         )
         browser.close()
 
-        with open(HASHED_DIR + hash_name + ".hash", 'w') as f:
-            f.write(file_hash(filename))
-
     with sync_playwright() as playwright:
         run(playwright)
-
-    os.system('SCROLLABLE=True bash scripts/process.sh ' + filename)

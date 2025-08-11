@@ -18,7 +18,7 @@ jupyter nbconvert ${1} --to slides \
     --SlidesExporter.reveal_theme="luiss" \
     --SlidesExporter.reveal_number="c/t" \
     --SlidesExporter.reveal_scroll=${SCROLLABLE} \
-    --SlidesExporter.reveal_height=700  \
+    --SlidesExporter.reveal_height=800  \
     --SlidesExporter.reveal_transition="none" 
     # \
     # --SlidesExporter.reveal_width=1280 \
@@ -27,7 +27,9 @@ jupyter nbconvert ${1} --to slides \
 # --no-input # --post serve # ?print-pdf
 
 # fix: top vertical alignment
-sed -i -e 's/controls: true/controls: true, center: false, margin: 0/g' ${1%%.*}.slides.html
+if [ -z "${SCROLLABLE}" ]; then
+    sed -i -e 's/controls: true/controls: true, center: false, margin: 0/g' ${1%%.*}.slides.html
+fi
 
 # fix: luiss font
 # sed -i -e 's/jp-content-font-family: system-ui/jp-content-font-family: LUISS, system-ui/g' ${1%%.*}.slides.html

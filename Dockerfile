@@ -20,3 +20,23 @@ COPY requirements.txt requirements.txt
 RUN python3 -m venv .venv
 RUN . .venv/bin/activate; pip install -r requirements.txt
 RUN . .venv/bin/activate; playwright install chromium # --with-deps
+
+USER root
+
+RUN apt-get update && apt-get install -y \
+    fonts-liberation \
+    fonts-dejavu-core \
+    fonts-roboto \
+    fonts-noto-core \
+    fonts-noto-cjk \
+    fonts-noto-color-emoji \
+    fonts-freefont-ttf \
+    fonts-ubuntu \
+    fonts-droid-fallback \
+    fontconfig
+
+USER user
+
+ENV VIRTUAL_ENV="/home/user/.venv"
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
