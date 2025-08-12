@@ -7606,12 +7606,126 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="What-can-we-do-with-AND,-OR,-NOT-gates?">What can we do with AND, OR, NOT gates?<a class="anchor-link" href="#What-can-we-do-with-AND,-OR,-NOT-gates?">¶</a></h2><p>We can combine AND, OR, and NOT gates to implement a logic circuit that implements arbitrary boolean functions.</p>
-<p>For instance, we see how to implement two common components:</p>
+<h2 id="What-can-we-do-with-AND,-OR,-NOT-gates?">What can we do with AND, OR, NOT gates?<a class="anchor-link" href="#What-can-we-do-with-AND,-OR,-NOT-gates?">¶</a></h2><p>We can combine AND, OR, and NOT gates to implement a logic circuit that implements arbitrary boolean functions:</p>
 <ol>
-<li><strong>Half Adder</strong>: a circuit that implements the addition of two binary numbers.</li>
-<li><strong>Full Adder</strong>: a circuit that implements the addition of two binary numbers with a carry input.</li>
+<li>Build the truth table for your custom computation. For instance:<br/><br/></li>
 </ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">OUTPUT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<br/>
+<ol start="2">
+<li>Use a tool to derive the boolean formula: e.g., provide the OUTPUT column from your truth table to <a href="https://www.dcode.fr/boolean-truth-table">dcode.fr</a></li>
+</ol>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/tool-generate-formula.png" width="50%"/><br/>
+<img alt="No description has been provided for this image" src="img/tool-generate-formula-output.png" width="40%"/>
+</div>
+<p><strong>NOTE</strong>: We discovered that our output does not depend on the value of A!</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<br/>
+<ol start="3">
+<li>Use a tool to get a minimal circuit: e.g., provide the boolean formula to <a href="https://www.boolean-algebra.com/">boolean-algebra.com</a></li>
+</ol>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/tool-bool-simplifier.png" width="60%"/><br/>
+<img alt="No description has been provided for this image" src="img/tool-bool-simplifier-circuit.png" width="50%"/>
+</div>
+<p><strong>NOTE</strong>: In this case, the formula was already minimal. In general, the tool will first perform a minimization of the formula, and then generate the circuit. Smaller is formula, smaller is circuit, less gates, less area, less power, less cost.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Implementing-real-world-components">Implementing real-world components<a class="anchor-link" href="#Implementing-real-world-components">¶</a></h2><p>For instance, we see how to implement two common components:</p>
+<ol>
+<li><p><strong>Half Adder</strong>: a circuit that implements the addition of two binary numbers.</p>
+</li>
+<li><p><strong>Full Adder</strong>: a circuit that implements the addition of two binary numbers with a carry input.</p>
+</li>
+</ol>
+<p>These components can be find on any computer, and are used to perform the addition of two binary numbers.</p>
 </div>
 </div>
 </div>
@@ -7684,21 +7798,50 @@ main {
 </tr>
 </tbody>
 </table>
-<p><strong>NOTE:</strong></p>
+<br/>
 <ul>
-<li>when both A and B are 1, the output bit is not enough to represent the sum which would be $10_2$, hence, the output is split into two bits: the sum and the carry.</li>
+<li>We can easily observe by looking at the table above that:<ul>
+<li>SUM(A, B) = A XOR B</li>
+<li>CARRY(A, B) = A AND B</li>
 </ul>
+</li>
+</ul>
+<p><strong>NOTE:</strong> The formula has two outputs because when both A and B are 1, a single output bit would not enough to represent the sum which would be $1_2 + 1_2 = 10_2$, hence, the output is split into two bits: the sum and the carry.</p>
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Half-Adder:-circuit-implementation">Half Adder: circuit implementation<a class="anchor-link" href="#Half-Adder:-circuit-implementation">¶</a></h2>
+<h2 id="Half-Adder:-circuit-implementation">Half Adder: circuit implementation<a class="anchor-link" href="#Half-Adder:-circuit-implementation">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/halfadder.drawio.png" width="40%"/>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Half-Adder:-cannot-be-chained-to-sum-bytes">Half Adder: cannot be chained to sum bytes<a class="anchor-link" href="#Half-Adder:-cannot-be-chained-to-sum-bytes">¶</a></h2><p>In the real world, we would to sum two binary numbers A and B that are more than one bit long. For instance:
+$$
+    A = 100011100_2\\
+    B = 101010111_2\\
+    A + B = ?
+$$</p>
+<p>One strategy could be to split the numbers into bits and sum them pair by pair using different half adders:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/halfadder-sum-bytes.drawio.png" width="100%"/>
+</div>
+<p>where $A_i$, $B_i$, and $S_i$ are the $i$-th bit of $A$, $B$, and $S$ (the sum) respectively.</p>
+<p><strong>PROBLEM</strong>: We are ignoring the carry bit of each operation! The result is wrong!</p>
 </div>
 </div>
 </div>
@@ -7711,14 +7854,14 @@ main {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Full-Adder:-boolean-function">Full Adder: boolean function<a class="anchor-link" href="#Full-Adder:-boolean-function">¶</a></h2><p>We want to design a circut that:</p>
 <ul>
-<li>camputes the sum of two binary numbers A and B</li>
-<li>the output is:<ul>
-<li>SUM(A, B): the sum of A and B $\Rightarrow 0_2 + 0_2 = 0_2, 0_2 + 1_2 = 1_2, 1_2 + 1_2 = 0_2$</li>
-<li>CARRY(A, B): the carry of SUM(A, B)</li>
+<li>camputes the sum of:<ul>
+<li>two bit A and B</li>
+<li>a carry bit (from the previous addition)</li>
 </ul>
 </li>
-<li>if are doing a sequence of additions, we have to also consider a carry from the previous addition<ul>
-<li>SUM(SUM(A, B), CARRY)
+<li>the output is:<ul>
+<li>SUM(A, B, CARRY): the sum of A, B, and CARRY</li>
+<li>CARRY(A, B, CARRY): the carry of SUM(A, B, CARRY)
 <br/><br/></li>
 </ul>
 </li>
@@ -7729,8 +7872,8 @@ main {
 <th style="text-align:center">A</th>
 <th style="text-align:center">B</th>
 <th style="text-align:center">CARRY</th>
-<th style="text-align:center">CARRY(A, B)</th>
-<th style="text-align:center">SUM(A, B)</th>
+<th style="text-align:center">SUM(A, B, CARRY)</th>
+<th style="text-align:center">CARRY(A, B, CARRY)</th>
 </tr>
 </thead>
 <tbody>
@@ -7745,43 +7888,43 @@ main {
 <td style="text-align:center">0</td>
 <td style="text-align:center">0</td>
 <td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
 <td style="text-align:center">1</td>
 <td style="text-align:center">0</td>
 </tr>
 <tr>
+<td style="text-align:center">0</td>
 <td style="text-align:center">1</td>
 <td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
 <td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
 <td style="text-align:center">0</td>
 <td style="text-align:center">1</td>
 </tr>
 <tr>
 <td style="text-align:center">1</td>
 <td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
 <td style="text-align:center">1</td>
 <td style="text-align:center">0</td>
 </tr>
 <tr>
 <td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
 <td style="text-align:center">0</td>
 <td style="text-align:center">1</td>
 <td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
 </tr>
 <tr>
 <td style="text-align:center">1</td>
@@ -7815,7 +7958,111 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="How-does-the-hardware-of-a-computer-work?">How does the hardware of a computer work?<a class="anchor-link" href="#How-does-the-hardware-of-a-computer-work?">¶</a></h2><p>An (still accurate) high level overview of a computer:</p>
+<h2 id="Full-Adder:-summing-two-bytes">Full Adder: summing two bytes<a class="anchor-link" href="#Full-Adder:-summing-two-bytes">¶</a></h2><p>We now sum two bytes $A$ and $B$, such as:</p>
+<p>$$
+    A = 100011100_2\\
+    B = 101010111_2\\
+    A + B = ?
+$$</p>
+<p>We split the numbers into bits and sum them pair by pair using different full adders:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/adder-sum-bytes.drawio.png" width="100%"/>
+</div>
+<p>where $A_i$, $B_i$, and $S_i$ are the $i$-th bit of $A$, $B$, and $S$ (the sum) respectively. The first input carry is set to 0, and the last output carry is ignored.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Next:-we-will-implement-a-full-8-bit-computer!">Next: we will implement a full 8-bit computer!<a class="anchor-link" href="#Next:-we-will-implement-a-full-8-bit-computer!">¶</a></h2><p>We will use starter kit electronics. Spoiler of the result:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/8bit-computer.png" width="70%">
+</img></div>
+<p>What you need:</p>
+<ul>
+<li>7899 transistors</li>
+<li>12786 jump wires</li>
+<li><strong>...just kidding :)</strong></li>
+</ul>
+<p><strong>NOTE</strong>: someone has actually done it: see <a href="https://www.youtube.com/watch?v=g_ZaioqF1B0&amp;ab_channel=PauloConstantino">here</a> and <a href="https://www.youtube.com/watch?v=HyznrdDSSGM&amp;list=PLowKtXNTBypGqImE405J2565dvjafglHU&amp;ab_channel=BenEater">here</a>.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="How-today's-computers-are-built?">How today's computers are built?<a class="anchor-link" href="#How-today's-computers-are-built?">¶</a></h2><ul>
+<li>They are based on the same ideas presented in our lectures...</li>
+<li>...manufacturers are implementing millions of boolean operations</li>
+<li>...to do that they need billions of gates</li>
+<li>...since gates are mostly implemented using transistors</li>
+<li>...they need <strong>billions of transistors</strong></li>
+<li>...which has to be packed in a limited surface to minimize signal propagation</li>
+</ul>
+<p>They cannot use standard electronic components as we have done. They had to drastically reduce their size, optimizing the production process:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/vlsi.png" width="70%"/>
+</div>
+<p>...in the last 20 years they have been able to pack billions of transistors in a chip.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Transistor-size-evolution">Transistor size evolution<a class="anchor-link" href="#Transistor-size-evolution">¶</a></h2><div align="center">
+<a href="https://www.tech-sparks.com/size-of-transistors/">
+<img alt="No description has been provided for this image" src="img/transistor-size.png" width="70%">
+</img></a>
+</div>
+<p>Only a few companies can produce transistors smaller than 10nm:</p>
+<ul>
+<li>TSMC is leading the market: used by AMD, Apple, Samsung, Huawei, etc.</li>
+<li>Intel is struggling to scale under 10nm transistors</li>
+<li>Samsung is also struggling to scale under 10nm transistors</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Moore's-Law">Moore's Law<a class="anchor-link" href="#Moore's-Law">¶</a></h2><div align="center">
+<a href="https://semianalysis.com/2023/02/04/a-century-of-moores-law/">
+<img alt="No description has been provided for this image" src="img/moore-law.png" width="80%"/>
+</a>
+</div>
+<p>Gordon Moore (Intel): <em>the number of transistors in an integrated circuit doubles about every two years.</em></p>
+<p>Before 2010, more transistors translated into faster CPU. Software was getting faster without doing nothing... it was enough to buy a new CPU every year!</p>
+<p>After 2010, more transistors translated into more cores or more cache. Unfortunately, the <em><strong>free lunch is over</strong></em>: software is not getting faster without doing nothing... software must be re-engineered to take advantage of more cores or more cache.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="What-is-inside-a-computer?">What is inside a computer?<a class="anchor-link" href="#What-is-inside-a-computer?">¶</a></h2><p>An (still accurate) high level overview of a computer:</p>
 <br/>
 <div align="center">
 <img alt="No description has been provided for this image" src="img/computer-architecture-basic.drawio.png" width="70%"/>
@@ -7844,9 +8091,144 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="We-all-knew-the-hardest-part...">We all knew the hardest part...<a class="anchor-link" href="#We-all-knew-the-hardest-part...">¶</a></h2><div align="center">
+<h2 id="We-all-know-the-hardest-part...">We all know the hardest part...<a class="anchor-link" href="#We-all-know-the-hardest-part...">¶</a></h2><div align="center">
 <img alt="No description has been provided for this image" src="img/usb-fuck.png" width="40%"/>
 </div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Motherboard-of-a-computer">Motherboard of a computer<a class="anchor-link" href="#Motherboard-of-a-computer">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/motherboard.jpg" width="70%"/>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Modern-System-On-Chip-(SoC)">Modern System On Chip (SoC)<a class="anchor-link" href="#Modern-System-On-Chip-(SoC)">¶</a></h2><p>Modern SoCs integrate the CPU, GPU, disk, and other components on a single chip:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/soc.drawio.png" width="70%">
+</img></div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="CPU-(Central-Processing-Unit)">CPU (<strong>C</strong>entral <strong>P</strong>rocessing <strong>U</strong>nit)<a class="anchor-link" href="#CPU-(Central-Processing-Unit)">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/cpu-alt.drawio.png" width="85%">
+</img></div>
+<ul>
+<li><p>The <strong>Arithmetic Logic Unit (ALU)</strong> performs arithmetic operations (such as addition and subtraction) and
+logical operations (like AND, OR, NOT) on binary data.</p>
+</li>
+<li><p>The <strong>Control Unit</strong> coordinates the operations of the CPU, managing the flow of data and instructions (e.g., determining the next instruction to execute, performing the fetch-decode-execute cycle).</p>
+</li>
+<li><p>The <strong>Registers</strong> are a few (less than 10-20) small (up to 64 bits wide), fast (&lt;0.5 nanosecond) volatile memory locations that store data and instructions for processing. Most CPUs have to first load data from RAM (~100 nanoseconds) into registers before processing it with the ALU.</p>
+</li>
+<li><p>The <strong>Cache</strong> is a high-speed (1-16 nanoseconds) but still limited (e.g., 1-16 MB) volatile memory that stores frequently used data to speed up access.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="RAM-(Random-Access-Memory)">RAM (<strong>R</strong>andom <strong>A</strong>ccess <strong>M</strong>emory)<a class="anchor-link" href="#RAM-(Random-Access-Memory)">¶</a></h2><ul>
+<li><p>The main (volatile) memory of the computer, where data and instructions are stored for processing before being loaded into the CPU.</p>
+</li>
+<li><p>Implemented with Dynamic Random Access Memory (DRAM) chips, based on capacitors (require regular refreshes to maintain data).</p>
+</li>
+<li><p>The capacity of RAM is nowadays in order of gigabytes (GB) or terabytes (TB).</p>
+</li>
+<li><p>Extremely faster ($1000-100000\times$) than secondary storage (e.g., hard drives, SSDs) but significantly slower ($10-100\times$) than CPU registers.</p>
+</li>
+<li><p>Like a huge array of consecutive bytes, each identified by its address (e.g., $0, 1, 2, \ldots, 2^{64}-1$).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Disks">Disks<a class="anchor-link" href="#Disks">¶</a></h2><p>Permanent storage devices used to store data and programs for long-term use:</p>
+<ul>
+<li><p><strong>Hard Drives (HDDs)</strong>: use spinning disks to store data, quite slow speed (~200 MB/s) but large capacity (up to 20 TB).</p>
+</li>
+<li><p><strong>Solid-state disks (SSDs)</strong>: use flash memory to store data, much faster speed (~1-4 GB/s) but smaller capacity (up to 2 TB).</p>
+</li>
+</ul>
+<p>Disks can be connected to the computer in different ways:</p>
+<ul>
+<li>USB (Universal Serial Bus): used for external disks.</li>
+<li>IDE (Integrated Drive Electronics): used for mechanical disks.</li>
+<li>SATA (Serial Advanced Technology Attachment): used for mechanical disks and older SSDs.</li>
+<li>NVMe (Non-Volatile Memory Express): used for modern SSDs.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Memory-hierarchy">Memory hierarchy<a class="anchor-link" href="#Memory-hierarchy">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/Memory-hierarchy.png" width="85%">
+</img></div>
+<p>Fast memory is expensive, hence a complex hierarchy is used to compromise between cost and performance: larger data is stored in slower, cheaper memory, that, when needed, is loaded into faster, more expensive memory into smaller amounts.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Cloud...?">Cloud...?<a class="anchor-link" href="#Cloud...?">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/cloud.png" width="65%"/>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="How-can-program-a-computer?">How can program a computer?<a class="anchor-link" href="#How-can-program-a-computer?">¶</a></h2><p>In the next lecture, we will cover the software side of the story.</p>
 </div>
 </div>
 </div>
