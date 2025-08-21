@@ -58,6 +58,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/C03/C03-Software';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -431,12 +433,29 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-low-level-to-high-level-programming">From low-level to high-level programming</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compilation">Compilation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-to-learn-a-programming-language">Why do we need to learn a programming language?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#language-syntax-and-semantics">Language: syntax and semantics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-high-level-languages">Different high-level languages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-language-paradigms">Programming language paradigms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-a-task-algorithm-recipe">Solving a task → Algorithm → Recipe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-slightly-more-complex-example-newton-s-method">A slightly more complex example: Newton’s method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#many-different-high-level-languages">MANY different high-level languages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-programming-languages">Popular programming languages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms">Algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-run-complex-software-stacks">Computers run complex software stacks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems">Operating Systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-goals-of-modern-operating-systems">Design goals of modern Operating Systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-operating-system">Overview Operating System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-operating-system-cont-d">Overview Operating System (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Overview Operating System (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-cores-and-operating-system-multitasking">CPU Cores and Operating System Multitasking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-operating-systems">Popular Operating Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">macOS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gnu-linux">GNU/Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#android">Android</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ios">iOS</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -460,13 +479,13 @@ document.write(`
 <div align="center">
 <img src="img/cpus.drawio.png" width="80%">
 </div>
-<p>The CPU is the responsible for executing the program code:</p>
+<p>The <strong>CPU</strong> is the responsible for executing the program code:</p>
 <ul class="simple">
 <li><p>It interprets the instructions one by one from the <strong>RAM</strong></p></li>
 <li><p>The instructions must be written in <strong>machine code</strong></p></li>
 <li><p>The machine code is:</p>
 <ul>
-<li><p><strong>Low level</strong>: quite simple operations</p></li>
+<li><p><strong>Low level</strong>: relatevely simple operations</p></li>
 <li><p><strong>CPU specific</strong>: different CPUs have different machine codes</p></li>
 <li><p><strong>Binary format</strong>: humans struggle to read it</p></li>
 </ul>
@@ -516,7 +535,7 @@ c0 03 5f d6
 <h2>From machine code to assembly code<a class="headerlink" href="#from-machine-code-to-assembly-code" title="Link to this heading">#</a></h2>
 <p>To make machine code understandble for human, we can translate it to assembly code:</p>
 <ul class="simple">
-<li><p><strong>Low level</strong> [same as machine code]: quite simple operations</p></li>
+<li><p><strong>Low level</strong> [same as machine code]: relatevely simple operations</p></li>
 <li><p><strong>CPU specific</strong> [same as machine code]: different CPUs have different machine codes</p></li>
 <li><p><strong>Human readable</strong> [differently from machine code]: CPU struggles to read it!<br><br></p></li>
 </ul>
@@ -600,6 +619,19 @@ ret
 <div align="center">
 <img src="img/interpretation.drawio.png" width="80%">
 </div></section>
+<section id="why-do-we-need-to-learn-a-programming-language">
+<h2>Why do we need to learn a programming language?<a class="headerlink" href="#why-do-we-need-to-learn-a-programming-language" title="Link to this heading">#</a></h2>
+<p>Most everyday tasks require to perform:</p>
+<ul class="simple">
+<li><p>repetitive…</p></li>
+<li><p>long sequences of…</p></li>
+<li><p>simple steps</p></li>
+</ul>
+<p>This scenario is <em>exactly</em> where a computer excels!</p>
+<blockquote>
+<div><p>Computers are incredibly fast, accurate, and stupid. Human beings are incredibly slow, inaccurate, and brilliant. Together they are powerful beyond imagination.<br><br>– Albert Einstein</p>
+</div></blockquote>
+</section>
 <section id="language-syntax-and-semantics">
 <h2>Language: syntax and semantics<a class="headerlink" href="#language-syntax-and-semantics" title="Link to this heading">#</a></h2>
 <p>Programming languages have:</p>
@@ -623,8 +655,89 @@ ret
 </ul>
 <p>An important difference between programming languages and natural languages is that programming languages are designed to be <strong>unambiguous</strong>, which means that there is no room for interpretation.</p>
 </section>
-<section id="different-high-level-languages">
-<h2>Different high-level languages<a class="headerlink" href="#different-high-level-languages" title="Link to this heading">#</a></h2>
+<section id="programming-language-paradigms">
+<h2>Programming language paradigms<a class="headerlink" href="#programming-language-paradigms" title="Link to this heading">#</a></h2>
+<p>Two major computing paradigms:</p>
+<ul class="simple">
+<li><p><strong>Imperative programming</strong>:</p>
+<ul>
+<li><p>we describe how the program must accomplish the task</p></li>
+<li><p>language statements describe the steps (how to do), just like a <strong>recipe</strong></p></li>
+<li><p>close to the paradigm adopted by machine code</p></li>
+</ul>
+</li>
+<li><p><strong>Declarative programming</strong>:</p>
+<ul>
+<li><p>we describe what to do (define the end goal), without saying how (no step-by-step)</p></li>
+<li><p>language statements describe facts (what to do)</p></li>
+<li><p>paradigm adopted, e.g., by Database programming languages (SQL)</p></li>
+<li><p>distant from the paradigm adopted by machine code</p></li>
+</ul>
+</li>
+</ul>
+<div align="center">
+<br>
+<b>Imperative programming is what we will see in this course.</b>
+<br><br>
+</div>
+<p><strong>NOTE:</strong> In many cases, code will be a mixture of both designs too, so it’s not always
+black-and-white.</p>
+</section>
+<section id="solving-a-task-algorithm-recipe">
+<h2>Solving a task → Algorithm → Recipe<a class="headerlink" href="#solving-a-task-algorithm-recipe" title="Link to this heading">#</a></h2>
+<p>An algorithm features:</p>
+<ul class="simple">
+<li><p>a sequence of <strong>simple steps</strong></p></li>
+<li><p><strong>flow of control</strong> to specify when each step must be executed</p></li>
+<li><p>a way of determining when to <strong>stop</strong>.</p></li>
+</ul>
+<p>…just like a recipe!</p>
+<p>Even a plain 1 + 2 + 3 + 4 + 5 =? is an algorithm!</p>
+</section>
+<section id="a-slightly-more-complex-example-newton-s-method">
+<h2>A slightly more complex example: Newton’s method<a class="headerlink" href="#a-slightly-more-complex-example-newton-s-method" title="Link to this heading">#</a></h2>
+<p>The square root of <span class="math notranslate nohighlight">\(x\)</span> is a number <span class="math notranslate nohighlight">\(y\)</span> such that <span class="math notranslate nohighlight">\(y \cdot y = x\)</span> ← <strong>declarative</strong>!</p>
+<p>Let’s see an <strong>imperative</strong> version:</p>
+<ol class="arabic simple">
+<li><p>Start with a guess <span class="math notranslate nohighlight">\(g\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(g \cdot g\)</span> is “close enough” to <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<ol class="arabic simple">
+<li><p>Let <span class="math notranslate nohighlight">\(y = g\)</span></p></li>
+<li><p>Stop</p></li>
+</ol>
+</li>
+<li><p>Otherwise:
+a. Let <span class="math notranslate nohighlight">\(g \leftarrow \tfrac{1}{2}\left( g + \tfrac{x}{g}\right)\)</span>
+b. Repeat from step #2</p></li>
+</ol>
+<p>Square root of 16 via Newton’s method:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(g\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(g \cdot g\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\tfrac{1}{2}\left( g + \tfrac{x}{g}\right)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3</p></td>
+<td><p><span class="math notranslate nohighlight">\(3 \cdot 3 = 9\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\tfrac{1}{2}\left( 3 + \tfrac{16}{3}\right) \simeq 4.17\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>4.17</p></td>
+<td><p><span class="math notranslate nohighlight">\(4.17 \cdot 4.17 \simeq 17.39\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\tfrac{1}{2}\left( 4.17 + \tfrac{16}{4.17}\right) \simeq 4.0035\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>4.0035</p></td>
+<td><p><span class="math notranslate nohighlight">\(4.0035 \cdot 4.0035 \simeq 16.028\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\tfrac{1}{2}\left( 4.0035 + \tfrac{16}{4.0035}\right) \simeq 4\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>As already pointed out, we cannot write an algorithm in our own natural language (e.g., English). To make an algorithm interpretable by a computer, we need to learn a <strong>programming language</strong>.</p>
+</section>
+<section id="many-different-high-level-languages">
+<h2>MANY different high-level languages<a class="headerlink" href="#many-different-high-level-languages" title="Link to this heading">#</a></h2>
 <div align="center">
 <img src="img/pl.png" width="75%">
 </div>
@@ -645,12 +758,209 @@ ret
 </div></section>
 <section id="python">
 <h2>Python<a class="headerlink" href="#python" title="Link to this heading">#</a></h2>
+<center>
+<a class="reference internal image-reference" href="../../_images/Python_logo_and_wordmark.svg.png"><img alt="../../_images/Python_logo_and_wordmark.svg.png" src="../../_images/Python_logo_and_wordmark.svg.png" style="width: 400px;" />
+</a>
+</center>
+<p>Benefits:</p>
+<ul class="simple">
+<li><p><strong>Easy to learn</strong>: designed to be readable, quick to learn</p></li>
+<li><p><strong>High-level language</strong>: abstracting away most low-level aspects of a computer</p></li>
+<li><p><strong>Large community and great support</strong>: several libraries allow to build complex projects with just a few lines of code</p></li>
+<li><p><strong>Adequate for most tasks</strong>: it shows its limits when performance is essential and low-level details play a role. You will hardly work on anything that cannot be implemented in Python</p></li>
+</ul>
+<p>Python:</p>
+<ul class="simple">
+<li><p>is an <strong>imperative programming language</strong></p></li>
+<li><p>with minor flavors of declarative (functional) programming traits.</p></li>
+</ul>
 </section>
-<section id="algorithms">
-<h2>Algorithms<a class="headerlink" href="#algorithms" title="Link to this heading">#</a></h2>
+<section id="computers-run-complex-software-stacks">
+<h2>Computers run complex software stacks<a class="headerlink" href="#computers-run-complex-software-stacks" title="Link to this heading">#</a></h2>
+<p>Python is nice and powerful, but computers are expected to run <strong>MANY</strong> programs at the same time:</p>
+<ul class="simple">
+<li><p>Browser to visit web pages (e.g., Chrome)</p></li>
+<li><p>Office editor to write documents</p></li>
+<li><p>File manager to organize files</p></li>
+<li><p>Messaging applications (e.g., Telegram)</p></li>
+<li><p>Video streaming client (e.g., Netflix)</p></li>
+<li><p>…and way more!</p></li>
+</ul>
+<p>Some of these may be written in Python, but others are written in other languages.</p>
+<p>Hence, <strong>a computer cannot just run a single Python program</strong>. Moreover, computers are expected to:</p>
+<ul class="simple">
+<li><p>embrace the concept of user accounts</p></li>
+<li><p>provide access only after user authentication</p></li>
+<li><p>protect files across users and prevent hardware damage</p></li>
+<li><p>allow only admin users to install other programs</p></li>
+<li><p>handle network connections, power management</p></li>
+</ul>
+<p>This is a <strong>LOT</strong> of <strong>HARD</strong> work: we need an <strong>Operating System (OS)</strong>.</p>
 </section>
 <section id="operating-systems">
 <h2>Operating Systems<a class="headerlink" href="#operating-systems" title="Link to this heading">#</a></h2>
+<p>Modern computing systems are based on <strong>operating systems</strong>, which are software designed to allow the execution of applications (programs) on the available hardware.</p>
+<p>The main tasks of an operating system are:</p>
+<ul class="simple">
+<li><p><strong>Process management</strong> (creation, termination, CPU scheduling, etc.): any application (program) running on your OS is associated with a <strong>process</strong>.</p></li>
+<li><p><strong>Resource allocation</strong> to processes (RAM, storage, network connections)</p></li>
+<li><p><strong>Time management</strong> (clock, timers)</p></li>
+<li><p><strong>User management</strong> for multi-user systems (access privileges to files, programs)</p></li>
+<li><p><strong>Inter-process communication</strong> (locally or across networked systems)</p></li>
+<li><p><strong>Error handling</strong> during process execution or system operations</p></li>
+<li><p><strong>Protection and security</strong>, isolating processes to prevent interference with other processes, the OS, or hardware (preventing data theft or malicious/buggy operations)</p></li>
+</ul>
+</section>
+<section id="design-goals-of-modern-operating-systems">
+<h2>Design goals of modern Operating Systems<a class="headerlink" href="#design-goals-of-modern-operating-systems" title="Link to this heading">#</a></h2>
+<p>Modern operating systems are designed with several key objectives:</p>
+<ul class="simple">
+<li><p><strong>Multitasking</strong>: Ability to run multiple applications simultaneously</p></li>
+<li><p><strong>Preemption</strong>: Capability to take CPU control from one process and give it to another</p></li>
+<li><p><strong>Progress &amp; fairness</strong>: Regular CPU allocation to all processes to ensure computational progress</p></li>
+<li><p><strong>High throughput</strong>: Maximizing the number of instructions executed per time unit</p></li>
+<li><p><strong>Low latency</strong>: Minimizing response time for system operations (critical in real-time environments like automotive safety systems)</p></li>
+</ul>
+</section>
+<section id="overview-operating-system">
+<h2>Overview Operating System<a class="headerlink" href="#overview-operating-system" title="Link to this heading">#</a></h2>
+<div align="center">
+<a class="reference internal image-reference" href="../../_images/schema.png"><img alt="../../_images/schema.png" src="../../_images/schema.png" style="width: 80%;" />
+</a>
+</div>
+<p>From the bottom:</p>
+<ul class="simple">
+<li><p>The <strong>hardware</strong> is the physical part of the computer, containing CPU, RAM, disks and other devices.</p></li>
+<li><p>To program the hardware, each architecture defines the <strong>Instruction Set Architecture (ISA)</strong>, which defines machine code instruction syntax and semantics.</p></li>
+<li><p>The platform (operating system on a specific architecture, e.g., Windows x86) defines the <strong>Application Binary Interface (ABI)</strong>, which defines conventions (rules) on how different programs can interact, reuse code, and interface with the operating system.</p></li>
+</ul>
+</section>
+<section id="overview-operating-system-cont-d">
+<h2>Overview Operating System (cont’d)<a class="headerlink" href="#overview-operating-system-cont-d" title="Link to this heading">#</a></h2>
+<div align="center">
+<a class="reference internal image-reference" href="../../_images/schema.png"><img alt="../../_images/schema.png" src="../../_images/schema.png" style="width: 80%;" />
+</a>
+</div>
+<p>The <strong>operating system</strong>:</p>
+<ul class="simple">
+<li><p>has full control over the hardware:</p>
+<ul>
+<li><p>it runs in <strong>supervisor (kernel) execution mode</strong></p></li>
+<li><p>it can execute <strong>ALL</strong> instructions from the ISA.</p></li>
+</ul>
+</li>
+<li><p>controls which applications should run on the CPU cores at any time</p></li>
+<li><p>plays the role of intermediary between applications and the hardware</p></li>
+<li><p>manages four key aspects: <strong>processes</strong>, <strong>memory management</strong>, <strong>file and I/O</strong>, <strong>time</strong></p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>Overview Operating System (cont’d)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div align="center">
+<a class="reference internal image-reference" href="../../_images/schema.png"><img alt="../../_images/schema.png" src="../../_images/schema.png" style="width: 80%;" />
+</a>
+</div>
+<p>In <strong>user execution mode</strong>:</p>
+<ul class="simple">
+<li><p>Code can run only a limited (safe) subset of ISA</p></li>
+<li><p>Privileged instructions must be delegated to the OS following ABI</p></li>
+<li><p>Processes can be related to:</p>
+<ul>
+<li><p>built-in applications provided by the OS: e.g., file manager</p></li>
+<li><p>applications installed by the users: e.g., Chrome (web browser by Google)</p></li>
+</ul>
+</li>
+<li><p>Applications use system libraries (subprograms for standard tasks, e.g., reading a file, make a network communication) to avoid reinventing the wheel when not needed.</p></li>
+</ul>
+</section>
+<section id="cpu-cores-and-operating-system-multitasking">
+<h2>CPU Cores and Operating System Multitasking<a class="headerlink" href="#cpu-cores-and-operating-system-multitasking" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>CPUs traditionally had only a single core (and many still have few cores)</p></li>
+<li><p>Yet we can run many applications simultaneously</p></li>
+</ul>
+<p><em><strong>How is this possible?</strong></em></p>
+<p>The Operating System creates the <strong>illusion of parallel execution</strong>:</p>
+<ul class="simple">
+<li><p>CPU time is divided into small time slots (milliseconds)</p></li>
+<li><p>Each application gets a turn to use the CPU</p></li>
+<li><p>When a time slot expires, the OS performs <em>context switching</em></p></li>
+<li><p>Applications take turns using the CPU so quickly that users perceive them running simultaneously</p></li>
+</ul>
+<p>This technique is called <strong>time-sharing</strong> or <strong>preemptive multitasking</strong> and it is the essential trait of all modern operating systems.</p>
+<p>If you have:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(1\)</span> core with preemptive multitasking: illusion of parallel execution of an infinite number of apps</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> cores without preemptive multitasking: up to <span class="math notranslate nohighlight">\(k\)</span> applications executing in parallel</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> cores with preemptive multitasking: illusion of parallel execution of an infinite number of applications, with up to <span class="math notranslate nohighlight">\(k\)</span> actually executing in parallel at any given time</p></li>
+</ul>
+</section>
+<section id="popular-operating-systems">
+<h2>Popular Operating Systems<a class="headerlink" href="#popular-operating-systems" title="Link to this heading">#</a></h2>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Proprietary, closed-source OS developed by Microsoft for:</p>
+<ul>
+<li><p>Intel/AMD CPUs</p></li>
+<li><p>ARM (still early stage)</p></li>
+</ul>
+</li>
+<li><p>Most widely used desktop OS globally</p></li>
+<li><p>Known for user-friendly interface and software compatibility</p></li>
+</ul>
+<div align="center">
+<br>
+<img src="img/windows.png" width="90%">
+</div></section>
+<section id="macos">
+<h3>macOS<a class="headerlink" href="#macos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Proprietary, closed-source OS developed by Apple for:</p>
+<ul>
+<li><p>PowerPC CPUs (before 2006)</p></li>
+<li><p>Intel CPUs (before 2021)</p></li>
+<li><p>Apple Silicon CPUs (now)</p></li>
+</ul>
+</li>
+<li><p>Known for sleek design and stability</p></li>
+<li><p>Popular among creative professionals</p></li>
+</ul>
+<div align="center">
+<img src="img/macos.png" width="55%">
+</div></section>
+<section id="gnu-linux">
+<h3>GNU/Linux<a class="headerlink" href="#gnu-linux" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Combination of the Linux kernel and GNU userspace libraries</p></li>
+<li><p>Packaged by different <em>distributions</em> (Ubuntu, Fedora, Debian, Gentoo, Arch)</p></li>
+<li><p><strong>Open Source</strong>: you can see and change its code!</p></li>
+<li><p>Powers most web servers and supercomputers (even Microsoft uses it in their cloud!)</p></li>
+</ul>
+<div align="center">
+<br>
+<img src="img/linux.png" width="100%">
+</div></section>
+<section id="android">
+<h3>Android<a class="headerlink" href="#android" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Linux-based OS developed by Google</p></li>
+<li><p>Most popular mobile OS worldwide</p></li>
+<li><p>Open ecosystem with extensive app marketplace</p></li>
+</ul>
+<div align="center">
+<img src="img/android.png" width="35%">
+</div></section>
+<section id="ios">
+<h3>iOS<a class="headerlink" href="#ios" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Proprietary, closed-source OS for Apple mobile devices</p></li>
+<li><p>Second most popular mobile OS worldwide</p></li>
+<li><p>Closed ecosystem with extensive app marketplace</p></li>
+</ul>
+<div align="center">
+<img src="img/ios.png" width="45%">
+</div></section>
 </section>
 </section>
 
@@ -725,12 +1035,29 @@ ret
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-low-level-to-high-level-programming">From low-level to high-level programming</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compilation">Compilation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-to-learn-a-programming-language">Why do we need to learn a programming language?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#language-syntax-and-semantics">Language: syntax and semantics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-high-level-languages">Different high-level languages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-language-paradigms">Programming language paradigms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-a-task-algorithm-recipe">Solving a task → Algorithm → Recipe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-slightly-more-complex-example-newton-s-method">A slightly more complex example: Newton’s method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#many-different-high-level-languages">MANY different high-level languages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-programming-languages">Popular programming languages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms">Algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-run-complex-software-stacks">Computers run complex software stacks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems">Operating Systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-goals-of-modern-operating-systems">Design goals of modern Operating Systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-operating-system">Overview Operating System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-operating-system-cont-d">Overview Operating System (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Overview Operating System (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-cores-and-operating-system-multitasking">CPU Cores and Operating System Multitasking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-operating-systems">Popular Operating Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">macOS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gnu-linux">GNU/Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#android">Android</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ios">iOS</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
