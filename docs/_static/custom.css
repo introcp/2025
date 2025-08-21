@@ -25,3 +25,23 @@
   font-style: italic;
   src: url("../dist/fonts/LuissSans-BoldItalic.otf") format("opentype");
 }
+
+/* Hide scrollbar in left sidebar */
+.bd-sidebar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.bd-sidebar::-webkit-scrollbar {
+  display: none; /* WebKit browsers (Chrome, Safari, Edge) */
+}
+
+/* Alternative selector for sidebar navigation */
+.bd-sidebar .bd-toc {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.bd-sidebar .bd-toc::-webkit-scrollbar {
+  display: none;
+}

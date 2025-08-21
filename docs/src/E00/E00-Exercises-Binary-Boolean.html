@@ -1,0 +1,975 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exercises on Binary Numbers and Boolean Logic &#8212; Introduction to computer programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7faeedcc" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/E00/E00-Exercises-Binary-Boolean';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Introduction to computer programming - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Introduction to computer programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    <b style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</b>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../A00/A00-Introduction.html"><b style="font-family: 'LUISS', 'Lato'">Course overview</b></a></li>
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computer Systems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../C00/C00-Bits-and-Bytes.html"><b style="font-family: 'LUISS', 'Lato'">Bits and Bytes</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C01/C01-Boolean-Logic.html"><b style="font-family: 'LUISS', 'Lato'">Boolean Logic</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C02/C02-Hardware.html"><b style="font-family: 'LUISS', 'Lato'">Hardware</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C03/C03-Software.html"><b style="font-family: 'LUISS', 'Lato'">Software</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C04/C04-OS-Essentials.html"><b style="font-family: 'LUISS', 'Lato'">Operating System Essentials</b></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../P00/P00-Python-Getting-Started.html"><b style="font-family: 'LUISS', 'Lato'">Getting Started</b></a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../P01/P01-Python-Expressions-and-Types.html"><b style="font-family: 'LUISS', 'Lato'">Expressions and Data Types</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P02/P02-Python-Types-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Variables and Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../E01/E01-Python-Errors.html"><b style="font-family: 'LUISS', 'Lato'">Types of Errors</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P03/P03-Python-Branching.html"><b style="font-family: 'LUISS', 'Lato'">Branching</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P04/P04-Python-Functions.html"><b style="font-family: 'LUISS', 'Lato'">Functions</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P05/P05-Python-Iteration.html"><b style="font-family: 'LUISS', 'Lato'">Iteration</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P06/P06-Python-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P07/P07-Python-Lists.html"><b style="font-family: 'LUISS', 'Lato'">Lists</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P08/P08-Python-Dictionaries-Tuples-Sets.html"><b style="font-family: 'LUISS', 'Lato'">Dictionaries, Tuples, and Sets</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P09/P09-Python-Classes.html"><b style="font-family: 'LUISS', 'Lato'">Classes and Objects</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P10/P10-Python-Recursion.html"><b style="font-family: 'LUISS', 'Lato'">Recursion</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P11/P11-Python-Files.html"><b style="font-family: 'LUISS', 'Lato'">Files</b></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/introcp/introcp.github.io/blob/2025/src/E00/E00-Exercises-Binary-Boolean.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+
+<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://introcp.github.io/_sources//src/E00/E00-Exercises-Binary-Boolean.ipynb" target="_blank"
+  class="btn btn-sm dropdown-item"
+  title="Launch on JupyterLite"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+ 
+
+<span class="btn__icon-container">
+ 
+   <img alt="JupyterLite logo" src="https://avatars.githubusercontent.com/u/81094398?s=200&v=4">
+ </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+    
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/E00/E00-Exercises-Binary-Boolean.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.open(window.location.pathname.replace('.html', '.pdf'));"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+    <button onclick="window.open(window.location.pathname.replace('.html', '.slides.html'));"
+    class="btn btn-sm btn-fullscreen-button"
+    title="Slide"
+    data-bs-placement="bottom" data-bs-toggle="tooltip"
+    >
+    
+    <span class="btn__icon-container">
+        <i class="fa-brands fa-slideshare"></i>
+    </span>
+
+    </button>
+
+    <button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><b style="font-family: 'LUISS', 'Lato'">Exercises on Binary Numbers and Boolean Logic</b></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-binary-numbers">Recap: binary numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-systems-positional-vs-non-positional">Number Systems: Positional vs. Non-Positional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-positional-system">General Positional System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-binary-system-base-2">The Binary System (Base 2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bits-and-bytes">Bits and Bytes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#octal-and-hexadecimal-systems">Octal and Hexadecimal Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-from-decimal-to-another-base">Converting from Decimal to Another Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-convert-116-10-to-binary">Example: Convert <span class="math notranslate nohighlight">\(116_{10}\)</span> to Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-convert-1547-10-to-hexadecimal">Example: Convert <span class="math notranslate nohighlight">\(1547_{10}\)</span> to Hexadecimal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-binary"><span class="math notranslate nohighlight">\(24_{10}\)</span> to Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><span class="math notranslate nohighlight">\(63_{10}\)</span> to Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><span class="math notranslate nohighlight">\(129_{10}\)</span> to Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-decimal"><span class="math notranslate nohighlight">\(10101_{2}\)</span> to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><span class="math notranslate nohighlight">\(100100 _{2}\)</span> to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><span class="math notranslate nohighlight">\(1100111_{2}\)</span> to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><span class="math notranslate nohighlight">\(1547_{16}\)</span> to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cafe-16-to-decimal"><span class="math notranslate nohighlight">\(CAFE_{16}\)</span> to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deadbeef-16-to-decimal"><span class="math notranslate nohighlight">\(DEADBEEF_{16}\)</span> to Decimal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-boolean-logic">Recap: Boolean Logic</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-operators-and-truth-tables">Boolean Operators and Truth Tables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-table-example">Truth Table Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts-in-boolean-logic">Key Concepts in Boolean Logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-evaluate-the-expression-neg-a-land-neg-b-lor-neg-b-land-a">Exercise: Evaluate the expression <span class="math notranslate nohighlight">\(\neg A \land \neg B \lor (\neg B \land A)\)</span></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div align="center">
+<section class="tex2jax_ignore mathjax_ignore" id="exercises-on-binary-numbers-and-boolean-logic">
+<h1><b style="font-family: 'LUISS', 'Lato'">Exercises on Binary Numbers and Boolean Logic</b><a class="headerlink" href="#exercises-on-binary-numbers-and-boolean-logic" title="Link to this heading">#</a></h1>
+<h2 style="font-family: 'LUISS', 'Lato'">Introduction to Computer Programming</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
+<img src="https://introcp.github.io/dist/img/cliente-luiss.png">
+<p><br><br><br></p>
+</div><section id="recap-binary-numbers">
+<h2>Recap: binary numbers<a class="headerlink" href="#recap-binary-numbers" title="Link to this heading">#</a></h2>
+<section id="number-systems-positional-vs-non-positional">
+<h3>Number Systems: Positional vs. Non-Positional<a class="headerlink" href="#number-systems-positional-vs-non-positional" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Non-Positional Systems</strong>: The value of a symbol is independent of its position.</p>
+<ul>
+<li><p>Example: In the Roman numeral <code class="docutils literal notranslate"><span class="pre">XXVIII</span></code> (28)</p>
+<ul>
+<li><p>both <code class="docutils literal notranslate"><span class="pre">X</span></code> symbols represent 10</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br><ul class="simple">
+<li><p><strong>Positional Systems</strong>: The value of a symbol depends on its position within the number.</p>
+<ul>
+<li><p>Example: In the decimal number <code class="docutils literal notranslate"><span class="pre">37579</span></code>:</p>
+<ul>
+<li><p>the first <code class="docutils literal notranslate"><span class="pre">7</span></code> represents 7000</p></li>
+<li><p>while the second <code class="docutils literal notranslate"><span class="pre">7</span></code> represents 70</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="general-positional-system">
+<h3>General Positional System<a class="headerlink" href="#general-positional-system" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Any natural number <span class="math notranslate nohighlight">\(b &gt; 1\)</span> can be used as the <strong>base</strong> of a positional number system.</p></li>
+<li><p>A number is written as a sequence of digits <span class="math notranslate nohighlight">\(d_{n-1}d_{n-2}...d_1d_0\)</span>, where each digit <span class="math notranslate nohighlight">\(d_i\)</span> is an integer from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(b-1\)</span>.</p></li>
+<li><p>The value of the number is calculated using the formula:
+$<span class="math notranslate nohighlight">\( N = \sum_{i=0}^{n-1} d_i \times b^i = d_{n-1}b^{n-1} + d_{n-2}b^{n-2} + \dots + d_1b^1 + d_0b^0 \)</span>$</p></li>
+</ul>
+</section>
+<section id="the-binary-system-base-2">
+<h3>The Binary System (Base 2)<a class="headerlink" href="#the-binary-system-base-2" title="Link to this heading">#</a></h3>
+<p>When the base <span class="math notranslate nohighlight">\(b=2\)</span>, we get the <strong>binary system</strong>. The only possible digits are 0 and 1.</p>
+<p>Example: Convert the binary number <span class="math notranslate nohighlight">\(11011_2\)</span> to decimal</p>
+<div class="math notranslate nohighlight">
+\[ (11011)_2 = 1 \cdot 2^4 + 1 \cdot 2^3 + 0 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0 \]</div>
+<div class="math notranslate nohighlight">
+\[ = 16 + 8 + 0 + 2 + 1 = (27)_{10} \]</div>
+</section>
+<section id="bits-and-bytes">
+<h3>Bits and Bytes<a class="headerlink" href="#bits-and-bytes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Bit</strong>: A single binary digit (0 or 1).</p></li>
+<li><p><strong>Byte</strong>: A group of 8 bits.</p></li>
+</ul>
+<p>With one byte, we can represent <span class="math notranslate nohighlight">\(2^8 = 256\)</span> different values (from 0 to 255). This is enough to represent all the characters on a standard keyboard using an encoding like ASCII.</p>
+</section>
+<section id="octal-and-hexadecimal-systems">
+<h3>Octal and Hexadecimal Systems<a class="headerlink" href="#octal-and-hexadecimal-systems" title="Link to this heading">#</a></h3>
+<p>These systems are commonly used in computing as a compact way to represent binary numbers.</p>
+<ul class="simple">
+<li><p><strong>Octal</strong>: Uses <span class="math notranslate nohighlight">\(b=8\)</span> and digits 0-7.</p></li>
+<li><p><strong>Hexadecimal</strong>: Uses <span class="math notranslate nohighlight">\(b=16\)</span> and digits 0-9 and letters A-F, where:<br></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">10</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">=</span> <span class="pre">11</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">12</span></code>, <code class="docutils literal notranslate"><span class="pre">D</span> <span class="pre">=</span> <span class="pre">13</span></code>, <code class="docutils literal notranslate"><span class="pre">E</span> <span class="pre">=</span> <span class="pre">14</span></code>, <code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">=</span> <span class="pre">15</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="converting-from-decimal-to-another-base">
+<h3>Converting from Decimal to Another Base<a class="headerlink" href="#converting-from-decimal-to-another-base" title="Link to this heading">#</a></h3>
+<p>To convert a decimal number <span class="math notranslate nohighlight">\(N_{10}\)</span> to base <span class="math notranslate nohighlight">\(b\)</span>, we use the method of <strong>successive divisions</strong>:</p>
+<ol class="arabic simple">
+<li><p>Divide <span class="math notranslate nohighlight">\(N_{10}\)</span> by the base <span class="math notranslate nohighlight">\(b\)</span>. The remainder is the rightmost digit.</p></li>
+<li><p>Replace <span class="math notranslate nohighlight">\(N_{10}\)</span> with the quotient from the division.</p></li>
+<li><p>Repeat until the quotient is 0. The remainders, read in reverse order, form the number in base <span class="math notranslate nohighlight">\(b\)</span>.</p></li>
+</ol>
+</section>
+<section id="example-convert-116-10-to-binary">
+<h3>Example: Convert <span class="math notranslate nohighlight">\(116_{10}\)</span> to Binary<a class="headerlink" href="#example-convert-116-10-to-binary" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(116 \div 2 = 58 \Rightarrow\)</span> remainder <strong>0</strong></p>
+<p><span class="math notranslate nohighlight">\(58 \div 2 = 29 \Rightarrow\)</span> remainder <strong>0</strong></p>
+<p><span class="math notranslate nohighlight">\(29 \div 2 = 14 \Rightarrow\)</span> remainder <strong>1</strong></p>
+<p><span class="math notranslate nohighlight">\(14 \div 2 = 7 \Rightarrow\)</span> remainder <strong>0</strong></p>
+<p><span class="math notranslate nohighlight">\(7 \div 2 = 3 \Rightarrow\)</span> remainder <strong>1</strong></p>
+<p><span class="math notranslate nohighlight">\(3 \div 2 = 1 \Rightarrow\)</span> remainder <strong>1</strong></p>
+<p><span class="math notranslate nohighlight">\(1 \div 2 = 0 \Rightarrow\)</span> remainder <strong>1</strong></p>
+<p>Reading the remainders from bottom to top, we get: <span class="math notranslate nohighlight">\((1110100)_2\)</span>.</p>
+</section>
+<section id="example-convert-1547-10-to-hexadecimal">
+<h3>Example: Convert <span class="math notranslate nohighlight">\(1547_{10}\)</span> to Hexadecimal<a class="headerlink" href="#example-convert-1547-10-to-hexadecimal" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(1547 \div 16 = 96\Rightarrow\)</span> remainder <strong>11</strong> (which is <code class="docutils literal notranslate"><span class="pre">B</span></code> in hex)</p>
+<p><span class="math notranslate nohighlight">\(96 \div 16 = 6\Rightarrow\)</span> remainder <strong>0</strong></p>
+<p><span class="math notranslate nohighlight">\(6 \div 16 = 0\Rightarrow\)</span> remainder <strong>6</strong></p>
+<p>Reading the remainders from bottom to top, we get: <span class="math notranslate nohighlight">\((60B)_{16}\)</span>.</p>
+</section>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<p><strong>Possible exam questions!</strong></p>
+<section id="to-binary">
+<h3><span class="math notranslate nohighlight">\(24_{10}\)</span> to Binary<a class="headerlink" href="#to-binary" title="Link to this heading">#</a></h3>
+<p>Convert the decimal number <strong>24</strong> to binary:</p>
+<p><span class="math notranslate nohighlight">\(24 \div 2 = 12\)</span> (rem 0)</p>
+<p><span class="math notranslate nohighlight">\(12 \div 2 = 6\)</span> (rem 0)</p>
+<p><span class="math notranslate nohighlight">\(6 \div 2 = 3\)</span> (rem 0)</p>
+<p><span class="math notranslate nohighlight">\(3 \div 2 = 1\)</span> (rem 1)</p>
+<p><span class="math notranslate nohighlight">\(1 \div 2 = 0\)</span> (rem 1)</p>
+<p>Result: <span class="math notranslate nohighlight">\((11000)_2\)</span></p>
+</section>
+<section id="id1">
+<h3><span class="math notranslate nohighlight">\(63_{10}\)</span> to Binary<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>To convert <span class="math notranslate nohighlight">\(63\)</span> from decimal to binary:</p>
+<p><span class="math notranslate nohighlight">\(63 \div 2 = 31\)</span> remainder <span class="math notranslate nohighlight">\(1\)</span></p>
+<p><span class="math notranslate nohighlight">\(31 \div 2 = 15\)</span> remainder <span class="math notranslate nohighlight">\(1\)</span></p>
+<p><span class="math notranslate nohighlight">\(15 \div 2 = 7\)</span> remainder <span class="math notranslate nohighlight">\(1\)</span></p>
+<p><span class="math notranslate nohighlight">\(7 \div 2 = 3\)</span> remainder <span class="math notranslate nohighlight">\(1\)</span></p>
+<p><span class="math notranslate nohighlight">\(3 \div 2 = 1\)</span> remainder <span class="math notranslate nohighlight">\(1\)</span></p>
+<p><span class="math notranslate nohighlight">\(1 \div 2 = 0\)</span> remainder <span class="math notranslate nohighlight">\(1\)</span></p>
+<p>Reading from bottom to top: <span class="math notranslate nohighlight">\(111111\)</span></p>
+<p>Therefore, <span class="math notranslate nohighlight">\(63_{10} = 111111_2\)</span></p>
+</section>
+<section id="id2">
+<h3><span class="math notranslate nohighlight">\(129_{10}\)</span> to Binary<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>To convert <span class="math notranslate nohighlight">\(129\)</span> from decimal to binary:</p>
+<p><span class="math notranslate nohighlight">\(129 \div 2 = 64\)</span> remainder <span class="math notranslate nohighlight">\(1\)</span></p>
+<p><span class="math notranslate nohighlight">\(64 \div 2 = 32\)</span> remainder <span class="math notranslate nohighlight">\(0\)</span></p>
+<p><span class="math notranslate nohighlight">\(32 \div 2 = 16\)</span> remainder <span class="math notranslate nohighlight">\(0\)</span></p>
+<p><span class="math notranslate nohighlight">\(16 \div 2 = 8\)</span> remainder <span class="math notranslate nohighlight">\(0\)</span></p>
+<p><span class="math notranslate nohighlight">\(8 \div 2 = 4\)</span> remainder <span class="math notranslate nohighlight">\(0\)</span></p>
+<p><span class="math notranslate nohighlight">\(4 \div 2 = 2\)</span> remainder <span class="math notranslate nohighlight">\(0\)</span></p>
+<p><span class="math notranslate nohighlight">\(2 \div 2 = 1\)</span> remainder <span class="math notranslate nohighlight">\(0\)</span></p>
+<p><span class="math notranslate nohighlight">\(1 \div 2 = 0\)</span> remainder <span class="math notranslate nohighlight">\(1\)</span></p>
+<p>Reading from bottom to top: <span class="math notranslate nohighlight">\(10000001\)</span></p>
+<p>Therefore, <span class="math notranslate nohighlight">\(129_{10} = 10000001_2\)</span></p>
+</section>
+<section id="to-decimal">
+<h3><span class="math notranslate nohighlight">\(10101_{2}\)</span> to Decimal<a class="headerlink" href="#to-decimal" title="Link to this heading">#</a></h3>
+<p>Convert the binary number <strong>10101</strong> to decimal:</p>
+<div class="math notranslate nohighlight">
+\[ (10101)_2 = 1 \cdot 2^4 + 0 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 \]</div>
+<div class="math notranslate nohighlight">
+\[ = 16 + 0 + 4 + 0 + 1 = (21)_{10} \]</div>
+</section>
+<section id="id3">
+<h3><span class="math notranslate nohighlight">\(100100 _{2}\)</span> to Decimal<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Convert the binary number <strong>100100</strong> to decimal:</p>
+<div class="math notranslate nohighlight">
+\[ (100100)_2 = 1 \cdot 2^5 + 0 \cdot 2^4 + 0 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 0 \cdot 2^0 \]</div>
+<div class="math notranslate nohighlight">
+\[ = 32 + 0 + 0 + 4 + 0 + 0 = (36)_{10} \]</div>
+</section>
+<section id="id4">
+<h3><span class="math notranslate nohighlight">\(1100111_{2}\)</span> to Decimal<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Convert the binary number <strong>11100111</strong> to decimal:</p>
+<div class="math notranslate nohighlight">
+\[ (11100111)_2 = 1 \cdot 2^7 + 1 \cdot 2^6 + 1 \cdot 2^5 + 0 \cdot 2^4 + 0 \cdot 2^3 + 1 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0 \]</div>
+<div class="math notranslate nohighlight">
+\[ = 128 + 64 + 32 + 0 + 0 + 4 + 2 + 1 = (231)_{10} \]</div>
+</section>
+<section id="id5">
+<h3><span class="math notranslate nohighlight">\(1547_{16}\)</span> to Decimal<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Convert the hexadecimal number <strong>1547</strong> to decimal:</p>
+<div class="math notranslate nohighlight">
+\[ (1547)_{16} = 1 \cdot 16^3 + 5 \cdot 16^2 + 4 \cdot 16^1 + 7 \cdot 16^0 \]</div>
+<div class="math notranslate nohighlight">
+\[ = 1 \cdot 4096 + 5 \cdot 256 + 4 \cdot 16 + 7 \cdot 1 \]</div>
+<div class="math notranslate nohighlight">
+\[ = 4096 + 1280 + 64 + 7 = (5447)_{10} \]</div>
+</section>
+<section id="cafe-16-to-decimal">
+<h3><span class="math notranslate nohighlight">\(CAFE_{16}\)</span> to Decimal<a class="headerlink" href="#cafe-16-to-decimal" title="Link to this heading">#</a></h3>
+<p>Convert the hexadecimal number <strong>CAFE</strong> to decimal:</p>
+<div class="math notranslate nohighlight">
+\[ (CAFE)_{16} = C \cdot 16^3 + A \cdot 16^2 + F \cdot 16^1 + E \cdot 16^0 \]</div>
+<div class="math notranslate nohighlight">
+\[ = 12 \cdot 4096 + 10 \cdot 256 + 15 \cdot 16 + 14 \cdot 1 \]</div>
+<div class="math notranslate nohighlight">
+\[ = 49152 + 2560 + 240 + 14 = (51966)_{10} \]</div>
+</section>
+<section id="deadbeef-16-to-decimal">
+<h3><span class="math notranslate nohighlight">\(DEADBEEF_{16}\)</span> to Decimal<a class="headerlink" href="#deadbeef-16-to-decimal" title="Link to this heading">#</a></h3>
+<p>Convert the hexadecimal number <strong>DEADBEEF</strong> to decimal:</p>
+<div class="math notranslate nohighlight">
+\[ DEADBEEF_{16} = D \cdot 16^7 + E \cdot 16^6 + A \cdot 16^5 + D \cdot 16^4 + B \cdot 16^3 + E \cdot 16^2 + E \cdot 16^1 + F \cdot 16^0 \]</div>
+<div class="math notranslate nohighlight">
+\[ = 13 \cdot 16^7 + 14 \cdot 16^6 + 10 \cdot 16^5 + 13 \cdot 16^4 + 11 \cdot 16^3 + 14 \cdot 16^2 + 14 \cdot 16^1 + 15 \cdot 16^0 \]</div>
+<div class="math notranslate nohighlight">
+\[ = 13 \cdot 268435456 + 14 \cdot 16777216 + 10 \cdot 1048576 + 13 \cdot 65536 + 11 \cdot 4096 + 14 \cdot 256 + 14 \cdot 16 + 15 \cdot 1 \]</div>
+<div class="math notranslate nohighlight">
+\[ = 3489660928 + 234881024 + 10485760 + 851968 + 45056 + 3584 + 224 + 15 = 3735928559_{10} \]</div>
+</section>
+</section>
+<section id="recap-boolean-logic">
+<h2>Recap: Boolean Logic<a class="headerlink" href="#recap-boolean-logic" title="Link to this heading">#</a></h2>
+<section id="boolean-operators-and-truth-tables">
+<h3>Boolean Operators and Truth Tables<a class="headerlink" href="#boolean-operators-and-truth-tables" title="Link to this heading">#</a></h3>
+<p>Boolean algebra operates on truth values (True/1, False/0) using logical operators.</p>
+<ul class="simple">
+<li><p><strong>AND (Conjunction, <span class="math notranslate nohighlight">\(\land\)</span>)</strong>: True only if both operands are true.</p></li>
+<li><p><strong>OR (Disjunction, <span class="math notranslate nohighlight">\(\lor\)</span>)</strong>: True if at least one operand is true.</p></li>
+<li><p><strong>NOT (Negation, <span class="math notranslate nohighlight">\(\neg\)</span>)</strong>: Inverts the truth value.</p></li>
+</ul>
+</section>
+<section id="truth-table-example">
+<h3>Truth Table Example<a class="headerlink" href="#truth-table-example" title="Link to this heading">#</a></h3>
+<p>Let’s evaluate the expression: <span class="math notranslate nohighlight">\(F = (A \land B) \lor (\neg A \land C)\)</span></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>A</p></th>
+<th class="head text-center"><p>B</p></th>
+<th class="head text-center"><p>C</p></th>
+<th class="head text-center"><p>A AND B</p></th>
+<th class="head text-center"><p>!A</p></th>
+<th class="head text-center"><p>!A AND C</p></th>
+<th class="head text-center"><p>F</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p><strong>0</strong></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p><strong>1</strong></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p><strong>0</strong></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p><strong>1</strong></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p><strong>0</strong></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p><strong>0</strong></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p><strong>1</strong></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p><strong>1</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="key-concepts-in-boolean-logic">
+<h2>Key Concepts in Boolean Logic<a class="headerlink" href="#key-concepts-in-boolean-logic" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Equivalence</strong>: Two expressions are equivalent if they have the same truth table.</p>
+<ul>
+<li><p><em>Example (De Morgan’s Law)</em>: <span class="math notranslate nohighlight">\(\neg(A \lor B) \equiv \neg A \land \neg B\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Tautology</strong>: An expression that is always true, regardless of the input values.</p>
+<ul>
+<li><p><em>Example</em>: <span class="math notranslate nohighlight">\(A \lor \neg A\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Contradiction</strong>: An expression that is always false.</p>
+<ul>
+<li><p><em>Example</em>: <span class="math notranslate nohighlight">\(A \land \neg A\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id6">
+<h2>Exercises<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="exercise-evaluate-the-expression-neg-a-land-neg-b-lor-neg-b-land-a">
+<h3>Exercise: Evaluate the expression <span class="math notranslate nohighlight">\(\neg A \land \neg B \lor (\neg B \land A)\)</span><a class="headerlink" href="#exercise-evaluate-the-expression-neg-a-land-neg-b-lor-neg-b-land-a" title="Link to this heading">#</a></h3>
+<p>Let’s use <span class="math notranslate nohighlight">\(A'B' + B'A\)</span> for simplicity.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>A</p></th>
+<th class="head text-center"><p>B</p></th>
+<th class="head text-center"><p>A’</p></th>
+<th class="head text-center"><p>B’</p></th>
+<th class="head text-center"><p>A’B’</p></th>
+<th class="head text-center"><p>B’A</p></th>
+<th class="head text-center"><p>A’B’ + B’A</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p><strong>1</strong></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p><strong>0</strong></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p><strong>1</strong></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p><strong>0</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src/E00"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-binary-numbers">Recap: binary numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-systems-positional-vs-non-positional">Number Systems: Positional vs. Non-Positional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-positional-system">General Positional System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-binary-system-base-2">The Binary System (Base 2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bits-and-bytes">Bits and Bytes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#octal-and-hexadecimal-systems">Octal and Hexadecimal Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-from-decimal-to-another-base">Converting from Decimal to Another Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-convert-116-10-to-binary">Example: Convert <span class="math notranslate nohighlight">\(116_{10}\)</span> to Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-convert-1547-10-to-hexadecimal">Example: Convert <span class="math notranslate nohighlight">\(1547_{10}\)</span> to Hexadecimal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-binary"><span class="math notranslate nohighlight">\(24_{10}\)</span> to Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><span class="math notranslate nohighlight">\(63_{10}\)</span> to Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><span class="math notranslate nohighlight">\(129_{10}\)</span> to Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-decimal"><span class="math notranslate nohighlight">\(10101_{2}\)</span> to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><span class="math notranslate nohighlight">\(100100 _{2}\)</span> to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><span class="math notranslate nohighlight">\(1100111_{2}\)</span> to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><span class="math notranslate nohighlight">\(1547_{16}\)</span> to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cafe-16-to-decimal"><span class="math notranslate nohighlight">\(CAFE_{16}\)</span> to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deadbeef-16-to-decimal"><span class="math notranslate nohighlight">\(DEADBEEF_{16}\)</span> to Decimal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-boolean-logic">Recap: Boolean Logic</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-operators-and-truth-tables">Boolean Operators and Truth Tables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-table-example">Truth Table Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts-in-boolean-logic">Key Concepts in Boolean Logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-evaluate-the-expression-neg-a-land-neg-b-lor-neg-b-land-a">Exercise: Evaluate the expression <span class="math notranslate nohighlight">\(\neg A \land \neg B \lor (\neg B \land A)\)</span></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Emilio Coppa and Alessio Martino
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
