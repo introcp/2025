@@ -1,0 +1,68 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6">
+  <diagram name="Container Architecture" id="container-architecture">
+    <mxGraphModel dx="1494" dy="393" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Container Workflow -->
+        <mxCell id="dockerfile" value="Dockerfile&#xa;(Recipe)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="80" width="100" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="image" value="Container Image&#xa;(Template)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="80" width="100" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="container" value="Running Container&#xa;(Instance)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="80" width="100" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Registry -->
+        <mxCell id="registry" value="Container Registry&#xa;(Docker Hub, etc.)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="200" width="100" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrows -->
+        <mxCell id="build-arrow" value="docker build" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#82B366;strokeWidth=2;fontSize=10;" edge="1" parent="1" source="dockerfile" target="image">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="run-arrow" value="docker run" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#D79B00;strokeWidth=2;fontSize=10;" edge="1" parent="1" source="image" target="container">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="push-arrow" value="docker push" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#9673A6;strokeWidth=2;fontSize=10;" edge="1" parent="1" source="image" target="registry">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Container Benefits -->
+        <mxCell id="benefits-title" value="Container Benefits" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="500" y="80" width="150" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="portability" value="📦 Portability&#xa;Run anywhere" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="120" width="80" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="consistency" value="⚙️ Consistency&#xa;Same environment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="120" width="80" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="scalability" value="📈 Scalability&#xa;Easy scaling" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="180" width="80" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="efficiency" value="⚡ Efficiency&#xa;Resource sharing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="180" width="80" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Use Cases -->
+        <mxCell id="use-cases" value="Common Use Cases:&#xa;• Microservices&#xa;• CI/CD Pipelines&#xa;• Development Environment&#xa;• Application Deployment&#xa;• Testing &amp; QA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=10;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="300" width="200" height="100" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
