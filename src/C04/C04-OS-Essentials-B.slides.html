@@ -5,7 +5,7 @@
 <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<title>C04-OS-Essentials slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>C04-OS-Essentials-B slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
@@ -7441,7 +7441,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div align="center">
-<h1 id="Operating-System-Essentials"><b style="font-family: 'LUISS', 'Lato'">Operating System Essentials</b><a class="anchor-link" href="#Operating-System-Essentials">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h1 id="Application-Installation-&amp;-Deployment"><b style="font-family: 'LUISS', 'Lato'">Application Installation &amp; Deployment</b><a class="anchor-link" href="#Application-Installation-&amp;-Deployment">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
 <h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
 <img alt="No description has been provided for this image" src="https://introcp.github.io/dist/img/cliente-luiss.png"/>
 <p><br/><br/><br/></p>
@@ -7456,658 +7456,11 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Covering-the-essentials">Covering the essentials<a class="anchor-link" href="#Covering-the-essentials">¶</a></h2><p>Understanding your operating system is crucial for effective programming and computer use:</p>
-<ul>
-<li><strong>File Systems</strong>: How files and directories are organized</li>
-<li><strong>Command Line Interface</strong>: Powerful text-based interaction</li>
-<li><strong>Process Management</strong>: How programs run and are controlled</li>
-</ul>
-<p>We'll focus on <strong>Windows</strong> and <strong>macOS</strong> with hands-on examples!</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="File-Systems:-The-Foundation">File Systems: The Foundation<a class="anchor-link" href="#File-Systems:-The-Foundation">¶</a></h2><p>Every operating system organizes files in a <strong>hierarchical structure</strong>, like a tree:</p>
-<div align="center">
-<img alt="No description has been provided for this image" src="img/filesystem-tree.png" style="margin-bottom: -20px;" width="60%"/>
-</div>
-<p>Key Concepts:</p>
-<ul>
-<li><strong>Root</strong>: The top-level directory (starting point)</li>
-<li><strong>Directories/Folders</strong>: Containers that hold files and other directories</li>
-<li><strong>Files</strong>: Individual documents, programs, or data</li>
-<li><strong>Path</strong>: The route to reach a specific file or directory</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Windows-File-System-Structure">Windows File System Structure<a class="anchor-link" href="#Windows-File-System-Structure">¶</a></h2><p>Windows uses <strong>drive letters</strong> (C:, D:, etc.) for the root top-level directory and <strong>backslashes</strong> (<code>\</code>) to separate folders along the path:</p>
-<pre><code>C:\                          (Root of C: drive)
-├── Windows\                 (System files)
-├── Program Files\           (Installed applications)
-├── Users\                   (User home directories)
-│   ├── Alice\               (Alice's home directory)
-│   │   ├── Desktop\         (Desktop files)
-│   │   ├── Documents\       (User documents)
-│   │   ├── Downloads\       (Downloaded files)
-│   │   └── Pictures\        (User photos)
-│   └── Bob\                 (Bob's home directory)
-└── temp\                    (Temporary files)
-</code></pre>
-<p>Examples of Windows paths:</p>
-<ul>
-<li><code>C:\Users\YourName\Documents\report.docx</code></li>
-<li><code>C:\Program Files\Google\Chrome\chrome.exe</code></li>
-<li><code>D:\Photos\vacation\beach.jpg</code></li>
-</ul>
-<p><strong>NOTE:</strong> Each disk gets a different drive letter (e.g., <strong>D:</strong>) and an independent file system. By convention, <strong>C:</strong> is assigned to the disk containing the operating system.</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="macOS-File-System-Structure">macOS File System Structure<a class="anchor-link" href="#macOS-File-System-Structure">¶</a></h2><p>macOS uses <strong>forward slashes</strong> (<code>/</code>) and starts from root (<code>/</code>):</p>
-<pre><code>/                            (Root directory)
-├── Applications/            (Installed applications)
-├── System/                  (System files)
-├── Users/                   (User home directories)
-│   ├── alice/               (Alice's home directory)
-│   │   ├── Desktop/         (Desktop files)
-│   │   ├── Documents/       (User documents)
-│   │   ├── Downloads/       (Downloaded files)
-│   │   └── Pictures/        (User photos)
-│   └── bob/                 (Bob's home directory)
-├── Library/                 (System libraries)
-└── tmp/                     (Temporary files)
-</code></pre>
-<p>Examples of macOS paths:</p>
-<ul>
-<li><code>/Users/YourName/Documents/report.docx</code></li>
-<li><code>/Applications/Google Chrome.app</code></li>
-<li><code>/Users/YourName/Pictures/vacation/beach.jpg</code></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>NOTE:</strong> macOS mounts other drives within the main filesystem hierarchy. When you connect an external drive like a USB flash drive, it's automatically mounted at <code>/Volumes/DRIVE_NAME</code>. For example, if you plug in a flash drive named "PENDRIVE", it would be accessible at: <code>/Volumes/PENDRIVE/</code>.</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Absolute-vs-Relative-Paths">Absolute vs Relative Paths<a class="anchor-link" href="#Absolute-vs-Relative-Paths">¶</a></h2><p><strong>Absolute Path</strong>: Complete path from the root</p>
-<ul>
-<li>Windows: <code>C:\Users\Alice\Documents\project\main.py</code></li>
-<li>macOS: <code>/Users/alice/Documents/project/main.py</code></li>
-</ul>
-<p><strong>Relative Path</strong>: Path relative to current location</p>
-<ul>
-<li>macOS: <code>project/main.py</code> (from current dir, open <code>project</code>, reach <code>main.py</code>)</li>
-<li>Windows: <code>project\main.py</code> (from current dir, open <code>project</code>, reach <code>main.py</code>)</li>
-<li>macOS: <code>../Documents/report.docx</code> (go up one level, then to Documents)</li>
-<li>Windows: <code>..\Documents\report.docx</code> (go up one level, then to Documents)</li>
-<li>macOS: <code>./main.py</code> (current directory)</li>
-<li>Windows: <code>.\main.py</code> (current directory)</li>
-</ul>
-<p><strong>Special Directory Symbols:</strong></p>
-<ul>
-<li><code>.</code> = current directory</li>
-<li><code>..</code> = parent directory (one level up)</li>
-<li><code>~</code> = home directory (macOS/Linux)</li>
-<li><code>%USERPROFILE%</code> = home directory (Windows)</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="The-Command-Line-Interface-(CLI)">The Command Line Interface (CLI)<a class="anchor-link" href="#The-Command-Line-Interface-(CLI)">¶</a></h2><p>The <strong>command line</strong> is a text-based way to interact with your computer:</p>
-<div align="center">
-<img alt="No description has been provided for this image" src="img/terminal-2.png" width="100%"/>
-</div>
-<p><strong>Why use the command line?</strong></p>
-<ul>
-<li><strong>Speed</strong>: Much faster for many tasks</li>
-<li><strong>Power</strong>: Can do things GUIs can't</li>
-<li><strong>Automation</strong>: Easy to script repetitive tasks</li>
-<li><strong>Remote access</strong>: Work on computers anywhere</li>
-<li><strong>Programming</strong>: Essential for development work</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Windows-Command-Line">Windows Command Line<a class="anchor-link" href="#Windows-Command-Line">¶</a></h2><p>Opening the Command Line (alternatives):</p>
-<ul>
-<li>Press <code>Win + R</code>, type <code>cmd</code>, press Enter (Command Prompt)</li>
-<li>Press <code>Win + X</code>, select "Windows PowerShell" (PowerShell)</li>
-<li>Search for "Command Prompt" or "PowerShell" in Start menu</li>
-</ul>
-<p>Basic Windows Commands:</p>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Purpose</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>dir</code></td>
-<td>List files and directories</td>
-<td><code>dir</code></td>
-</tr>
-<tr>
-<td><code>cd</code></td>
-<td>Change directory</td>
-<td><code>cd Documents</code></td>
-</tr>
-<tr>
-<td><code>mkdir</code></td>
-<td>Create directory</td>
-<td><code>mkdir MyProject</code></td>
-</tr>
-<tr>
-<td><code>copy</code></td>
-<td>Copy files</td>
-<td><code>copy file.txt backup.txt</code></td>
-</tr>
-<tr>
-<td><code>del</code></td>
-<td>Delete files</td>
-<td><code>del oldfile.txt</code></td>
-</tr>
-<tr>
-<td><code>type</code></td>
-<td>Display file content</td>
-<td><code>type readme.txt</code></td>
-</tr>
-<tr>
-<td><code>cls</code></td>
-<td>Clear screen</td>
-<td><code>cls</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Practical-Exercise:-Navigation-(Windows-Users)">Practical Exercise: Navigation (Windows Users)<a class="anchor-link" href="#Practical-Exercise:-Navigation-(Windows-Users)">¶</a></h2><div class="highlight"><pre><span></span><span class="c1"># See where you are</span>
-<span class="nb">cd</span>
-
-<span class="c1"># List files in current directory</span>
-dir
-
-<span class="c1"># Go to your Documents folder</span>
-<span class="nb">cd</span><span class="w"> </span>Documents
-
-<span class="c1"># Create a new folder</span>
-mkdir<span class="w"> </span>ProgrammingClass
-
-<span class="c1"># Enter the new folder</span>
-<span class="nb">cd</span><span class="w"> </span>ProgrammingClass
-
-<span class="c1"># Go back to parent directory</span>
-<span class="nb">cd</span><span class="w"> </span>..
-
-<span class="c1"># Start a program</span>
-notepad.exe
-</pre></div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="macOS-Command-Line">macOS Command Line<a class="anchor-link" href="#macOS-Command-Line">¶</a></h2><p>Opening Terminal (alternatives):</p>
-<ul>
-<li>Press <code>Cmd + Space</code>, type "Terminal", press Enter</li>
-<li>Go to Applications → Utilities → Terminal</li>
-<li>Use Spotlight search for "Terminal"</li>
-</ul>
-<p>Basic macOS/Unix Commands:</p>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Purpose</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ls</code></td>
-<td>List files and directories</td>
-<td><code>ls -la</code></td>
-</tr>
-<tr>
-<td><code>cd</code></td>
-<td>Change directory</td>
-<td><code>cd Documents</code></td>
-</tr>
-<tr>
-<td><code>mkdir</code></td>
-<td>Create directory</td>
-<td><code>mkdir MyProject</code></td>
-</tr>
-<tr>
-<td><code>cp</code></td>
-<td>Copy files</td>
-<td><code>cp file.txt backup.txt</code></td>
-</tr>
-<tr>
-<td><code>rm</code></td>
-<td>Delete files</td>
-<td><code>rm oldfile.txt</code></td>
-</tr>
-<tr>
-<td><code>cat</code></td>
-<td>Display file content</td>
-<td><code>cat readme.txt</code></td>
-</tr>
-<tr>
-<td><code>clear</code></td>
-<td>Clear screen</td>
-<td><code>clear</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Practical-Exercise:-Navigation-(MacOS-Users)">Practical Exercise: Navigation (MacOS Users)<a class="anchor-link" href="#Practical-Exercise:-Navigation-(MacOS-Users)">¶</a></h2><div class="highlight"><pre><span></span><span class="c1"># See where you are</span>
-<span class="nb">pwd</span>
-
-<span class="c1"># List files in current directory</span>
-ls
-
-<span class="c1"># Go to your Documents folder</span>
-<span class="nb">cd</span><span class="w"> </span>Documents
-
-<span class="c1"># Create a new folder</span>
-mkdir<span class="w"> </span>ProgrammingClass
-
-<span class="c1"># Enter the new folder</span>
-<span class="nb">cd</span><span class="w"> </span>ProgrammingClass
-
-<span class="c1"># Go back to parent directory</span>
-<span class="nb">cd</span><span class="w"> </span>..
-
-<span class="c1"># Start a program</span>
-open<span class="w"> </span>-a<span class="w"> </span>TextEdit
-</pre></div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Understanding-Processes">Understanding Processes<a class="anchor-link" href="#Understanding-Processes">¶</a></h2><p>A <strong>process</strong> is a running program in memory:</p>
-<div align="center">
-<img alt="No description has been provided for this image" src="img/process-concept.drawio.png" style="margin-bottom: -10px; margin-top: -10px;" width="95%"/>
-</div>
-<p>Key Process Concepts:</p>
-<ul>
-<li><strong>Process ID (PID)</strong>: Unique identifier for each process</li>
-<li><strong>Parent/Child</strong>: Processes can create other processes</li>
-<li><strong>Memory</strong>: Each process has its own memory space</li>
-<li><strong>CPU Time</strong>: Processes share CPU time</li>
-<li><strong>States</strong>: Processes transition between different states:<ul>
-<li><strong>Running</strong>: Currently executing on the CPU</li>
-<li><strong>Ready</strong>: Waiting to be assigned to the CPU</li>
-<li><strong>Blocked/Waiting</strong>: Waiting for some event (I/O, signals, etc.)</li>
-<li><strong>Terminated</strong>: Execution completed, but still in memory</li>
-<li><strong>New</strong>: Process created but not yet admitted to the pool of executable processes</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Process-Management-in-Windows">Process Management in Windows<a class="anchor-link" href="#Process-Management-in-Windows">¶</a></h2><p><strong>Task Manager</strong> (Ctrl + Shift + Esc):</p>
-<ul>
-<li>Graphical interface to view and manage running processes</li>
-<li>Monitor CPU, memory, disk, and network usage</li>
-<li>Terminate unresponsive applications</li>
-</ul>
-<p><strong>Command Line Process Management:</strong></p>
-<div class="highlight"><pre><span></span><span class="c1"># List all running processes</span>
-tasklist
-
-<span class="c1"># Find specific processes by name</span>
-tasklist<span class="w"> </span><span class="p">|</span><span class="w"> </span>findstr<span class="w"> </span><span class="s2">"notepad"</span>
-
-<span class="c1"># Kill a process by name (force with /F)</span>
-taskkill<span class="w"> </span>/IM<span class="w"> </span>notepad.exe
-taskkill<span class="w"> </span>/F<span class="w"> </span>/IM<span class="w"> </span>notepad.exe
-
-<span class="c1"># Kill a process by PID (force with /F)</span>
-taskkill<span class="w"> </span>/PID<span class="w"> </span><span class="m">1234</span>
-taskkill<span class="w"> </span>/F<span class="w"> </span>/PID<span class="w"> </span><span class="m">1234</span>
-
-<span class="c1"># Start a program</span>
-start<span class="w"> </span>notepad.exe
-</pre></div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Process-Management-in-macOS">Process Management in macOS<a class="anchor-link" href="#Process-Management-in-macOS">¶</a></h2><p><strong>Activity Monitor</strong> (Applications → Utilities):</p>
-<ul>
-<li>GUI tool for monitoring and managing processes</li>
-<li>Shows CPU, memory, energy, disk, and network usage</li>
-</ul>
-<p><strong>Command Line Process Management:</strong></p>
-<div class="highlight"><pre><span></span><span class="c1"># List running processes</span>
-ps<span class="w"> </span>aux
-
-<span class="c1"># Find specific process</span>
-ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">"TextEdit"</span>
-
-<span class="c1"># Kill a process by PID</span>
-<span class="nb">kill</span><span class="w"> </span><span class="m">1234</span>
-
-<span class="c1"># Force kill a process (SIGKILL)</span>
-<span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="m">1234</span>
-
-<span class="c1"># Kill process by name</span>
-killall<span class="w"> </span>TextEdit
-
-<span class="c1"># Start a program</span>
-open<span class="w"> </span>-a<span class="w"> </span>TextEdit
-
-<span class="c1"># View process hierarchy</span>
-pstree
-</pre></div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Environment-Variables">Environment Variables<a class="anchor-link" href="#Environment-Variables">¶</a></h2><p><strong>Environment variables</strong> store system configuration:</p>
-<ul>
-<li>Windows:</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="c1"># View all environment variables</span>
-<span class="nb">set</span>
-
-<span class="c1"># View specific variable</span>
-<span class="nb">echo</span><span class="w"> </span>%PATH%
-<span class="nb">echo</span><span class="w"> </span>%USERPROFILE%
-
-<span class="c1"># Set a variable (temporary)</span>
-<span class="nb">set</span><span class="w"> </span><span class="nv">MYVAR</span><span class="o">=</span>Hello
-<span class="nb">echo</span><span class="w"> </span>%MYVAR%
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>macOS:</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="c1"># View all environment variables</span>
-env
-
-<span class="c1"># View specific variable</span>
-<span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
-<span class="nb">echo</span><span class="w"> </span><span class="nv">$HOME</span>
-
-<span class="c1"># Set a variable (temporary)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">MYVAR</span><span class="o">=</span><span class="s2">"Hello"</span>
-<span class="nb">echo</span><span class="w"> </span><span class="nv">$MYVAR</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Important-Environment-Variables">Important Environment Variables<a class="anchor-link" href="#Important-Environment-Variables">¶</a></h2><ul>
-<li><code>PATH</code>: <strong>Directories where executable files are found</strong> (separated by <code>:</code> in macOS, <code>;</code> in Win)</li>
-<li><code>HOME</code>/<code>USERPROFILE</code>: User's home directory location</li>
-<li><code>PWD</code>: Current working directory</li>
-<li><code>TMPDIR</code>/<code>TEMP</code>: Directory for temporary files</li>
-<li><code>USER</code>/<code>USERNAME</code>: Current username</li>
-<li><code>SHELL</code>: Default shell program</li>
-<li><code>LANG</code>/<code>LANGUAGE</code>: System language and locale settings</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>NOTE</strong>: The PATH environment variable is crucial for program accessibility. When software is installed, it must add its directory to PATH - otherwise you can only run the program by typing its absolute path. This is why properly installed programs can be launched from any location in the terminal by simply typing their name.</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="File-Permissions">File Permissions<a class="anchor-link" href="#File-Permissions">¶</a></h2><p><strong>Windows Permissions:</strong></p>
-<ul>
-<li><strong>Read</strong>: View file contents</li>
-<li><strong>Write</strong>: Modify file contents</li>
-<li><strong>Execute</strong>: Run the file as a program</li>
-<li><strong>Full Control</strong>: All permissions plus ability to change permissions</li>
-</ul>
-<p><strong>macOS Permissions (Unix-style):</strong></p>
-<div class="highlight"><pre><span></span><span class="c1"># View permissions</span>
-ls<span class="w"> </span>-l<span class="w"> </span>myfile.txt
-<span class="c1"># Output: -rw-r--r-- 1 user group 1024 Jan 1 12:00 myfile.txt</span>
-<span class="c1">#         ^^^ ^^^ ^^^</span>
-<span class="c1">#         |   |   |</span>
-<span class="c1">#         |   |   +-- Others (everyone else)</span>
-<span class="c1">#         |   +------ Group</span>
-<span class="c1">#         +---------- Owner (you)</span>
-
-<span class="c1"># Change permissions</span>
-chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>script.py<span class="w">    </span><span class="c1"># rwxr-xr-x</span>
-chmod<span class="w"> </span>+x<span class="w"> </span>script.py<span class="w">     </span><span class="c1"># Add execute permission</span>
-</pre></div>
-<p><strong>Permission Symbols:</strong></p>
-<ul>
-<li><code>r</code> = read (4), <code>w</code> = write (2), <code>x</code> = execute (1)</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="System-Information-Commands">System Information Commands<a class="anchor-link" href="#System-Information-Commands">¶</a></h2><ul>
-<li>Windows:</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="c1"># System information</span>
-systeminfo
-
-<span class="c1"># Current user</span>
-whoami
-
-<span class="c1"># Current date and time</span>
-date
-<span class="nb">time</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>macOS:</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="c1"># System information</span>
-uname<span class="w"> </span>-a
-
-<span class="c1"># Current user</span>
-whoami
-
-<span class="c1"># Current date and time</span>
-date
-
-<span class="c1"># Disk usage</span>
-df<span class="w"> </span>-h
-</pre></div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Shortcuts-and-Productivity-Tips">Shortcuts and Productivity Tips<a class="anchor-link" href="#Shortcuts-and-Productivity-Tips">¶</a></h2><p><strong>Windows Keyboard Shortcuts:</strong></p>
-<ul>
-<li><code>Win + E</code>: Open File Explorer</li>
-<li><code>Win + R</code>: Run dialog</li>
-<li><code>Win + L</code>: Lock computer</li>
-<li><code>Alt + Tab</code>: Switch between applications</li>
-<li><code>Ctrl + Shift + Esc</code>: Task Manager</li>
-</ul>
-<p><strong>macOS Keyboard Shortcuts:</strong></p>
-<ul>
-<li><code>Cmd + Space</code>: Spotlight search</li>
-<li><code>Cmd + Tab</code>: Switch between applications</li>
-<li><code>Cmd + Option + Esc</code>: Force quit applications</li>
-<li><code>Cmd + Shift + 3</code>: Screenshot</li>
-</ul>
-<p><strong>Command Line Shortcuts (both systems):</strong></p>
-<ul>
-<li><code>Tab</code>: Auto-complete file/directory names</li>
-<li><code>↑/↓ arrows</code>: Navigate command history</li>
-<li><code>Ctrl + C</code>: Cancel current command</li>
-<li><code>Ctrl + L</code>: Clear screen</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Application-Installation-Methods">Application Installation Methods<a class="anchor-link" href="#Application-Installation-Methods">¶</a></h2><p>Modern software can be installed and deployed in several ways:</p>
 <ol>
-<li><p><strong>Direct Downloads</strong>: Executable files (.exe, .msi, .dmg)</p>
-</li>
-<li><p><strong>Application Stores</strong>: Curated marketplaces</p>
-</li>
-<li><p><strong>Containers &amp; Virtual Machines</strong>: Isolated environments</p>
-</li>
+<li><strong>Direct Downloads</strong> - Executable files (.exe, .msi, .dmg)</li>
+<li><strong>Application Stores</strong> - Curated marketplaces</li>
+<li><strong>Containers &amp; Virtual Machines</strong> - Isolated environments</li>
 </ol>
 <p>Each method has different <strong>goals</strong>, <strong>advantages</strong>, and <strong>trade-offs</strong> depending on:</p>
 <ul>
@@ -8127,12 +7480,13 @@ df<span class="w"> </span>-h
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Direct-Downloads:-Executable-Files">Direct Downloads: Executable Files<a class="anchor-link" href="#Direct-Downloads:-Executable-Files">¶</a></h2><div align="center">
-<img alt="No description has been provided for this image" src="img/executable-downloads.drawio.png" style="margin-bottom: -10px; margin-top: -10px;" width="50%"/>
+<img alt="No description has been provided for this image" src="img/executable-downloads.png" style="margin-bottom: -10px;" width="90%"/>
 </div>
 <p><strong>Common File Types:</strong></p>
 <ul>
 <li><strong>Windows</strong>: <code>.exe</code> (executable), <code>.msi</code> (Windows Installer)</li>
 <li><strong>macOS</strong>: <code>.dmg</code> (disk image), <code>.pkg</code> (package installer)</li>
+<li><strong>Linux</strong>: <code>.deb</code> (Debian), <code>.rpm</code> (Red Hat), <code>.AppImage</code></li>
 </ul>
 <p><strong>Process:</strong></p>
 <ol>
@@ -8151,23 +7505,23 @@ df<span class="w"> </span>-h
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Direct-Downloads:-Pros-&amp;-Cons">Direct Downloads: Pros &amp; Cons<a class="anchor-link" href="#Direct-Downloads:-Pros-&amp;-Cons">¶</a></h2><p>Advantages:</p>
+<h2 id="Direct-Downloads:-Pros-&amp;-Cons">Direct Downloads: Pros &amp; Cons<a class="anchor-link" href="#Direct-Downloads:-Pros-&amp;-Cons">¶</a></h2><p><strong>Advantages:</strong></p>
 <ul>
-<li><strong>Immediate access</strong> to latest software releases</li>
-<li><strong>Freedom from platform-specific</strong> restrictions</li>
-<li><strong>Offline installation</strong> capabilities</li>
-<li><strong>Complete control</strong> over installation parameters</li>
-<li><strong>Enterprise deployment</strong> compatibility</li>
+<li>✅ <strong>Direct access</strong> to latest versions</li>
+<li>✅ <strong>No intermediary</strong> restrictions</li>
+<li>✅ <strong>Offline installation</strong> possible</li>
+<li>✅ <strong>Full control</strong> over installation process</li>
+<li>✅ <strong>Enterprise deployment</strong> friendly</li>
 </ul>
-<p>Disadvantages:</p>
+<p><strong>Disadvantages:</strong></p>
 <ul>
-<li><strong>Security vulnerabilities</strong> from unverified sources</li>
-<li><strong>Manual maintenance</strong> of updates required</li>
-<li><strong>Complex dependency</strong> resolution</li>
-<li><strong>Decentralized</strong> removal procedures</li>
-<li><strong>Potential version</strong> incompatibilities</li>
+<li>❌ <strong>Security risks</strong> from untrusted sources</li>
+<li>❌ <strong>Manual updates</strong> required</li>
+<li>❌ <strong>Dependency management</strong> complexity</li>
+<li>❌ <strong>No centralized</strong> uninstall process</li>
+<li>❌ <strong>Version conflicts</strong> possible</li>
 </ul>
-<p>Most suitable for enterprise-grade software, development toolchains, specialized applications</p>
+<p><strong>Best for:</strong> Enterprise software, development tools, specialized applications</p>
 </div>
 </div>
 </div>
@@ -8179,9 +7533,18 @@ df<span class="w"> </span>-h
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Application-Stores">Application Stores<a class="anchor-link" href="#Application-Stores">¶</a></h2><div align="center">
-<img alt="No description has been provided for this image" src="img/app-store-installations.drawio.png" width="70%"/>
+<img alt="No description has been provided for this image" src="img/app-store-installations.png" style="margin-bottom: -10px;" width="90%"/>
 </div>
-<p>Unified Experience for all the steps!</p>
+<p><strong>Major App Stores:</strong></p>
+<ul>
+<li><strong>Microsoft Store</strong> (Windows)</li>
+<li><strong>Mac App Store</strong> (macOS)</li>
+<li><strong>Google Play Store</strong> (Android)</li>
+<li><strong>Snap Store</strong> (Linux)</li>
+<li><strong>Flathub</strong> (Linux Flatpak)</li>
+</ul>
+<p><strong>Unified Experience:</strong>
+Browse → Review → Install → Auto-Update → Uninstall</p>
 </div>
 </div>
 </div>
@@ -8192,45 +7555,24 @@ df<span class="w"> </span>-h
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="App-Stores:-Pros-&amp;-Cons">App Stores: Pros &amp; Cons<a class="anchor-link" href="#App-Stores:-Pros-&amp;-Cons">¶</a></h2><p>Advantages:</p>
+<h2 id="App-Stores:-Pros-&amp;-Cons">App Stores: Pros &amp; Cons<a class="anchor-link" href="#App-Stores:-Pros-&amp;-Cons">¶</a></h2><p><strong>Advantages:</strong></p>
 <ul>
-<li><strong>Curated &amp; verified</strong> applications</li>
-<li><strong>Automatic updates</strong> and security patches</li>
-<li><strong>Easy management</strong> (install/uninstall)</li>
-<li><strong>User reviews</strong> and ratings</li>
-<li><strong>Sandboxed security</strong> model</li>
-<li><strong>Centralized billing</strong> and licensing</li>
+<li>✅ <strong>Curated &amp; verified</strong> applications</li>
+<li>✅ <strong>Automatic updates</strong> and security patches</li>
+<li>✅ <strong>Easy management</strong> (install/uninstall)</li>
+<li>✅ <strong>User reviews</strong> and ratings</li>
+<li>✅ <strong>Sandboxed security</strong> model</li>
+<li>✅ <strong>Centralized billing</strong> and licensing</li>
 </ul>
-<p>Disadvantages:</p>
+<p><strong>Disadvantages:</strong></p>
 <ul>
-<li><strong>Limited selection</strong> of applications</li>
-<li><strong>Platform restrictions</strong> and policies</li>
-<li><strong>Review process delays</strong> for updates</li>
-<li><strong>Revenue sharing</strong> with platform</li>
-<li><strong>Dependency on store</strong> availability</li>
+<li>❌ <strong>Limited selection</strong> of applications</li>
+<li>❌ <strong>Platform restrictions</strong> and policies</li>
+<li>❌ <strong>Review process delays</strong> for updates</li>
+<li>❌ <strong>Revenue sharing</strong> with platform</li>
+<li>❌ <strong>Dependency on store</strong> availability</li>
 </ul>
-<p>Best for consumer applications, mobile apps, casual software</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Why-VMs-or-containers-when-we-already-have-apps?">Why VMs or containers when we already have apps?<a class="anchor-link" href="#Why-VMs-or-containers-when-we-already-have-apps?">¶</a></h2><ul>
-<li><strong>Isolation</strong>: Applications run in their own environment without interfering with the host system</li>
-<li><strong>Compatibility</strong>: Some applications may not be compatible with the user's operating system</li>
-<li><strong>Dependency management</strong>: Applications may have complex dependencies that conflict with other installed software</li>
-<li><strong>Portability</strong>: VMs or containers provide a self-contained "package" that can be executed consistently across different environments</li>
-<li><strong>Reproducibility</strong>: Ensures consistent behavior regardless of where the application runs</li>
-<li><strong>Security</strong>: Containment of potential security vulnerabilities within the VM/container boundary</li>
-<li><strong>Resource allocation</strong>: Better control over CPU, memory and storage allocation</li>
-<li><strong>Scalability</strong>: Easier to scale applications horizontally by deploying multiple instances</li>
-</ul>
-<p>Containers are primarily used for deploying non-graphical applications (although Flatpak and Snap on Linux are an exception). They have become the industry standard for deploying services in cloud environments, especially web services, due to their lightweight nature and efficient resource utilization.</p>
+<p><strong>Best for:</strong> Consumer applications, mobile apps, casual software</p>
 </div>
 </div>
 </div>
@@ -8242,19 +7584,9 @@ df<span class="w"> </span>-h
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Containers-vs-Virtual-Machines">Containers vs Virtual Machines<a class="anchor-link" href="#Containers-vs-Virtual-Machines">¶</a></h2><div align="center">
-<img alt="No description has been provided for this image" src="img/containers-vms.drawio.png" style="margin-bottom: -10px;" width="65%"/>
+<img alt="No description has been provided for this image" src="img/containers-vms.png" style="margin-bottom: -10px;" width="95%"/>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Key Differences:</p>
+<p><strong>Key Differences:</strong></p>
 <table>
 <thead>
 <tr>
@@ -8281,12 +7613,11 @@ df<span class="w"> </span>-h
 </tr>
 <tr>
 <td><strong>Portability</strong></td>
-<td>Hypervisor dependent</td>
-<td>Open format (OCI)</td>
+<td>Platform dependent</td>
+<td>Highly portable</td>
 </tr>
 </tbody>
 </table>
-<p><strong>NOTE</strong>: For users, containers typically means using Docker. Docker runs Linux-based applications, so on macOS and Windows, it requires a lightweight Linux-based VM. On Linux, Docker can run natively without an additional VM layer.</p>
 </div>
 </div>
 </div>
@@ -8297,7 +7628,108 @@ df<span class="w"> </span>-h
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="No-Solution-to-Rule-Them-All">No Solution to Rule Them All<a class="anchor-link" href="#No-Solution-to-Rule-Them-All">¶</a></h2><p>Decision Matrix:</p>
+<h2 id="Containers:-Goals-&amp;-Architecture">Containers: Goals &amp; Architecture<a class="anchor-link" href="#Containers:-Goals-&amp;-Architecture">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/container-architecture.png" style="margin-bottom: -10px;" width="90%"/>
+</div>
+<p><strong>Primary Goals:</strong></p>
+<ul>
+<li><strong>Application portability</strong> across environments</li>
+<li><strong>Consistent deployment</strong> from dev to production</li>
+<li><strong>Resource efficiency</strong> through sharing</li>
+<li><strong>Microservices architecture</strong> enablement</li>
+<li><strong>DevOps automation</strong> and CI/CD integration</li>
+</ul>
+<p><strong>Core Concept:</strong> Package application + dependencies into lightweight, portable units</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Containers:-Pros-&amp;-Cons">Containers: Pros &amp; Cons<a class="anchor-link" href="#Containers:-Pros-&amp;-Cons">¶</a></h2><p><strong>Advantages:</strong></p>
+<ul>
+<li>✅ <strong>Lightweight</strong> and fast startup</li>
+<li>✅ <strong>Consistent environments</strong> ("works on my machine")</li>
+<li>✅ <strong>Easy scaling</strong> and orchestration</li>
+<li>✅ <strong>Resource efficient</strong> sharing of OS kernel</li>
+<li>✅ <strong>Version control</strong> for infrastructure</li>
+<li>✅ <strong>Microservices friendly</strong> architecture</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>❌ <strong>Shared OS kernel</strong> security concerns</li>
+<li>❌ <strong>Linux-centric</strong> (though Windows containers exist)</li>
+<li>❌ <strong>Learning curve</strong> for orchestration</li>
+<li>❌ <strong>Persistent storage</strong> complexity</li>
+<li>❌ <strong>Debugging challenges</strong> in production</li>
+</ul>
+<p><strong>Best for:</strong> Web applications, microservices, CI/CD pipelines, cloud-native apps</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Virtual-Machines:-Goals-&amp;-Architecture">Virtual Machines: Goals &amp; Architecture<a class="anchor-link" href="#Virtual-Machines:-Goals-&amp;-Architecture">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/vm-architecture.png" style="margin-bottom: -10px;" width="90%"/>
+</div>
+<p><strong>Primary Goals:</strong></p>
+<ul>
+<li><strong>Complete isolation</strong> between applications</li>
+<li><strong>Multiple OS support</strong> on single hardware</li>
+<li><strong>Legacy system</strong> preservation and support</li>
+<li><strong>Security boundaries</strong> for sensitive workloads</li>
+<li><strong>Hardware abstraction</strong> and resource allocation</li>
+</ul>
+<p><strong>Core Concept:</strong> Virtualize entire computer systems with full OS stack</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Virtual-Machines:-Pros-&amp;-Cons">Virtual Machines: Pros &amp; Cons<a class="anchor-link" href="#Virtual-Machines:-Pros-&amp;-Cons">¶</a></h2><p><strong>Advantages:</strong></p>
+<ul>
+<li>✅ <strong>Complete isolation</strong> and security</li>
+<li>✅ <strong>Different OS types</strong> (Windows, Linux, etc.)</li>
+<li>✅ <strong>Legacy application</strong> support</li>
+<li>✅ <strong>Snapshot &amp; rollback</strong> capabilities</li>
+<li>✅ <strong>Hardware abstraction</strong> layer</li>
+<li>✅ <strong>Mature ecosystem</strong> and tooling</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>❌ <strong>Resource overhead</strong> (full OS per VM)</li>
+<li>❌ <strong>Slower performance</strong> due to virtualization</li>
+<li>❌ <strong>Longer boot times</strong> (minutes vs seconds)</li>
+<li>❌ <strong>License costs</strong> for multiple OS instances</li>
+<li>❌ <strong>Storage requirements</strong> for each VM</li>
+<li>❌ <strong>Management complexity</strong> at scale</li>
+</ul>
+<p><strong>Best for:</strong> Enterprise applications, development environments, security isolation, legacy systems</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Choosing-the-Right-Deployment-Method">Choosing the Right Deployment Method<a class="anchor-link" href="#Choosing-the-Right-Deployment-Method">¶</a></h2><p><strong>Decision Matrix:</strong></p>
 <table>
 <thead>
 <tr>
@@ -8344,6 +7776,7 @@ df<span class="w"> </span>-h
 </tr>
 </tbody>
 </table>
+<p><strong>Key Factors:</strong> Security requirements, resource constraints, maintenance overhead, team expertise</p>
 </div>
 </div>
 </div>

@@ -443,6 +443,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-permissions">File Permissions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-information-commands">System Information Commands</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcuts-and-productivity-tips">Shortcuts and Productivity Tips</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-installation-methods">Application Installation Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-downloads-executable-files">Direct Downloads: Executable Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-downloads-pros-cons">Direct Downloads: Pros &amp; Cons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-stores">Application Stores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#app-stores-pros-cons">App Stores: Pros &amp; Cons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-vms-or-containers-when-we-already-have-apps">Why VMs or containers when we already have apps?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#containers-vs-virtual-machines">Containers vs Virtual Machines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#no-solution-to-rule-them-all">No Solution to Rule Them All</a></li>
 </ul>
             </nav>
         </div>
@@ -937,6 +945,180 @@ df<span class="w"> </span>-h
 <li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">L</span></code>: Clear screen</p></li>
 </ul>
 </section>
+<section id="application-installation-methods">
+<h2>Application Installation Methods<a class="headerlink" href="#application-installation-methods" title="Link to this heading">#</a></h2>
+<p>Modern software can be installed and deployed in several ways:</p>
+<ol class="arabic simple">
+<li><p><strong>Direct Downloads</strong>: Executable files (.exe, .msi, .dmg)</p></li>
+<li><p><strong>Application Stores</strong>: Curated marketplaces</p></li>
+<li><p><strong>Containers &amp; Virtual Machines</strong>: Isolated environments</p></li>
+</ol>
+<p>Each method has different <strong>goals</strong>, <strong>advantages</strong>, and <strong>trade-offs</strong> depending on:</p>
+<ul class="simple">
+<li><p>Security requirements</p></li>
+<li><p>Deployment complexity</p></li>
+<li><p>Resource constraints</p></li>
+<li><p>Maintenance needs</p></li>
+</ul>
+</section>
+<section id="direct-downloads-executable-files">
+<h2>Direct Downloads: Executable Files<a class="headerlink" href="#direct-downloads-executable-files" title="Link to this heading">#</a></h2>
+<div align="center">
+<img src="img/executable-downloads.drawio.png" width="50%" style="margin-bottom: -10px; margin-top: -10px;">
+</div>
+<p><strong>Common File Types:</strong></p>
+<ul class="simple">
+<li><p><strong>Windows</strong>: <code class="docutils literal notranslate"><span class="pre">.exe</span></code> (executable), <code class="docutils literal notranslate"><span class="pre">.msi</span></code> (Windows Installer)</p></li>
+<li><p><strong>macOS</strong>: <code class="docutils literal notranslate"><span class="pre">.dmg</span></code> (disk image), <code class="docutils literal notranslate"><span class="pre">.pkg</span></code> (package installer)</p></li>
+</ul>
+<p><strong>Process:</strong></p>
+<ol class="arabic simple">
+<li><p>Download from official website or repository</p></li>
+<li><p>Verify file integrity (checksums, digital signatures)</p></li>
+<li><p>Run installer with appropriate permissions</p></li>
+<li><p>Follow installation wizard steps</p></li>
+</ol>
+</section>
+<section id="direct-downloads-pros-cons">
+<h2>Direct Downloads: Pros &amp; Cons<a class="headerlink" href="#direct-downloads-pros-cons" title="Link to this heading">#</a></h2>
+<p>Advantages:</p>
+<ul class="simple">
+<li><p><strong>Immediate access</strong> to latest software releases</p></li>
+<li><p><strong>Freedom from platform-specific</strong> restrictions</p></li>
+<li><p><strong>Offline installation</strong> capabilities</p></li>
+<li><p><strong>Complete control</strong> over installation parameters</p></li>
+<li><p><strong>Enterprise deployment</strong> compatibility</p></li>
+</ul>
+<p>Disadvantages:</p>
+<ul class="simple">
+<li><p><strong>Security vulnerabilities</strong> from unverified sources</p></li>
+<li><p><strong>Manual maintenance</strong> of updates required</p></li>
+<li><p><strong>Complex dependency</strong> resolution</p></li>
+<li><p><strong>Decentralized</strong> removal procedures</p></li>
+<li><p><strong>Potential version</strong> incompatibilities</p></li>
+</ul>
+<p>Most suitable for enterprise-grade software, development toolchains, specialized applications</p>
+</section>
+<section id="application-stores">
+<h2>Application Stores<a class="headerlink" href="#application-stores" title="Link to this heading">#</a></h2>
+<div align="center">
+<img src="img/app-store-installations.drawio.png" width="70%">
+</div>
+<p>Unified Experience for all the steps!</p>
+</section>
+<section id="app-stores-pros-cons">
+<h2>App Stores: Pros &amp; Cons<a class="headerlink" href="#app-stores-pros-cons" title="Link to this heading">#</a></h2>
+<p>Advantages:</p>
+<ul class="simple">
+<li><p><strong>Curated &amp; verified</strong> applications</p></li>
+<li><p><strong>Automatic updates</strong> and security patches</p></li>
+<li><p><strong>Easy management</strong> (install/uninstall)</p></li>
+<li><p><strong>User reviews</strong> and ratings</p></li>
+<li><p><strong>Sandboxed security</strong> model</p></li>
+<li><p><strong>Centralized billing</strong> and licensing</p></li>
+</ul>
+<p>Disadvantages:</p>
+<ul class="simple">
+<li><p><strong>Limited selection</strong> of applications</p></li>
+<li><p><strong>Platform restrictions</strong> and policies</p></li>
+<li><p><strong>Review process delays</strong> for updates</p></li>
+<li><p><strong>Revenue sharing</strong> with platform</p></li>
+<li><p><strong>Dependency on store</strong> availability</p></li>
+</ul>
+<p>Best for consumer applications, mobile apps, casual software</p>
+</section>
+<section id="why-vms-or-containers-when-we-already-have-apps">
+<h2>Why VMs or containers when we already have apps?<a class="headerlink" href="#why-vms-or-containers-when-we-already-have-apps" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Isolation</strong>: Applications run in their own environment without interfering with the host system</p></li>
+<li><p><strong>Compatibility</strong>: Some applications may not be compatible with the user’s operating system</p></li>
+<li><p><strong>Dependency management</strong>: Applications may have complex dependencies that conflict with other installed software</p></li>
+<li><p><strong>Portability</strong>: VMs or containers provide a self-contained “package” that can be executed consistently across different environments</p></li>
+<li><p><strong>Reproducibility</strong>: Ensures consistent behavior regardless of where the application runs</p></li>
+<li><p><strong>Security</strong>: Containment of potential security vulnerabilities within the VM/container boundary</p></li>
+<li><p><strong>Resource allocation</strong>: Better control over CPU, memory and storage allocation</p></li>
+<li><p><strong>Scalability</strong>: Easier to scale applications horizontally by deploying multiple instances</p></li>
+</ul>
+<p>Containers are primarily used for deploying non-graphical applications (although Flatpak and Snap on Linux are an exception). They have become the industry standard for deploying services in cloud environments, especially web services, due to their lightweight nature and efficient resource utilization.</p>
+</section>
+<section id="containers-vs-virtual-machines">
+<h2>Containers vs Virtual Machines<a class="headerlink" href="#containers-vs-virtual-machines" title="Link to this heading">#</a></h2>
+<div align="center">
+<img src="img/containers-vms.drawio.png" width="65%" style="margin-bottom: -10px;">
+</div>
+<p>Key Differences:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Virtual Machines</p></th>
+<th class="head"><p>Containers</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Isolation</strong></p></td>
+<td><p>Complete OS isolation</p></td>
+<td><p>Process-level isolation</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Resource Usage</strong></p></td>
+<td><p>Heavy (full OS)</p></td>
+<td><p>Lightweight (shared kernel)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Startup Time</strong></p></td>
+<td><p>Minutes</p></td>
+<td><p>Seconds</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Portability</strong></p></td>
+<td><p>Hypervisor dependent</p></td>
+<td><p>Open format (OCI)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>NOTE</strong>: For users, containers typically means using Docker. Docker runs Linux-based applications, so on macOS and Windows, it requires a lightweight Linux-based VM. On Linux, Docker can run natively without an additional VM layer.</p>
+</section>
+<section id="no-solution-to-rule-them-all">
+<h2>No Solution to Rule Them All<a class="headerlink" href="#no-solution-to-rule-them-all" title="Link to this heading">#</a></h2>
+<p>Decision Matrix:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Use Case</p></th>
+<th class="head"><p>Recommended Method</p></th>
+<th class="head"><p>Why?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Consumer Apps</strong></p></td>
+<td><p>App Store</p></td>
+<td><p>Security, ease of use</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Enterprise Software</strong></p></td>
+<td><p>Direct Download</p></td>
+<td><p>Control, customization</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Web Applications</strong></p></td>
+<td><p>Containers</p></td>
+<td><p>Scalability, portability</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Legacy Systems</strong></p></td>
+<td><p>Virtual Machines</p></td>
+<td><p>Isolation, compatibility</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Development Tools</strong></p></td>
+<td><p>Direct Download + Containers</p></td>
+<td><p>Flexibility + consistency</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Microservices</strong></p></td>
+<td><p>Containers</p></td>
+<td><p>Orchestration, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Security Testing</strong></p></td>
+<td><p>Virtual Machines</p></td>
+<td><p>Complete isolation</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1021,6 +1203,14 @@ df<span class="w"> </span>-h
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-permissions">File Permissions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-information-commands">System Information Commands</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcuts-and-productivity-tips">Shortcuts and Productivity Tips</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-installation-methods">Application Installation Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-downloads-executable-files">Direct Downloads: Executable Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-downloads-pros-cons">Direct Downloads: Pros &amp; Cons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-stores">Application Stores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#app-stores-pros-cons">App Stores: Pros &amp; Cons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-vms-or-containers-when-we-already-have-apps">Why VMs or containers when we already have apps?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#containers-vs-virtual-machines">Containers vs Virtual Machines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#no-solution-to-rule-them-all">No Solution to Rule Them All</a></li>
 </ul>
   </nav></div>
 
