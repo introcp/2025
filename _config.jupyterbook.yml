@@ -31,6 +31,8 @@ repository:
 html:
   use_issues_button: false
   use_repository_button: false
+  extra_css:
+    - _static/custom.css
 
 parse:
   myst_enable_extensions:
