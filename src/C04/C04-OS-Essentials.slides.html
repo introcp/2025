@@ -5,7 +5,7 @@
 <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<title>C03-Software slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>C04-OS-Essentials slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
@@ -7441,7 +7441,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div align="center">
-<h1 id="Software"><b style="font-family: 'LUISS', 'Lato'">Software</b><a class="anchor-link" href="#Software">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h1 id="Operating-System-Essentials"><b style="font-family: 'LUISS', 'Lato'">Operating System Essentials</b><a class="anchor-link" href="#Operating-System-Essentials">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
 <h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
 <img alt="No description has been provided for this image" src="https://introcp.github.io/dist/img/cliente-luiss.png"/>
 <p><br/><br/><br/></p>
@@ -7456,23 +7456,13 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="How-can-a-computer-execute-a-program?">How can a computer execute a program?<a class="anchor-link" href="#How-can-a-computer-execute-a-program?">¶</a></h2><div align="center">
-<img alt="No description has been provided for this image" src="img/cpus.drawio.png" width="80%"/>
-</div>
-<p>The <strong>CPU</strong> is the responsible for executing the program code:</p>
+<h2 id="Covering-the-essentials">Covering the essentials<a class="anchor-link" href="#Covering-the-essentials">¶</a></h2><p>Understanding your operating system is crucial for effective programming and computer use:</p>
 <ul>
-<li><p>It interprets the instructions one by one from the <strong>RAM</strong></p>
-</li>
-<li><p>The instructions must be written in <strong>machine code</strong></p>
-</li>
-<li><p>The machine code is:</p>
-<ul>
-<li><strong>Low level</strong>: relatevely simple operations</li>
-<li><strong>CPU specific</strong>: different CPUs have different machine codes</li>
-<li><strong>Binary format</strong>: humans struggle to read it</li>
+<li><strong>File Systems</strong>: How files and directories are organized</li>
+<li><strong>Command Line Interface</strong>: Powerful text-based interaction</li>
+<li><strong>Process Management</strong>: How programs run and are controlled</li>
 </ul>
-</li>
-</ul>
+<p>We'll focus on <strong>Windows</strong> and <strong>macOS</strong> with hands-on examples!</p>
 </div>
 </div>
 </div>
@@ -7483,282 +7473,17 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Machine-code:-Intel/AMD-vs-ARM">Machine code: Intel/AMD vs ARM<a class="anchor-link" href="#Machine-code:-Intel/AMD-vs-ARM">¶</a></h2><p>A simple sequence of instructions to compute the sum of two integer numbers would look like this in machine code:</p>
-<table>
-<tr>
-<td>Intel/AMD 64 bit machine code</td>
-<td></td><td></td>
-<td>ARM 64-bit machine code</td>
-</tr>
-<tr>
-<td><pre><code>f3 0f 1e fa
-55
-48 89 e5
-89 7d fc
-89 75 f8
-8b 55 fc
-8b 45 f8
-01 d0
-5d
-c3
-</code></pre></td>
-<td></td><td></td>
-<td><pre><code>ff 43 00 d1 
-e0 0f 00 b9 
-e8 0f 40 b9 
-e9 0f 40 b9 
-00 7d 09 1b 
-ff 43 00 91 
-c0 03 5f d6 
-</code></pre></td>
-</tr>
-</table>
-<ul>
-<li>Each instruction is stored into its own line for clarity, but in practice, they would be stored contiguously in memory.</li>
-<li>The machine code is stored in a binary format, while in this example we have used hexadecimal notation for clarity.</li>
-<li>Intel and AMD processors use the same machine code format (with only minor differences).</li>
-<li>Other processors (e.g., ARM used by Apple, Raspberry Pi, Huawei, etc.) use a completely different machine code format.</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="From-machine-code-to-assembly-code">From machine code to assembly code<a class="anchor-link" href="#From-machine-code-to-assembly-code">¶</a></h2><p>To make machine code understandble for human, we can translate it to assembly code:</p>
-<ul>
-<li><strong>Low level</strong> [same as machine code]: relatevely simple operations</li>
-<li><strong>CPU specific</strong> [same as machine code]: different CPUs have different machine codes</li>
-<li><strong>Human readable</strong> [differently from machine code]: CPU struggles to read it!<br/><br/></li>
-</ul>
-<table>
-<tr>
-<td>Intel/AMD 64 bit assembly</td>
-<td></td><td></td>
-<td>ARM 64-bit assembly</td>
-</tr>
-<tr>
-<td><pre><code>endbr64
-push   %rbp
-mov    %rsp,%rbp
-mov    %edi,-0x4(%rbp)
-mov    %esi,-0x8(%rbp)
-mov    -0x4(%rbp),%edx
-mov    -0x8(%rbp),%eax
-add    %edx,%eax
-pop    %rbp
-ret
-</code></pre></td>
-<td></td><td></td>
-<td><pre><code>sub     sp, sp, #16
-str     w0, [sp, #12]
-ldr     w8, [sp, #12]
-ldr     w9, [sp, #12]
-mul     w0, w8, w9
-add     sp, sp, #16
-ret
-</code></pre></td>
-</tr>
-</table>
-<p>Without getting into details, we can see that this code is doing some basic operations, such as addition, multiplication, copy/move of values from/to registers (which are different from CPU to CPU), etc.</p>
-<p><strong>NOTE:</strong> Translation from/to machine code to/from assembly code is a one-to-one non-ambiguous mapping. Translating from machine code to assembly code is called <strong>disassembly</strong>, while the opposite is called <strong>assembly</strong>.</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Writing-low-level-code-is-impractical">Writing low level code is impractical<a class="anchor-link" href="#Writing-low-level-code-is-impractical">¶</a></h2><p>Major problems when working with machine/assembly code are:</p>
-<ol>
-<li><p>Programmers have to write a lot of code to perform simple operations</p>
-</li>
-<li><p>Code is not portable across different hardware platforms</p>
-</li>
-<li><p>Programmers have to deal with hardware details</p>
-</li>
-<li><p>Programming in machine/assembly code is hard and error-prone</p>
-</li>
-</ol>
-<p><strong>Yet, CPUs only understand and run machine code.</strong></p>
-<p>How can programmers survive?</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="From-low-level-to-high-level-programming">From low-level to high-level programming<a class="anchor-link" href="#From-low-level-to-high-level-programming">¶</a></h2><p>Most programmers use high-level languages, such as Python, Javascript, or PHP, to write software.</p>
-<p><em><strong>However, the CPU does not understand high-level languages. Never!</strong></em></p>
-<p>Code written in high-level languages must be translated into machine code. Two main strategies:</p>
-<ol>
-<li><p><strong>Compilation</strong>:</p>
-<ul>
-<li>Compilers translate high-level code into machine code at <em>compile time</em></li>
-<li>Compile time means when the developer writes the code.</li>
-<li>Machine code is packaged into an executable.</li>
-<li>One executable for each platform (Operating Systems and CPUs).</li>
-<li>Developers keeps the high-level code, while users get the low-level code.</li>
-</ul>
-</li>
-<li><p><strong>Interpretation</strong>:</p>
-<ul>
-<li>Interpreters translate high-level code into machine code at <em>running time</em>.</li>
-<li>Running time means when the user runs the code.</li>
-<li>The code is portable and platform independent.</li>
-<li>Developers distribute the high-level code, users exploits the interpreter to run the code.</li>
-</ul>
-</li>
-</ol>
-<p>Compiled code is typically more efficient than interpreted code.</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Compilation">Compilation<a class="anchor-link" href="#Compilation">¶</a></h2><div align="center">
-<img alt="No description has been provided for this image" src="img/compilation.drawio.png" width="70%"/>
-</div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">¶</a></h2><div align="center">
-<img alt="No description has been provided for this image" src="img/interpretation.drawio.png" width="80%"/>
-</div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Why-do-we-need-to-learn-a-programming-language?">Why do we need to learn a programming language?<a class="anchor-link" href="#Why-do-we-need-to-learn-a-programming-language?">¶</a></h2><p>Most everyday tasks require to perform:</p>
-<ul>
-<li>repetitive…</li>
-<li>long sequences of…</li>
-<li>simple steps</li>
-</ul>
-<p>This scenario is <em>exactly</em> where a computer excels!</p>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<blockquote>
-<p>Computers are incredibly fast, accurate, and stupid. Human beings are incredibly slow, inaccurate, and brilliant. Together they are powerful beyond imagination.<br/><br/>-- Albert Einstein</p>
-</blockquote>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Language:-syntax-and-semantics">Language: syntax and semantics<a class="anchor-link" href="#Language:-syntax-and-semantics">¶</a></h2><p>Programming languages have:</p>
-<ul>
-<li><strong>Syntax</strong>: it defines which strings of characters and symbols are well formed.</li>
-<li><strong>Semantics</strong>: it defines the meaning of the well formed strings.<br/><br/></li>
-</ul>
-<p>The same is true even for natural languages (English, Italian, etc.):</p>
-<ul>
-<li><strong>Syntax</strong>:<ul>
-<li><em>"I are big"</em> is syntactically incorrect (<em>"I am big"</em> is correct).</li>
-<li><em>"The square circle is big"</em> is a well formed sentence.</li>
-</ul>
-</li>
-<li><strong>Semantics</strong>:<ul>
-<li><em>"The square circle is big"</em> is semantically incorrect (nonsensical because "square" and "circle" contradict).</li>
-</ul>
-</li>
-</ul>
-<p>An important difference between programming languages and natural languages is that programming languages are designed to be <strong>unambiguous</strong>, which means that there is no room for interpretation.</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Programming-language-paradigms">Programming language paradigms<a class="anchor-link" href="#Programming-language-paradigms">¶</a></h2><p>Two major computing paradigms:</p>
-<ul>
-<li><p><strong>Imperative programming</strong>:</p>
-<ul>
-<li>we describe how the program must accomplish the task</li>
-<li>language statements describe the steps (how to do), just like a <strong>recipe</strong></li>
-<li>close to the paradigm adopted by machine code</li>
-</ul>
-</li>
-<li><p><strong>Declarative programming</strong>:</p>
-<ul>
-<li>we describe what to do (define the end goal), without saying how (no step-by-step)</li>
-<li>language statements describe facts (what to do)</li>
-<li>paradigm adopted, e.g., by Database programming languages (SQL)</li>
-<li>distant from the paradigm adopted by machine code</li>
-</ul>
-</li>
-</ul>
+<h2 id="File-Systems:-The-Foundation">File Systems: The Foundation<a class="anchor-link" href="#File-Systems:-The-Foundation">¶</a></h2><p>Every operating system organizes files in a <strong>hierarchical structure</strong>, like a tree:</p>
 <div align="center">
-<br/>
-<b>Imperative programming is what we will see in this course.</b>
-<br/><br/>
+<img alt="No description has been provided for this image" src="img/filesystem-tree.png" style="margin-bottom: -20px;" width="60%"/>
 </div>
-<p><strong>NOTE:</strong> In many cases, code will be a mixture of both designs too, so it’s not always
-black-and-white.</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Solving-a-task-%E2%86%92-Algorithm-%E2%86%92-Recipe">Solving a task → Algorithm → Recipe<a class="anchor-link" href="#Solving-a-task-%E2%86%92-Algorithm-%E2%86%92-Recipe">¶</a></h2><p>An algorithm features:</p>
+<p>Key Concepts:</p>
 <ul>
-<li>a sequence of <strong>simple steps</strong></li>
-<li><strong>flow of control</strong> to specify when each step must be executed</li>
-<li>a way of determining when to <strong>stop</strong>.</li>
+<li><strong>Root</strong>: The top-level directory (starting point)</li>
+<li><strong>Directories/Folders</strong>: Containers that hold files and other directories</li>
+<li><strong>Files</strong>: Individual documents, programs, or data</li>
+<li><strong>Path</strong>: The route to reach a specific file or directory</li>
 </ul>
-<p>...just like a recipe!</p>
-<p>Even a plain 1 + 2 + 3 + 4 + 5 =? is an algorithm!</p>
 </div>
 </div>
 </div>
@@ -7769,57 +7494,214 @@ black-and-white.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="A-slightly-more-complex-example:-Newton's-method">A slightly more complex example: Newton's method<a class="anchor-link" href="#A-slightly-more-complex-example:-Newton's-method">¶</a></h2><p>The square root of $x$ is a number $y$ such that $y \cdot y = x$ ← <strong>declarative</strong>!</p>
-<p>Let's see an <strong>imperative</strong> version:</p>
-<ol>
-<li>Start with a guess $g$</li>
-<li>If $g \cdot g$ is "close enough" to $x$:<ol>
-<li>Let $y = g$</li>
-<li>Stop</li>
-</ol>
-</li>
-<li>Otherwise:
-a. Let $g \leftarrow \tfrac{1}{2}\left( g + \tfrac{x}{g}\right)$
-b. Repeat from step #2</li>
-</ol>
-<p>Square root of 16 via Newton's method:</p>
+<h2 id="Windows-File-System-Structure">Windows File System Structure<a class="anchor-link" href="#Windows-File-System-Structure">¶</a></h2><p>Windows uses <strong>drive letters</strong> (C:, D:, etc.) for the root top-level directory and <strong>backslashes</strong> (<code>\</code>) to separate folders along the path:</p>
+<pre><code>C:\                          (Root of C: drive)
+├── Windows\                 (System files)
+├── Program Files\           (Installed applications)
+├── Users\                   (User home directories)
+│   ├── Alice\               (Alice's home directory)
+│   │   ├── Desktop\         (Desktop files)
+│   │   ├── Documents\       (User documents)
+│   │   ├── Downloads\       (Downloaded files)
+│   │   └── Pictures\        (User photos)
+│   └── Bob\                 (Bob's home directory)
+└── temp\                    (Temporary files)
+</code></pre>
+<p>Examples of Windows paths:</p>
+<ul>
+<li><code>C:\Users\YourName\Documents\report.docx</code></li>
+<li><code>C:\Program Files\Google\Chrome\chrome.exe</code></li>
+<li><code>D:\Photos\vacation\beach.jpg</code></li>
+</ul>
+<p><strong>NOTE:</strong> Each disk gets a different drive letter (e.g., <strong>D:</strong>) and an independent file system. By convention, <strong>C:</strong> is assigned to the disk containing the operating system.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="macOS-File-System-Structure">macOS File System Structure<a class="anchor-link" href="#macOS-File-System-Structure">¶</a></h2><p>macOS uses <strong>forward slashes</strong> (<code>/</code>) and starts from root (<code>/</code>):</p>
+<pre><code>/                            (Root directory)
+├── Applications/            (Installed applications)
+├── System/                  (System files)
+├── Users/                   (User home directories)
+│   ├── alice/               (Alice's home directory)
+│   │   ├── Desktop/         (Desktop files)
+│   │   ├── Documents/       (User documents)
+│   │   ├── Downloads/       (Downloaded files)
+│   │   └── Pictures/        (User photos)
+│   └── bob/                 (Bob's home directory)
+├── Library/                 (System libraries)
+└── tmp/                     (Temporary files)
+</code></pre>
+<p>Examples of macOS paths:</p>
+<ul>
+<li><code>/Users/YourName/Documents/report.docx</code></li>
+<li><code>/Applications/Google Chrome.app</code></li>
+<li><code>/Users/YourName/Pictures/vacation/beach.jpg</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>NOTE:</strong> macOS mounts other drives within the main filesystem hierarchy. When you connect an external drive like a USB flash drive, it's automatically mounted at <code>/Volumes/DRIVE_NAME</code>. For example, if you plug in a flash drive named "PENDRIVE", it would be accessible at: <code>/Volumes/PENDRIVE/</code>.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Absolute-vs-Relative-Paths">Absolute vs Relative Paths<a class="anchor-link" href="#Absolute-vs-Relative-Paths">¶</a></h2><p><strong>Absolute Path</strong>: Complete path from the root</p>
+<ul>
+<li>Windows: <code>C:\Users\Alice\Documents\project\main.py</code></li>
+<li>macOS: <code>/Users/alice/Documents/project/main.py</code></li>
+</ul>
+<p><strong>Relative Path</strong>: Path relative to current location</p>
+<ul>
+<li>macOS: <code>project/main.py</code> (from current dir, open <code>project</code>, reach <code>main.py</code>)</li>
+<li>Windows: <code>project\main.py</code> (from current dir, open <code>project</code>, reach <code>main.py</code>)</li>
+<li>macOS: <code>../Documents/report.docx</code> (go up one level, then to Documents)</li>
+<li>Windows: <code>..\Documents\report.docx</code> (go up one level, then to Documents)</li>
+<li>macOS: <code>./main.py</code> (current directory)</li>
+<li>Windows: <code>.\main.py</code> (current directory)</li>
+</ul>
+<p><strong>Special Directory Symbols:</strong></p>
+<ul>
+<li><code>.</code> = current directory</li>
+<li><code>..</code> = parent directory (one level up)</li>
+<li><code>~</code> = home directory (macOS/Linux)</li>
+<li><code>%USERPROFILE%</code> = home directory (Windows)</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="The-Command-Line-Interface-(CLI)">The Command Line Interface (CLI)<a class="anchor-link" href="#The-Command-Line-Interface-(CLI)">¶</a></h2><p>The <strong>command line</strong> is a text-based way to interact with your computer:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/terminal-2.png" width="100%"/>
+</div>
+<p><strong>Why use the command line?</strong></p>
+<ul>
+<li><strong>Speed</strong>: Much faster for many tasks</li>
+<li><strong>Power</strong>: Can do things GUIs can't</li>
+<li><strong>Automation</strong>: Easy to script repetitive tasks</li>
+<li><strong>Remote access</strong>: Work on computers anywhere</li>
+<li><strong>Programming</strong>: Essential for development work</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Windows-Command-Line">Windows Command Line<a class="anchor-link" href="#Windows-Command-Line">¶</a></h2><p>Opening the Command Line (alternatives):</p>
+<ul>
+<li>Press <code>Win + R</code>, type <code>cmd</code>, press Enter (Command Prompt)</li>
+<li>Press <code>Win + X</code>, select "Windows PowerShell" (PowerShell)</li>
+<li>Search for "Command Prompt" or "PowerShell" in Start menu</li>
+</ul>
+<p>Basic Windows Commands:</p>
 <table>
 <thead>
 <tr>
-<th>$g$</th>
-<th>$g \cdot g$</th>
-<th>$\tfrac{1}{2}\left( g + \tfrac{x}{g}\right)$</th>
+<th>Command</th>
+<th>Purpose</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>3</td>
-<td>$3 \cdot 3 = 9$</td>
-<td>$\tfrac{1}{2}\left( 3 + \tfrac{16}{3}\right) \simeq 4.17$</td>
+<td><code>dir</code></td>
+<td>List files and directories</td>
+<td><code>dir</code></td>
 </tr>
 <tr>
-<td>4.17</td>
-<td>$4.17 \cdot 4.17 \simeq 17.39$</td>
-<td>$\tfrac{1}{2}\left( 4.17 + \tfrac{16}{4.17}\right) \simeq 4.0035$</td>
+<td><code>cd</code></td>
+<td>Change directory</td>
+<td><code>cd Documents</code></td>
 </tr>
 <tr>
-<td>4.0035</td>
-<td>$4.0035 \cdot 4.0035 \simeq 16.028$</td>
-<td>$\tfrac{1}{2}\left( 4.0035 + \tfrac{16}{4.0035}\right) \simeq 4$</td>
+<td><code>mkdir</code></td>
+<td>Create directory</td>
+<td><code>mkdir MyProject</code></td>
+</tr>
+<tr>
+<td><code>copy</code></td>
+<td>Copy files</td>
+<td><code>copy file.txt backup.txt</code></td>
+</tr>
+<tr>
+<td><code>del</code></td>
+<td>Delete files</td>
+<td><code>del oldfile.txt</code></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>Display file content</td>
+<td><code>type readme.txt</code></td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td>Clear screen</td>
+<td><code>cls</code></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>As already pointed out, we cannot write an algorithm in our own natural language (e.g., English). To make an algorithm interpretable by a computer, we need to learn a <strong>programming language</strong>.</p>
+<h2 id="Practical-Exercise:-Navigation-(Windows-Users)">Practical Exercise: Navigation (Windows Users)<a class="anchor-link" href="#Practical-Exercise:-Navigation-(Windows-Users)">¶</a></h2><div class="highlight"><pre><span></span><span class="c1"># See where you are</span>
+<span class="nb">cd</span>
+
+<span class="c1"># List files in current directory</span>
+dir
+
+<span class="c1"># Go to your Documents folder</span>
+<span class="nb">cd</span><span class="w"> </span>Documents
+
+<span class="c1"># Create a new folder</span>
+mkdir<span class="w"> </span>ProgrammingClass
+
+<span class="c1"># Enter the new folder</span>
+<span class="nb">cd</span><span class="w"> </span>ProgrammingClass
+
+<span class="c1"># Go back to parent directory</span>
+<span class="nb">cd</span><span class="w"> </span>..
+
+<span class="c1"># Start a program</span>
+notepad.exe
+</pre></div>
 </div>
 </div>
 </div>
@@ -7830,17 +7712,59 @@ b. Repeat from step #2</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="MANY-different-high-level-languages">MANY different high-level languages<a class="anchor-link" href="#MANY-different-high-level-languages">¶</a></h2><div align="center">
-<img alt="No description has been provided for this image" src="img/pl.png" width="75%"/>
-</div>
-<p>There exists thousands of high-level languages:</p>
+<h2 id="macOS-Command-Line">macOS Command Line<a class="anchor-link" href="#macOS-Command-Line">¶</a></h2><p>Opening Terminal (alternatives):</p>
 <ul>
-<li>They have been designed with different goals in mind</li>
-<li>Some are general purpose, some are domain specific (e.g., web)</li>
-<li>Some gives more control to the user, some hide more details</li>
-<li>Some are compiled, some are interpreted</li>
+<li>Press <code>Cmd + Space</code>, type "Terminal", press Enter</li>
+<li>Go to Applications → Utilities → Terminal</li>
+<li>Use Spotlight search for "Terminal"</li>
 </ul>
-<p>In this course, we will focus on a single high-level language: <em><strong>but which we should choose?</strong></em></p>
+<p>Basic macOS/Unix Commands:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls</code></td>
+<td>List files and directories</td>
+<td><code>ls -la</code></td>
+</tr>
+<tr>
+<td><code>cd</code></td>
+<td>Change directory</td>
+<td><code>cd Documents</code></td>
+</tr>
+<tr>
+<td><code>mkdir</code></td>
+<td>Create directory</td>
+<td><code>mkdir MyProject</code></td>
+</tr>
+<tr>
+<td><code>cp</code></td>
+<td>Copy files</td>
+<td><code>cp file.txt backup.txt</code></td>
+</tr>
+<tr>
+<td><code>rm</code></td>
+<td>Delete files</td>
+<td><code>rm oldfile.txt</code></td>
+</tr>
+<tr>
+<td><code>cat</code></td>
+<td>Display file content</td>
+<td><code>cat readme.txt</code></td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td>Clear screen</td>
+<td><code>clear</code></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -7851,35 +7775,27 @@ b. Repeat from step #2</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Popular-programming-languages">Popular programming languages<a class="anchor-link" href="#Popular-programming-languages">¶</a></h2><div align="center">
-<img alt="No description has been provided for this image" src="img/popular-pl.drawio.png" width="100%"/>
-<p style="text-align: center;"><b>See the full <a href="https://www.youtube.com/watch?v=5yAbVkIMl_M&amp;ab_channel=CaptainGizmo">video</a></b></p>
-</div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Python">Python<a class="anchor-link" href="#Python">¶</a></h2><center>
-<img alt="No description has been provided for this image" src="img/Python_logo_and_wordmark.svg.png" width="400"/>
-</center>
-<p>Benefits:</p>
-<ul>
-<li><strong>Easy to learn</strong>: designed to be readable, quick to learn</li>
-<li><strong>High-level language</strong>: abstracting away most low-level aspects of a computer</li>
-<li><strong>Large community and great support</strong>: several libraries allow to build complex projects with just a few lines of code</li>
-<li><strong>Adequate for most tasks</strong>: it shows its limits when performance is essential and low-level details play a role. You will hardly work on anything that cannot be implemented in Python</li>
-</ul>
-<p>Python:</p>
-<ul>
-<li>is an <strong>imperative programming language</strong></li>
-<li>with minor flavors of declarative (functional) programming traits.</li>
-</ul>
+<h2 id="Practical-Exercise:-Navigation-(MacOS-Users)">Practical Exercise: Navigation (MacOS Users)<a class="anchor-link" href="#Practical-Exercise:-Navigation-(MacOS-Users)">¶</a></h2><div class="highlight"><pre><span></span><span class="c1"># See where you are</span>
+<span class="nb">pwd</span>
+
+<span class="c1"># List files in current directory</span>
+ls
+
+<span class="c1"># Go to your Documents folder</span>
+<span class="nb">cd</span><span class="w"> </span>Documents
+
+<span class="c1"># Create a new folder</span>
+mkdir<span class="w"> </span>ProgrammingClass
+
+<span class="c1"># Enter the new folder</span>
+<span class="nb">cd</span><span class="w"> </span>ProgrammingClass
+
+<span class="c1"># Go back to parent directory</span>
+<span class="nb">cd</span><span class="w"> </span>..
+
+<span class="c1"># Start a program</span>
+open<span class="w"> </span>-a<span class="w"> </span>TextEdit
+</pre></div>
 </div>
 </div>
 </div>
@@ -7890,248 +7806,25 @@ b. Repeat from step #2</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Computers-run-complex-software-stacks">Computers run complex software stacks<a class="anchor-link" href="#Computers-run-complex-software-stacks">¶</a></h2><p>Python is nice and powerful, but computers are expected to run <strong>MANY</strong> programs at the same time:</p>
-<ul>
-<li>Browser to visit web pages (e.g., Chrome)</li>
-<li>Office editor to write documents</li>
-<li>File manager to organize files</li>
-<li>Messaging applications (e.g., Telegram)</li>
-<li>Video streaming client (e.g., Netflix)</li>
-<li>...and way more!</li>
-</ul>
-<p>Some of these may be written in Python, but others are written in other languages.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Hence, <strong>a computer cannot just run a single Python program</strong>. Moreover, computers are expected to:</p>
-<ul>
-<li>embrace the concept of user accounts</li>
-<li>provide access only after user authentication</li>
-<li>protect files across users and prevent hardware damage</li>
-<li>allow only admin users to install other programs</li>
-<li>handle network connections, power management</li>
-</ul>
-<p>This is a <strong>LOT</strong> of <strong>HARD</strong> work: we need an <strong>Operating System (OS)</strong>.</p>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Operating-Systems">Operating Systems<a class="anchor-link" href="#Operating-Systems">¶</a></h2><p>Modern computing systems are based on <strong>operating systems</strong>, which are software designed to allow the execution of applications (programs) on the available hardware.</p>
-<p>The main tasks of an operating system are:</p>
-<ul>
-<li><p><strong>Process management</strong> (creation, termination, CPU scheduling, etc.): any application (program) running on your OS is associated with a <strong>process</strong>.</p>
-</li>
-<li><p><strong>Resource allocation</strong> to processes (RAM, storage, network connections)</p>
-</li>
-<li><p><strong>Time management</strong> (clock, timers)</p>
-</li>
-<li><p><strong>User management</strong> for multi-user systems (access privileges to files, programs)</p>
-</li>
-<li><p><strong>Inter-process communication</strong> (locally or across networked systems)</p>
-</li>
-<li><p><strong>Error handling</strong> during process execution or system operations</p>
-</li>
-<li><p><strong>Protection and security</strong>, isolating processes to prevent interference with other processes, the OS, or hardware (preventing data theft or malicious/buggy operations)</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Design-goals-of-modern-Operating-Systems">Design goals of modern Operating Systems<a class="anchor-link" href="#Design-goals-of-modern-Operating-Systems">¶</a></h2><p>Modern operating systems are designed with several key objectives:</p>
-<ul>
-<li><p><strong>Multitasking</strong>: Ability to run multiple applications simultaneously</p>
-</li>
-<li><p><strong>Preemption</strong>: Capability to take CPU control from one process and give it to another</p>
-</li>
-<li><p><strong>Progress &amp; fairness</strong>: Regular CPU allocation to all processes to ensure computational progress</p>
-</li>
-<li><p><strong>High throughput</strong>: Maximizing the number of instructions executed per time unit</p>
-</li>
-<li><p><strong>Low latency</strong>: Minimizing response time for system operations (critical in real-time environments like automotive safety systems)</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Overview-Operating-System">Overview Operating System<a class="anchor-link" href="#Overview-Operating-System">¶</a></h2><div align="center">
-<img alt="No description has been provided for this image" src="img/schema.png" width="80%"/>
-</div>
-<p>From the bottom:</p>
-<ul>
-<li>The <strong>hardware</strong> is the physical part of the computer, containing CPU, RAM, disks and other devices.</li>
-<li>To program the hardware, each architecture defines the <strong>Instruction Set Architecture (ISA)</strong>, which defines machine code instruction syntax and semantics.</li>
-<li>The platform (operating system on a specific architecture, e.g., Windows x86) defines the <strong>Application Binary Interface (ABI)</strong>, which defines conventions (rules) on how different programs can interact, reuse code, and interface with the operating system.</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Overview-Operating-System-(cont'd)">Overview Operating System (cont'd)<a class="anchor-link" href="#Overview-Operating-System-(cont'd)">¶</a></h2><div align="center">
-<img alt="No description has been provided for this image" src="img/schema.png" width="80%"/>
-</div>
-<p>The <strong>operating system</strong>:</p>
-<ul>
-<li>has full control over the hardware:<ul>
-<li>it runs in <strong>supervisor (kernel) execution mode</strong></li>
-<li>it can execute <strong>ALL</strong> instructions from the ISA.</li>
-</ul>
-</li>
-<li>controls which applications should run on the CPU cores at any time</li>
-<li>plays the role of intermediary between applications and the hardware</li>
-<li>manages four key aspects: <strong>processes</strong>, <strong>memory management</strong>, <strong>file and I/O</strong>, <strong>time</strong></li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Overview-Operating-System-(cont'd)">Overview Operating System (cont'd)<a class="anchor-link" href="#Overview-Operating-System-(cont'd)">¶</a></h2><div align="center">
-<img alt="No description has been provided for this image" src="img/schema.png" width="80%"/>
-</div>
-<p>In <strong>user execution mode</strong>:</p>
-<ul>
-<li>Code can run only a limited (safe) subset of ISA</li>
-<li>Privileged instructions must be delegated to the OS following ABI</li>
-<li>Processes can be related to:<ul>
-<li>built-in applications provided by the OS: e.g., file manager</li>
-<li>applications installed by the users: e.g., Chrome (web browser by Google)</li>
-</ul>
-</li>
-<li>Applications use system libraries (subprograms for standard tasks, e.g., reading a file, make a network communication) to avoid reinventing the wheel when not needed.</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="CPU-Cores-and-Operating-System-Multitasking">CPU Cores and Operating System Multitasking<a class="anchor-link" href="#CPU-Cores-and-Operating-System-Multitasking">¶</a></h2><ul>
-<li>CPUs traditionally had only a single core (and many still have few cores)</li>
-<li>Yet we can run many applications simultaneously</li>
-</ul>
-<p><em><strong>How is this possible?</strong></em></p>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The Operating System creates the <strong>illusion of parallel execution</strong>:</p>
-<ul>
-<li>CPU time is divided into small time slots (milliseconds)</li>
-<li>Each application gets a turn to use the CPU</li>
-<li>When a time slot expires, the OS performs <em>context switching</em></li>
-<li>Applications take turns using the CPU so quickly that users perceive them running simultaneously</li>
-</ul>
-<p>This technique is called <strong>time-sharing</strong> or <strong>preemptive multitasking</strong> and it is the essential trait of all modern operating systems.</p>
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>If you have:</p>
-<ul>
-<li>$1$ core with preemptive multitasking: illusion of parallel execution of an infinite number of apps</li>
-<li>$k$ cores without preemptive multitasking: up to $k$ applications executing in parallel</li>
-<li>$k$ cores with preemptive multitasking: illusion of parallel execution of an infinite number of applications, with up to $k$ actually executing in parallel at any given time</li>
-</ul>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Popular-Operating-Systems">Popular Operating Systems<a class="anchor-link" href="#Popular-Operating-Systems">¶</a></h2><h3 id="Windows">Windows<a class="anchor-link" href="#Windows">¶</a></h3><ul>
-<li>Proprietary, closed-source OS developed by Microsoft for:<ul>
-<li>Intel/AMD CPUs</li>
-<li>ARM (still early stage)</li>
-</ul>
-</li>
-<li>Most widely used desktop OS globally</li>
-<li>Known for user-friendly interface and software compatibility</li>
-</ul>
+<h2 id="Understanding-Processes">Understanding Processes<a class="anchor-link" href="#Understanding-Processes">¶</a></h2><p>A <strong>process</strong> is a running program in memory:</p>
 <div align="center">
-<br/>
-<img alt="No description has been provided for this image" src="img/windows.png" width="90%"/>
+<img alt="No description has been provided for this image" src="img/process-concept.drawio.png" style="margin-bottom: -10px; margin-top: -10px;" width="95%"/>
 </div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="macOS">macOS<a class="anchor-link" href="#macOS">¶</a></h3><ul>
-<li>Proprietary, closed-source OS developed by Apple for:<ul>
-<li>PowerPC CPUs (before 2006)</li>
-<li>Intel CPUs (before 2021)</li>
-<li>Apple Silicon CPUs (now)</li>
+<p>Key Process Concepts:</p>
+<ul>
+<li><strong>Process ID (PID)</strong>: Unique identifier for each process</li>
+<li><strong>Parent/Child</strong>: Processes can create other processes</li>
+<li><strong>Memory</strong>: Each process has its own memory space</li>
+<li><strong>CPU Time</strong>: Processes share CPU time</li>
+<li><strong>States</strong>: Processes transition between different states:<ul>
+<li><strong>Running</strong>: Currently executing on the CPU</li>
+<li><strong>Ready</strong>: Waiting to be assigned to the CPU</li>
+<li><strong>Blocked/Waiting</strong>: Waiting for some event (I/O, signals, etc.)</li>
+<li><strong>Terminated</strong>: Execution completed, but still in memory</li>
+<li><strong>New</strong>: Process created but not yet admitted to the pool of executable processes</li>
 </ul>
 </li>
-<li>Known for sleek design and stability</li>
-<li>Popular among creative professionals</li>
 </ul>
-<div align="center">
-<img alt="No description has been provided for this image" src="img/macos.png" width="50%"/>
-</div>
 </div>
 </div>
 </div>
@@ -8142,16 +7835,30 @@ b. Repeat from step #2</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="GNU/Linux">GNU/Linux<a class="anchor-link" href="#GNU/Linux">¶</a></h3><ul>
-<li>Combination of the Linux kernel and GNU userspace libraries</li>
-<li>Packaged by different <em>distributions</em> (Ubuntu, Fedora, Debian, Gentoo, Arch)</li>
-<li><strong>Open Source</strong>: you can see and change its code!</li>
-<li>Powers most web servers and supercomputers (even Microsoft uses it in their cloud!)</li>
+<h2 id="Process-Management-in-Windows">Process Management in Windows<a class="anchor-link" href="#Process-Management-in-Windows">¶</a></h2><p><strong>Task Manager</strong> (Ctrl + Shift + Esc):</p>
+<ul>
+<li>Graphical interface to view and manage running processes</li>
+<li>Monitor CPU, memory, disk, and network usage</li>
+<li>Terminate unresponsive applications</li>
 </ul>
-<div align="center">
-<br/>
-<img alt="No description has been provided for this image" src="img/linux.png" width="100%"/>
-</div>
+<p><strong>Command Line Process Management:</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># List all running processes</span>
+tasklist
+
+<span class="c1"># Find specific processes by name</span>
+tasklist<span class="w"> </span><span class="p">|</span><span class="w"> </span>findstr<span class="w"> </span><span class="s2">"notepad"</span>
+
+<span class="c1"># Kill a process by name (force with /F)</span>
+taskkill<span class="w"> </span>/IM<span class="w"> </span>notepad.exe
+taskkill<span class="w"> </span>/F<span class="w"> </span>/IM<span class="w"> </span>notepad.exe
+
+<span class="c1"># Kill a process by PID (force with /F)</span>
+taskkill<span class="w"> </span>/PID<span class="w"> </span><span class="m">1234</span>
+taskkill<span class="w"> </span>/F<span class="w"> </span>/PID<span class="w"> </span><span class="m">1234</span>
+
+<span class="c1"># Start a program</span>
+start<span class="w"> </span>notepad.exe
+</pre></div>
 </div>
 </div>
 </div>
@@ -8162,14 +7869,33 @@ b. Repeat from step #2</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Android">Android<a class="anchor-link" href="#Android">¶</a></h3><ul>
-<li>Linux-based OS developed by Google</li>
-<li>Most popular mobile OS worldwide</li>
-<li>Open ecosystem with extensive app marketplace</li>
+<h2 id="Process-Management-in-macOS">Process Management in macOS<a class="anchor-link" href="#Process-Management-in-macOS">¶</a></h2><p><strong>Activity Monitor</strong> (Applications → Utilities):</p>
+<ul>
+<li>GUI tool for monitoring and managing processes</li>
+<li>Shows CPU, memory, energy, disk, and network usage</li>
 </ul>
-<div align="center">
-<img alt="No description has been provided for this image" src="img/android.png" width="35%"/>
-</div>
+<p><strong>Command Line Process Management:</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># List running processes</span>
+ps<span class="w"> </span>aux
+
+<span class="c1"># Find specific process</span>
+ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">"TextEdit"</span>
+
+<span class="c1"># Kill a process by PID</span>
+<span class="nb">kill</span><span class="w"> </span><span class="m">1234</span>
+
+<span class="c1"># Force kill a process (SIGKILL)</span>
+<span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="m">1234</span>
+
+<span class="c1"># Kill process by name</span>
+killall<span class="w"> </span>TextEdit
+
+<span class="c1"># Start a program</span>
+open<span class="w"> </span>-a<span class="w"> </span>TextEdit
+
+<span class="c1"># View process hierarchy</span>
+pstree
+</pre></div>
 </div>
 </div>
 </div>
@@ -8180,14 +7906,45 @@ b. Repeat from step #2</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="iOS">iOS<a class="anchor-link" href="#iOS">¶</a></h3><ul>
-<li>Proprietary, closed-source OS for Apple mobile devices</li>
-<li>Second most popular mobile OS worldwide</li>
-<li>Closed ecosystem with extensive app marketplace</li>
+<h2 id="Environment-Variables">Environment Variables<a class="anchor-link" href="#Environment-Variables">¶</a></h2><p><strong>Environment variables</strong> store system configuration:</p>
+<ul>
+<li>Windows:</li>
 </ul>
-<div align="center">
-<img alt="No description has been provided for this image" src="img/ios.png" width="45%"/>
+<div class="highlight"><pre><span></span><span class="c1"># View all environment variables</span>
+<span class="nb">set</span>
+
+<span class="c1"># View specific variable</span>
+<span class="nb">echo</span><span class="w"> </span>%PATH%
+<span class="nb">echo</span><span class="w"> </span>%USERPROFILE%
+
+<span class="c1"># Set a variable (temporary)</span>
+<span class="nb">set</span><span class="w"> </span><span class="nv">MYVAR</span><span class="o">=</span>Hello
+<span class="nb">echo</span><span class="w"> </span>%MYVAR%
+</pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>macOS:</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="c1"># View all environment variables</span>
+env
+
+<span class="c1"># View specific variable</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$HOME</span>
+
+<span class="c1"># Set a variable (temporary)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MYVAR</span><span class="o">=</span><span class="s2">"Hello"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$MYVAR</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -8198,7 +7955,141 @@ b. Repeat from step #2</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Learn-the-OS-Essentials">Learn the OS Essentials<a class="anchor-link" href="#Learn-the-OS-Essentials">¶</a></h2><p>In the next lecture, we will learn about and work with essential operating system concepts.</p>
+<h2 id="Important-Environment-Variables">Important Environment Variables<a class="anchor-link" href="#Important-Environment-Variables">¶</a></h2><ul>
+<li><code>PATH</code>: <strong>Directories where executable files are found</strong> (separated by <code>:</code> in macOS, <code>;</code> in Win)</li>
+<li><code>HOME</code>/<code>USERPROFILE</code>: User's home directory location</li>
+<li><code>PWD</code>: Current working directory</li>
+<li><code>TMPDIR</code>/<code>TEMP</code>: Directory for temporary files</li>
+<li><code>USER</code>/<code>USERNAME</code>: Current username</li>
+<li><code>SHELL</code>: Default shell program</li>
+<li><code>LANG</code>/<code>LANGUAGE</code>: System language and locale settings</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>NOTE</strong>: The PATH environment variable is crucial for program accessibility. When software is installed, it must add its directory to PATH - otherwise you can only run the program by typing its absolute path. This is why properly installed programs can be launched from any location in the terminal by simply typing their name.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="File-Permissions">File Permissions<a class="anchor-link" href="#File-Permissions">¶</a></h2><p><strong>Windows Permissions:</strong></p>
+<ul>
+<li><strong>Read</strong>: View file contents</li>
+<li><strong>Write</strong>: Modify file contents</li>
+<li><strong>Execute</strong>: Run the file as a program</li>
+<li><strong>Full Control</strong>: All permissions plus ability to change permissions</li>
+</ul>
+<p><strong>macOS Permissions (Unix-style):</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># View permissions</span>
+ls<span class="w"> </span>-l<span class="w"> </span>myfile.txt
+<span class="c1"># Output: -rw-r--r-- 1 user group 1024 Jan 1 12:00 myfile.txt</span>
+<span class="c1">#         ^^^ ^^^ ^^^</span>
+<span class="c1">#         |   |   |</span>
+<span class="c1">#         |   |   +-- Others (everyone else)</span>
+<span class="c1">#         |   +------ Group</span>
+<span class="c1">#         +---------- Owner (you)</span>
+
+<span class="c1"># Change permissions</span>
+chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>script.py<span class="w">    </span><span class="c1"># rwxr-xr-x</span>
+chmod<span class="w"> </span>+x<span class="w"> </span>script.py<span class="w">     </span><span class="c1"># Add execute permission</span>
+</pre></div>
+<p><strong>Permission Symbols:</strong></p>
+<ul>
+<li><code>r</code> = read (4), <code>w</code> = write (2), <code>x</code> = execute (1)</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="System-Information-Commands">System Information Commands<a class="anchor-link" href="#System-Information-Commands">¶</a></h2><ul>
+<li>Windows:</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="c1"># System information</span>
+systeminfo
+
+<span class="c1"># Current user</span>
+whoami
+
+<span class="c1"># Current date and time</span>
+date
+<span class="nb">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>macOS:</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="c1"># System information</span>
+uname<span class="w"> </span>-a
+
+<span class="c1"># Current user</span>
+whoami
+
+<span class="c1"># Current date and time</span>
+date
+
+<span class="c1"># Disk usage</span>
+df<span class="w"> </span>-h
+</pre></div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Shortcuts-and-Productivity-Tips">Shortcuts and Productivity Tips<a class="anchor-link" href="#Shortcuts-and-Productivity-Tips">¶</a></h2><p><strong>Windows Keyboard Shortcuts:</strong></p>
+<ul>
+<li><code>Win + E</code>: Open File Explorer</li>
+<li><code>Win + R</code>: Run dialog</li>
+<li><code>Win + L</code>: Lock computer</li>
+<li><code>Alt + Tab</code>: Switch between applications</li>
+<li><code>Ctrl + Shift + Esc</code>: Task Manager</li>
+</ul>
+<p><strong>macOS Keyboard Shortcuts:</strong></p>
+<ul>
+<li><code>Cmd + Space</code>: Spotlight search</li>
+<li><code>Cmd + Tab</code>: Switch between applications</li>
+<li><code>Cmd + Option + Esc</code>: Force quit applications</li>
+<li><code>Cmd + Shift + 3</code>: Screenshot</li>
+</ul>
+<p><strong>Command Line Shortcuts (both systems):</strong></p>
+<ul>
+<li><code>Tab</code>: Auto-complete file/directory names</li>
+<li><code>↑/↓ arrows</code>: Navigate command history</li>
+<li><code>Ctrl + C</code>: Cancel current command</li>
+<li><code>Ctrl + L</code>: Clear screen</li>
+</ul>
 </div>
 </div>
 </div>

@@ -1,0 +1,24 @@
+File System Hierarchy
+
+Root Directory
+├── System Files
+│   ├── Operating System
+│   ├── Device Drivers
+│   └── System Libraries
+├── Applications
+│   ├── Web Browser
+│   ├── Text Editor
+│   └── Media Player
+├── User Directories
+│   ├── User1
+│   │   ├── Documents
+│   │   ├── Pictures
+│   │   ├── Downloads
+│   │   └── Desktop
+│   └── User2
+│       ├── Documents
+│       ├── Pictures
+│       └── Downloads
+└── Temporary Files
+    ├── Cache
+    └── Logs
