@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Operating System Essentials &#8212; Introduction to computer programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2445107f" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/C04/C04-OS-Essentials';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Getting Started" href="../P00/P00-Python-Getting-Started.html" />
+    <link rel="prev" title="Software" href="../C03/C03-Software.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Introduction to computer programming - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Introduction to computer programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    <b style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</b>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../A00/A00-Introduction.html"><b style="font-family: 'LUISS', 'Lato'">Course overview</b></a></li>
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computer Systems</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../C00/C00-Bits-and-Bytes.html"><b style="font-family: 'LUISS', 'Lato'">Bits and Bytes</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C01/C01-Boolean-Logic.html"><b style="font-family: 'LUISS', 'Lato'">Boolean Logic</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C02/C02-Hardware.html"><b style="font-family: 'LUISS', 'Lato'">Hardware</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C03/C03-Software.html"><b style="font-family: 'LUISS', 'Lato'">Software</b></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><b style="font-family: 'LUISS', 'Lato'">Operating System Essentials</b></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../P00/P00-Python-Getting-Started.html"><b style="font-family: 'LUISS', 'Lato'">Getting Started</b></a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../P01/P01-Python-Expressions-and-Types.html"><b style="font-family: 'LUISS', 'Lato'">Expressions and Data Types</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P02/P02-Python-Types-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Variables and Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../E00/E00-Python-Errors.html"><b style="font-family: 'LUISS', 'Lato'">Types of Errors</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P03/P03-Python-Branching.html"><b style="font-family: 'LUISS', 'Lato'">Branching</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P04/P04-Python-Functions.html"><b style="font-family: 'LUISS', 'Lato'">Functions</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P05/P05-Python-Iteration.html"><b style="font-family: 'LUISS', 'Lato'">Iteration</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P06/P06-Python-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P07/P07-Python-Lists.html"><b style="font-family: 'LUISS', 'Lato'">Lists</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P08/P08-Python-Dictionaries-Tuples-Sets.html"><b style="font-family: 'LUISS', 'Lato'">Dictionaries, Tuples, and Sets</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P09/P09-Python-Classes.html"><b style="font-family: 'LUISS', 'Lato'">Classes and Objects</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P10/P10-Python-Recursion.html"><b style="font-family: 'LUISS', 'Lato'">Recursion</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P11/P11-Python-Files.html"><b style="font-family: 'LUISS', 'Lato'">Files</b></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/introcp/introcp.github.io/blob/2025/src/C04/C04-OS-Essentials.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+
+<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://introcp.github.io/_sources//src/C04/C04-OS-Essentials.ipynb" target="_blank"
+  class="btn btn-sm dropdown-item"
+  title="Launch on JupyterLite"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+ 
+
+<span class="btn__icon-container">
+ 
+   <img alt="JupyterLite logo" src="https://avatars.githubusercontent.com/u/81094398?s=200&v=4">
+ </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+    
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/C04/C04-OS-Essentials.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.open(window.location.pathname.replace('.html', '.pdf'));"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+    <button onclick="window.open(window.location.pathname.replace('.html', '.slides.html'));"
+    class="btn btn-sm btn-fullscreen-button"
+    title="Slide"
+    data-bs-placement="bottom" data-bs-toggle="tooltip"
+    >
+    
+    <span class="btn__icon-container">
+        <i class="fa-brands fa-slideshare"></i>
+    </span>
+
+    </button>
+
+    <button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><b style="font-family: 'LUISS', 'Lato'">Operating System Essentials</b></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#covering-the-essentials">Covering the essentials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-systems-the-foundation">File Systems: The Foundation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-file-system-structure">Windows File System Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-file-system-structure">macOS File System Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-vs-relative-paths">Absolute vs Relative Paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-command-line-interface-cli">The Command Line Interface (CLI)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-command-line">Windows Command Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-exercise-navigation-windows-users">Practical Exercise: Navigation (Windows Users)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-command-line">macOS Command Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-exercise-navigation-macos-users">Practical Exercise: Navigation (MacOS Users)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-processes">Understanding Processes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-management-in-windows">Process Management in Windows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-management-in-macos">Process Management in macOS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-environment-variables">Important Environment Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-permissions">File Permissions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-information-commands">System Information Commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcuts-and-productivity-tips">Shortcuts and Productivity Tips</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div align="center">
+<section class="tex2jax_ignore mathjax_ignore" id="operating-system-essentials">
+<h1><b style="font-family: 'LUISS', 'Lato'">Operating System Essentials</b><a class="headerlink" href="#operating-system-essentials" title="Link to this heading">#</a></h1>
+<h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
+<img src="https://introcp.github.io/dist/img/cliente-luiss.png">
+<p><br><br><br></p>
+</div><section id="covering-the-essentials">
+<h2>Covering the essentials<a class="headerlink" href="#covering-the-essentials" title="Link to this heading">#</a></h2>
+<p>Understanding your operating system is crucial for effective programming and computer use:</p>
+<ul class="simple">
+<li><p><strong>File Systems</strong>: How files and directories are organized</p></li>
+<li><p><strong>Command Line Interface</strong>: Powerful text-based interaction</p></li>
+<li><p><strong>Process Management</strong>: How programs run and are controlled</p></li>
+</ul>
+<p>We’ll focus on <strong>Windows</strong> and <strong>macOS</strong> with hands-on examples!</p>
+</section>
+<section id="file-systems-the-foundation">
+<h2>File Systems: The Foundation<a class="headerlink" href="#file-systems-the-foundation" title="Link to this heading">#</a></h2>
+<p>Every operating system organizes files in a <strong>hierarchical structure</strong>, like a tree:</p>
+<div align="center">
+<img src="img/filesystem-tree.png" width="60%" style="margin-bottom: -20px;">
+</div>
+<p>Key Concepts:</p>
+<ul class="simple">
+<li><p><strong>Root</strong>: The top-level directory (starting point)</p></li>
+<li><p><strong>Directories/Folders</strong>: Containers that hold files and other directories</p></li>
+<li><p><strong>Files</strong>: Individual documents, programs, or data</p></li>
+<li><p><strong>Path</strong>: The route to reach a specific file or directory</p></li>
+</ul>
+</section>
+<section id="windows-file-system-structure">
+<h2>Windows File System Structure<a class="headerlink" href="#windows-file-system-structure" title="Link to this heading">#</a></h2>
+<p>Windows uses <strong>drive letters</strong> (C:, D:, etc.) for the root top-level directory and <strong>backslashes</strong> (<code class="docutils literal notranslate"><span class="pre">\</span></code>) to separate folders along the path:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C:\                          (Root of C: drive)
+├── Windows\                 (System files)
+├── Program Files\           (Installed applications)
+├── Users\                   (User home directories)
+│   ├── Alice\               (Alice&#39;s home directory)
+│   │   ├── Desktop\         (Desktop files)
+│   │   ├── Documents\       (User documents)
+│   │   ├── Downloads\       (Downloaded files)
+│   │   └── Pictures\        (User photos)
+│   └── Bob\                 (Bob&#39;s home directory)
+└── temp\                    (Temporary files)
+</pre></div>
+</div>
+<p>Examples of Windows paths:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">C:\Users\YourName\Documents\report.docx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Google\Chrome\chrome.exe</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">D:\Photos\vacation\beach.jpg</span></code></p></li>
+</ul>
+<p><strong>NOTE:</strong> Each disk gets a different drive letter (e.g., <strong>D:</strong>) and an independent file system. By convention, <strong>C:</strong> is assigned to the disk containing the operating system.</p>
+</section>
+<section id="macos-file-system-structure">
+<h2>macOS File System Structure<a class="headerlink" href="#macos-file-system-structure" title="Link to this heading">#</a></h2>
+<p>macOS uses <strong>forward slashes</strong> (<code class="docutils literal notranslate"><span class="pre">/</span></code>) and starts from root (<code class="docutils literal notranslate"><span class="pre">/</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/                            (Root directory)
+├── Applications/            (Installed applications)
+├── System/                  (System files)
+├── Users/                   (User home directories)
+│   ├── alice/               (Alice&#39;s home directory)
+│   │   ├── Desktop/         (Desktop files)
+│   │   ├── Documents/       (User documents)
+│   │   ├── Downloads/       (Downloaded files)
+│   │   └── Pictures/        (User photos)
+│   └── bob/                 (Bob&#39;s home directory)
+├── Library/                 (System libraries)
+└── tmp/                     (Temporary files)
+</pre></div>
+</div>
+<p>Examples of macOS paths:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/Users/YourName/Documents/report.docx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/Applications/Google</span> <span class="pre">Chrome.app</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/Users/YourName/Pictures/vacation/beach.jpg</span></code></p></li>
+</ul>
+<p><strong>NOTE:</strong> macOS mounts other drives within the main filesystem hierarchy. When you connect an external drive like a USB flash drive, it’s automatically mounted at <code class="docutils literal notranslate"><span class="pre">/Volumes/DRIVE_NAME</span></code>. For example, if you plug in a flash drive named “PENDRIVE”, it would be accessible at: <code class="docutils literal notranslate"><span class="pre">/Volumes/PENDRIVE/</span></code>.</p>
+</section>
+<section id="absolute-vs-relative-paths">
+<h2>Absolute vs Relative Paths<a class="headerlink" href="#absolute-vs-relative-paths" title="Link to this heading">#</a></h2>
+<p><strong>Absolute Path</strong>: Complete path from the root</p>
+<ul class="simple">
+<li><p>Windows: <code class="docutils literal notranslate"><span class="pre">C:\Users\Alice\Documents\project\main.py</span></code></p></li>
+<li><p>macOS: <code class="docutils literal notranslate"><span class="pre">/Users/alice/Documents/project/main.py</span></code></p></li>
+</ul>
+<p><strong>Relative Path</strong>: Path relative to current location</p>
+<ul class="simple">
+<li><p>macOS: <code class="docutils literal notranslate"><span class="pre">project/main.py</span></code> (from current dir, open <code class="docutils literal notranslate"><span class="pre">project</span></code>, reach <code class="docutils literal notranslate"><span class="pre">main.py</span></code>)</p></li>
+<li><p>Windows: <code class="docutils literal notranslate"><span class="pre">project\main.py</span></code> (from current dir, open <code class="docutils literal notranslate"><span class="pre">project</span></code>, reach <code class="docutils literal notranslate"><span class="pre">main.py</span></code>)</p></li>
+<li><p>macOS: <code class="docutils literal notranslate"><span class="pre">../Documents/report.docx</span></code> (go up one level, then to Documents)</p></li>
+<li><p>Windows: <code class="docutils literal notranslate"><span class="pre">..\Documents\report.docx</span></code> (go up one level, then to Documents)</p></li>
+<li><p>macOS: <code class="docutils literal notranslate"><span class="pre">./main.py</span></code> (current directory)</p></li>
+<li><p>Windows: <code class="docutils literal notranslate"><span class="pre">.\main.py</span></code> (current directory)</p></li>
+</ul>
+<p><strong>Special Directory Symbols:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.</span></code> = current directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span></code> = parent directory (one level up)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~</span></code> = home directory (macOS/Linux)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%USERPROFILE%</span></code> = home directory (Windows)</p></li>
+</ul>
+</section>
+<section id="the-command-line-interface-cli">
+<h2>The Command Line Interface (CLI)<a class="headerlink" href="#the-command-line-interface-cli" title="Link to this heading">#</a></h2>
+<p>The <strong>command line</strong> is a text-based way to interact with your computer:</p>
+<div align="center">
+<img src="img/terminal-2.png" width="100%">
+</div>
+<p><strong>Why use the command line?</strong></p>
+<ul class="simple">
+<li><p><strong>Speed</strong>: Much faster for many tasks</p></li>
+<li><p><strong>Power</strong>: Can do things GUIs can’t</p></li>
+<li><p><strong>Automation</strong>: Easy to script repetitive tasks</p></li>
+<li><p><strong>Remote access</strong>: Work on computers anywhere</p></li>
+<li><p><strong>Programming</strong>: Essential for development work</p></li>
+</ul>
+</section>
+<section id="windows-command-line">
+<h2>Windows Command Line<a class="headerlink" href="#windows-command-line" title="Link to this heading">#</a></h2>
+<p>Opening the Command Line (alternatives):</p>
+<ul class="simple">
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Win</span> <span class="pre">+</span> <span class="pre">R</span></code>, type <code class="docutils literal notranslate"><span class="pre">cmd</span></code>, press Enter (Command Prompt)</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Win</span> <span class="pre">+</span> <span class="pre">X</span></code>, select “Windows PowerShell” (PowerShell)</p></li>
+<li><p>Search for “Command Prompt” or “PowerShell” in Start menu</p></li>
+</ul>
+<p>Basic Windows Commands:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dir</span></code></p></td>
+<td><p>List files and directories</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dir</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cd</span></code></p></td>
+<td><p>Change directory</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Documents</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code></p></td>
+<td><p>Create directory</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">MyProject</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">copy</span></code></p></td>
+<td><p>Copy files</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">copy</span> <span class="pre">file.txt</span> <span class="pre">backup.txt</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">del</span></code></p></td>
+<td><p>Delete files</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">oldfile.txt</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">type</span></code></p></td>
+<td><p>Display file content</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">readme.txt</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cls</span></code></p></td>
+<td><p>Clear screen</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cls</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="practical-exercise-navigation-windows-users">
+<h2>Practical Exercise: Navigation (Windows Users)<a class="headerlink" href="#practical-exercise-navigation-windows-users" title="Link to this heading">#</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># See where you are</span>
+<span class="nb">cd</span>
+
+<span class="c1"># List files in current directory</span>
+dir
+
+<span class="c1"># Go to your Documents folder</span>
+<span class="nb">cd</span><span class="w"> </span>Documents
+
+<span class="c1"># Create a new folder</span>
+mkdir<span class="w"> </span>ProgrammingClass
+
+<span class="c1"># Enter the new folder</span>
+<span class="nb">cd</span><span class="w"> </span>ProgrammingClass
+
+<span class="c1"># Go back to parent directory</span>
+<span class="nb">cd</span><span class="w"> </span>..
+
+<span class="c1"># Start a program</span>
+notepad.exe
+</pre></div>
+</div>
+</section>
+<section id="macos-command-line">
+<h2>macOS Command Line<a class="headerlink" href="#macos-command-line" title="Link to this heading">#</a></h2>
+<p>Opening Terminal (alternatives):</p>
+<ul class="simple">
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Cmd</span> <span class="pre">+</span> <span class="pre">Space</span></code>, type “Terminal”, press Enter</p></li>
+<li><p>Go to Applications → Utilities → Terminal</p></li>
+<li><p>Use Spotlight search for “Terminal”</p></li>
+</ul>
+<p>Basic macOS/Unix Commands:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ls</span></code></p></td>
+<td><p>List files and directories</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-la</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cd</span></code></p></td>
+<td><p>Change directory</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Documents</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code></p></td>
+<td><p>Create directory</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">MyProject</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cp</span></code></p></td>
+<td><p>Copy files</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">file.txt</span> <span class="pre">backup.txt</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">rm</span></code></p></td>
+<td><p>Delete files</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">oldfile.txt</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cat</span></code></p></td>
+<td><p>Display file content</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">readme.txt</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">clear</span></code></p></td>
+<td><p>Clear screen</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">clear</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="practical-exercise-navigation-macos-users">
+<h2>Practical Exercise: Navigation (MacOS Users)<a class="headerlink" href="#practical-exercise-navigation-macos-users" title="Link to this heading">#</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># See where you are</span>
+<span class="nb">pwd</span>
+
+<span class="c1"># List files in current directory</span>
+ls
+
+<span class="c1"># Go to your Documents folder</span>
+<span class="nb">cd</span><span class="w"> </span>Documents
+
+<span class="c1"># Create a new folder</span>
+mkdir<span class="w"> </span>ProgrammingClass
+
+<span class="c1"># Enter the new folder</span>
+<span class="nb">cd</span><span class="w"> </span>ProgrammingClass
+
+<span class="c1"># Go back to parent directory</span>
+<span class="nb">cd</span><span class="w"> </span>..
+
+<span class="c1"># Start a program</span>
+open<span class="w"> </span>-a<span class="w"> </span>TextEdit
+</pre></div>
+</div>
+</section>
+<section id="understanding-processes">
+<h2>Understanding Processes<a class="headerlink" href="#understanding-processes" title="Link to this heading">#</a></h2>
+<p>A <strong>process</strong> is a running program in memory:</p>
+<div align="center">
+<img src="img/process-concept.drawio.png" width="95%" style="margin-bottom: -10px; margin-top: -10px;">
+</div>
+<p>Key Process Concepts:</p>
+<ul class="simple">
+<li><p><strong>Process ID (PID)</strong>: Unique identifier for each process</p></li>
+<li><p><strong>Parent/Child</strong>: Processes can create other processes</p></li>
+<li><p><strong>Memory</strong>: Each process has its own memory space</p></li>
+<li><p><strong>CPU Time</strong>: Processes share CPU time</p></li>
+<li><p><strong>States</strong>: Processes transition between different states:</p>
+<ul>
+<li><p><strong>Running</strong>: Currently executing on the CPU</p></li>
+<li><p><strong>Ready</strong>: Waiting to be assigned to the CPU</p></li>
+<li><p><strong>Blocked/Waiting</strong>: Waiting for some event (I/O, signals, etc.)</p></li>
+<li><p><strong>Terminated</strong>: Execution completed, but still in memory</p></li>
+<li><p><strong>New</strong>: Process created but not yet admitted to the pool of executable processes</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="process-management-in-windows">
+<h2>Process Management in Windows<a class="headerlink" href="#process-management-in-windows" title="Link to this heading">#</a></h2>
+<p><strong>Task Manager</strong> (Ctrl + Shift + Esc):</p>
+<ul class="simple">
+<li><p>Graphical interface to view and manage running processes</p></li>
+<li><p>Monitor CPU, memory, disk, and network usage</p></li>
+<li><p>Terminate unresponsive applications</p></li>
+</ul>
+<p><strong>Command Line Process Management:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># List all running processes</span>
+tasklist
+
+<span class="c1"># Find specific processes by name</span>
+tasklist<span class="w"> </span><span class="p">|</span><span class="w"> </span>findstr<span class="w"> </span><span class="s2">&quot;notepad&quot;</span>
+
+<span class="c1"># Kill a process by name (force with /F)</span>
+taskkill<span class="w"> </span>/IM<span class="w"> </span>notepad.exe
+taskkill<span class="w"> </span>/F<span class="w"> </span>/IM<span class="w"> </span>notepad.exe
+
+<span class="c1"># Kill a process by PID (force with /F)</span>
+taskkill<span class="w"> </span>/PID<span class="w"> </span><span class="m">1234</span>
+taskkill<span class="w"> </span>/F<span class="w"> </span>/PID<span class="w"> </span><span class="m">1234</span>
+
+<span class="c1"># Start a program</span>
+start<span class="w"> </span>notepad.exe
+</pre></div>
+</div>
+</section>
+<section id="process-management-in-macos">
+<h2>Process Management in macOS<a class="headerlink" href="#process-management-in-macos" title="Link to this heading">#</a></h2>
+<p><strong>Activity Monitor</strong> (Applications → Utilities):</p>
+<ul class="simple">
+<li><p>GUI tool for monitoring and managing processes</p></li>
+<li><p>Shows CPU, memory, energy, disk, and network usage</p></li>
+</ul>
+<p><strong>Command Line Process Management:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># List running processes</span>
+ps<span class="w"> </span>aux
+
+<span class="c1"># Find specific process</span>
+ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;TextEdit&quot;</span>
+
+<span class="c1"># Kill a process by PID</span>
+<span class="nb">kill</span><span class="w"> </span><span class="m">1234</span>
+
+<span class="c1"># Force kill a process (SIGKILL)</span>
+<span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="m">1234</span>
+
+<span class="c1"># Kill process by name</span>
+killall<span class="w"> </span>TextEdit
+
+<span class="c1"># Start a program</span>
+open<span class="w"> </span>-a<span class="w"> </span>TextEdit
+
+<span class="c1"># View process hierarchy</span>
+pstree
+</pre></div>
+</div>
+</section>
+<section id="environment-variables">
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Link to this heading">#</a></h2>
+<p><strong>Environment variables</strong> store system configuration:</p>
+<ul class="simple">
+<li><p>Windows:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># View all environment variables</span>
+<span class="nb">set</span>
+
+<span class="c1"># View specific variable</span>
+<span class="nb">echo</span><span class="w"> </span>%PATH%
+<span class="nb">echo</span><span class="w"> </span>%USERPROFILE%
+
+<span class="c1"># Set a variable (temporary)</span>
+<span class="nb">set</span><span class="w"> </span><span class="nv">MYVAR</span><span class="o">=</span>Hello
+<span class="nb">echo</span><span class="w"> </span>%MYVAR%
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>macOS:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># View all environment variables</span>
+env
+
+<span class="c1"># View specific variable</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$HOME</span>
+
+<span class="c1"># Set a variable (temporary)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MYVAR</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$MYVAR</span>
+</pre></div>
+</div>
+</section>
+<section id="important-environment-variables">
+<h2>Important Environment Variables<a class="headerlink" href="#important-environment-variables" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PATH</span></code>: <strong>Directories where executable files are found</strong> (separated by <code class="docutils literal notranslate"><span class="pre">:</span></code> in macOS, <code class="docutils literal notranslate"><span class="pre">;</span></code> in Win)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HOME</span></code>/<code class="docutils literal notranslate"><span class="pre">USERPROFILE</span></code>: User’s home directory location</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PWD</span></code>: Current working directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TMPDIR</span></code>/<code class="docutils literal notranslate"><span class="pre">TEMP</span></code>: Directory for temporary files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">USER</span></code>/<code class="docutils literal notranslate"><span class="pre">USERNAME</span></code>: Current username</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHELL</span></code>: Default shell program</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LANG</span></code>/<code class="docutils literal notranslate"><span class="pre">LANGUAGE</span></code>: System language and locale settings</p></li>
+</ul>
+<p><strong>NOTE</strong>: The PATH environment variable is crucial for program accessibility. When software is installed, it must add its directory to PATH - otherwise you can only run the program by typing its absolute path. This is why properly installed programs can be launched from any location in the terminal by simply typing their name.</p>
+</section>
+<section id="file-permissions">
+<h2>File Permissions<a class="headerlink" href="#file-permissions" title="Link to this heading">#</a></h2>
+<p><strong>Windows Permissions:</strong></p>
+<ul class="simple">
+<li><p><strong>Read</strong>: View file contents</p></li>
+<li><p><strong>Write</strong>: Modify file contents</p></li>
+<li><p><strong>Execute</strong>: Run the file as a program</p></li>
+<li><p><strong>Full Control</strong>: All permissions plus ability to change permissions</p></li>
+</ul>
+<p><strong>macOS Permissions (Unix-style):</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># View permissions</span>
+ls<span class="w"> </span>-l<span class="w"> </span>myfile.txt
+<span class="c1"># Output: -rw-r--r-- 1 user group 1024 Jan 1 12:00 myfile.txt</span>
+<span class="c1">#         ^^^ ^^^ ^^^</span>
+<span class="c1">#         |   |   |</span>
+<span class="c1">#         |   |   +-- Others (everyone else)</span>
+<span class="c1">#         |   +------ Group</span>
+<span class="c1">#         +---------- Owner (you)</span>
+
+<span class="c1"># Change permissions</span>
+chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>script.py<span class="w">    </span><span class="c1"># rwxr-xr-x</span>
+chmod<span class="w"> </span>+x<span class="w"> </span>script.py<span class="w">     </span><span class="c1"># Add execute permission</span>
+</pre></div>
+</div>
+<p><strong>Permission Symbols:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code> = read (4), <code class="docutils literal notranslate"><span class="pre">w</span></code> = write (2), <code class="docutils literal notranslate"><span class="pre">x</span></code> = execute (1)</p></li>
+</ul>
+</section>
+<section id="system-information-commands">
+<h2>System Information Commands<a class="headerlink" href="#system-information-commands" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Windows:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># System information</span>
+systeminfo
+
+<span class="c1"># Current user</span>
+whoami
+
+<span class="c1"># Current date and time</span>
+date
+<span class="nb">time</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>macOS:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># System information</span>
+uname<span class="w"> </span>-a
+
+<span class="c1"># Current user</span>
+whoami
+
+<span class="c1"># Current date and time</span>
+date
+
+<span class="c1"># Disk usage</span>
+df<span class="w"> </span>-h
+</pre></div>
+</div>
+</section>
+<section id="shortcuts-and-productivity-tips">
+<h2>Shortcuts and Productivity Tips<a class="headerlink" href="#shortcuts-and-productivity-tips" title="Link to this heading">#</a></h2>
+<p><strong>Windows Keyboard Shortcuts:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Win</span> <span class="pre">+</span> <span class="pre">E</span></code>: Open File Explorer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Win</span> <span class="pre">+</span> <span class="pre">R</span></code>: Run dialog</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Win</span> <span class="pre">+</span> <span class="pre">L</span></code>: Lock computer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">Tab</span></code>: Switch between applications</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Esc</span></code>: Task Manager</p></li>
+</ul>
+<p><strong>macOS Keyboard Shortcuts:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Cmd</span> <span class="pre">+</span> <span class="pre">Space</span></code>: Spotlight search</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cmd</span> <span class="pre">+</span> <span class="pre">Tab</span></code>: Switch between applications</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cmd</span> <span class="pre">+</span> <span class="pre">Option</span> <span class="pre">+</span> <span class="pre">Esc</span></code>: Force quit applications</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cmd</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">3</span></code>: Screenshot</p></li>
+</ul>
+<p><strong>Command Line Shortcuts (both systems):</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Tab</span></code>: Auto-complete file/directory names</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">↑/↓</span> <span class="pre">arrows</span></code>: Navigate command history</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code>: Cancel current command</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">L</span></code>: Clear screen</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src/C04"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../C03/C03-Software.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Software</b></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../P00/P00-Python-Getting-Started.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Getting Started</b></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#covering-the-essentials">Covering the essentials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-systems-the-foundation">File Systems: The Foundation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-file-system-structure">Windows File System Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-file-system-structure">macOS File System Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-vs-relative-paths">Absolute vs Relative Paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-command-line-interface-cli">The Command Line Interface (CLI)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-command-line">Windows Command Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-exercise-navigation-windows-users">Practical Exercise: Navigation (Windows Users)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-command-line">macOS Command Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-exercise-navigation-macos-users">Practical Exercise: Navigation (MacOS Users)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-processes">Understanding Processes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-management-in-windows">Process Management in Windows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-management-in-macos">Process Management in macOS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-environment-variables">Important Environment Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-permissions">File Permissions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-information-commands">System Information Commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcuts-and-productivity-tips">Shortcuts and Productivity Tips</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Emilio Coppa and Alessio Martino
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
