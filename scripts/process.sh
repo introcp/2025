@@ -27,9 +27,9 @@ jupyter nbconvert ${1} --to slides \
 # --no-input # --post serve # ?print-pdf
 
 # fix: top vertical alignment
-if [ -z "${SCROLLABLE}" ] || [ "${SCROLLABLE}" = "True" ]; then
+# if [ -z "${SCROLLABLE}" ] || [ "${SCROLLABLE}" = "True" ]; then
     sed -i -e 's/controls: true/controls: true, center: false, margin: 0/g' ${1%%.*}.slides.html
-fi
+# fi
 
 # fix: luiss font
 # sed -i -e 's/jp-content-font-family: system-ui/jp-content-font-family: LUISS, system-ui/g' ${1%%.*}.slides.html
