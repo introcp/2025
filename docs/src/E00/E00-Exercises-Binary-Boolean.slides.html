@@ -8074,7 +8074,7 @@ $$ = 128 + 64 + 32 + 0 + 0 + 4 + 2 + 1 = (231)_{10} $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Key-Concepts-in-Boolean-Logic">Key Concepts in Boolean Logic<a class="anchor-link" href="#Key-Concepts-in-Boolean-Logic">¶</a></h2><ul>
+<h3 id="Key-Concepts-in-Boolean-Logic">Key Concepts in Boolean Logic<a class="anchor-link" href="#Key-Concepts-in-Boolean-Logic">¶</a></h3><ul>
 <li><p><strong>Equivalence</strong>: Two expressions are equivalent if they have the same truth table.</p>
 <ul>
 <li><em>Example (De Morgan's Law)</em>: $\neg(A \lor B) \equiv \neg A \land \neg B$</li>
@@ -8112,17 +8112,27 @@ $$ = 128 + 64 + 32 + 0 + 0 + 4 + 2 + 1 = (231)_{10} $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Exercise:-Evaluate-the-expression-$%5Cneg-A-%5Cland-%5Cneg-B-%5Clor-(%5Cneg-B-%5Cland-A)$">Exercise: Evaluate the expression $\neg A \land \neg B \lor (\neg B \land A)$<a class="anchor-link" href="#Exercise:-Evaluate-the-expression-$%5Cneg-A-%5Cland-%5Cneg-B-%5Clor-(%5Cneg-B-%5Cland-A)$">¶</a></h3><p>Let's use $A'B' + B'A$ for simplicity.</p>
+<h3 id="Formula-$(%5Cneg-A-%5Cland-%5Cneg-B)-%5Clor-(%5Cneg-B-%5Cland-A)$">Formula $(\neg A \land \neg B) \lor (\neg B \land A)$<a class="anchor-link" href="#Formula-$(%5Cneg-A-%5Cland-%5Cneg-B)-%5Clor-(%5Cneg-B-%5Cland-A)$">¶</a></h3><br/>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <table>
 <thead>
 <tr>
 <th style="text-align:center">A</th>
 <th style="text-align:center">B</th>
-<th style="text-align:center">A'</th>
-<th style="text-align:center">B'</th>
-<th style="text-align:center">A'B'</th>
-<th style="text-align:center">B'A</th>
-<th style="text-align:center">A'B' + B'A</th>
+<th style="text-align:center">!A</th>
+<th style="text-align:center">!B</th>
+<th style="text-align:center">!A AND !B</th>
+<th style="text-align:center">!B AND A</th>
+<th style="text-align:center">(!A AND !B) OR (!B AND A)</th>
 </tr>
 </thead>
 <tbody>
@@ -8133,7 +8143,7 @@ $$ = 128 + 64 + 32 + 0 + 0 + 4 + 2 + 1 = (231)_{10} $$</p>
 <td style="text-align:center">1</td>
 <td style="text-align:center">1</td>
 <td style="text-align:center">0</td>
-<td style="text-align:center"><strong>1</strong></td>
+<td style="text-align:center">1</td>
 </tr>
 <tr>
 <td style="text-align:center">0</td>
@@ -8142,7 +8152,7 @@ $$ = 128 + 64 + 32 + 0 + 0 + 4 + 2 + 1 = (231)_{10} $$</p>
 <td style="text-align:center">0</td>
 <td style="text-align:center">0</td>
 <td style="text-align:center">0</td>
-<td style="text-align:center"><strong>0</strong></td>
+<td style="text-align:center">0</td>
 </tr>
 <tr>
 <td style="text-align:center">1</td>
@@ -8151,7 +8161,7 @@ $$ = 128 + 64 + 32 + 0 + 0 + 4 + 2 + 1 = (231)_{10} $$</p>
 <td style="text-align:center">1</td>
 <td style="text-align:center">0</td>
 <td style="text-align:center">1</td>
-<td style="text-align:center"><strong>1</strong></td>
+<td style="text-align:center">1</td>
 </tr>
 <tr>
 <td style="text-align:center">1</td>
@@ -8160,14 +8170,484 @@ $$ = 128 + 64 + 32 + 0 + 0 + 4 + 2 + 1 = (231)_{10} $$</p>
 <td style="text-align:center">0</td>
 <td style="text-align:center">0</td>
 <td style="text-align:center">0</td>
-<td style="text-align:center"><strong>0</strong></td>
+<td style="text-align:center">0</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-</div></section></section>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Formula-$(%5Cneg-A-%5Cland-B-%5Cland-%5Cneg-C)-%5Clor-(A-%5Cland-%5Cneg-B)%E2%80%8B$">Formula $(\neg A \land B \land \neg C) \lor (A \land \neg B)​$<a class="anchor-link" href="#Formula-$(%5Cneg-A-%5Cland-B-%5Cland-%5Cneg-C)-%5Clor-(A-%5Cland-%5Cneg-B)%E2%80%8B$">¶</a></h3><br/>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">!A</th>
+<th style="text-align:center">!B</th>
+<th style="text-align:center">!C</th>
+<th style="text-align:center">!A AND B</th>
+<th style="text-align:center">!A AND B AND !C</th>
+<th style="text-align:center">A AND !B</th>
+<th style="text-align:center">(!A AND B AND !C) OR (A AND !B)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Formula-$A-%5Cland-%5Cneg-B-%5Cland-(C-%5Clor-B-%5Cland-%5Cneg%7BC%7D)-%5Clor-%5Cneg%7BC%7D$">Formula $A \land \neg B \land (C \lor B \land \neg{C}) \lor \neg{C}$<a class="anchor-link" href="#Formula-$A-%5Cland-%5Cneg-B-%5Cland-(C-%5Clor-B-%5Cland-%5Cneg%7BC%7D)-%5Clor-%5Cneg%7BC%7D$">¶</a></h3><br/>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">!B</th>
+<th style="text-align:center">!C</th>
+<th style="text-align:center">B AND !C</th>
+<th style="text-align:center">C OR (B AND !C)</th>
+<th style="text-align:center">A AND !B AND (C OR (B AND !C)) OR !C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Formula-$(%5Cneg-A-%5Cland-(B-%5Cland-A-+-%5Cneg-B-%5Cland-%5Cneg-A))-%5Clor-(%5Cneg-B-%5Cland-(A-%5Clor-%5Cneg-A-%5Cland-B))$">Formula $(\neg A \land (B \land A + \neg B \land \neg A)) \lor (\neg B \land (A \lor \neg A \land B))$<a class="anchor-link" href="#Formula-$(%5Cneg-A-%5Cland-(B-%5Cland-A-+-%5Cneg-B-%5Cland-%5Cneg-A))-%5Clor-(%5Cneg-B-%5Cland-(A-%5Clor-%5Cneg-A-%5Cland-B))$">¶</a></h3><br/>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">!A</th>
+<th style="text-align:center">!B</th>
+<th style="text-align:center">!A AND ((B AND A) OR (!B AND !A))​</th>
+<th style="text-align:center">!B AND (A OR (!A AND B))</th>
+<th style="text-align:center">(!A AND ((B AND A) OR (!B AND !A))) OR (!B AND (A OR (!A AND B)))</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Formula-$A-%5Clor-%5Cneg(A-%5Cland-B)$-is-a-tautology?">Formula $A \lor \neg(A \land B)$ is a tautology?<a class="anchor-link" href="#Formula-$A-%5Clor-%5Cneg(A-%5Cland-B)$-is-a-tautology?">¶</a></h3><br/>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">A AND B</th>
+<th style="text-align:center">NOT(A AND B)</th>
+<th style="text-align:center">A OR NOT(A AND B)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Yes, it is a tautology!</strong></p>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Formula-$A-%5Clor-(%5Cneg%7BA%7D-%5Cland-B)$-is-a-contradiction?">Formula $A \lor (\neg{A} \land B)$ is a contradiction?<a class="anchor-link" href="#Formula-$A-%5Clor-(%5Cneg%7BA%7D-%5Cland-B)$-is-a-contradiction?">¶</a></h3><br/>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">!A</th>
+<th style="text-align:center">!A AND B</th>
+<th style="text-align:center">A OR (!A AND B)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>No, it is not a contradiction!</strong></p>
+</div>
+</div>
+</div>
+</div></div></section></section>
 </div>
 </div>
 </main>
