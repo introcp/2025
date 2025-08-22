@@ -9576,7 +9576,7 @@ require(
     function(Reveal, RevealNotes){
         // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
         Reveal.initialize({
-            controls: true,
+            controls: true, center: false, margin: 0,
             progress: true,
             history: true,
             transition: "none",
@@ -9596,7 +9596,7 @@ require(
         Reveal.addEventListener('slidechanged', update);
 
         function setScrollingSlide() {
-            var scroll = false
+            var scroll = true
             if (scroll === true) {
               var h = $('.reveal').height() * 0.755;
               $('section.present').find('section')
