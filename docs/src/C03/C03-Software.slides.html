@@ -69,14 +69,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .s1 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Single */
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
-.reveal .controls {
+  .reveal .controls {
   height: 20px !important;
 }
 .reveal .controls button {
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
-  </style>
+</style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
@@ -6041,7 +6041,6 @@ Note: input and output wrappers have "display: block" propery in print mode.
 |----------------------------------------------------------------------------*/
 
 .jp-MarkdownOutput {
-  
   width: 100%;
   margin-top: 0;
   margin-bottom: 0;
@@ -7430,39 +7429,26 @@ main {
 }
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
-<!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
-    init_mathjax = function() {
-        if (window.MathJax) {
-        // MathJax loaded
-            MathJax.Hub.Config({
-                TeX: {
-                    equationNumbers: {
-                    autoNumber: "AMS",
-                    useLabelIds: true
-                    }
-                },
-                tex2jax: {
-                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-                    processEscapes: true,
-                    processEnvironments: true
-                },
-                displayAlign: 'center',
-                messageStyle: 'none',
-                CommonHTML: {
-                    linebreaks: {
-                    automatic: true
-                    }
-                }
-            });
-
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        }
+<!-- Load mathjax -->
+<script>
+  window.MathJax = {
+    options: {
+      renderActions: { addMenu: [] },
+      processHtmlClass: 'tex2jax_process', // Only process elements with this class
+    },
+    tex: {
+      processClass: 'tex2jax_process', // Only process elements with this class
+      inlineMath: [['$', '$']],
+      displayMath: [['$$', '$$']],
+      tags: 'ams'
+    },
+    chtml: {
+      linebreaks: { automatic: true }
     }
-    init_mathjax();
-    </script>
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<!-- End of MathJax v3 configuration -->
 <!-- End of mathjax configuration --><!-- Reveal Theme -->
 <link href="../dist/theme/luiss.css" id="theme" rel="stylesheet"/>
 </head>
@@ -8288,8 +8274,8 @@ require(
             history: true,
             transition: "none",
             slideNumber: "c/t",
-            minScale: 1.45,
-            maxScale: 2.0,
+      minScale: 1.45,
+      maxScale: 2.0,
             plugins: [RevealNotes, RevealZoom],
             width: 960,
 			      height: 700,
