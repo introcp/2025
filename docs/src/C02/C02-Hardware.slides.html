@@ -7430,39 +7430,26 @@ main {
 }
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
-<!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
-    init_mathjax = function() {
-        if (window.MathJax) {
-        // MathJax loaded
-            MathJax.Hub.Config({
-                TeX: {
-                    equationNumbers: {
-                    autoNumber: "AMS",
-                    useLabelIds: true
-                    }
-                },
-                tex2jax: {
-                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-                    processEscapes: true,
-                    processEnvironments: true
-                },
-                displayAlign: 'center',
-                messageStyle: 'none',
-                CommonHTML: {
-                    linebreaks: {
-                    automatic: true
-                    }
-                }
-            });
-
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        }
+<!-- Load mathjax -->
+<script>
+  window.MathJax = {
+    options: {
+      renderActions: { addMenu: [] },
+      processHtmlClass: 'tex2jax_process', // Only process elements with this class
+    },
+    tex: {
+      processClass: 'tex2jax_process', // Only process elements with this class
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      tags: 'ams'
+    },
+    chtml: {
+      linebreaks: { automatic: true }
     }
-    init_mathjax();
-    </script>
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<!-- End of MathJax v3 configuration -->
 <!-- End of mathjax configuration --><!-- Reveal Theme -->
 <link href="../dist/theme/luiss.css" id="theme" rel="stylesheet"/>
 </head>
@@ -8148,7 +8135,7 @@ $$</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Moore's-Law">Moore's Law<a class="anchor-link" href="#Moore's-Law">¶</a></h2><div align="center">
 <a href="https://semianalysis.com/2023/02/04/a-century-of-moores-law/">
-<img alt="No description has been provided for this image" src="img/moore-law.png" style="margin-bottom: -10px;" width="80%"/>
+<img alt="No description has been provided for this image" src="img/moore-law.png" style="margin-bottom: -10px;" width="55%"/>
 </a>
 </div>
 <p>Gordon Moore (Intel): <em>the number of transistors in an integrated circuit doubles about every two years.</em></p>
