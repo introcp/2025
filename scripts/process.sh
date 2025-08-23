@@ -59,6 +59,41 @@ sed -i -e 's/plugins: \[RevealNotes\]/plugins: [RevealNotes, RevealZoom]/' ${1%%
 # fix alignment first slide
 perl -0777 -i -pe 's/<div class="jp-InputPrompt jp-InputArea-prompt">\n<\/div>//' ${1%%.*}.slides.html
 
+# Upgrade MathJax to v3 (replace old v2 include + config block)
+MATHJAX_CONFIG=$(cat <<'EOF'
+<!-- Load mathjax -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\(', '\)']],
+      displayMath: [['$$', '$$'], ['\[', '\]']],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: { addMenu: [] },
+      processHtmlClass: 'tex2jax_process',
+    },
+    tex: {
+      processClass: 'tex2jax_process',
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      tags: 'ams'
+    },
+    chtml: {
+      linebreaks: { automatic: true }
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<!-- End of MathJax v3 configuration -->
+EOF
+)
+
+# Use a single, robust perl command to find and replace the entire MathJax block.
+# This is the correct and most reliable way to handle the multi-line replacement.
+export MATHJAX_CONFIG
+perl -0777 -i -pe 's{<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/[\s\S]*?</script>\s*<!-- MathJax configuration -->[\s\S]*?init_mathjax\(\);\s*</script>}{$ENV{MATHJAX_CONFIG}}s' ${1%%.*}.slides.html
+
 # Customize Reveal.js minScale/maxScale (environment overridable)
 MIN_SCALE="${MIN_SCALE:-1.45}"
 MAX_SCALE="${MAX_SCALE:-2.0}"
@@ -70,5 +105,13 @@ sed -i -E '/Reveal\.initialize\(/,/^\s*\}\);\s*$/ { /minScale:/d; /maxScale:/d }
 sed -i -e "/slideNumber: \\\"c\\/t\\\",/a \\
             minScale: ${MIN_SCALE},\\
             maxScale: ${MAX_SCALE}," ${1%%.*}.slides.html
+
+# Thicken fonts
+# sed -i -e '/<\/style>/i \
+# .reveal section, .reveal p, .reveal li { font-weight: 425 !important; }\n\
+#  }\n\
+# }' ${1%%.*}.slides.html
+# .reveal h1, .reveal h2, .reveal h3 { font-weight: 800 !important;
+# .reveal h4, .reveal h5, .reveal h6 { font-weight: 700 !important;
 
 echo "Done"

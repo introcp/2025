@@ -88,7 +88,7 @@ for filename in files:
 
         if verbose: print("Setting the viewport")
 
-        page.emulate_media(media="print")
+        page.emulate_media(media="screen")
 
         html_file = os.getcwd() + "/" + filename.replace('.ipynb', '.slides.html?print-pdf')
         
@@ -98,11 +98,22 @@ for filename in files:
             f"file://{html_file}",
             wait_until="load"
         )
-        
-        wait_ms = 1000
-        if verbose: print("Waiting for", wait_ms, "ms")
+        # Ensure network is idle (scripts and images fetched)
+        page.wait_for_load_state("networkidle")
 
-        page.wait_for_timeout(wait_ms);
+        # Wait for Reveal to be ready, if available
+        try:
+            page.wait_for_function("() => window.Reveal && (Reveal.isReady ? Reveal.isReady() : true)", timeout=5000)
+        except Exception:
+            pass
+
+        # Wait for MathJax to finish rendering all equations.
+        # Wait for MathJax to finish rendering, with a timeout.
+        try:
+            page.wait_for_function("() => window.MathJax && window.MathJax.startup", timeout=5000)
+            page.evaluate("async () => { await MathJax.startup.promise; await MathJax.typesetPromise(); }")
+        except Exception as e:
+            print(f"    - MathJax rendering timed out or failed: {e}")
 
         page.pdf(
             path=os.getcwd() + "/" + filename.replace('.ipynb', '.pdf'),
