@@ -57,9 +57,9 @@ for filename in sorted([f]):
             path=os.getcwd() + "/" + filename.replace('.ipynb', '.pdf'),
             print_background=True,
             margin=[],
-            format="A4",
-            # height="900",
-            # width="1500",
+            # format="A4",
+            height="800",
+            width="1024",
         )
         browser.close()
 

@@ -3,6 +3,7 @@ import os
 import hashlib
 import glob
 from playwright.sync_api import sync_playwright, Playwright
+import argparse
 
 def file_hash(path):
     hasher = hashlib.sha256()
@@ -26,11 +27,33 @@ for hash in glob.glob(HASHED_DIR + "/*.hash"):
     h = open(hash, 'r').read().strip()
     cached_hashes[hf] = h
 
-for filename in sorted(glob.glob('src/*/*.ipynb')):
+parser = argparse.ArgumentParser(description="Convert notebooks to slides PDFs")
+parser.add_argument("input", nargs="?", help="Path to a single .ipynb to convert (ignores cache)")
+parser.add_argument("--force", action="store_true", help="Force regeneration ignoring cache for all inputs")
+args = parser.parse_args()
+
+# Determine files to process
+if args.input:
+    # Normalize and validate single input
+    in_path = args.input
+    if not in_path.endswith('.ipynb'):
+        print(f"Error: input must be a .ipynb file: {in_path}")
+        raise SystemExit(2)
+    if not os.path.exists(in_path):
+        print(f"Error: file does not exist: {in_path}")
+        raise SystemExit(2)
+    files = [in_path]
+    # When targeting a single file, ignore cache by default
+    force = True
+else:
+    files = sorted(glob.glob('src/*/*.ipynb'))
+    force = bool(args.force)
+
+for filename in files:
     
     hash_name = name_hash(filename)
 
-    if 'ALL' not in os.environ and os.path.exists(filename.replace(".ipynb", ".pdf")) \
+    if (not force) and 'ALL' not in os.environ and os.path.exists(filename.replace(".ipynb", ".pdf")) \
         and hash_name in cached_hashes and file_hash(filename) in cached_hashes[hash_name]:
         print("Skipping conversion into slide:", filename)
         continue
@@ -47,7 +70,7 @@ for filename in sorted(glob.glob('src/*/*.ipynb')):
         browser = chromium.launch(
             headless=True,
             args = [
-                "--disable-gpu"
+                "--disable-gpu",
                 '--no-sandbox',
                 '--disable-setuid-sandbox',
                 '--disable-dev-shm-usage',
@@ -65,7 +88,7 @@ for filename in sorted(glob.glob('src/*/*.ipynb')):
 
         if verbose: print("Setting the viewport")
 
-        page.emulate_media(media="screen")
+        page.emulate_media(media="print")
 
         html_file = os.getcwd() + "/" + filename.replace('.ipynb', '.slides.html?print-pdf')
         
@@ -85,9 +108,9 @@ for filename in sorted(glob.glob('src/*/*.ipynb')):
             path=os.getcwd() + "/" + filename.replace('.ipynb', '.pdf'),
             print_background=True,
             margin=[],
-            format="A4",
+            # format="A4",
             height="680",
-            # width="1200",
+            width="1024",
         )
         browser.close()
 

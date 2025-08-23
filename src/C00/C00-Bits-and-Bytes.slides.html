@@ -69,6 +69,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .s1 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Single */
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
   </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -6823,6 +6830,13 @@ div.jp-Cell-Placeholder-content-3 {
   top: 140px;
 }
 
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -7248,6 +7262,13 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-switch-color: var(--md-grey-400);
   --jp-switch-true-position-color: var(--md-orange-900);
 }
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
 </style>
 <style type="text/css">
 a.anchor-link {
@@ -7269,6 +7290,13 @@ a.anchor-link {
   body {
     margin: 0;
   }
+}
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
 }
 </style>
 <style type="text/css">
@@ -7392,6 +7420,13 @@ main {
 }
 ::-webkit-scrollbar-thumb {
   background: #727272 !important;
+}
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
 }
 </style>
 <!-- Load mathjax -->
@@ -7525,7 +7560,7 @@ main {
 </table>
 <p>This how your computers see data (pictures, tests, everything!):</p>
 <div align="center">
-<img alt="No description has been provided for this image" src="img/bits.png" width="30%"/>
+<img alt="No description has been provided for this image" src="img/bits.png" style="margin-bottom: -15px; margin-top: -5px" width="25%"/>
 </div>
 <p>How can we interpret bits?</p>
 </div>
@@ -7645,7 +7680,7 @@ $$</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Why-computers-prefer-the-binary-representation?">Why computers prefer the binary representation?<a class="anchor-link" href="#Why-computers-prefer-the-binary-representation?">¶</a></h2><p>As we will see in the next lecture, computers are devices that work with electric signals with two state levels:</p>
 <div align="center">
-<img alt="No description has been provided for this image" src="img/2-level-digital-signal.png" width="50%"/>
+<img alt="No description has been provided for this image" src="img/2-level-digital-signal.png" style="margin-bottom: -15px; margin-top: -5px" width="50%"/>
 </div>
 <p>Why the signal has only two levels?</p>
 <p>It makes it more resistant to noise and interference since it uses extreme, easy to identify, cases:</p>
@@ -8106,7 +8141,7 @@ $$</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Turning-text-into-bits">Turning text into bits<a class="anchor-link" href="#Turning-text-into-bits">¶</a></h2><p>One way to represent text into bits is to use the <em><strong>ASCII</strong></em> (American Standard Code for Information Interchange) encoding:</p>
 <div align="center">
-<img alt="No description has been provided for this image" src="img/ascii.png" width="80%"/>
+<img alt="No description has been provided for this image" src="img/ascii.png" style="margin-bottom: -15px; margin-top: -5px" width="80%"/>
 </div>
 </div>
 </div>
@@ -8421,7 +8456,7 @@ $$</p>
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8446,20 +8481,23 @@ require(
     },
     [
       "../dist/reveal.js",
-      "../plugin/notes/notes.js"
+      "../dist/plugin/notes/notes.js",
+      "../dist/plugin/zoom/zoom.js"
     ],
 
-    function(Reveal, RevealNotes){
+    function(Reveal, RevealNotes, RevealZoom){
         // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
         Reveal.initialize({
-            controls: true, center: false, margin: 0,
+            controls: true,
             progress: true,
             history: true,
             transition: "none",
             slideNumber: "c/t",
-            plugins: [RevealNotes],
+            minScale: 1.45,
+            maxScale: 2.0,
+            plugins: [RevealNotes, RevealZoom],
             width: 960,
-			      height: 800,
+			      height: 700,
 
         });
 
@@ -8474,12 +8512,12 @@ require(
         function setScrollingSlide() {
             var scroll = true
             if (scroll === true) {
-              var h = $('.reveal').height() * 0.755;
+              var h = $('.reveal').height() * 0.995;
               $('section.present').find('section')
                 .filter(function() {
                   return $(this).height() > h;
                 })
-                .css('height', 'calc(90vh)')
+                .css('height', 'calc(95vh)')
                 .css('overflow-y', 'scroll')
                 .css('margin-top', '0px').css('scrollbar-width', 'none');
             }
