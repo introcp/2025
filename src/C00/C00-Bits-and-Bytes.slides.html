@@ -7430,39 +7430,26 @@ main {
 }
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
-<!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
-    init_mathjax = function() {
-        if (window.MathJax) {
-        // MathJax loaded
-            MathJax.Hub.Config({
-                TeX: {
-                    equationNumbers: {
-                    autoNumber: "AMS",
-                    useLabelIds: true
-                    }
-                },
-                tex2jax: {
-                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-                    processEscapes: true,
-                    processEnvironments: true
-                },
-                displayAlign: 'center',
-                messageStyle: 'none',
-                CommonHTML: {
-                    linebreaks: {
-                    automatic: true
-                    }
-                }
-            });
-
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        }
+<!-- Load mathjax -->
+<script>
+  window.MathJax = {
+    options: {
+      renderActions: { addMenu: [] },
+      processHtmlClass: 'tex2jax_process', // Only process elements with this class
+    },
+    tex: {
+      processClass: 'tex2jax_process', // Only process elements with this class
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      tags: 'ams'
+    },
+    chtml: {
+      linebreaks: { automatic: true }
     }
-    init_mathjax();
-    </script>
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<!-- End of MathJax v3 configuration -->
 <!-- End of mathjax configuration --><!-- Reveal Theme -->
 <link href="../dist/theme/luiss.css" id="theme" rel="stylesheet"/>
 </head>
@@ -7609,7 +7596,8 @@ $$</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
 <p>In other words, we assign a different weight to each digit based on its position:</p>
-<table style="width:60%">
+<table>
+<thead>
 <tr>
 <th>Digit</th>
 <th>6</th>
@@ -7617,20 +7605,23 @@ $$</p>
 <th>4</th>
 <th>3</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<th>Position</th>
-<th>3</th>
-<th>2</th>
-<th>1</th>
-<th>0</th>
+<td>Position</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
 </tr>
 <tr>
-<th>Weight</th>
-<th>$10^3$</th>
-<th>$10^2$</th>
-<th>$10^1$</th>
-<th>$10^0$</th>
+<td>Weight</td>
+<td>$10^3$</td>
+<td>$10^2$</td>
+<td>$10^1$</td>
+<td>$10^0$</td>
 </tr>
+</tbody>
 </table>
 <br/>
 <p>More in general, we can write for the decimal positional system:</p>
@@ -7678,9 +7669,9 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Why-computers-prefer-the-binary-representation?">Why computers prefer the binary representation?<a class="anchor-link" href="#Why-computers-prefer-the-binary-representation?">¶</a></h2><p>As we will see in the next lecture, computers are devices that work with electric signals with two state levels:</p>
+<h2 id="Why-computers-prefer-the-binary-representation?">Why computers prefer the binary representation?<a class="anchor-link" href="#Why-computers-prefer-the-binary-representation?">¶</a></h2><p>Computers are devices that work with electric signals with two state levels:</p>
 <div align="center">
-<img alt="No description has been provided for this image" src="img/2-level-digital-signal.png" style="margin-bottom: -15px; margin-top: -5px" width="50%"/>
+<img alt="No description has been provided for this image" src="img/2-level-digital-signal.png" style="margin-bottom: -10px; margin-top: -5px" width="50%"/>
 </div>
 <p>Why the signal has only two levels?</p>
 <p>It makes it more resistant to noise and interference since it uses extreme, easy to identify, cases:</p>
@@ -7691,7 +7682,7 @@ $$</p>
 <p>Electrical devices can use more levels but it makes the signal harder to interpret. For instance:</p>
 <ul>
 <li>A light bulb with two states (on or off) makes it easier to identify the state.</li>
-<li>A light bulb with multiple levels of brightness requires high precision when we need to identify the  state: Is it at 10% or 20% of the actual brightness level? Harder (costly) to implement.</li>
+<li>A light bulb with multiple brightness levels needs precise detection: 10% vs 20% brightness? More complex and costly.</li>
 </ul>
 </div>
 </div>
@@ -7735,7 +7726,8 @@ $$</p>
 <li>for convenience, the result ($\text{value}_{10}$) is kept in base 10</li>
 </ul>
 <p>The powers of $2$ are:</p>
-<table style="width:100%">
+<table>
+<thead>
 <tr>
 <th>Position:</th>
 <th>8</th>
@@ -7748,30 +7740,33 @@ $$</p>
 <th>1</th>
 <th>0</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<th>Power of two:</th>
-<th>$2^8$</th>
-<th>$2^7$</th>
-<th>$2^6$</th>
-<th>$2^5$</th>
-<th>$2^4$</th>
-<th>$2^3$</th>
-<th>$2^2$</th>
-<th>$2^1$</th>
-<th>$2^0$</th>
+<td>Power of two:</td>
+<td>$2^8$</td>
+<td>$2^7$</td>
+<td>$2^6$</td>
+<td>$2^5$</td>
+<td>$2^4$</td>
+<td>$2^3$</td>
+<td>$2^2$</td>
+<td>$2^1$</td>
+<td>$2^0$</td>
 </tr>
 <tr>
-<th>Value:</th>
-<th>256</th>
-<th>128</th>
-<th>64</th>
-<th>32</th>
-<th>16</th>
-<th>8</th>
-<th>4</th>
-<th>2</th>
-<th>1</th>
+<td>Value:</td>
+<td>256</td>
+<td>128</td>
+<td>64</td>
+<td>32</td>
+<td>16</td>
+<td>8</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
 </tr>
+</tbody>
 </table>
 </div>
 </div>
