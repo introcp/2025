@@ -2,6 +2,20 @@ import sys
 import glob
 import os
 
+for filename in glob.glob('src/*/*slides.html'):
+    print("Processing", filename)
+    d = os.path.dirname(filename)
+    print("Copying", d)
+    os.system('cp -a ' + d + '/* ' + sys.argv[1] + "/" + d + "/")
+
+for filename in glob.glob('docs/_sources/src/*/*.ipynb'):
+    print("Processing", filename)
+    data = open(filename).read()
+    d = os.path.basename(os.path.dirname(filename))
+    data = data.replace('(img/', '(https://introcp.github.io/src/' + d + '/img/')
+    data = data.replace('"img/', '"https://introcp.github.io/src/' + d + '/img/')
+    open(filename, 'w').write(data)
+
 for filename in glob.glob(sys.argv[1] + '/src/*/*.html'):
     if 'slides' in filename:
         continue

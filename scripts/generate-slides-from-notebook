@@ -1,0 +1,28 @@
+#!/bin/bash
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+if [ -z "${1}" ]; then
+    echo "Usage: ${0} <notebook>.ipynb"
+    exit 1
+fi
+
+if [ ! -f "${1}" ]; then
+    echo "File ${1} does not exist"
+    exit 1
+fi
+
+# check that is ending with .ipynb
+if [[ "${1}" != *.ipynb ]]; then
+    echo "File ${1} is not a .ipynb file"
+    exit 1
+fi
+
+docker run --rm -ti \
+    -u `id -u`:`id -g` \
+    -v ${SCRIPT_DIR}/..:/home/user/introcp \
+    -w /home/user/introcp \
+    --ipc=host --cap-add=SYS_ADMIN --init \
+    --name introcp-slide \
+    ercoppa/introcp \
+    bash -c "scripts/convert-notebook-to-PDF-slides.py --watch ${1}"
