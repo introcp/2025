@@ -523,10 +523,10 @@ c0 03 5f d6
   </tr>
 </table>
 <ul class="simple">
-<li><p>Each instruction is stored into its own line for clarity, but in practice, they would be stored contiguously in memory.</p></li>
-<li><p>The machine code is stored in a binary format, while in this example we have used hexadecimal notation for clarity.</p></li>
-<li><p>Intel and AMD processors use the same machine code format (with only minor differences).</p></li>
-<li><p>Other processors (e.g., ARM used by Apple, Raspberry Pi, Huawei, etc.) use a completely different machine code format.</p></li>
+<li><p>Each instruction is shown on a separate line for clarity, but stored contiguously in memory</p></li>
+<li><p>Machine code is binary, shown here in hexadecimal for readability</p></li>
+<li><p>Intel/AMD processors share the same machine code format</p></li>
+<li><p>Other processors like ARM use entirely different machine code formats</p></li>
 </ul>
 </section>
 <section id="from-machine-code-to-assembly-code">
@@ -567,7 +567,12 @@ ret
   </tr>
 </table>
 <p>Without getting into details, we can see that this code is doing some basic operations, such as addition, multiplication, copy/move of values from/to registers (which are different from CPU to CPU), etc.</p>
-<p><strong>NOTE:</strong> Translation from/to machine code to/from assembly code is a one-to-one non-ambiguous mapping. Translating from machine code to assembly code is called <strong>disassembly</strong>, while the opposite is called <strong>assembly</strong>.</p>
+<p><strong>NOTE:</strong></p>
+<ul class="simple">
+<li><p>Translation from/to machine code to/from assembly code is a one-to-one non-ambiguous mapping.</p></li>
+<li><p>Translating from machine code to assembly code is called <strong>disassembly</strong></p></li>
+<li><p>While the opposite is called <strong>assembly</strong></p></li>
+</ul>
 </section>
 <section id="writing-low-level-code-is-impractical">
 <h2>Writing low level code is impractical<a class="headerlink" href="#writing-low-level-code-is-impractical" title="Link to this heading">#</a></h2>
@@ -596,6 +601,8 @@ ret
 <li><p>Developers keeps the high-level code, while users get the low-level code.</p></li>
 </ul>
 </li>
+</ol>
+<ol class="arabic simple" start="2">
 <li><p><strong>Interpretation</strong>:</p>
 <ul class="simple">
 <li><p>Interpreters translate high-level code into machine code at <em>running time</em>.</p></li>
@@ -676,7 +683,7 @@ ret
 <div align="center">
 <br>
 <b>Imperative programming is what we will see in this course.</b>
-<br><br>
+<br>
 </div>
 <p><strong>NOTE:</strong> In many cases, code will be a mixture of both designs too, so it’s not always
 black-and-white.</p>
@@ -732,12 +739,12 @@ b. Repeat from step #2</p></li>
 </tbody>
 </table>
 </div>
-<p>As already pointed out, we cannot write an algorithm in our own natural language (e.g., English). To make an algorithm interpretable by a computer, we need to learn a <strong>programming language</strong>.</p>
+<p><strong>NOTE</strong>: As already pointed out, we cannot write an algorithm in our own natural language (e.g., English). To make an algorithm interpretable by a computer, we need to learn a <strong>programming language</strong>.</p>
 </section>
 <section id="many-different-high-level-languages">
 <h2>MANY different high-level languages<a class="headerlink" href="#many-different-high-level-languages" title="Link to this heading">#</a></h2>
 <div align="center">
-<img src="img/pl.png" width="75%">
+<img src="img/pl.png" width="55%" style="margin: -10px;">
 </div>
 <p>There exists thousands of high-level languages:</p>
 <ul class="simple">
@@ -751,7 +758,7 @@ b. Repeat from step #2</p></li>
 <section id="popular-programming-languages">
 <h2>Popular programming languages<a class="headerlink" href="#popular-programming-languages" title="Link to this heading">#</a></h2>
 <div align="center">
-<img src="img/popular-pl.drawio.png" width="100%">
+<img src="img/popular-pl.drawio.png" width="90%">
 <p style="text-align: center;"><b>See the full <a href="https://www.youtube.com/watch?v=5yAbVkIMl_M&ab_channel=CaptainGizmo">video</a></b></p>
 </div></section>
 <section id="python">
@@ -823,10 +830,9 @@ b. Repeat from step #2</p></li>
 <section id="overview-operating-system">
 <h2>Overview Operating System<a class="headerlink" href="#overview-operating-system" title="Link to this heading">#</a></h2>
 <div align="center">
-<a class="reference internal image-reference" href="../../_images/schema.png"><img alt="../../_images/schema.png" src="../../_images/schema.png" style="width: 80%;" />
+<a class="reference internal image-reference" href="../../_images/schema.png"><img alt="../../_images/schema.png" src="../../_images/schema.png" style="width: 50%;" />
 </a>
 </div>
-<p>From the bottom:</p>
 <ul class="simple">
 <li><p>The <strong>hardware</strong> is the physical part of the computer, containing CPU, RAM, disks and other devices.</p></li>
 <li><p>To program the hardware, each architecture defines the <strong>Instruction Set Architecture (ISA)</strong>, which defines machine code instruction syntax and semantics.</p></li>
@@ -836,7 +842,7 @@ b. Repeat from step #2</p></li>
 <section id="overview-operating-system-cont-d">
 <h2>Overview Operating System (cont’d)<a class="headerlink" href="#overview-operating-system-cont-d" title="Link to this heading">#</a></h2>
 <div align="center">
-<a class="reference internal image-reference" href="../../_images/schema.png"><img alt="../../_images/schema.png" src="../../_images/schema.png" style="width: 80%;" />
+<a class="reference internal image-reference" href="../../_images/schema.png"><img alt="../../_images/schema.png" src="../../_images/schema.png" style="width: 50%;" />
 </a>
 </div>
 <p>The <strong>operating system</strong>:</p>
@@ -855,7 +861,7 @@ b. Repeat from step #2</p></li>
 <section id="id1">
 <h2>Overview Operating System (cont’d)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div align="center">
-<a class="reference internal image-reference" href="../../_images/schema.png"><img alt="../../_images/schema.png" src="../../_images/schema.png" style="width: 80%;" />
+<a class="reference internal image-reference" href="../../_images/schema.png"><img alt="../../_images/schema.png" src="../../_images/schema.png" style="width: 50%;" />
 </a>
 </div>
 <p>In <strong>user execution mode</strong>:</p>
@@ -886,8 +892,9 @@ b. Repeat from step #2</p></li>
 <li><p>Applications take turns using the CPU so quickly that users perceive them running simultaneously</p></li>
 </ul>
 <p>This technique is called <strong>time-sharing</strong> or <strong>preemptive multitasking</strong> and it is the essential trait of all modern operating systems.</p>
-<p>If you have:</p>
+<p><strong>NOTE</strong>: If you have:</p>
 <ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(1\)</span> core without preemptive multitasking: up to <span class="math notranslate nohighlight">\(1\)</span> applications executing in parallel</p></li>
 <li><p><span class="math notranslate nohighlight">\(1\)</span> core with preemptive multitasking: illusion of parallel execution of an infinite number of apps</p></li>
 <li><p><span class="math notranslate nohighlight">\(k\)</span> cores without preemptive multitasking: up to <span class="math notranslate nohighlight">\(k\)</span> applications executing in parallel</p></li>
 <li><p><span class="math notranslate nohighlight">\(k\)</span> cores with preemptive multitasking: illusion of parallel execution of an infinite number of applications, with up to <span class="math notranslate nohighlight">\(k\)</span> actually executing in parallel at any given time</p></li>
@@ -925,7 +932,7 @@ b. Repeat from step #2</p></li>
 <li><p>Popular among creative professionals</p></li>
 </ul>
 <div align="center">
-<img src="img/macos.png" width="50%">
+<img src="img/macos.png" width="40%">
 </div></section>
 <section id="gnu-linux">
 <h3>GNU/Linux<a class="headerlink" href="#gnu-linux" title="Link to this heading">#</a></h3>
@@ -937,7 +944,7 @@ b. Repeat from step #2</p></li>
 </ul>
 <div align="center">
 <br>
-<img src="img/linux.png" width="100%">
+<img src="img/linux.png" width="80%">
 </div></section>
 <section id="android">
 <h3>Android<a class="headerlink" href="#android" title="Link to this heading">#</a></h3>

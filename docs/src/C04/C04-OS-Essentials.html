@@ -480,7 +480,7 @@ document.write(`
 <h2>File Systems: The Foundation<a class="headerlink" href="#file-systems-the-foundation" title="Link to this heading">#</a></h2>
 <p>Every operating system organizes files in a <strong>hierarchical structure</strong>, like a tree:</p>
 <div align="center">
-<img src="img/filesystem-tree.png" width="60%" style="margin-bottom: -20px;">
+<img src="img/filesystem-tree.png" width="40%" style="margin: -10px;">
 </div>
 <p>Key Concepts:</p>
 <ul class="simple">
@@ -569,7 +569,7 @@ document.write(`
 <div align="center">
 <img src="img/terminal-2.png" width="100%">
 </div>
-<p><strong>Why use the command line?</strong></p>
+<p>Why use the command line?</p>
 <ul class="simple">
 <li><p><strong>Speed</strong>: Much faster for many tasks</p></li>
 <li><p><strong>Power</strong>: Can do things GUIs can’t</p></li>
@@ -730,7 +730,7 @@ open<span class="w"> </span>-a<span class="w"> </span>TextEdit
 <h2>Understanding Processes<a class="headerlink" href="#understanding-processes" title="Link to this heading">#</a></h2>
 <p>A <strong>process</strong> is a running program in memory:</p>
 <div align="center">
-<img src="img/process-concept.drawio.png" width="95%" style="margin-bottom: -10px; margin-top: -10px;">
+<img src="img/process-concept.drawio.png" width="75%">
 </div>
 <p>Key Process Concepts:</p>
 <ul class="simple">
@@ -738,7 +738,9 @@ open<span class="w"> </span>-a<span class="w"> </span>TextEdit
 <li><p><strong>Parent/Child</strong>: Processes can create other processes</p></li>
 <li><p><strong>Memory</strong>: Each process has its own memory space</p></li>
 <li><p><strong>CPU Time</strong>: Processes share CPU time</p></li>
-<li><p><strong>States</strong>: Processes transition between different states:</p>
+</ul>
+<ul class="simple">
+<li><p><strong>States</strong>: Processes transition between different states</p>
 <ul>
 <li><p><strong>Running</strong>: Currently executing on the CPU</p></li>
 <li><p><strong>Ready</strong>: Waiting to be assigned to the CPU</p></li>
@@ -857,14 +859,14 @@ env
 </section>
 <section id="file-permissions">
 <h2>File Permissions<a class="headerlink" href="#file-permissions" title="Link to this heading">#</a></h2>
-<p><strong>Windows Permissions:</strong></p>
+<p>Windows Permissions:</p>
 <ul class="simple">
 <li><p><strong>Read</strong>: View file contents</p></li>
 <li><p><strong>Write</strong>: Modify file contents</p></li>
 <li><p><strong>Execute</strong>: Run the file as a program</p></li>
 <li><p><strong>Full Control</strong>: All permissions plus ability to change permissions</p></li>
 </ul>
-<p><strong>macOS Permissions (Unix-style):</strong></p>
+<p>macOS Permissions (Unix-style):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># View permissions</span>
 ls<span class="w"> </span>-l<span class="w"> </span>myfile.txt
 <span class="c1"># Output: -rw-r--r-- 1 user group 1024 Jan 1 12:00 myfile.txt</span>
@@ -873,15 +875,11 @@ ls<span class="w"> </span>-l<span class="w"> </span>myfile.txt
 <span class="c1">#         |   |   +-- Others (everyone else)</span>
 <span class="c1">#         |   +------ Group</span>
 <span class="c1">#         +---------- Owner (you)</span>
-
-<span class="c1"># Change permissions</span>
-chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>script.py<span class="w">    </span><span class="c1"># rwxr-xr-x</span>
-chmod<span class="w"> </span>+x<span class="w"> </span>script.py<span class="w">     </span><span class="c1"># Add execute permission</span>
 </pre></div>
 </div>
-<p><strong>Permission Symbols:</strong></p>
+<p>Permission Symbols:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code> = read (4), <code class="docutils literal notranslate"><span class="pre">w</span></code> = write (2), <code class="docutils literal notranslate"><span class="pre">x</span></code> = execute (1)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code> = read, <code class="docutils literal notranslate"><span class="pre">w</span></code> = write, <code class="docutils literal notranslate"><span class="pre">x</span></code> = execute</p></li>
 </ul>
 </section>
 <section id="system-information-commands">
@@ -961,14 +959,14 @@ df<span class="w"> </span>-h
 <section id="direct-downloads-executable-files">
 <h2>Direct Downloads: Executable Files<a class="headerlink" href="#direct-downloads-executable-files" title="Link to this heading">#</a></h2>
 <div align="center">
-<img src="img/executable-downloads.drawio.png" width="50%" style="margin-bottom: -10px; margin-top: -10px;">
+<img src="img/executable-downloads.drawio.png" width="40%" style="margin-bottom: -20px; margin-top: -5px;">
 </div>
-<p><strong>Common File Types:</strong></p>
+<p>Common File Types:</p>
 <ul class="simple">
 <li><p><strong>Windows</strong>: <code class="docutils literal notranslate"><span class="pre">.exe</span></code> (executable), <code class="docutils literal notranslate"><span class="pre">.msi</span></code> (Windows Installer)</p></li>
 <li><p><strong>macOS</strong>: <code class="docutils literal notranslate"><span class="pre">.dmg</span></code> (disk image), <code class="docutils literal notranslate"><span class="pre">.pkg</span></code> (package installer)</p></li>
 </ul>
-<p><strong>Process:</strong></p>
+<p>Process:</p>
 <ol class="arabic simple">
 <li><p>Download from official website or repository</p></li>
 <li><p>Verify file integrity (checksums, digital signatures)</p></li>

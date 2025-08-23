@@ -435,15 +435,15 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-binary"><span class="math notranslate nohighlight">\(24_{10}\)</span> to Binary</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><span class="math notranslate nohighlight">\(63_{10}\)</span> to Binary</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><span class="math notranslate nohighlight">\(129_{10}\)</span> to Binary</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-decimal"><span class="math notranslate nohighlight">\(10101_{2}\)</span> to Decimal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><span class="math notranslate nohighlight">\(100100 _{2}\)</span> to Decimal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><span class="math notranslate nohighlight">\(1100111_{2}\)</span> to Decimal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><span class="math notranslate nohighlight">\(1547_{16}\)</span> to Decimal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cafe-16-to-decimal"><span class="math notranslate nohighlight">\(CAFE_{16}\)</span> to Decimal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deadbeef-16-to-decimal"><span class="math notranslate nohighlight">\(DEADBEEF_{16}\)</span> to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-24-to-binary">Decimal 24 to Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-63-to-binary">Decimal 63 to Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-129-to-binary">Decimal 129 to Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-10101-to-decimal">Binary 10101 to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-100100-to-decimal">Binary 100100 to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-1100111-to-decimal">Binary 1100111 to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hex-1547-to-decimal">Hex 1547 to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hex-cafe-to-decimal">Hex CAFE to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hex-deadbeef-to-decimal">Hex DEADBEEF to Decimal</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-boolean-logic">Recap: Boolean Logic</a><ul class="nav section-nav flex-column">
@@ -452,7 +452,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts-in-boolean-logic">Key Concepts in Boolean Logic</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-neg-a-land-neg-b-lor-neg-b-land-a">Formula <span class="math notranslate nohighlight">\((\neg A \land \neg B) \lor (\neg B \land A)\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-neg-a-land-b-land-neg-c-lor-a-land-neg-b">Formula <span class="math notranslate nohighlight">\((\neg A \land B \land \neg C) \lor (A \land \neg B)​\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-a-land-neg-b-land-c-lor-b-land-neg-c-lor-neg-c">Formula <span class="math notranslate nohighlight">\(A \land \neg B \land (C \lor B \land \neg{C}) \lor \neg{C}\)</span></a></li>
@@ -478,7 +478,7 @@ document.write(`
 <h2 style="font-family: 'LUISS', 'Lato'">Introduction to Computer Programming</h2>
 <h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
 <img src="https://introcp.github.io/dist/img/cliente-luiss.png">
-<p><br><br><br></p>
+<p><br><br></p>
 </div><section id="recap-binary-numbers">
 <h2>Recap: binary numbers<a class="headerlink" href="#recap-binary-numbers" title="Link to this heading">#</a></h2>
 <section id="number-systems-positional-vs-non-positional">
@@ -576,8 +576,8 @@ $<span class="math notranslate nohighlight">\( N = \sum_{i=0}^{n-1} d_i \times b
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <p><strong>Possible exam questions!</strong></p>
-<section id="to-binary">
-<h3><span class="math notranslate nohighlight">\(24_{10}\)</span> to Binary<a class="headerlink" href="#to-binary" title="Link to this heading">#</a></h3>
+<section id="decimal-24-to-binary">
+<h3>Decimal 24 to Binary<a class="headerlink" href="#decimal-24-to-binary" title="Link to this heading">#</a></h3>
 <p>Convert the decimal number <strong>24</strong> to binary:</p>
 <p><span class="math notranslate nohighlight">\(24 \div 2 = 12\)</span> (rem 0)</p>
 <p><span class="math notranslate nohighlight">\(12 \div 2 = 6\)</span> (rem 0)</p>
@@ -586,8 +586,8 @@ $<span class="math notranslate nohighlight">\( N = \sum_{i=0}^{n-1} d_i \times b
 <p><span class="math notranslate nohighlight">\(1 \div 2 = 0\)</span> (rem 1)</p>
 <p>Result: <span class="math notranslate nohighlight">\((11000)_2\)</span></p>
 </section>
-<section id="id1">
-<h3><span class="math notranslate nohighlight">\(63_{10}\)</span> to Binary<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="decimal-63-to-binary">
+<h3>Decimal 63 to Binary<a class="headerlink" href="#decimal-63-to-binary" title="Link to this heading">#</a></h3>
 <p>To convert <span class="math notranslate nohighlight">\(63\)</span> from decimal to binary:</p>
 <p><span class="math notranslate nohighlight">\(63 \div 2 = 31\)</span> remainder <span class="math notranslate nohighlight">\(1\)</span></p>
 <p><span class="math notranslate nohighlight">\(31 \div 2 = 15\)</span> remainder <span class="math notranslate nohighlight">\(1\)</span></p>
@@ -598,8 +598,8 @@ $<span class="math notranslate nohighlight">\( N = \sum_{i=0}^{n-1} d_i \times b
 <p>Reading from bottom to top: <span class="math notranslate nohighlight">\(111111\)</span></p>
 <p>Therefore, <span class="math notranslate nohighlight">\(63_{10} = 111111_2\)</span></p>
 </section>
-<section id="id2">
-<h3><span class="math notranslate nohighlight">\(129_{10}\)</span> to Binary<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="decimal-129-to-binary">
+<h3>Decimal 129 to Binary<a class="headerlink" href="#decimal-129-to-binary" title="Link to this heading">#</a></h3>
 <p>To convert <span class="math notranslate nohighlight">\(129\)</span> from decimal to binary:</p>
 <p><span class="math notranslate nohighlight">\(129 \div 2 = 64\)</span> remainder <span class="math notranslate nohighlight">\(1\)</span></p>
 <p><span class="math notranslate nohighlight">\(64 \div 2 = 32\)</span> remainder <span class="math notranslate nohighlight">\(0\)</span></p>
@@ -612,32 +612,32 @@ $<span class="math notranslate nohighlight">\( N = \sum_{i=0}^{n-1} d_i \times b
 <p>Reading from bottom to top: <span class="math notranslate nohighlight">\(10000001\)</span></p>
 <p>Therefore, <span class="math notranslate nohighlight">\(129_{10} = 10000001_2\)</span></p>
 </section>
-<section id="to-decimal">
-<h3><span class="math notranslate nohighlight">\(10101_{2}\)</span> to Decimal<a class="headerlink" href="#to-decimal" title="Link to this heading">#</a></h3>
+<section id="binary-10101-to-decimal">
+<h3>Binary 10101 to Decimal<a class="headerlink" href="#binary-10101-to-decimal" title="Link to this heading">#</a></h3>
 <p>Convert the binary number <strong>10101</strong> to decimal:</p>
 <div class="math notranslate nohighlight">
 \[ (10101)_2 = 1 \cdot 2^4 + 0 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 \]</div>
 <div class="math notranslate nohighlight">
 \[ = 16 + 0 + 4 + 0 + 1 = (21)_{10} \]</div>
 </section>
-<section id="id3">
-<h3><span class="math notranslate nohighlight">\(100100 _{2}\)</span> to Decimal<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="binary-100100-to-decimal">
+<h3>Binary 100100 to Decimal<a class="headerlink" href="#binary-100100-to-decimal" title="Link to this heading">#</a></h3>
 <p>Convert the binary number <strong>100100</strong> to decimal:</p>
 <div class="math notranslate nohighlight">
 \[ (100100)_2 = 1 \cdot 2^5 + 0 \cdot 2^4 + 0 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 0 \cdot 2^0 \]</div>
 <div class="math notranslate nohighlight">
 \[ = 32 + 0 + 0 + 4 + 0 + 0 = (36)_{10} \]</div>
 </section>
-<section id="id4">
-<h3><span class="math notranslate nohighlight">\(1100111_{2}\)</span> to Decimal<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="binary-1100111-to-decimal">
+<h3>Binary 1100111 to Decimal<a class="headerlink" href="#binary-1100111-to-decimal" title="Link to this heading">#</a></h3>
 <p>Convert the binary number <strong>11100111</strong> to decimal:</p>
 <div class="math notranslate nohighlight">
 \[ (11100111)_2 = 1 \cdot 2^7 + 1 \cdot 2^6 + 1 \cdot 2^5 + 0 \cdot 2^4 + 0 \cdot 2^3 + 1 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0 \]</div>
 <div class="math notranslate nohighlight">
 \[ = 128 + 64 + 32 + 0 + 0 + 4 + 2 + 1 = (231)_{10} \]</div>
 </section>
-<section id="id5">
-<h3><span class="math notranslate nohighlight">\(1547_{16}\)</span> to Decimal<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="hex-1547-to-decimal">
+<h3>Hex 1547 to Decimal<a class="headerlink" href="#hex-1547-to-decimal" title="Link to this heading">#</a></h3>
 <p>Convert the hexadecimal number <strong>1547</strong> to decimal:</p>
 <div class="math notranslate nohighlight">
 \[ (1547)_{16} = 1 \cdot 16^3 + 5 \cdot 16^2 + 4 \cdot 16^1 + 7 \cdot 16^0 \]</div>
@@ -646,8 +646,8 @@ $<span class="math notranslate nohighlight">\( N = \sum_{i=0}^{n-1} d_i \times b
 <div class="math notranslate nohighlight">
 \[ = 4096 + 1280 + 64 + 7 = (5447)_{10} \]</div>
 </section>
-<section id="cafe-16-to-decimal">
-<h3><span class="math notranslate nohighlight">\(CAFE_{16}\)</span> to Decimal<a class="headerlink" href="#cafe-16-to-decimal" title="Link to this heading">#</a></h3>
+<section id="hex-cafe-to-decimal">
+<h3>Hex CAFE to Decimal<a class="headerlink" href="#hex-cafe-to-decimal" title="Link to this heading">#</a></h3>
 <p>Convert the hexadecimal number <strong>CAFE</strong> to decimal:</p>
 <div class="math notranslate nohighlight">
 \[ (CAFE)_{16} = C \cdot 16^3 + A \cdot 16^2 + F \cdot 16^1 + E \cdot 16^0 \]</div>
@@ -656,8 +656,8 @@ $<span class="math notranslate nohighlight">\( N = \sum_{i=0}^{n-1} d_i \times b
 <div class="math notranslate nohighlight">
 \[ = 49152 + 2560 + 240 + 14 = (51966)_{10} \]</div>
 </section>
-<section id="deadbeef-16-to-decimal">
-<h3><span class="math notranslate nohighlight">\(DEADBEEF_{16}\)</span> to Decimal<a class="headerlink" href="#deadbeef-16-to-decimal" title="Link to this heading">#</a></h3>
+<section id="hex-deadbeef-to-decimal">
+<h3>Hex DEADBEEF to Decimal<a class="headerlink" href="#hex-deadbeef-to-decimal" title="Link to this heading">#</a></h3>
 <p>Convert the hexadecimal number <strong>DEADBEEF</strong> to decimal:</p>
 <div class="math notranslate nohighlight">
 \[ DEADBEEF_{16} = D \cdot 16^7 + E \cdot 16^6 + A \cdot 16^5 + D \cdot 16^4 + B \cdot 16^3 + E \cdot 16^2 + E \cdot 16^1 + F \cdot 16^0 \]</div>
@@ -784,8 +784,8 @@ $<span class="math notranslate nohighlight">\( N = \sum_{i=0}^{n-1} d_i \times b
 </ul>
 </section>
 </section>
-<section id="id6">
-<h2>Exercises<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2>Exercises<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="formula-neg-a-land-neg-b-lor-neg-b-land-a">
 <h3>Formula <span class="math notranslate nohighlight">\((\neg A \land \neg B) \lor (\neg B \land A)\)</span><a class="headerlink" href="#formula-neg-a-land-neg-b-lor-neg-b-land-a" title="Link to this heading">#</a></h3>
 <br><div class="pst-scrollable-table-container"><table class="table">
@@ -1229,15 +1229,15 @@ $<span class="math notranslate nohighlight">\( N = \sum_{i=0}^{n-1} d_i \times b
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-binary"><span class="math notranslate nohighlight">\(24_{10}\)</span> to Binary</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><span class="math notranslate nohighlight">\(63_{10}\)</span> to Binary</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><span class="math notranslate nohighlight">\(129_{10}\)</span> to Binary</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-decimal"><span class="math notranslate nohighlight">\(10101_{2}\)</span> to Decimal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><span class="math notranslate nohighlight">\(100100 _{2}\)</span> to Decimal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><span class="math notranslate nohighlight">\(1100111_{2}\)</span> to Decimal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><span class="math notranslate nohighlight">\(1547_{16}\)</span> to Decimal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cafe-16-to-decimal"><span class="math notranslate nohighlight">\(CAFE_{16}\)</span> to Decimal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deadbeef-16-to-decimal"><span class="math notranslate nohighlight">\(DEADBEEF_{16}\)</span> to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-24-to-binary">Decimal 24 to Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-63-to-binary">Decimal 63 to Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-129-to-binary">Decimal 129 to Binary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-10101-to-decimal">Binary 10101 to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-100100-to-decimal">Binary 100100 to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-1100111-to-decimal">Binary 1100111 to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hex-1547-to-decimal">Hex 1547 to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hex-cafe-to-decimal">Hex CAFE to Decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hex-deadbeef-to-decimal">Hex DEADBEEF to Decimal</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-boolean-logic">Recap: Boolean Logic</a><ul class="nav section-nav flex-column">
@@ -1246,7 +1246,7 @@ $<span class="math notranslate nohighlight">\( N = \sum_{i=0}^{n-1} d_i \times b
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts-in-boolean-logic">Key Concepts in Boolean Logic</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-neg-a-land-neg-b-lor-neg-b-land-a">Formula <span class="math notranslate nohighlight">\((\neg A \land \neg B) \lor (\neg B \land A)\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-neg-a-land-b-land-neg-c-lor-a-land-neg-b">Formula <span class="math notranslate nohighlight">\((\neg A \land B \land \neg C) \lor (A \land \neg B)​\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-a-land-neg-b-land-c-lor-b-land-neg-c-lor-neg-c">Formula <span class="math notranslate nohighlight">\(A \land \neg B \land (C \lor B \land \neg{C}) \lor \neg{C}\)</span></a></li>

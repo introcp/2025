@@ -69,6 +69,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .s1 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Single */
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
   </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -6823,6 +6830,13 @@ div.jp-Cell-Placeholder-content-3 {
   top: 140px;
 }
 
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -7248,6 +7262,13 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-switch-color: var(--md-grey-400);
   --jp-switch-true-position-color: var(--md-orange-900);
 }
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
 </style>
 <style type="text/css">
 a.anchor-link {
@@ -7269,6 +7290,13 @@ a.anchor-link {
   body {
     margin: 0;
   }
+}
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
 }
 </style>
 <style type="text/css">
@@ -7393,6 +7421,13 @@ main {
 ::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
 </style>
 <!-- Load mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
@@ -7476,7 +7511,7 @@ main {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="File-Systems:-The-Foundation">File Systems: The Foundation<a class="anchor-link" href="#File-Systems:-The-Foundation">¶</a></h2><p>Every operating system organizes files in a <strong>hierarchical structure</strong>, like a tree:</p>
 <div align="center">
-<img alt="No description has been provided for this image" src="img/filesystem-tree.png" style="margin-bottom: -20px;" width="60%"/>
+<img alt="No description has been provided for this image" src="img/filesystem-tree.png" style="margin: -10px;" width="40%"/>
 </div>
 <p>Key Concepts:</p>
 <ul>
@@ -7601,7 +7636,17 @@ main {
 <div align="center">
 <img alt="No description has been provided for this image" src="img/terminal-2.png" width="100%"/>
 </div>
-<p><strong>Why use the command line?</strong></p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Why use the command line?</p>
 <ul>
 <li><strong>Speed</strong>: Much faster for many tasks</li>
 <li><strong>Power</strong>: Can do things GUIs can't</li>
@@ -7809,7 +7854,7 @@ open<span class="w"> </span>-a<span class="w"> </span>TextEdit
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Understanding-Processes">Understanding Processes<a class="anchor-link" href="#Understanding-Processes">¶</a></h2><p>A <strong>process</strong> is a running program in memory:</p>
 <div align="center">
-<img alt="No description has been provided for this image" src="img/process-concept.drawio.png" style="margin-bottom: -10px; margin-top: -10px;" width="95%"/>
+<img alt="No description has been provided for this image" src="img/process-concept.drawio.png" width="75%"/>
 </div>
 <p>Key Process Concepts:</p>
 <ul>
@@ -7817,7 +7862,19 @@ open<span class="w"> </span>-a<span class="w"> </span>TextEdit
 <li><strong>Parent/Child</strong>: Processes can create other processes</li>
 <li><strong>Memory</strong>: Each process has its own memory space</li>
 <li><strong>CPU Time</strong>: Processes share CPU time</li>
-<li><strong>States</strong>: Processes transition between different states:<ul>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong>States</strong>: Processes transition between different states<ul>
 <li><strong>Running</strong>: Currently executing on the CPU</li>
 <li><strong>Ready</strong>: Waiting to be assigned to the CPU</li>
 <li><strong>Blocked/Waiting</strong>: Waiting for some event (I/O, signals, etc.)</li>
@@ -7986,14 +8043,14 @@ env
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="File-Permissions">File Permissions<a class="anchor-link" href="#File-Permissions">¶</a></h2><p><strong>Windows Permissions:</strong></p>
+<h2 id="File-Permissions">File Permissions<a class="anchor-link" href="#File-Permissions">¶</a></h2><p>Windows Permissions:</p>
 <ul>
 <li><strong>Read</strong>: View file contents</li>
 <li><strong>Write</strong>: Modify file contents</li>
 <li><strong>Execute</strong>: Run the file as a program</li>
 <li><strong>Full Control</strong>: All permissions plus ability to change permissions</li>
 </ul>
-<p><strong>macOS Permissions (Unix-style):</strong></p>
+<p>macOS Permissions (Unix-style):</p>
 <div class="highlight"><pre><span></span><span class="c1"># View permissions</span>
 ls<span class="w"> </span>-l<span class="w"> </span>myfile.txt
 <span class="c1"># Output: -rw-r--r-- 1 user group 1024 Jan 1 12:00 myfile.txt</span>
@@ -8002,14 +8059,10 @@ ls<span class="w"> </span>-l<span class="w"> </span>myfile.txt
 <span class="c1">#         |   |   +-- Others (everyone else)</span>
 <span class="c1">#         |   +------ Group</span>
 <span class="c1">#         +---------- Owner (you)</span>
-
-<span class="c1"># Change permissions</span>
-chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>script.py<span class="w">    </span><span class="c1"># rwxr-xr-x</span>
-chmod<span class="w"> </span>+x<span class="w"> </span>script.py<span class="w">     </span><span class="c1"># Add execute permission</span>
 </pre></div>
-<p><strong>Permission Symbols:</strong></p>
+<p>Permission Symbols:</p>
 <ul>
-<li><code>r</code> = read (4), <code>w</code> = write (2), <code>x</code> = execute (1)</li>
+<li><code>r</code> = read, <code>w</code> = write, <code>x</code> = execute</li>
 </ul>
 </div>
 </div>
@@ -8128,14 +8181,14 @@ df<span class="w"> </span>-h
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Direct-Downloads:-Executable-Files">Direct Downloads: Executable Files<a class="anchor-link" href="#Direct-Downloads:-Executable-Files">¶</a></h2><div align="center">
-<img alt="No description has been provided for this image" src="img/executable-downloads.drawio.png" style="margin-bottom: -10px; margin-top: -10px;" width="50%"/>
+<img alt="No description has been provided for this image" src="img/executable-downloads.drawio.png" style="margin-bottom: -20px; margin-top: -5px;" width="40%"/>
 </div>
-<p><strong>Common File Types:</strong></p>
+<p>Common File Types:</p>
 <ul>
 <li><strong>Windows</strong>: <code>.exe</code> (executable), <code>.msi</code> (Windows Installer)</li>
 <li><strong>macOS</strong>: <code>.dmg</code> (disk image), <code>.pkg</code> (package installer)</li>
 </ul>
-<p><strong>Process:</strong></p>
+<p>Process:</p>
 <ol>
 <li>Download from official website or repository</li>
 <li>Verify file integrity (checksums, digital signatures)</li>
@@ -8287,6 +8340,16 @@ df<span class="w"> </span>-h
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>NOTE</strong>: For users, containers typically means using Docker. Docker runs Linux-based applications, so on macOS and Windows, it requires a lightweight Linux-based VM. On Linux, Docker can run natively without an additional VM layer.</p>
 </div>
 </div>
@@ -8362,20 +8425,23 @@ require(
     },
     [
       "../dist/reveal.js",
-      "../plugin/notes/notes.js"
+      "../dist/plugin/notes/notes.js",
+      "../dist/plugin/zoom/zoom.js"
     ],
 
-    function(Reveal, RevealNotes){
+    function(Reveal, RevealNotes, RevealZoom){
         // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
         Reveal.initialize({
-            controls: true, center: false, margin: 0,
+            controls: true,
             progress: true,
             history: true,
             transition: "none",
             slideNumber: "c/t",
-            plugins: [RevealNotes],
+            minScale: 1.45,
+            maxScale: 2.0,
+            plugins: [RevealNotes, RevealZoom],
             width: 960,
-			      height: 800,
+			      height: 700,
 
         });
 
@@ -8390,12 +8456,12 @@ require(
         function setScrollingSlide() {
             var scroll = true
             if (scroll === true) {
-              var h = $('.reveal').height() * 0.755;
+              var h = $('.reveal').height() * 0.995;
               $('section.present').find('section')
                 .filter(function() {
                   return $(this).height() > h;
                 })
-                .css('height', 'calc(90vh)')
+                .css('height', 'calc(95vh)')
                 .css('overflow-y', 'scroll')
                 .css('margin-top', '0px').css('scrollbar-width', 'none');
             }

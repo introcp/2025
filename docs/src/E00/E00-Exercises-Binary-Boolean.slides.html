@@ -69,6 +69,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .s1 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Single */
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
   </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -6823,6 +6830,13 @@ div.jp-Cell-Placeholder-content-3 {
   top: 140px;
 }
 
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -7248,6 +7262,13 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-switch-color: var(--md-grey-400);
   --jp-switch-true-position-color: var(--md-orange-900);
 }
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
 </style>
 <style type="text/css">
 a.anchor-link {
@@ -7269,6 +7290,13 @@ a.anchor-link {
   body {
     margin: 0;
   }
+}
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
 }
 </style>
 <style type="text/css">
@@ -7393,41 +7421,35 @@ main {
 ::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
-<!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
-    init_mathjax = function() {
-        if (window.MathJax) {
-        // MathJax loaded
-            MathJax.Hub.Config({
-                TeX: {
-                    equationNumbers: {
-                    autoNumber: "AMS",
-                    useLabelIds: true
-                    }
-                },
-                tex2jax: {
-                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-                    processEscapes: true,
-                    processEnvironments: true
-                },
-                displayAlign: 'center',
-                messageStyle: 'none',
-                CommonHTML: {
-                    linebreaks: {
-                    automatic: true
-                    }
-                }
-            });
-
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        }
+<!-- Load mathjax -->
+<script>
+  window.MathJax = {
+    options: {
+      renderActions: { addMenu: [] },
+      processHtmlClass: 'tex2jax_process', // Only process elements with this class
+    },
+    tex: {
+      processClass: 'tex2jax_process', // Only process elements with this class
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      tags: 'ams'
+    },
+    chtml: {
+      linebreaks: { automatic: true }
     }
-    init_mathjax();
-    </script>
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<!-- End of MathJax v3 configuration -->
 <!-- End of mathjax configuration --><!-- Reveal Theme -->
 <link href="../dist/theme/luiss.css" id="theme" rel="stylesheet"/>
 </head>
@@ -7444,7 +7466,7 @@ main {
 <h1 id="Exercises-on-Binary-Numbers-and-Boolean-Logic"><b style="font-family: 'LUISS', 'Lato'">Exercises on Binary Numbers and Boolean Logic</b><a class="anchor-link" href="#Exercises-on-Binary-Numbers-and-Boolean-Logic">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to Computer Programming</h2>
 <h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
 <img alt="No description has been provided for this image" src="https://introcp.github.io/dist/img/cliente-luiss.png"/>
-<p><br/><br/><br/></p>
+<p><br/><br/></p>
 </div>
 </div>
 </div>
@@ -7647,7 +7669,7 @@ $$ = 16 + 8 + 0 + 2 + 1 = (27)_{10} $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="$24_%7B10%7D$-to-Binary">$24_{10}$ to Binary<a class="anchor-link" href="#$24_%7B10%7D$-to-Binary">¶</a></h3><p>Convert the decimal number <strong>24</strong> to binary:</p>
+<h3 id="Decimal-24-to-Binary">Decimal 24 to Binary<a class="anchor-link" href="#Decimal-24-to-Binary">¶</a></h3><p>Convert the decimal number <strong>24</strong> to binary:</p>
 </div>
 </div>
 </div>
@@ -7724,7 +7746,7 @@ $$ = 16 + 8 + 0 + 2 + 1 = (27)_{10} $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="$63_%7B10%7D$-to-Binary">$63_{10}$ to Binary<a class="anchor-link" href="#$63_%7B10%7D$-to-Binary">¶</a></h3><p>To convert $63$ from decimal to binary:</p>
+<h3 id="Decimal-63-to-Binary">Decimal 63 to Binary<a class="anchor-link" href="#Decimal-63-to-Binary">¶</a></h3><p>To convert $63$ from decimal to binary:</p>
 </div>
 </div>
 </div>
@@ -7753,7 +7775,7 @@ $$ = 16 + 8 + 0 + 2 + 1 = (27)_{10} $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="$129_%7B10%7D$-to-Binary">$129_{10}$ to Binary<a class="anchor-link" href="#$129_%7B10%7D$-to-Binary">¶</a></h3><p>To convert $129$ from decimal to binary:</p>
+<h3 id="Decimal-129-to-Binary">Decimal 129 to Binary<a class="anchor-link" href="#Decimal-129-to-Binary">¶</a></h3><p>To convert $129$ from decimal to binary:</p>
 </div>
 </div>
 </div>
@@ -7784,7 +7806,7 @@ $$ = 16 + 8 + 0 + 2 + 1 = (27)_{10} $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="$10101_%7B2%7D$-to-Decimal">$10101_{2}$ to Decimal<a class="anchor-link" href="#$10101_%7B2%7D$-to-Decimal">¶</a></h3><p>Convert the binary number <strong>10101</strong> to decimal:</p>
+<h3 id="Binary-10101-to-Decimal">Binary 10101 to Decimal<a class="anchor-link" href="#Binary-10101-to-Decimal">¶</a></h3><p>Convert the binary number <strong>10101</strong> to decimal:</p>
 </div>
 </div>
 </div>
@@ -7807,7 +7829,7 @@ $$ = 16 + 0 + 4 + 0 + 1 = (21)_{10} $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="$100100-_%7B2%7D$-to-Decimal">$100100 _{2}$ to Decimal<a class="anchor-link" href="#$100100-_%7B2%7D$-to-Decimal">¶</a></h3><p>Convert the binary number <strong>100100</strong> to decimal:</p>
+<h3 id="Binary-100100-to-Decimal">Binary 100100 to Decimal<a class="anchor-link" href="#Binary-100100-to-Decimal">¶</a></h3><p>Convert the binary number <strong>100100</strong> to decimal:</p>
 </div>
 </div>
 </div>
@@ -7830,7 +7852,7 @@ $$ = 32 + 0 + 0 + 4 + 0 + 0 = (36)_{10} $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="$1100111_%7B2%7D$-to-Decimal">$1100111_{2}$ to Decimal<a class="anchor-link" href="#$1100111_%7B2%7D$-to-Decimal">¶</a></h3><p>Convert the binary number <strong>11100111</strong> to decimal:</p>
+<h3 id="Binary-1100111-to-Decimal">Binary 1100111 to Decimal<a class="anchor-link" href="#Binary-1100111-to-Decimal">¶</a></h3><p>Convert the binary number <strong>11100111</strong> to decimal:</p>
 </div>
 </div>
 </div>
@@ -7853,7 +7875,7 @@ $$ = 128 + 64 + 32 + 0 + 0 + 4 + 2 + 1 = (231)_{10} $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="$1547_%7B16%7D$-to-Decimal">$1547_{16}$ to Decimal<a class="anchor-link" href="#$1547_%7B16%7D$-to-Decimal">¶</a></h3><p>Convert the hexadecimal number <strong>1547</strong> to decimal:</p>
+<h3 id="Hex-1547-to-Decimal">Hex 1547 to Decimal<a class="anchor-link" href="#Hex-1547-to-Decimal">¶</a></h3><p>Convert the hexadecimal number <strong>1547</strong> to decimal:</p>
 </div>
 </div>
 </div>
@@ -7877,7 +7899,7 @@ $$ = 128 + 64 + 32 + 0 + 0 + 4 + 2 + 1 = (231)_{10} $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="$CAFE_%7B16%7D$-to-Decimal">$CAFE_{16}$ to Decimal<a class="anchor-link" href="#$CAFE_%7B16%7D$-to-Decimal">¶</a></h3><p>Convert the hexadecimal number <strong>CAFE</strong> to decimal:</p>
+<h3 id="Hex-CAFE-to-Decimal">Hex CAFE to Decimal<a class="anchor-link" href="#Hex-CAFE-to-Decimal">¶</a></h3><p>Convert the hexadecimal number <strong>CAFE</strong> to decimal:</p>
 </div>
 </div>
 </div>
@@ -7921,7 +7943,7 @@ $$ = 128 + 64 + 32 + 0 + 0 + 4 + 2 + 1 = (231)_{10} $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="$DEADBEEF_%7B16%7D$-to-Decimal">$DEADBEEF_{16}$ to Decimal<a class="anchor-link" href="#$DEADBEEF_%7B16%7D$-to-Decimal">¶</a></h3><p>Convert the hexadecimal number <strong>DEADBEEF</strong> to decimal:</p>
+<h3 id="Hex-DEADBEEF-to-Decimal">Hex DEADBEEF to Decimal<a class="anchor-link" href="#Hex-DEADBEEF-to-Decimal">¶</a></h3><p>Convert the hexadecimal number <strong>DEADBEEF</strong> to decimal:</p>
 <p>$$ DEADBEEF_{16} = D \cdot 16^7 + E \cdot 16^6 + A \cdot 16^5 + D \cdot 16^4 + B \cdot 16^3 + E \cdot 16^2 + E \cdot 16^1 + F \cdot 16^0 $$</p>
 <p>$$ = 13 \cdot 16^7 + 14 \cdot 16^6 + 10 \cdot 16^5 + 13 \cdot 16^4 + 11 \cdot 16^3 + 14 \cdot 16^2 + 14 \cdot 16^1 + 15 \cdot 16^0 $$</p>
 <p>$$ = 13 \cdot 268435456 + 14 \cdot 16777216 + 10 \cdot 1048576 + 13 \cdot 65536 + 11 \cdot 4096 + 14 \cdot 256 + 14 \cdot 16 + 15 \cdot 1 $$</p>
@@ -8661,20 +8683,23 @@ require(
     },
     [
       "../dist/reveal.js",
-      "../plugin/notes/notes.js"
+      "../dist/plugin/notes/notes.js",
+      "../dist/plugin/zoom/zoom.js"
     ],
 
-    function(Reveal, RevealNotes){
+    function(Reveal, RevealNotes, RevealZoom){
         // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
         Reveal.initialize({
-            controls: true, center: false, margin: 0,
+            controls: true,
             progress: true,
             history: true,
             transition: "none",
             slideNumber: "c/t",
-            plugins: [RevealNotes],
+            minScale: 1.45,
+            maxScale: 2.0,
+            plugins: [RevealNotes, RevealZoom],
             width: 960,
-			      height: 800,
+			      height: 700,
 
         });
 
@@ -8689,12 +8714,12 @@ require(
         function setScrollingSlide() {
             var scroll = true
             if (scroll === true) {
-              var h = $('.reveal').height() * 0.755;
+              var h = $('.reveal').height() * 0.995;
               $('section.present').find('section')
                 .filter(function() {
                   return $(this).height() > h;
                 })
-                .css('height', 'calc(90vh)')
+                .css('height', 'calc(95vh)')
                 .css('overflow-y', 'scroll')
                 .css('margin-top', '0px').css('scrollbar-width', 'none');
             }
