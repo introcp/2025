@@ -64,17 +64,12 @@ MATHJAX_CONFIG=$(cat <<'EOF'
 <!-- Load mathjax -->
 <script>
   window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\(', '\)']],
-      displayMath: [['$$', '$$'], ['\[', '\]']],
-      tags: 'ams'
-    },
     options: {
       renderActions: { addMenu: [] },
-      processHtmlClass: 'tex2jax_process',
+      processHtmlClass: 'tex2jax_process', // Only process elements with this class
     },
     tex: {
-      processClass: 'tex2jax_process',
+      processClass: 'tex2jax_process', // Only process elements with this class
       inlineMath: [['$', '$'], ['\\(', '\\)']],
       displayMath: [['$$', '$$'], ['\\[', '\\]']],
       tags: 'ams'
