@@ -13,14 +13,17 @@ The repository is organized into four main directories:
     -   **PXX** (e.g., `P00`, `P01`): Theory lectures on Python.
     -   **EXX** (e.g., `E00`, `E01`): Exercise collections.
 
-    The ID for each lecture corresponds to the internal course timetable. Within each folder, the typical structure is:
+    The ID for each lecture corresponds to the internal course timetable (see Google Spreadsheet). Within each folder, the typical structure is:
 
     -   `img/`: A directory for images used in the notebook.
     -   `<ID>-Title-of-the-Lecture.ipynb`: The source notebook file.
     -   `<ID>-Title-of-the-Lecture.slides.html`: Auto-generated HTML slides.
     -   `<ID>-Title-of-the-Lecture.pdf`: Auto-generated PDF slides.
+
 -   `docs/`: The output directory where the generated website (built by Jupyter Book) is stored. This directory is served by GitHub Pages.
+
 -   `scripts/`: A collection of Python and shell scripts for automating tasks like converting notebooks to slides and finalizing the website.
+
 -   `exercises/`: A indipendent subrepository for creating, managing, and generating programming collections of exercises.
 
 ## 2. Course Materials
@@ -80,3 +83,5 @@ When you push changes to the `2025` branch, a GitHub Action is automatically tri
 2.  Generates all HTML and PDF slides.
 3.  Commits the updated `docs/` and `src/` directories back to the repository.
 4.  Deploys the `docs/` directory to GitHub Pages.
+
+The process is triggered automatically by GitHub Actions when you push changes to the `2025` branch and takes about 3 minutes to complete.
