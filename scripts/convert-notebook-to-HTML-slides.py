@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import os
 import re
+import signal
 import subprocess
 import sys
 import time
@@ -17,8 +18,8 @@ MATHJAX_CONFIG = r"""<!-- Load mathjax -->
     },
     tex: {
       processClass: 'tex2jax_process', // Only process elements with this class
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      inlineMath: [['$', '$']],
+      displayMath: [['$$', '$$']],
       tags: 'ams'
     },
     chtml: {
@@ -47,7 +48,10 @@ def process_slides(notebook_path):
     # Run nbconvert
     scrollable = os.environ.get('SCROLLABLE', 'True')
 
-    subprocess.run([
+    original_sigint_handler = signal.getsignal(signal.SIGINT)
+    try:
+        signal.signal(signal.SIGINT, signal.SIG_IGN)
+        subprocess.run([
         'jupyter-nbconvert', str(notebook_path),
         '--to', 'slides',
         '--SlidesExporter.reveal_url_prefix', '..',
@@ -57,6 +61,8 @@ def process_slides(notebook_path):
         '--SlidesExporter.reveal_height', '700',
         '--SlidesExporter.reveal_transition', 'none'
     ], check=True)
+    finally:
+        signal.signal(signal.SIGINT, original_sigint_handler)
 
     # Post-process the generated HTML
     with open(slides_html_path, 'r+') as f:
@@ -140,19 +146,23 @@ def main():
 
     print(f"[INFO] Watching {notebook_path} for changes...")
     last_hash = None
-    while True:
-        current_hash = get_file_hash(notebook_path)
-        if current_hash != last_hash:
-            if last_hash is not None:
-                print("[INFO] File change detected.")
-            try:
-                process_slides(notebook_path)
-                last_hash = current_hash
-            except subprocess.CalledProcessError as e:
-                print(f"[ERROR] Failed to convert {notebook_path}: {e}", file=sys.stderr)
-            except Exception as e:
-                print(f"[ERROR] An unexpected error occurred: {e}", file=sys.stderr)
-        time.sleep(0.5)
+    try:
+        while True:
+            current_hash = get_file_hash(notebook_path)
+            if current_hash != last_hash:
+                if last_hash is not None:
+                    print("[INFO] File change detected.")
+                try:
+                    process_slides(notebook_path)
+                    last_hash = current_hash
+                except subprocess.CalledProcessError as e:
+                    print(f"[ERROR] Failed to convert {notebook_path}: {e}", file=sys.stderr)
+                except Exception as e:
+                    print(f"[ERROR] An unexpected error occurred: {e}", file=sys.stderr)
+            time.sleep(0.5)
+    except KeyboardInterrupt:
+        print("\n[INFO] Watch mode stopped by user. Exiting.")
+        sys.exit(0)
 
 if __name__ == '__main__':
     main()

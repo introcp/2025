@@ -6,6 +6,7 @@ import hashlib
 import glob
 from playwright.sync_api import sync_playwright, Playwright
 import argparse
+import signal
 import sys
 import time
 
@@ -66,10 +67,15 @@ def convert_to_pdf(filename, force=False, verbose=False):
         print(f"Skipping cached PDF: {filename}")
         return
 
-    print(f"Converting to PDF: {filename}")
+    print(f"\nConverting to PDF: {filename}")
 
-    # Generate the prerequisite HTML slides
-    os.system(f'SCROLLABLE=False python3 scripts/convert-notebook-to-HTML-slides.py "{filename}"')
+    original_sigint_handler = signal.getsignal(signal.SIGINT)
+    try:
+        signal.signal(signal.SIGINT, signal.SIG_IGN)
+        # Generate the prerequisite HTML slides
+        os.system(f'SCROLLABLE=False python3 scripts/convert-notebook-to-HTML-slides.py "{filename}"')
+    finally:
+        signal.signal(signal.SIGINT, original_sigint_handler)
 
     def run_playwright(playwright: Playwright):
         if verbose: print("Launching browser...")
@@ -115,7 +121,12 @@ def convert_to_pdf(filename, force=False, verbose=False):
         with sync_playwright() as playwright:
             run_playwright(playwright)
         # Generate scrollable version for viewing
-        os.system(f'SCROLLABLE=True python3 scripts/convert-notebook-to-HTML-slides.py "{filename}"')
+        original_sigint_handler = signal.getsignal(signal.SIGINT)
+        try:
+            signal.signal(signal.SIGINT, signal.SIG_IGN)
+            os.system(f'SCROLLABLE=True python3 scripts/convert-notebook-to-HTML-slides.py "{filename}"')
+        finally:
+            signal.signal(signal.SIGINT, original_sigint_handler)
     except Exception as e:
         print(f"[ERROR] Failed to convert {filename} to PDF: {e}", file=sys.stderr)
 
@@ -128,18 +139,22 @@ if args.watch:
     print(f"[INFO] Watching {args.input} for changes...\n")
     last_hash = None
     changed = True
-    while True:
-        current_hash = file_hash(args.input)
-        if current_hash != last_hash:
-            if last_hash is not None:
-                print("[INFO] File change detected.")
-            convert_to_pdf(args.input, force=True)
-            last_hash = current_hash
-            changed = True
-        elif changed:
-            print("\n[INFO] Waiting for file changes... Crtl+C to exit")
-            changed = False
-        time.sleep(0.5)
+    try:
+        while True:
+            current_hash = file_hash(args.input)
+            if current_hash != last_hash:
+                if last_hash is not None:
+                    print("[INFO] File change detected.")
+                convert_to_pdf(args.input, force=True)
+                last_hash = current_hash
+                changed = True
+            elif changed:
+                print("\n[INFO] Waiting for file changes... Crtl+C to exit")
+                changed = False
+            time.sleep(0.5)
+    except KeyboardInterrupt:
+        print("\n[INFO] Watch mode stopped by user. Exiting.")
+        sys.exit(0)
 else:
     for filename in files:
         convert_to_pdf(filename, force=force)

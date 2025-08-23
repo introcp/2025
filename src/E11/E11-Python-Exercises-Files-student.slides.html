@@ -69,7 +69,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .s1 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Single */
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
-  </style>
+  .reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
+</style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
@@ -6034,7 +6041,6 @@ Note: input and output wrappers have "display: block" propery in print mode.
 |----------------------------------------------------------------------------*/
 
 .jp-MarkdownOutput {
-  
   width: 100%;
   margin-top: 0;
   margin-bottom: 0;
@@ -6823,6 +6829,13 @@ div.jp-Cell-Placeholder-content-3 {
   top: 140px;
 }
 
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -7248,6 +7261,13 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-switch-color: var(--md-grey-400);
   --jp-switch-true-position-color: var(--md-orange-900);
 }
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
 </style>
 <style type="text/css">
 a.anchor-link {
@@ -7269,6 +7289,13 @@ a.anchor-link {
   body {
     margin: 0;
   }
+}
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
 }
 </style>
 <style type="text/css">
@@ -7393,41 +7420,35 @@ main {
 ::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
-<!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
-    init_mathjax = function() {
-        if (window.MathJax) {
-        // MathJax loaded
-            MathJax.Hub.Config({
-                TeX: {
-                    equationNumbers: {
-                    autoNumber: "AMS",
-                    useLabelIds: true
-                    }
-                },
-                tex2jax: {
-                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-                    processEscapes: true,
-                    processEnvironments: true
-                },
-                displayAlign: 'center',
-                messageStyle: 'none',
-                CommonHTML: {
-                    linebreaks: {
-                    automatic: true
-                    }
-                }
-            });
-
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        }
+<!-- Load mathjax -->
+<script>
+  window.MathJax = {
+    options: {
+      renderActions: { addMenu: [] },
+      processHtmlClass: 'tex2jax_process', // Only process elements with this class
+    },
+    tex: {
+      processClass: 'tex2jax_process', // Only process elements with this class
+      inlineMath: [['$', '$']],
+      displayMath: [['$$', '$$']],
+      tags: 'ams'
+    },
+    chtml: {
+      linebreaks: { automatic: true }
     }
-    init_mathjax();
-    </script>
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+<!-- End of MathJax v3 configuration -->
 <!-- End of mathjax configuration --><!-- Reveal Theme -->
 <link href="../dist/theme/luiss.css" id="theme" rel="stylesheet"/>
 </head>
@@ -9043,20 +9064,23 @@ require(
     },
     [
       "../dist/reveal.js",
-      "../plugin/notes/notes.js"
+      "../dist/plugin/notes/notes.js",
+      "../dist/plugin/zoom/zoom.js"
     ],
 
-    function(Reveal, RevealNotes){
+    function(Reveal, RevealNotes, RevealZoom){
         // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
         Reveal.initialize({
-            controls: true, center: false, margin: 0,
+            controls: true,
             progress: true,
             history: true,
             transition: "none",
             slideNumber: "c/t",
-            plugins: [RevealNotes],
+      minScale: 1.45,
+      maxScale: 2.0,
+            plugins: [RevealNotes, RevealZoom],
             width: 960,
-			      height: 800,
+			      height: 700,
 
         });
 
@@ -9071,12 +9095,12 @@ require(
         function setScrollingSlide() {
             var scroll = true
             if (scroll === true) {
-              var h = $('.reveal').height() * 0.755;
+              var h = $('.reveal').height() * 0.995;
               $('section.present').find('section')
                 .filter(function() {
                   return $(this).height() > h;
                 })
-                .css('height', 'calc(90vh)')
+                .css('height', 'calc(95vh)')
                 .css('overflow-y', 'scroll')
                 .css('margin-top', '0px').css('scrollbar-width', 'none');
             }

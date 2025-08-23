@@ -1,5 +1,22 @@
 #!/bin/bash
 
+CONTAINER_NAME="introcp-slide-$$"
+
+# Function to clean up the container on exit
+cleanup() {
+    # Check if the container exists before trying to stop and remove it
+    if [ "$(docker ps -q -f name=${CONTAINER_NAME})" ]; then
+        echo -e "\n[INFO] Script interrupted by user. Stopping and removing container..."
+        docker stop "${CONTAINER_NAME}" >/dev/null
+    fi
+    # The --rm flag will handle removal, but we trap EXIT to ensure cleanup
+    # in case the script is terminated in other ways.
+    exit 0
+}
+
+# Trap SIGINT (Ctrl+C) and EXIT to call the cleanup function
+trap cleanup SIGINT EXIT
+
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 if [ -z "${1}" ]; then
@@ -18,11 +35,16 @@ if [[ "${1}" != *.ipynb ]]; then
     exit 1
 fi
 
-docker run --rm -ti \
+# Run the container in detached mode
+docker run --rm -d -i \
     -u `id -u`:`id -g` \
     -v ${SCRIPT_DIR}/..:/home/user/introcp \
     -w /home/user/introcp \
     --ipc=host --cap-add=SYS_ADMIN --init \
-    --name introcp-slide \
+    --name "${CONTAINER_NAME}" \
     ercoppa/introcp \
-    bash -c "scripts/convert-notebook-to-PDF-slides.py --watch ${1}"
+    scripts/convert-notebook-to-PDF-slides.py --watch "${1}"
+
+# Attach to the container's output. Ctrl+C will detach and trigger the trap.
+echo "[INFO] Attaching to container. Press Ctrl+C to stop."
+docker attach "${CONTAINER_NAME}"
