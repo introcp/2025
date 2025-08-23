@@ -41,7 +41,9 @@ Theory lectures are **manually** created as Jupyter Notebooks (`.ipynb`) in the 
     *   `"slide_type": "slide"`: Starts a new slide.
     *   `"slide_type": "fragment"`: Part of the previous slide whose content will appear on click.
     *   `"slide_type": "none"` (or missing): The cell content will be appended to the previous slide.
-Slide cell types can easily changed using the VS Code extension "Jupyter: Slideshow".
+
+Slide cell types can be easily changed using the VS Code extension "Jupyter: Slideshow":
+![Slide type in VS Code](_static/slide_type.png)
 
 ### 2b. Exercises
 
@@ -51,7 +53,7 @@ Exercise notebooks are auto-generated from a source template system located in t
 -   **Pseudocode mode**: Includes step-by-step hints on how to approach the solution.
 -   **Solution mode**: Contains the complete solution.
 
-Generated notebooks are placed in `src/` to be included in the final website, and they are linked from the theory notebooks. For detailed instructions on creating and generating exercises, refer to the `exercises/README.md` file.
+Generated notebooks are placed in `src/EXX` to be included in the final website, and they are linked from the theory notebooks. For detailed instructions on creating and generating exercises, refer to the `exercises/README.md` file.
 
 ## 3. Previewing Slides
 
@@ -84,4 +86,4 @@ When you push changes to the `2025` branch, a GitHub Action is automatically tri
 3.  Commits the updated `docs/` and `src/` directories back to the repository.
 4.  Deploys the `docs/` directory to GitHub Pages.
 
-The process is triggered automatically by GitHub Actions when you push changes to the `2025` branch and takes about 3 minutes to complete.
+The process is triggered automatically by GitHub Actions when you push changes to the `2025` branch and takes about 3 minutes to complete when updating a single notebook.
