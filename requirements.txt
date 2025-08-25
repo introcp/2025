@@ -4,3 +4,5 @@ numpy
 seaborn
 jupyterlab
 playwright
+PyMuPDF
+Pillow

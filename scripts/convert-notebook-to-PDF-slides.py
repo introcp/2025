@@ -9,6 +9,10 @@ import argparse
 import signal
 import sys
 import time
+import json
+import re
+import subprocess
+import fitz  # PyMuPDF for PDF manipulation
 
 def file_hash(path):
     hasher = hashlib.sha256()
@@ -20,6 +24,96 @@ def name_hash(path):
     hasher = hashlib.sha256()
     hasher.update(path.encode('utf-8'))
     return hasher.hexdigest()
+
+def extract_h1_title_from_notebook(notebook_path):
+    """Extract the first H1 (#) title from the first cell of the notebook."""
+    try:
+        with open(notebook_path, 'r', encoding='utf-8') as f:
+            notebook = json.load(f)
+        
+        # Get the first cell
+        if not notebook.get('cells'):
+            return None
+            
+        first_cell = notebook['cells'][0]
+        
+        # Check if it's a markdown cell
+        if first_cell.get('cell_type') != 'markdown':
+            return None
+            
+        # Get the source content
+        source = first_cell.get('source', [])
+        if isinstance(source, list):
+            source = ''.join(source)
+        
+        # Find the first H1 title (# Title)
+        h1_match = re.search(r'^#\s+(.+)$', source, re.MULTILINE)
+        if h1_match:
+            title_text = h1_match.group(1).strip()
+            # Remove HTML tags if present
+            title_text = re.sub(r'<[^>]+>', '', title_text)
+            return title_text.strip()
+            
+        return None
+    except Exception as e:
+        print(f"Warning: Could not extract title from {notebook_path}: {e}")
+        return None
+
+def remove_first_slide(pdf_path, output_path):
+    """Remove the first slide from a PDF and save to output_path."""
+    try:
+        doc = fitz.open(pdf_path)
+        if doc.page_count <= 1:
+            # If only one page, return None (no slides to keep)
+            doc.close()
+            return None
+        
+        # Create new document without first page
+        new_doc = fitz.open()
+        for page_num in range(1, doc.page_count):  # Start from page 1 (skip page 0)
+            new_doc.insert_pdf(doc, from_page=page_num, to_page=page_num)
+        
+        new_doc.save(output_path)
+        new_doc.close()
+        doc.close()
+        return output_path
+    except Exception as e:
+        print(f"Warning: Could not remove first slide: {e}")
+        return None
+
+def generate_front_slide(title, slides_pdf_path):
+    """Generate a front slide PDF and merge with slides (minus first slide)."""
+    try:
+        # Remove first slide from the original slides
+        slides_without_first = slides_pdf_path.replace('.pdf', '_no_first.pdf')
+        if not remove_first_slide(slides_pdf_path, slides_without_first):
+            print("Warning: Could not remove first slide, using original PDF")
+            slides_without_first = slides_pdf_path
+        
+        # Use the front template and generate the cover
+        cmd = [
+            'python3', 'scripts/generate_front.py',
+            '--title', title,
+            '--title-font', 'src/dist/fonts/LuissSans-Bold.otf',
+            'src/front.pdf',
+            slides_without_first,
+            '--output', slides_pdf_path.replace('.pdf', '_with_front.pdf')
+        ]
+        
+        result = subprocess.run(cmd, capture_output=True, text=True, cwd=os.getcwd())
+        
+        # Clean up temporary file
+        if os.path.exists(slides_without_first) and slides_without_first != slides_pdf_path:
+            os.remove(slides_without_first)
+        
+        if result.returncode == 0:
+            return slides_pdf_path.replace('.pdf', '_with_front.pdf')
+        else:
+            print(f"Warning: Failed to generate front slide: {result.stderr}")
+            return None
+    except Exception as e:
+        print(f"Warning: Could not generate front slide: {e}")
+        return None
 
 HASHED_DIR = "docs/.hashes/"
 
@@ -68,6 +162,11 @@ def convert_to_pdf(filename, force=False, verbose=False):
         return
 
     print(f"\nConverting to PDF: {filename}")
+    
+    # Extract title from notebook for front slide
+    title = extract_h1_title_from_notebook(filename)
+    if verbose and title:
+        print(f"Extracted title: {title}")
 
     original_sigint_handler = signal.getsignal(signal.SIGINT)
     try:
@@ -107,15 +206,37 @@ def convert_to_pdf(filename, force=False, verbose=False):
         except Exception as e:
             print(f"    - MathJax rendering timed out or failed: {e}")
 
+        # Generate main slides PDF (without front slide initially)
+        main_pdf_path = f"{os.getcwd()}/{filename.replace('.ipynb', '_slides.pdf')}"
         page.pdf(
-            path=f"{os.getcwd()}/{filename.replace('.ipynb', '.pdf')}",
-            print_background=True, margin=[], height="680px", width="1024px"
+            path=main_pdf_path,
+            print_background=True, margin=[], height="680px", width="1280px"
         )
         browser.close()
+        
+        # Generate final PDF with front slide if title was extracted
+        final_pdf_path = f"{os.getcwd()}/{filename.replace('.ipynb', '.pdf')}"
+        if title:
+            if verbose: print(f"Generating front slide with title: {title}")
+            front_pdf = generate_front_slide(title, main_pdf_path)
+            if front_pdf and os.path.exists(front_pdf):
+                # Move the front slide PDF to final location
+                os.rename(front_pdf, final_pdf_path)
+                # Clean up temporary main slides PDF
+                if os.path.exists(main_pdf_path):
+                    os.remove(main_pdf_path)
+                print(f"Successfully generated PDF with front slide for {filename}")
+            else:
+                # Fallback: use main PDF without front slide
+                os.rename(main_pdf_path, final_pdf_path)
+                print(f"Successfully generated PDF (no front slide) for {filename}")
+        else:
+            # No title found, use main PDF as final
+            os.rename(main_pdf_path, final_pdf_path)
+            print(f"Successfully generated PDF (no title found) for {filename}")
 
         with open(f"{HASHED_DIR}{hash_name}.hash", 'w') as f:
             f.write(file_hash(filename))
-        print(f"Successfully generated PDF for {filename}")
 
     try:
         with sync_playwright() as playwright:
