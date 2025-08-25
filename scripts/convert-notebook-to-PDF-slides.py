@@ -25,6 +25,29 @@ def name_hash(path):
     hasher.update(path.encode('utf-8'))
     return hasher.hexdigest()
 
+def check_first_cell_is_slide(notebook_path):
+    """Check if the first cell has slide type metadata."""
+    try:
+        with open(notebook_path, 'r', encoding='utf-8') as f:
+            notebook = json.load(f)
+        
+        # Get the first cell
+        if not notebook.get('cells'):
+            return False
+            
+        first_cell = notebook['cells'][0]
+        
+        # Check if the cell has slideshow metadata with slide type
+        metadata = first_cell.get('metadata', {})
+        slideshow = metadata.get('slideshow', {})
+        slide_type = slideshow.get('slide_type', '')
+        
+        return slide_type == 'slide'
+        
+    except Exception as e:
+        print(f"Warning: Could not check slide type from {notebook_path}: {e}")
+        return False
+
 def extract_h1_title_from_notebook(notebook_path):
     """Extract the first H1 (#) title from the first cell of the notebook."""
     try:
@@ -43,16 +66,33 @@ def extract_h1_title_from_notebook(notebook_path):
             
         # Get the source content
         source = first_cell.get('source', [])
-        if isinstance(source, list):
-            source = ''.join(source)
         
-        # Find the first H1 title (# Title)
-        h1_match = re.search(r'^#\s+(.+)$', source, re.MULTILINE)
-        if h1_match:
-            title_text = h1_match.group(1).strip()
-            # Remove HTML tags if present
-            title_text = re.sub(r'<[^>]+>', '', title_text)
-            return title_text.strip()
+        # Process line by line to find the first H1
+        if isinstance(source, list):
+            # Process each line in the list
+            for line in source:
+                line = line.strip()
+                if line.startswith('#') and not line.startswith('##'):
+                    # Extract everything after the first #
+                    title_text = line[1:].strip()
+                    # Remove HTML tags if present
+                    title_text = re.sub(r'<[^>]+>', '', title_text)
+                    # Remove backticks from title
+                    title_text = title_text.replace('`', '')
+                    return title_text.strip()
+        else:
+            # If source is a string, split by lines
+            lines = source.split('\n')
+            for line in lines:
+                line = line.strip()
+                if line.startswith('#') and not line.startswith('##'):
+                    # Extract everything after the first #
+                    title_text = line[1:].strip()
+                    # Remove HTML tags if present
+                    title_text = re.sub(r'<[^>]+>', '', title_text)
+                    # Remove backticks from title
+                    title_text = title_text.replace('`', '')
+                    return title_text.strip()
             
         return None
     except Exception as e:
@@ -89,6 +129,8 @@ def generate_front_slide(title, slides_pdf_path):
         if not remove_first_slide(slides_pdf_path, slides_without_first):
             print("Warning: Could not remove first slide, using original PDF")
             slides_without_first = slides_pdf_path
+    
+        print(f"Generating front slide with title: {title}")
         
         # Use the front template and generate the cover
         cmd = [
@@ -163,10 +205,17 @@ def convert_to_pdf(filename, force=False, verbose=False):
 
     print(f"\nConverting to PDF: {filename}")
     
-    # Extract title from notebook for front slide
-    title = extract_h1_title_from_notebook(filename)
-    if verbose and title:
-        print(f"Extracted title: {title}")
+    # Check if first cell is marked as slide type
+    is_slide_presentation = check_first_cell_is_slide(filename)
+    if verbose:
+        print(f"First cell is slide type: {is_slide_presentation}")
+    
+    # Extract title from notebook for front slide (only if it's a slide presentation)
+    title = None
+    if is_slide_presentation:
+        title = extract_h1_title_from_notebook(filename)
+        if verbose and title:
+            print(f"Extracted title: {title}")
 
     original_sigint_handler = signal.getsignal(signal.SIGINT)
     try:
