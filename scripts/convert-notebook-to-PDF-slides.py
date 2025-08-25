@@ -259,7 +259,7 @@ def convert_to_pdf(filename, force=False, verbose=False):
         main_pdf_path = f"{os.getcwd()}/{filename.replace('.ipynb', '_slides.pdf')}"
         page.pdf(
             path=main_pdf_path,
-            print_background=True, margin=[], height="680px", width="1280px"
+            print_background=True, margin=[], height="720px", width="1280px"
         )
         browser.close()
         
