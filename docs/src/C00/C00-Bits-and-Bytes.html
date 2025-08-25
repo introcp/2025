@@ -467,7 +467,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="bits-and-bytes">
 <h1><b style="font-family: 'LUISS', 'Lato'">Bits and Bytes</b><a class="headerlink" href="#bits-and-bytes" title="Link to this heading">#</a></h1>
-<h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2><h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3><br><img src="https://introcp.github.io/dist/img/logo2.png" width="200px"><br><br><br><section id="what-is-a-computing-system">
+<h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
+<br>
+<img src="https://introcp.github.io/dist/img/logo2.png" width="200px">
+<p><br><br><br></p>
+<section id="what-is-a-computing-system">
 <h2>What is a Computing System?<a class="headerlink" href="#what-is-a-computing-system" title="Link to this heading">#</a></h2>
 <p>A computing system:</p>
 <ul class="simple">
@@ -522,7 +527,7 @@ document.write(`
 </div>
 <p>This how your computers see data (pictures, tests, everything!):</p>
 <div align="center">
-<img src="img/bits.png" width="25%" style="margin-bottom: -15px; margin-top: -5px">
+<img src="img/bits.png" width="25%" style="margin-bottom: -5px; margin-top: -10px">
 </div>
 <p>How can we interpret bits?</p>
 </section>
@@ -615,7 +620,7 @@ $<span class="math notranslate nohighlight">\(
 <h2>Why computers prefer the binary representation?<a class="headerlink" href="#why-computers-prefer-the-binary-representation" title="Link to this heading">#</a></h2>
 <p>Computers are devices that work with electric signals with two state levels:</p>
 <div align="center">
-<img src="img/2-level-digital-signal.png" width="50%" style="margin-bottom: -10px; margin-top: -5px">
+<img src="img/2-level-digital-signal.png" width="50%" style="margin-bottom: -5px; margin-top: -10px">
 </div>
 <p>Why the signal has only two levels?</p>
 <p>It makes it more resistant to noise and interference since it uses extreme, easy to identify, cases:</p>
@@ -703,38 +708,46 @@ $<span class="math notranslate nohighlight">\(
 <p>We already know how to that based on what we said before :)</p>
 <p>For instance:</p>
 <ul class="simple">
-<li><p>the binary number <span class="math notranslate nohighlight">\(1010\)</span>:
-$<span class="math notranslate nohighlight">\(
-\begin{equation*}
-  1010_{2} = \underbrace{1 \times 2^3}_\text{fourth position} + \underbrace{0 \times 2^2}_\text{third position} + \underbrace{1 \times 2^1}_\text{second position} + \underbrace{0 \times 2^0}_\text{first position} = 10_{10}\\
-  1010_{2} = \underbrace{1 \times 8}_\text{fourth position} + \underbrace{0 \times 4}_\text{third position} + \underbrace{1 \times 2}_\text{second position} + \underbrace{0 \times 1}_\text{first position} = 10_{10}
-\end{equation*}
-\)</span>$</p></li>
-<li><p>the binary number <span class="math notranslate nohighlight">\(1001\)</span>:
-$<span class="math notranslate nohighlight">\(
-\begin{equation*}
-  1001_{2} = \underbrace{1 \times 2^3}_\text{fourth position} + \underbrace{0 \times 2^2}_\text{third position} + \underbrace{0 \times 2^1}_\text{second position} + \underbrace{1 \times 2^0}_\text{first position} = 9_{10}\\
-  1001_{2} = \underbrace{1 \times 8}_\text{fourth position} + \underbrace{0 \times 4}_\text{third position} + \underbrace{0 \times 2}_\text{second position} + \underbrace{1 \times 1}_\text{first position} = 9_{10}
-\end{equation*}
-\)</span>$</p></li>
+<li><p>the binary number <span class="math notranslate nohighlight">\(1010\)</span>:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+	1010_{2} = \underbrace{1 \times 2^3}_\text{fourth position} + \underbrace{0 \times 2^2}_\text{third position} + \underbrace{1 \times 2^1}_\text{second position} + \underbrace{0 \times 2^0}_\text{first position} = 10_{10}\\
+	1010_{2} = \underbrace{1 \times 8}_\text{fourth position} + \underbrace{0 \times 4}_\text{third position} + \underbrace{1 \times 2}_\text{second position} + \underbrace{0 \times 1}_\text{first position} = 10_{10}
+\end{equation*}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>the binary number <span class="math notranslate nohighlight">\(1001\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+	1001_{2} = \underbrace{1 \times 2^3}_\text{fourth position} + \underbrace{0 \times 2^2}_\text{third position} + \underbrace{0 \times 2^1}_\text{second position} + \underbrace{1 \times 2^0}_\text{first position} = 9_{10}\\
+	1001_{2} = \underbrace{1 \times 8}_\text{fourth position} + \underbrace{0 \times 4}_\text{third position} + \underbrace{0 \times 2}_\text{second position} + \underbrace{1 \times 1}_\text{first position} = 9_{10}
+\end{equation*}
+\end{split}\]</div>
 <br>
 <ul class="simple">
-<li><p>the binary number <span class="math notranslate nohighlight">\(11010\)</span>:
-$<span class="math notranslate nohighlight">\(
-\begin{equation*}
-  11010_{2} = \underbrace{1 \times 2^4}_\text{fifth position} + \underbrace{1 \times 2^3}_\text{fourth position} + \underbrace{0 \times 2^2}_\text{third position} + \underbrace{1 \times 2^1}_\text{second position} + \underbrace{0 \times 2^0}_\text{first position} = 26_{10}\\
-  11010_{2} = \underbrace{1 \times 16}_\text{fifth position} + \underbrace{1 \times 8}_\text{fourth position} + \underbrace{0 \times 4}_\text{third position} + \underbrace{1 \times 2}_\text{second position} + \underbrace{0 \times 1}_\text{first position} = 26_{10}
-\end{equation*}
-\)</span>$</p></li>
-<li><p>the binary number <span class="math notranslate nohighlight">\(10001\)</span>:
-$<span class="math notranslate nohighlight">\(
-\begin{equation*}
-  10001_{2} = \underbrace{1 \times 2^4}_\text{fifth position} + \underbrace{0 \times 2^3}_\text{fourth position} + \underbrace{0 \times 2^2}_\text{third position} + \underbrace{0 \times 2^1}_\text{second position} + \underbrace{1 \times 2^0}_\text{first position} = 17_{10}\\
-  10001_{2} = \underbrace{1 \times 16}_\text{fifth position} + \underbrace{0 \times 8}_\text{fourth position} + \underbrace{0 \times 4}_\text{third position} + \underbrace{0 \times 2}_\text{second position} + \underbrace{1 \times 1}_\text{first position} = 17_{10}
-\end{equation*}
-\)</span>$</p></li>
+<li><p>the binary number <span class="math notranslate nohighlight">\(11010\)</span>:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+	11010_{2} = \underbrace{1 \times 2^4}_\text{fifth position} + \underbrace{1 \times 2^3}_\text{fourth position} + \underbrace{0 \times 2^2}_\text{third position} + \underbrace{1 \times 2^1}_\text{second position} + \underbrace{0 \times 2^0}_\text{first position} = 26_{10}\\
+	11010_{2} = \underbrace{1 \times 16}_\text{fifth position} + \underbrace{1 \times 8}_\text{fourth position} + \underbrace{0 \times 4}_\text{third position} + \underbrace{1 \times 2}_\text{second position} + \underbrace{0 \times 1}_\text{first position} = 26_{10}
+\end{equation*}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>the binary number <span class="math notranslate nohighlight">\(10001\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+	10001_{2} = \underbrace{1 \times 2^4}_\text{fifth position} + \underbrace{0 \times 2^3}_\text{fourth position} + \underbrace{0 \times 2^2}_\text{third position} + \underbrace{0 \times 2^1}_\text{second position} + \underbrace{1 \times 2^0}_\text{first position} = 17_{10}\\
+	10001_{2} = \underbrace{1 \times 16}_\text{fifth position} + \underbrace{0 \times 8}_\text{fourth position} + \underbrace{0 \times 4}_\text{third position} + \underbrace{0 \times 2}_\text{second position} + \underbrace{1 \times 1}_\text{first position} = 17_{10}
+\end{equation*}
+\end{split}\]</div>
 </section>
 <section id="first-n-binary-numbers-n-16">
 <h2>First <span class="math notranslate nohighlight">\(n\)</span> binary numbers (<span class="math notranslate nohighlight">\(n=16\)</span>)<a class="headerlink" href="#first-n-binary-numbers-n-16" title="Link to this heading">#</a></h2>
@@ -895,35 +908,38 @@ $<span class="math notranslate nohighlight">\(
 <li><p>for convenience, the result (<span class="math notranslate nohighlight">\(\text{value}_{10}\)</span>) is kept in base 10</p></li>
 </ul>
 <p>The powers of <span class="math notranslate nohighlight">\(16\)</span> are:</p>
-<table style="width:100%">
-	<tr>
-		<th>Position:</th>
-		<th>5</th>
-		<th>4</th>
-		<th>3</th>
-		<th>2</th>
-		<th>1</th>
-		<th>0</th>
-	</tr>
-    	<tr>
-		<th>Power of 16:</th>
-		<th>$16^5$</th>
-		<th>$16^4$</th>
-		<th>$16^3$</th>
-		<th>$16^2$</th>
-		<th>$16^1$</th>
-		<th>$16^0$</th>
-	</tr>
-	<tr>
-		<th>Value:</th>
-		<th>$1048576$</th>
-        <th>$65536$</th>
-		<th>$4096$</th>
-		<th>$256$</th>
-		<th>$16$</th>
-        <th>$1$</th>
-	</tr>
-</table><br>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Position:</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Power of 16:</p></td>
+<td><p><span class="math notranslate nohighlight">\(16^5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(16^4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(16^3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(16^2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(16^1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(16^0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Value:</p></td>
+<td><p><span class="math notranslate nohighlight">\(1048576\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(65536\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(4096\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(256\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(16\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<br>
 <p>For instance, the number <span class="math notranslate nohighlight">\(1A3FA _{16}\)</span> is:</p>
 <p>\begin{equation*}
 1A3FA_{16} = \underbrace{1 \times 16^4}<em>\text{fourth position} + \underbrace{A \times 16^3}</em>\text{third position} + \underbrace{3 \times 16^2}<em>\text{second position} + \underbrace{F \times 16^1}</em>\text{first position} + \underbrace{A \times 16^0}<em>\text{first position} = 107514</em>{10}
@@ -943,10 +959,11 @@ $<span class="math notranslate nohighlight">\(
 <li><p>Each group of four binary digits can be converted to a single hexadecimal digit.</p></li>
 </ol>
 <p><br><br></p>
-<p>For instance, <span class="math notranslate nohighlight">\(11010001111111010_{2}\)</span>:
-$<span class="math notranslate nohighlight">\(
+<p>For instance, <span class="math notranslate nohighlight">\(11010001111111010_{2}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
     {1_{2}\,\,{1010}_{2}\,\,{0011}_{2}\,\,{1111}_{2}\,\,{1010}_{2}} = \underbrace{1_{2}}_{1_{16}} ~~ \underbrace{1010_{2}}_{A_{16}} ~~ \underbrace{0011_{2}}_{3_{16}} ~~ \underbrace{1111_{2}}_{F_{16}} ~~ \underbrace{1010_{2}}_{A_{16}} = 1A3FA_{16}
-\)</span>$</p>
+\]</div>
 </section>
 <section id="conversion-from-hexadecimal-to-binary">
 <h2>Conversion from hexadecimal to binary<a class="headerlink" href="#conversion-from-hexadecimal-to-binary" title="Link to this heading">#</a></h2>
@@ -956,10 +973,11 @@ $<span class="math notranslate nohighlight">\(
 <li><p>Combine the binary digits to form the final binary number.</p></li>
 </ol>
 <p><br><br></p>
-<p>For instance, <span class="math notranslate nohighlight">\(1A3FA_{16}\)</span>:
-$<span class="math notranslate nohighlight">\(
+<p>For instance, <span class="math notranslate nohighlight">\(1A3FA_{16}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
     {{1}_{16}\,\,A_{16}\,\,3_{16}\,\,F_{16}\,\,A_{16}} = \underbrace{1_{16}}_{1_{2}} ~~ \underbrace{A_{16}}_{1010_{2}} ~~ \underbrace{3_{16}}_{0011_{2}} ~~ \underbrace{F_{16}}_{1111_{2}} ~~ \underbrace{A_{16}}_{1010_{2}} = 11010001111111010_{2}
-\)</span>$</p>
+\]</div>
 </section>
 <section id="turning-text-into-bits">
 <h2>Turning text into bits<a class="headerlink" href="#turning-text-into-bits" title="Link to this heading">#</a></h2>
