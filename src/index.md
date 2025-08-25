@@ -2,5 +2,5 @@
 
 <h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
 
-<img src="https://introcp.github.io/dist/img/logo2.png">
+<img src="https://introcp.github.io/dist/img/logo2.png"  width="200px">
 <br><br><br>
