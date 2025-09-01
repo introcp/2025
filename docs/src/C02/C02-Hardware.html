@@ -440,7 +440,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-adder-circuit-implementation">Full Adder: circuit implementation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-adder-summing-two-bytes">Full Adder: summing two bytes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-we-will-implement-a-full-8-bit-computer">Next: we will implement a full 8-bit computer!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-today-s-computers-are-built">How today’s computers are built?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-are-today-s-computers-built">How are today’s computers built?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transistor-size-evolution">Transistor size evolution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moore-s-law">Moore’s Law</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-inside-a-computer">What is inside a computer?</a></li>
@@ -453,7 +453,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disks">Disks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-hierarchy">Memory hierarchy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud">Cloud…?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-program-a-computer">How can program a computer?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-program-a-computer">How can we program a computer?</a></li>
 </ul>
             </nav>
         </div>
@@ -510,7 +510,7 @@ document.write(`
 </section>
 <section id="and-gate-real-world-inefficient-implementation">
 <h2>AND gate: real-world (inefficient) implementation<a class="headerlink" href="#and-gate-real-world-inefficient-implementation" title="Link to this heading">#</a></h2>
-<p>We can buy transistors, resistors, and LED to make our own AND gate with minimal cost: “electronics starter kit” (often sold with Arduino boards) cost less than 15-20€ and allows to build simple circuits.</p>
+<p>We can buy transistors, resistors, and an LED to make our own AND gate with minimal cost: “electronics starter kit” (often sold with Arduino boards) cost less than 15-20€ and allows to build simple circuits.</p>
 <div align="center">
 <img src="img/AND-circuit-components.drawio.png" width="60%">
 </div>
@@ -554,12 +554,12 @@ document.write(`
 <li><p>if their base signal (A or B) is high, the transistor is on and current flows</p></li>
 <li><p>if their base signal (A or B) is low, the transistor is off and no current flows</p></li>
 </ul>
-<p>When at least one transistors is on, the output signal C is high.</p>
-<p><strong>NOTE</strong>: There exist other types of transistors, which can be used to implement an AND gate.</p>
+<p>When at least one transistor is on, the output signal C is high.</p>
+<p><strong>NOTE</strong>: There exist other types of transistors, which can be used to implement an OR gate.</p>
 </section>
 <section id="or-gate-real-world-inefficient-implementation">
 <h2>OR gate: real-world (inefficient) implementation<a class="headerlink" href="#or-gate-real-world-inefficient-implementation" title="Link to this heading">#</a></h2>
-<p>As for the AND gate, we can implement the OR gate with a few cheap transistors, resistors, and LED.</p>
+<p>As for the AND gate, we can implement the OR gate with a few cheap transistors, resistors, and an LED.</p>
 <div align="center">
 <img src="img/OR-circuit-components.drawio.png" width="60%">
 </div>
@@ -580,7 +580,7 @@ document.write(`
 </section>
 <section id="what-can-we-do-with-and-or-not-gates">
 <h2>What can we do with AND, OR, NOT gates?<a class="headerlink" href="#what-can-we-do-with-and-or-not-gates" title="Link to this heading">#</a></h2>
-<p>We can combine AND, OR, and NOT gates to implement a logic circuit that implements arbitrary boolean functions:</p>
+<p>We can combine AND, OR, and NOT gates to build logic circuits that compute arbitrary Boolean functions:</p>
 <ol class="arabic simple">
 <li><p>Build the truth table for your custom computation. For instance:<br><br></p></li>
 </ol>
@@ -671,7 +671,7 @@ document.write(`
 <div align="center">
 <img src="img/XOR-circuit.drawio.png" width="80%">
 </div>
-<p>As seen in the previous lecture, a XOR can be implemented by combining AND, OR, and NOT gates:</p>
+<p>As seen in the previous lecture, an XOR can be implemented by combining AND, OR, and NOT gates:</p>
 <p>XOR(A, B) = OR(AND(A, NOT(B)), AND(NOT(A), B))</p>
 </section>
 <section id="half-adder-boolean-function">
@@ -723,7 +723,7 @@ document.write(`
 <li><p>SUM(A, B) = A XOR B</p></li>
 <li><p>CARRY(A, B) = A AND B</p></li>
 </ul>
-<p><strong>NOTE:</strong> The formula has two outputs because when both A and B are 1, a single output bit would not enough to represent the sum which would be <span class="math notranslate nohighlight">\(1_2 + 1_2 = 10_2\)</span>, hence, the output is split into two bits: the sum and the carry.</p>
+<p><strong>NOTE:</strong> The formula has two outputs because when both A and B are 1, a single output bit would not be enough to represent the sum which would be <span class="math notranslate nohighlight">\(1_2 + 1_2 = 10_2\)</span>, hence, the output is split into two bits: the sum and the carry.</p>
 </section>
 <section id="half-adder-circuit-implementation">
 <h2>Half Adder: circuit implementation<a class="headerlink" href="#half-adder-circuit-implementation" title="Link to this heading">#</a></h2>
@@ -837,7 +837,7 @@ $<span class="math notranslate nohighlight">\(
     B = 101010111_2\\
     A + B = ?
 \end{split}\]</div>
-<p>We split the numbers into bits and sum them pair by pair using different full adders:</p>
+<p>We split the numbers into bits and sum them pair by pair using multiple full adders:</p>
 <div align="center">
 <img src="img/adder-sum-bytes.drawio.png" width="100%">
 </div>
@@ -852,15 +852,15 @@ $<span class="math notranslate nohighlight">\(
 <p>What you need: 7899 transistors, 12786 jump wires, <strong>…just kidding :)</strong></p>
 <p><strong>NOTE</strong>: someone has actually done it: see <a class="reference external" href="https://www.youtube.com/watch?v=g_ZaioqF1B0&amp;amp;ab_channel=PauloConstantino">here</a> and <a class="reference external" href="https://www.youtube.com/watch?v=HyznrdDSSGM&amp;amp;list=PLowKtXNTBypGqImE405J2565dvjafglHU&amp;amp;ab_channel=BenEater">here</a>.</p>
 </section>
-<section id="how-today-s-computers-are-built">
-<h2>How today’s computers are built?<a class="headerlink" href="#how-today-s-computers-are-built" title="Link to this heading">#</a></h2>
+<section id="how-are-today-s-computers-built">
+<h2>How are today’s computers built?<a class="headerlink" href="#how-are-today-s-computers-built" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>They are based on the same ideas presented in our lectures…</p></li>
 <li><p>…manufacturers are implementing millions of boolean operations</p></li>
 <li><p>…to do that they need billions of gates</p></li>
 <li><p>…since gates are mostly implemented using transistors</p></li>
 <li><p>…they need <strong>billions of transistors</strong></p></li>
-<li><p>…which has to be packed in a limited surface to minimize signal propagation</p></li>
+<li><p>…which have to be packed into a limited area to minimize signal propagation</p></li>
 </ul>
 <p>They cannot use standard electronic components. They must reduce their size:</p>
 <div align="center">
@@ -875,11 +875,11 @@ $<span class="math notranslate nohighlight">\(
 <img src="img/transistor-size.png" width="70%" style="margin-bottom: -10px;"/>
 </a>
 </div>
-<p>Only a few companies can produce transistors smaller than 10nm:</p>
+<p>Only a few companies can produce transistors smaller than 10 nm:</p>
 <ul class="simple">
 <li><p>TSMC is leading the market: used by AMD, Apple, Samsung, Huawei, etc.</p></li>
-<li><p>Intel is struggling to scale under 10nm transistors</p></li>
-<li><p>Samsung is also struggling to scale under 10nm transistors</p></li>
+<li><p>Intel is struggling to scale under 10 nm transistors</p></li>
+<li><p>Samsung is also struggling to scale under 10 nm transistors</p></li>
 </ul>
 </section>
 <section id="moore-s-law">
@@ -890,12 +890,12 @@ $<span class="math notranslate nohighlight">\(
 </a>
 </div>
 <p>Gordon Moore (Intel): <em>the number of transistors in an integrated circuit doubles about every two years.</em></p>
-<p>Before 2010, more transistors translated into faster CPU. Software was getting faster without doing nothing… it was enough to buy a new CPU every year!</p>
-<p>After 2010, more transistors translated into more cores or more cache. Unfortunately, the <em><strong>free lunch is over</strong></em>: software is not getting faster without doing nothing… software must be re-engineered to take advantage of more cores or more cache.</p>
+<p>Before 2010, more transistors translated into faster CPU. Software was getting faster without doing anything… it was enough to buy a new CPU every year!</p>
+<p>After 2010, more transistors translated into more cores or more cache. Unfortunately, the <em><strong>free lunch is over</strong></em>: software is not getting faster without doing anything… software must be re-engineered to take advantage of more cores or more cache.</p>
 </section>
 <section id="what-is-inside-a-computer">
 <h2>What is inside a computer?<a class="headerlink" href="#what-is-inside-a-computer" title="Link to this heading">#</a></h2>
-<p>An (still accurate) high level overview of a computer:</p>
+<p>A (still accurate) high-level overview of a computer:</p>
 <br>
 <div align="center">
 <img src="img/computer-architecture-basic.drawio.png" width="70%">
@@ -919,7 +919,7 @@ $<span class="math notranslate nohighlight">\(
 </div></section>
 <section id="modern-system-on-chip-soc">
 <h2>Modern System On Chip (SoC)<a class="headerlink" href="#modern-system-on-chip-soc" title="Link to this heading">#</a></h2>
-<p>Modern SoCs integrate the CPU, GPU, disk, and other components on a single chip:</p>
+<p>Modern SoCs integrate the CPU, GPU, storage controllers, and other components on a single chip:</p>
 <div align="center">
 <img src="img/soc.drawio.png" width="70%"/>
 </div></section>
@@ -932,7 +932,7 @@ $<span class="math notranslate nohighlight">\(
 <li><p>The <strong>Arithmetic Logic Unit (ALU)</strong> performs arithmetic operations (such as addition and subtraction) and
 logical operations (like AND, OR, NOT) on binary data.</p></li>
 <li><p>The <strong>Control Unit</strong> coordinates the operations of the CPU, managing the flow of data and instructions (e.g., determining the next instruction to execute, performing the fetch-decode-execute cycle).</p></li>
-<li><p>The <strong>Registers</strong> are a few (less than 10-20) small (up to 64 bits wide), fast (&lt;0.5 nanosecond) volatile memory locations that store data and instructions for processing. Most CPUs have to first load data from RAM (~100 nanoseconds) into registers before processing it with the ALU.</p></li>
+<li><p>The <strong>Registers</strong> are a few (less than 10-20) small (up to 64 bits wide), fast (&lt;0.5 nanoseconds) volatile memory locations that store data and instructions for processing. Most CPUs have to first load data from RAM (~100 nanoseconds) into registers before processing it with the ALU.</p></li>
 <li><p>The <strong>Cache</strong> is a high-speed (1-16 nanoseconds) but still limited (e.g., 1-16 MB) volatile memory that stores frequently used data to speed up access.</p></li>
 </ul>
 </section>
@@ -940,10 +940,10 @@ logical operations (like AND, OR, NOT) on binary data.</p></li>
 <h2>RAM (<strong>R</strong>andom <strong>A</strong>ccess <strong>M</strong>emory)<a class="headerlink" href="#ram-random-access-memory" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The main (volatile) memory of the computer, where data and instructions are stored for processing before being loaded into the CPU.</p></li>
-<li><p>Implemented with Dynamic Random Access Memory (DRAM) chips, based on capacitors (require regular refreshes to maintain data).</p></li>
-<li><p>The capacity of RAM is nowadays in order of gigabytes (GB) or terabytes (TB).</p></li>
-<li><p>Extremely faster (<span class="math notranslate nohighlight">\(1000-100000\times\)</span>) than secondary storage (e.g., hard drives, SSDs) but significantly slower (<span class="math notranslate nohighlight">\(10-100\times\)</span>) than CPU registers.</p></li>
-<li><p>Like a huge array of consecutive bytes, each identified by its address (e.g., <span class="math notranslate nohighlight">\(0, 1, 2, \ldots, 2^{64}-1\)</span>).</p></li>
+<li><p>Implemented with Dynamic Random Access Memory (DRAM) chips, based on capacitors (which require regular refreshes to maintain data).</p></li>
+<li><p>The capacity of RAM is nowadays on the order of gigabytes (GB) or terabytes (TB).</p></li>
+<li><p>Much faster (<span class="math notranslate nohighlight">\(1000-100000\times\)</span>) than secondary storage (e.g., hard drives, SSDs) but significantly slower (<span class="math notranslate nohighlight">\(10-100\times\)</span>) than CPU registers.</p></li>
+<li><p>It is like a huge array of consecutive bytes, each identified by its address (e.g., <span class="math notranslate nohighlight">\(0, 1, 2, \ldots, 2^{64}-1\)</span>).</p></li>
 </ul>
 </section>
 <section id="disks">
@@ -966,15 +966,15 @@ logical operations (like AND, OR, NOT) on binary data.</p></li>
 <div align="center">
 <img src="img/Memory-hierarchy.png" width="65%"/>
 </div>
-<p>Fast memory is expensive, hence a complex hierarchy is used to compromise between cost and performance: larger data is stored in slower, cheaper memory, that, when needed, is loaded into faster, more expensive memory into smaller amounts.</p>
+<p>Fast memory is expensive; hence a hierarchy is used to balance cost and performance: larger amounts of data are stored in slower, cheaper memory and, when needed, loaded into faster, more expensive memory in smaller amounts.</p>
 </section>
 <section id="cloud">
 <h2>Cloud…?<a class="headerlink" href="#cloud" title="Link to this heading">#</a></h2>
 <div align="center">
 <img src="img/cloud.png" width="45%">
 </img></div></section>
-<section id="how-can-program-a-computer">
-<h2>How can program a computer?<a class="headerlink" href="#how-can-program-a-computer" title="Link to this heading">#</a></h2>
+<section id="how-can-we-program-a-computer">
+<h2>How can we program a computer?<a class="headerlink" href="#how-can-we-program-a-computer" title="Link to this heading">#</a></h2>
 <p>In the next lecture, we will cover the software side of the story.</p>
 </section>
 </section>
@@ -1060,7 +1060,7 @@ logical operations (like AND, OR, NOT) on binary data.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-adder-circuit-implementation">Full Adder: circuit implementation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-adder-summing-two-bytes">Full Adder: summing two bytes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-we-will-implement-a-full-8-bit-computer">Next: we will implement a full 8-bit computer!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-today-s-computers-are-built">How today’s computers are built?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-are-today-s-computers-built">How are today’s computers built?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transistor-size-evolution">Transistor size evolution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moore-s-law">Moore’s Law</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-inside-a-computer">What is inside a computer?</a></li>
@@ -1073,7 +1073,7 @@ logical operations (like AND, OR, NOT) on binary data.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disks">Disks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-hierarchy">Memory hierarchy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud">Cloud…?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-program-a-computer">How can program a computer?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-program-a-computer">How can we program a computer?</a></li>
 </ul>
   </nav></div>
 
