@@ -7495,15 +7495,15 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Computations-manipulate-Data">Computations manipulate Data<a class="anchor-link" href="#Computations-manipulate-Data">¶</a></h2><p>Well, basically:</p>
+<h2 id="Computations-manipulate-data">Computations manipulate data<a class="anchor-link" href="#Computations-manipulate-data">¶</a></h2><p>Well, basically:</p>
 <ul>
-<li><strong>performs</strong> calculations: a billion calculations per second!</li>
-<li><strong>remembers</strong> results: hundreds of GigaBytes of storage!</li>
+<li><strong>perform</strong> calculations: a billion calculations per second!</li>
+<li><strong>remember</strong> results: hundreds of gigabytes of storage!</li>
 </ul>
 <p>What kind of <strong>calculations</strong>?</p>
 <ul>
-<li><em>built-in</em> included in the programming language</li>
-<li>custom and ad-hoc defined by the programmer</li>
+<li><em>built-in</em> operations included in the programming language</li>
+<li>custom, ad hoc, defined by the programmer</li>
 </ul>
 <p>The <strong>essence</strong> of a computation: store, manipulate, and move <strong>data</strong>.</p>
 </div>
@@ -7543,7 +7543,7 @@ main {
 </tr>
 </tbody>
 </table>
-<p>This how your computers see data (pictures, tests, everything!):</p>
+<p>This is how computers see data (pictures, text, everything!):</p>
 <div align="center">
 <img alt="No description has been provided for this image" src="img/bits.png" style="margin-top: -10px" width="25%"/>
 </div>
@@ -7580,7 +7580,7 @@ $$
 	6543_{10} = \underbrace{6 \times 10^3}_\text{fourth position} + \underbrace{5 \times 10^2}_\text{third position} + \underbrace{4 \times 10^1}_\text{second position} + \underbrace{3 \times 10^0}_\text{first position}
 \end{equation*}
 $$</p>
-<p>We consider digits based on their position, from the rightmost one to the leftmost one. We then mulitply each digit by the base (10 in this case) raised to the power of the position (minus one).</p>
+<p>We consider digits based on their position, from the rightmost one to the leftmost one. We then multiply each digit by the base (10 in this case) raised to the power of the position (minus one).</p>
 <p><strong>NOTE</strong>: The subscript 10 indicates that the number is in base 10.</p>
 </div>
 </div>
@@ -7622,7 +7622,7 @@ $$</p>
 </tbody>
 </table>
 <br/>
-<p>More in general, we can write for the decimal positional system:</p>
+<p>More generally, we can write for the decimal positional system:</p>
 <p>$$
 \sum_{i=0}^{n-1} d_i \times 10^i = \text{value}_{10}
 $$</p>
@@ -7656,7 +7656,7 @@ $$</p>
 <li>for convenience, the result ($\text{value}_{10}$) is kept in base 10</li>
 </ul>
 <p>The base $b$ can be any positive integer, but it is common to use powers of 2, 8, 10, and 16.</p>
-<p><strong>Computers works with binary data, so $b=2$.</strong></p>
+<p><strong>Computers work with binary data, so $b=2$.</strong></p>
 </div>
 </div>
 </div>
@@ -7667,17 +7667,17 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Why-computers-prefer-the-binary-representation?">Why computers prefer the binary representation?<a class="anchor-link" href="#Why-computers-prefer-the-binary-representation?">¶</a></h2><p>Computers are devices that work with electric signals with two state levels:</p>
+<h2 id="Why-do-computers-prefer-the-binary-representation?">Why do computers prefer the binary representation?<a class="anchor-link" href="#Why-do-computers-prefer-the-binary-representation?">¶</a></h2><p>Computers are devices that work with electric signals with two state levels:</p>
 <div align="center">
 <img alt="No description has been provided for this image" src="img/2-level-digital-signal.png" style="margin-bottom: -0px; margin-top: -10px" width="50%"/>
 </div>
-<p>Why the signal has only two levels?</p>
-<p>It makes it more resistant to noise and interference since it uses extreme, easy to identify, cases:</p>
+<p>Why does the signal have only two levels?</p>
+<p>It makes it more resistant to noise and interference since it uses extreme, easy-to-identify cases:</p>
 <ul>
 <li>0: switch off, low signal, no current, or minimum voltage</li>
 <li>1: switch on, high signal, maximum current, or maximum voltage</li>
 </ul>
-<p>Electrical devices can use more levels but it makes the signal harder to interpret. For instance:</p>
+<p>Electrical devices can use more levels, but that makes the signal harder to interpret. For instance:</p>
 <ul>
 <li>A light bulb with two states (on or off) makes it easier to identify the state.</li>
 <li>A light bulb with multiple brightness levels needs precise detection: 10% vs 20% brightness? More complex and costly.</li>
@@ -7697,7 +7697,7 @@ $$</p>
 <li>In the context of computer systems, <em>intuitive</em> means <em>easy to implement</em>.</li>
 <li>In the context of humans, <em>intuitive</em> often means <em>easy to understand</em>.</li>
 </ul>
-<p>In pratice:</p>
+<p>In practice:</p>
 <ul>
 <li>The decimal system is intuitive for humans, but not for computers.</li>
 <li>The binary system is intuitive for computers, but not for humans.</li>
@@ -7913,7 +7913,7 @@ $$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-<p>Binary numbers composed only by $n$ digits equal to $1$ are equal to $2^n-1$:</p>
+<p>Binary numbers composed only of $n$ digits equal to $1$ are equal to $2^n-1$:</p>
 <p>$$
 \begin{align*}
     1_{2} &amp;= 1 \times 2^0 &amp; = 1_{10}\\
@@ -7927,7 +7927,7 @@ $$</p>
 \end{align*}
 $$</p>
 <br/>
-<p>Binary numbers composed only by $n$ digits equal to $0$ are equal to $0$. This is trivial!</p>
+<p>Binary numbers composed only of $n$ digits equal to $0$ are equal to $0$. This is trivial!</p>
 </div>
 </div>
 </div>
@@ -7938,7 +7938,7 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Conversion-from-binary-to-decimal">Conversion from binary to decimal<a class="anchor-link" href="#Conversion-from-binary-to-decimal">¶</a></h2><p>Keep divide the number by 2 until the quotient is 0, then take the remainders in reverse order.</p>
+<h2 id="Conversion-from-decimal-to-binary">Conversion from decimal to binary<a class="anchor-link" href="#Conversion-from-decimal-to-binary">¶</a></h2><p>Keep dividing the number by 2 until the quotient is 0, then take the remainders in reverse order.</p>
 <p>For instance, when converting $102_{10}$ to binary:</p>
 <p>$$
 \begin{align*}
@@ -7992,7 +7992,7 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Computers-use-hexadecimal-numbers,-why?">Computers use hexadecimal numbers, why?<a class="anchor-link" href="#Computers-use-hexadecimal-numbers,-why?">¶</a></h2><p>Internally, computers use binary numbers. However, when data must be represented in a human-readable format, there are two common choices:</p>
+<h2 id="Why-do-computers-use-hexadecimal-numbers?">Why do computers use hexadecimal numbers?<a class="anchor-link" href="#Why-do-computers-use-hexadecimal-numbers?">¶</a></h2><p>Internally, computers use binary numbers. However, when data must be represented in a human-readable format, there are two common choices:</p>
 <ul>
 <li>decimal:<ul>
 <li>pro:<ul>
@@ -8020,7 +8020,7 @@ $$</p>
 </ul>
 </li>
 </ul>
-<p>When data must be shown in a raw format, computers show data in hexadecimal.</p>
+<p>When data must be shown in raw format, computers show data in hexadecimal.</p>
 </div>
 </div>
 </div>
@@ -8039,7 +8039,7 @@ $$</p>
 <li>$b=16$ is the base of the powers</li>
 <li>$d_i$ is the digit at position $i$ (from right to left)</li>
 <li>$n$ is the number of digits</li>
-<li>$d_i \in \{0, 1, \ldots, 9, A, B, C, D,E,F\}$</li>
+<li>$d_i \in \{0, 1, \ldots, 9, A, B, C, D, E, F\}$</li>
 <li>$d_i &gt; 9$ are represented with a single digit: $A=10$, $B=11$, $C=12$, $D=13$, $E=14$, $F=15$</li>
 <li>for convenience, the result ($\text{value}_{10}$) is kept in base 10</li>
 </ul>
@@ -8090,7 +8090,7 @@ $$</p>
 <br/>
 <p>For instance, the number $1A3FA _{16}$ is:</p>
 <p>\begin{equation*}
-	1A3FA_{16} = \underbrace{1 \times 16^4}_\text{fourth position} + \underbrace{A \times 16^3}_\text{third position} + \underbrace{3 \times 16^2}_\text{second position} + \underbrace{F \times 16^1}_\text{first position} + \underbrace{A \times 16^0}_\text{first position} = 107514_{10}
+	1A3FA_{16} = \underbrace{1 \times 16^4}_\text{fifth position} + \underbrace{A \times 16^3}_\text{fourth position} + \underbrace{3 \times 16^2}_\text{third position} + \underbrace{F \times 16^1}_\text{second position} + \underbrace{A \times 16^0}_\text{first position} = 107514_{10}
 \end{equation*}</p>
 <ul>
 <li>$1A3FA_{16}$ is a 5-digit number in base 16.</li>
@@ -8152,7 +8152,7 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Turning-text-into-bits">Turning text into bits<a class="anchor-link" href="#Turning-text-into-bits">¶</a></h2><p>One way to represent text into bits is to use the <em><strong>ASCII</strong></em> (American Standard Code for Information Interchange) encoding:</p>
+<h2 id="Turning-text-into-bits">Turning text into bits<a class="anchor-link" href="#Turning-text-into-bits">¶</a></h2><p>One way to represent text as bits is to use the <em><strong>ASCII</strong></em> (American Standard Code for Information Interchange) encoding:</p>
 <div align="center">
 <img alt="No description has been provided for this image" src="img/ascii.png" style="margin-bottom: -15px; margin-top: -5px" width="80%"/>
 </div>
@@ -8174,7 +8174,7 @@ $$</p>
 </li>
 <li><p>Convert the hex values to binary</p>
 </li>
-<li><p>Convert the binary values</p>
+<li><p>Concatenate the binary values</p>
 </li>
 </ol>
 <p>For instance, the text "Hello LUISS":</p>
@@ -8205,10 +8205,10 @@ $$</p>
 </li>
 <li><p>Convert the hex values to characters using the ASCII table</p>
 </li>
-<li><p>Convert the characters to obtain the text</p>
+<li><p>Combine the characters to obtain the text</p>
 </li>
 </ol>
-<p>For instance, on the previous example:</p>
+<p>For instance, in the previous example:</p>
 <ol>
 <li><p>Grouped binary values: $01001000_{2}\,\,01100101_{2}\,\,01101100_{2}\,\,01101100_{2}\,\,01101111_{2}\,\,00100000_{2}\,\,01001100_{2}\,\,01010101_{2}\,\,01001001_{2}\,\,01001111_{2}\,\,01001111_{2}$</p>
 </li>
@@ -8256,19 +8256,19 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Other-data-formats">Other data formats<a class="anchor-link" href="#Other-data-formats">¶</a></h2><p>Depending on the specific data type, there is a <strong>standardized</strong> way of turning sequence of bits into a human-readable format.</p>
+<h2 id="Other-data-formats">Other data formats<a class="anchor-link" href="#Other-data-formats">¶</a></h2><p>Depending on the specific data type, there is a <strong>standardized</strong> way of turning a sequence of bits into a human-readable format.</p>
 <p>For instance, a simple yet inefficient image format:</p>
 <ul>
 <li>split bits into groups of 8</li>
 <li>each group is a number between 0 and 255</li>
 <li>each number is seen as a different pixel</li>
-<li>each pixel value is represented to the screen with a different color</li>
+<li>each pixel value is displayed on the screen with a different color</li>
 <li>there are only 256 colors available</li>
 </ul>
 <p>This is a very inefficient way of representing an image, but it is simple to understand. Image formats, such as JPEG or PNG, are much more efficient and effective:</p>
 <ul>
 <li>they can use more than 256 colors... millions of colors!</li>
-<li>they can use compression to reduce the size of the file: if some <em>close</em> pixels have the same color, they can be represented in a more compact way!</li>
+<li>they can use compression to reduce the size of the file: if some adjacent pixels have the same color, they can be represented in a more compact way!</li>
 </ul>
 </div>
 </div>
@@ -8285,7 +8285,7 @@ $$</p>
 # "P3" means this is a RGB color image in ASCII
 # "3 2" is the width and height of the image in pixels
 # "255" is the maximum value for each color
-# This, up through the "255" line below are the header.
+# This, up through the "255" line below, is the header.
 # Everything after that is the image data: RGB triplets.
 # In order: red, green, blue, yellow, white, and black.
 3 2
@@ -8311,7 +8311,7 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Byte">Byte<a class="anchor-link" href="#Byte">¶</a></h2><p>A <strong>byte</strong> is a unit of information made up of <strong>8 bits</strong>. Most systems and data formats are designed to process data in bytes, which is the most common unit when dealing with sequences of bits. Indeed, in computer science, bytes are often used to measure the amount of data stored or transmitted.</p>
+<h2 id="Byte">Byte<a class="anchor-link" href="#Byte">¶</a></h2><p>A <strong>byte</strong> is a unit of information made up of <strong>8 bits</strong>. Most systems and data formats are designed to process data in bytes, the most common unit when dealing with sequences of bits. Indeed, in computer science, bytes are often used to measure the amount of data stored or transmitted.</p>
 <p>Notice that:</p>
 <ul>
 <li>8 bits can represent 256 different values (from 0 to 255)</li>
@@ -8321,7 +8321,7 @@ $$</p>
 <p>$$
     \underbrace{{10110011}_2}_{8~\text{bits}} = \underbrace{1011_{2}\,0011_2}_{1~\text{byte}} = \underbrace{B_{16}3_{16}}_{2~\text{hex digits}} = 187_{10}
 $$</p>
-<p>For values larger than 255, we still group by 8 bits, ending with more than one byte. When the number of bits are not a multiple of 8, we add leading zeros to make it a multiple of 8.</p>
+<p>For values larger than 255, we still group by 8 bits, ending with more than one byte. When the number of bits is not a multiple of 8, we add leading zeros to make it a multiple of 8.</p>
 <p>For instance:</p>
 <p>$$
      \underbrace{{1110110011}_2}_{10~\text{bits}} = \underbrace{{0000_{2}\,0011_{2}}\,\,{1011_{2}\,0011_2}}_{2~~\text{bytes}} = \underbrace{0_{16}\,3_{16}\,B_{16}\,3_{16}}_{4~\text{hex digits}} = 947_{10}
@@ -8421,7 +8421,7 @@ $$</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Dad's-joke-time">Dad's joke time<a class="anchor-link" href="#Dad's-joke-time">¶</a></h3><div align="center">
 <img alt="No description has been provided for this image" src="img/joke.png" width="80%"/>
-<p style="text-align: center;">If you do not get the joke: <code>10</code> is binary is 2 :)</p>
+<p style="text-align: center;">If you do not get the joke: <code>10</code> in binary is 2 :)</p>
 </div>
 </div>
 </div>
