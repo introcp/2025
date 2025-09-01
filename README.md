@@ -62,6 +62,9 @@ Generated notebooks are placed in `src/EXX` to be included in the final website,
 You can generate and preview HTML/PDF slides for a single notebook using the `scripts/generate-slides-from-notebook` script. This script uses Docker to ensure a consistent environment.
 
 ```bash
+# Fetch the container image
+docker pull ercoppa/introcp
+
 # Make the script executable
 chmod +x scripts/generate-slides-from-notebook
 
