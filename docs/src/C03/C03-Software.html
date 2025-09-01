@@ -441,9 +441,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-run-complex-software-stacks">Computers run complex software stacks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems">Operating Systems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-goals-of-modern-operating-systems">Design goals of modern Operating Systems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-operating-system">Overview Operating System</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-operating-system-cont-d">Overview Operating System (cont’d)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Overview Operating System (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-system-overview">Operating System Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-system-overview-cont-d">Operating System Overview (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Operating System Overview (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-cores-and-operating-system-multitasking">CPU Cores and Operating System Multitasking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-operating-systems">Popular Operating Systems</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
@@ -472,13 +472,13 @@ document.write(`
 <div align="center">
 <img src="img/cpus.drawio.png" width="80%">
 </div>
-<p>The <strong>CPU</strong> is the responsible for executing the program code:</p>
+<p>The <strong>CPU</strong> is responsible for executing the program code:</p>
 <ul class="simple">
 <li><p>It interprets the instructions one by one from the <strong>RAM</strong></p></li>
 <li><p>The instructions must be written in <strong>machine code</strong></p></li>
 <li><p>The machine code is:</p>
 <ul>
-<li><p><strong>Low level</strong>: relatevely simple operations</p></li>
+<li><p><strong>Low level</strong>: relatively simple operations</p></li>
 <li><p><strong>CPU specific</strong>: different CPUs have different machine codes</p></li>
 <li><p><strong>Binary format</strong>: humans struggle to read it</p></li>
 </ul>
@@ -490,7 +490,7 @@ document.write(`
 <p>A simple sequence of instructions to compute the sum of two integer numbers would look like this in machine code:</p>
 <table>
   <tr>
-    <td>Intel/AMD 64 bit machine code</td>
+    <td>Intel/AMD 64-bit machine code</td>
     <td></td><td></td>
     <td>ARM 64-bit machine code</td>
   </tr>
@@ -519,22 +519,22 @@ c0 03 5f d6
 </table>
 <ul class="simple">
 <li><p>Each instruction is shown on a separate line for clarity, but stored contiguously in memory</p></li>
-<li><p>Machine code is binary, shown here in hexadecimal for readability</p></li>
+<li><p>Machine code is binary (shown here in hexadecimal for readability)</p></li>
 <li><p>Intel/AMD processors share the same machine code format</p></li>
 <li><p>Other processors like ARM use entirely different machine code formats</p></li>
 </ul>
 </section>
 <section id="from-machine-code-to-assembly-code">
 <h2>From machine code to assembly code<a class="headerlink" href="#from-machine-code-to-assembly-code" title="Link to this heading">#</a></h2>
-<p>To make machine code understandble for human, we can translate it to assembly code:</p>
+<p>To make machine code understandable for humans, we can translate it to assembly code:</p>
 <ul class="simple">
-<li><p><strong>Low level</strong> [same as machine code]: relatevely simple operations</p></li>
+<li><p><strong>Low level</strong> [same as machine code]: relatively simple operations</p></li>
 <li><p><strong>CPU specific</strong> [same as machine code]: different CPUs have different machine codes</p></li>
 <li><p><strong>Human readable</strong> [differently from machine code]: CPU struggles to read it!<br><br></p></li>
 </ul>
 <table>
   <tr>
-    <td>Intel/AMD 64 bit assembly</td>
+    <td>Intel/AMD 64-bit assembly</td>
     <td></td><td></td>
     <td>ARM 64-bit assembly</td>
   </tr>
@@ -583,27 +583,27 @@ ret
 </section>
 <section id="from-low-level-to-high-level-programming">
 <h2>From low-level to high-level programming<a class="headerlink" href="#from-low-level-to-high-level-programming" title="Link to this heading">#</a></h2>
-<p>Most programmers use high-level languages, such as Python, Javascript, or PHP, to write software.</p>
+<p>Most programmers use high-level languages, such as Python, JavaScript, or PHP, to write software.</p>
 <p><em><strong>However, the CPU does not understand high-level languages. Never!</strong></em></p>
 <p>Code written in high-level languages must be translated into machine code. Two main strategies:</p>
 <ol class="arabic simple">
 <li><p><strong>Compilation</strong>:</p>
 <ul class="simple">
 <li><p>Compilers translate high-level code into machine code at <em>compile time</em></p></li>
-<li><p>Compile time means when the developer writes the code.</p></li>
+<li><p>Compile time is when the developer compiles the code (before it is run).</p></li>
 <li><p>Machine code is packaged into an executable.</p></li>
 <li><p>One executable for each platform (Operating Systems and CPUs).</p></li>
-<li><p>Developers keeps the high-level code, while users get the low-level code.</p></li>
+<li><p>Developers keep the high-level code, while users get the low-level code.</p></li>
 </ul>
 </li>
 </ol>
 <ol class="arabic simple" start="2">
 <li><p><strong>Interpretation</strong>:</p>
 <ul class="simple">
-<li><p>Interpreters translate high-level code into machine code at <em>running time</em>.</p></li>
+<li><p>Interpreters translate high-level code into machine code at <em>runtime</em>.</p></li>
 <li><p>Running time means when the user runs the code.</p></li>
-<li><p>The code is portable and platform independent.</p></li>
-<li><p>Developers distribute the high-level code, users exploits the interpreter to run the code.</p></li>
+<li><p>The code is portable and platform-independent.</p></li>
+<li><p>Developers distribute the high-level code, users use the interpreter to run the code.</p></li>
 </ul>
 </li>
 </ol>
@@ -621,7 +621,7 @@ ret
 </div></section>
 <section id="why-do-we-need-to-learn-a-programming-language">
 <h2>Why do we need to learn a programming language?<a class="headerlink" href="#why-do-we-need-to-learn-a-programming-language" title="Link to this heading">#</a></h2>
-<p>Most everyday tasks require to perform:</p>
+<p>Most everyday tasks require performing:</p>
 <ul class="simple">
 <li><p>repetitive…</p></li>
 <li><p>long sequences of…</p></li>
@@ -636,15 +636,15 @@ ret
 <h2>Language: syntax and semantics<a class="headerlink" href="#language-syntax-and-semantics" title="Link to this heading">#</a></h2>
 <p>Programming languages have:</p>
 <ul class="simple">
-<li><p><strong>Syntax</strong>: it defines which strings of characters and symbols are well formed.</p></li>
-<li><p><strong>Semantics</strong>: it defines the meaning of the well formed strings.<br><br></p></li>
+<li><p><strong>Syntax</strong>: it defines which strings of characters and symbols are well-formed.</p></li>
+<li><p><strong>Semantics</strong>: it defines the meaning of the well-formed strings.<br><br></p></li>
 </ul>
 <p>The same is true even for natural languages (English, Italian, etc.):</p>
 <ul class="simple">
 <li><p><strong>Syntax</strong>:</p>
 <ul>
 <li><p><em>“I are big”</em> is syntactically incorrect (<em>“I am big”</em> is correct).</p></li>
-<li><p><em>“The square circle is big”</em> is a well formed sentence.</p></li>
+<li><p><em>“The square circle is big”</em> is a well-formed sentence.</p></li>
 </ul>
 </li>
 <li><p><strong>Semantics</strong>:</p>
@@ -741,14 +741,14 @@ b. Repeat from step #2</p></li>
 <div align="center">
 <img src="img/pl.png" width="55%" style="margin: -10px;">
 </div>
-<p>There exists thousands of high-level languages:</p>
+<p>There are thousands of high-level languages:</p>
 <ul class="simple">
 <li><p>They have been designed with different goals in mind</p></li>
 <li><p>Some are general purpose, some are domain specific (e.g., web)</p></li>
-<li><p>Some gives more control to the user, some hide more details</p></li>
+<li><p>Some give more control to the user, some hide more details</p></li>
 <li><p>Some are compiled, some are interpreted</p></li>
 </ul>
-<p>In this course, we will focus on a single high-level language: <em><strong>but which we should choose?</strong></em></p>
+<p>In this course, we will focus on a single high-level language: <em><strong>but which should we choose?</strong></em></p>
 </section>
 <section id="popular-programming-languages">
 <h2>Popular programming languages<a class="headerlink" href="#popular-programming-languages" title="Link to this heading">#</a></h2>
@@ -822,8 +822,8 @@ b. Repeat from step #2</p></li>
 <li><p><strong>Low latency</strong>: Minimizing response time for system operations (critical in real-time environments like automotive safety systems)</p></li>
 </ul>
 </section>
-<section id="overview-operating-system">
-<h2>Overview Operating System<a class="headerlink" href="#overview-operating-system" title="Link to this heading">#</a></h2>
+<section id="operating-system-overview">
+<h2>Operating System Overview<a class="headerlink" href="#operating-system-overview" title="Link to this heading">#</a></h2>
 <div align="center">
 <a class="reference internal image-reference" href="../../_images/schema.png"><img alt="../../_images/schema.png" src="../../_images/schema.png" style="width: 50%;" />
 </a>
@@ -834,8 +834,8 @@ b. Repeat from step #2</p></li>
 <li><p>The platform (operating system on a specific architecture, e.g., Windows x86) defines the <strong>Application Binary Interface (ABI)</strong>, which defines conventions (rules) on how different programs can interact, reuse code, and interface with the operating system.</p></li>
 </ul>
 </section>
-<section id="overview-operating-system-cont-d">
-<h2>Overview Operating System (cont’d)<a class="headerlink" href="#overview-operating-system-cont-d" title="Link to this heading">#</a></h2>
+<section id="operating-system-overview-cont-d">
+<h2>Operating System Overview (cont’d)<a class="headerlink" href="#operating-system-overview-cont-d" title="Link to this heading">#</a></h2>
 <div align="center">
 <a class="reference internal image-reference" href="../../_images/schema.png"><img alt="../../_images/schema.png" src="../../_images/schema.png" style="width: 50%;" />
 </a>
@@ -854,22 +854,22 @@ b. Repeat from step #2</p></li>
 </ul>
 </section>
 <section id="id1">
-<h2>Overview Operating System (cont’d)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>Operating System Overview (cont’d)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div align="center">
 <a class="reference internal image-reference" href="../../_images/schema.png"><img alt="../../_images/schema.png" src="../../_images/schema.png" style="width: 50%;" />
 </a>
 </div>
 <p>In <strong>user execution mode</strong>:</p>
 <ul class="simple">
-<li><p>Code can run only a limited (safe) subset of ISA</p></li>
-<li><p>Privileged instructions must be delegated to the OS following ABI</p></li>
+<li><p>Code can run only a limited (safe) subset of the ISA</p></li>
+<li><p>Privileged instructions must be delegated to the OS following the ABI</p></li>
 <li><p>Processes can be related to:</p>
 <ul>
 <li><p>built-in applications provided by the OS: e.g., file manager</p></li>
 <li><p>applications installed by the users: e.g., Chrome (web browser by Google)</p></li>
 </ul>
 </li>
-<li><p>Applications use system libraries (subprograms for standard tasks, e.g., reading a file, make a network communication) to avoid reinventing the wheel when not needed.</p></li>
+<li><p>Applications use system libraries (subprograms for standard tasks, e.g., reading a file, make a network connection) to avoid reinventing the wheel when not necessary.</p></li>
 </ul>
 </section>
 <section id="cpu-cores-and-operating-system-multitasking">
@@ -890,7 +890,7 @@ b. Repeat from step #2</p></li>
 <p><strong>NOTE</strong>: If you have:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(1\)</span> core without preemptive multitasking: up to <span class="math notranslate nohighlight">\(1\)</span> applications executing in parallel</p></li>
-<li><p><span class="math notranslate nohighlight">\(1\)</span> core with preemptive multitasking: illusion of parallel execution of an infinite number of apps</p></li>
+<li><p><span class="math notranslate nohighlight">\(1\)</span> core with preemptive multitasking: illusion of parallel execution of an infinite number of applications</p></li>
 <li><p><span class="math notranslate nohighlight">\(k\)</span> cores without preemptive multitasking: up to <span class="math notranslate nohighlight">\(k\)</span> applications executing in parallel</p></li>
 <li><p><span class="math notranslate nohighlight">\(k\)</span> cores with preemptive multitasking: illusion of parallel execution of an infinite number of applications, with up to <span class="math notranslate nohighlight">\(k\)</span> actually executing in parallel at any given time</p></li>
 </ul>
@@ -1050,9 +1050,9 @@ b. Repeat from step #2</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-run-complex-software-stacks">Computers run complex software stacks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems">Operating Systems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-goals-of-modern-operating-systems">Design goals of modern Operating Systems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-operating-system">Overview Operating System</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-operating-system-cont-d">Overview Operating System (cont’d)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Overview Operating System (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-system-overview">Operating System Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-system-overview-cont-d">Operating System Overview (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Operating System Overview (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-cores-and-operating-system-multitasking">CPU Cores and Operating System Multitasking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-operating-systems">Popular Operating Systems</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
