@@ -11,33 +11,23 @@ parts:
     chapters:
       - file: src/C00/C00-Bits-and-Bytes.ipynb
       - file: src/C01/C01-Boolean-Logic.ipynb
-      - file: src/C02/C02-Hardware.ipynb
-      - file: src/C03/C03-Software.ipynb
-      - file: src/C04/C04-OS-Essentials.ipynb
-  - caption: Python
-    chapters:
-      - file: src/P00/P00-Python-Getting-Started.ipynb
-      - file: src/P01/P01-Python-Expressions-and-Types.ipynb
-      - file: src/P02/P02-Python-Types-Strings.ipynb
-      - file: src/E01/E01-Python-Errors.ipynb
-      - file: src/P03/P03-Python-Branching.ipynb
-      - file: src/P04/P04-Python-Functions.ipynb
-      - file: src/P05/P05-Python-Iteration.ipynb
-      - file: src/P06/P06-Python-Strings.ipynb
-      - file: src/P07/P07-Python-Lists.ipynb
-      - file: src/P08/P08-Python-Dictionaries-Tuples-Sets.ipynb
-      - file: src/P09/P09-Python-Classes.ipynb
-      - file: src/P10/P10-Python-Recursion.ipynb
-      - file: src/P11/P11-Python-Files.ipynb
-
-  # - caption: Exercises
+  #     - file: src/C02/C02-Hardware.ipynb
+  #     - file: src/C03/C03-Software.ipynb
+  #     - file: src/C04/C04-OS-Essentials.ipynb
+  # - caption: Python
   #   chapters:
-  #     - file: src/E03/E03-Python-Exercises-Branching.ipynb
-  #       title: Branching
-  #     - file: src/E04/E04-Python-Exercises-Functions.ipynb
-  #       title: Functions
-  #     - file: src/E05/E05-Python-Exercises-Iteration.ipynb
-  #       title: Iteration
-  #     - file: src/E06/E06-Python-Exercises-Strings-Lists.ipynb
-  #       title: Strings and Lists
+  #     - file: src/P00/P00-Python-Getting-Started.ipynb
+  #     - file: src/P01/P01-Python-Expressions-and-Types.ipynb
+  #     - file: src/P02/P02-Python-Types-Strings.ipynb
+  #     - file: src/E01/E01-Python-Errors.ipynb
+  #     - file: src/P03/P03-Python-Branching.ipynb
+  #     - file: src/P04/P04-Python-Functions.ipynb
+  #     - file: src/P05/P05-Python-Iteration.ipynb
+  #     - file: src/P06/P06-Python-Strings.ipynb
+  #     - file: src/P07/P07-Python-Lists.ipynb
+  #     - file: src/P08/P08-Python-Dictionaries-Tuples-Sets.ipynb
+  #     - file: src/P09/P09-Python-Classes.ipynb
+  #     - file: src/P10/P10-Python-Recursion.ipynb
+  #     - file: src/P11/P11-Python-Files.ipynb
+
 

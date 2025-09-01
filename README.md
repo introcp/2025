@@ -2,6 +2,8 @@
 
 This repository contains all the source material for the "Introduction to Computer Programming" course, available online at [https://introcp.github.io/](https://introcp.github.io/).
 
+A (full) ToC of the course is available at [https://introcp.github.io/toc](https://introcp.github.io/toc).
+
 ## 1. Repository Structure
 
 The repository is organized into four main directories:
