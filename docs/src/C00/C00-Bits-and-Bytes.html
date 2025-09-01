@@ -424,17 +424,17 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-computing-system">What is a Computing System?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computations-manipulate-data">Computations manipulate Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computations-manipulate-data">Computations manipulate data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-in-computing-means-bits">Data in computing means <em><strong>bits</strong></em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-notation">Positional Notation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-computers-prefer-the-binary-representation">Why computers prefer the binary representation?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-computers-prefer-the-binary-representation">Why do computers prefer the binary representation?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humans-and-computers-are-quite-different">Humans and Computers are quite different</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-representation">Binary representation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-binary-to-decimal">Conversion from binary to decimal</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-n-binary-numbers-n-16">First <span class="math notranslate nohighlight">\(n\)</span> binary numbers (<span class="math notranslate nohighlight">\(n=16\)</span>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interesting-properties-of-binary-numbers">Interesting properties of binary numbers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Conversion from binary to decimal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-use-hexadecimal-numbers-why">Computers use hexadecimal numbers, why?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-decimal-to-binary">Conversion from decimal to binary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-computers-use-hexadecimal-numbers">Why do computers use hexadecimal numbers?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hexadecimal-numbers">Hexadecimal numbers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-binary-to-hexadecimal">Conversion from binary to hexadecimal</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-hexadecimal-to-binary">Conversion from hexadecimal to binary</a></li>
@@ -486,16 +486,16 @@ document.write(`
 <p>Common examples are your desktop PCs, laptops, smartphones, smartwatches, data centers, supercomputers, smart TVs, smart fridges, and so on!</p>
 </section>
 <section id="computations-manipulate-data">
-<h2>Computations manipulate Data<a class="headerlink" href="#computations-manipulate-data" title="Link to this heading">#</a></h2>
+<h2>Computations manipulate data<a class="headerlink" href="#computations-manipulate-data" title="Link to this heading">#</a></h2>
 <p>Well, basically:</p>
 <ul class="simple">
-<li><p><strong>performs</strong> calculations: a billion calculations per second!</p></li>
-<li><p><strong>remembers</strong> results: hundreds of GigaBytes of storage!</p></li>
+<li><p><strong>perform</strong> calculations: a billion calculations per second!</p></li>
+<li><p><strong>remember</strong> results: hundreds of gigabytes of storage!</p></li>
 </ul>
 <p>What kind of <strong>calculations</strong>?</p>
 <ul class="simple">
-<li><p><em>built-in</em> included in the programming language</p></li>
-<li><p>custom and ad-hoc defined by the programmer</p></li>
+<li><p><em>built-in</em> operations included in the programming language</p></li>
+<li><p>custom, ad hoc, defined by the programmer</p></li>
 </ul>
 <p>The <strong>essence</strong> of a computation: store, manipulate, and move <strong>data</strong>.</p>
 </section>
@@ -525,7 +525,7 @@ document.write(`
 </tbody>
 </table>
 </div>
-<p>This how your computers see data (pictures, tests, everything!):</p>
+<p>This is how computers see data (pictures, text, everything!):</p>
 <div align="center">
 <img src="img/bits.png" width="25%" style="margin-top: -10px">
 </div>
@@ -559,7 +559,7 @@ document.write(`
 	6543_{10} = \underbrace{6 \times 10^3}_\text{fourth position} + \underbrace{5 \times 10^2}_\text{third position} + \underbrace{4 \times 10^1}_\text{second position} + \underbrace{3 \times 10^0}_\text{first position}
 \end{equation*}
 \]</div>
-<p>We consider digits based on their position, from the rightmost one to the leftmost one. We then mulitply each digit by the base (10 in this case) raised to the power of the position (minus one).</p>
+<p>We consider digits based on their position, from the rightmost one to the leftmost one. We then multiply each digit by the base (10 in this case) raised to the power of the position (minus one).</p>
 <p><strong>NOTE</strong>: The subscript 10 indicates that the number is in base 10.</p>
 <br>
 <p>In other words, we assign a different weight to each digit based on its position:</p>
@@ -589,7 +589,7 @@ document.write(`
 </table>
 </div>
 <br>
-<p>More in general, we can write for the decimal positional system:</p>
+<p>More generally, we can write for the decimal positional system:</p>
 <div class="math notranslate nohighlight">
 \[
 \sum_{i=0}^{n-1} d_i \times 10^i = \text{value}_{10}
@@ -614,21 +614,21 @@ $<span class="math notranslate nohighlight">\(
 <li><p>for convenience, the result (<span class="math notranslate nohighlight">\(\text{value}_{10}\)</span>) is kept in base 10</p></li>
 </ul>
 <p>The base <span class="math notranslate nohighlight">\(b\)</span> can be any positive integer, but it is common to use powers of 2, 8, 10, and 16.</p>
-<p><strong>Computers works with binary data, so <span class="math notranslate nohighlight">\(b=2\)</span>.</strong></p>
+<p><strong>Computers work with binary data, so <span class="math notranslate nohighlight">\(b=2\)</span>.</strong></p>
 </section>
-<section id="why-computers-prefer-the-binary-representation">
-<h2>Why computers prefer the binary representation?<a class="headerlink" href="#why-computers-prefer-the-binary-representation" title="Link to this heading">#</a></h2>
+<section id="why-do-computers-prefer-the-binary-representation">
+<h2>Why do computers prefer the binary representation?<a class="headerlink" href="#why-do-computers-prefer-the-binary-representation" title="Link to this heading">#</a></h2>
 <p>Computers are devices that work with electric signals with two state levels:</p>
 <div align="center">
 <img src="img/2-level-digital-signal.png" width="50%" style="margin-bottom: -0px; margin-top: -10px">
 </div>
-<p>Why the signal has only two levels?</p>
-<p>It makes it more resistant to noise and interference since it uses extreme, easy to identify, cases:</p>
+<p>Why does the signal have only two levels?</p>
+<p>It makes it more resistant to noise and interference since it uses extreme, easy-to-identify cases:</p>
 <ul class="simple">
 <li><p>0: switch off, low signal, no current, or minimum voltage</p></li>
 <li><p>1: switch on, high signal, maximum current, or maximum voltage</p></li>
 </ul>
-<p>Electrical devices can use more levels but it makes the signal harder to interpret. For instance:</p>
+<p>Electrical devices can use more levels, but that makes the signal harder to interpret. For instance:</p>
 <ul class="simple">
 <li><p>A light bulb with two states (on or off) makes it easier to identify the state.</p></li>
 <li><p>A light bulb with multiple brightness levels needs precise detection: 10% vs 20% brightness? More complex and costly.</p></li>
@@ -641,7 +641,7 @@ $<span class="math notranslate nohighlight">\(
 <li><p>In the context of computer systems, <em>intuitive</em> means <em>easy to implement</em>.</p></li>
 <li><p>In the context of humans, <em>intuitive</em> often means <em>easy to understand</em>.</p></li>
 </ul>
-<p>In pratice:</p>
+<p>In practice:</p>
 <ul class="simple">
 <li><p>The decimal system is intuitive for humans, but not for computers.</p></li>
 <li><p>The binary system is intuitive for computers, but not for humans.</p></li>
@@ -818,7 +818,7 @@ $<span class="math notranslate nohighlight">\(
 \end{align*}
 \end{split}\]</div>
 <br>
-<p>Binary numbers composed only by <span class="math notranslate nohighlight">\(n\)</span> digits equal to <span class="math notranslate nohighlight">\(1\)</span> are equal to <span class="math notranslate nohighlight">\(2^n-1\)</span>:</p>
+<p>Binary numbers composed only of <span class="math notranslate nohighlight">\(n\)</span> digits equal to <span class="math notranslate nohighlight">\(1\)</span> are equal to <span class="math notranslate nohighlight">\(2^n-1\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*}
@@ -833,11 +833,11 @@ $<span class="math notranslate nohighlight">\(
 \end{align*}
 \end{split}\]</div>
 <br>
-<p>Binary numbers composed only by <span class="math notranslate nohighlight">\(n\)</span> digits equal to <span class="math notranslate nohighlight">\(0\)</span> are equal to <span class="math notranslate nohighlight">\(0\)</span>. This is trivial!</p>
+<p>Binary numbers composed only of <span class="math notranslate nohighlight">\(n\)</span> digits equal to <span class="math notranslate nohighlight">\(0\)</span> are equal to <span class="math notranslate nohighlight">\(0\)</span>. This is trivial!</p>
 </section>
-<section id="id1">
-<h2>Conversion from binary to decimal<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>Keep divide the number by 2 until the quotient is 0, then take the remainders in reverse order.</p>
+<section id="conversion-from-decimal-to-binary">
+<h2>Conversion from decimal to binary<a class="headerlink" href="#conversion-from-decimal-to-binary" title="Link to this heading">#</a></h2>
+<p>Keep dividing the number by 2 until the quotient is 0, then take the remainders in reverse order.</p>
 <p>For instance, when converting <span class="math notranslate nohighlight">\(102_{10}\)</span> to binary:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -874,8 +874,8 @@ $<span class="math notranslate nohighlight">\(
 \end{split}\]</div>
 <p>The result is <span class="math notranslate nohighlight">\(10000100000_2\)</span></p>
 </section>
-<section id="computers-use-hexadecimal-numbers-why">
-<h2>Computers use hexadecimal numbers, why?<a class="headerlink" href="#computers-use-hexadecimal-numbers-why" title="Link to this heading">#</a></h2>
+<section id="why-do-computers-use-hexadecimal-numbers">
+<h2>Why do computers use hexadecimal numbers?<a class="headerlink" href="#why-do-computers-use-hexadecimal-numbers" title="Link to this heading">#</a></h2>
 <p>Internally, computers use binary numbers. However, when data must be represented in a human-readable format, there are two common choices:</p>
 <ul class="simple">
 <li><p>decimal:</p>
@@ -910,7 +910,7 @@ $<span class="math notranslate nohighlight">\(
 </ul>
 </li>
 </ul>
-<p>When data must be shown in a raw format, computers show data in hexadecimal.</p>
+<p>When data must be shown in raw format, computers show data in hexadecimal.</p>
 </section>
 <section id="hexadecimal-numbers">
 <h2>Hexadecimal numbers<a class="headerlink" href="#hexadecimal-numbers" title="Link to this heading">#</a></h2>
@@ -923,7 +923,7 @@ $<span class="math notranslate nohighlight">\(
 <li><p><span class="math notranslate nohighlight">\(b=16\)</span> is the base of the powers</p></li>
 <li><p><span class="math notranslate nohighlight">\(d_i\)</span> is the digit at position <span class="math notranslate nohighlight">\(i\)</span> (from right to left)</p></li>
 <li><p><span class="math notranslate nohighlight">\(n\)</span> is the number of digits</p></li>
-<li><p><span class="math notranslate nohighlight">\(d_i \in \{0, 1, \ldots, 9, A, B, C, D,E,F\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(d_i \in \{0, 1, \ldots, 9, A, B, C, D, E, F\}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(d_i &gt; 9\)</span> are represented with a single digit: <span class="math notranslate nohighlight">\(A=10\)</span>, <span class="math notranslate nohighlight">\(B=11\)</span>, <span class="math notranslate nohighlight">\(C=12\)</span>, <span class="math notranslate nohighlight">\(D=13\)</span>, <span class="math notranslate nohighlight">\(E=14\)</span>, <span class="math notranslate nohighlight">\(F=15\)</span></p></li>
 <li><p>for convenience, the result (<span class="math notranslate nohighlight">\(\text{value}_{10}\)</span>) is kept in base 10</p></li>
 </ul>
@@ -962,7 +962,7 @@ $<span class="math notranslate nohighlight">\(
 <br>
 <p>For instance, the number <span class="math notranslate nohighlight">\(1A3FA _{16}\)</span> is:</p>
 <p>\begin{equation*}
-1A3FA_{16} = \underbrace{1 \times 16^4}<em>\text{fourth position} + \underbrace{A \times 16^3}</em>\text{third position} + \underbrace{3 \times 16^2}<em>\text{second position} + \underbrace{F \times 16^1}</em>\text{first position} + \underbrace{A \times 16^0}<em>\text{first position} = 107514</em>{10}
+1A3FA_{16} = \underbrace{1 \times 16^4}<em>\text{fifth position} + \underbrace{A \times 16^3}</em>\text{fourth position} + \underbrace{3 \times 16^2}<em>\text{third position} + \underbrace{F \times 16^1}</em>\text{second position} + \underbrace{A \times 16^0}<em>\text{first position} = 107514</em>{10}
 \end{equation*}</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(1A3FA_{16}\)</span> is a 5-digit number in base 16.</p></li>
@@ -1001,7 +1001,7 @@ $<span class="math notranslate nohighlight">\(
 </section>
 <section id="turning-text-into-bits">
 <h2>Turning text into bits<a class="headerlink" href="#turning-text-into-bits" title="Link to this heading">#</a></h2>
-<p>One way to represent text into bits is to use the <em><strong>ASCII</strong></em> (American Standard Code for Information Interchange) encoding:</p>
+<p>One way to represent text as bits is to use the <em><strong>ASCII</strong></em> (American Standard Code for Information Interchange) encoding:</p>
 <div align="center">
 <a class="reference internal image-reference" href="../../_images/ascii.png"><img alt="../../_images/ascii.png" src="../../_images/ascii.png" style="width: 80%;" />
 </a>
@@ -1010,7 +1010,7 @@ $<span class="math notranslate nohighlight">\(
 <li><p>Split the text into characters</p></li>
 <li><p>Take each character of your text and consider the hex value of that character from the ASCII table</p></li>
 <li><p>Convert the hex values to binary</p></li>
-<li><p>Convert the binary values</p></li>
+<li><p>Concatenate the binary values</p></li>
 </ol>
 <p>For instance, the text “Hello LUISS”:</p>
 <ol class="arabic simple">
@@ -1026,9 +1026,9 @@ $<span class="math notranslate nohighlight">\(
 <li><p>Split the binary bits into groups of 8</p></li>
 <li><p>Convert the binary values to hex</p></li>
 <li><p>Convert the hex values to characters using the ASCII table</p></li>
-<li><p>Convert the characters to obtain the text</p></li>
+<li><p>Combine the characters to obtain the text</p></li>
 </ol>
-<p>For instance, on the previous example:</p>
+<p>For instance, in the previous example:</p>
 <ol class="arabic simple">
 <li><p>Grouped binary values: <span class="math notranslate nohighlight">\(01001000_{2}\,\,01100101_{2}\,\,01101100_{2}\,\,01101100_{2}\,\,01101111_{2}\,\,00100000_{2}\,\,01001100_{2}\,\,01010101_{2}\,\,01001001_{2}\,\,01001111_{2}\,\,01001111_{2}\)</span></p></li>
 <li><p>Hex values: <span class="math notranslate nohighlight">\(48_{16}\)</span>, <span class="math notranslate nohighlight">\(65_{16}\)</span>, <span class="math notranslate nohighlight">\(6C_{16}\)</span>, <span class="math notranslate nohighlight">\(6C_{16}\)</span>, <span class="math notranslate nohighlight">\(6F_{16}\)</span>, <span class="math notranslate nohighlight">\(20_{16}\)</span>, <span class="math notranslate nohighlight">\(4C_{16}\)</span>, <span class="math notranslate nohighlight">\(55_{16}\)</span>, <span class="math notranslate nohighlight">\(49_{16}\)</span>, <span class="math notranslate nohighlight">\(53_{16}\)</span>, <span class="math notranslate nohighlight">\(53_{16}\)</span></p></li>
@@ -1051,19 +1051,19 @@ $<span class="math notranslate nohighlight">\(
 </section>
 <section id="other-data-formats">
 <h2>Other data formats<a class="headerlink" href="#other-data-formats" title="Link to this heading">#</a></h2>
-<p>Depending on the specific data type, there is a <strong>standardized</strong> way of turning sequence of bits into a human-readable format.</p>
+<p>Depending on the specific data type, there is a <strong>standardized</strong> way of turning a sequence of bits into a human-readable format.</p>
 <p>For instance, a simple yet inefficient image format:</p>
 <ul class="simple">
 <li><p>split bits into groups of 8</p></li>
 <li><p>each group is a number between 0 and 255</p></li>
 <li><p>each number is seen as a different pixel</p></li>
-<li><p>each pixel value is represented to the screen with a different color</p></li>
+<li><p>each pixel value is displayed on the screen with a different color</p></li>
 <li><p>there are only 256 colors available</p></li>
 </ul>
 <p>This is a very inefficient way of representing an image, but it is simple to understand. Image formats, such as JPEG or PNG, are much more efficient and effective:</p>
 <ul class="simple">
 <li><p>they can use more than 256 colors… millions of colors!</p></li>
-<li><p>they can use compression to reduce the size of the file: if some <em>close</em> pixels have the same color, they can be represented in a more compact way!</p></li>
+<li><p>they can use compression to reduce the size of the file: if some adjacent pixels have the same color, they can be represented in a more compact way!</p></li>
 </ul>
 </section>
 <section id="ppm-image-format">
@@ -1073,7 +1073,7 @@ $<span class="math notranslate nohighlight">\(
 <span class="c1"># &quot;P3&quot; means this is a RGB color image in ASCII</span>
 <span class="c1"># &quot;3 2&quot; is the width and height of the image in pixels</span>
 <span class="c1"># &quot;255&quot; is the maximum value for each color</span>
-<span class="c1"># This, up through the &quot;255&quot; line below are the header.</span>
+<span class="c1"># This, up through the &quot;255&quot; line below, is the header.</span>
 <span class="c1"># Everything after that is the image data: RGB triplets.</span>
 <span class="c1"># In order: red, green, blue, yellow, white, and black.</span>
 <span class="mi">3</span> <span class="mi">2</span>
@@ -1093,7 +1093,7 @@ $<span class="math notranslate nohighlight">\(
 </div>  </section>
 <section id="byte">
 <h2>Byte<a class="headerlink" href="#byte" title="Link to this heading">#</a></h2>
-<p>A <strong>byte</strong> is a unit of information made up of <strong>8 bits</strong>. Most systems and data formats are designed to process data in bytes, which is the most common unit when dealing with sequences of bits. Indeed, in computer science, bytes are often used to measure the amount of data stored or transmitted.</p>
+<p>A <strong>byte</strong> is a unit of information made up of <strong>8 bits</strong>. Most systems and data formats are designed to process data in bytes, the most common unit when dealing with sequences of bits. Indeed, in computer science, bytes are often used to measure the amount of data stored or transmitted.</p>
 <p>Notice that:</p>
 <ul class="simple">
 <li><p>8 bits can represent 256 different values (from 0 to 255)</p></li>
@@ -1104,7 +1104,7 @@ $<span class="math notranslate nohighlight">\(
 \[
     \underbrace{{10110011}_2}_{8~\text{bits}} = \underbrace{1011_{2}\,0011_2}_{1~\text{byte}} = \underbrace{B_{16}3_{16}}_{2~\text{hex digits}} = 187_{10}
 \]</div>
-<p>For values larger than 255, we still group by 8 bits, ending with more than one byte. When the number of bits are not a multiple of 8, we add leading zeros to make it a multiple of 8.</p>
+<p>For values larger than 255, we still group by 8 bits, ending with more than one byte. When the number of bits is not a multiple of 8, we add leading zeros to make it a multiple of 8.</p>
 <p>For instance:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1176,7 +1176,7 @@ $<span class="math notranslate nohighlight">\(
 <h3>Dad’s joke time<a class="headerlink" href="#dad-s-joke-time" title="Link to this heading">#</a></h3>
 <div align="center">
 <img src="img/joke.png" width="80%">
-<p style="text-align: center;">If you do not get the joke: <code>10</code> is binary is 2 :)</p>
+<p style="text-align: center;">If you do not get the joke: <code>10</code> in binary is 2 :)</p>
 </div>
 </section>
 <section id="wait-a-minute">
@@ -1267,17 +1267,17 @@ $<span class="math notranslate nohighlight">\(
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-computing-system">What is a Computing System?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computations-manipulate-data">Computations manipulate Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computations-manipulate-data">Computations manipulate data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-in-computing-means-bits">Data in computing means <em><strong>bits</strong></em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-notation">Positional Notation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-computers-prefer-the-binary-representation">Why computers prefer the binary representation?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-computers-prefer-the-binary-representation">Why do computers prefer the binary representation?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humans-and-computers-are-quite-different">Humans and Computers are quite different</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-representation">Binary representation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-binary-to-decimal">Conversion from binary to decimal</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-n-binary-numbers-n-16">First <span class="math notranslate nohighlight">\(n\)</span> binary numbers (<span class="math notranslate nohighlight">\(n=16\)</span>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interesting-properties-of-binary-numbers">Interesting properties of binary numbers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Conversion from binary to decimal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-use-hexadecimal-numbers-why">Computers use hexadecimal numbers, why?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-decimal-to-binary">Conversion from decimal to binary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-computers-use-hexadecimal-numbers">Why do computers use hexadecimal numbers?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hexadecimal-numbers">Hexadecimal numbers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-binary-to-hexadecimal">Conversion from binary to hexadecimal</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-hexadecimal-to-binary">Conversion from hexadecimal to binary</a></li>
