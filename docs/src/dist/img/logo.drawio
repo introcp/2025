@@ -1,0 +1,155 @@
+<mxfile host="app.diagrams.net" modified="2025-08-26T15:21:08.000Z" agent="5.0" etag="logo" version="24.7.7">
+  <diagram name="Logo" id="logo">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Background -->
+        <mxCell id="background" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry width="1600" height="900" as="geometry" />
+        </mxCell>
+        
+        <!-- Main Title -->
+        <mxCell id="title1" value="Introduction to" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=48;fontFamily=Arial;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="280" width="800" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="title2" value="Computer Programming" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=56;fontFamily=Arial;fontColor=#00d4ff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="340" width="800" height="70" as="geometry" />
+        </mxCell>
+        
+        <!-- Binary Background Pattern -->
+        <mxCell id="binary1" value="01001001 01101110 01110100 01110010 01101111" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontFamily=Courier New;fontColor=#333366;opacity=30" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="500" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="binary2" value="01000011 01101111 01101101 01110000 01110101 01110100 01100101 01110010" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontFamily=Courier New;fontColor=#333366;opacity=30" vertex="1" parent="1">
+          <mxGeometry x="1050" y="150" width="500" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="binary3" value="01010000 01110010 01101111 01100111 01110010 01100001 01101101" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontFamily=Courier New;fontColor=#333366;opacity=30" vertex="1" parent="1">
+          <mxGeometry x="50" y="750" width="500" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="binary4" value="01101101 01101001 01101110 01100111 00100000 01010000 01111001 01110100 01101000 01101111 01101110" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontFamily=Courier New;fontColor=#333366;opacity=30" vertex="1" parent="1">
+          <mxGeometry x="1000" y="800" width="550" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Left Side - Computer Systems -->
+        <mxCell id="cpu_icon" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4a90e2;strokeColor=#ffffff;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="80" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="cpu_text" value="CPU" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontFamily=Arial;fontColor=#ffffff;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="420" width="80" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Circuit Pattern -->
+        <mxCell id="circuit1" value="" style="endArrow=none;html=1;strokeColor=#00ff88;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="420" as="sourcePoint" />
+            <mxPoint x="300" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="circuit2" value="" style="endArrow=none;html=1;strokeColor=#00ff88;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="420" as="sourcePoint" />
+            <mxPoint x="250" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="circuit3" value="" style="endArrow=none;html=1;strokeColor=#00ff88;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="420" as="sourcePoint" />
+            <mxPoint x="250" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Boolean Logic Gates -->
+        <mxCell id="and_gate" value="AND" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff6b6b;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="520" width="60" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="or_gate" value="OR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff6b6b;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="160" y="520" width="60" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="not_gate" value="NOT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff6b6b;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="240" y="520" width="60" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Network Icon -->
+        <mxCell id="network" value="🌐" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=40;" vertex="1" parent="1">
+          <mxGeometry x="80" y="580" width="60" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Right Side - Python Programming -->
+        <mxCell id="python_logo" value="🐍" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="380" width="80" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="python_text" value="Python" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=Arial;fontColor=#ffd43b;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1440" y="470" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Code Snippet -->
+        <mxCell id="code_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2d2d2d;strokeColor=#555555;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="520" width="320" height="120" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="code1" value="def hello_world():" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontFamily=Courier New;fontColor=#569cd6;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="530" width="280" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="code2" value="    print(&quot;Hello, Programming!&quot;)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontFamily=Courier New;fontColor=#ce9178;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="555" width="280" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="code3" value="    return True" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontFamily=Courier New;fontColor=#569cd6;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="580" width="280" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="code4" value="hello_world()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontFamily=Courier New;fontColor=#dcdcaa;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="605" width="280" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Hardware Elements -->
+        <mxCell id="memory" value="RAM" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#95a5a6;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="320" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="storage" value="SSD" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#34495e;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="180" y="320" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Decorative Elements -->
+        <mxCell id="bits1" value="0101" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontFamily=Courier New;fontColor=#00ff88;opacity=60" vertex="1" parent="1">
+          <mxGeometry x="320" y="200" width="80" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="bits2" value="1010" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontFamily=Courier New;fontColor=#00ff88;opacity=60" vertex="1" parent="1">
+          <mxGeometry x="1200" y="200" width="80" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="bits3" value="1100" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontFamily=Courier New;fontColor=#00ff88;opacity=60" vertex="1" parent="1">
+          <mxGeometry x="320" y="660" width="80" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="bits4" value="0011" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontFamily=Courier New;fontColor=#00ff88;opacity=60" vertex="1" parent="1">
+          <mxGeometry x="1200" y="660" width="80" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Connecting Lines -->
+        <mxCell id="connect1" value="" style="endArrow=none;html=1;strokeColor=#00d4ff;strokeWidth=2;opacity=50;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="450" as="sourcePoint" />
+            <mxPoint x="1200" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
