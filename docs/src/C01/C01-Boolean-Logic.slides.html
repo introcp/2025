@@ -7461,7 +7461,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Boolean-Logic"><b style="font-family: 'LUISS', 'Lato'">Boolean Logic</b><a class="anchor-link" href="#Boolean-Logic">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h1 id="Hardware"><b style="font-family: 'LUISS', 'Lato'">Hardware</b><a class="anchor-link" href="#Hardware">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
 <h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
 <br/>
 <img alt="No description has been provided for this image" src="https://introcp.github.io/dist/img/logo2.png" width="200px"/>
@@ -7476,416 +7476,11 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Bit-Computations">Bit Computations<a class="anchor-link" href="#Bit-Computations">¶</a></h2><p>Bits represent the data in a computer. <em><strong>But how can we perform meaningful computations over bits?</strong></em></p>
-<br/>
-<p>At a high level, we want to have:</p>
-<div align="center">
-<img alt="No description has been provided for this image" src="img/computation.drawio.png" width="80%">
-</img></div>
-<p>The computation can be anything we want:</p>
-<ul>
-<li>addition</li>
-<li>subtraction</li>
-<li>multiplication</li>
-<li>...even complex operations such as applying a <em>filter</em> to a picture before posting it on social media!</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Unary-and-Binary-Functions">Unary and Binary Functions<a class="anchor-link" href="#Unary-and-Binary-Functions">¶</a></h2><p>We need to start from simpler scenarios:</p>
-<div align="center">
-<img alt="No description has been provided for this image" src="img/unary-binary-functions.drawio.png" width="75%"/>
-</div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Inputs">Inputs<a class="anchor-link" href="#Inputs">¶</a></h2><p>The inputs of our computations will be binary values (0 and 1).</p>
-<p>Since we want our computation to work on any possible assignment of values to the inputs, we need to consider <em><strong>ALL</strong></em> the possible assignments of values to the inputs:</p>
-<ul>
-<li>Possible input assignments for a unary function:</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Input</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-</tr>
-</tbody>
-</table>
-<br/>
-<ul>
-<li>Possible input assignments for a binary function:</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Input #1</th>
-<th style="text-align:center">Input #2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="What-if-we-ignore-some-input-assignments?">What if we ignore some input assignments?<a class="anchor-link" href="#What-if-we-ignore-some-input-assignments?">¶</a></h2><p>Ignoring assignments is not a good idea:</p>
-<ul>
-<li><p>you are not defining what the expected output is in some cases (the ignored input assignments)</p>
-</li>
-<li><p>it leads your hardware/software to undefined behavior</p>
-</li>
-<li><p>undefined behavior can lead to:</p>
-<ul>
-<li><p><strong>bugs</strong>: Mars Climate Orbiter (1999) from NASA exploded due to a software bug, leading to a $327.6 million loss.</p>
-</li>
-<li><p><strong>vulnerabilities</strong>: Meltdown (2017) and Spectre (2018) from Intel CPUs may leak sensitive data; millions of devices are affected and required to be replaced.</p>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Output">Output<a class="anchor-link" href="#Output">¶</a></h2><p>The output is a single bit (0 or 1). We need to specify the output value for each possible input assignment:</p>
-<ul>
-<li>Possible input assignments for a unary function:</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Input</th>
-<th style="text-align:center">Output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center"><em>Either 0 or 1 depending on the function</em></td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center"><em>Either 0 or 1 depending on the function</em></td>
-</tr>
-</tbody>
-</table>
-<br/>
-<ul>
-<li>Possible input assignments for a binary function:</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Input #1</th>
-<th style="text-align:center">Input #2</th>
-<th style="text-align:center">Output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center"><em>Either 0 or 1 depending on the function</em></td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center"><em>Either 0 or 1 depending on the function</em></td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center"><em>Either 0 or 1 depending on the function</em></td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center"><em>Either 0 or 1 depending on the function</em></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="How-do-we-determine-the-value-of-the-output?">How do we determine the value of the output?<a class="anchor-link" href="#How-do-we-determine-the-value-of-the-output?">¶</a></h2><p>It depends on the computation!</p>
-<p>For instance, if we want to perform multiplication:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Input #1</th>
-<th style="text-align:center">Input #2</th>
-<th style="text-align:center">Output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-</tbody>
-</table>
-<p>However, someone spent a bit of time thinking about how to better formalize all of this and define the essential computations we need (not only for a computer!):</p>
-<p style="text-align: center;">
-<i>The Mathematical Analysis of Logic</i> by <strong>George Boole</strong> (1847)
-</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Boolean-Algebra">Boolean Algebra<a class="anchor-link" href="#Boolean-Algebra">¶</a></h2><p>Boolean algebra:</p>
-<ul>
-<li><p>works on <em><strong>boolean</strong></em> values:</p>
-<ul>
-<li><em>true</em> (which corresponds to 1)</li>
-<li><em>false</em> (which corresponds to 0)</li>
-</ul>
-</li>
-<li><p>defines some essential operators:</p>
-<ul>
-<li>AND</li>
-<li>OR</li>
-<li>NOT</li>
-</ul>
-</li>
-<li><p>shows that by combining these essential operators, using them as building blocks, we can create any complex computation</p>
-</li>
-</ul>
-<p>Modern computers are nothing more than efficient combinations of AND, OR, and NOT operations! They internally integrate billions of these operators to perform complex computations.</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Boolean-AND">Boolean AND<a class="anchor-link" href="#Boolean-AND">¶</a></h2><p>The logical AND operator:</p>
-<ul>
-<li>is a binary operator that takes two inputs (e.g., denoted as variables <em>A</em> and <em>B</em>) and returns a single output (e.g., denoted as <em>A AND B</em>)</li>
-<li>is denoted by the symbol <strong>AND</strong>, $\wedge$, or <strong>&amp;&amp;</strong> or <strong>*</strong></li>
-<li>is also called <strong>conjunction</strong></li>
-</ul>
-<p>The <em>truth table</em> for the AND operator is:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">A</th>
-<th style="text-align:center">B</th>
-<th style="text-align:center">A AND B</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-</tbody>
-</table>
-<br/>
-<p><strong>INTUITION</strong>: the output is 1 (true) only when <strong>both</strong> inputs are 1 (true)</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Boolean-OR">Boolean OR<a class="anchor-link" href="#Boolean-OR">¶</a></h2><p>The logical OR operator:</p>
-<ul>
-<li>is a binary operator that takes two inputs (e.g., denoted as variables <em>A</em> and <em>B</em>) and returns a single output (e.g., denoted as <em>A OR B</em>)</li>
-<li>is denoted by the symbol <strong>OR</strong>, $\vee$, or <strong>||</strong> or <strong>+</strong></li>
-<li>is also called <strong>disjunction</strong></li>
-</ul>
-<p>The <em>truth table</em> for the OR operator is:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">A</th>
-<th style="text-align:center">B</th>
-<th style="text-align:center">A OR B</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-</tbody>
-</table>
-<br/>
-<p><strong>INTUITION</strong>: the output is 1 (true) when <strong>at least one</strong> of the inputs is 1 (true)</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Boolean-NOT">Boolean NOT<a class="anchor-link" href="#Boolean-NOT">¶</a></h2><p>The logical NOT operator:</p>
-<ul>
-<li>is a unary operator that takes a single input (e.g., denoted as variable <em>A</em>) and returns a single output (e.g., denoted as <em>NOT A</em>)</li>
-<li>is denoted by the symbol <strong>NOT</strong>, $\neg$, or <strong>!</strong></li>
-<li>is also called <strong>negation</strong></li>
-</ul>
-<p>The <em>truth table</em> for the NOT operator is:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">A</th>
-<th style="text-align:center">NOT A</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-</tr>
-</tbody>
-</table>
-<br/>
-<p><strong>INTUITION</strong>: the output is 1 (true) when the input is 0 (false), and vice versa</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="The-operators-in-the-real-world">The operators in the real world<a class="anchor-link" href="#The-operators-in-the-real-world">¶</a></h2><p>With a bit of imagination, we can easily see that these essential operators can represent meaningful computations in the real world:</p>
-<ul>
-<li>Example of computation: <em>if either it rains or the weather forecast predicts rain, I take an umbrella</em>.</li>
-</ul>
-<br/>
+<h2 id="Boolean-operators-as-logic-gates">Boolean operators as logic gates<a class="anchor-link" href="#Boolean-operators-as-logic-gates">¶</a></h2><p>The boolean operators AND, OR, and NOT, introduced in the previous lecture, can be implemented as logic gates (circuits).</p>
+<p>Within a circuit, they are represented by these symbols:</p>
 <br/>
 <div align="center">
-<img alt="No description has been provided for this image" src="img/OR-example.png" width="70%"/>
+<img alt="No description has been provided for this image" src="img/gates.png" width="60%"/>
 </div>
 </div>
 </div>
@@ -7897,16 +7492,17 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<br/>
-<p>But the real value emerges when we start to combine (chain) them:</p>
-<ul>
-<li>Example of computation: <em>I take the umbrella if it rains or if the weather forecast predicts rain and I am not using the car</em>.</li>
-</ul>
-<br/>
-<br/>
+<h2 id="AND-gate">AND gate<a class="anchor-link" href="#AND-gate">¶</a></h2><p>The AND logic gate can be implemented with two switches in series:</p>
 <div align="center">
-<img alt="No description has been provided for this image" src="img/OR-AND-example.png" width="70%"/>
+<img alt="No description has been provided for this image" src="img/AND-circuit.drawio.png" width="60%"/>
 </div>
+<p>The two inputs, A and B, control the two switches:</p>
+<ul>
+<li>if their boolean value is True, the switch is closed and current flows</li>
+<li>if their boolean value is False, the switch is open and no current flows</li>
+</ul>
+<p>Only when both switches are closed (A=True and B=True), the current flows to C (represented with a LED, which would emit light to represent a True value).</p>
+<p><strong>NOTE</strong>: A resistor should be added in series with the LED to limit the current and prevent damage.</p>
 </div>
 </div>
 </div>
@@ -7917,65 +7513,36 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Other-Boolean-operators">Other Boolean operators<a class="anchor-link" href="#Other-Boolean-operators">¶</a></h2><p>Other well-known Boolean operators are XOR, NAND, and NOR:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">A</th>
-<th style="text-align:center">B</th>
-<th style="text-align:center">A XOR B</th>
-<th style="text-align:center">A NAND B</th>
-<th style="text-align:center">A NOR B</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-</tbody>
-</table>
-<p>These operators can be derived (implemented) from OR, AND, and NOT:</p>
+<h2 id="AND-gate:-from-switches-to-transistors">AND gate: from switches to transistors<a class="anchor-link" href="#AND-gate:-from-switches-to-transistors">¶</a></h2><p>In electronics, when realizing an AND gate, switches are replaced with transistors:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/AND-circuit-npn.drawio.png" width="60%"/>
+</div>
+<p>We have replaced the two switches with two BJT NPN transistors:</p>
 <ul>
-<li>XOR (exclusive OR):<ul>
-<li>equivalent to: OR(AND(A, NOT(B)), AND(NOT(A), B))</li>
-<li><strong>INTUITION</strong>: A XOR B is true if A and B are different</li>
+<li>if their base signal (A or B) is high, the transistor is on and current flows</li>
+<li>if their base signal (A or B) is low, the transistor is off and no current flows</li>
 </ul>
-</li>
-<li>NAND (not AND):<ul>
-<li>equivalent to NOT(AND(A, B))</li>
-<li><strong>INTUITION</strong>: A NAND B is true if A and B are not both true</li>
-</ul>
-</li>
-<li>NOR (not OR):<ul>
-<li>equivalent to NOT(OR(A, B))</li>
-<li><strong>INTUITION</strong>: A NOR B is true if A and B are both false</li>
-</ul>
-</li>
+<p>Only when both transistors are on, the output signal C is high.</p>
+<p><strong>NOTE</strong>: There exist other types of transistors, which can be used to implement an AND gate.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="AND-gate:-real-world-(inefficient)-implementation">AND gate: real-world (inefficient) implementation<a class="anchor-link" href="#AND-gate:-real-world-(inefficient)-implementation">¶</a></h2><p>We can buy transistors, resistors, and LED to make our own AND gate with minimal cost: "electronics starter kit" (often sold with Arduino boards) cost less than 15-20€ and allows to build simple circuits.</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/AND-circuit-components.drawio.png" width="60%"/>
+</div>
+<ul>
+<li>the breadboard is a device that allows you to connect the components without soldering them</li>
+<li>we added some resistors to limit the current flowing through the LED</li>
+<li>we can manually control A and B by pushing the buttons</li>
+<li>the LED will light up if and only if both A and B are pressed</li>
 </ul>
 </div>
 </div>
@@ -7987,18 +7554,682 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Generic-Boolean-formula">Generic Boolean formula<a class="anchor-link" href="#Generic-Boolean-formula">¶</a></h2><p>A generic Boolean formula is a formula that can be evaluated to either True or False by applying Boolean operators to its input Boolean variables.</p>
-<p>Some conventions for the notation:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/AND-circuit-components.drawio.png" width="60%"/>
+</div>
+<p>In the real world:</p>
 <ul>
-<li>$A$, $B$, $C$, etc. denote the Boolean variables</li>
-<li>$\land$ is the boolean operator AND</li>
-<li>$\lor$ is the boolean operator OR</li>
-<li>$\neg$ is the boolean operator NOT</li>
-<li>Precedence of the operators (from highest to lowest):<ol>
-<li>$\neg$</li>
-<li>$\land$</li>
-<li>$\lor$</li>
+<li>A and B would be generated by other circuits, without the need of manually controlling them!</li>
+<li>C would be used to likely control other circuit or generate a bit value</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="OR-gate">OR gate<a class="anchor-link" href="#OR-gate">¶</a></h2><p>The OR logic gate can be implemented with two switches in parallel:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/OR-circuit.drawio.png" width="60%"/>
+</div>
+<p>The two inputs, A and B, control the two switches:</p>
+<ul>
+<li>if their boolean value is True, the switch is closed and current flows</li>
+<li>if their boolean value is False, the switch is open and no current flows</li>
+</ul>
+<p>When at least one switch is closed (A=True or B=True), the current flows to C (represented with a LED, which would emit light to represent a True value).</p>
+<p><strong>NOTE</strong>: A resistor should be added in series with the LED to limit the current and prevent damage.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="OR-gate:-from-switches-to-transistors">OR gate: from switches to transistors<a class="anchor-link" href="#OR-gate:-from-switches-to-transistors">¶</a></h2><p>In electronics, when realizing an OR gate, switches are replaced with transistors:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/OR-circuit-npn.drawio.png" width="60%"/>
+</div>
+<p>We have replaced the two switches with two BJT NPN transistors:</p>
+<ul>
+<li>if their base signal (A or B) is high, the transistor is on and current flows</li>
+<li>if their base signal (A or B) is low, the transistor is off and no current flows</li>
+</ul>
+<p>When at least one transistors is on, the output signal C is high.</p>
+<p><strong>NOTE</strong>: There exist other types of transistors, which can be used to implement an AND gate.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="OR-gate:-real-world-(inefficient)-implementation">OR gate: real-world (inefficient) implementation<a class="anchor-link" href="#OR-gate:-real-world-(inefficient)-implementation">¶</a></h2><p>As for the AND gate, we can implement the OR gate with a few cheap transistors, resistors, and LED.</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/OR-circuit-components.drawio.png" width="60%"/>
+</div>
+<ul>
+<li>the breadboard is a device that allows you to connect the components without soldering them</li>
+<li>we added some resistors to limit the current flowing through the LED</li>
+<li>we can manually control A and B by pushing the buttons</li>
+<li>the LED will light up if at least one of A or B is pressed</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div align="center">
+<img alt="No description has been provided for this image" src="img/OR-circuit-components.drawio.png" width="60%"/>
+</div>
+<p>In the real world:</p>
+<ul>
+<li>A and B would be generated by other circuits, without the need of manually controlling them!</li>
+<li>C would be used to likely control other circuit or generate a bit value</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="What-can-we-do-with-AND,-OR,-NOT-gates?">What can we do with AND, OR, NOT gates?<a class="anchor-link" href="#What-can-we-do-with-AND,-OR,-NOT-gates?">¶</a></h2><p>We can combine AND, OR, and NOT gates to implement a logic circuit that implements arbitrary boolean functions:</p>
+<ol>
+<li>Build the truth table for your custom computation. For instance:<br/><br/></li>
 </ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">OUTPUT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<br/>
+<ol start="2">
+<li>Use a tool to derive the boolean formula: e.g., provide the OUTPUT column from your truth table to <a href="https://www.dcode.fr/boolean-truth-table">dcode.fr</a></li>
+</ol>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/tool-generate-formula.png" width="50%"/><br/>
+<img alt="No description has been provided for this image" src="img/tool-generate-formula-output.png" width="40%"/>
+</div>
+<p><strong>NOTE</strong>: We discovered that our output does not depend on the value of A!</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<br/>
+<ol start="3">
+<li>Use a tool to get a minimal circuit: e.g., provide the boolean formula to <a href="https://www.boolean-algebra.com/">boolean-algebra.com</a></li>
+</ol>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/tool-bool-simplifier.png" width="60%"/><br/>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div align="center">
+<img alt="No description has been provided for this image" src="img/tool-bool-simplifier-circuit.png" width="50%"/>
+</div>
+<p><strong>NOTE</strong>: In this case, the formula was already minimal. In general, the tool will first perform a minimization of the formula, and then generate the circuit. Smaller is formula, smaller is circuit, less gates, less area, less power, less cost.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Implementing-real-world-components">Implementing real-world components<a class="anchor-link" href="#Implementing-real-world-components">¶</a></h2><p>For instance, we see how to implement two common components:</p>
+<ol>
+<li><p><strong>Half Adder</strong>: a circuit that implements the addition of two binary numbers.</p>
+</li>
+<li><p><strong>Full Adder</strong>: a circuit that implements the addition of two binary numbers with a carry input.</p>
+</li>
+</ol>
+<p>These components can be found on any computer, and are used to perform the addition of two binary numbers.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="XOR-gate">XOR gate<a class="anchor-link" href="#XOR-gate">¶</a></h2><p>To easily implement an adder, we need to implement an XOR gate:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/XOR-circuit.drawio.png" width="80%"/>
+</div>
+<p>As seen in the previous lecture, a XOR can be implemented by combining AND, OR, and NOT gates:</p>
+<p>XOR(A, B) = OR(AND(A, NOT(B)), AND(NOT(A), B))</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Half-Adder:-boolean-function">Half Adder: boolean function<a class="anchor-link" href="#Half-Adder:-boolean-function">¶</a></h2><p>We want to design a circuit that:</p>
+<ul>
+<li>computes the sum of two binary numbers A and B</li>
+<li>the output is:<ul>
+<li>SUM(A, B): the sum of A and B</li>
+<li>CARRY(A, B): the carry of SUM(A, B)</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">SUM(A, B)</th>
+<th style="text-align:center">CARRY(A, B)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We can easily observe by looking at the table above that:</p>
+<ul>
+<li>SUM(A, B) = A XOR B</li>
+<li>CARRY(A, B) = A AND B</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>NOTE:</strong> The formula has two outputs because when both A and B are 1, a single output bit would not enough to represent the sum which would be $1_2 + 1_2 = 10_2$, hence, the output is split into two bits: the sum and the carry.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Half-Adder:-circuit-implementation">Half Adder: circuit implementation<a class="anchor-link" href="#Half-Adder:-circuit-implementation">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/halfadder.drawio.png" width="40%"/>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Half-Adder:-cannot-be-chained-to-sum-bytes">Half Adder: cannot be chained to sum bytes<a class="anchor-link" href="#Half-Adder:-cannot-be-chained-to-sum-bytes">¶</a></h2><p>In the real world, we would like to sum two binary numbers A and B that are more than one bit long. For instance:
+$$
+    A = 100011100_2 ~~~~~~~~~ B = 101010111_2\\
+    A + B = ?
+$$</p>
+<p>One strategy could be to split the numbers into bits and sum them pair by pair using half adders:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/halfadder-sum-bytes.drawio.png" width="95%"/>
+</div>
+<p>where $A_i$, $B_i$, and $S_i$ are the $i$-th bit of $A$, $B$, and $S$ (the sum) respectively.</p>
+<p><strong>PROBLEM</strong>: We are ignoring the carry bit of each operation! The result is wrong!</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Full-Adder:-boolean-function">Full Adder: boolean function<a class="anchor-link" href="#Full-Adder:-boolean-function">¶</a></h2><p>We want to design a circuit that:</p>
+<ul>
+<li>computes the sum of:<ul>
+<li>two bits A and B</li>
+<li>a carry bit (from the previous addition)</li>
+</ul>
+</li>
+<li>the output is:<ul>
+<li>SUM(A, B, CARRY): the sum of A, B, and CARRY</li>
+<li>CARRY(A, B, CARRY): the carry of SUM(A, B, CARRY)</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">CARRY</th>
+<th style="text-align:center">SUM(A, B, CARRY)</th>
+<th style="text-align:center">CARRY(A, B, CARRY)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Full-Adder:-circuit-implementation">Full Adder: circuit implementation<a class="anchor-link" href="#Full-Adder:-circuit-implementation">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/adder.drawio.png" width="70%"/>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Full-Adder:-summing-two-bytes">Full Adder: summing two bytes<a class="anchor-link" href="#Full-Adder:-summing-two-bytes">¶</a></h2><p>We now sum two bytes $A$ and $B$, such as:</p>
+<p>$$
+    A = 100011100_2\\
+    B = 101010111_2\\
+    A + B = ?
+$$</p>
+<p>We split the numbers into bits and sum them pair by pair using different full adders:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/adder-sum-bytes.drawio.png" width="100%"/>
+</div>
+<p>where $A_i$, $B_i$, and $S_i$ are the $i$-th bit of $A$, $B$, and $S$ (the sum) respectively. The first input carry is set to 0, and the last output carry is ignored.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Next:-we-will-implement-a-full-8-bit-computer!">Next: we will implement a full 8-bit computer!<a class="anchor-link" href="#Next:-we-will-implement-a-full-8-bit-computer!">¶</a></h2><p>We will use starter kit electronics. Spoiler of the result:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/8bit-computer.png" width="50%">
+</img></div>
+<p>What you need: 7899 transistors, 12786 jump wires, <strong>...just kidding :)</strong></p>
+<p><strong>NOTE</strong>: someone has actually done it: see <a href="https://www.youtube.com/watch?v=g_ZaioqF1B0&amp;ab_channel=PauloConstantino">here</a> and <a href="https://www.youtube.com/watch?v=HyznrdDSSGM&amp;list=PLowKtXNTBypGqImE405J2565dvjafglHU&amp;ab_channel=BenEater">here</a>.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="How-today's-computers-are-built?">How today's computers are built?<a class="anchor-link" href="#How-today's-computers-are-built?">¶</a></h2><ul>
+<li>They are based on the same ideas presented in our lectures...</li>
+<li>...manufacturers are implementing millions of boolean operations</li>
+<li>...to do that they need billions of gates</li>
+<li>...since gates are mostly implemented using transistors</li>
+<li>...they need <strong>billions of transistors</strong></li>
+<li>...which has to be packed in a limited surface to minimize signal propagation</li>
+</ul>
+<p>They cannot use standard electronic components. They must reduce their size:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/vlsi.png" width="70%"/>
+</div>
+<p>...in the last 20 years they have been able to pack billions of transistors in a chip.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Transistor-size-evolution">Transistor size evolution<a class="anchor-link" href="#Transistor-size-evolution">¶</a></h2><div align="center">
+<a href="https://www.tech-sparks.com/size-of-transistors/">
+<img alt="No description has been provided for this image" src="img/transistor-size.png" style="margin-bottom: -10px;" width="70%">
+</img></a>
+</div>
+<p>Only a few companies can produce transistors smaller than 10nm:</p>
+<ul>
+<li>TSMC is leading the market: used by AMD, Apple, Samsung, Huawei, etc.</li>
+<li>Intel is struggling to scale under 10nm transistors</li>
+<li>Samsung is also struggling to scale under 10nm transistors</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Moore's-Law">Moore's Law<a class="anchor-link" href="#Moore's-Law">¶</a></h2><div align="center">
+<a href="https://semianalysis.com/2023/02/04/a-century-of-moores-law/">
+<img alt="No description has been provided for this image" src="img/moore-law.png" style="margin-bottom: -10px;" width="55%"/>
+</a>
+</div>
+<p>Gordon Moore (Intel): <em>the number of transistors in an integrated circuit doubles about every two years.</em></p>
+<p>Before 2010, more transistors translated into faster CPU. Software was getting faster without doing nothing... it was enough to buy a new CPU every year!</p>
+<p>After 2010, more transistors translated into more cores or more cache. Unfortunately, the <em><strong>free lunch is over</strong></em>: software is not getting faster without doing nothing... software must be re-engineered to take advantage of more cores or more cache.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="What-is-inside-a-computer?">What is inside a computer?<a class="anchor-link" href="#What-is-inside-a-computer?">¶</a></h2><p>An (still accurate) high level overview of a computer:</p>
+<br/>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/computer-architecture-basic.drawio.png" width="70%"/>
+<p style="text-align: center;">von Neumann architecture (1945)</p>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="A-more-detailed-overview-of-a-computer">A more detailed overview of a computer<a class="anchor-link" href="#A-more-detailed-overview-of-a-computer">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/computer-architecture.drawio.png" width="80%"/>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="We-all-know-the-hardest-part...">We all know the hardest part...<a class="anchor-link" href="#We-all-know-the-hardest-part...">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/usb-fuck.png" width="40%"/>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Motherboard-of-a-computer">Motherboard of a computer<a class="anchor-link" href="#Motherboard-of-a-computer">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/motherboard.jpg" width="70%"/>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Modern-System-On-Chip-(SoC)">Modern System On Chip (SoC)<a class="anchor-link" href="#Modern-System-On-Chip-(SoC)">¶</a></h2><p>Modern SoCs integrate the CPU, GPU, disk, and other components on a single chip:</p>
+<div align="center">
+<img alt="No description has been provided for this image" src="img/soc.drawio.png" width="70%">
+</img></div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="CPU-(Central-Processing-Unit)">CPU (<strong>C</strong>entral <strong>P</strong>rocessing <strong>U</strong>nit)<a class="anchor-link" href="#CPU-(Central-Processing-Unit)">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/cpu-alt.drawio.png" width="85%">
+</img></div>
+<ul>
+<li><p>The <strong>Arithmetic Logic Unit (ALU)</strong> performs arithmetic operations (such as addition and subtraction) and
+logical operations (like AND, OR, NOT) on binary data.</p>
+</li>
+<li><p>The <strong>Control Unit</strong> coordinates the operations of the CPU, managing the flow of data and instructions (e.g., determining the next instruction to execute, performing the fetch-decode-execute cycle).</p>
+</li>
+<li><p>The <strong>Registers</strong> are a few (less than 10-20) small (up to 64 bits wide), fast (&lt;0.5 nanosecond) volatile memory locations that store data and instructions for processing. Most CPUs have to first load data from RAM (~100 nanoseconds) into registers before processing it with the ALU.</p>
+</li>
+<li><p>The <strong>Cache</strong> is a high-speed (1-16 nanoseconds) but still limited (e.g., 1-16 MB) volatile memory that stores frequently used data to speed up access.</p>
 </li>
 </ul>
 </div>
@@ -8011,64 +8242,18 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Let us see some examples:</p>
-<ul>
-<li>$(A \land B)\lor (C \land D):$</li>
+<h2 id="RAM-(Random-Access-Memory)">RAM (<strong>R</strong>andom <strong>A</strong>ccess <strong>M</strong>emory)<a class="anchor-link" href="#RAM-(Random-Access-Memory)">¶</a></h2><ul>
+<li><p>The main (volatile) memory of the computer, where data and instructions are stored for processing before being loaded into the CPU.</p>
+</li>
+<li><p>Implemented with Dynamic Random Access Memory (DRAM) chips, based on capacitors (require regular refreshes to maintain data).</p>
+</li>
+<li><p>The capacity of RAM is nowadays in order of gigabytes (GB) or terabytes (TB).</p>
+</li>
+<li><p>Extremely faster ($1000-100000\times$) than secondary storage (e.g., hard drives, SSDs) but significantly slower ($10-100\times$) than CPU registers.</p>
+</li>
+<li><p>Like a huge array of consecutive bytes, each identified by its address (e.g., $0, 1, 2, \ldots, 2^{64}-1$).</p>
+</li>
 </ul>
-<br/>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">A</th>
-<th style="text-align:center">B</th>
-<th style="text-align:center">C</th>
-<th style="text-align:center">D</th>
-<th style="text-align:center">$(A \land B)$</th>
-<th style="text-align:center">$(C\,\land\,D)$</th>
-<th style="text-align:center">$(A\,\land\,B)\,\lor\,(C\land\,D)$</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-</tr>
-</tbody>
-</table>
-<br/>
-<p>To make it easier for us, we have introduced in the truth table some intermediate computations ($(A \land B)$ and $(C \land D)$). Notice the parentheses in the formula are not needed since the formula $A \land B \lor C \land D$ would have the same truth table due to the operator precedence.</p>
 </div>
 </div>
 </div>
@@ -8079,460 +8264,58 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<br/>
+<h2 id="Disks">Disks<a class="anchor-link" href="#Disks">¶</a></h2><p>Permanent storage devices used to store data and programs for long-term use:</p>
 <ul>
-<li>$(\lnot A \land B \land \lnot C) \lor (A \land \lnot B):$</li>
+<li><p><strong>Hard Drives (HDDs)</strong>: use spinning disks to store data, quite slow speed (~200 MB/s) but large capacity (up to 20 TB).</p>
+</li>
+<li><p><strong>Solid-state disks (SSDs)</strong>: use flash memory to store data, much faster speed (~1-4 GB/s) but smaller capacity (up to 2 TB).</p>
+</li>
 </ul>
-<br/>
-<br/>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">A</th>
-<th style="text-align:center">B</th>
-<th style="text-align:center">C</th>
-<th style="text-align:center">!A</th>
-<th style="text-align:center">!B</th>
-<th style="text-align:center">!C</th>
-<th style="text-align:center">(!A AND B)</th>
-<th style="text-align:center">(!A AND B AND !C)</th>
-<th style="text-align:center">(A AND !B)</th>
-<th style="text-align:center">(!A AND B AND !C) OR (A AND !B)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-</tbody>
-</table>
-<p>We have eight rows because we have three variables, each with two possible values (0 or 1).</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Tautology">Tautology<a class="anchor-link" href="#Tautology">¶</a></h2><p>A Boolean expression is a tautology if it is always true, regardless of the values of the variables.</p>
-<p>For example, these formulas are tautologies:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">A</th>
-<th style="text-align:center">B</th>
-<th style="text-align:center">C</th>
-<th style="text-align:center">(A AND B) OR !(A AND B)</th>
-<th style="text-align:center">!((A OR B) AND !(A OR B))</th>
-<th style="text-align:center">(A OR NOT A) OR (B OR C)</th>
-<th style="text-align:center">!(!(A OR B OR C)) OR !(A OR B OR C)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Contradiction">Contradiction<a class="anchor-link" href="#Contradiction">¶</a></h2><p>A Boolean expression is a contradiction if it is always false, regardless of the values of the variables.</p>
-<p>For example, these formulas are contradictions:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">A</th>
-<th style="text-align:center">B</th>
-<th style="text-align:center">C</th>
-<th style="text-align:center">(A and not A)</th>
-<th style="text-align:center">(A or B) and not(A or B)</th>
-<th style="text-align:center">(A and B and C) and not(A and B and C)</th>
-<th style="text-align:center">not(A or not A)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Equivalence">Equivalence<a class="anchor-link" href="#Equivalence">¶</a></h2><p>Two Boolean expressions are equivalent if they produce the same result for all possible values of the variables.</p>
-<p>For example, these formulas are equivalent (compare 4th and 5th columns; compare 6th and 7th columns; compare 8th and 9th columns):</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">A</th>
-<th style="text-align:center">B</th>
-<th style="text-align:center">C</th>
-<th style="text-align:center">¬(A∧B)</th>
-<th style="text-align:center">¬A ∨ ¬B</th>
-<th style="text-align:center">¬(A∨B)</th>
-<th style="text-align:center">¬A ∧ ¬B</th>
-<th style="text-align:center">A ∨ (B ∧ C)</th>
-<th style="text-align:center">(A ∨ B) ∧ (A ∨ C)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Why-do-we-care-about-Boolean-formulas-and-their-truth-tables?">Why do we care about Boolean formulas and their truth tables?<a class="anchor-link" href="#Why-do-we-care-about-Boolean-formulas-and-their-truth-tables?">¶</a></h2><p>It turns out that we can:</p>
+<p>Disks can be connected to the computer in different ways:</p>
 <ul>
-<li>choose an arbitrary computation that we like: we define the truth table of the function as we like</li>
-<li>exploit several engineering techniques to turn the truth table into a Boolean formula</li>
-<li>exploit other engineering techniques to <em>minimize</em> the Boolean formula to an equivalent one with minimum number of operations</li>
-<li>implement the Boolean formula in a circuit!</li>
+<li>USB (Universal Serial Bus): used for external disks.</li>
+<li>IDE (Integrated Drive Electronics): used for mechanical disks.</li>
+<li>SATA (Serial Advanced Technology Attachment): used for mechanical disks and older SSDs.</li>
+<li>NVMe (Non-Volatile Memory Express): used for modern SSDs.</li>
 </ul>
-<p>To do this for all expected computations that you need and you have built your first computer (or at least a part of it!)</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Memory-hierarchy">Memory hierarchy<a class="anchor-link" href="#Memory-hierarchy">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/Memory-hierarchy.png" width="65%">
+</img></div>
+<p>Fast memory is expensive, hence a complex hierarchy is used to compromise between cost and performance: larger data is stored in slower, cheaper memory, that, when needed, is loaded into faster, more expensive memory into smaller amounts.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Cloud...?">Cloud...?<a class="anchor-link" href="#Cloud...?">¶</a></h2><div align="center">
+<img alt="No description has been provided for this image" src="img/cloud.png" width="45%"/>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="How-can-program-a-computer?">How can program a computer?<a class="anchor-link" href="#How-can-program-a-computer?">¶</a></h2><p>In the next lecture, we will cover the software side of the story.</p>
 </div>
 </div>
 </div>

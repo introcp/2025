@@ -188,7 +188,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computer Systems</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../C00/C00-Bits-and-Bytes.html"><b style="font-family: 'LUISS', 'Lato'">Bits and Bytes</b></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../C01/C01-Boolean-Logic.html"><b style="font-family: 'LUISS', 'Lato'">Boolean Logic</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C01/C01-Boolean-Logic.html"><b style="font-family: 'LUISS', 'Lato'">Hardware</b></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../C02/C02-Hardware.html"><b style="font-family: 'LUISS', 'Lato'">Hardware</b></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../C03/C03-Software.html"><b style="font-family: 'LUISS', 'Lato'">Software</b></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><b style="font-family: 'LUISS', 'Lato'">Operating System Essentials</b></a></li>
@@ -430,7 +430,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-command-line">Windows Command Line</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-exercise-navigation-windows-users">Practical Exercise: Navigation (Windows Users)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-command-line">macOS Command Line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-exercise-navigation-macos-users">Practical Exercise: Navigation (MacOS Users)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-exercise-navigation-macos-users">Practical Exercise: Navigation (macOS Users)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-processes">Understanding Processes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-management-in-windows">Process Management in Windows</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-management-in-macos">Process Management in macOS</a></li>
@@ -444,7 +444,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-downloads-pros-cons">Direct Downloads: Pros &amp; Cons</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-stores">Application Stores</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#app-stores-pros-cons">App Stores: Pros &amp; Cons</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-vms-or-containers-when-we-already-have-apps">Why VMs or containers when we already have apps?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-vms-or-containers-when-we-already-have-apps">Why VMs or Containers when we already have apps?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#containers-vs-virtual-machines">Containers vs Virtual Machines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#no-solution-to-rule-them-all">No Solution to Rule Them All</a></li>
 </ul>
@@ -537,7 +537,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">/Applications/Google</span> <span class="pre">Chrome.app</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">/Users/YourName/Pictures/vacation/beach.jpg</span></code></p></li>
 </ul>
-<p><strong>NOTE:</strong> macOS mounts other drives within the main filesystem hierarchy. When you connect an external drive like a USB flash drive, it’s automatically mounted at <code class="docutils literal notranslate"><span class="pre">/Volumes/DRIVE_NAME</span></code>. For example, if you plug in a flash drive named “PENDRIVE”, it would be accessible at: <code class="docutils literal notranslate"><span class="pre">/Volumes/PENDRIVE/</span></code>.</p>
+<p><strong>NOTE:</strong> macOS mounts other drives within the main file system hierarchy. When you connect an external drive like a USB flash drive, it’s automatically mounted at <code class="docutils literal notranslate"><span class="pre">/Volumes/DRIVE_NAME</span></code>. For example, if you plug in a flash drive named “PENDRIVE”, it would be accessible at: <code class="docutils literal notranslate"><span class="pre">/Volumes/PENDRIVE/</span></code>.</p>
 </section>
 <section id="absolute-vs-relative-paths">
 <h2>Absolute vs Relative Paths<a class="headerlink" href="#absolute-vs-relative-paths" title="Link to this heading">#</a></h2>
@@ -702,7 +702,7 @@ notepad.exe
 </div>
 </section>
 <section id="practical-exercise-navigation-macos-users">
-<h2>Practical Exercise: Navigation (MacOS Users)<a class="headerlink" href="#practical-exercise-navigation-macos-users" title="Link to this heading">#</a></h2>
+<h2>Practical Exercise: Navigation (macOS Users)<a class="headerlink" href="#practical-exercise-navigation-macos-users" title="Link to this heading">#</a></h2>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># See where you are</span>
 <span class="nb">pwd</span>
 
@@ -847,7 +847,7 @@ env
 <section id="important-environment-variables">
 <h2>Important Environment Variables<a class="headerlink" href="#important-environment-variables" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">PATH</span></code>: <strong>Directories where executable files are found</strong> (separated by <code class="docutils literal notranslate"><span class="pre">:</span></code> in macOS, <code class="docutils literal notranslate"><span class="pre">;</span></code> in Win)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PATH</span></code>: <strong>Directories where executable files are found</strong> (separated by <code class="docutils literal notranslate"><span class="pre">:</span></code> in macOS, <code class="docutils literal notranslate"><span class="pre">;</span></code> in Windows)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">HOME</span></code>/<code class="docutils literal notranslate"><span class="pre">USERPROFILE</span></code>: User’s home directory location</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PWD</span></code>: Current working directory</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">TMPDIR</span></code>/<code class="docutils literal notranslate"><span class="pre">TEMP</span></code>: Directory for temporary files</p></li>
@@ -855,7 +855,7 @@ env
 <li><p><code class="docutils literal notranslate"><span class="pre">SHELL</span></code>: Default shell program</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">LANG</span></code>/<code class="docutils literal notranslate"><span class="pre">LANGUAGE</span></code>: System language and locale settings</p></li>
 </ul>
-<p><strong>NOTE</strong>: The PATH environment variable is crucial for program accessibility. When software is installed, it must add its directory to PATH - otherwise you can only run the program by typing its absolute path. This is why properly installed programs can be launched from any location in the terminal by simply typing their name.</p>
+<p><strong>NOTE</strong>: The PATH environment variable is crucial for program accessibility. When software is installed, it must add its directory to PATH; otherwise you can only run the program by typing its absolute path. This is why properly installed programs can be launched from any location in the terminal by simply typing their name.</p>
 </section>
 <section id="file-permissions">
 <h2>File Permissions<a class="headerlink" href="#file-permissions" title="Link to this heading">#</a></h2>
@@ -999,7 +999,7 @@ df<span class="w"> </span>-h
 <div align="center">
 <img src="img/app-store-installations.drawio.png" width="70%">
 </div>
-<p>Unified Experience for all the steps!</p>
+<p>Unified experience for all steps!</p>
 </section>
 <section id="app-stores-pros-cons">
 <h2>App Stores: Pros &amp; Cons<a class="headerlink" href="#app-stores-pros-cons" title="Link to this heading">#</a></h2>
@@ -1023,7 +1023,7 @@ df<span class="w"> </span>-h
 <p>Best for consumer applications, mobile apps, casual software</p>
 </section>
 <section id="why-vms-or-containers-when-we-already-have-apps">
-<h2>Why VMs or containers when we already have apps?<a class="headerlink" href="#why-vms-or-containers-when-we-already-have-apps" title="Link to this heading">#</a></h2>
+<h2>Why VMs or Containers when we already have apps?<a class="headerlink" href="#why-vms-or-containers-when-we-already-have-apps" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Isolation</strong>: Applications run in their own environment without interfering with the host system</p></li>
 <li><p><strong>Compatibility</strong>: Some applications may not be compatible with the user’s operating system</p></li>
@@ -1031,7 +1031,7 @@ df<span class="w"> </span>-h
 <li><p><strong>Portability</strong>: VMs or containers provide a self-contained “package” that can be executed consistently across different environments</p></li>
 <li><p><strong>Reproducibility</strong>: Ensures consistent behavior regardless of where the application runs</p></li>
 <li><p><strong>Security</strong>: Containment of potential security vulnerabilities within the VM/container boundary</p></li>
-<li><p><strong>Resource allocation</strong>: Better control over CPU, memory and storage allocation</p></li>
+<li><p><strong>Resource allocation</strong>: Better control over CPU, memory, and storage allocation</p></li>
 <li><p><strong>Scalability</strong>: Easier to scale applications horizontally by deploying multiple instances</p></li>
 </ul>
 <p>Containers are primarily used for deploying non-graphical applications (although Flatpak and Snap on Linux are an exception). They have become the industry standard for deploying services in cloud environments, especially web services, due to their lightweight nature and efficient resource utilization.</p>
@@ -1189,7 +1189,7 @@ df<span class="w"> </span>-h
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-command-line">Windows Command Line</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-exercise-navigation-windows-users">Practical Exercise: Navigation (Windows Users)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-command-line">macOS Command Line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-exercise-navigation-macos-users">Practical Exercise: Navigation (MacOS Users)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-exercise-navigation-macos-users">Practical Exercise: Navigation (macOS Users)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-processes">Understanding Processes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-management-in-windows">Process Management in Windows</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-management-in-macos">Process Management in macOS</a></li>
@@ -1203,7 +1203,7 @@ df<span class="w"> </span>-h
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-downloads-pros-cons">Direct Downloads: Pros &amp; Cons</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-stores">Application Stores</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#app-stores-pros-cons">App Stores: Pros &amp; Cons</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-vms-or-containers-when-we-already-have-apps">Why VMs or containers when we already have apps?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-vms-or-containers-when-we-already-have-apps">Why VMs or Containers when we already have apps?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#containers-vs-virtual-machines">Containers vs Virtual Machines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#no-solution-to-rule-them-all">No Solution to Rule Them All</a></li>
 </ul>
