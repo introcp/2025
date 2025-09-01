@@ -7475,7 +7475,7 @@ main {
 <h2 id="How-can-a-computer-execute-a-program?">How can a computer execute a program?<a class="anchor-link" href="#How-can-a-computer-execute-a-program?">¶</a></h2><div align="center">
 <img alt="No description has been provided for this image" src="img/cpus.drawio.png" width="80%"/>
 </div>
-<p>The <strong>CPU</strong> is the responsible for executing the program code:</p>
+<p>The <strong>CPU</strong> is responsible for executing the program code:</p>
 <ul>
 <li><p>It interprets the instructions one by one from the <strong>RAM</strong></p>
 </li>
@@ -7483,7 +7483,7 @@ main {
 </li>
 <li><p>The machine code is:</p>
 <ul>
-<li><strong>Low level</strong>: relatevely simple operations</li>
+<li><strong>Low level</strong>: relatively simple operations</li>
 <li><strong>CPU specific</strong>: different CPUs have different machine codes</li>
 <li><strong>Binary format</strong>: humans struggle to read it</li>
 </ul>
@@ -7502,7 +7502,7 @@ main {
 <h2 id="Machine-code:-Intel/AMD-vs-ARM">Machine code: Intel/AMD vs ARM<a class="anchor-link" href="#Machine-code:-Intel/AMD-vs-ARM">¶</a></h2><p>A simple sequence of instructions to compute the sum of two integer numbers would look like this in machine code:</p>
 <table>
 <tr>
-<td>Intel/AMD 64 bit machine code</td>
+<td>Intel/AMD 64-bit machine code</td>
 <td></td><td></td>
 <td>ARM 64-bit machine code</td>
 </tr>
@@ -7531,7 +7531,7 @@ c0 03 5f d6
 </table>
 <ul>
 <li>Each instruction is shown on a separate line for clarity, but stored contiguously in memory</li>
-<li>Machine code is binary, shown here in hexadecimal for readability</li>
+<li>Machine code is binary (shown here in hexadecimal for readability)</li>
 <li>Intel/AMD processors share the same machine code format</li>
 <li>Other processors like ARM use entirely different machine code formats</li>
 </ul>
@@ -7545,15 +7545,15 @@ c0 03 5f d6
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="From-machine-code-to-assembly-code">From machine code to assembly code<a class="anchor-link" href="#From-machine-code-to-assembly-code">¶</a></h2><p>To make machine code understandble for human, we can translate it to assembly code:</p>
+<h2 id="From-machine-code-to-assembly-code">From machine code to assembly code<a class="anchor-link" href="#From-machine-code-to-assembly-code">¶</a></h2><p>To make machine code understandable for humans, we can translate it to assembly code:</p>
 <ul>
-<li><strong>Low level</strong> [same as machine code]: relatevely simple operations</li>
+<li><strong>Low level</strong> [same as machine code]: relatively simple operations</li>
 <li><strong>CPU specific</strong> [same as machine code]: different CPUs have different machine codes</li>
 <li><strong>Human readable</strong> [differently from machine code]: CPU struggles to read it!<br/><br/></li>
 </ul>
 <table>
 <tr>
-<td>Intel/AMD 64 bit assembly</td>
+<td>Intel/AMD 64-bit assembly</td>
 <td></td><td></td>
 <td>ARM 64-bit assembly</td>
 </tr>
@@ -7630,16 +7630,16 @@ ret
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="From-low-level-to-high-level-programming">From low-level to high-level programming<a class="anchor-link" href="#From-low-level-to-high-level-programming">¶</a></h2><p>Most programmers use high-level languages, such as Python, Javascript, or PHP, to write software.</p>
+<h2 id="From-low-level-to-high-level-programming">From low-level to high-level programming<a class="anchor-link" href="#From-low-level-to-high-level-programming">¶</a></h2><p>Most programmers use high-level languages, such as Python, JavaScript, or PHP, to write software.</p>
 <p><em><strong>However, the CPU does not understand high-level languages. Never!</strong></em></p>
 <p>Code written in high-level languages must be translated into machine code. Two main strategies:</p>
 <ol>
 <li><strong>Compilation</strong>:<ul>
 <li>Compilers translate high-level code into machine code at <em>compile time</em></li>
-<li>Compile time means when the developer writes the code.</li>
+<li>Compile time is when the developer compiles the code (before it is run).</li>
 <li>Machine code is packaged into an executable.</li>
 <li>One executable for each platform (Operating Systems and CPUs).</li>
-<li>Developers keeps the high-level code, while users get the low-level code.</li>
+<li>Developers keep the high-level code, while users get the low-level code.</li>
 </ul>
 </li>
 </ol>
@@ -7655,10 +7655,10 @@ ret
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol start="2">
 <li><strong>Interpretation</strong>:<ul>
-<li>Interpreters translate high-level code into machine code at <em>running time</em>.</li>
+<li>Interpreters translate high-level code into machine code at <em>runtime</em>.</li>
 <li>Running time means when the user runs the code.</li>
-<li>The code is portable and platform independent.</li>
-<li>Developers distribute the high-level code, users exploits the interpreter to run the code.</li>
+<li>The code is portable and platform-independent.</li>
+<li>Developers distribute the high-level code, users use the interpreter to run the code.</li>
 </ul>
 </li>
 </ol>
@@ -7699,7 +7699,7 @@ ret
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Why-do-we-need-to-learn-a-programming-language?">Why do we need to learn a programming language?<a class="anchor-link" href="#Why-do-we-need-to-learn-a-programming-language?">¶</a></h2><p>Most everyday tasks require to perform:</p>
+<h2 id="Why-do-we-need-to-learn-a-programming-language?">Why do we need to learn a programming language?<a class="anchor-link" href="#Why-do-we-need-to-learn-a-programming-language?">¶</a></h2><p>Most everyday tasks require performing:</p>
 <ul>
 <li>repetitive…</li>
 <li>long sequences of…</li>
@@ -7731,14 +7731,14 @@ ret
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Language:-syntax-and-semantics">Language: syntax and semantics<a class="anchor-link" href="#Language:-syntax-and-semantics">¶</a></h2><p>Programming languages have:</p>
 <ul>
-<li><strong>Syntax</strong>: it defines which strings of characters and symbols are well formed.</li>
-<li><strong>Semantics</strong>: it defines the meaning of the well formed strings.<br/><br/></li>
+<li><strong>Syntax</strong>: it defines which strings of characters and symbols are well-formed.</li>
+<li><strong>Semantics</strong>: it defines the meaning of the well-formed strings.<br/><br/></li>
 </ul>
 <p>The same is true even for natural languages (English, Italian, etc.):</p>
 <ul>
 <li><strong>Syntax</strong>:<ul>
 <li><em>"I are big"</em> is syntactically incorrect (<em>"I am big"</em> is correct).</li>
-<li><em>"The square circle is big"</em> is a well formed sentence.</li>
+<li><em>"The square circle is big"</em> is a well-formed sentence.</li>
 </ul>
 </li>
 <li><strong>Semantics</strong>:<ul>
@@ -7874,14 +7874,14 @@ b. Repeat from step #2</li>
 <h2 id="MANY-different-high-level-languages">MANY different high-level languages<a class="anchor-link" href="#MANY-different-high-level-languages">¶</a></h2><div align="center">
 <img alt="No description has been provided for this image" src="img/pl.png" style="margin: -10px;" width="55%"/>
 </div>
-<p>There exists thousands of high-level languages:</p>
+<p>There are thousands of high-level languages:</p>
 <ul>
 <li>They have been designed with different goals in mind</li>
 <li>Some are general purpose, some are domain specific (e.g., web)</li>
-<li>Some gives more control to the user, some hide more details</li>
+<li>Some give more control to the user, some hide more details</li>
 <li>Some are compiled, some are interpreted</li>
 </ul>
-<p>In this course, we will focus on a single high-level language: <em><strong>but which we should choose?</strong></em></p>
+<p>In this course, we will focus on a single high-level language: <em><strong>but which should we choose?</strong></em></p>
 </div>
 </div>
 </div>
@@ -8021,7 +8021,7 @@ b. Repeat from step #2</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Overview-Operating-System">Overview Operating System<a class="anchor-link" href="#Overview-Operating-System">¶</a></h2><div align="center">
+<h2 id="Operating-System-Overview">Operating System Overview<a class="anchor-link" href="#Operating-System-Overview">¶</a></h2><div align="center">
 <img alt="No description has been provided for this image" src="img/schema.png" width="50%"/>
 </div>
 <ul>
@@ -8039,7 +8039,7 @@ b. Repeat from step #2</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Overview-Operating-System-(cont'd)">Overview Operating System (cont'd)<a class="anchor-link" href="#Overview-Operating-System-(cont'd)">¶</a></h2><div align="center">
+<h2 id="Operating-System-Overview-(cont'd)">Operating System Overview (cont'd)<a class="anchor-link" href="#Operating-System-Overview-(cont'd)">¶</a></h2><div align="center">
 <img alt="No description has been provided for this image" src="img/schema.png" width="50%"/>
 </div>
 <p>The <strong>operating system</strong>:</p>
@@ -8063,19 +8063,19 @@ b. Repeat from step #2</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Overview-Operating-System-(cont'd)">Overview Operating System (cont'd)<a class="anchor-link" href="#Overview-Operating-System-(cont'd)">¶</a></h2><div align="center">
+<h2 id="Operating-System-Overview-(cont'd)">Operating System Overview (cont'd)<a class="anchor-link" href="#Operating-System-Overview-(cont'd)">¶</a></h2><div align="center">
 <img alt="No description has been provided for this image" src="img/schema.png" width="50%"/>
 </div>
 <p>In <strong>user execution mode</strong>:</p>
 <ul>
-<li>Code can run only a limited (safe) subset of ISA</li>
-<li>Privileged instructions must be delegated to the OS following ABI</li>
+<li>Code can run only a limited (safe) subset of the ISA</li>
+<li>Privileged instructions must be delegated to the OS following the ABI</li>
 <li>Processes can be related to:<ul>
 <li>built-in applications provided by the OS: e.g., file manager</li>
 <li>applications installed by the users: e.g., Chrome (web browser by Google)</li>
 </ul>
 </li>
-<li>Applications use system libraries (subprograms for standard tasks, e.g., reading a file, make a network communication) to avoid reinventing the wheel when not needed.</li>
+<li>Applications use system libraries (subprograms for standard tasks, e.g., reading a file, make a network connection) to avoid reinventing the wheel when not necessary.</li>
 </ul>
 </div>
 </div>
@@ -8123,7 +8123,7 @@ b. Repeat from step #2</li>
 <p><strong>NOTE</strong>: If you have:</p>
 <ul>
 <li>$1$ core without preemptive multitasking: up to $1$ applications executing in parallel</li>
-<li>$1$ core with preemptive multitasking: illusion of parallel execution of an infinite number of apps</li>
+<li>$1$ core with preemptive multitasking: illusion of parallel execution of an infinite number of applications</li>
 <li>$k$ cores without preemptive multitasking: up to $k$ applications executing in parallel</li>
 <li>$k$ cores with preemptive multitasking: illusion of parallel execution of an infinite number of applications, with up to $k$ actually executing in parallel at any given time</li>
 </ul>
