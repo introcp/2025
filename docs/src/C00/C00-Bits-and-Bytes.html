@@ -527,7 +527,7 @@ document.write(`
 </div>
 <p>This how your computers see data (pictures, tests, everything!):</p>
 <div align="center">
-<img src="img/bits.png" width="25%" style="margin-bottom: -5px; margin-top: -10px">
+<img src="img/bits.png" width="25%" style="margin-top: -10px">
 </div>
 <p>How can we interpret bits?</p>
 </section>
@@ -620,7 +620,7 @@ $<span class="math notranslate nohighlight">\(
 <h2>Why computers prefer the binary representation?<a class="headerlink" href="#why-computers-prefer-the-binary-representation" title="Link to this heading">#</a></h2>
 <p>Computers are devices that work with electric signals with two state levels:</p>
 <div align="center">
-<img src="img/2-level-digital-signal.png" width="50%" style="margin-bottom: -5px; margin-top: -10px">
+<img src="img/2-level-digital-signal.png" width="50%" style="margin-bottom: -0px; margin-top: -10px">
 </div>
 <p>Why the signal has only two levels?</p>
 <p>It makes it more resistant to noise and interference since it uses extreme, easy to identify, cases:</p>
@@ -1089,7 +1089,7 @@ $<span class="math notranslate nohighlight">\(
 <div align="center">
 <a class="reference internal image-reference" href="../../_images/Tiny6pixel.png"><img alt="../../_images/Tiny6pixel.png" src="../../_images/Tiny6pixel.png" style="width: 20%;" />
 </a>
-<p style="text-align: center;"><a href="https://en.wikipedia.org/wiki/Netpbm#File_formats">Wikipedia >PPM format</a></p>
+<p style="text-align: center;"><a href="https://en.wikipedia.org/wiki/Netpbm#File_formats">Wikipedia > PPM format</a></p>
 </div>  </section>
 <section id="byte">
 <h2>Byte<a class="headerlink" href="#byte" title="Link to this heading">#</a></h2>
@@ -1099,15 +1099,17 @@ $<span class="math notranslate nohighlight">\(
 <li><p>8 bits can represent 256 different values (from 0 to 255)</p></li>
 <li><p>8 bits can be written as 2 hex digits</p></li>
 </ul>
-<p>For instance, <span class="math notranslate nohighlight">\({1110110011}_2\)</span>:
-$<span class="math notranslate nohighlight">\(
+<p>For instance, <span class="math notranslate nohighlight">\({1110110011}_2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
     \underbrace{{10110011}_2}_{8~\text{bits}} = \underbrace{1011_{2}\,0011_2}_{1~\text{byte}} = \underbrace{B_{16}3_{16}}_{2~\text{hex digits}} = 187_{10}
-\)</span>$</p>
+\]</div>
 <p>For values larger than 255, we still group by 8 bits, ending with more than one byte. When the number of bits are not a multiple of 8, we add leading zeros to make it a multiple of 8.</p>
-<p>For instance:
-$<span class="math notranslate nohighlight">\(
+<p>For instance:</p>
+<div class="math notranslate nohighlight">
+\[
      \underbrace{{1110110011}_2}_{10~\text{bits}} = \underbrace{{0000_{2}\,0011_{2}}\,\,{1011_{2}\,0011_2}}_{2~~\text{bytes}} = \underbrace{0_{16}\,3_{16}\,B_{16}\,3_{16}}_{4~\text{hex digits}} = 947_{10}
-\)</span>$</p>
+\]</div>
 </section>
 <section id="multiple-byte-units">
 <h2>Multiple-byte units<a class="headerlink" href="#multiple-byte-units" title="Link to this heading">#</a></h2>
