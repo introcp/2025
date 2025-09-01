@@ -423,23 +423,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bits-computations">Bits Computations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-computations">Bit Computations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unary-and-binary-functions">Unary and Binary Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs">Inputs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-we-ignore-some-input-assignments">What if we ignore some input assignments?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-we-determine-the-value-of-the-output">How we determine the value of the output?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-determine-the-value-of-the-output">How do we determine the value of the output?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-algebra">Boolean Algebra</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and">Boolean AND</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or">Boolean OR</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-not">Boolean NOT</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-operators-in-the-real-world">The operators in the real world</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-boolean-operators">Other boolean operators</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generic-boolean-formula">Generic boolean formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-boolean-operators">Other Boolean operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generic-boolean-formula">Generic Boolean formula</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tautology">Tautology</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contradiction">Contradiction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalence">Equivalence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-care-about-boolean-formulas-and-their-truth-tables">Why do care about boolean formulas and their truth tables?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-care-about-boolean-formulas-and-their-truth-tables">Why do we care about Boolean formulas and their truth tables?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-session">Exercise Session</a></li>
 </ul>
             </nav>
@@ -459,11 +459,11 @@ document.write(`
 <br>
 <img src="https://introcp.github.io/dist/img/logo2.png" width="200px">
 <p><br><br><br></p>
-<section id="bits-computations">
-<h2>Bits Computations<a class="headerlink" href="#bits-computations" title="Link to this heading">#</a></h2>
+<section id="bit-computations">
+<h2>Bit Computations<a class="headerlink" href="#bit-computations" title="Link to this heading">#</a></h2>
 <p>Bits represent the data in a computer. <em><strong>But how can we perform meaningful computations over bits?</strong></em></p>
 <br>
-<p>At high level, we want to have:</p>
+<p>At a high level, we want to have:</p>
 <div align="center">
 <img src="img/computation.drawio.png" width="80%"/>
 </div>
@@ -472,7 +472,7 @@ document.write(`
 <li><p>addition</p></li>
 <li><p>subtraction</p></li>
 <li><p>multiplication</p></li>
-<li><p>…even complex operations such as apply a <em>filter</em> to a picture before posting it on social media!</p></li>
+<li><p>…even complex operations such as applying a <em>filter</em> to a picture before posting it on social media!</p></li>
 </ul>
 </section>
 <section id="unary-and-binary-functions">
@@ -532,7 +532,7 @@ document.write(`
 <h2>What if we ignore some input assignments?<a class="headerlink" href="#what-if-we-ignore-some-input-assignments" title="Link to this heading">#</a></h2>
 <p>Ignoring assignments is not a good idea:</p>
 <ul class="simple">
-<li><p>you are not defining what is expected output in some cases (the ignored input assignments)</p></li>
+<li><p>you are not defining what the expected output is in some cases (the ignored input assignments)</p></li>
 <li><p>it leads your hardware/software to undefined behavior</p></li>
 <li><p>undefined behavior can lead to:</p>
 <ul>
@@ -596,8 +596,8 @@ document.write(`
 </table>
 </div>
 </section>
-<section id="how-we-determine-the-value-of-the-output">
-<h2>How we determine the value of the output?<a class="headerlink" href="#how-we-determine-the-value-of-the-output" title="Link to this heading">#</a></h2>
+<section id="how-do-we-determine-the-value-of-the-output">
+<h2>How do we determine the value of the output?<a class="headerlink" href="#how-do-we-determine-the-value-of-the-output" title="Link to this heading">#</a></h2>
 <p>It depends on the computation!</p>
 <p>For instance, if we want to perform multiplication:</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -627,7 +627,7 @@ document.write(`
 </tbody>
 </table>
 </div>
-<p>However, someone has spent a <em>bit</em> of time about thinking about to better formalize all of this and define which are the essential computation that we need (not only for a computer!):</p>
+<p>However, someone spent a bit of time thinking about how to better formalize all of this and define the essential computations we need (not only for a computer!):</p>
 <p style="text-align: center;">
 <i>The Mathematical Analysis of Logic</i> by <strong>George Boole</strong> (1847)
 </p>
@@ -736,7 +736,7 @@ document.write(`
 <p>The logical NOT operator:</p>
 <ul class="simple">
 <li><p>is a unary operator that takes a single input (e.g., denoted as variable <em>A</em>) and returns a single output (e.g., denoted as <em>NOT A</em>)</p></li>
-<li><p>is denoted by the symbol <strong>NOT</strong>, or <span class="math notranslate nohighlight">\(\neg\)</span>, or <strong>!</strong>, or <strong>!</strong></p></li>
+<li><p>is denoted by the symbol <strong>NOT</strong>, <span class="math notranslate nohighlight">\(\neg\)</span>, or <strong>!</strong></p></li>
 <li><p>is also called <strong>negation</strong></p></li>
 </ul>
 <p>The <em>truth table</em> for the NOT operator is:</p>
@@ -761,7 +761,7 @@ document.write(`
 </section>
 <section id="the-operators-in-the-real-world">
 <h2>The operators in the real world<a class="headerlink" href="#the-operators-in-the-real-world" title="Link to this heading">#</a></h2>
-<p>With a bit of fantasy, we can easily see that these essential operators can represent meaningful computation in the real world:</p>
+<p>With a bit of imagination, we can easily see that these essential operators can represent meaningful computations in the real world:</p>
 <ul class="simple">
 <li><p>Example of computation: <em>if either it rains or the weather forecast predicts rain, I take an umbrella</em>.</p></li>
 </ul>
@@ -771,7 +771,7 @@ document.write(`
     <img src="img/OR-example.png" width="70%">
 </div>
 <br>
-<p>But the actual value begins when we start to combine (chain) them:</p>
+<p>But the real value emerges when we start to combine (chain) them:</p>
 <ul class="simple">
 <li><p>Example of computation: <em>I take the umbrella if it rains or if the weather forecast predicts rain and I am not using the car</em>.</p></li>
 </ul>
@@ -782,8 +782,8 @@ document.write(`
 </div>
 </section>
 <section id="other-boolean-operators">
-<h2>Other boolean operators<a class="headerlink" href="#other-boolean-operators" title="Link to this heading">#</a></h2>
-<p>Other well-known boolean operators are XOR, NAND, and NOR:</p>
+<h2>Other Boolean operators<a class="headerlink" href="#other-boolean-operators" title="Link to this heading">#</a></h2>
+<p>Other well-known Boolean operators are XOR, NAND, and NOR:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>A</p></th>
@@ -844,11 +844,11 @@ document.write(`
 </ul>
 </section>
 <section id="generic-boolean-formula">
-<h2>Generic boolean formula<a class="headerlink" href="#generic-boolean-formula" title="Link to this heading">#</a></h2>
-<p>A generic boolean formula is a formula that can be evaluated to either True or False by applying boolean operators to its input boolean variables.</p>
-<p>Some convention on the notation:</p>
+<h2>Generic Boolean formula<a class="headerlink" href="#generic-boolean-formula" title="Link to this heading">#</a></h2>
+<p>A generic Boolean formula is a formula that can be evaluated to either True or False by applying Boolean operators to its input Boolean variables.</p>
+<p>Some conventions for the notation:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, etc. denote the boolean variables</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, etc. denote the Boolean variables</p></li>
 <li><p><span class="math notranslate nohighlight">\(\land\)</span> is the boolean operator AND</p></li>
 <li><p><span class="math notranslate nohighlight">\(\lor\)</span> is the boolean operator OR</p></li>
 <li><p><span class="math notranslate nohighlight">\(\neg\)</span> is the boolean operator NOT</p></li>
@@ -1026,7 +1026,7 @@ document.write(`
 </tbody>
 </table>
 </div>
-<p>We have nine rows because we have three variables, each with two possible values (0 or 1).</p>
+<p>We have eight rows because we have three variables, each with two possible values (0 or 1).</p>
 </section>
 <section id="tautology">
 <h2>Tautology<a class="headerlink" href="#tautology" title="Link to this heading">#</a></h2>
@@ -1298,16 +1298,16 @@ document.write(`
 </table>
 </div>
 </section>
-<section id="why-do-care-about-boolean-formulas-and-their-truth-tables">
-<h2>Why do care about boolean formulas and their truth tables?<a class="headerlink" href="#why-do-care-about-boolean-formulas-and-their-truth-tables" title="Link to this heading">#</a></h2>
+<section id="why-do-we-care-about-boolean-formulas-and-their-truth-tables">
+<h2>Why do we care about Boolean formulas and their truth tables?<a class="headerlink" href="#why-do-we-care-about-boolean-formulas-and-their-truth-tables" title="Link to this heading">#</a></h2>
 <p>It turns out that we can:</p>
 <ul class="simple">
 <li><p>choose an arbitrary computation that we like: we define the truth table of the function as we like</p></li>
-<li><p>exploit several engineering techniques to turn the truth table into a boolean formula</p></li>
-<li><p>exploit other engineering techniques to <em>minimize</em> the boolean formula to an equivalent one with minimum number of operations</p></li>
-<li><p>implement the boolean formula in a circuit!</p></li>
+<li><p>exploit several engineering techniques to turn the truth table into a Boolean formula</p></li>
+<li><p>exploit other engineering techniques to <em>minimize</em> the Boolean formula to an equivalent one with minimum number of operations</p></li>
+<li><p>implement the Boolean formula in a circuit!</p></li>
 </ul>
-<p>To do this for all expected computations that you need and you have build your first computer (or at least a part of it!)</p>
+<p>To do this for all expected computations that you need and you have built your first computer (or at least a part of it!)</p>
 </section>
 <section id="exercise-session">
 <h2>Exercise Session<a class="headerlink" href="#exercise-session" title="Link to this heading">#</a></h2>
@@ -1379,23 +1379,23 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bits-computations">Bits Computations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-computations">Bit Computations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unary-and-binary-functions">Unary and Binary Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs">Inputs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-we-ignore-some-input-assignments">What if we ignore some input assignments?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-we-determine-the-value-of-the-output">How we determine the value of the output?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-determine-the-value-of-the-output">How do we determine the value of the output?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-algebra">Boolean Algebra</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-and">Boolean AND</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-or">Boolean OR</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-not">Boolean NOT</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-operators-in-the-real-world">The operators in the real world</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-boolean-operators">Other boolean operators</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generic-boolean-formula">Generic boolean formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-boolean-operators">Other Boolean operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generic-boolean-formula">Generic Boolean formula</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tautology">Tautology</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contradiction">Contradiction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalence">Equivalence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-care-about-boolean-formulas-and-their-truth-tables">Why do care about boolean formulas and their truth tables?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-care-about-boolean-formulas-and-their-truth-tables">Why do we care about Boolean formulas and their truth tables?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-session">Exercise Session</a></li>
 </ul>
   </nav></div>

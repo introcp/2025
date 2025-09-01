@@ -7476,9 +7476,9 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Bits-Computations">Bits Computations<a class="anchor-link" href="#Bits-Computations">¶</a></h2><p>Bits represent the data in a computer. <em><strong>But how can we perform meaningful computations over bits?</strong></em></p>
+<h2 id="Bit-Computations">Bit Computations<a class="anchor-link" href="#Bit-Computations">¶</a></h2><p>Bits represent the data in a computer. <em><strong>But how can we perform meaningful computations over bits?</strong></em></p>
 <br/>
-<p>At high level, we want to have:</p>
+<p>At a high level, we want to have:</p>
 <div align="center">
 <img alt="No description has been provided for this image" src="img/computation.drawio.png" width="80%">
 </img></div>
@@ -7487,7 +7487,7 @@ main {
 <li>addition</li>
 <li>subtraction</li>
 <li>multiplication</li>
-<li>...even complex operations such as apply a <em>filter</em> to a picture before posting it on social media!</li>
+<li>...even complex operations such as applying a <em>filter</em> to a picture before posting it on social media!</li>
 </ul>
 </div>
 </div>
@@ -7575,7 +7575,7 @@ main {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="What-if-we-ignore-some-input-assignments?">What if we ignore some input assignments?<a class="anchor-link" href="#What-if-we-ignore-some-input-assignments?">¶</a></h2><p>Ignoring assignments is not a good idea:</p>
 <ul>
-<li><p>you are not defining what is expected output in some cases (the ignored input assignments)</p>
+<li><p>you are not defining what the expected output is in some cases (the ignored input assignments)</p>
 </li>
 <li><p>it leads your hardware/software to undefined behavior</p>
 </li>
@@ -7665,7 +7665,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="How-we-determine-the-value-of-the-output?">How we determine the value of the output?<a class="anchor-link" href="#How-we-determine-the-value-of-the-output?">¶</a></h2><p>It depends on the computation!</p>
+<h2 id="How-do-we-determine-the-value-of-the-output?">How do we determine the value of the output?<a class="anchor-link" href="#How-do-we-determine-the-value-of-the-output?">¶</a></h2><p>It depends on the computation!</p>
 <p>For instance, if we want to perform multiplication:</p>
 <table>
 <thead>
@@ -7698,7 +7698,7 @@ main {
 </tr>
 </tbody>
 </table>
-<p>However, someone has spent a <em>bit</em> of time about thinking about to better formalize all of this and define which are the essential computation that we need (not only for a computer!):</p>
+<p>However, someone spent a bit of time thinking about how to better formalize all of this and define the essential computations we need (not only for a computer!):</p>
 <p style="text-align: center;">
 <i>The Mathematical Analysis of Logic</i> by <strong>George Boole</strong> (1847)
 </p>
@@ -7844,7 +7844,7 @@ main {
 <h2 id="Boolean-NOT">Boolean NOT<a class="anchor-link" href="#Boolean-NOT">¶</a></h2><p>The logical NOT operator:</p>
 <ul>
 <li>is a unary operator that takes a single input (e.g., denoted as variable <em>A</em>) and returns a single output (e.g., denoted as <em>NOT A</em>)</li>
-<li>is denoted by the symbol <strong>NOT</strong>, or $\neg$, or <strong>!</strong>, or <strong>!</strong></li>
+<li>is denoted by the symbol <strong>NOT</strong>, $\neg$, or <strong>!</strong></li>
 <li>is also called <strong>negation</strong></li>
 </ul>
 <p>The <em>truth table</em> for the NOT operator is:</p>
@@ -7878,7 +7878,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="The-operators-in-the-real-world">The operators in the real world<a class="anchor-link" href="#The-operators-in-the-real-world">¶</a></h2><p>With a bit of fantasy, we can easily see that these essential operators can represent meaningful computation in the real world:</p>
+<h2 id="The-operators-in-the-real-world">The operators in the real world<a class="anchor-link" href="#The-operators-in-the-real-world">¶</a></h2><p>With a bit of imagination, we can easily see that these essential operators can represent meaningful computations in the real world:</p>
 <ul>
 <li>Example of computation: <em>if either it rains or the weather forecast predicts rain, I take an umbrella</em>.</li>
 </ul>
@@ -7898,7 +7898,7 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-<p>But the actual value begins when we start to combine (chain) them:</p>
+<p>But the real value emerges when we start to combine (chain) them:</p>
 <ul>
 <li>Example of computation: <em>I take the umbrella if it rains or if the weather forecast predicts rain and I am not using the car</em>.</li>
 </ul>
@@ -7917,7 +7917,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Other-boolean-operators">Other boolean operators<a class="anchor-link" href="#Other-boolean-operators">¶</a></h2><p>Other well-known boolean operators are XOR, NAND, and NOR:</p>
+<h2 id="Other-Boolean-operators">Other Boolean operators<a class="anchor-link" href="#Other-Boolean-operators">¶</a></h2><p>Other well-known Boolean operators are XOR, NAND, and NOR:</p>
 <table>
 <thead>
 <tr>
@@ -7987,10 +7987,10 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Generic-boolean-formula">Generic boolean formula<a class="anchor-link" href="#Generic-boolean-formula">¶</a></h2><p>A generic boolean formula is a formula that can be evaluated to either True or False by applying boolean operators to its input boolean variables.</p>
-<p>Some convention on the notation:</p>
+<h2 id="Generic-Boolean-formula">Generic Boolean formula<a class="anchor-link" href="#Generic-Boolean-formula">¶</a></h2><p>A generic Boolean formula is a formula that can be evaluated to either True or False by applying Boolean operators to its input Boolean variables.</p>
+<p>Some conventions for the notation:</p>
 <ul>
-<li>$A$, $B$, $C$, etc. denote the boolean variables</li>
+<li>$A$, $B$, $C$, etc. denote the Boolean variables</li>
 <li>$\land$ is the boolean operator AND</li>
 <li>$\lor$ is the boolean operator OR</li>
 <li>$\neg$ is the boolean operator NOT</li>
@@ -8199,7 +8199,7 @@ main {
 </tr>
 </tbody>
 </table>
-<p>We have nine rows because we have three variables, each with two possible values (0 or 1).</p>
+<p>We have eight rows because we have three variables, each with two possible values (0 or 1).</p>
 </div>
 </div>
 </div>
@@ -8525,14 +8525,14 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Why-do-care-about-boolean-formulas-and-their-truth-tables?">Why do care about boolean formulas and their truth tables?<a class="anchor-link" href="#Why-do-care-about-boolean-formulas-and-their-truth-tables?">¶</a></h2><p>It turns out that we can:</p>
+<h2 id="Why-do-we-care-about-Boolean-formulas-and-their-truth-tables?">Why do we care about Boolean formulas and their truth tables?<a class="anchor-link" href="#Why-do-we-care-about-Boolean-formulas-and-their-truth-tables?">¶</a></h2><p>It turns out that we can:</p>
 <ul>
 <li>choose an arbitrary computation that we like: we define the truth table of the function as we like</li>
-<li>exploit several engineering techniques to turn the truth table into a boolean formula</li>
-<li>exploit other engineering techniques to <em>minimize</em> the boolean formula to an equivalent one with minimum number of operations</li>
-<li>implement the boolean formula in a circuit!</li>
+<li>exploit several engineering techniques to turn the truth table into a Boolean formula</li>
+<li>exploit other engineering techniques to <em>minimize</em> the Boolean formula to an equivalent one with minimum number of operations</li>
+<li>implement the Boolean formula in a circuit!</li>
 </ul>
-<p>To do this for all expected computations that you need and you have build your first computer (or at least a part of it!)</p>
+<p>To do this for all expected computations that you need and you have built your first computer (or at least a part of it!)</p>
 </div>
 </div>
 </div>
