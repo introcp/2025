@@ -7575,7 +7575,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>NOTE:</strong> macOS mounts other drives within the main filesystem hierarchy. When you connect an external drive like a USB flash drive, it's automatically mounted at <code>/Volumes/DRIVE_NAME</code>. For example, if you plug in a flash drive named "PENDRIVE", it would be accessible at: <code>/Volumes/PENDRIVE/</code>.</p>
+<p><strong>NOTE:</strong> macOS mounts other drives within the main file system hierarchy. When you connect an external drive like a USB flash drive, it's automatically mounted at <code>/Volumes/DRIVE_NAME</code>. For example, if you plug in a flash drive named "PENDRIVE", it would be accessible at: <code>/Volumes/PENDRIVE/</code>.</p>
 </div>
 </div>
 </div>
@@ -7806,7 +7806,7 @@ notepad.exe
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Practical-Exercise:-Navigation-(MacOS-Users)">Practical Exercise: Navigation (MacOS Users)<a class="anchor-link" href="#Practical-Exercise:-Navigation-(MacOS-Users)">¶</a></h2><div class="highlight"><pre><span></span><span class="c1"># See where you are</span>
+<h2 id="Practical-Exercise:-Navigation-(macOS-Users)">Practical Exercise: Navigation (macOS Users)<a class="anchor-link" href="#Practical-Exercise:-Navigation-(macOS-Users)">¶</a></h2><div class="highlight"><pre><span></span><span class="c1"># See where you are</span>
 <span class="nb">pwd</span>
 
 <span class="c1"># List files in current directory</span>
@@ -7999,7 +7999,7 @@ env
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Important-Environment-Variables">Important Environment Variables<a class="anchor-link" href="#Important-Environment-Variables">¶</a></h2><ul>
-<li><code>PATH</code>: <strong>Directories where executable files are found</strong> (separated by <code>:</code> in macOS, <code>;</code> in Win)</li>
+<li><code>PATH</code>: <strong>Directories where executable files are found</strong> (separated by <code>:</code> in macOS, <code>;</code> in Windows)</li>
 <li><code>HOME</code>/<code>USERPROFILE</code>: User's home directory location</li>
 <li><code>PWD</code>: Current working directory</li>
 <li><code>TMPDIR</code>/<code>TEMP</code>: Directory for temporary files</li>
@@ -8017,7 +8017,7 @@ env
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>NOTE</strong>: The PATH environment variable is crucial for program accessibility. When software is installed, it must add its directory to PATH - otherwise you can only run the program by typing its absolute path. This is why properly installed programs can be launched from any location in the terminal by simply typing their name.</p>
+<p><strong>NOTE</strong>: The PATH environment variable is crucial for program accessibility. When software is installed, it must add its directory to PATH; otherwise you can only run the program by typing its absolute path. This is why properly installed programs can be launched from any location in the terminal by simply typing their name.</p>
 </div>
 </div>
 </div>
@@ -8220,7 +8220,7 @@ df<span class="w"> </span>-h
 <h2 id="Application-Stores">Application Stores<a class="anchor-link" href="#Application-Stores">¶</a></h2><div align="center">
 <img alt="No description has been provided for this image" src="img/app-store-installations.drawio.png" width="70%"/>
 </div>
-<p>Unified Experience for all the steps!</p>
+<p>Unified experience for all steps!</p>
 </div>
 </div>
 </div>
@@ -8259,14 +8259,14 @@ df<span class="w"> </span>-h
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Why-VMs-or-containers-when-we-already-have-apps?">Why VMs or containers when we already have apps?<a class="anchor-link" href="#Why-VMs-or-containers-when-we-already-have-apps?">¶</a></h2><ul>
+<h2 id="Why-VMs-or-Containers-when-we-already-have-apps?">Why VMs or Containers when we already have apps?<a class="anchor-link" href="#Why-VMs-or-Containers-when-we-already-have-apps?">¶</a></h2><ul>
 <li><strong>Isolation</strong>: Applications run in their own environment without interfering with the host system</li>
 <li><strong>Compatibility</strong>: Some applications may not be compatible with the user's operating system</li>
 <li><strong>Dependency management</strong>: Applications may have complex dependencies that conflict with other installed software</li>
 <li><strong>Portability</strong>: VMs or containers provide a self-contained "package" that can be executed consistently across different environments</li>
 <li><strong>Reproducibility</strong>: Ensures consistent behavior regardless of where the application runs</li>
 <li><strong>Security</strong>: Containment of potential security vulnerabilities within the VM/container boundary</li>
-<li><strong>Resource allocation</strong>: Better control over CPU, memory and storage allocation</li>
+<li><strong>Resource allocation</strong>: Better control over CPU, memory, and storage allocation</li>
 <li><strong>Scalability</strong>: Easier to scale applications horizontally by deploying multiple instances</li>
 </ul>
 <p>Containers are primarily used for deploying non-graphical applications (although Flatpak and Snap on Linux are an exception). They have become the industry standard for deploying services in cloud environments, especially web services, due to their lightweight nature and efficient resource utilization.</p>
