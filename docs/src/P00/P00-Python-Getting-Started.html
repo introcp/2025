@@ -410,22 +410,40 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#local-setup">Local Setup</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#only-on-windows-11-disable-windows-store-aliases">[<strong>Only on Windows 11</strong>]<br/>Disable Windows Store Aliases</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#only-on-windows-11-enable-script-cmdlet">[<strong>Only on Windows 11</strong>]<br/>Enable script cmdlet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-python">Download Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-python-via-miniconda">Installing Python via MiniConda</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer">Launch the installer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer-cont-d">Launch the installer (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer-cont-d-2-windows-only">Launch the installer (cont’d 2) [Windows only]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-a-good-code-editor-visual-studio-code">Install a (good) code editor: <strong>Visual Studio Code</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code-windows">Start <strong>Visual Studio Code</strong> (Windows)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code-mac-os-x">Start <strong>Visual Studio Code</strong> (Mac OS X)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-python-integration">VSCode extension: Python integration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-python-environment-manager">VSCode extension: Python Environment Manager</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-jupyter">VSCode extension: Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code">Start <strong>Visual Studio Code</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-python-installation">Test python installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code-extension-python-integration">VS Code extension: Python integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-run-a-python-file-in-vs-code">Create and run a python file in VS Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-run-a-python-file-in-vs-code-cont-d">Create and run a python file in VS Code (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code-extension-jupyter">VS Code extension: Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-jupyter-notebook">Create a new jupyter notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-install-python-packages-from-the-community">Where to install Python packages from the community</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-virtual-environment">Create a new virtual environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-the-default-virtual-environment">Pick the default virtual environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-virtual-environment-only-windows">Create a new virtual environment [Only Windows]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-virtual-environment-cont-d">Create a new virtual environment (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-the-environment-list">Print the environment list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-environments-while-working">How to use environments while working</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activate-you-environment">Activate you environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-python-packages-in-the-virtual-environment">Installation of Python packages in the virtual environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-code-in-jupyter-notebook">Running code in Jupyter notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-code-in-jupyter-notebook-cont-d">Running code in Jupyter notebook (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter">Working with jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter-code-cell">Working with jupyter - Code cell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter-markdown-cell">Working with jupyter - Markdown cell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter-markdown-cell-cont-d">Working with jupyter - Markdown cell (cont’d)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-uninstall-miniconda">STEP 1 Uninstall Miniconda:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d-2">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d - 2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d-3">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d - 3)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d-4">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d - 4)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-reinstall-miniconda-properly">STEP 2 Reinstall miniconda properly:</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-setup">Cloud Setup</a><ul class="visible nav section-nav flex-column">
@@ -437,6 +455,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-local-setup-with-vscode">Environment: local setup with VSCode</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-local-setup-with-jupyerlab">Environment: local setup with JupyerLab</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-cloud-setup-with-colab">Environment: cloud setup with Colab</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-book">Using the book</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book">Opening code from the book</a></li>
 </ul>
 </li>
 </ul>
@@ -515,7 +537,7 @@ document.write(`
 </center></section>
 <section id="jupyter-notebook">
 <h2>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Link to this heading">#</a></h2>
-<p>Using the environment <strong>JupyterLab</strong> we can create a new notebook:</p>
+<p>Using the environment <strong>JupyterLab</strong> or with a proper Visual Studio Code setup, we can create a new notebook:</p>
 <center>
 <img src="img/jupyterlab.png" width="750">
 </center></section>
@@ -564,51 +586,67 @@ document.write(`
 <center>
 <img src="img/win11-set-execution-policy.png" width="400">
 </center></section>
-<section id="download-python">
-<h2>Download Python<a class="headerlink" href="#download-python" title="Link to this heading">#</a></h2>
-<p>Visit: <strong><a class="reference external" href="https://www.python.org/">https://www.python.org/</a></strong></p>
-<center>
-<img src="img/python-download-win.png" width="700">
-<img src="img/python-download-mac.png" width="700">
-</center></section>
-<section id="launch-the-installer">
-<h2>Launch the installer<a class="headerlink" href="#launch-the-installer" title="Link to this heading">#</a></h2>
-<p>Double click on the downloaded file, e.g., on Windows:</p>
-<ol class="arabic">
-<li><h3>Enable <b><i>Add python.exe to PATH</i></b></3>
-</li>
-<li><p>Click <em><strong>Install now</strong></em></p></li>
+<section id="installing-python-via-miniconda">
+<h2>Installing Python via MiniConda<a class="headerlink" href="#installing-python-via-miniconda" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Open your web browser (e.g. Google Chrome, Microsoft Edge, Apple Safari, Mozilla Firefox) and go to <a class="reference external" href="https://www.anaconda.com/download/success">https://www.anaconda.com/download/success</a></p></li>
+<li><p>Click on the <em>Download</em> (for Windows) / <em>Download for mac</em> (for Mac) button under <em>Miniconda Installers</em> to get the installer</p></li>
 </ol>
 <center>
-<img src="img/python-installer-win.drawio.png" width="500">
+<img src="img/download-miniconda-installers.png" width="350">
+&nbsp;&nbsp;
+<img src="img/download-miniconda-mac.png" width="400">
+</center>
+</section>
+<section id="launch-the-installer">
+<h2>Launch the installer<a class="headerlink" href="#launch-the-installer" title="Link to this heading">#</a></h2>
+<p>Double click on the downloaded file (e.g. on Windows) to start the setup:</p>
+<center>
+<img src="img/miniconda-installer-windows-1.png" width="600">
 </center></section>
 <section id="launch-the-installer-cont-d">
 <h2>Launch the installer (cont’d)<a class="headerlink" href="#launch-the-installer-cont-d" title="Link to this heading">#</a></h2>
 <p>Similarly on Mac OS X:</p>
 <center>
-<img src="img/python-installer-mac.png" width="500">
+<img src="img/miniconda-setup-mac.png" width="600">
+</center></section>
+<section id="launch-the-installer-cont-d-2-windows-only">
+<h2>Launch the installer (cont’d 2) [Windows only]<a class="headerlink" href="#launch-the-installer-cont-d-2-windows-only" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>In the <em>Advanced Installation Options</em> view, check “Add installation to my PATH environment variable”, ignore warnings</p></li>
+</ul>
+<center>
+<img src="img/miniconda-installer-windows-5.png" width="600">
 </center></section>
 <section id="install-a-good-code-editor-visual-studio-code">
 <h2>Install a (good) code editor: <strong>Visual Studio Code</strong><a class="headerlink" href="#install-a-good-code-editor-visual-studio-code" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Visit: <strong><a class="reference external" href="https://code.visualstudio.com/Download">https://code.visualstudio.com/Download</a></strong></p></li>
-<li><p>Download the latest version for your OS</p></li>
+<li><p>Visit: <strong><a class="reference external" href="https://code.visualstudio.com">https://code.visualstudio.com </a></strong></p></li>
+<li><p>Click on the button “Download for Windows” (if you have windows) or “Download for Mac” to start the download [check needed]</p></li>
 </ol>
 <center>
-<img src="img/download-vscode.png">
+<img src="img/download-vscode-windows.png" width="300">
+&nbsp;&nbsp;
+<img src="img/vscode-download-mac.png" width="250">
 </center></section>
-<section id="start-visual-studio-code-windows">
-<h2>Start <strong>Visual Studio Code</strong> (Windows)<a class="headerlink" href="#start-visual-studio-code-windows" title="Link to this heading">#</a></h2>
+<section id="start-visual-studio-code">
+<h2>Start <strong>Visual Studio Code</strong><a class="headerlink" href="#start-visual-studio-code" title="Link to this heading">#</a></h2>
 <center>
-<img src="img/vscode.png" width="650">
+<img src="img/open-vscode-windows.png" width="650">
 </center></section>
-<section id="start-visual-studio-code-mac-os-x">
-<h2>Start <strong>Visual Studio Code</strong> (Mac OS X)<a class="headerlink" href="#start-visual-studio-code-mac-os-x" title="Link to this heading">#</a></h2>
+<section id="test-python-installation">
+<h2>Test python installation<a class="headerlink" href="#test-python-installation" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>In VS Code start the terminal: <em><strong>Terminal &gt; New Terminal</strong></em></p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">python</span></code> to open the interactive shell, a prompt input will appear with symbols <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code></p></li>
+<li><p>Type the code <code class="docutils literal notranslate"><span class="pre">print('python</span> <span class="pre">installed!')</span></code> and hit enter, you will see the shell printing on screen “python installed!”</p></li>
+</ol>
 <center>
-<img src="img/vscode-mac.png" width="650">
-</center></section>
-<section id="vscode-extension-python-integration">
-<h2>VSCode extension: Python integration<a class="headerlink" href="#vscode-extension-python-integration" title="Link to this heading">#</a></h2>
+<img src="img/python-installed-terminal.png" width="650">
+</center>
+<!-- goto: troubleshooting if python not added to path --></section>
+<section id="vs-code-extension-python-integration">
+<h2>VS Code extension: Python integration<a class="headerlink" href="#vs-code-extension-python-integration" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>From the side bar, open the <em><strong>Extension</strong></em> tab</p></li>
 <li><p>Search for <em><strong>Python</strong></em></p></li>
@@ -616,28 +654,67 @@ document.write(`
 </ol>
 <center>
 <img src="img/vscode-extension-python.png" width="500">
-</center></section>
-<section id="vscode-extension-python-environment-manager">
-<h2>VSCode extension: Python Environment Manager<a class="headerlink" href="#vscode-extension-python-environment-manager" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>From the side bar, open the <em><strong>Extension</strong></em> tab</p></li>
-<li><p>Search for <em><strong>Python Environment Manager</strong></em></p></li>
-<li><p>Install the extension</p></li>
-</ol>
+</center><!-- ## VSCode extension: Python Environment Manager
+
+1. From the side bar, open the ***Extension*** tab
+2. Search for ***Python Environment Manager***
+3. Install the extension
+
 <center>
 <img src="img/vscode-extension-python-venv-manager.png" width="500">
+</center> --></section>
+<section id="create-and-run-a-python-file-in-vs-code">
+<h2>Create and run a python file in VS Code<a class="headerlink" href="#create-and-run-a-python-file-in-vs-code" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>In Visual Studio Code <em><strong>File &gt; New File</strong></em></p></li>
+<li><p>Select <em><strong>Python File</strong></em></p></li>
+</ol>
+<center>
+<img src="img/new-python-file.png" width="500">
+</center>
+<ol class="arabic simple" start="3">
+<li><p>In the opened file type <code class="docutils literal notranslate"><span class="pre">print('hello</span> <span class="pre">world!')</span></code> and save the file</p></li>
+<li><p>Click on the <strong>play button</strong> on the top right corner and the code will be executed in a new terminal</p></li>
+</ol>
+<center>
+<img src="img/vscode-play.png" width="500">
 </center></section>
-<section id="vscode-extension-jupyter">
-<h2>VSCode extension: Jupyter<a class="headerlink" href="#vscode-extension-jupyter" title="Link to this heading">#</a></h2>
+<section id="create-and-run-a-python-file-in-vs-code-cont-d">
+<h2>Create and run a python file in VS Code (cont’d)<a class="headerlink" href="#create-and-run-a-python-file-in-vs-code-cont-d" title="Link to this heading">#</a></h2>
+<p>When you hit play, VS Code is just running a command line in the terminal. That’s another way to run python files:</p>
+<ol class="arabic simple">
+<li><p>In Visual Studio Code open the terminal <em><strong>File &gt; New Terminal</strong></em></p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">&lt;full-path-to-the-file&gt;</span></code> and hit enter <br>
+(e.g. on Windows if you have a file named “hello_world.py” in the Documents folder)</p></li>
+</ol>
+<center>
+<img src="img/vscode-terminal-py.png" width="500">
+</center></section>
+<section id="vs-code-extension-jupyter">
+<h2>VS Code extension: Jupyter<a class="headerlink" href="#vs-code-extension-jupyter" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>From the side bar, open the <em><strong>Extension</strong></em> tab</p></li>
 <li><p>Search for <em><strong>Jupyter</strong></em></p></li>
 <li><p>Install the extension</p></li>
 </ol>
 <center>
-<img src="img/vscode-jupyter.png">
+<img src="img/vscode-jupyter.png" width="750">
+</center></section>
+<section id="create-a-new-jupyter-notebook">
+<h2>Create a new jupyter notebook<a class="headerlink" href="#create-a-new-jupyter-notebook" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>In Visual Studio Code <em><strong>File &gt; New File</strong></em> tab</p></li>
+<li><p>Select <em><strong>Jupyter Notebook</strong></em></p></li>
+</ol>
+<center>
+<img src="img/new-ipnb.png" width="500">
 </center>
-</section>
+<ol class="arabic simple" start="3">
+<li><p>A new notebook will open</p></li>
+</ol>
+<center>
+<img src="img/new-ipnb-opened.png" width="500">
+</center></section>
 <section id="where-to-install-python-packages-from-the-community">
 <h2>Where to install Python packages from the community<a class="headerlink" href="#where-to-install-python-packages-from-the-community" title="Link to this heading">#</a></h2>
 <p>We can install Python packages from the community following two strategies:</p>
@@ -658,36 +735,76 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="create-a-new-virtual-environment">
-<h2>Create a new virtual environment<a class="headerlink" href="#create-a-new-virtual-environment" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Create a new folder (e.g., <code class="docutils literal notranslate"><span class="pre">labds</span></code> within <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> folder)</p></li>
-<li><p>Open the folder from VSCode:</p></li>
-</ol>
-<center>
-<img src="img/vscode-open-folder.png" width="250">
-</center>
-<ol class="arabic simple" start="3">
-<li><p>Start the terminal: <em><strong>View &gt; Terminal</strong></em></p></li>
-<li><p>Type in the terminal:<br>
-<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">.venv</span></code>
-<br>or:<br>
-<code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">.venv</span></code></p></li>
+<section id="create-a-new-virtual-environment-only-windows">
+<h2>Create a new virtual environment [Only Windows]<a class="headerlink" href="#create-a-new-virtual-environment-only-windows" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>In VS Code, start the terminal: <em><strong>Terminal &gt; New Terminal</strong></em></p></li>
+<li><p>Only for Windows:
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span> <span class="pre">powershell</span></code><br>
+Then close the terminal <br></p>
+ <center>
+ <img src="img/close-terminal.png" width="800">
+ </center></li>
 </ol>
 </section>
-<section id="pick-the-default-virtual-environment">
-<h2>Pick the default virtual environment<a class="headerlink" href="#pick-the-default-virtual-environment" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>From the side bar, open the Python logo</p></li>
-<li><p>Click on the <em>star</em> to select the virtual environment</p></li>
-</ol>
-<center>
-<img src="img/vscode-pick-venv.png" width="250">
-</center>
-<ol class="arabic simple" start="3">
-<li><p>Close VSCode and then re-open your project folder in VSCode</p></li>
+<section id="create-a-new-virtual-environment-cont-d">
+<h2>Create a new virtual environment (cont’d)<a class="headerlink" href="#create-a-new-virtual-environment-cont-d" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>In VS Code, start the terminal: <em><strong>Terminal &gt; New Terminal</strong></em></p></li>
+<li><p>Type in the terminal:
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">&lt;my-env&gt;</span></code><br>
+Where <code class="docutils literal notranslate"><span class="pre">&lt;my-env&gt;</span></code> is the name of your virtual environment<br></p></li>
+<li><p>Conda will ask to proceed
+<code class="docutils literal notranslate"><span class="pre">Proceed</span> <span class="pre">([y]/n)?</span></code>
+<br> Type <code class="docutils literal notranslate"><span class="pre">y</span></code> and hit enter to confirm
+<br><br></p>
+<p><strong>NOTE</strong>: The first time you create an environment, conda will ask to accept the terms of agreement <strong>before asking to proceed</strong></p>
+ <center>
+ <img src="img/conda-terms-of-agreement.png">
+ </center></li>
 </ol>
 </section>
+<section id="print-the-environment-list">
+<h2>Print the environment list<a class="headerlink" href="#print-the-environment-list" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>To verify that the new environment was created correctly, we’ll print the list of all the existing environments:<br>
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code><br></p></li>
+<li><p>The newly created environment name should appear in the list</p>
+  <center>
+  <img src="img/conda-env-list.png">
+  </center></li>
+</ul>
+</section>
+<section id="how-to-use-environments-while-working">
+<h2>How to use environments while working<a class="headerlink" href="#how-to-use-environments-while-working" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>There is a default <strong>base</strong> environment.</p></li>
+</ul>
+<center>
+<img src="img/base-env.png">
+</center>
+<ul class="simple">
+<li><p>When starting a new project, we will create a new environment<br><br></p></li>
+<li><p>Then our workflow will be like:</p>
+<ol class="arabic simple">
+<li><p>Before starting to edit a project: <strong>activate</strong> the environment created for that project: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">&lt;my-env&gt;</span></code></p></li>
+<li><p>While working on the project: install any <strong>python package</strong> needed <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">&lt;package-name&gt;</span></code></p></li>
+<li><p>When finished: <strong>deactivate</strong> the environment (to avoid conflicts between projects) <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span> <span class="pre">&lt;my-env&gt;</span></code></p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="activate-you-environment">
+<h2>Activate you environment<a class="headerlink" href="#activate-you-environment" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Type in the terminal:
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">--name</span> <span class="pre">&lt;my-env&gt;</span></code><br>
+Where <code class="docutils literal notranslate"><span class="pre">&lt;my-env&gt;</span></code> is the name of your virtual environment<br></p></li>
+<li><p>The name of the environment will relace of “(base)” at the beginning of the command line, to confirm the environment is active.</p></li>
+</ol>
+<center>
+<img src="img/my-first-env-activate.png">
+</center></section>
 <section id="installation-of-python-packages-in-the-virtual-environment">
 <h2>Installation of Python packages in the virtual environment<a class="headerlink" href="#installation-of-python-packages-in-the-virtual-environment" title="Link to this heading">#</a></h2>
 <p>We will use some extra Python bits from the community, including:<br>
@@ -695,14 +812,78 @@ document.write(`
 <p>From VSCode:</p>
 <ol class="arabic simple">
 <li><p>Start a new terminal using the menu: <em><strong>Terminal &gt; New Terminal</strong></em></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span> <span class="pre">matplotlib</span> <span class="pre">seaborn</span> <span class="pre">scikit-learn</span> <span class="pre">jupyterlab</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">numpy</span> <span class="pre">matplotlib</span> <span class="pre">seaborn</span> <span class="pre">scikit-learn</span> <span class="pre">jupyterlab</span></code></p></li>
+<li><p>When prompted to <code class="docutils literal notranslate"><span class="pre">Proceed</span> <span class="pre">([y]/n)?</span></code> type <code class="docutils literal notranslate"><span class="pre">y</span></code> and hit enter. The package download will start</p></li>
 </ol>
 <center>
-<img src="img/vscode-install-with-pip.png">
+<img src="img/conda-package-installation.png">
 </center>
 </section>
-<section id="troubleshooting-on-windows-python-is-not-recognized">
-<h2>Troubleshooting on Windows:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code><a class="headerlink" href="#troubleshooting-on-windows-python-is-not-recognized" title="Link to this heading">#</a></h2>
+<section id="running-code-in-jupyter-notebook">
+<h2>Running code in Jupyter notebook<a class="headerlink" href="#running-code-in-jupyter-notebook" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>In Visual Studio Code <em><strong>File &gt; New File &gt; Jupyter Notebook</strong></em></p></li>
+<li><p>When you create a new notebook, the new file contains a new code cell.</p></li>
+<li><p>In the code cell type <code class="docutils literal notranslate"><span class="pre">print('hello</span> <span class="pre">world!')</span></code></p></li>
+<li><p>In the top right corner click on <strong>Select Kernel &gt; Python Environments…</strong></p></li>
+</ol>
+<center>
+<img src="img/select-kernel-python-environments.png" width="500">
+</center></section>
+<section id="running-code-in-jupyter-notebook-cont-d">
+<h2>Running code in Jupyter notebook (cont’d)<a class="headerlink" href="#running-code-in-jupyter-notebook-cont-d" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="5">
+<li><p>Choose the python environment you’ve created for your project</p></li>
+</ol>
+<center>
+<img src="img/select-python-environment.png" width="500">
+</center>
+<ol class="arabic simple" start="6">
+<li><p>Click the play button on the left side of the cell. The code will run and the result will appear under the code cell</p></li>
+</ol>
+<center>
+<img src="img/run-code-ipnb.png" width="500">
+</center>
+</section>
+<section id="working-with-jupyter">
+<h2>Working with jupyter<a class="headerlink" href="#working-with-jupyter" title="Link to this heading">#</a></h2>
+<p>In a Jupyter notebook you can add two different types of cell</p>
+<ol class="arabic simple">
+<li><p>Code - to write code to run</p></li>
+<li><p>Markdown - to add text and format it</p></li>
+</ol>
+<center>
+<img src="img/vscode-ipnb-buttons.png" width="900">
+</center></section>
+<section id="working-with-jupyter-code-cell">
+<h2>Working with jupyter - Code cell<a class="headerlink" href="#working-with-jupyter-code-cell" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Click on the “+ Code” button</p></li>
+<li><p>Write python code</p></li>
+<li><p>Run it (play button or <em>shift</em> + <em>enter</em>)</p></li>
+</ol>
+<center>
+<img src="img/ipnb-code-window.png" width="900">
+</center></section>
+<section id="working-with-jupyter-markdown-cell">
+<h2>Working with jupyter - Markdown cell<a class="headerlink" href="#working-with-jupyter-markdown-cell" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Click on the “+ Markdown” button</p></li>
+<li><p>Write text and format it with markdown symbols</p></li>
+<li><p>You can also use html</p></li>
+</ol>
+<center>
+<img src="img/ipnb-mkdown-window-typing.png" width="900">
+</center></section>
+<section id="working-with-jupyter-markdown-cell-cont-d">
+<h2>Working with jupyter - Markdown cell (cont’d)<a class="headerlink" href="#working-with-jupyter-markdown-cell-cont-d" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="4">
+<li><p>Confirm it (Check symbol on the top right or <em>shift</em> + <em>enter</em>) to see the result</p></li>
+</ol>
+<center>
+<img src="img/ipnb-mkdown-window-run.png" width="900">
+</center><section id="troubleshooting-on-windows-python-is-not-recognized">
+<h3>Troubleshooting on Windows:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code><a class="headerlink" href="#troubleshooting-on-windows-python-is-not-recognized" title="Link to this heading">#</a></h3>
 <p>If, when when running <code class="docutils literal notranslate"><span class="pre">python</span></code> in the terminal of VSCode, you get the following error:</p>
 <center>
 <img src="img/win11-unrecognized-python.png">
@@ -710,26 +891,48 @@ document.write(`
 <p>Then, you have to:</p>
 </section>
 <section id="troubleshooting-on-windows-python-is-not-recognized-cont-d">
-<h2>Troubleshooting on Windows:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)<a class="headerlink" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d" title="Link to this heading">#</a></h2>
+<h3>Troubleshooting on Windows:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)<a class="headerlink" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d" title="Link to this heading">#</a></h3>
+</section>
+<section id="step-1-uninstall-miniconda">
+<h3>STEP 1 Uninstall Miniconda:<a class="headerlink" href="#step-1-uninstall-miniconda" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Uninstall Python: run again the installer of Python and select <em>Uninstall</em>:</p></li>
+<li><p>Click on <strong>Start &gt; Settings</strong></p></li>
+<li><p>Select <strong>Apps</strong> from the left menu and then click <strong>Installed apps</strong></p></li>
 </ol>
 <center>
-<img src="img/win11-uninstall-python.drawio.png" width="450">
+<img src="img/windows-settings-apps.png" width="450">
+</center></section>
+<section id="troubleshooting-on-windows-python-is-not-recognized-cont-d-2">
+<h3>Troubleshooting on Windows:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d - 2)<a class="headerlink" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d-2" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="3">
+<li><p>Look for Miniconda, click on <strong>… &gt; Uninstall</strong></p></li>
+</ol>
+<center>
+<img src="img/uninstall-conda.png" width="450">
+</center></section>
+<section id="troubleshooting-on-windows-python-is-not-recognized-cont-d-3">
+<h3>Troubleshooting on Windows:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d - 3)<a class="headerlink" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d-3" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="4">
+<li><p>Run the conda uninstaller</p></li>
+</ol>
+<center>
+<img src="img/miniconda-uninstaller.png" width="450">
 </center>
 </section>
-<section id="id1">
-<h2>Troubleshooting on Windows:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<ol class="arabic simple" start="2">
-<li><p>Start the Python installer</p></li>
-<li><p>Select <em><strong>Add to path</strong></em> at the bottom</p></li>
+<section id="troubleshooting-on-windows-python-is-not-recognized-cont-d-4">
+<h3>Troubleshooting on Windows:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d - 4)<a class="headerlink" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d-4" title="Link to this heading">#</a></h3>
+</section>
+<section id="step-2-reinstall-miniconda-properly">
+<h3>STEP 2 Reinstall miniconda properly:<a class="headerlink" href="#step-2-reinstall-miniconda-properly" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Start the miniconda installer</p></li>
+<li><p>Click next and accept license terms</p></li>
+<li><p>In the <em>Advanced Installation Options</em> view, check “Add installation to my PATH environment variable”, ignore warnings. Then continue the setup.</p></li>
 </ol>
 <center>
-<img src="img/python-installer-win.drawio.png" width="400">
+<img src="img/miniconda-installer-windows-5.png" width="500">
 </center>
-<ol class="arabic simple" start="4">
-<li><p>Proceed with <em><strong>Install now</strong></em></p></li>
-</ol>
+</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="cloud-setup">
@@ -793,6 +996,20 @@ document.write(`
 <p><em><strong>We suggest to use Colab only if you have issues with your local setup</strong></em></p>
 </section>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="using-the-book">
+<h1>Using the book<a class="headerlink" href="#using-the-book" title="Link to this heading">#</a></h1>
+<section id="opening-code-from-the-book">
+<h2>Opening code from the book<a class="headerlink" href="#opening-code-from-the-book" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Visit <a class="reference external" href="https://introcp.github.io/src/index.html">https://introcp.github.io/src/index.html</a> to access the book</p></li>
+<li><p>Use the left menu to get the desired content</p></li>
+<li><p>You can open the content as a jupyter notebook in Colab (google account needed) or in a web jupyter app (ready to use, no account needed)</p></li>
+<li><p>This will be very useful to run code you find in the book</p></li>
+</ol>
+<center>
+<img src="img/book-colab-jupyter-menu.png" width="600">
+</center></section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -852,22 +1069,40 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#local-setup">Local Setup</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#only-on-windows-11-disable-windows-store-aliases">[<strong>Only on Windows 11</strong>]<br/>Disable Windows Store Aliases</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#only-on-windows-11-enable-script-cmdlet">[<strong>Only on Windows 11</strong>]<br/>Enable script cmdlet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-python">Download Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-python-via-miniconda">Installing Python via MiniConda</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer">Launch the installer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer-cont-d">Launch the installer (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-the-installer-cont-d-2-windows-only">Launch the installer (cont’d 2) [Windows only]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-a-good-code-editor-visual-studio-code">Install a (good) code editor: <strong>Visual Studio Code</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code-windows">Start <strong>Visual Studio Code</strong> (Windows)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code-mac-os-x">Start <strong>Visual Studio Code</strong> (Mac OS X)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-python-integration">VSCode extension: Python integration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-python-environment-manager">VSCode extension: Python Environment Manager</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-jupyter">VSCode extension: Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-visual-studio-code">Start <strong>Visual Studio Code</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-python-installation">Test python installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code-extension-python-integration">VS Code extension: Python integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-run-a-python-file-in-vs-code">Create and run a python file in VS Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-run-a-python-file-in-vs-code-cont-d">Create and run a python file in VS Code (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code-extension-jupyter">VS Code extension: Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-jupyter-notebook">Create a new jupyter notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-install-python-packages-from-the-community">Where to install Python packages from the community</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-virtual-environment">Create a new virtual environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-the-default-virtual-environment">Pick the default virtual environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-virtual-environment-only-windows">Create a new virtual environment [Only Windows]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-virtual-environment-cont-d">Create a new virtual environment (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-the-environment-list">Print the environment list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-environments-while-working">How to use environments while working</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activate-you-environment">Activate you environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-python-packages-in-the-virtual-environment">Installation of Python packages in the virtual environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-code-in-jupyter-notebook">Running code in Jupyter notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-code-in-jupyter-notebook-cont-d">Running code in Jupyter notebook (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter">Working with jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter-code-cell">Working with jupyter - Code cell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter-markdown-cell">Working with jupyter - Markdown cell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter-markdown-cell-cont-d">Working with jupyter - Markdown cell (cont’d)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-uninstall-miniconda">STEP 1 Uninstall Miniconda:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d-2">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d - 2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d-3">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d - 3)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d-4">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d - 4)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-reinstall-miniconda-properly">STEP 2 Reinstall miniconda properly:</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-setup">Cloud Setup</a><ul class="visible nav section-nav flex-column">
@@ -879,6 +1114,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-local-setup-with-vscode">Environment: local setup with VSCode</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-local-setup-with-jupyerlab">Environment: local setup with JupyerLab</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-cloud-setup-with-colab">Environment: cloud setup with Colab</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-book">Using the book</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book">Opening code from the book</a></li>
 </ul>
 </li>
 </ul>
