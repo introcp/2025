@@ -407,6 +407,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hex-badc0de-to-binary">Hex BADC0DE to Binary</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-totti-to-binary">Text TOTTI to Binary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-to-text">Binary to text</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-logic-exercises">Boolean Logic Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-a-land-neg-b-land-c-lor-neg-a-land-b-land-neg-c-lor-a-land-b-land-c">Formula <span class="math notranslate nohighlight">\((A \land \neg B \land C) \lor (\neg A \land B \land \neg C) \lor (A \land B \land C)\)</span></a></li>
@@ -482,23 +483,11 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(E_{16} = {1110}_2\)</span></p></li>
 </ul>
 <p>Therefore: <span class="math notranslate nohighlight">\(BADC0DE_{16} = 1011101011011100000011011110_2\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Text TOTTI to Binary</span>
-
-<span class="n">Convert</span> <span class="n">the</span> <span class="n">text</span> <span class="s2">&quot;TOTTI&quot;</span> <span class="n">to</span> <span class="n">binary</span> <span class="n">using</span> <span class="n">the</span> <span class="n">ASCII</span> <span class="n">table</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-    <span class="n">Convert</span> <span class="n">the</span> <span class="n">text</span> <span class="s2">&quot;TOTTI&quot;</span> <span class="n">to</span> <span class="n">binary</span> <span class="n">using</span> <span class="n">the</span> <span class="n">ASCII</span> <span class="n">table</span>
-            <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+</section>
+<section id="text-totti-to-binary">
+<h2>Text TOTTI to Binary<a class="headerlink" href="#text-totti-to-binary" title="Link to this heading">#</a></h2>
+<p>Convert the text “TOTTI” to binary using the ASCII table</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">T</span> <span class="o">=</span> <span class="mi">84</span> <span class="ow">in</span> <span class="n">ASCII</span> <span class="o">=</span> <span class="mi">01010100</span> <span class="ow">in</span> <span class="n">binary</span>
@@ -509,18 +498,27 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="o">-</span> <span class="n">T</span> <span class="o">=</span> <span class="mi">84</span> <span class="ow">in</span> <span class="n">ASCII</span> <span class="o">=</span> <span class="mi">01010100</span> <span class="ow">in</span> <span class="n">binary</span>
+                        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+</pre></div>
 </div>
-</section>
+</div>
+</div>
 </section>
 <section id="binary-to-text">
 <h2>Binary to text<a class="headerlink" href="#binary-to-text" title="Link to this heading">#</a></h2>
 <p>Convert <code class="docutils literal notranslate"><span class="pre">0100110001010101010010010101001101010011</span></code> into text using ASCII:</p>
 <p>Breaking the binary string into 8-bit chunks:</p>
-<p>01001100 -&gt; 76 in decimal -&gt; ‘L’ in ASCII
-01010101 -&gt; 85 in decimal -&gt; ‘U’ in ASCII
-01001001 -&gt; 73 in decimal -&gt; ‘I’ in ASCII
-01010011 -&gt; 83 in decimal -&gt; ‘S’ in ASCII
-01010011 -&gt; 83 in decimal -&gt; ‘S’ in ASCII</p>
+<ul class="simple">
+<li><p>01001100 -&gt; 76 in decimal -&gt; ‘L’ in ASCII</p></li>
+<li><p>01010101 -&gt; 85 in decimal -&gt; ‘U’ in ASCII</p></li>
+<li><p>01001001 -&gt; 73 in decimal -&gt; ‘I’ in ASCII</p></li>
+<li><p>01010011 -&gt; 83 in decimal -&gt; ‘S’ in ASCII</p></li>
+<li><p>01010011 -&gt; 83 in decimal -&gt; ‘S’ in ASCII</p></li>
+</ul>
 <p>So the text is: LUISS</p>
 </section>
 <section id="boolean-logic-exercises">
@@ -1096,6 +1094,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hex-badc0de-to-binary">Hex BADC0DE to Binary</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-totti-to-binary">Text TOTTI to Binary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-to-text">Binary to text</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-logic-exercises">Boolean Logic Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-a-land-neg-b-land-c-lor-neg-a-land-b-land-neg-c-lor-a-land-b-land-c">Formula <span class="math notranslate nohighlight">\((A \land \neg B \land C) \lor (\neg A \land B \land \neg C) \lor (A \land B \land C)\)</span></a></li>

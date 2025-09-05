@@ -25,15 +25,17 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-## Text TOTTI to Binary
-
-Convert the text "TOTTI" to binary using the ASCII table
+- T = 84 in ASCII = 01010100 in binary
+- O = 79 in ASCII = 01001111 in binary
+- T = 84 in ASCII = 01010100 in binary
+- T = 84 in ASCII = 01010100 in binary
+- I = 73 in ASCII = 01001001 in binary
 ------------------
 
 
-  [36mCell[39m[36m [39m[32mIn[1][39m[32m, line 3[39m
-[31m    [39m[31mConvert the text "TOTTI" to binary using the ASCII table[39m
-            ^
-[31mSyntaxError[39m[31m:[39m invalid syntax
+  [36mCell[39m[36m [39m[32mIn[1][39m[32m, line 1[39m
+[31m    [39m[31m- T = 84 in ASCII = 01010100 in binary[39m
+                        ^
+[31mSyntaxError[39m[31m:[39m leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
 
 
