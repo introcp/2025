@@ -7567,7 +7567,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Jupyter-Notebook">Jupyter Notebook<a class="anchor-link" href="#Jupyter-Notebook">¶</a></h2><p>Using the environment <strong>JupyterLab</strong> we can create a new notebook:</p>
+<h2 id="Jupyter-Notebook">Jupyter Notebook<a class="anchor-link" href="#Jupyter-Notebook">¶</a></h2><p>Using the environment <strong>JupyterLab</strong> or with a proper Visual Studio Code setup, we can create a new notebook:</p>
 <center>
 <img alt="No description has been provided for this image" src="img/jupyterlab.png" width="750"/>
 </center>
@@ -7659,11 +7659,15 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Download-Python">Download Python<a class="anchor-link" href="#Download-Python">¶</a></h2><p>Visit: <strong><a href="https://www.python.org/">https://www.python.org/</a></strong></p>
-<center>
-<img alt="No description has been provided for this image" src="img/python-download-win.png" width="700"/>
-<img alt="No description has been provided for this image" src="img/python-download-mac.png" width="700"/>
+<h2 id="Installing-Python-via-MiniConda">Installing Python via MiniConda<a class="anchor-link" href="#Installing-Python-via-MiniConda">¶</a></h2><ol>
+<li>Open your web browser (e.g. Google Chrome, Microsoft Edge, Apple Safari, Mozilla Firefox) and go to <a href="https://www.anaconda.com/download/success">https://www.anaconda.com/download/success</a></li>
+<li>Click on the <em>Download</em> (for Windows) / <em>Download for mac</em> (for Mac) button under <em>Miniconda Installers</em> to get the installer<center>
+<img alt="No description has been provided for this image" src="img/download-miniconda-installers.png" width="350"/>
+  
+<img alt="No description has been provided for this image" src="img/download-miniconda-mac.png" width="400"/>
 </center>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -7674,14 +7678,9 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Launch-the-installer">Launch the installer<a class="anchor-link" href="#Launch-the-installer">¶</a></h2><p>Double click on the downloaded file, e.g., on Windows:</p>
-<ol>
-<li><h3>Enable <b><i>Add python.exe to PATH</i></b><!--3-->
-</h3></li>
-<li>Click <em><strong>Install now</strong></em></li>
-</ol>
+<h2 id="Launch-the-installer">Launch the installer<a class="anchor-link" href="#Launch-the-installer">¶</a></h2><p>Double click on the downloaded file (e.g. on Windows) to start the setup:</p>
 <center>
-<img alt="No description has been provided for this image" src="img/python-installer-win.drawio.png" width="500"/>
+<img alt="No description has been provided for this image" src="img/miniconda-installer-windows-1.png" width="600"/>
 </center>
 </div>
 </div>
@@ -7695,7 +7694,23 @@ main {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Launch-the-installer-(cont'd)">Launch the installer (cont'd)<a class="anchor-link" href="#Launch-the-installer-(cont'd)">¶</a></h2><p>Similarly on Mac OS X:</p>
 <center>
-<img alt="No description has been provided for this image" src="img/python-installer-mac.png" width="500"/>
+<img alt="No description has been provided for this image" src="img/miniconda-setup-mac.png" width="600"/>
+</center>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Launch-the-installer-(cont'd-2)-%5BWindows-only%5D">Launch the installer (cont'd 2) [Windows only]<a class="anchor-link" href="#Launch-the-installer-(cont'd-2)-%5BWindows-only%5D">¶</a></h2><ul>
+<li>In the <em>Advanced Installation Options</em> view, check "Add installation to my PATH environment variable", ignore warnings</li>
+</ul>
+<center>
+<img alt="No description has been provided for this image" src="img/miniconda-installer-windows-5.png" width="600"/>
 </center>
 </div>
 </div>
@@ -7708,11 +7723,13 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Install-a-(good)-code-editor:-Visual-Studio-Code">Install a (good) code editor: <strong>Visual Studio Code</strong><a class="anchor-link" href="#Install-a-(good)-code-editor:-Visual-Studio-Code">¶</a></h2><ol>
-<li>Visit: <strong><a href="https://code.visualstudio.com/Download">https://code.visualstudio.com/Download</a></strong></li>
-<li>Download the latest version for your OS</li>
+<li>Visit: <strong><a href="https://code.visualstudio.com">https://code.visualstudio.com </a></strong></li>
+<li>Click on the button "Download for Windows" (if you have windows) or "Download for Mac" to start the download [check needed]</li>
 </ol>
 <center>
-<img alt="No description has been provided for this image" src="img/download-vscode.png"/>
+<img alt="No description has been provided for this image" src="img/download-vscode-windows.png" width="300"/>
+  
+<img alt="No description has been provided for this image" src="img/vscode-download-mac.png" width="250"/>
 </center>
 </div>
 </div>
@@ -7724,8 +7741,8 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Start-Visual-Studio-Code-(Windows)">Start <strong>Visual Studio Code</strong> (Windows)<a class="anchor-link" href="#Start-Visual-Studio-Code-(Windows)">¶</a></h2><center>
-<img alt="No description has been provided for this image" src="img/vscode.png" width="650"/>
+<h2 id="Start-Visual-Studio-Code">Start <strong>Visual Studio Code</strong><a class="anchor-link" href="#Start-Visual-Studio-Code">¶</a></h2><center>
+<img alt="No description has been provided for this image" src="img/open-vscode-windows.png" width="650"/>
 </center>
 </div>
 </div>
@@ -7737,9 +7754,15 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Start-Visual-Studio-Code-(Mac-OS-X)">Start <strong>Visual Studio Code</strong> (Mac OS X)<a class="anchor-link" href="#Start-Visual-Studio-Code-(Mac-OS-X)">¶</a></h2><center>
-<img alt="No description has been provided for this image" src="img/vscode-mac.png" width="650"/>
+<h2 id="Test-python-installation">Test python installation<a class="anchor-link" href="#Test-python-installation">¶</a></h2><ol>
+<li>In VS Code start the terminal: <em><strong>Terminal &gt; New Terminal</strong></em></li>
+<li>Type <code>python</code> to open the interactive shell, a prompt input will appear with symbols <code>&gt;&gt;&gt;</code></li>
+<li>Type the code <code>print('python installed!')</code> and hit enter, you will see the shell printing on screen "python installed!"</li>
+</ol>
+<center>
+<img alt="No description has been provided for this image" src="img/python-installed-terminal.png" width="650"/>
 </center>
+<!-- goto: troubleshooting if python not added to path -->
 </div>
 </div>
 </div>
@@ -7750,7 +7773,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="VSCode-extension:-Python-integration">VSCode extension: Python integration<a class="anchor-link" href="#VSCode-extension:-Python-integration">¶</a></h2><ol>
+<h2 id="VS-Code-extension:-Python-integration">VS Code extension: Python integration<a class="anchor-link" href="#VS-Code-extension:-Python-integration">¶</a></h2><ol>
 <li>From the side bar, open the <em><strong>Extension</strong></em> tab</li>
 <li>Search for <em><strong>Python</strong></em></li>
 <li>Install the extension</li>
@@ -7768,13 +7791,77 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="VSCode-extension:-Python-Environment-Manager">VSCode extension: Python Environment Manager<a class="anchor-link" href="#VSCode-extension:-Python-Environment-Manager">¶</a></h2><ol>
+<!-- ## VSCode extension: Python Environment Manager
+
+1. From the side bar, open the ***Extension*** tab
+2. Search for ***Python Environment Manager***
+3. Install the extension
+
+<center>
+<img src="img/vscode-extension-python-venv-manager.png" width="500">
+</center> -->
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Create-and-run-a-python-file-in-VS-Code">Create and run a python file in VS Code<a class="anchor-link" href="#Create-and-run-a-python-file-in-VS-Code">¶</a></h2><ol>
+<li><p>In Visual Studio Code <em><strong>File &gt; New File</strong></em></p>
+</li>
+<li><p>Select <em><strong>Python File</strong></em></p>
+<center>
+<img alt="No description has been provided for this image" src="img/new-python-file.png" width="500"/>
+</center>
+</li>
+<li><p>In the opened file type <code>print('hello world!')</code> and save the file</p>
+</li>
+<li><p>Click on the <strong>play button</strong> on the top right corner and the code will be executed in a new terminal</p>
+<center>
+<img alt="No description has been provided for this image" src="img/vscode-play.png" width="500"/>
+</center>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Create-and-run-a-python-file-in-VS-Code-(cont'd)">Create and run a python file in VS Code (cont'd)<a class="anchor-link" href="#Create-and-run-a-python-file-in-VS-Code-(cont'd)">¶</a></h2><p>When you hit play, VS Code is just running a command line in the terminal. That's another way to run python files:</p>
+<ol>
+<li>In Visual Studio Code open the terminal <em><strong>File &gt; New Terminal</strong></em></li>
+<li>Type <code>python &lt;full-path-to-the-file&gt;</code> and hit enter <br/>
+(e.g. on Windows if you have a file named "hello_world.py" in the Documents folder)<center>
+<img alt="No description has been provided for this image" src="img/vscode-terminal-py.png" width="500"/>
+</center>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="VS-Code-extension:-Jupyter">VS Code extension: Jupyter<a class="anchor-link" href="#VS-Code-extension:-Jupyter">¶</a></h2><ol>
 <li>From the side bar, open the <em><strong>Extension</strong></em> tab</li>
-<li>Search for <em><strong>Python Environment Manager</strong></em></li>
+<li>Search for <em><strong>Jupyter</strong></em></li>
 <li>Install the extension</li>
 </ol>
 <center>
-<img alt="No description has been provided for this image" src="img/vscode-extension-python-venv-manager.png" width="500"/>
+<img alt="No description has been provided for this image" src="img/vscode-jupyter.png" width="750"/>
 </center>
 </div>
 </div>
@@ -7786,14 +7873,20 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="VSCode-extension:-Jupyter">VSCode extension: Jupyter<a class="anchor-link" href="#VSCode-extension:-Jupyter">¶</a></h2><ol>
-<li>From the side bar, open the <em><strong>Extension</strong></em> tab</li>
-<li>Search for <em><strong>Jupyter</strong></em></li>
-<li>Install the extension</li>
-</ol>
+<h2 id="Create-a-new-jupyter-notebook">Create a new jupyter notebook<a class="anchor-link" href="#Create-a-new-jupyter-notebook">¶</a></h2><ol>
+<li><p>In Visual Studio Code <em><strong>File &gt; New File</strong></em> tab</p>
+</li>
+<li><p>Select <em><strong>Jupyter Notebook</strong></em></p>
 <center>
-<img alt="No description has been provided for this image" src="img/vscode-jupyter.png"/>
+<img alt="No description has been provided for this image" src="img/new-ipnb.png" width="500"/>
 </center>
+</li>
+<li><p>A new notebook will open</p>
+<center>
+<img alt="No description has been provided for this image" src="img/new-ipnb-opened.png" width="500"/>
+</center>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -7831,19 +7924,16 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Create-a-new-virtual-environment">Create a new virtual environment<a class="anchor-link" href="#Create-a-new-virtual-environment">¶</a></h2><ol>
-<li>Create a new folder (e.g., <code>labds</code> within <code>Desktop</code> folder)</li>
-<li>Open the folder from VSCode:</li>
-</ol>
+<h2 id="Create-a-new-virtual-environment-%5BOnly-Windows%5D">Create a new virtual environment [Only Windows]<a class="anchor-link" href="#Create-a-new-virtual-environment-%5BOnly-Windows%5D">¶</a></h2><ol>
+<li><p>In VS Code, start the terminal: <em><strong>Terminal &gt; New Terminal</strong></em></p>
+</li>
+<li><p>Only for Windows:
+<code>conda init powershell</code><br/>
+Then close the terminal <br/></p>
 <center>
-<img alt="No description has been provided for this image" src="img/vscode-open-folder.png" width="250"/>
+<img alt="No description has been provided for this image" src="img/close-terminal.png" width="800"/>
 </center>
-<ol start="3">
-<li>Start the terminal: <em><strong>View &gt; Terminal</strong></em></li>
-<li>Type in the terminal:<br/>
-<code>python -m venv .venv</code>
-<br/>or:<br/>
-<code>python3 -m venv .venv</code></li>
+</li>
 </ol>
 </div>
 </div>
@@ -7855,15 +7945,89 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Pick-the-default-virtual-environment">Pick the default virtual environment<a class="anchor-link" href="#Pick-the-default-virtual-environment">¶</a></h2><ol>
-<li>From the side bar, open the Python logo</li>
-<li>Click on the <em>star</em> to select the virtual environment</li>
-</ol>
+<h2 id="Create-a-new-virtual-environment-(cont'd)">Create a new virtual environment (cont'd)<a class="anchor-link" href="#Create-a-new-virtual-environment-(cont'd)">¶</a></h2><ol>
+<li><p>In VS Code, start the terminal: <em><strong>Terminal &gt; New Terminal</strong></em></p>
+</li>
+<li><p>Type in the terminal:
+<code>conda create --name &lt;my-env&gt;</code><br/>
+Where <code>&lt;my-env&gt;</code> is the name of your virtual environment<br/></p>
+</li>
+<li><p>Conda will ask to proceed
+<code>Proceed ([y]/n)?</code>
+<br/> Type <code>y</code> and hit enter to confirm
+<br/><br/></p>
+<p><strong>NOTE</strong>: The first time you create an environment, conda will ask to accept the terms of agreement <strong>before asking to proceed</strong></p>
 <center>
-<img alt="No description has been provided for this image" src="img/vscode-pick-venv.png" width="250"/>
+<img alt="No description has been provided for this image" src="img/conda-terms-of-agreement.png"/>
 </center>
-<ol start="3">
-<li>Close VSCode and then re-open your project folder in VSCode</li>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Print-the-environment-list">Print the environment list<a class="anchor-link" href="#Print-the-environment-list">¶</a></h2><ul>
+<li><p>To verify that the new environment was created correctly, we'll print the list of all the existing environments:<br/>
+<code>conda env list</code><br/></p>
+</li>
+<li><p>The newly created environment name should appear in the list</p>
+<center>
+<img alt="No description has been provided for this image" src="img/conda-env-list.png"/>
+</center>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="How-to-use-environments-while-working">How to use environments while working<a class="anchor-link" href="#How-to-use-environments-while-working">¶</a></h2><ul>
+<li><p>There is a default <strong>base</strong> environment.</p>
+<center>
+<img alt="No description has been provided for this image" src="img/base-env.png"/>
+</center>
+</li>
+<li><p>When starting a new project, we will create a new environment<br/><br/></p>
+</li>
+<li><p>Then our workflow will be like:</p>
+<ol>
+<li>Before starting to edit a project: <strong>activate</strong> the environment created for that project: <code>conda activate &lt;my-env&gt;</code></li>
+<li>While working on the project: install any <strong>python package</strong> needed <code>conda install &lt;package-name&gt;</code></li>
+<li>When finished: <strong>deactivate</strong> the environment (to avoid conflicts between projects) <code>conda deactivate &lt;my-env&gt;</code></li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Activate-you-environment">Activate you environment<a class="anchor-link" href="#Activate-you-environment">¶</a></h2><ol>
+<li><p>Type in the terminal:
+<code>conda activate --name &lt;my-env&gt;</code><br/>
+Where <code>&lt;my-env&gt;</code> is the name of your virtual environment<br/></p>
+</li>
+<li><p>The name of the environment will relace of "(base)" at the beginning of the command line, to confirm the environment is active.</p>
+<center>
+<img alt="No description has been provided for this image" src="img/my-first-env-activate.png"/>
+</center>
+</li>
 </ol>
 </div>
 </div>
@@ -7880,10 +8044,11 @@ main {
 <p>From VSCode:</p>
 <ol>
 <li>Start a new terminal using the menu: <em><strong>Terminal &gt; New Terminal</strong></em></li>
-<li><code>python -m pip install numpy matplotlib seaborn scikit-learn jupyterlab</code></li>
+<li><code>conda install numpy matplotlib seaborn scikit-learn jupyterlab</code></li>
+<li>When prompted to <code>Proceed ([y]/n)?</code> type <code>y</code> and hit enter. The package download will start</li>
 </ol>
 <center>
-<img alt="No description has been provided for this image" src="img/vscode-install-with-pip.png"/>
+<img alt="No description has been provided for this image" src="img/conda-package-installation.png"/>
 </center>
 </div>
 </div>
@@ -7895,7 +8060,118 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2>Troubleshooting on Windows:<br/><code>python is not recognized</code></h2>
+<h2 id="Running-code-in-Jupyter-notebook">Running code in Jupyter notebook<a class="anchor-link" href="#Running-code-in-Jupyter-notebook">¶</a></h2><ol>
+<li>In Visual Studio Code <em><strong>File &gt; New File &gt; Jupyter Notebook</strong></em></li>
+<li>When you create a new notebook, the new file contains a new code cell.</li>
+<li>In the code cell type <code>print('hello world!')</code></li>
+<li>In the top right corner click on <strong>Select Kernel &gt; Python Environments...</strong><center>
+<img alt="No description has been provided for this image" src="img/select-kernel-python-environments.png" width="500"/>
+</center>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Running-code-in-Jupyter-notebook-(cont'd)">Running code in Jupyter notebook (cont'd)<a class="anchor-link" href="#Running-code-in-Jupyter-notebook-(cont'd)">¶</a></h2><ol start="5">
+<li><p>Choose the python environment you've created for your project</p>
+<center>
+<img alt="No description has been provided for this image" src="img/select-python-environment.png" width="500"/>
+</center>
+</li>
+<li><p>Click the play button on the left side of the cell. The code will run and the result will appear under the code cell</p>
+<center>
+<img alt="No description has been provided for this image" src="img/run-code-ipnb.png" width="500"/>
+</center>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Working-with-jupyter">Working with jupyter<a class="anchor-link" href="#Working-with-jupyter">¶</a></h2><p>In a Jupyter notebook you can add two different types of cell</p>
+<ol>
+<li>Code - to write code to run</li>
+<li>Markdown - to add text and format it<center>
+<img alt="No description has been provided for this image" src="img/vscode-ipnb-buttons.png" width="900"/>
+</center>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Working-with-jupyter---Code-cell">Working with jupyter - Code cell<a class="anchor-link" href="#Working-with-jupyter---Code-cell">¶</a></h2><ol>
+<li>Click on the "+ Code" button</li>
+<li>Write python code</li>
+<li>Run it (play button or <em>shift</em> + <em>enter</em>)<center>
+<img alt="No description has been provided for this image" src="img/ipnb-code-window.png" width="900"/>
+</center>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Working-with-jupyter---Markdown-cell">Working with jupyter - Markdown cell<a class="anchor-link" href="#Working-with-jupyter---Markdown-cell">¶</a></h2><ol>
+<li>Click on the "+ Markdown" button</li>
+<li>Write text and format it with markdown symbols</li>
+<li>You can also use html<center>
+<img alt="No description has been provided for this image" src="img/ipnb-mkdown-window-typing.png" width="900"/>
+</center>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Working-with-jupyter---Markdown-cell-(cont'd)">Working with jupyter - Markdown cell (cont'd)<a class="anchor-link" href="#Working-with-jupyter---Markdown-cell-(cont'd)">¶</a></h2><ol start="4">
+<li>Confirm it (Check symbol on the top right or <em>shift</em> + <em>enter</em>) to see the result<center>
+<img alt="No description has been provided for this image" src="img/ipnb-mkdown-window-run.png" width="900"/>
+</center>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3>Troubleshooting on Windows:<br/><code>python is not recognized</code></h3>
 <p>If, when when running <code>python</code> in the terminal of VSCode, you get the following error:</p>
 <center>
 <img alt="No description has been provided for this image" src="img/win11-unrecognized-python.png"/>
@@ -7911,10 +8187,11 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2>Troubleshooting on Windows:<br/><code>python is not recognized</code> (cont'd)</h2>
-<ol>
-<li>Uninstall Python: run again the installer of Python and select <em>Uninstall</em>:<center>
-<img alt="No description has been provided for this image" src="img/win11-uninstall-python.drawio.png" width="450"/>
+<h3>Troubleshooting on Windows:<br/><code>python is not recognized</code> (cont'd)</h3>
+<h3 id="STEP-1-Uninstall-Miniconda:">STEP 1 Uninstall Miniconda:<a class="anchor-link" href="#STEP-1-Uninstall-Miniconda:">¶</a></h3><ol>
+<li>Click on <strong>Start &gt; Settings</strong></li>
+<li>Select <strong>Apps</strong> from the left menu and then click <strong>Installed apps</strong><center>
+<img alt="No description has been provided for this image" src="img/windows-settings-apps.png" width="450"/>
 </center>
 </li>
 </ol>
@@ -7928,18 +8205,49 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2>Troubleshooting on Windows:<br/><code>python is not recognized</code> (cont'd)</h2>
-<ol start="2">
-<li><p>Start the Python installer</p>
-</li>
-<li><p>Select <em><strong>Add to path</strong></em> at the bottom</p>
-<center>
-<img alt="No description has been provided for this image" src="img/python-installer-win.drawio.png" width="400"/>
+<h3>Troubleshooting on Windows:<br/><code>python is not recognized</code> (cont'd - 2)</h3>
+<ol start="3">
+<li>Look for Miniconda, click on <strong>... &gt; Uninstall</strong><center>
+<img alt="No description has been provided for this image" src="img/uninstall-conda.png" width="450"/>
 </center>
 </li>
-<li><p>Proceed with <em><strong>Install now</strong></em></p>
+</ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3>Troubleshooting on Windows:<br/><code>python is not recognized</code> (cont'd - 3)</h3>
+<ol start="4">
+<li>Run the conda uninstaller<center>
+<img alt="No description has been provided for this image" src="img/miniconda-uninstaller.png" width="450"/>
+</center>
 </li>
 </ol>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3>Troubleshooting on Windows:<br/><code>python is not recognized</code> (cont'd - 4)</h3>
+<h3 id="STEP-2-Reinstall-miniconda-properly:">STEP 2 Reinstall miniconda properly:<a class="anchor-link" href="#STEP-2-Reinstall-miniconda-properly:">¶</a></h3><ol>
+<li>Start the miniconda installer</li>
+<li>Click next and accept license terms</li>
+<li>In the <em>Advanced Installation Options</em> view, check "Add installation to my PATH environment variable", ignore warnings. Then continue the setup.</li>
+</ol>
+<center>
+<img alt="No description has been provided for this image" src="img/miniconda-installer-windows-5.png" width="500"/>
+</center>
 </div>
 </div>
 </div>
