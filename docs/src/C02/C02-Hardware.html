@@ -456,7 +456,45 @@ document.write(`
 <br>
 <div align="center">
 <img src="img/gates.png" width="60%">
-</div></section>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>A</p></th>
+<th class="head text-center"><p>B</p></th>
+<th class="head text-center"><p>A AND B</p></th>
+<th class="head text-center"><p>A OR B</p></th>
+<th class="head text-center"><p>NOT A</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 <section id="and-gate">
 <h2>AND gate<a class="headerlink" href="#and-gate" title="Link to this heading">#</a></h2>
 <p>The AND logic gate can be implemented with two switches in series:</p>
@@ -645,12 +683,37 @@ document.write(`
 <section id="xor-gate">
 <h2>XOR gate<a class="headerlink" href="#xor-gate" title="Link to this heading">#</a></h2>
 <p>To easily implement an adder, we need to implement an XOR gate:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>A</p></th>
+<th class="head text-center"><p>B</p></th>
+<th class="head text-center"><p>A XOR B</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>XOR can be implemented by combining AND, OR, and NOT gates: OR(AND(A, NOT(B)), AND(NOT(A), B))</p>
 <div align="center">
 <img src="img/XOR-circuit.drawio.png" width="80%">
-</div>
-<p>As seen in the previous lecture, an XOR can be implemented by combining AND, OR, and NOT gates:</p>
-<p>XOR(A, B) = OR(AND(A, NOT(B)), AND(NOT(A), B))</p>
-</section>
+</div></section>
 <section id="half-adder-boolean-function">
 <h2>Half Adder: boolean function<a class="headerlink" href="#half-adder-boolean-function" title="Link to this heading">#</a></h2>
 <p>We want to design a circuit that:</p>
@@ -826,7 +889,8 @@ $<span class="math notranslate nohighlight">\(
 <div align="center">
 <img src="img/8bit-computer.png" width="50%"/>
 </div>
-<p>What you need: 7899 transistors, 12786 jump wires, <strong>…just kidding :)</strong></p>
+<p>What you need: 7899 transistors, 12786 jump wires, …</p>
+<p><strong>…just kidding :)</strong></p>
 <p><strong>NOTE</strong>: someone has actually done it: see <a class="reference external" href="https://www.youtube.com/watch?v=g_ZaioqF1B0&amp;amp;ab_channel=PauloConstantino">here</a> and <a class="reference external" href="https://www.youtube.com/watch?v=HyznrdDSSGM&amp;amp;list=PLowKtXNTBypGqImE405J2565dvjafglHU&amp;amp;ab_channel=BenEater">here</a>.</p>
 </section>
 <section id="how-are-today-s-computers-built">
