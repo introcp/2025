@@ -7482,6 +7482,47 @@ main {
 <div align="center">
 <img alt="No description has been provided for this image" src="img/gates.png" width="60%"/>
 </div>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">A AND B</th>
+<th style="text-align:center">A OR B</th>
+<th style="text-align:center">NOT A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -7795,11 +7836,41 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="XOR-gate">XOR gate<a class="anchor-link" href="#XOR-gate">¶</a></h2><p>To easily implement an adder, we need to implement an XOR gate:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">A XOR B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<p>XOR can be implemented by combining AND, OR, and NOT gates: OR(AND(A, NOT(B)), AND(NOT(A), B))</p>
 <div align="center">
 <img alt="No description has been provided for this image" src="img/XOR-circuit.drawio.png" width="80%"/>
 </div>
-<p>As seen in the previous lecture, an XOR can be implemented by combining AND, OR, and NOT gates:</p>
-<p>XOR(A, B) = OR(AND(A, NOT(B)), AND(NOT(A), B))</p>
 </div>
 </div>
 </div>
@@ -7868,7 +7939,7 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7883,7 +7954,7 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8052,9 +8123,7 @@ $$</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Full-Adder:-summing-two-bytes">Full Adder: summing two bytes<a class="anchor-link" href="#Full-Adder:-summing-two-bytes">¶</a></h2><p>We now sum two bytes $A$ and $B$, such as:</p>
 <p>$$
-    A = 100011100_2\\
-    B = 101010111_2\\
-    A + B = ?
+    A = 100011100_2 ~~~~~~~~~ B = 101010111_2 ~~~~~~~~~ A + B = ?
 $$</p>
 <p>We split the numbers into bits and sum them pair by pair using different full adders:</p>
 <div align="center">
@@ -8072,15 +8141,36 @@ $$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Next:-we-will-implement-a-full-8-bit-computer!">Next: we will implement a full 8-bit computer!<a class="anchor-link" href="#Next:-we-will-implement-a-full-8-bit-computer!">¶</a></h2><p>We will use starter kit electronics. Spoiler of the result:</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div align="center">
 <img alt="No description has been provided for this image" src="img/8bit-computer.png" width="50%">
 </img></div>
-<p>What you need: 7899 transistors, 12786 jump wires, <strong>...just kidding :)</strong></p>
+<p>What you need: 7899 transistors, 12786 jump wires, ...</p>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>...just kidding :)</strong></p>
 <p><strong>NOTE</strong>: someone has actually done it: see <a href="https://www.youtube.com/watch?v=g_ZaioqF1B0&amp;ab_channel=PauloConstantino">here</a> and <a href="https://www.youtube.com/watch?v=HyznrdDSSGM&amp;list=PLowKtXNTBypGqImE405J2565dvjafglHU&amp;ab_channel=BenEater">here</a>.</p>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">

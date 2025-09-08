@@ -418,9 +418,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-run-complex-software-stacks">Computers run complex software stacks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems">Operating Systems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-goals-of-modern-operating-systems">Design goals of modern Operating Systems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-system-overview">Operating System Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-system-overview-cont-d">Operating System Overview (cont’d)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Operating System Overview (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-operating-system">Overview Operating System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-operating-system-cont-d">Overview Operating System (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Overview Operating System (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-cores-and-operating-system-multitasking">CPU Cores and Operating System Multitasking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-operating-systems">Popular Operating Systems</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
@@ -444,7 +444,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="software">
 <h1><b style="font-family: 'LUISS', 'Lato'">Software</b><a class="headerlink" href="#software" title="Link to this heading">#</a></h1>
-<h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2><h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3><br><img src="https://introcp.github.io/dist/img/logo2.png" width="200px"><br><br><br><section id="how-can-a-computer-execute-a-program">
+<h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
+<br>
+<img src="https://introcp.github.io/dist/img/logo2.png" width="200px">
+<p><br><br><br></p>
+<section id="how-can-a-computer-execute-a-program">
 <h2>How can a computer execute a program?<a class="headerlink" href="#how-can-a-computer-execute-a-program" title="Link to this heading">#</a></h2>
 <div align="center">
 <img src="img/cpus.drawio.png" width="80%">
@@ -467,7 +472,7 @@ document.write(`
 <p>A simple sequence of instructions to compute the sum of two integer numbers would look like this in machine code:</p>
 <table>
   <tr>
-    <td>Intel/AMD 64-bit machine code</td>
+    <td>Intel/AMD 64 bit machine code</td>
     <td></td><td></td>
     <td>ARM 64-bit machine code</td>
   </tr>
@@ -506,7 +511,7 @@ c0 03 5f d6
 <p>To make machine code understandable for humans, we can translate it to assembly code:</p>
 <ul class="simple">
 <li><p><strong>Low level</strong> [same as machine code]: relatively simple operations</p></li>
-<li><p><strong>CPU specific</strong> [same as machine code]: different CPUs have different machine codes</p></li>
+<li><p><strong>CPU specific</strong> [same as machine code]: different CPUs have different assembly codes</p></li>
 <li><p><strong>Human readable</strong> [differently from machine code]: CPU struggles to read it!<br><br></p></li>
 </ul>
 <table>
@@ -560,7 +565,7 @@ ret
 </section>
 <section id="from-low-level-to-high-level-programming">
 <h2>From low-level to high-level programming<a class="headerlink" href="#from-low-level-to-high-level-programming" title="Link to this heading">#</a></h2>
-<p>Most programmers use high-level languages, such as Python, JavaScript, or PHP, to write software.</p>
+<p>Most programmers use high-level languages, such as Python, Javascript, or PHP, to write software.</p>
 <p><em><strong>However, the CPU does not understand high-level languages. Never!</strong></em></p>
 <p>Code written in high-level languages must be translated into machine code. Two main strategies:</p>
 <ol class="arabic simple">
@@ -577,9 +582,9 @@ ret
 <ol class="arabic simple" start="2">
 <li><p><strong>Interpretation</strong>:</p>
 <ul class="simple">
-<li><p>Interpreters translate high-level code into machine code at <em>runtime</em>.</p></li>
+<li><p>Interpreters translate high-level code into machine code at <em>running time</em>.</p></li>
 <li><p>Running time means when the user runs the code.</p></li>
-<li><p>The code is portable and platform-independent.</p></li>
+<li><p>The code is portable and platform independent.</p></li>
 <li><p>Developers distribute the high-level code, users use the interpreter to run the code.</p></li>
 </ul>
 </li>
@@ -598,7 +603,7 @@ ret
 </div></section>
 <section id="why-do-we-need-to-learn-a-programming-language">
 <h2>Why do we need to learn a programming language?<a class="headerlink" href="#why-do-we-need-to-learn-a-programming-language" title="Link to this heading">#</a></h2>
-<p>Most everyday tasks require performing:</p>
+<p>Most everyday tasks require to perform:</p>
 <ul class="simple">
 <li><p>repetitive…</p></li>
 <li><p>long sequences of…</p></li>
@@ -613,7 +618,7 @@ ret
 <h2>Language: syntax and semantics<a class="headerlink" href="#language-syntax-and-semantics" title="Link to this heading">#</a></h2>
 <p>Programming languages have:</p>
 <ul class="simple">
-<li><p><strong>Syntax</strong>: it defines which strings of characters and symbols are well-formed.</p></li>
+<li><p><strong>Syntax</strong>: it defines which strings of characters and symbols are well formed.</p></li>
 <li><p><strong>Semantics</strong>: it defines the meaning of the well-formed strings.<br><br></p></li>
 </ul>
 <p>The same is true even for natural languages (English, Italian, etc.):</p>
@@ -722,7 +727,7 @@ b. Repeat from step #2</p></li>
 <ul class="simple">
 <li><p>They have been designed with different goals in mind</p></li>
 <li><p>Some are general purpose, some are domain specific (e.g., web)</p></li>
-<li><p>Some give more control to the user, some hide more details</p></li>
+<li><p>Some gives more control to the user, some hide more details</p></li>
 <li><p>Some are compiled, some are interpreted</p></li>
 </ul>
 <p>In this course, we will focus on a single high-level language: <em><strong>but which should we choose?</strong></em></p>
@@ -799,8 +804,8 @@ b. Repeat from step #2</p></li>
 <li><p><strong>Low latency</strong>: Minimizing response time for system operations (critical in real-time environments like automotive safety systems)</p></li>
 </ul>
 </section>
-<section id="operating-system-overview">
-<h2>Operating System Overview<a class="headerlink" href="#operating-system-overview" title="Link to this heading">#</a></h2>
+<section id="overview-operating-system">
+<h2>Overview Operating System<a class="headerlink" href="#overview-operating-system" title="Link to this heading">#</a></h2>
 <div align="center">
 <a class="reference internal image-reference" href="../../_images/schema.png"><img alt="../../_images/schema.png" src="../../_images/schema.png" style="width: 50%;" />
 </a>
@@ -811,8 +816,8 @@ b. Repeat from step #2</p></li>
 <li><p>The platform (operating system on a specific architecture, e.g., Windows x86) defines the <strong>Application Binary Interface (ABI)</strong>, which defines conventions (rules) on how different programs can interact, reuse code, and interface with the operating system.</p></li>
 </ul>
 </section>
-<section id="operating-system-overview-cont-d">
-<h2>Operating System Overview (cont’d)<a class="headerlink" href="#operating-system-overview-cont-d" title="Link to this heading">#</a></h2>
+<section id="overview-operating-system-cont-d">
+<h2>Overview Operating System (cont’d)<a class="headerlink" href="#overview-operating-system-cont-d" title="Link to this heading">#</a></h2>
 <div align="center">
 <a class="reference internal image-reference" href="../../_images/schema.png"><img alt="../../_images/schema.png" src="../../_images/schema.png" style="width: 50%;" />
 </a>
@@ -831,7 +836,7 @@ b. Repeat from step #2</p></li>
 </ul>
 </section>
 <section id="id1">
-<h2>Operating System Overview (cont’d)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>Overview Operating System (cont’d)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div align="center">
 <a class="reference internal image-reference" href="../../_images/schema.png"><img alt="../../_images/schema.png" src="../../_images/schema.png" style="width: 50%;" />
 </a>
@@ -867,7 +872,7 @@ b. Repeat from step #2</p></li>
 <p><strong>NOTE</strong>: If you have:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(1\)</span> core without preemptive multitasking: up to <span class="math notranslate nohighlight">\(1\)</span> applications executing in parallel</p></li>
-<li><p><span class="math notranslate nohighlight">\(1\)</span> core with preemptive multitasking: illusion of parallel execution of an infinite number of applications</p></li>
+<li><p><span class="math notranslate nohighlight">\(1\)</span> core with preemptive multitasking: illusion of parallel execution of an infinite number of apps</p></li>
 <li><p><span class="math notranslate nohighlight">\(k\)</span> cores without preemptive multitasking: up to <span class="math notranslate nohighlight">\(k\)</span> applications executing in parallel</p></li>
 <li><p><span class="math notranslate nohighlight">\(k\)</span> cores with preemptive multitasking: illusion of parallel execution of an infinite number of applications, with up to <span class="math notranslate nohighlight">\(k\)</span> actually executing in parallel at any given time</p></li>
 </ul>
@@ -1009,9 +1014,9 @@ b. Repeat from step #2</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers-run-complex-software-stacks">Computers run complex software stacks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems">Operating Systems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-goals-of-modern-operating-systems">Design goals of modern Operating Systems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-system-overview">Operating System Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-system-overview-cont-d">Operating System Overview (cont’d)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Operating System Overview (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-operating-system">Overview Operating System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-operating-system-cont-d">Overview Operating System (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Overview Operating System (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-cores-and-operating-system-multitasking">CPU Cores and Operating System Multitasking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-operating-systems">Popular Operating Systems</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
