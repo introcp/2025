@@ -440,13 +440,17 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-setup">Cloud Setup</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab-i-e-the-lazy-approach"><strong>Google Colab</strong>, i.e., the lazy approach</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-google-drive">From <strong>Google Drive</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab-i-e-the-lazy-approach-cont-d"><strong>Google Colab</strong>, i.e., the lazy approach (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-colab-notebook">New Colab notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-colab-notebook-cont-d">New Colab notebook (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlite">JupyterLite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlite-cont-d">JupyterLite (cont’d)</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">Environments</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-local-setup-with-vscode">Environment: local setup with VSCode</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-local-setup-with-jupyerlab">Environment: local setup with JupyerLab</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-cloud-setup-with-colab">Environment: cloud setup with Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-cloud-setup-with-jupyterlite">Environment: cloud setup with JupyterLite</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-book">Using the book</a><ul class="visible nav section-nav flex-column">
@@ -849,10 +853,51 @@ document.write(`
 <li><p><strong>No need to install anything</strong></p></li>
 </ul>
 </section>
-<section id="from-google-drive">
-<h2>From <strong>Google Drive</strong><a class="headerlink" href="#from-google-drive" title="Link to this heading">#</a></h2>
+<section id="google-colab-i-e-the-lazy-approach-cont-d">
+<h2><strong>Google Colab</strong>, i.e., the lazy approach (cont’d)<a class="headerlink" href="#google-colab-i-e-the-lazy-approach-cont-d" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>From <strong>Google Drive</strong></p></li>
+</ul>
 <center>
 <img src="img/drive-colab.png" width="500">>
+</center></section>
+<section id="new-colab-notebook">
+<h2>New Colab notebook<a class="headerlink" href="#new-colab-notebook" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>A new notebook will open in colab</p></li>
+<li><p>Use as usual</p></li>
+<li><p>Before running you must connect to a runtime</p></li>
+</ul>
+<center>
+<img src="img/generic-colab-connect.png" width="800">>
+</center></section>
+<section id="new-colab-notebook-cont-d">
+<h2>New Colab notebook (cont’d)<a class="headerlink" href="#new-colab-notebook-cont-d" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Once connected, write code and run code in cells pressing the play button on the left side of the cell</p></li>
+</ul>
+<center>
+<img src="img/generic-colab-run.png" width="800">>
+</center></section>
+<section id="jupyterlite">
+<h2>JupyterLite<a class="headerlink" href="#jupyterlite" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ercoppa.github.io/jupyterlite/lab/">https://ercoppa.github.io/jupyterlite/lab/</a></p></li>
+<li><p>Add code and cells</p></li>
+<li><p>Run with play button (or <em>shift + enter</em>)</p></li>
+<li><p>Save your file</p></li>
+</ul>
+<center>
+<img src="img/jupyterlite-notebook.png" width="800">
+</center></section>
+<section id="jupyterlite-cont-d">
+<h2>JupyterLite (cont’d)<a class="headerlink" href="#jupyterlite-cont-d" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Your files are saved in the browser’s memory space</p></li>
+<li><p><strong>You will lose them when you’ll delete your “cookies and other site data”</strong></p></li>
+</ul>
+<center>
+<img src="img/jupyterlite-local-storage.png" width="800">
 </center></section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="environments">
@@ -869,17 +914,6 @@ document.write(`
 </ul>
 <p><em><strong>This is the environment that we suggest you to use.</strong></em></p>
 </section>
-<section id="environment-local-setup-with-jupyerlab">
-<h2>Environment: local setup with JupyerLab<a class="headerlink" href="#environment-local-setup-with-jupyerlab" title="Link to this heading">#</a></h2>
-<p>Use JupyterLab:</p>
-<ul class="simple">
-<li><p>Start it from any terminal (e.g., from VSCode) with:<br><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">jupyterlab</span></code></p></li>
-<li><p>Write and execute notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) with support even for advanced and weird features.</p></li>
-<li><p>Basic editor</p></li>
-<li><p>Everything runs on your machine</p></li>
-</ul>
-<p><em><strong>We suggest to use JupterLab only when you need to run advanced Jupyter notebooks obtained from the external world</strong></em></p>
-</section>
 <section id="environment-cloud-setup-with-colab">
 <h2>Environment: cloud setup with Colab<a class="headerlink" href="#environment-cloud-setup-with-colab" title="Link to this heading">#</a></h2>
 <p>Use Google Colab:</p>
@@ -891,6 +925,17 @@ document.write(`
 <li><p><strong>Not adequate in future courses where you need a bit of computational power</strong> (assuming you do not want to pay Google).</p></li>
 </ul>
 <p><em><strong>We suggest to use Colab only if you have issues with your local setup</strong></em></p>
+</section>
+<section id="environment-cloud-setup-with-jupyterlite">
+<h2>Environment: cloud setup with JupyterLite<a class="headerlink" href="#environment-cloud-setup-with-jupyterlite" title="Link to this heading">#</a></h2>
+<p>Use JupyterLite:</p>
+<ul class="simple">
+<li><p>You can work from any computer. Even your tablet (although, it is a bit inconvenient!)</p></li>
+<li><p>Write and execute notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) with support even for advanced and weird features.</p></li>
+<li><p>Everything is saved only in the browser’s local database</p></li>
+<li><p>Everything runs actually on your machine</p></li>
+</ul>
+<p><em><strong>We suggest to use JupterLite only when you need to run advanced Jupyter notebooks obtained from the external world and you have issues with your local setup</strong></em></p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="using-the-book">
@@ -1104,13 +1149,17 @@ Where <code class="docutils literal notranslate"><span class="pre">&lt;my-env&gt
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-setup">Cloud Setup</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab-i-e-the-lazy-approach"><strong>Google Colab</strong>, i.e., the lazy approach</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-google-drive">From <strong>Google Drive</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab-i-e-the-lazy-approach-cont-d"><strong>Google Colab</strong>, i.e., the lazy approach (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-colab-notebook">New Colab notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-colab-notebook-cont-d">New Colab notebook (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlite">JupyterLite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlite-cont-d">JupyterLite (cont’d)</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">Environments</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-local-setup-with-vscode">Environment: local setup with VSCode</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-local-setup-with-jupyerlab">Environment: local setup with JupyerLab</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-cloud-setup-with-colab">Environment: cloud setup with Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-cloud-setup-with-jupyterlite">Environment: cloud setup with JupyterLite</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-book">Using the book</a><ul class="visible nav section-nav flex-column">
