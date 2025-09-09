@@ -454,15 +454,13 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-book">Using the book</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book">Opening code from the book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-downloading-the-ipnb">Opening code from the book: downloading the .ipnb</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-downloading-the-ipnb-cont-d">Opening code from the book: downloading the .ipnb (cont’d)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-opening-in-google-colab-or-jupyterlite">Opening code from the book: opening in Google Colab or JupyterLite</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-running-in-google-colab">Opening code from the book: running in Google Colab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-running-in-google-colab-cont-d">Opening code from the book: running in Google Colab (cont’d)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-running-in-google-colab-cont-d-2">Opening code from the book: running in Google Colab (cont’d - 2)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-running-in-jupyterlite">Opening code from the book: running in JupyterLite</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-why-you-should">Opening code from the book: why you should</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-material-on-the-book">Accessing the material on the book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-notebooks-from-the-book">Download notebooks from the book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-notebooks-from-the-book-in-vscode">Opening notebooks from the book in VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-notebooks-from-the-book-colab-or-jupyterlite">Opening notebooks from the book: Colab or JupyterLite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-notebooks-from-the-book-colab">Importing notebooks from the book: Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-notebooks-from-the-book-jupyterlite">Importing notebooks from the book: JupyterLite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-notebooks-from-the-book-why-you-should">Importing notebooks from the book: why you should</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python-virtual-environments">Python Virtual Environments</a><ul class="visible nav section-nav flex-column">
@@ -890,7 +888,8 @@ document.write(`
 <section id="jupyterlite">
 <h2>JupyterLite<a class="headerlink" href="#jupyterlite" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://ercoppa.github.io/jupyterlite/lab/">https://ercoppa.github.io/jupyterlite/lab/</a></p></li>
+<li><p><a class="reference external" href="https://ercoppa.github.io/jupyterlite/">https://ercoppa.github.io/jupyterlite/</a></p></li>
+<li><p><strong>It does not require an account</strong></p></li>
 <li><p>Add code and cells</p></li>
 <li><p>Run with play button (or <em>shift + enter</em>)</p></li>
 <li><p>Save your file</p></li>
@@ -901,7 +900,7 @@ document.write(`
 <section id="jupyterlite-cont-d">
 <h2>JupyterLite (cont’d)<a class="headerlink" href="#jupyterlite-cont-d" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Your files are saved in the browser’s memory space</p></li>
+<li><p>Your files are saved in the browser’s cache</p></li>
 <li><p><strong>You will lose them when you’ll delete your “cookies and other site data”</strong></p></li>
 </ul>
 <center>
@@ -939,92 +938,75 @@ document.write(`
 <p>Use JupyterLite:</p>
 <ul class="simple">
 <li><p>You can work from any computer. Even your tablet (although, it is a bit inconvenient!)</p></li>
-<li><p>Write and execute notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) with support even for advanced and weird features.</p></li>
-<li><p>Everything is saved only in the browser’s local database</p></li>
+<li><p>Write and execute notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>).</p></li>
+<li><p>Everything is saved in the browser’s local database</p></li>
 <li><p>Everything runs actually on your machine</p></li>
 </ul>
-<p><em><strong>We suggest to use JupterLite only when you need to run advanced Jupyter notebooks obtained from the external world and you have issues with your local setup</strong></em></p>
+<p><em><strong>We suggest to use JupterLite only when you cannot use VSCode and do not want use Colab</strong></em></p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="using-the-book">
 <h1>Using the book<a class="headerlink" href="#using-the-book" title="Link to this heading">#</a></h1>
-<section id="opening-code-from-the-book">
-<h2>Opening code from the book<a class="headerlink" href="#opening-code-from-the-book" title="Link to this heading">#</a></h2>
+<section id="accessing-the-material-on-the-book">
+<h2>Accessing the material on the book<a class="headerlink" href="#accessing-the-material-on-the-book" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Visit <a class="reference external" href="https://introcp.github.io/src/index.html">https://introcp.github.io/src/index.html</a> to access the book</p></li>
+<li><p>Visit <a class="reference external" href="https://introcp.github.io/">https://introcp.github.io/</a> to access the book</p></li>
 <li><p>Use the left menu to get the lesson content</p></li>
 </ol>
 <center>
-<img src="img/website-navigation.png" width="600">
+<img src="img/book.png" width="600">
 </center></section>
-<section id="opening-code-from-the-book-downloading-the-ipnb">
-<h2>Opening code from the book: downloading the .ipnb<a class="headerlink" href="#opening-code-from-the-book-downloading-the-ipnb" title="Link to this heading">#</a></h2>
+<section id="download-notebooks-from-the-book">
+<h2>Download notebooks from the book<a class="headerlink" href="#download-notebooks-from-the-book" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Click on the <a class="reference internal" href="../../_images/download-icon.png"><img alt="../../_images/download-icon.png" src="../../_images/download-icon.png" style="width: 25px;" /></a> icon</p></li>
-<li><p>Right click on <strong>.ipnb &gt; Save link as</strong> to save the file on your pc</p></li>
+<li><p>Right click on <strong>.ipynb &gt; Save link as</strong> to save the file on your pc</p></li>
 </ol>
 <center>
 <img src="img/download=ipnb.png" width="600">
 </center></section>
-<section id="opening-code-from-the-book-downloading-the-ipnb-cont-d">
-<h2>Opening code from the book: downloading the .ipnb (cont’d)<a class="headerlink" href="#opening-code-from-the-book-downloading-the-ipnb-cont-d" title="Link to this heading">#</a></h2>
+<section id="opening-notebooks-from-the-book-in-vscode">
+<h2>Opening notebooks from the book in VSCode<a class="headerlink" href="#opening-notebooks-from-the-book-in-vscode" title="Link to this heading">#</a></h2>
 <ol class="arabic simple" start="3">
-<li><p>Open the .ipnb in VS Code</p></li>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> in VS Code</p></li>
 <li><p>Add your notes and code snippets</p></li>
 </ol>
 <center>
 <img src="img/ipnb-opened-vscode.png" width="600">
 </center></section>
-<section id="opening-code-from-the-book-opening-in-google-colab-or-jupyterlite">
-<h2>Opening code from the book: opening in Google Colab or JupyterLite<a class="headerlink" href="#opening-code-from-the-book-opening-in-google-colab-or-jupyterlite" title="Link to this heading">#</a></h2>
+<section id="opening-notebooks-from-the-book-colab-or-jupyterlite">
+<h2>Opening notebooks from the book: Colab or JupyterLite<a class="headerlink" href="#opening-notebooks-from-the-book-colab-or-jupyterlite" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Click on the <a class="reference internal" href="../../_images/rocket-icon.png"><img alt="../../_images/rocket-icon.png" src="../../_images/rocket-icon.png" style="width: 25px;" /></a> icon</p></li>
 <li><p>Click on Colab/JupyterLite</p></li>
 </ol>
 <center>
-<img src="img/book-colab-jupyter-menu.png" width="600">
+<img src="img/import-notebooks.png" width="600">
 </center></section>
-<section id="opening-code-from-the-book-running-in-google-colab">
-<h2>Opening code from the book: running in Google Colab<a class="headerlink" href="#opening-code-from-the-book-running-in-google-colab" title="Link to this heading">#</a></h2>
+<section id="importing-notebooks-from-the-book-colab">
+<h2>Importing notebooks from the book: Colab<a class="headerlink" href="#importing-notebooks-from-the-book-colab" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Open in colab</p></li>
+<li><p>Import a notebook in colab</p></li>
 <li><p>Add your notes or code snippets</p></li>
 </ul>
 <center>
 <img src="img/opened-in-colab.png" width="600">
 </center></section>
-<section id="opening-code-from-the-book-running-in-google-colab-cont-d">
-<h2>Opening code from the book: running in Google Colab (cont’d)<a class="headerlink" href="#opening-code-from-the-book-running-in-google-colab-cont-d" title="Link to this heading">#</a></h2>
+<section id="importing-notebooks-from-the-book-jupyterlite">
+<h2>Importing notebooks from the book: JupyterLite<a class="headerlink" href="#importing-notebooks-from-the-book-jupyterlite" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>In order to run code snippets, you need to connect your colab instance to a python runtime</p></li>
-<li><p>On the top right click on <strong>Connect &gt; Connect to a hosted runtime</strong></p></li>
-</ul>
-<center>
-<img src="img/connect-colab-kernel.png" width="600">
-</center></section>
-<section id="opening-code-from-the-book-running-in-google-colab-cont-d-2">
-<h2>Opening code from the book: running in Google Colab (cont’d - 2)<a class="headerlink" href="#opening-code-from-the-book-running-in-google-colab-cont-d-2" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Once connected, you can run code snippets clicking on the play button on the left side of the cell</p></li>
-</ul>
-<center>
-<img src="img/run-exercise-colab.png" width="600">
-</center></section>
-<section id="opening-code-from-the-book-running-in-jupyterlite">
-<h2>Opening code from the book: running in JupyterLite<a class="headerlink" href="#opening-code-from-the-book-running-in-jupyterlite" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Open in colab</p></li>
+<li><p>Import the notebook in JupyterLite</p></li>
 <li><p>Add your notes or code snippets</p></li>
 <li><p>Run code snippets by clicking on the play button (on the top of the notebook or on the left of the code cell)</p></li>
 </ul>
 <center>
 <img src="img/open-book-jupyter.png" width="600">
 </center></section>
-<section id="opening-code-from-the-book-why-you-should">
-<h2>Opening code from the book: why you should<a class="headerlink" href="#opening-code-from-the-book-why-you-should" title="Link to this heading">#</a></h2>
+<section id="importing-notebooks-from-the-book-why-you-should">
+<h2>Importing notebooks from the book: why you should<a class="headerlink" href="#importing-notebooks-from-the-book-why-you-should" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Add your personal notes and thoughts notes to theory slides</p></li>
-<li><p>Open python exercise notebook, complete exercises, run examples without further efforts</p></li>
+<li><p>Add your personal notes and thoughts notes to theory slides during the lectures!</p></li>
+<li><p>Work on the Python exercises and run examples without further efforts</p></li>
 <li><p>Active learning (and learning by doing) is a proven way to enhance learning experience and results</p></li>
 </ol>
 </section>
@@ -1240,15 +1222,13 @@ Where <code class="docutils literal notranslate"><span class="pre">&lt;my-env&gt
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-book">Using the book</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book">Opening code from the book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-downloading-the-ipnb">Opening code from the book: downloading the .ipnb</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-downloading-the-ipnb-cont-d">Opening code from the book: downloading the .ipnb (cont’d)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-opening-in-google-colab-or-jupyterlite">Opening code from the book: opening in Google Colab or JupyterLite</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-running-in-google-colab">Opening code from the book: running in Google Colab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-running-in-google-colab-cont-d">Opening code from the book: running in Google Colab (cont’d)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-running-in-google-colab-cont-d-2">Opening code from the book: running in Google Colab (cont’d - 2)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-running-in-jupyterlite">Opening code from the book: running in JupyterLite</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-code-from-the-book-why-you-should">Opening code from the book: why you should</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-material-on-the-book">Accessing the material on the book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-notebooks-from-the-book">Download notebooks from the book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-notebooks-from-the-book-in-vscode">Opening notebooks from the book in VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-notebooks-from-the-book-colab-or-jupyterlite">Opening notebooks from the book: Colab or JupyterLite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-notebooks-from-the-book-colab">Importing notebooks from the book: Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-notebooks-from-the-book-jupyterlite">Importing notebooks from the book: JupyterLite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-notebooks-from-the-book-why-you-should">Importing notebooks from the book: why you should</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python-virtual-environments">Python Virtual Environments</a><ul class="visible nav section-nav flex-column">
