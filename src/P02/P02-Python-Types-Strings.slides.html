@@ -7476,12 +7476,12 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Variables-=-a-Name-for-Values">Variables = a Name for Values<a class="anchor-link" href="#Variables-=-a-Name-for-Values">¶</a></h2><p>The equal sign <code>=</code> serves for <b style="color:red">assigning</b> a variable name to a value:</p>
+<h2 id="Variables-=-a-Name-for-Values">Variables = a Name for Values<a class="anchor-link" href="#Variables-=-a-Name-for-Values">¶</a></h2><p>The equal sign <code>=</code> serves for <strong>assigning</strong> a variable name to a value:</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
 </pre></div>
 <p>where <code>pi</code> is the <em>variable name</em> and <code>3.14</code> is the <em>value</em>.</p>
 <div class="alert alert-block alert-info">
-<b>Recall</b>: The equal sign `=` serves for assignments. The equality check reads as `==`.
+<b>Recall</b>: The equal sign <code>=</code> serves for assignments. The equality check reads as `==`.
 </div>
 <p>Retrieve the value associated to a variable by querying the name on the prompt:</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">pi</span>      <span class="c1"># input</span>
@@ -7584,7 +7584,7 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Why-variable-names?">Why variable names?<a class="anchor-link" href="#Why-variable-names?">¶</a></h2><ul>
-<li>reuse <b style="color:red">names</b> instead of <b style="color:red">values</b> throughout the code</li>
+<li>reuse <strong>names</strong> instead of <strong>values</strong> throughout the code</li>
 <li>store (temporarily!) values and results</li>
 <li>easier to change the code later</li>
 </ul>
@@ -7612,7 +7612,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Variables can be <b style="color:red">changed</b> (or <b style="color:red">re-binded</b>) using new assignments on the same variable name.</p>
+<p>Variables can be <strong>changed</strong> (or <strong>re-binded</strong>) using new assignments on the same variable name.</p>
 <div class="alert alert-block alert-warning">
 <b>Warning</b>: The old value might still be in the computer memory, but you lose the handle for it.
 </div>
@@ -7624,11 +7624,11 @@ main {
 <span class="o">&gt;&gt;&gt;</span> <span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span><span class="o">+</span><span class="mi">1</span>
 </pre></div>
 <br/>
-<div class="alert alert-block alert-info"><b>Hint</b>: `radius = radius+1` can be shortcut to `radius+=1`.</div>
-<div class="alert alert-block alert-info"><b>Note</b>: `area` does not change its value.</div>
+<div class="alert alert-block alert-info"><b>HINT</b>: <code>radius = radius+1</code> can be shortcut to <code>radius+=1</code>.</div>
+<div class="alert alert-block alert-info"><b>NOTE</b>: <code>area</code> does not change its value.</div>
 </div>
 <div style="flex: 1;">
-<img alt="No description has been provided for this image" src="img/Rebinding.png" width="90%"/>
+<img alt="No description has been provided for this image" src="img/Rebinding_upscayl_4x_upscayl-standard-4x.png" width="90%"/>
 </div>
 </div>
 </div>
@@ -7641,7 +7641,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Dynamic-Typing">Dynamic Typing<a class="anchor-link" href="#Dynamic-Typing">¶</a></h2><p>Python supports <b style="color:red">dynamic typing</b>.</p>
+<h2 id="Dynamic-Typing">Dynamic Typing<a class="anchor-link" href="#Dynamic-Typing">¶</a></h2><p>Python supports <strong>dynamic typing</strong>.</p>
 <ul>
 <li>variables can hold values of any type</li>
 <li>variables can hold different types throughout the code</li>
@@ -7653,7 +7653,7 @@ main {
 </pre></div>
 <br/>
 <div class="alert alert-block alert-info">
-<b>Recall</b>: You can always use <code>type(x)</code> to find the type of variable `x`.
+<b>Recall</b>: You can always use <code>type(x)</code> to find the type of variable <code>x</code>.
 </div>
 <p>You can use <code>type()</code> for comparison and conversion</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">=</span><span class="mi">3</span>
@@ -7677,20 +7677,20 @@ main {
 Strings can be created by enclosing stuff in quotation marks or single quotes:</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">hi</span><span class="o">=</span><span class="s1">'hello there'</span> <span class="c1"># or "hello there"</span>
 </pre></div>
-<p>You can <b style="color:red">concatenate</b> strings using the <code>+</code> operator:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">name</span><span class="o">=</span><span class="s1">'alessio'</span>
+<p>You can <strong>concatenate</strong> strings using the <code>+</code> operator:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">name</span><span class="o">=</span><span class="s1">'LUISS'</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">greeting</span><span class="o">=</span><span class="n">hi</span> <span class="o">+</span> <span class="n">name</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">greeting</span>
-<span class="s1">'hello therealessio'</span>
+<span class="s1">'hello thereLUISS'</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">greeting</span><span class="o">=</span><span class="n">hi</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">name</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">greeting</span>
-<span class="s1">'hello there alessio'</span>
+<span class="s1">'hello there LUISS'</span>
 </pre></div>
-<p>You can <b style="color:red">replicate</b> strings using the <code>*</code> operator:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">name</span><span class="o">=</span><span class="s1">'alessio'</span>
+<p>You can <strong>replicate</strong> strings using the <code>*</code> operator:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">name</span><span class="o">=</span><span class="s1">'LUISS'</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">silly</span><span class="o">=</span><span class="n">name</span><span class="o">*</span><span class="mi">3</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">silly</span>
-<span class="s1">'alessioalessioalessio'</span>
+<span class="s1">'LUISSLUISSLUISS'</span>
 </pre></div>
 </div>
 </div>
@@ -7784,12 +7784,12 @@ We cannot do any of the following
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Escape-Sequences">Escape Sequences<a class="anchor-link" href="#Escape-Sequences">¶</a></h2><p>We can solve the above problem also thanks to <b style="color:red">escape sequences</b>.</p>
+<h2 id="Escape-Sequences">Escape Sequences<a class="anchor-link" href="#Escape-Sequences">¶</a></h2><p>We can solve the above problem also thanks to escape <strong>sequences</strong>.</p>
 <p>Escape sequences are brief sequences of characters that start with a backslash and are interpreted differently.</p>
 <p>There exist escape sequences to display single quotes (<code>\'</code>) and double quotes (<code>\"</code>) ... and to display the backslash itself (<code>\\</code>):</p>
 <ul>
-<li>if we 'shield' single or double quotes with a backslash, they are interpreted as characters rather than string delimiters;</li>
-<li>if we 'shield' the backslash with a backslash, it is interpreted as character rather than 'this the beginning of an escape sequence'.</li>
+<li>if we <em>shield</em> single or double quotes with a backslash, they are interpreted as characters rather than string delimiters;</li>
+<li>if we <em>shield</em> the backslash with a backslash, it is interpreted as character rather than 'this the beginning of an escape sequence'.</li>
 </ul>
 <p>Let's try the following:</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="s1">'I said "What</span><span class="se">\'</span><span class="s1">s going on"'</span>
@@ -7848,7 +7848,7 @@ We cannot do any of the following
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'apple'</span> <span class="o">+</span> <span class="s1">'banana'</span><span class="p">)</span> <span class="c1"># one input argument</span>
 <span class="n">applebanana</span>
 </pre></div>
-<p>By default, multiple input arguments are separated by space (<code> </code>) and the line terminates with a newline ('<code>\n</code>'). You can change that via <code>sep</code> and <code>end</code>.</p>
+<p>By default, multiple input arguments are separated by space (<code> </code>) and the line terminates with a newline (<code>\n</code>). You can change that via <code>sep</code> and <code>end</code>.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">=</span><span class="mi">5</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"a="</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"bye"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'|'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">'</span><span class="se">\n\n\n</span><span class="s1">'</span><span class="p">)</span>
@@ -7940,7 +7940,7 @@ Because we cannot concatenate (i.e., <code>+</code>) strings and numbers togethe
 <br/>
 <br/>
 <div class="alert alert-block alert-info">
-<b>Note</b>: We can personalize <code>%f</code> by specifying the number of digits before and after the decimal separator. That is, <code>%$x$.$y$f</code> yields a floating point number with $x$ digits before and $y$ digits after the comma. $x$ can be omitted.
+<b>Note</b>: We can personalize <code>%f</code> by specifying the number of digits before and after the decimal separator. That is, <code>%x.yf</code> yields a floating point number with $x$ digits before and $y$ digits after the comma. $x$ can be omitted.
 </div>
 </div>
 </div>
@@ -8104,43 +8104,8 @@ Because we cannot concatenate (i.e., <code>+</code>) strings and numbers togethe
 </table>
 <br/>
 <div class="alert alert-block alert-info">
-<b>Note</b>: If you want your script to show something, you must use `print()`.
+<b>Note</b>: If you want your script to show something, you must use <code>print()</code>.
 </div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Expressions-vs.-Statements">Expressions vs. Statements<a class="anchor-link" href="#Expressions-vs.-Statements">¶</a></h2><ul>
-<li><p><strong>Expressions:</strong> <b style="color:red">Represent</b> something</p>
-<ul>
-<li>Python <em>evaluates</em> expressions</li>
-<li>end-result is a value</li>
-</ul>
-<p>Examples:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mf">2.3</span>         <span class="c1"># a plain literal</span>
-<span class="mf">2.3</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">4</span>   <span class="c1"># 4 literals and some operators</span>
-<span class="mi">18</span>
-</pre></div>
-</li>
-<li><p><strong>Statements:</strong> <b style="color:red">Do</b> something</p>
-<ul>
-<li>Python <em>executes</em> statements</li>
-<li>no need to return a value</li>
-</ul>
-<p>Examples:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"Hi there!"</span><span class="p">)</span>
-<span class="n">Hi</span> <span class="n">there</span><span class="err">!</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-</pre></div>
-</li>
-</ul>
 </div>
 </div>
 </div>
