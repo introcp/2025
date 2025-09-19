@@ -418,7 +418,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-between-ints-and-floats-a-recap">Comparison Between <code class="docutils literal notranslate"><span class="pre">int</span></code>s and <code class="docutils literal notranslate"><span class="pre">float</span></code>s: a Recap</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chained-comparisons">Chained Comparisons</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence">Operator Precedence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-big-picture">The Big Picture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-big-picture-of-operator-precedence">The Big Picture of Operator Precedence</a></li>
 </ul>
             </nav>
         </div>
@@ -893,14 +893,14 @@ truncates the decimal part. To round to the nearest integer, use
 <section id="chained-comparisons">
 <h2>Chained Comparisons<a class="headerlink" href="#chained-comparisons" title="Link to this heading">#</a></h2>
 <p>Comparisons can be chained arbitrarily and comparisons have the same priority:</p>
-<div align="center"><code>i&lt;j&lt;k</code> is the same as <code>i&lt;j</code> and <code>j&lt;k</code></div>
-<p>Since comparisons do not act in a pairwise fashion, ‘weird’ comparisons like</p>
+<div align="center"><code>i&lt;j&lt;k</code> is the same as <code>i&lt;j and j&lt;k</code></div>
+<p>Since comparisons do not act in a pairwise fashion, <em>weird</em> comparisons like</p>
 <div align="center"><code>i&lt;j&gt;k</code></div>
-<p>are perfectly valid.</p>
+<p>are perfectly valid since it is equivalent to <code>(i&lt;j) and (j&gt;k)</code>.</p>
 </section>
 <section id="operator-precedence">
 <h2>Operator Precedence<a class="headerlink" href="#operator-precedence" title="Link to this heading">#</a></h2>
-<p>Precedence between operators can be ‘forced’ via parenthesis.</p>
+<p>Precedence between operators can be <em>forced</em> via parenthesis.</p>
 <p>In principle, operators follow the <strong>PEMDAS</strong> order:</p>
 <ol class="arabic simple">
 <li><p><strong>P</strong>arenthesis</p></li>
@@ -909,8 +909,8 @@ truncates the decimal part. To round to the nearest integer, use
 <li><p><strong>A</strong>ddition and <strong>S</strong>ubtraction</p></li>
 </ol>
 </section>
-<section id="the-big-picture">
-<h2>The Big Picture<a class="headerlink" href="#the-big-picture" title="Link to this heading">#</a></h2>
+<section id="the-big-picture-of-operator-precedence">
+<h2>The Big Picture of Operator Precedence<a class="headerlink" href="#the-big-picture-of-operator-precedence" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Parenthesis: <code class="docutils literal notranslate"><span class="pre">(...)</span></code></p></li>
 <li><p>Exponentiation: <code class="docutils literal notranslate"><span class="pre">**</span></code></p></li>
@@ -918,9 +918,9 @@ truncates the decimal part. To round to the nearest integer, use
 <li><p>Binary arithmetic:  <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code> and <code class="docutils literal notranslate"><span class="pre">%</span></code></p></li>
 <li><p>Binary arithmetic: <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
 <li><p>Comparisons: <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code></p></li>
-<li><p>Logical not</p></li>
-<li><p>Logical and</p></li>
-<li><p>Logical or</p></li>
+<li><p>Logical <code class="docutils literal notranslate"><span class="pre">not</span></code></p></li>
+<li><p>Logical <code class="docutils literal notranslate"><span class="pre">and</span></code></p></li>
+<li><p>Logical <code class="docutils literal notranslate"><span class="pre">or</span></code></p></li>
 </ol>
 <br>
 <br>
@@ -993,7 +993,7 @@ truncates the decimal part. To round to the nearest integer, use
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-between-ints-and-floats-a-recap">Comparison Between <code class="docutils literal notranslate"><span class="pre">int</span></code>s and <code class="docutils literal notranslate"><span class="pre">float</span></code>s: a Recap</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chained-comparisons">Chained Comparisons</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-precedence">Operator Precedence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-big-picture">The Big Picture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-big-picture-of-operator-precedence">The Big Picture of Operator Precedence</a></li>
 </ul>
   </nav></div>
 

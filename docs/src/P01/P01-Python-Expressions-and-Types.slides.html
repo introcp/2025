@@ -8081,10 +8081,10 @@ $$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Chained-Comparisons">Chained Comparisons<a class="anchor-link" href="#Chained-Comparisons">¶</a></h2><p>Comparisons can be chained arbitrarily and comparisons have the same priority:</p>
-<div align="center"><code>i&lt;j&lt;k</code> is the same as <code>i&lt;j</code> and <code>j&lt;k</code></div>
-<p>Since comparisons do not act in a pairwise fashion, 'weird' comparisons like</p>
+<div align="center"><code>i&lt;j&lt;k</code> is the same as <code>i&lt;j and j&lt;k</code></div>
+<p>Since comparisons do not act in a pairwise fashion, <em>weird</em> comparisons like</p>
 <div align="center"><code>i&lt;j&gt;k</code></div>
-<p>are perfectly valid.</p>
+<p>are perfectly valid since it is equivalent to <code>(i&lt;j) and (j&gt;k)</code>.</p>
 </div>
 </div>
 </div>
@@ -8095,7 +8095,7 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Operator-Precedence">Operator Precedence<a class="anchor-link" href="#Operator-Precedence">¶</a></h2><p>Precedence between operators can be 'forced' via parenthesis.</p>
+<h2 id="Operator-Precedence">Operator Precedence<a class="anchor-link" href="#Operator-Precedence">¶</a></h2><p>Precedence between operators can be <em>forced</em> via parenthesis.</p>
 <p>In principle, operators follow the <strong>PEMDAS</strong> order:</p>
 <ol>
 <li><strong>P</strong>arenthesis</li>
@@ -8113,16 +8113,16 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="The-Big-Picture">The Big Picture<a class="anchor-link" href="#The-Big-Picture">¶</a></h2><ol>
+<h2 id="The-Big-Picture-of-Operator-Precedence">The Big Picture of Operator Precedence<a class="anchor-link" href="#The-Big-Picture-of-Operator-Precedence">¶</a></h2><ol>
 <li>Parenthesis: <code>(...)</code></li>
 <li>Exponentiation: <code>**</code></li>
 <li>Unary operators: <code>+</code> and <code>-</code></li>
 <li>Binary arithmetic:  <code>*</code>, <code>/</code>, <code>//</code> and <code>%</code></li>
 <li>Binary arithmetic: <code>+</code> and <code>-</code></li>
 <li>Comparisons: <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code></li>
-<li>Logical not</li>
-<li>Logical and</li>
-<li>Logical or</li>
+<li>Logical <code>not</code></li>
+<li>Logical <code>and</code></li>
+<li>Logical <code>or</code></li>
 </ol>
 <br/>
 <br/>
