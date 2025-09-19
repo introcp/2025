@@ -405,6 +405,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions-and-statements">Expressions and Statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions-vs-statements">Expressions vs. Statements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-vs-script-mode">Interactive vs. Script Mode</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-in-python">Programming in Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-objects">Scalar Objects</a></li>
@@ -477,6 +478,36 @@ do something (e.g., print on screen, assign to variable)</p></li>
 <li><p>be directly written into a shell (<strong>interactive mode</strong>)</p></li>
 <li><p>be written into a text file and then loaded into the shell
 (<strong>script mode</strong>).</p></li>
+</ul>
+</section>
+<section id="expressions-vs-statements">
+<h2>Expressions vs. Statements<a class="headerlink" href="#expressions-vs-statements" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Expressions:</strong> <b style="color:red">Represent</b> something</p>
+<ul class="simple">
+<li><p>Python <em>evaluates</em> expressions</p></li>
+<li><p>end-result is a value</p></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mf">2.3</span>         <span class="c1"># a plain literal</span>
+<span class="go">2.3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">4</span>   <span class="c1"># 4 literals and some operators</span>
+<span class="go">18</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Statements:</strong> <b style="color:red">Do</b> something</p>
+<ul class="simple">
+<li><p>Python <em>executes</em> statements</p></li>
+<li><p>no need to return a value</p></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi there!&quot;</span><span class="p">)</span>
+<span class="go">Hi there!</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+</pre></div>
+</div>
+</li>
 </ul>
 </section>
 <section id="interactive-vs-script-mode">
@@ -980,6 +1011,7 @@ truncates the decimal part. To round to the nearest integer, use
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions-and-statements">Expressions and Statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions-vs-statements">Expressions vs. Statements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-vs-script-mode">Interactive vs. Script Mode</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-in-python">Programming in Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-objects">Scalar Objects</a></li>
