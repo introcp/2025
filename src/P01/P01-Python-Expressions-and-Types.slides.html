@@ -69,14 +69,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .s1 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Single */
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
-  .reveal .controls {
-  height: 20px !important;
-}
-.reveal .controls button {
-  padding: 2px 4px !important;
-  font-size: 8px !important;
-}
-</style>
+  </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
@@ -6829,13 +6822,6 @@ div.jp-Cell-Placeholder-content-3 {
   top: 140px;
 }
 
-.reveal .controls {
-  height: 20px !important;
-}
-.reveal .controls button {
-  padding: 2px 4px !important;
-  font-size: 8px !important;
-}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -7261,13 +7247,6 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-switch-color: var(--md-grey-400);
   --jp-switch-true-position-color: var(--md-orange-900);
 }
-.reveal .controls {
-  height: 20px !important;
-}
-.reveal .controls button {
-  padding: 2px 4px !important;
-  font-size: 8px !important;
-}
 </style>
 <style type="text/css">
 a.anchor-link {
@@ -7289,13 +7268,6 @@ a.anchor-link {
   body {
     margin: 0;
   }
-}
-.reveal .controls {
-  height: 20px !important;
-}
-.reveal .controls button {
-  padding: 2px 4px !important;
-  font-size: 8px !important;
 }
 </style>
 <style type="text/css">
@@ -7420,13 +7392,6 @@ main {
 ::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
-.reveal .controls {
-  height: 20px !important;
-}
-.reveal .controls button {
-  padding: 2px 4px !important;
-  font-size: 8px !important;
-}
 </style>
 <!-- Load mathjax -->
 <!-- Load mathjax -->
@@ -7451,6 +7416,65 @@ main {
 <!-- End of MathJax v3 configuration -->
 <!-- End of mathjax configuration --><!-- Reveal Theme -->
 <link href="../dist/theme/luiss.css" id="theme" rel="stylesheet"/>
+<style>
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
+/* Inline code: transparent background (do not affect code blocks) */
+/* Robust selector: any code that is NOT inside a pre */
+.reveal :not(pre) code {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 .1em !important;
+  border: none !important;
+}
+/* Bootstrap alert and generic text containers */
+.reveal .alert code,
+.reveal .alert-inline code,
+.reveal .well code {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 .1em !important;
+  border: none !important;
+}
+/* Extra contexts to out-specify Jupyter styles if present */
+.reveal .slides section :not(pre) code,
+.reveal .jp-RenderedHTMLCommon :not(pre) code {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 .1em !important;
+  border: none !important;
+}
+/* Keep specific inline contexts for extra safety */
+.reveal p code,
+.reveal li code,
+.reveal h1 code,
+.reveal h2 code,
+.reveal h3 code,
+.reveal h4 code,
+.reveal h5 code,
+.reveal h6 code,
+.reveal td code,
+.reveal th code,
+.reveal dd code {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 .1em !important;
+  border: none !important;
+}
+</style>
 </head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
@@ -7491,9 +7515,9 @@ languages)</p>
 <br/>
 <br/>
 <div class="alert alert-block alert-info">
-<b>Recall</b>: We will use Python 3 (there are non-backwards compatible
-differences with respect to Python 2). Further, Python 2 is now
-unsupported.
+<b>NOTE</b>: We will use Python 3. Python 2 is now
+unsupported, and there are non-backwards compatible
+differences between Python 3 and Python 2.
 </div>
 </div>
 </div>
@@ -7530,7 +7554,7 @@ do something (e.g., print on screen, assign to variable)</li>
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7572,10 +7596,10 @@ do something (e.g., print on screen, assign to variable)</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Interactive-vs.-Script-Mode">Interactive vs. Script Mode<a class="anchor-link" href="#Interactive-vs.-Script-Mode">¶</a></h2><ul>
+<h2 id="Interactive-vs.-Script-Mode-vs.-Jupyter-Notebook">Interactive vs. Script Mode vs. Jupyter Notebook<a class="anchor-link" href="#Interactive-vs.-Script-Mode-vs.-Jupyter-Notebook">¶</a></h2><ul>
 <li><strong>Interactive Mode</strong>: perfectly fine for testing and learning.<br>
 Type your commands/expressions into the shell and Python will
-execute/evaluate those immediately:</br></li>
+execute/evaluate them:</br></li>
 </ul>
 <table>
 <thead>
@@ -7598,17 +7622,43 @@ execute/evaluate those immediately:</br></li>
 <br/>
 <ul>
 <li><p><strong>Script Mode</strong>:
-is what you normally do.</p>
-<ul>
-<li><p>write the entire source code in a text file ending with the <code>.py</code>
-extension (say <code>myscript.py</code>)</p>
+is what you normally do in the real world.<br>
+Write the entire source code in a text file ending with the <code>.py</code>
+extension (say <code>myscript.py</code>).<br>
+<code>myscript.py</code> will be executed in its entirety by the Python
+interpreter</br></br></p>
 </li>
-<li><p><code>myscript.py</code> will be executed in its entirety by the Python
-interpreter</p>
+<li><p><strong>Jupyter Notebook</strong>: what we will in this course most of the time.<br>
+Write the code into a code cell and execute it</br></p>
 </li>
 </ul>
-</li>
-</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>25
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7625,12 +7675,12 @@ interpreter</p>
 <ul>
 <li><p>programs manipulate <strong>data objects</strong></p>
 </li>
-<li><p>each data object has its own <strong>type</strong>, which defines the type of operations that can be done with them</p>
+<li><p>each object has its own <strong>type</strong>, which defines the type of operations that can be done with them</p>
 </li>
-<li><p>objects can either be:</p>
+<li><p>data objects can either be:</p>
 <ul>
-<li><strong>Scalar</strong>: cannot be subdivided</li>
-<li><strong>Non-scalar</strong>: have an inner structure that can be accessed</li>
+<li><strong>Scalar</strong>: primitive data types that cannot be subdivided (like numbers, booleans)</li>
+<li><strong>Non-scalar</strong>: composite data types with internal structure that can be accessed (like lists, dictionaries, objects)</li>
 </ul>
 </li>
 </ul>
@@ -7652,48 +7702,62 @@ interpreter</p>
 </ul>
 <br/>
 <br/>
-<div class="alert alert-block alert-info">
-<b>Hint</b>: Use the <code>type()</code> function if you are not sure about the data type.
+<div class="alert alert-block alert-success">
+<b>HINT</b>: Use the <code>type()</code> function if you are not sure about the data type.
 </div>
-<br/>
 <p>Examples:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>&gt;&gt;&gt; type(109)</code></td>
-<td style="text-align:left">$\leftarrow$input</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>&lt;class 'int'&gt;</code></td>
-<td style="text-align:left">$\leftarrow$output</td>
-</tr>
-</tbody>
-</table>
-<br/>
-<table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>&gt;&gt;&gt; type(10.9)</code></td>
-<td style="text-align:left">$\leftarrow$input</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>&lt;class ’float’&gt;</code></td>
-<td style="text-align:left">$\leftarrow$output</td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">109</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>int</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">10.9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>float</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7714,35 +7778,57 @@ commas.</p>
 <li><code>-</code> (unary minus, to negate a number)</li>
 </ul>
 <p>Examples:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>&gt;&gt;&gt; 7/5</code></td>
-<td style="text-align:left">$\leftarrow$input</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>1.4</code></td>
-<td style="text-align:left">$\leftarrow$output</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>&gt;&gt;&gt; 7//5</code></td>
-<td style="text-align:left">$\leftarrow$ <code>//</code> is the floor division!</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>1</code></td>
-<td style="text-align:left">$\leftarrow$output</td>
-</tr>
-</tbody>
-</table>
-<br/>
-<div class="alert alert-block alert-info">
-Note In Python 3, operations between integers may not yield an integer.
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="mi">7</span><span class="o">/</span><span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>1.4</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="mi">7</span><span class="o">//</span><span class="mi">5</span> <span class="c1"># NOTE: // is the floor division!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>1</pre>
 </div>
 </div>
 </div>
@@ -7769,35 +7855,61 @@ Note that:</br></p>
 <br/>
 <br/>
 <div class="alert alert-block alert-info">
-Operations between floats or between a float and an
+<b>NOTE</b>: Operations between floats or between a float and an
 integer, always yield a float.
 </div>
-<table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>&gt;&gt;&gt; 7.0/5.0</code></td>
-<td style="text-align:left">$\leftarrow$input</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>1.4</code></td>
-<td style="text-align:left">$\leftarrow$output</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>&gt;&gt;&gt; 7.0//5</code></td>
-<td style="text-align:left">$\leftarrow$ <code>//</code> is the floor division!</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>1.0</code></td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="mf">7.0</span><span class="o">/</span><span class="mf">5.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>1.4</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="mf">7.0</span><span class="o">//</span><span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>1.0</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7812,47 +7924,91 @@ integer, always yield a float.
 $$\text{\{number\}} = \text{\{integer mantissa\}} \cdot 2^{-\text{\{exponent\}}}$$
 For example:
 $0.125 = 1 \cdot 2^{-3} = 1\cdot \frac{1}{2^3}=1\cdot \frac{1}{8}$.</p>
-<div class="alert alert-block alert-info">
-<b>Warning</b>: Not all numbers can be represented in base 2 fractions. Python
+<div class="alert alert-block alert-warning">
+<b>WARNING</b>: Not all numbers can be represented in base 2 fractions. Python
 chooses the best approximation it can. The same also holds for some
 numbers in base 10 fraction: e.g., what about 1/3?
 </div>
 <p>Python may yield some <strong>approximation errors</strong>, that propagate as expressions go through.</p>
 <p>Example:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>&gt;&gt;&gt; 0.1+0.2</code></td>
-<td style="text-align:left">$\leftarrow$input</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>0.30000000000000004</code></td>
-<td style="text-align:left">$\leftarrow$output</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>&gt;&gt;&gt; 0.1+0.2+0.1+0.2</code></td>
-<td style="text-align:left">$\leftarrow$input</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>0.6000000000000001</code></td>
-<td style="text-align:left">$\leftarrow$output</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>&gt;&gt;&gt; 0.1+0.2+0.1+0.2+0.1+0.2+0.1+0.2</code></td>
-<td style="text-align:left">$\leftarrow$input</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>1.2000000000000002</code></td>
-<td style="text-align:left">$\leftarrow$output</td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>0.30000000000000004</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span><span class="o">+</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>0.6000000000000001</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span><span class="o">+</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span><span class="o">+</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span><span class="o">+</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>1.2000000000000002</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7864,7 +8020,7 @@ numbers in base 10 fraction: e.g., what about 1/3?
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Type-bool">Type <code>bool</code><a class="anchor-link" href="#Type-bool">¶</a></h2><p>Values:</p>
-<p>$~~~~~~~~~~~~~~~$ <code>True</code> and <code>False</code> (capitalized!)</p>
+<p>$~~~~~~~~~~~~~~~$ <code>True</code> and <code>False</code> (<strong>capitalized</strong>!)</p>
 <p>Operations:</p>
 <p><code>not a</code> = $\begin{cases}
           \texttt{True} &amp; \text{if} \texttt{ a } \text{is} \texttt{ False }\\
@@ -7958,8 +8114,8 @@ numbers in base 10 fraction: e.g., what about 1/3?
 </ul>
 <br/>
 <br/>
-<div class="alert alert-block alert-info">
-<b>Warning</b> <code>int()</code> does not round to the nearest integer: rather, it
+<div class="alert alert-block alert-warning">
+<b>WARNING</b> <code>int()</code> does not round to the nearest integer: rather, it
 truncates the decimal part. To round to the nearest integer, use
 <code>round()</code> instead.
 </div>
@@ -8164,7 +8320,7 @@ $$</p>
 <div class="alert alert-block alert-info">
 <b>NOTE</b>: Same line means same precedence. Read ties left to right.
 </div>
-<div class="alert alert-block alert-info">
+<div class="alert alert-block alert-success">
 <b>HINT</b>: In case of emergency, use parenthesis!
 </div>
 </div>
