@@ -14,9 +14,9 @@ parts:
       - file: src/C02/C02-Hardware.ipynb
       - file: src/C03/C03-Software.ipynb
       - file: src/C04/C04-OS-Essentials.ipynb
-  # - caption: Python
-  #   chapters:
-  #     - file: src/P00/P00-Python-Getting-Started.ipynb
+   - caption: Python
+     chapters:
+       - file: src/P00/P00-Python-Getting-Started.ipynb
   #     - file: src/P01/P01-Python-Expressions-and-Types.ipynb
   #     - file: src/P02/P02-Python-Types-Strings.ipynb
   #     - file: src/E01/E01-Python-Errors.ipynb
