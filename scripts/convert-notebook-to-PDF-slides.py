@@ -13,6 +13,8 @@ import json
 import re
 import subprocess
 import fitz  # PyMuPDF for PDF manipulation
+import threading
+import multiprocessing
 
 def file_hash(path):
     hasher = hashlib.sha256()
@@ -192,7 +194,7 @@ else:
     files = sorted(glob.glob('src/*/*.ipynb'))
     force = bool(args.force)
 
-def convert_to_pdf(filename, force=False, verbose=False):
+def convert_to_pdf(filename, force=False, verbose=False, abort_event=None):
     """Converts a single notebook file to PDF, checking cache unless forced."""
     filename = str(filename)
     hash_name = name_hash(filename)
@@ -217,13 +219,34 @@ def convert_to_pdf(filename, force=False, verbose=False):
         if verbose and title:
             print(f"Extracted title: {title}")
 
-    original_sigint_handler = signal.getsignal(signal.SIGINT)
+    # Check for abortion before starting expensive operations
+    if abort_event and abort_event.is_set():
+        print(f"Conversion aborted for {filename}")
+        return
+
+    # Generate the prerequisite HTML slides for PDF conversion (step 1)
+    # Use subprocess instead of os.system to avoid signal handling issues in threads
     try:
-        signal.signal(signal.SIGINT, signal.SIG_IGN)
-        # Generate the prerequisite HTML slides
-        os.system(f'SCROLLABLE=False python3 scripts/convert-notebook-to-HTML-slides.py "{filename}"')
-    finally:
-        signal.signal(signal.SIGINT, original_sigint_handler)
+        if verbose: print("Generating HTML slides for PDF conversion...")
+        env = os.environ.copy()
+        env['SCROLLABLE'] = 'False'
+        env['SUFFIX'] = '.slide.pdf'
+        result = subprocess.run([
+            'python3', 'scripts/convert-notebook-to-HTML-slides.py', filename
+        ], env=env, check=True, capture_output=False, text=True)
+        if verbose: print("HTML slides generation completed.")
+    except subprocess.CalledProcessError as e:
+        print(f"[ERROR] HTML generation failed: {e}")
+        return
+
+    # Check for abortion after HTML generation
+    if abort_event and abort_event.is_set():
+        print(f"Conversion aborted for {filename}")
+        # Clean up the generated slide.pdf.html file
+        slide_pdf_html = filename.replace('.ipynb', '.slide.pdf.html')
+        if os.path.exists(slide_pdf_html):
+            os.remove(slide_pdf_html)
+        return
 
     def run_playwright(playwright: Playwright):
         if verbose: print("Launching browser...")
@@ -238,7 +261,8 @@ def convert_to_pdf(filename, force=False, verbose=False):
         page = browser.new_page()
         page.emulate_media(media="screen")
 
-        html_file = f"file://{os.getcwd()}/{filename.replace('.ipynb', '.slides.html?print-pdf')}"
+        # Use the slide.pdf.html file for PDF conversion
+        html_file = f"file://{os.getcwd()}/{filename.replace('.ipynb', '.slide.pdf.html?print-pdf')}"
         if verbose: print(f"Visiting {html_file}")
         
         page.goto(html_file, wait_until="load")
@@ -262,6 +286,11 @@ def convert_to_pdf(filename, force=False, verbose=False):
             print_background=True, margin=[], height="720px", width="1280px"
         )
         browser.close()
+        
+        # Clean up the slide.pdf.html file after PDF generation
+        slide_pdf_html = filename.replace('.ipynb', '.slide.pdf.html')
+        if os.path.exists(slide_pdf_html):
+            os.remove(slide_pdf_html)
         
         # Generate final PDF with front slide if title was extracted
         final_pdf_path = f"{os.getcwd()}/{filename.replace('.ipynb', '.pdf')}"
@@ -289,16 +318,33 @@ def convert_to_pdf(filename, force=False, verbose=False):
 
     try:
         with sync_playwright() as playwright:
+            # Check for abortion before starting playwright
+            if abort_event and abort_event.is_set():
+                print(f"Conversion aborted for {filename}")
+                # Clean up the generated slide.pdf.html file
+                slide_pdf_html = filename.replace('.ipynb', '.slide.pdf.html')
+                if os.path.exists(slide_pdf_html):
+                    os.remove(slide_pdf_html)
+                return
             run_playwright(playwright)
-        # Generate scrollable version for viewing
-        original_sigint_handler = signal.getsignal(signal.SIGINT)
-        try:
-            signal.signal(signal.SIGINT, signal.SIG_IGN)
-            os.system(f'SCROLLABLE=True python3 scripts/convert-notebook-to-HTML-slides.py "{filename}"')
-        finally:
-            signal.signal(signal.SIGINT, original_sigint_handler)
     except Exception as e:
         print(f"[ERROR] Failed to convert {filename} to PDF: {e}", file=sys.stderr)
+
+def generate_scrollable_html(filename, verbose=False):
+    """Generate scrollable version for viewing (step 3)."""
+    print(f"Generating scrollable HTML: {filename}")
+    # Use subprocess instead of os.system to avoid signal handling issues in threads
+    try:
+        if verbose: print("Starting scrollable HTML generation...")
+        env = os.environ.copy()
+        env['SCROLLABLE'] = 'True'
+        result = subprocess.run([
+            'python3', 'scripts/convert-notebook-to-HTML-slides.py', filename
+        ], env=env, check=True, capture_output=False, text=True)
+        if verbose: print("Scrollable HTML generation completed.")
+    except subprocess.CalledProcessError as e:
+        print(f"[ERROR] Scrollable HTML generation failed: {e}")
+        raise
 
 # --- Main execution ---
 if args.watch:
@@ -309,22 +355,66 @@ if args.watch:
     print(f"[INFO] Watching {args.input} for changes...\n")
     last_hash = None
     changed = True
+    abort_event = threading.Event()
+    pdf_thread = None
+    scrollable_thread = None
+    
+    def run_pdf_conversion():
+        try:
+            convert_to_pdf(args.input, force=True, verbose=args.verbose, abort_event=abort_event)
+        except Exception as e:
+            print(f"[ERROR] PDF conversion failed: {e}")
+    
+    def run_scrollable_generation():
+        try:
+            generate_scrollable_html(args.input, verbose=args.verbose)
+        except Exception as e:
+            print(f"[ERROR] Scrollable HTML generation failed: {e}")
+    
     try:
         while True:
             current_hash = file_hash(args.input)
             if current_hash != last_hash:
                 if last_hash is not None:
                     print("[INFO] File change detected.")
-                convert_to_pdf(args.input, force=True)
+                    
+                    # Signal abortion to ongoing PDF conversion
+                    if pdf_thread and pdf_thread.is_alive():
+                        print("[INFO] Aborting ongoing PDF conversion...")
+                        abort_event.set()
+                        pdf_thread.join(timeout=2)  # Wait up to 2 seconds for graceful shutdown
+                        if pdf_thread.is_alive():
+                            print("[WARNING] PDF conversion did not stop gracefully")
+                    
+                    # Reset abort event for new conversion
+                    abort_event.clear()
+                
+                # Start PDF conversion (steps 1-2)
+                pdf_thread = threading.Thread(target=run_pdf_conversion)
+                pdf_thread.start()
+                
+                # Start scrollable HTML generation in parallel (step 3)
+                scrollable_thread = threading.Thread(target=run_scrollable_generation)
+                scrollable_thread.start()
+                
                 last_hash = current_hash
                 changed = True
             elif changed:
-                print("\n[INFO] Waiting for file changes... Crtl+C to exit")
+                print("\n[INFO] Waiting for file changes... Ctrl+C to exit")
                 changed = False
             time.sleep(0.5)
     except KeyboardInterrupt:
-        print("\n[INFO] Watch mode stopped by user. Exiting.")
+        print("\n[INFO] Watch mode stopped by user. Stopping ongoing processes...")
+        
+        # Signal abortion and wait for threads to finish
+        abort_event.set()
+        if pdf_thread and pdf_thread.is_alive():
+            pdf_thread.join(timeout=5)
+        if scrollable_thread and scrollable_thread.is_alive():
+            scrollable_thread.join(timeout=5)
+        
+        print("[INFO] Exiting.")
         sys.exit(0)
 else:
     for filename in files:
-        convert_to_pdf(filename, force=force)
+        convert_to_pdf(filename, force=force, verbose=args.verbose)

@@ -7,6 +7,7 @@ import signal
 import subprocess
 import sys
 import time
+import threading
 from pathlib import Path
 
 MATHJAX_CONFIG = r"""<!-- Load mathjax -->
@@ -43,26 +44,53 @@ def get_file_hash(path):
 def process_slides(notebook_path):
     """Convert a Jupyter notebook to Reveal.js slides and post-process it."""
     print(f"[INFO] Converting {notebook_path}...")
-    slides_html_path = notebook_path.with_suffix('.slides.html')
+    
+    # Check for custom suffix from environment variable
+    suffix = os.environ.get('SUFFIX', '.slides')
+    slides_html_path = notebook_path.with_suffix(f'{suffix}.html')
 
     # Run nbconvert
     scrollable = os.environ.get('SCROLLABLE', 'True')
 
+    # For custom suffixes, we need to account for nbconvert appending .slides.html
+    if suffix != '.slides':
+        # nbconvert will create filename.suffix.slides.html, but we want filename.suffix.html
+        # So we use the base name without extension + suffix (without the .html part)
+        output_name = notebook_path.stem + suffix.replace('.html', '')
+        expected_nbconvert_output = notebook_path.with_suffix(f'{suffix}.slides.html')
+    else:
+        output_name = None  # Use default naming
+        expected_nbconvert_output = slides_html_path
+
     original_sigint_handler = signal.getsignal(signal.SIGINT)
     try:
-        signal.signal(signal.SIGINT, signal.SIG_IGN)
-        subprocess.run([
-        'jupyter-nbconvert', str(notebook_path),
-        '--to', 'slides',
-        '--SlidesExporter.reveal_url_prefix', '..',
-        '--SlidesExporter.reveal_theme', 'luiss',
-        '--SlidesExporter.reveal_number', 'c/t',
-        '--SlidesExporter.reveal_scroll', scrollable,
-        '--SlidesExporter.reveal_height', '700',
-        '--SlidesExporter.reveal_transition', 'none'
-    ], check=True)
+        # Only modify signal handling if we're in the main thread
+        if threading.current_thread() is threading.main_thread():
+            signal.signal(signal.SIGINT, signal.SIG_IGN)
+        
+        cmd = [
+            'jupyter-nbconvert', str(notebook_path),
+            '--to', 'slides',
+            '--SlidesExporter.reveal_url_prefix', '..',
+            '--SlidesExporter.reveal_theme', 'luiss',
+            '--SlidesExporter.reveal_number', 'c/t',
+            '--SlidesExporter.reveal_scroll', scrollable,
+            '--SlidesExporter.reveal_height', '700',
+            '--SlidesExporter.reveal_transition', 'none'
+        ]
+        if output_name:
+            cmd.extend(['--output', output_name])
+        
+        subprocess.run(cmd, check=True)
+        
+        # If we used a custom suffix, rename the file to the expected name
+        if suffix != '.slides' and expected_nbconvert_output.exists():
+            expected_nbconvert_output.rename(slides_html_path)
+            
     finally:
-        signal.signal(signal.SIGINT, original_sigint_handler)
+        # Only restore signal handling if we're in the main thread
+        if threading.current_thread() is threading.main_thread():
+            signal.signal(signal.SIGINT, original_sigint_handler)
 
     # Post-process the generated HTML
     with open(slides_html_path, 'r+') as f:
