@@ -198,11 +198,15 @@ def convert_to_pdf(filename, force=False, verbose=False, abort_event=None):
     """Converts a single notebook file to PDF, checking cache unless forced."""
     filename = str(filename)
     hash_name = name_hash(filename)
+    
+    # Define expected output files
+    pdf_file = filename.replace(".ipynb", ".pdf")
+    html_file = filename.replace(".ipynb", ".slides.html")
 
-    # Check cache
-    if not force and 'ALL' not in os.environ and os.path.exists(filename.replace(".ipynb", ".pdf")) \
+    # Check cache - require both PDF and HTML files to exist
+    if not force and 'ALL' not in os.environ and os.path.exists(pdf_file) and os.path.exists(html_file) \
         and hash_name in cached_hashes and file_hash(filename) == cached_hashes.get(hash_name):
-        print(f"Skipping cached PDF: {filename}")
+        print(f"Skipping cached conversion: {filename}")
         return
 
     print(f"\nConverting to PDF: {filename}")
@@ -330,8 +334,18 @@ def convert_to_pdf(filename, force=False, verbose=False, abort_event=None):
     except Exception as e:
         print(f"[ERROR] Failed to convert {filename} to PDF: {e}", file=sys.stderr)
 
-def generate_scrollable_html(filename, verbose=False):
+def generate_scrollable_html(filename, verbose=False, force=False):
     """Generate scrollable version for viewing (step 3)."""
+    filename = str(filename)
+    hash_name = name_hash(filename)
+    html_file = filename.replace(".ipynb", ".slides.html")
+    
+    # Check cache for HTML file
+    if not force and os.path.exists(html_file) \
+        and hash_name in cached_hashes and file_hash(filename) == cached_hashes.get(hash_name):
+        if verbose: print(f"Skipping cached HTML generation: {filename}")
+        return
+    
     print(f"Generating scrollable HTML: {filename}")
     # Use subprocess instead of os.system to avoid signal handling issues in threads
     try:
@@ -367,7 +381,7 @@ if args.watch:
     
     def run_scrollable_generation():
         try:
-            generate_scrollable_html(args.input, verbose=args.verbose)
+            generate_scrollable_html(args.input, verbose=args.verbose, force=True)
         except Exception as e:
             print(f"[ERROR] Scrollable HTML generation failed: {e}")
     
@@ -418,3 +432,4 @@ if args.watch:
 else:
     for filename in files:
         convert_to_pdf(filename, force=force, verbose=args.verbose)
+        generate_scrollable_html(filename, verbose=args.verbose, force=force)
