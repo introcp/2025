@@ -64,6 +64,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Variables and Strings" href="../P02/P02-Python-Types-Strings.html" />
+    <link rel="prev" title="Getting Started" href="../P00/P00-Python-Getting-Started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +127,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -194,6 +194,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../C02/C02-Hardware.html"><b style="font-family: 'LUISS', 'Lato'">Hardware</b></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../C03/C03-Software.html"><b style="font-family: 'LUISS', 'Lato'">Software</b></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../C04/C04-OS-Essentials.html"><b style="font-family: 'LUISS', 'Lato'">Operating System Essentials</b></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../P00/P00-Python-Getting-Started.html"><b style="font-family: 'LUISS', 'Lato'">Getting Started</b></a></li>
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><b style="font-family: 'LUISS', 'Lato'">Expressions and Data Types</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P02/P02-Python-Types-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Variables and Strings</b></a></li>
 </ul>
 
     </div>
@@ -406,7 +418,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions-and-statements">Expressions and Statements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions-vs-statements">Expressions vs. Statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-vs-script-mode">Interactive vs. Script Mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-vs-script-mode-vs-jupyter-notebook">Interactive vs. Script Mode vs. Jupyter Notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-in-python">Programming in Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-objects">Scalar Objects</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-int">Type <code class="docutils literal notranslate"><span class="pre">int()</span></code></a></li>
@@ -451,10 +463,11 @@ languages)</p></li>
 <br>
 <br>
 <div class="alert alert-block alert-info">
-<b>Recall</b>: We will use Python 3 (there are non-backwards compatible
-differences with respect to Python 2). Further, Python 2 is now
-unsupported.
-</div></section>
+<b>NOTE</b>: We will use Python 3. Python 2 is now
+unsupported, and there are non-backwards compatible
+differences between Python 3 and Python 2.
+</div>
+</section>
 <section id="expressions-and-statements">
 <h2>Expressions and Statements<a class="headerlink" href="#expressions-and-statements" title="Link to this heading">#</a></h2>
 <p>A (Python) program is composed by a sequence of:</p>
@@ -510,12 +523,12 @@ do something (e.g., print on screen, assign to variable)</p></li>
 </li>
 </ul>
 </section>
-<section id="interactive-vs-script-mode">
-<h2>Interactive vs. Script Mode<a class="headerlink" href="#interactive-vs-script-mode" title="Link to this heading">#</a></h2>
+<section id="interactive-vs-script-mode-vs-jupyter-notebook">
+<h2>Interactive vs. Script Mode vs. Jupyter Notebook<a class="headerlink" href="#interactive-vs-script-mode-vs-jupyter-notebook" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Interactive Mode</strong>: perfectly fine for testing and learning.<br />
 Type your commands/expressions into the shell and Python will
-execute/evaluate those immediately:</p></li>
+execute/evaluate them:</p></li>
 </ul>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -536,15 +549,26 @@ execute/evaluate those immediately:</p></li>
 <br>
 <ul class="simple">
 <li><p><strong>Script Mode</strong>:
-is what you normally do.</p>
-<ul>
-<li><p>write the entire source code in a text file ending with the <code class="docutils literal notranslate"><span class="pre">.py</span></code>
-extension (say <code class="docutils literal notranslate"><span class="pre">myscript.py</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">myscript.py</span></code> will be executed in its entirety by the Python
+is what you normally do in the real world.<br />
+Write the entire source code in a text file ending with the <code class="docutils literal notranslate"><span class="pre">.py</span></code>
+extension (say <code class="docutils literal notranslate"><span class="pre">myscript.py</span></code>).<br />
+<code class="docutils literal notranslate"><span class="pre">myscript.py</span></code> will be executed in its entirety by the Python
 interpreter</p></li>
+<li><p><strong>Jupyter Notebook</strong>: what we will in this course most of the time.<br />
+Write the code into a code cell and execute it</p></li>
 </ul>
-</li>
-</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="programming-in-python">
 <h2>Programming in Python<a class="headerlink" href="#programming-in-python" title="Link to this heading">#</a></h2>
@@ -553,11 +577,11 @@ interpreter</p></li>
 </div>
 <ul class="simple">
 <li><p>programs manipulate <strong>data objects</strong></p></li>
-<li><p>each data object has its own <strong>type</strong>, which defines the type of operations that can be done with them</p></li>
-<li><p>objects can either be:</p>
+<li><p>each object has its own <strong>type</strong>, which defines the type of operations that can be done with them</p></li>
+<li><p>data objects can either be:</p>
 <ul>
-<li><p><strong>Scalar</strong>: cannot be subdivided</p></li>
-<li><p><strong>Non-scalar</strong>: have an inner structure that can be accessed</p></li>
+<li><p><strong>Scalar</strong>: primitive data types that cannot be subdivided (like numbers, booleans)</p></li>
+<li><p><strong>Non-scalar</strong>: composite data types with internal structure that can be accessed (like lists, dictionaries, objects)</p></li>
 </ul>
 </li>
 </ul>
@@ -572,43 +596,33 @@ interpreter</p></li>
 </ul>
 <br>
 <br>
-<div class="alert alert-block alert-info">
-<b>Hint</b>: Use the <code>type()</code> function if you are not sure about the data type.
+<div class="alert alert-block alert-success">
+<b>HINT</b>: Use the <code>type()</code> function if you are not sure about the data type.
 </div>
-<br>
 <p>Examples:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p></p></th>
-<th class="head text-left"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span> <span class="pre">type(109)</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span>input</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&lt;class</span> <span class="pre">'int'&gt;</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span>output</p></td>
-</tr>
-</tbody>
-</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">109</span><span class="p">)</span>
+</pre></div>
 </div>
-<br>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p></p></th>
-<th class="head text-left"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span> <span class="pre">type(10.9)</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span>input</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&lt;class</span> <span class="pre">’float’&gt;</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span>output</p></td>
-</tr>
-</tbody>
-</table>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">10.9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="type-int">
@@ -623,31 +637,29 @@ commas.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> (unary minus, to negate a number)</p></li>
 </ul>
 <p>Examples:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p></p></th>
-<th class="head text-left"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span> <span class="pre">7/5</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span>input</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">1.4</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span>output</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span> <span class="pre">7//5</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span> <code class="docutils literal notranslate"><span class="pre">//</span></code> is the floor division!</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span>output</p></td>
-</tr>
-</tbody>
-</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="o">/</span><span class="mi">5</span>
+</pre></div>
 </div>
-<br>
-<div class="alert alert-block alert-info">
-Note In Python 3, operations between integers may not yield an integer.
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="o">//</span><span class="mi">5</span> <span class="c1"># NOTE: // is the floor division!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="type-float">
@@ -667,75 +679,84 @@ Note that:</p>
 <br>
 <br>
 <div class="alert alert-block alert-info">
-Operations between floats or between a float and an
+<b>NOTE</b>: Operations between floats or between a float and an
 integer, always yield a float.
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">7.0</span><span class="o">/</span><span class="mf">5.0</span>
+</pre></div>
 </div>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p></p></th>
-<th class="head text-left"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span> <span class="pre">7.0/5.0</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span>input</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">1.4</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span>output</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span> <span class="pre">7.0//5</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span> <code class="docutils literal notranslate"><span class="pre">//</span></code> is the floor division!</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
-<td class="text-left"><p></p></td>
-</tr>
-</tbody>
-</table>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">7.0</span><span class="o">//</span><span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
 </div>
 <p>Python stores floating point numbers as base 2 (binary) fractions:
 $<span class="math notranslate nohighlight">\(\text{\{number\}} = \text{\{integer mantissa\}} \cdot 2^{-\text{\{exponent\}}}\)</span><span class="math notranslate nohighlight">\(
 For example:
 \)</span>0.125 = 1 \cdot 2^{-3} = 1\cdot \frac{1}{2^3}=1\cdot \frac{1}{8}$.</p>
-<div class="alert alert-block alert-info">
-<b>Warning</b>: Not all numbers can be represented in base 2 fractions. Python
+<div class="alert alert-block alert-warning">
+<b>WARNING</b>: Not all numbers can be represented in base 2 fractions. Python
 chooses the best approximation it can. The same also holds for some
 numbers in base 10 fraction: e.g., what about 1/3?
 </div>
 <p>Python may yield some <strong>approximation errors</strong>, that propagate as expressions go through.</p>
 <p>Example:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p></p></th>
-<th class="head text-left"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span> <span class="pre">0.1+0.2</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span>input</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">0.30000000000000004</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span>output</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span> <span class="pre">0.1+0.2+0.1+0.2</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span>input</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">0.6000000000000001</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span>output</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span> <span class="pre">0.1+0.2+0.1+0.2+0.1+0.2+0.1+0.2</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span>input</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">1.2000000000000002</span></code></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\leftarrow\)</span>output</p></td>
-</tr>
-</tbody>
-</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.30000000000000004
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span><span class="o">+</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6000000000000001
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span><span class="o">+</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span><span class="o">+</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span><span class="o">+</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2000000000000002
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="type-bool">
 <h2>Type <code class="docutils literal notranslate"><span class="pre">bool</span></code><a class="headerlink" href="#type-bool" title="Link to this heading">#</a></h2>
 <p>Values:</p>
-<p><span class="math notranslate nohighlight">\(~~~~~~~~~~~~~~~\)</span> <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> (capitalized!)</p>
+<p><span class="math notranslate nohighlight">\(~~~~~~~~~~~~~~~\)</span> <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> (<strong>capitalized</strong>!)</p>
 <p>Operations:</p>
 <p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">a</span></code> = <span class="math notranslate nohighlight">\(\begin{cases}
           \texttt{True} &amp; \text{if} \texttt{ a } \text{is} \texttt{ False }\\
@@ -811,8 +832,8 @@ numbers in base 10 fraction: e.g., what about 1/3?
 </ul>
 <br>
 <br>
-<div class="alert alert-block alert-info">
-<b>Warning</b> <code>int()</code> does not round to the nearest integer: rather, it
+<div class="alert alert-block alert-warning">
+<b>WARNING</b> <code>int()</code> does not round to the nearest integer: rather, it
 truncates the decimal part. To round to the nearest integer, use
 <code>round()</code> instead.
 </div>
@@ -958,7 +979,7 @@ truncates the decimal part. To round to the nearest integer, use
 <div class="alert alert-block alert-info">
 <b>NOTE</b>: Same line means same precedence. Read ties left to right.
 </div>
-<div class="alert alert-block alert-info">
+<div class="alert alert-block alert-success">
 <b>HINT</b>: In case of emergency, use parenthesis!
 </div></section>
 </section>
@@ -993,6 +1014,24 @@ truncates the decimal part. To round to the nearest integer, use
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../P00/P00-Python-Getting-Started.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Getting Started</b></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../P02/P02-Python-Types-Strings.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Variables and Strings</b></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1012,7 +1051,7 @@ truncates the decimal part. To round to the nearest integer, use
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions-and-statements">Expressions and Statements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions-vs-statements">Expressions vs. Statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-vs-script-mode">Interactive vs. Script Mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-vs-script-mode-vs-jupyter-notebook">Interactive vs. Script Mode vs. Jupyter Notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-in-python">Programming in Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-objects">Scalar Objects</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-int">Type <code class="docutils literal notranslate"><span class="pre">int()</span></code></a></li>
