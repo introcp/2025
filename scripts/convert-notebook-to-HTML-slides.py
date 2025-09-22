@@ -145,9 +145,14 @@ def process_slides(notebook_path):
         content = content.replace(".css('margin-top', '20px')", ".css('margin-top', '0px').css('scrollbar-width', 'none')")
         content = re.sub(r'(\.jp-MarkdownOutput \{)\n  display: table-cell;', r'\1', content)
 
-        # 6. Reduce height of bottom controls
+        # 6. Reduce height of bottom controls and fix inline code styling
         controls_css = """\
 .reveal .controls {\n  height: 20px !important;\n}\n.reveal .controls button {\n  padding: 2px 4px !important;\n  font-size: 8px !important;\n}
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>"""
         content = content.replace('</style>', controls_css)
 
