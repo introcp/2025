@@ -69,7 +69,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .s1 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Single */
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
-  </style>
+  .reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
+</style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
@@ -6822,6 +6829,13 @@ div.jp-Cell-Placeholder-content-3 {
   top: 140px;
 }
 
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -7247,6 +7261,13 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-switch-color: var(--md-grey-400);
   --jp-switch-true-position-color: var(--md-orange-900);
 }
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
 </style>
 <style type="text/css">
 a.anchor-link {
@@ -7268,6 +7289,13 @@ a.anchor-link {
   body {
     margin: 0;
   }
+}
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
 }
 </style>
 <style type="text/css">
@@ -7392,6 +7420,13 @@ main {
 ::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
+.reveal .controls {
+  height: 20px !important;
+}
+.reveal .controls button {
+  padding: 2px 4px !important;
+  font-size: 8px !important;
+}
 </style>
 <!-- Load mathjax -->
 <!-- Load mathjax -->
@@ -7416,65 +7451,6 @@ main {
 <!-- End of MathJax v3 configuration -->
 <!-- End of mathjax configuration --><!-- Reveal Theme -->
 <link href="../dist/theme/luiss.css" id="theme" rel="stylesheet"/>
-<style>
-.reveal .controls {
-  height: 20px !important;
-}
-.reveal .controls button {
-  padding: 2px 4px !important;
-  font-size: 8px !important;
-}
-/* Inline code: transparent background (do not affect code blocks) */
-/* Robust selector: any code that is NOT inside a pre */
-.reveal :not(pre) code {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 .1em !important;
-  border: none !important;
-}
-/* Bootstrap alert and generic text containers */
-.reveal .alert code,
-.reveal .alert-inline code,
-.reveal .well code {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 .1em !important;
-  border: none !important;
-}
-/* Extra contexts to out-specify Jupyter styles if present */
-.reveal .slides section :not(pre) code,
-.reveal .jp-RenderedHTMLCommon :not(pre) code {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 .1em !important;
-  border: none !important;
-}
-/* Keep specific inline contexts for extra safety */
-.reveal p code,
-.reveal li code,
-.reveal h1 code,
-.reveal h2 code,
-.reveal h3 code,
-.reveal h4 code,
-.reveal h5 code,
-.reveal h6 code,
-.reveal td code,
-.reveal th code,
-.reveal dd code {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 .1em !important;
-  border: none !important;
-}
-</style>
 </head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
