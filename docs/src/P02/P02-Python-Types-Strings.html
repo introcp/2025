@@ -422,7 +422,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-formatting">String Formatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-input">Input: <code class="docutils literal notranslate"><span class="pre">input()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-recaps">Some Recaps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-vs-script">Interactive vs. Script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-notebook-vs-script">Interactive/Notebook vs. Script</a></li>
 </ul>
             </nav>
         </div>
@@ -444,19 +444,30 @@ document.write(`
 <section id="variables-a-name-for-values">
 <h2>Variables = a Name for Values<a class="headerlink" href="#variables-a-name-for-values" title="Link to this heading">#</a></h2>
 <p>The equal sign <code class="docutils literal notranslate"><span class="pre">=</span></code> serves for <strong>assigning</strong> a variable name to a value:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">pi</span></code> is the <em>variable name</em> and <code class="docutils literal notranslate"><span class="pre">3.14</span></code> is the <em>value</em>.</p>
 <div class="alert alert-block alert-info">
-<b>Recall</b>: The equal sign <code>=</code> serves for assignments. The equality check reads as `==`.
+<b>Recall</b>: The equal sign <code>=</code> serves for assignments. The equality check reads as <code>==</code>.
 </div>
 <p>Retrieve the value associated to a variable by querying the name on the prompt:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pi</span>      <span class="c1"># input</span>
-<span class="go">3.14        # output</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span>
 </pre></div>
 </div>
-<br>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14
+</pre></div>
+</div>
+</div>
+</div>
 <ul class="simple">
 <li><p>All values are stored in the computer memory</p></li>
 <li><p>The assignment operation binds a name to a value</p></li>
@@ -537,15 +548,16 @@ document.write(`
 <li><p>easier to change the code later</p></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pi</span><span class="o">=</span><span class="mf">3.14</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">radius</span><span class="o">=</span><span class="mf">2.2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># calculate the area        &lt;-- this is a comment!</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">area</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># calculate the diameter</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">diameter</span> <span class="o">=</span> <span class="n">radius</span><span class="o">*</span><span class="mi">2</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span><span class="o">=</span><span class="mf">3.14</span>
+<span class="n">radius</span><span class="o">=</span><span class="mf">2.2</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>     <span class="c1"># calculate the area     &lt;-- this is a comment!</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="n">radius</span><span class="o">*</span><span class="mi">2</span>         <span class="c1"># calculate the diameter</span>
 </pre></div>
 </div>
-<br>
+</div>
+</div>
 <p>Syntax of assignments:</p>
 <ul class="simple">
 <li><p>rightmost term of assignment: expression that yields a value</p></li>
@@ -553,14 +565,14 @@ document.write(`
 </ul>
 <p>Variables can be <strong>changed</strong> (or <strong>re-binded</strong>) using new assignments on the same variable name.</p>
 <div class="alert alert-block alert-warning">
-<b>Warning</b>: The old value might still be in the computer memory, but you lose the handle for it.
+<b>WARNING</b>: The old value might still be in the computer memory, but you lose the handle for it.
 </div>
 <div style="display:flex; flex-direction:row;">
 <div style="flex: 1; padding-right: 20px;">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pi</span><span class="o">=</span><span class="mf">3.14</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">radius</span><span class="o">=</span><span class="mf">2.2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">area</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span><span class="o">+</span><span class="mi">1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span><span class="o">=</span><span class="mf">3.14</span>
+<span class="n">radius</span><span class="o">=</span><span class="mf">2.2</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span><span class="o">+</span><span class="mi">1</span>
 </pre></div>
 </div>
 <br>
@@ -573,110 +585,208 @@ document.write(`
 </div></section>
 <section id="dynamic-typing">
 <h2>Dynamic Typing<a class="headerlink" href="#dynamic-typing" title="Link to this heading">#</a></h2>
-<p>Python supports <strong>dynamic typing</strong>.</p>
+<p>Python supports <strong>dynamic typing</strong>:</p>
 <ul class="simple">
 <li><p>variables can hold values of any type</p></li>
 <li><p>variables can hold different types throughout the code</p></li>
 </ul>
 <p>The following is perfectly valid in Python:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">=</span><span class="mi">3</span>          <span class="c1"># x now contains an int</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="o">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">=</span><span class="mf">9.53642</span>    <span class="c1"># x now contains a float</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">3</span>          <span class="c1"># x now contains an int</span>
+<span class="o">...</span>          <span class="c1"># other code...</span>
+<span class="n">x</span><span class="o">=</span><span class="mf">9.53642</span>    <span class="c1"># x now contains a float</span>
 </pre></div>
 </div>
 <br>
 <div class="alert alert-block alert-info">
-<b>Recall</b>: You can always use <code>type(x)</code> to find the type of variable <code>x</code>.
+<b>RECALL</b>: You can always use <code>type(x)</code> to find the type of variable <code>x</code>.
 </div>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">type()</span></code> for comparison and conversion</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">=</span><span class="mi">3</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">==</span><span class="nb">int</span>
-<span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">==</span><span class="nb">float</span>
-<span class="go">True</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">3</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">==</span><span class="nb">int</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">==</span><span class="nb">float</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="strings-a-warmup">
 <h2>Strings: a Warmup<a class="headerlink" href="#strings-a-warmup" title="Link to this heading">#</a></h2>
 <p>Strings are objects that can host letters, numbers, spaces, special characters.
 Strings can be created by enclosing stuff in quotation marks or single quotes:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hi</span><span class="o">=</span><span class="s1">&#39;hello there&#39;</span> <span class="c1"># or &quot;hello there&quot;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hi</span><span class="o">=</span><span class="s1">&#39;hello there&#39;</span> <span class="c1"># or &quot;hello there&quot;</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>You can <strong>concatenate</strong> strings using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;LUISS&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">greeting</span><span class="o">=</span><span class="n">hi</span> <span class="o">+</span> <span class="n">name</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">greeting</span>
-<span class="go">&#39;hello thereLUISS&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">greeting</span><span class="o">=</span><span class="n">hi</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">name</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">greeting</span>
-<span class="go">&#39;hello there LUISS&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;LUISS&#39;</span>
+<span class="n">greeting</span><span class="o">=</span><span class="n">hi</span> <span class="o">+</span> <span class="n">name</span>
+<span class="n">greeting</span>
 </pre></div>
 </div>
-<p>You can <strong>replicate</strong> strings using the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;LUISS&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">silly</span><span class="o">=</span><span class="n">name</span><span class="o">*</span><span class="mi">3</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">silly</span>
-<span class="go">&#39;LUISSLUISSLUISS&#39;</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hello thereLUISS&#39;
 </pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span><span class="o">=</span><span class="n">hi</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">name</span>
+<span class="n">greeting</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hello there LUISS&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<br>
+<p>You can <strong>replicate</strong> strings using the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;LUISS&#39;</span>
+<span class="n">silly</span><span class="o">=</span><span class="n">name</span><span class="o">*</span><span class="mi">3</span>
+<span class="n">silly</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;LUISSLUISSLUISS&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Single quotes or double quotes can be (in principle) used interchangeably.
 For example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;hello students&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;hello students&quot;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;hello students&#39;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;hello students&quot;</span>
+<span class="n">s1</span> <span class="o">==</span> <span class="n">s2</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
 </div>
 <p>yield two identical strings.</p>
 <div class="alert alert-block alert-danger">
 <b>Problem</b>: What if my string contains itself a single quote (e.g., <i>Let's go</i>)?
 </div>
-If we do something like
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;Let&#39;</span><span class="n">s</span> <span class="n">go</span><span class="s1">&#39;</span>
-<span class="go">SyntaxError: invalid syntax</span>
+<p>If we do something like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;Let&#39;</span><span class="n">s</span> <span class="n">go</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
-<p>we have an unterminated string syntax error.</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;Let&#39;</span><span class="n">s</span> <span class="n">go</span><span class="s1">&#39;</span>
+                 <span class="o">^</span>
+<span class="ne">SyntaxError</span>: unterminated string literal (detected at line 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have an unterminated string syntax error.</p>
 <div class="alert alert-block alert-success">
 <b>Solution</b>: Wrap your string with single quotes between double quotes!
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Let&#39;s go&quot;</span>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Let&#39;s go&quot;</span>
 </pre></div>
+</div>
+</div>
 </div>
 <br>
 <div class="alert alert-block alert-danger">
-<b>(Opposite) problem</b>: What if my string contains itself a double quote (e.g., <i>I said "Hello"</i>)?
+<b>(OPPOSITE) PROBLEM</b>: What if my string contains itself a double quote (e.g., <i>I said "Hello"</i>)?
 </div>
-If we do something like
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I said &quot;</span><span class="n">Hello</span><span class="s2">&quot;&quot;</span>
-<span class="go">SyntaxError: invalid syntax</span>
+If we do something like:<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I said &quot;</span><span class="n">Hello</span><span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-<p>we have another syntax error, equivalent to the previous one.</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I said &quot;</span><span class="n">Hello</span><span class="s2">&quot;&quot;</span>
+                 <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have another syntax error, equivalent to the previous one.</p>
 <div class="alert alert-block alert-success">
-<b>Solution</b>: Wrap your string with double quotes between single quotes!
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;I said &quot;Hello&quot;&#39;</span>
+<b>SOLUTION</b>: Wrap your string with double quotes between single quotes!
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;I said &quot;Hello&quot;&#39;</span>
 </pre></div>
+</div>
+</div>
 </div>
 <br>
 <div class="alert alert-block alert-danger">
-<b>(Yet another) problem</b>: What if my string contains both single quotes and double quotes (e.g., <i>I said "What's going on"</i>)?
+<b>(YET ANOTHER) PROBLEM</b>: What if my string contains both single quotes and double quotes (e.g., <i>I said "What's going on"</i>)?
 </div>
-We cannot do any of the following
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I said &quot;</span><span class="n">What</span><span class="s1">&#39;s going on&quot;&quot;</span>
-<span class="go">SyntaxError: invalid syntax</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;I said &quot;What&#39;</span><span class="n">s</span> <span class="n">going</span> <span class="n">on</span><span class="s2">&quot;&#39;</span>
-<span class="go">SyntaxError: invalid syntax</span>
+We cannot do any of the following:<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I said &quot;</span><span class="n">What</span><span class="s1">&#39;s going on&quot;&quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;I said &quot;What&#39;</span><span class="n">s</span> <span class="n">going</span> <span class="n">on</span><span class="s2">&quot;&#39; # similar error</span>
 </pre></div>
 </div>
-<p>because of syntax errors, equivalent to the previous ones.</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I said &quot;</span><span class="n">What</span><span class="s1">&#39;s going on&quot;&quot;</span>
+                     <span class="o">^</span>
+<span class="ne">SyntaxError</span>: unterminated string literal (detected at line 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because of syntax errors, equivalent to the previous ones.</p>
 <div class="alert alert-block alert-success">
-<b>Solution</b>: Wrap your string between triple single quotes!
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;I said &quot;What&#39;s going on&quot;&#39;&#39;&#39;</span>
+<b>SOLUTION</b>: Wrap your string between triple single quotes!
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;I said &quot;What&#39;s going on&quot;&#39;&#39;&#39;</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="escape-sequences">
@@ -689,10 +799,14 @@ We cannot do any of the following
 <li><p>if we <em>shield</em> the backslash with a backslash, it is interpreted as character rather than ‘this the beginning of an escape sequence’.</p></li>
 </ul>
 <p>Let’s try the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;I said &quot;What</span><span class="se">\&#39;</span><span class="s1">s going on&quot;&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;I said </span><span class="se">\&quot;</span><span class="s2">What&#39;s going on</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;Hello</span><span class="se">\\</span><span class="s2">Students&quot;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;I said &quot;What</span><span class="se">\&#39;</span><span class="s1">s going on&quot;&#39;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;I said </span><span class="se">\&quot;</span><span class="s2">What&#39;s going on</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;Hello</span><span class="se">\\</span><span class="s2">Students&quot;</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>There exist escape sequences also for string formatting.</p>
 <p>Let’s see the most important ones:</p>
@@ -704,18 +818,56 @@ We cannot do any of the following
 <li><p>form feed <code class="docutils literal notranslate"><span class="pre">\v</span></code> or <code class="docutils literal notranslate"><span class="pre">\f</span></code>, which breaks the line</p></li>
 </ul>
 <p>Let’s see them in action:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;Hello</span><span class="se">\n</span><span class="s1">Students&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
-<span class="go">Hello</span>
-<span class="go">Students</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;Hello</span><span class="se">\t</span><span class="s1">Students&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
-<span class="go">Hello   Students</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s3</span> <span class="o">=</span> <span class="s1">&#39;Hello</span><span class="se">\r</span><span class="s1">Students&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
-<span class="go">Students</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\a</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;Hello</span><span class="se">\n</span><span class="s1">Students&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello\nStudents&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;Hello</span><span class="se">\t</span><span class="s1">Students&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello	Students
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s3</span> <span class="o">=</span> <span class="s1">&#39;Hello</span><span class="se">\r</span><span class="s1">Students&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span> <span class="c1"># notice that &quot;Hello&quot; is overwritten by &quot;Students&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Students
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\a</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># this may or may not produce a sound depending on your system</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="input-output">
@@ -725,21 +877,48 @@ We cannot do any of the following
 <li><p>Universal (and very flexible) function: <code class="docutils literal notranslate"><span class="pre">print()</span></code></p></li>
 </ul>
 <p>Examples:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">)</span> <span class="c1"># two input arguments</span>
-<span class="go">apple banana</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;apple&#39;</span> <span class="o">+</span> <span class="s1">&#39;banana&#39;</span><span class="p">)</span> <span class="c1"># one input argument</span>
-<span class="go">applebanana</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">)</span> <span class="c1"># two input arguments</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple banana
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;apple&#39;</span> <span class="o">+</span> <span class="s1">&#39;banana&#39;</span><span class="p">)</span> <span class="c1"># one input argument</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>applebanana
+</pre></div>
+</div>
+</div>
 </div>
 <p>By default, multiple input arguments are separated by space (<code class="docutils literal notranslate"> </code>) and the line terminates with a newline (<code class="docutils literal notranslate"><span class="pre">\n</span></code>). You can change that via <code class="docutils literal notranslate"><span class="pre">sep</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code>.</p>
 <p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">=</span><span class="mi">5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a=&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;bye&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="go">a=|5|10|bye</span>
-
-
-<span class="gp">&gt;&gt;&gt;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a=&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;bye&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n\n\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># three new lines afterwards!</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LUISS&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a=|5|10|bye
+
+
+LUISS
+</pre></div>
+</div>
+</div>
 </div>
 <p>Hence, there are two strategies to print something on screen:</p>
 <ol class="arabic simple">
@@ -748,11 +927,19 @@ We cannot do any of the following
 </ol>
 <p>The second case deserves further observations.</p>
 <p>What happens if we run the following code?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">age</span><span class="o">=</span><span class="mi">5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Eric&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is &quot;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot; and I&#39;m &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; years old.&quot;</span><span class="p">)</span>
-<span class="go">My name is Eric and I&#39;m 5 years old.</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">name</span><span class="o">=</span><span class="s1">&#39;Eric&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is &quot;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot; and I&#39;m &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; years old.&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My name is Eric and I&#39;m 5 years old.
+</pre></div>
+</div>
+</div>
 </div>
 <p>It works fine, but it will error if we don’t convert <code class="docutils literal notranslate"><span class="pre">age</span></code> to string (i.e., using <code class="docutils literal notranslate"><span class="pre">str()</span></code>).
 Because we cannot concatenate (i.e., <code class="docutils literal notranslate"><span class="pre">+</span></code>) strings and numbers together.</p>
@@ -766,17 +953,55 @@ Because we cannot concatenate (i.e., <code class="docutils literal notranslate">
 </ul>
 <p>Let’s see the old-school way (C-like).</p>
 <p>What happens if we run the following code?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n1</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">n2</span> <span class="o">=</span> <span class="mf">1234.56789</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The value of n1 is </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n1</span><span class="p">)</span>
-<span class="go">The value of n1 is 5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The value of n2 is </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n2</span><span class="p">)</span>
-<span class="go">The value of n2 is 1234</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The value of n1 is </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n1</span><span class="p">)</span>
-<span class="go">The value of n1 is 5.000000</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The value of n2 is </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n2</span><span class="p">)</span>
-<span class="go">The value of n2 is 1234.567890</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n1</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="mf">1234.56789</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The value of n1 is </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n1</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The value of n1 is 5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The value of n2 is </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The value of n2 is 1234
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The value of n1 is </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The value of n1 is 5.000000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The value of n2 is </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The value of n2 is 1234.567890
+</pre></div>
+</div>
+</div>
 </div>
 <p>In the string we are building, we can see that:</p>
 <ul class="simple">
@@ -801,14 +1026,22 @@ Because we cannot concatenate (i.e., <code class="docutils literal notranslate">
 <br>
 <br>
 <div class="alert alert-block alert-info">
-<b>Note</b>: We can personalize <code>%f</code> by specifying the number of digits before and after the decimal separator. That is, <code>%x.yf</code> yields a floating point number with $x$ digits before and $y$ digits after the comma. $x$ can be omitted.
+<b>NOTE</b>: We can personalize <code>%f</code> by specifying the number of digits before and after the decimal separator. That is, <code>%x.yf</code> yields a floating point number with $x$ digits before and $y$ digits after the comma. $x$ can be omitted.
 </div><p>We can build strings with an arbitrary number of placeholders.</p>
-<p>Let’s run the following code</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Eric&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">age</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is </span><span class="si">%s</span><span class="s2"> and I&#39;m </span><span class="si">%d</span><span class="s2"> years old.&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>
-<span class="go">My name is Eric and I&#39;m 5 years old.</span>
+<p>Let’s run the following code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Eric&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is </span><span class="si">%s</span><span class="s2"> and I&#39;m </span><span class="si">%d</span><span class="s2"> years old.&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My name is Eric and I&#39;m 5 years old.
+</pre></div>
+</div>
+</div>
 </div>
 <p>We note that:</p>
 <ul class="simple">
@@ -824,7 +1057,7 @@ Because we cannot concatenate (i.e., <code class="docutils literal notranslate">
 <br>
 <br>
 <div class="alert alert-block alert-info">
-<b>Note</b>: <code>%s</code> can be used for strings and for all objects that support a string conversion, e.g., numbers.
+<b>NOTE</b>: <code>%s</code> can be used for strings and for all objects that support a string conversion, e.g., numbers.
 </div></section>
 <section id="input-input">
 <h2>Input: <code class="docutils literal notranslate"><span class="pre">input()</span></code><a class="headerlink" href="#input-input" title="Link to this heading">#</a></h2>
@@ -847,7 +1080,7 @@ Because we cannot concatenate (i.e., <code class="docutils literal notranslate">
 </div>
 <br>
 <div class="alert alert-block alert-warning">
-<b>Warning</b>: <code>input()</code> always returns a string. If you have to play with numbers, you must cast.
+<b>WARNING</b>: <code>input()</code> always returns a string. If you have to play with numbers, you must cast.
 </div>
 <p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">num</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a number: &#39;</span><span class="p">)</span>
@@ -893,19 +1126,36 @@ Because we cannot concatenate (i.e., <code class="docutils literal notranslate">
 <br>
 <br>
 <div class="alert alert-block alert-info">
-<b>Note</b>: We will see more (non-scalar) data types later in the course.
+<b>NOTE</b>: We will see more (non-scalar) data types later in the course.
 </div></section>
-<section id="interactive-vs-script">
-<h2>Interactive vs. Script<a class="headerlink" href="#interactive-vs-script" title="Link to this heading">#</a></h2>
+<section id="interactive-notebook-vs-script">
+<h2>Interactive/Notebook vs. Script<a class="headerlink" href="#interactive-notebook-vs-script" title="Link to this heading">#</a></h2>
 <p>What happens if you type this code in the interpreter or write a script and execute it?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">miles</span> <span class="o">=</span> <span class="mf">11.41</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">miles</span>
-<span class="go">11.41</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">miles</span> <span class="o">*</span> <span class="mi">2</span>
-<span class="go">22.82</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">miles</span> <span class="o">=</span> <span class="mf">11.41</span>
+<span class="n">miles</span>
 </pre></div>
 </div>
-<br>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.41
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">miles</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22.82
+</pre></div>
+</div>
+</div>
+</div>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Interactive</p></th>
@@ -927,7 +1177,7 @@ Because we cannot concatenate (i.e., <code class="docutils literal notranslate">
 </div>
 <br>
 <div class="alert alert-block alert-info">
-<b>Note</b>: If you want your script to show something, you must use <code>print()</code>.
+<b>NOTE</b>: If you want your script to show something, you must use <code>print()</code>.
 </div></section>
 </section>
 
@@ -996,7 +1246,7 @@ Because we cannot concatenate (i.e., <code class="docutils literal notranslate">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-formatting">String Formatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-input">Input: <code class="docutils literal notranslate"><span class="pre">input()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-recaps">Some Recaps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-vs-script">Interactive vs. Script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-notebook-vs-script">Interactive/Notebook vs. Script</a></li>
 </ul>
   </nav></div>
 
