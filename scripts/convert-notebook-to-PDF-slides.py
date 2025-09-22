@@ -13,8 +13,6 @@ import json
 import re
 import subprocess
 import fitz  # PyMuPDF for PDF manipulation
-import tempfile
-import shutil
 
 def file_hash(path):
     hasher = hashlib.sha256()
@@ -206,14 +204,6 @@ def convert_to_pdf(filename, force=False, verbose=False):
         return
 
     print(f"\nConverting to PDF: {filename}")
-
-    # PRIORITY: Immediately update the scrollable HTML version for fast feedback
-    original_sigint_handler = signal.getsignal(signal.SIGINT)
-    try:
-        signal.signal(signal.SIGINT, signal.SIG_IGN)
-        os.system(f'SCROLLABLE=True python3 scripts/convert-notebook-to-HTML-slides.py "{filename}"')
-    finally:
-        signal.signal(signal.SIGINT, original_sigint_handler)
     
     # Check if first cell is marked as slide type
     is_slide_presentation = check_first_cell_is_slide(filename)
@@ -227,17 +217,11 @@ def convert_to_pdf(filename, force=False, verbose=False):
         if verbose and title:
             print(f"Extracted title: {title}")
 
-    # Generate the prerequisite HTML slides into a temporary directory (non-scrollable)
-    tmpdir = tempfile.mkdtemp(prefix="slides_html_")
-    if verbose:
-        print(f"Generating non-scrollable HTML into temp dir: {tmpdir}")
     original_sigint_handler = signal.getsignal(signal.SIGINT)
     try:
         signal.signal(signal.SIGINT, signal.SIG_IGN)
-        cmd = f'SCROLLABLE=False python3 scripts/convert-notebook-to-HTML-slides.py --output-dir "{tmpdir}" "{filename}"'
-        result = subprocess.run(cmd, shell=True)
-        if result.returncode != 0:
-            raise RuntimeError("Failed to generate prerequisite HTML for PDF")
+        # Generate the prerequisite HTML slides
+        os.system(f'SCROLLABLE=False python3 scripts/convert-notebook-to-HTML-slides.py "{filename}"')
     finally:
         signal.signal(signal.SIGINT, original_sigint_handler)
 
@@ -254,10 +238,7 @@ def convert_to_pdf(filename, force=False, verbose=False):
         page = browser.new_page()
         page.emulate_media(media="screen")
 
-        # Use the HTML from the temporary directory for printing to PDF
-        base_name = os.path.basename(filename).replace('.ipynb', '.slides.html')
-        html_path = os.path.join(tmpdir, base_name)
-        html_file = f"file://{html_path}?print-pdf"
+        html_file = f"file://{os.getcwd()}/{filename.replace('.ipynb', '.slides.html?print-pdf')}"
         if verbose: print(f"Visiting {html_file}")
         
         page.goto(html_file, wait_until="load")
@@ -309,74 +290,40 @@ def convert_to_pdf(filename, force=False, verbose=False):
     try:
         with sync_playwright() as playwright:
             run_playwright(playwright)
+        # Generate scrollable version for viewing
+        original_sigint_handler = signal.getsignal(signal.SIGINT)
+        try:
+            signal.signal(signal.SIGINT, signal.SIG_IGN)
+            os.system(f'SCROLLABLE=True python3 scripts/convert-notebook-to-HTML-slides.py "{filename}"')
+        finally:
+            signal.signal(signal.SIGINT, original_sigint_handler)
     except Exception as e:
         print(f"[ERROR] Failed to convert {filename} to PDF: {e}", file=sys.stderr)
-    finally:
-        # Clean up temporary directory
-        try:
-            shutil.rmtree(tmpdir, ignore_errors=True)
-        except Exception:
-            pass
 
 # --- Main execution ---
 if args.watch:
     if not args.input:
         print("[ERROR] --watch requires a single input file.", file=sys.stderr)
         sys.exit(1)
-
+    
     print(f"[INFO] Watching {args.input} for changes...\n")
     last_hash = None
-    proc = None
+    changed = True
     try:
         while True:
             current_hash = file_hash(args.input)
             if current_hash != last_hash:
                 if last_hash is not None:
-                    print("[INFO] File change detected. Restarting conversion...")
-                # If a conversion is running, terminate it
-                if proc and proc.poll() is None:
-                    try:
-                        proc.terminate()
-                        # Wait briefly, then kill if still running
-                        try:
-                            proc.wait(timeout=2)
-                        except subprocess.TimeoutExpired:
-                            proc.kill()
-                    except Exception:
-                        pass
-                # Immediately regenerate the scrollable HTML for fast feedback
-                try:
-                    original_sigint_handler = signal.getsignal(signal.SIGINT)
-                    signal.signal(signal.SIGINT, signal.SIG_IGN)
-                    os.system(f'SCROLLABLE=True python3 scripts/convert-notebook-to-HTML-slides.py "{args.input}"')
-                finally:
-                    signal.signal(signal.SIGINT, original_sigint_handler)
-
-                # Debounce before starting slow PDF conversion
-                time.sleep(0.4)
-                stable_hash = file_hash(args.input)
-                if stable_hash != current_hash:
-                    # File changed again during debounce; skip starting PDF this cycle
-                    last_hash = stable_hash
-                    continue
-
-                # Start a new conversion subprocess (single-run) for the PDF pipeline
-                cmd = [sys.executable, __file__, args.input]
-                proc = subprocess.Popen(cmd)
+                    print("[INFO] File change detected.")
+                convert_to_pdf(args.input, force=True)
                 last_hash = current_hash
+                changed = True
+            elif changed:
+                print("\n[INFO] Waiting for file changes... Crtl+C to exit")
+                changed = False
             time.sleep(0.5)
     except KeyboardInterrupt:
         print("\n[INFO] Watch mode stopped by user. Exiting.")
-        # Ensure child process is terminated
-        if proc and proc.poll() is None:
-            try:
-                proc.terminate()
-                try:
-                    proc.wait(timeout=2)
-                except subprocess.TimeoutExpired:
-                    proc.kill()
-            except Exception:
-                pass
         sys.exit(0)
 else:
     for filename in files:

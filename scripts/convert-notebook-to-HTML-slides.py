@@ -40,15 +40,10 @@ def get_file_hash(path):
             hasher.update(chunk)
     return hasher.hexdigest()
 
-def process_slides(notebook_path, output_dir: Path | None = None):
+def process_slides(notebook_path):
     """Convert a Jupyter notebook to Reveal.js slides and post-process it."""
     print(f"[INFO] Converting {notebook_path}...")
-    # Determine output HTML path
-    if output_dir is not None:
-        output_dir = Path(output_dir)
-        slides_html_path = output_dir / notebook_path.with_suffix('.slides.html').name
-    else:
-        slides_html_path = notebook_path.with_suffix('.slides.html')
+    slides_html_path = notebook_path.with_suffix('.slides.html')
 
     # Run nbconvert
     scrollable = os.environ.get('SCROLLABLE', 'True')
@@ -56,24 +51,21 @@ def process_slides(notebook_path, output_dir: Path | None = None):
     original_sigint_handler = signal.getsignal(signal.SIGINT)
     try:
         signal.signal(signal.SIGINT, signal.SIG_IGN)
-        cmd = [
-            'jupyter-nbconvert', str(notebook_path),
-            '--to', 'slides',
-            '--SlidesExporter.reveal_url_prefix', '..',
-            '--SlidesExporter.reveal_theme', 'luiss',
-            '--SlidesExporter.reveal_number', 'c/t',
-            '--SlidesExporter.reveal_scroll', scrollable,
-            '--SlidesExporter.reveal_height', '700',
-            '--SlidesExporter.reveal_transition', 'none'
-        ]
-        if output_dir is not None:
-            cmd += ['--output-dir', str(output_dir)]
-        subprocess.run(cmd, check=True)
+        subprocess.run([
+        'jupyter-nbconvert', str(notebook_path),
+        '--to', 'slides',
+        '--SlidesExporter.reveal_url_prefix', '..',
+        '--SlidesExporter.reveal_theme', 'luiss',
+        '--SlidesExporter.reveal_number', 'c/t',
+        '--SlidesExporter.reveal_scroll', scrollable,
+        '--SlidesExporter.reveal_height', '700',
+        '--SlidesExporter.reveal_transition', 'none'
+    ], check=True)
     finally:
         signal.signal(signal.SIGINT, original_sigint_handler)
 
     # Post-process the generated HTML
-    with open(slides_html_path, 'r+', encoding='utf-8') as f:
+    with open(slides_html_path, 'r+') as f:
         content = f.read()
         
         # 1. Replace MathJax v2 with v3
@@ -125,66 +117,11 @@ def process_slides(notebook_path, output_dir: Path | None = None):
         content = content.replace(".css('margin-top', '20px')", ".css('margin-top', '0px').css('scrollbar-width', 'none')")
         content = re.sub(r'(\.jp-MarkdownOutput \{)\n  display: table-cell;', r'\1', content)
 
-        # 6. Reduce height of bottom controls and fix inline code background
-        css_payload = """.reveal .controls {\n  height: 20px !important;\n}\n.reveal .controls button {\n  padding: 2px 4px !important;\n  font-size: 8px !important;\n}\n/* Inline code: transparent background (do not affect code blocks) */\n/* Robust selector: any code that is NOT inside a pre */\n.reveal :not(pre) code {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 .1em !important;
-  border: none !important;
-}
-/* Bootstrap alert and generic text containers */\n.reveal .alert code,
-.reveal .alert-inline code,
-.reveal .well code {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 .1em !important;
-  border: none !important;
-}
-/* Extra contexts to out-specify Jupyter styles if present */\n.reveal .slides section :not(pre) code,
-.reveal .jp-RenderedHTMLCommon :not(pre) code {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 .1em !important;
-  border: none !important;
-}
-/* Keep specific inline contexts for extra safety */\n.reveal p code,
-.reveal li code,
-.reveal h1 code,
-.reveal h2 code,
-.reveal h3 code,
-.reveal h4 code,
-.reveal h5 code,
-.reveal h6 code,
-.reveal td code,
-.reveal th code,
-.reveal dd code {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 .1em !important;
-  border: none !important;
-}
-"""
-        style_block = f"<style>\n{css_payload}</style>\n"
-        if '</head>' in content:
-            content = content.replace('</head>', style_block + '</head>')
-        else:
-            # Fallback: inject near existing style closing tag
-            content = content.replace('</style>', css_payload + '</style>')
-
-        # 7. If output_dir is used, rewrite relative asset URLs (../...) to absolute file URLs to the project's src/
-        if output_dir is not None:
-            project_src = (Path.cwd() / 'src').as_posix()
-            # Replace src and href that start with ../ to point to file://{project_src}/...
-            content = re.sub(r'src="\.\./', f'src="file://{project_src}/', content)
-            content = re.sub(r'href="\.\./', f'href="file://{project_src}/', content)
+        # 6. Reduce height of bottom controls
+        controls_css = """\
+.reveal .controls {\n  height: 20px !important;\n}\n.reveal .controls button {\n  padding: 2px 4px !important;\n  font-size: 8px !important;\n}
+</style>"""
+        content = content.replace('</style>', controls_css)
 
         f.seek(0)
         f.write(content)
@@ -196,7 +133,6 @@ def main():
     parser = argparse.ArgumentParser(description='Convert Jupyter notebooks to Reveal.js slides.')
     parser.add_argument('notebook', help='Path to the Jupyter notebook file.')
     parser.add_argument('--watch', '-w', action='store_true', help='Watch for file changes and re-run conversion.')
-    parser.add_argument('--output-dir', '-o', help='Optional output directory for the generated .slides.html (used by PDF generation).')
     args = parser.parse_args()
 
     notebook_path = Path(args.notebook)
@@ -205,7 +141,7 @@ def main():
         sys.exit(1)
 
     if not args.watch:
-        process_slides(notebook_path, Path(args.output_dir) if args.output_dir else None)
+        process_slides(notebook_path)
         return
 
     print(f"[INFO] Watching {notebook_path} for changes...")
@@ -217,7 +153,7 @@ def main():
                 if last_hash is not None:
                     print("[INFO] File change detected.")
                 try:
-                    process_slides(notebook_path, Path(args.output_dir) if args.output_dir else None)
+                    process_slides(notebook_path)
                     last_hash = current_hash
                 except subprocess.CalledProcessError as e:
                     print(f"[ERROR] Failed to convert {notebook_path}: {e}", file=sys.stderr)
