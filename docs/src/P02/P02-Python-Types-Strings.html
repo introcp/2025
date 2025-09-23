@@ -552,10 +552,10 @@ document.write(`
 <p>Examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span><span class="o">=</span><span class="mf">3.14</span>
-<span class="n">radius</span><span class="o">=</span><span class="mf">2.2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="mf">2.2</span>
 <span class="n">area</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>     <span class="c1"># calculate the area     &lt;-- this is a comment!</span>
-<span class="n">diameter</span> <span class="o">=</span> <span class="n">radius</span><span class="o">*</span><span class="mi">2</span>         <span class="c1"># calculate the diameter</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="n">radius</span> <span class="o">*</span> <span class="mi">2</span>       <span class="c1"># calculate the diameter</span>
 </pre></div>
 </div>
 </div>
@@ -571,10 +571,10 @@ document.write(`
 </div>
 <div style="display:flex; flex-direction:row;">
 <div style="flex: 1; padding-right: 20px;">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span><span class="o">=</span><span class="mf">3.14</span>
-<span class="n">radius</span><span class="o">=</span><span class="mf">2.2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="mf">2.2</span>
 <span class="n">area</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <br>
@@ -598,11 +598,10 @@ document.write(`
 <span class="n">x</span><span class="o">=</span><span class="mf">9.53642</span>    <span class="c1"># x now contains a float</span>
 </pre></div>
 </div>
-<br>
 <div class="alert alert-block alert-info">
 <b>RECALL</b>: You can always use <code>type(x)</code> to find the type of variable <code>x</code>.
 </div>
-<p>You can use <code class="docutils literal notranslate"><span class="pre">type()</span></code> for comparison and conversion</p>
+<p>For instace:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">3</span>
@@ -673,8 +672,8 @@ Strings can be created by enclosing stuff in quotation marks or single quotes:</
 <p>You can <strong>replicate</strong> strings using the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;LUISS&#39;</span>
-<span class="n">silly</span><span class="o">=</span><span class="n">name</span><span class="o">*</span><span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;LUISS&#39;</span>
+<span class="n">silly</span> <span class="o">=</span> <span class="n">name</span> <span class="o">*</span> <span class="mi">3</span>
 <span class="n">silly</span>
 </pre></div>
 </div>
@@ -703,7 +702,7 @@ For example:</p>
 </div>
 <p>yield two identical strings.</p>
 <div class="alert alert-block alert-danger">
-<b>Problem</b>: What if my string contains itself a single quote (e.g., <i>Let's go</i>)?
+<b>PROBLEM</b>: What if my string contains itself a single quote (e.g., <i>Let's go</i>)?
 </div>
 <p>If we do something like:</p>
 <div class="cell docutils container">
@@ -948,7 +947,7 @@ Because we cannot concatenate (i.e., <code class="docutils literal notranslate">
 </section>
 <section id="string-formatting">
 <h2>String Formatting<a class="headerlink" href="#string-formatting" title="Link to this heading">#</a></h2>
-<p>Luckily, Python has several string formatting shortcuts that allow us to create strings</p>
+<p>Luckily, Python has several string formatting shortcuts that allow us to create strings:</p>
 <ul class="simple">
 <li><p>without manual concatenation and casting</p></li>
 <li><p>in a very elegant and clean way.</p></li>
