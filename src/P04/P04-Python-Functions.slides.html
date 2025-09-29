@@ -7543,10 +7543,30 @@ main {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Functions">Functions<a class="anchor-link" href="#Functions">¶</a></h2><p>More code does not necessarily mean good practice → use <b style="color:red">functions</b>.</p>
 <p>Why?</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>functions are <b style="color:red">reusable</b> chunks of code</li>
-<li>functions run if and only if are “<b style="color:red">called</b>” or “<b style="color:red">invoked</b>”</li>
+<li>functions run if and only if are <i><b style="color:red">called</b></i> or <i><b style="color:red">invoked</b></i></li>
 </ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Characteristics of a function:</p>
 <ul>
 <li>functions have a <b style="color:red">name</b></li>
@@ -7559,7 +7579,7 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7601,12 +7621,12 @@ main {
 </ul>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span>
     <span class="k">return</span> <span class="n">j</span>
 
-<span class="n">n</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">n</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">n</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 <p>Let's see it in Python Tutor: <a href="https://pythontutor.com/visualize.html#code=def%20f%28i%29%3A%0A%20%20%20%20j%20%3D%20i%20*%202%0A%20%20%20%20return%20j%0A%0An%3Df%281%29%0An%3Df%282%29%0An%3Df%283%29&amp;cumulative=false&amp;heapPrimitives=nevernest&amp;mode=edit&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">pythontutor.com</a></p>
 </div>
@@ -7785,13 +7805,21 @@ main {
 <ol>
 <li>variable <code>x</code> is changed inside <code>f</code> because of <code>x = x+1</code></li>
 </ol>
-<br/>
-<br/>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="alert alert-block alert-info"><b>NOTE</b>: Variable <code>x</code> in the global scope has <b>not</b> been changed because <code>f</code> has its own scope!</div>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7804,7 +7832,7 @@ main {
 <p>What's going on here?</p>
 <ol>
 <li>variable <code>x</code> inside <code>f</code> is ready to be <code>return</code>ed</li>
-<li>in the main scope, there is variable <code>z</code> ready to host the <code>return</code>ed value</li>
+<li>in the <strong>global</strong> scope, there is variable <code>z</code> ready to host the <code>return</code>ed value</li>
 </ol>
 </div>
 </div>
@@ -7822,8 +7850,8 @@ main {
 <p>What's going on here?</p>
 <ol>
 <li>the frame of function <code>f</code> is destroyed because its execution is finished</li>
-<li>in the main scope, we have the 'original' value for <code>x</code></li>
-<li>in the main scope, we have the output of function <code>f</code> in the new variable <code>z</code></li>
+<li>in the <strong>global</strong> scope, we have the <em>original</em> value for <code>x</code></li>
+<li>in the <strong>global</strong> scope, we have the output of function <code>f</code> in the new variable <code>z</code></li>
 </ol>
 </div>
 </div>
@@ -8067,6 +8095,16 @@ In main(): c =  1
 <li>the second formal to the second actual</li>
 <li>...and so on, until all parameters are bounded</li>
 </ul>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Python also supports <b style="color:red">keyword bounding</b></p>
 <ul>
 <li>formals are bound to actuals using the name of the formal parameter</li>
@@ -8107,7 +8145,7 @@ In main(): c =  1
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8151,7 +8189,7 @@ In main(): c =  1
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-<p>When we call this function with no parameters:</p>
+<p>When we call this function with <strong>no parameters</strong>:</p>
 </div>
 </div>
 </div>
@@ -8234,7 +8272,7 @@ In main(): c =  1
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-<p>Or, we can call this function with one parameter:</p>
+<p>Or, we can call this function with <strong>one parameter</strong>:</p>
 </div>
 </div>
 </div>
@@ -8317,7 +8355,7 @@ In main(): c =  1
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-<p>As already seen, the natural choice would be to call it with the two parameters:</p>
+<p>As already seen, the natural choice would be to call it with the <strong>two parameters</strong>:</p>
 </div>
 </div>
 </div>
@@ -8556,7 +8594,7 @@ For example, a game (e.g., chess, ping-pong, ...):</br></p>
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
