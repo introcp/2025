@@ -469,20 +469,23 @@ document.write(`
 <h2>Reusing Code<a class="headerlink" href="#reusing-code" title="Link to this heading">#</a></h2>
 <p>So far…</p>
 <ul class="simple">
-<li><p>we have covered language mechanisms</p></li>
-<li><p>we know how to write different <code class="docutils literal notranslate"><span class="pre">.py</span></code> files for different computations</p></li>
-<li><p>…where each file contains some piece of code</p></li>
+<li><p>we have covered some basic language mechanisms</p></li>
+<li><p>we know how to write:</p>
+<ul>
+<li><p>different <code class="docutils literal notranslate"><span class="pre">.py</span></code> files for different computations</p></li>
+<li><p>different code cells for different computations</p></li>
+</ul>
+</li>
+<li><p>…where each file/cell contains some piece of code</p></li>
 <li><p>…and each code is a sequence of operations</p></li>
 </ul>
-<br>
-<br>
 <div class="alert alert-block alert-danger">
 <b>PROBLEM</b>: This approach is:<br>
 <ul>
 <li>easy for small-scale problems</li>
 <li>messy for large-scale problems</li>
 <li>hard to keep track of details and maintain</li>
-<li>hard to reuse inside more complex programs</li>
+<li>difficult to reuse within more complex programs</li>
 </ul>
 </div></section>
 <section id="id1">
@@ -505,12 +508,12 @@ document.write(`
 <section id="anatomy-of-a-function">
 <h3>Anatomy of a function<a class="headerlink" href="#anatomy-of-a-function" title="Link to this heading">#</a></h3>
 <div align="center">
-    <img src="img/Functions.png" style="width: 100%;">
+    <img src="img/Functions.png" style="width: 80%;">
 </div></section>
 <section id="function-body">
 <h3>Function body<a class="headerlink" href="#function-body" title="Link to this heading">#</a></h3>
 <div align="center">
-    <img src="img/Functions2.png" style="width: 100%;">
+    <img src="img/Functions2.png" style="width: 90%;">
 </div><p>When a function is invoked, Python:</p>
 <ul class="simple">
 <li><p>creates a <b style="color:red">frame</b> for the function call</p></li>
@@ -528,12 +531,12 @@ document.write(`
 <span class="n">n</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Let’s see it in Python Tutor: <a class="reference external" href="http://pythontutor.com/">pythontutor.com</a></p>
+<p>Let’s see it in Python Tutor: <a class="reference external" href="https://pythontutor.com/visualize.html#code=def%20f%28i%29%3A%0A%20%20%20%20j%20%3D%20i%20*%202%0A%20%20%20%20return%20j%0A%0An%3Df%281%29%0An%3Df%282%29%0An%3Df%283%29&amp;amp;cumulative=false&amp;amp;heapPrimitives=nevernest&amp;amp;mode=edit&amp;amp;origin=opt-frontend.js&amp;amp;py=311&amp;amp;rawInputLstJSON=%5B%5D&amp;amp;textReferences=false">pythontutor.com</a></p>
 </section>
 <section id="the-importance-of-return">
 <h3>The importance of <code class="docutils literal notranslate"><span class="pre">return</span></code><a class="headerlink" href="#the-importance-of-return" title="Link to this heading">#</a></h3>
 <div align="center">
-    <img src="img/Functions3.png" style="width: 100%;">
+    <img src="img/Functions3.png" style="width: 70%;">
 </div>
 <p>What happens when running e.g. <code class="docutils literal notranslate"><span class="pre">n=is_even(2)</span></code>?</p>
 <ul class="simple">
@@ -548,8 +551,8 @@ document.write(`
     <b><code>print</code></b>
     <ul>
       <li>can be placed <b style="color:red">anywhere</b></li>
-      <li>as <b style="color:red">many</b> `print` statements as you want</li>
-      <li>code <b style="color:red">after</b> `print` is executed</li>
+      <li>as <b style="color:red">many</b> <code>print</code> statements as you want</li>
+      <li>code <b style="color:red">after</b> <code>print</code> is executed</li>
       <li>has a value <b style="color:red">outputted</b> to the console</li>
     </ul>
   </div>
@@ -557,8 +560,8 @@ document.write(`
     <b><code>return</code></b>
     <ul>
       <li>has a meaning only <b style="color:red">inside</b> a function</li>
-      <li>only <b style="color:red">one</b> `return` statement is executed</li>
-      <li>code <b style="color:red">after</b> `return` is not executed</li>
+      <li>only <b style="color:red">one</b> <code>return</code> statement is executed</li>
+      <li>code <b style="color:red">after</b> <code>return</code> is not executed</li>
       <li>has a value <b style="color:red">returned</b> to the function caller</li>
     </ul>
   </div>
@@ -609,7 +612,7 @@ document.write(`
 <section id="running-example-1-4">
 <h3>Running Example (1/4)<a class="headerlink" href="#running-example-1-4" title="Link to this heading">#</a></h3>
 <div align="center">
-    <img src="img/Example1.png" style="width: 100%;">
+    <img src="img/Example1.png" style="width: 90%;">
 </div>
 <p>What’s going on here?</p>
 <ol class="arabic simple">
@@ -629,7 +632,7 @@ document.write(`
 </ol>
 <br>
 <br>
-<div class="alert alert-block alert-info"><b>NOTE</b>: Variable `x` in the global scope has not been changed because `f` has its own scope!</div></section>
+<div class="alert alert-block alert-info"><b>NOTE</b>: Variable <code>x</code> in the global scope has <b>not</b> been changed because <code>f</code> has its own scope!</div></section>
 <section id="running-example-3-4">
 <h3>Running Example (3/4)<a class="headerlink" href="#running-example-3-4" title="Link to this heading">#</a></h3>
 <div align="center">
@@ -703,7 +706,7 @@ In main(): c =  3
 </div>
 </div>
 </div>
-<p>Function <code class="docutils literal notranslate"><span class="pre">add</span></code> is modyfing the global variable <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
+<p>Function <code class="docutils literal notranslate"><span class="pre">add</span></code> is modifying the global variable <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
 <br>
 <p>What happens if we omit the <code class="docutils literal notranslate"><span class="pre">global</span></code> keyword?</p>
 <div class="cell docutils container">
@@ -712,7 +715,7 @@ In main(): c =  3
     <span class="n">c</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># this a local variable!</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inside add(): c = &quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 
-<span class="n">c</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># this is a gloabl variable</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># this is a global variable</span>
 <span class="n">add</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In main(): c = &quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 </pre></div>
@@ -725,7 +728,7 @@ In main(): c =  1
 </div>
 </div>
 </div>
-<p>Function <code class="docutils literal notranslate"><span class="pre">add</span></code> is not modyfing the global variable <code class="docutils literal notranslate"><span class="pre">c</span></code> but its own local variable.</p>
+<p>Function <code class="docutils literal notranslate"><span class="pre">add</span></code> is not modifying the global variable <code class="docutils literal notranslate"><span class="pre">c</span></code> but its own local variable.</p>
 </section>
 <section id="nested-functions">
 <h3>Nested Functions<a class="headerlink" href="#nested-functions" title="Link to this heading">#</a></h3>
@@ -733,7 +736,7 @@ In main(): c =  1
 <li><p>You can <b style="color:red">nest</b> functions arbitrarily.</p></li>
 <li><p>Scopes of nested functions behave like Matryoshka dolls.</p></li>
 </ul>
-<p>Let’s see how thanks to <a href="http://pythontutor.com/">pythontutor.com</a> on this example:</p>
+<p>Let’s see how thanks to <a class="reference external" href="https://pythontutor.com/visualize.html#code=def%20g%28x%29%3A%0A%20%20%20%20def%20h%28%29%3A%0A%20%20%20%20%20%20%20%20x%20%3D%20'abc'%0A%20%20%20%20x%20%3D%20x%20%2B%201%0A%20%20%20%20print%28'g%3A%20x%20%3D',%20x%29%0A%20%20%20%20h%28%29%0A%20%20%20%20return%20x%0A%0Ax%20%3D%203%0Az%20%3D%20g%28x%29&amp;amp;cumulative=false&amp;amp;heapPrimitives=nevernest&amp;amp;mode=edit&amp;amp;origin=opt-frontend.js&amp;amp;py=311&amp;amp;rawInputLstJSON=%5B%5D&amp;amp;textReferences=false">pythontutor.com</a> on this example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -940,13 +943,13 @@ In main(): c =  1
 <li><p>help function, namely <code class="docutils literal notranslate"><span class="pre">help()</span></code>**</p></li>
 </ul>
 <p>Related functions are grouped into files, called <b style="color:red">modules</b>.</p>
-<p><small>* Which is another way of doing exponentiation: <code class="docutils literal notranslate"><span class="pre">pow(x,y)</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">x**y</span></code>.</small>
+<p><small>* Which is another way of doing exponentiation: <code class="docutils literal notranslate"><span class="pre">pow(x,y)</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">x**y</span></code>.</small><br />
 <small>** The <code class="docutils literal notranslate"><span class="pre">help()</span></code> function takes as input the name of a function and returns its docstring.</small></p>
 </section>
 <section id="modules">
 <h2>Modules<a class="headerlink" href="#modules" title="Link to this heading">#</a></h2>
 <p><b style="color:red">Modular programming</b> is the way of breaking a large, unwieldy programming task into separate, smaller (and more manageable) subtasks.</p>
-<p>A <b style="color:red">module</b> is a piece of software with a specific functionality.
+<p>A <b style="color:red">module</b> is a piece of software with a specific functionality.<br />
 For example, a game (e.g., chess, ping-pong, …):</p>
 <ul class="simple">
 <li><p>a module responsible for the game logic (rules)</p></li>
@@ -987,7 +990,7 @@ For example, a game (e.g., chess, ping-pong, …):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>75
 </pre></div>
 </div>
 </div>
@@ -1003,7 +1006,7 @@ For example, a game (e.g., chess, ping-pong, …):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>82
 </pre></div>
 </div>
 </div>
@@ -1078,11 +1081,11 @@ You can find the full list here:
 </section>
 <section id="exercise-session-on-functions">
 <h2>Exercise Session on functions<a class="headerlink" href="#exercise-session-on-functions" title="Link to this heading">#</a></h2>
-<p>Find the exercises for the exam session: <a class="reference internal" href="../E04/E04-Python-Exercises-Functions.html"><span class="std std-doc">here</span></a></p>
+<p>Find the exercises for the exercise session: <a class="reference internal" href="../E04/E04-Python-Exercises-Functions.html"><span class="std std-doc">here</span></a></p>
 </section>
 <section id="exercise-session-on-math-and-datetime-modules">
 <h2>Exercise Session on <code class="docutils literal notranslate"><span class="pre">math</span></code> and <code class="docutils literal notranslate"><span class="pre">datetime</span></code> modules<a class="headerlink" href="#exercise-session-on-math-and-datetime-modules" title="Link to this heading">#</a></h2>
-<p>Find the exercises for the exam session: <a class="reference internal" href="../E02/E02-Python-Exercises-Math-Datetime.html"><span class="std std-doc">here</span></a></p>
+<p>Find the exercises for the exercise session: <a class="reference internal" href="../E02/E02-Python-Exercises-Math-Datetime.html"><span class="std std-doc">here</span></a></p>
 </section>
 </section>
 

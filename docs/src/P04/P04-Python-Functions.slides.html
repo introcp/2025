@@ -76,6 +76,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -6836,6 +6841,11 @@ div.jp-Cell-Placeholder-content-3 {
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -7268,6 +7278,11 @@ all of MD as it is not optimized for dense, information rich UIs.
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 a.anchor-link {
@@ -7296,6 +7311,11 @@ a.anchor-link {
 .reveal .controls button {
   padding: 2px 4px !important;
   font-size: 8px !important;
+}
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
 }
 </style>
 <style type="text/css">
@@ -7427,6 +7447,11 @@ main {
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <!-- Load mathjax -->
 <!-- Load mathjax -->
@@ -7478,26 +7503,38 @@ main {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Reusing-Code">Reusing Code<a class="anchor-link" href="#Reusing-Code">¶</a></h2><p>So far...</p>
 <ul>
-<li>we have covered language mechanisms</li>
-<li>we know how to write different <code>.py</code> files for different computations</li>
-<li>...where each file contains some piece of code</li>
+<li>we have covered some basic language mechanisms</li>
+<li>we know how to write:<ul>
+<li>different <code>.py</code> files for different computations</li>
+<li>different code cells for different computations</li>
+</ul>
+</li>
+<li>...where each file/cell contains some piece of code</li>
 <li>...and each code is a sequence of operations</li>
 </ul>
-<br/>
-<br/>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="alert alert-block alert-danger">
 <b>PROBLEM</b>: This approach is:<br/>
 <ul>
 <li>easy for small-scale problems</li>
 <li>messy for large-scale problems</li>
 <li>hard to keep track of details and maintain</li>
-<li>hard to reuse inside more complex programs</li>
+<li>difficult to reuse within more complex programs</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7530,7 +7567,7 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Anatomy-of-a-function">Anatomy of a function<a class="anchor-link" href="#Anatomy-of-a-function">¶</a></h3><div align="center">
-<img alt="No description has been provided for this image" src="img/Functions.png" style="width: 100%;"/>
+<img alt="No description has been provided for this image" src="img/Functions.png" style="width: 80%;"/>
 </div>
 </div>
 </div>
@@ -7543,7 +7580,7 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Function-body">Function body<a class="anchor-link" href="#Function-body">¶</a></h3><div align="center">
-<img alt="No description has been provided for this image" src="img/Functions2.png" style="width: 100%;"/>
+<img alt="No description has been provided for this image" src="img/Functions2.png" style="width: 90%;"/>
 </div>
 </div>
 </div>
@@ -7571,7 +7608,7 @@ main {
 <span class="n">n</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">n</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
-<p>Let's see it in Python Tutor: <a href="http://pythontutor.com/">pythontutor.com</a></p>
+<p>Let's see it in Python Tutor: <a href="https://pythontutor.com/visualize.html#code=def%20f%28i%29%3A%0A%20%20%20%20j%20%3D%20i%20*%202%0A%20%20%20%20return%20j%0A%0An%3Df%281%29%0An%3Df%282%29%0An%3Df%283%29&amp;cumulative=false&amp;heapPrimitives=nevernest&amp;mode=edit&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">pythontutor.com</a></p>
 </div>
 </div>
 </div>
@@ -7583,7 +7620,7 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="The-importance-of-return">The importance of <code>return</code><a class="anchor-link" href="#The-importance-of-return">¶</a></h3><div align="center">
-<img alt="No description has been provided for this image" src="img/Functions3.png" style="width: 100%;"/>
+<img alt="No description has been provided for this image" src="img/Functions3.png" style="width: 70%;"/>
 </div>
 <p>What happens when running e.g. <code>n=is_even(2)</code>?</p>
 <ul>
@@ -7605,8 +7642,8 @@ main {
 <b><code>print</code></b>
 <ul>
 <li>can be placed <b style="color:red">anywhere</b></li>
-<li>as <b style="color:red">many</b> `print` statements as you want</li>
-<li>code <b style="color:red">after</b> `print` is executed</li>
+<li>as <b style="color:red">many</b> <code>print</code> statements as you want</li>
+<li>code <b style="color:red">after</b> <code>print</code> is executed</li>
 <li>has a value <b style="color:red">outputted</b> to the console</li>
 </ul>
 </div>
@@ -7614,8 +7651,8 @@ main {
 <b><code>return</code></b>
 <ul>
 <li>has a meaning only <b style="color:red">inside</b> a function</li>
-<li>only <b style="color:red">one</b> `return` statement is executed</li>
-<li>code <b style="color:red">after</b> `return` is not executed</li>
+<li>only <b style="color:red">one</b> <code>return</code> statement is executed</li>
+<li>code <b style="color:red">after</b> <code>return</code> is not executed</li>
 <li>has a value <b style="color:red">returned</b> to the function caller</li>
 </ul>
 </div>
@@ -7713,9 +7750,19 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Running-Example-(1/4)">Running Example (1/4)<a class="anchor-link" href="#Running-Example-(1/4)">¶</a></h3><div align="center">
-<img alt="No description has been provided for this image" src="img/Example1.png" style="width: 100%;"/>
+<img alt="No description has been provided for this image" src="img/Example1.png" style="width: 90%;"/>
 </div>
 <p>What's going on here?</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol>
 <li>in the main (i.e., global) scope, we define function <code>f</code></li>
 <li>in the main scope, we define variable <code>x</code></li>
@@ -7724,7 +7771,7 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7740,7 +7787,7 @@ main {
 </ol>
 <br/>
 <br/>
-<div class="alert alert-block alert-info"><b>NOTE</b>: Variable `x` in the global scope has not been changed because `f` has its own scope!</div>
+<div class="alert alert-block alert-info"><b>NOTE</b>: Variable <code>x</code> in the global scope has <b>not</b> been changed because <code>f</code> has its own scope!</div>
 </div>
 </div>
 </div>
@@ -7885,7 +7932,7 @@ In main(): c =  3
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Function <code>add</code> is modyfing the global variable <code>c</code>.</p>
+<p>Function <code>add</code> is modifying the global variable <code>c</code>.</p>
 </div>
 </div>
 </div>
@@ -7906,14 +7953,14 @@ In main(): c =  3
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">():</span>
     <span class="n">c</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># this a local variable!</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Inside add(): c = "</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 
-<span class="n">c</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># this is a gloabl variable</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># this is a global variable</span>
 <span class="n">add</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"In main(): c = "</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 </pre></div>
@@ -7942,7 +7989,7 @@ In main(): c =  1
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Function <code>add</code> is not modyfing the global variable <code>c</code> but its own local variable.</p>
+<p>Function <code>add</code> is not modifying the global variable <code>c</code> but its own local variable.</p>
 </div>
 </div>
 </div>
@@ -7967,7 +8014,7 @@ In main(): c =  1
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Let's see how thanks to <a href="http://pythontutor.com/">pythontutor.com</a> on this example:</p>
+<p>Let's see how thanks to <a href="https://pythontutor.com/visualize.html#code=def%20g%28x%29%3A%0A%20%20%20%20def%20h%28%29%3A%0A%20%20%20%20%20%20%20%20x%20%3D%20%27abc%27%0A%20%20%20%20x%20%3D%20x%20%2B%201%0A%20%20%20%20print%28%27g%3A%20x%20%3D%27,%20x%29%0A%20%20%20%20h%28%29%0A%20%20%20%20return%20x%0A%0Ax%20%3D%203%0Az%20%3D%20g%28x%29&amp;cumulative=false&amp;heapPrimitives=nevernest&amp;mode=edit&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">pythontutor.com</a> on this example:</p>
 </div>
 </div>
 </div>
@@ -8004,16 +8051,6 @@ In main(): c =  1
 <pre>g: x = 4
 </pre>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 </div>
 </div>
 </div>
@@ -8416,8 +8453,8 @@ In main(): c =  1
 <li>help function, namely <code>help()</code>**</li>
 </ul>
 <p>Related functions are grouped into files, called <b style="color:red">modules</b>.</p>
-<p><small>* Which is another way of doing exponentiation: <code>pow(x,y)</code> is the same as <code>x**y</code>.</small>
-<small>** The <code>help()</code> function takes as input the name of a function and returns its docstring.</small></p>
+<p><small>* Which is another way of doing exponentiation: <code>pow(x,y)</code> is the same as <code>x**y</code>.</small><br>
+<small>** The <code>help()</code> function takes as input the name of a function and returns its docstring.</small></br></p>
 </div>
 </div>
 </div>
@@ -8429,8 +8466,8 @@ In main(): c =  1
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Modules">Modules<a class="anchor-link" href="#Modules">¶</a></h2><p><b style="color:red">Modular programming</b> is the way of breaking a large, unwieldy programming task into separate, smaller (and more manageable) subtasks.</p>
-<p>A <b style="color:red">module</b> is a piece of software with a specific functionality.
-For example, a game (e.g., chess, ping-pong, ...):</p>
+<p>A <b style="color:red">module</b> is a piece of software with a specific functionality.<br>
+For example, a game (e.g., chess, ping-pong, ...):</br></p>
 <ul>
 <li>a module responsible for the game logic (rules)</li>
 <li>a module responsible for graphics</li>
@@ -8704,7 +8741,7 @@ You can find the full list here:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Exercise-Session-on-functions">Exercise Session on functions<a class="anchor-link" href="#Exercise-Session-on-functions">¶</a></h2><p>Find the exercises for the exam session: <a href="../E04/E04-Python-Exercises-Functions.ipynb">here</a></p>
+<h2 id="Exercise-Session-on-functions">Exercise Session on functions<a class="anchor-link" href="#Exercise-Session-on-functions">¶</a></h2><p>Find the exercises for the exercise session: <a href="../E04/E04-Python-Exercises-Functions.ipynb">here</a></p>
 </div>
 </div>
 </div>
@@ -8715,7 +8752,7 @@ You can find the full list here:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Exercise-Session-on-math-and-datetime-modules">Exercise Session on <code>math</code> and <code>datetime</code> modules<a class="anchor-link" href="#Exercise-Session-on-math-and-datetime-modules">¶</a></h2><p>Find the exercises for the exam session: <a href="../E02/E02-Python-Exercises-Math-Datetime.ipynb">here</a></p>
+<h2 id="Exercise-Session-on-math-and-datetime-modules">Exercise Session on <code>math</code> and <code>datetime</code> modules<a class="anchor-link" href="#Exercise-Session-on-math-and-datetime-modules">¶</a></h2><p>Find the exercises for the exercise session: <a href="../E02/E02-Python-Exercises-Math-Datetime.ipynb">here</a></p>
 </div>
 </div>
 </div>
