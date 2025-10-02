@@ -439,6 +439,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-run-a-python-file-in-vs-code">Create and run a python file in VS Code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-run-a-python-file-in-vs-code-cont-d">Create and run a python file in VS Code (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code-extension-jupyter">VS Code extension: Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">VS Code extension: Jupyter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-jupyter-notebook">Create a new jupyter notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-code-in-jupyter-notebook">Running code in Jupyter notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-code-in-jupyter-notebook-cont-d">Running code in Jupyter notebook (cont’d)</a></li>
@@ -446,6 +447,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter-code-cell">Working with jupyter - Code cell</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter-markdown-cell">Working with jupyter - Markdown cell</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter-markdown-cell-cont-d">Working with jupyter - Markdown cell (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-first-ipynb-run">Troubleshooting first ipynb run</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-first-ipynb-run-cont-d">Troubleshooting first ipynb run (cont’d)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows">Troubleshooting on Windows</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
@@ -730,6 +736,14 @@ document.write(`
 <center>
 <img src="img/vscode-jupyter.png" width="750">
 </center></section>
+<section id="id1">
+<h2>VS Code extension: Jupyter<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>In order for python notebooks to be run in VS Code, you need to install ipykernel.</p>
+<ol class="arabic simple">
+<li><p>Open the terminal</p></li>
+<li><p>type <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ipykernel</span></code>, hit enter and wait for the installation to finish</p></li>
+</ol>
+</section>
 <section id="create-a-new-jupyter-notebook">
 <h2>Create a new jupyter notebook<a class="headerlink" href="#create-a-new-jupyter-notebook" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
@@ -809,6 +823,30 @@ document.write(`
 <center>
 <img src="img/ipnb-mkdown-window-run.png" width="900">
 </center></section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
+<section id="troubleshooting-first-ipynb-run">
+<h3>Troubleshooting first ipynb run<a class="headerlink" href="#troubleshooting-first-ipynb-run" title="Link to this heading">#</a></h3>
+<p>If, when when running you first notebook inside Visual Studio Code, you get this this window:</p>
+<center>
+<img src="img/install-ipykernel-msgbox.png">
+</center>
+<p>Click on <em>Install</em> to install the missing ipykernel</p>
+</section>
+<section id="troubleshooting-first-ipynb-run-cont-d">
+<h3>Troubleshooting first ipynb run (cont’d)<a class="headerlink" href="#troubleshooting-first-ipynb-run-cont-d" title="Link to this heading">#</a></h3>
+<p>If doing the installation, this error appears at the bottom right corner of VS Code</p>
+<center>
+<img src="img/install-ipykernel-msgbox.png">
+</center>
+<p>And this error under your code cell</p>
+<center>
+<img src="img/install-ipykernel-error-with-pip-solution.png">
+</center>
+<p>Copy the command and paste it in the terminal
+<code class="docutils literal notranslate"><span class="pre">c:/Python312/python.exe</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ipykernel</span> <span class="pre">-U</span> <span class="pre">--user</span> <span class="pre">--force-reinstall</span></code></p>
+</section>
+</section>
 <section id="troubleshooting-on-windows">
 <h2>Troubleshooting on Windows<a class="headerlink" href="#troubleshooting-on-windows" title="Link to this heading">#</a></h2>
 <section id="troubleshooting-on-windows-python-is-not-recognized">
@@ -1225,6 +1263,7 @@ Where <code class="docutils literal notranslate"><span class="pre">&lt;my-env&gt
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-run-a-python-file-in-vs-code">Create and run a python file in VS Code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-and-run-a-python-file-in-vs-code-cont-d">Create and run a python file in VS Code (cont’d)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code-extension-jupyter">VS Code extension: Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">VS Code extension: Jupyter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-jupyter-notebook">Create a new jupyter notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-code-in-jupyter-notebook">Running code in Jupyter notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-code-in-jupyter-notebook-cont-d">Running code in Jupyter notebook (cont’d)</a></li>
@@ -1232,6 +1271,11 @@ Where <code class="docutils literal notranslate"><span class="pre">&lt;my-env&gt
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter-code-cell">Working with jupyter - Code cell</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter-markdown-cell">Working with jupyter - Markdown cell</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-jupyter-markdown-cell-cont-d">Working with jupyter - Markdown cell (cont’d)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-first-ipynb-run">Troubleshooting first ipynb run</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-first-ipynb-run-cont-d">Troubleshooting first ipynb run (cont’d)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows">Troubleshooting on Windows</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-on-windows-python-is-not-recognized-cont-d">Troubleshooting on Windows:<br/><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code> (cont’d)</a></li>
