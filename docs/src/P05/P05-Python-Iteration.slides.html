@@ -76,6 +76,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -6836,6 +6841,11 @@ div.jp-Cell-Placeholder-content-3 {
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -7268,6 +7278,11 @@ all of MD as it is not optimized for dense, information rich UIs.
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 a.anchor-link {
@@ -7296,6 +7311,11 @@ a.anchor-link {
 .reveal .controls button {
   padding: 2px 4px !important;
   font-size: 8px !important;
+}
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
 }
 </style>
 <style type="text/css">
@@ -7427,6 +7447,11 @@ main {
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <!-- Load mathjax -->
 <!-- Load mathjax -->
@@ -7526,39 +7551,11 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Example">Example<a class="anchor-link" href="#Example">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">script</span> echo skipping
-
-n = input("You are in the Lost Forest. Go Left or Right?: ")
-while n == "Right":
-    n = input("You are in the Lost Forest. Go Left or Right?: ")
-print("You are out of the Lost Forest.")
+<h3 id="Example">Example<a class="anchor-link" href="#Example">¶</a></h3><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"You are in the Lost Forest. Go Left or Right?: "</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">==</span> <span class="s2">"Right"</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"You are in the Lost Forest. Go Left or Right?: "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"You are out of the Lost Forest."</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>skipping
-</pre>
-</div>
 </div>
 </div>
 </div>
@@ -7591,8 +7588,7 @@ print("You are out of the Lost Forest.")
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-range()-function">The <code>range()</code> function<a class="anchor-link" href="#The-range()-function">¶</a></h3><p>The <code>range(start, stop, step)</code> function returns a sequence of numbers, starting from <code>start</code>, and increments by <code>step</code>, and stops at <code>stop-1</code>.<br>
-Keep in mind the following caveats:</br></p>
+<h3 id="The-range()-function">The <code>range()</code> function<a class="anchor-link" href="#The-range()-function">¶</a></h3><p>The <code>range(start, stop, step)</code> function returns a sequence of numbers, starting from <code>start</code>, and increments by <code>step</code>, and stops at <code>stop-1</code>. Keep in mind the following caveats:</p>
 <ul>
 <li><code>stop</code> is mandatory</li>
 <li><code>step</code> is optional: if not provided, it defaults to <code>1</code></li>
@@ -8059,9 +8055,9 @@ Done!
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Warm-up-exercises">Warm-up exercises<a class="anchor-link" href="#Warm-up-exercises">¶</a></h2><ul>
-<li><a href="P05-Python-Iteration-Exercises-student.ipynb">Notebook with exercises on iteration (no hints)</a></li>
-<li><a href="P05-Python-Iteration-Exercises-pseudocode.ipynb">Notebook with exercises on iteration (with pseudocode)</a></li>
-<li><a href="P05-Python-Iteration-Exercises-solution.ipynb">Notebook with exercises on iteration (with solutions)</a></li>
+<li><a href="https://introcp.github.io/src/P05/P05-Python-Iteration-Exercises-student.ipynb">Notebook with exercises on iteration (no hints)</a></li>
+<li><a href="https://introcp.github.io/src/P05/P05-Python-Iteration-Exercises-pseudocode.ipynb">Notebook with exercises on iteration (with pseudocode)</a></li>
+<li><a href="https://introcp.github.io/src/P05/P05-Python-Iteration-Exercises-solution.ipynb">Notebook with exercises on iteration (with solutions)</a></li>
 </ul>
 </div>
 </div>
@@ -8073,7 +8069,7 @@ Done!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Exercise-session">Exercise session<a class="anchor-link" href="#Exercise-session">¶</a></h2><p>Find the exercises for the exam session: <a href="../E05/E05-Python-Exercises-Iteration.ipynb">here</a></p>
+<h2 id="Exercise-session">Exercise session<a class="anchor-link" href="#Exercise-session">¶</a></h2><p>Find the exercises for the exam session: <a href="https://introcp.github.io/src/E05/E05-Python-Exercises-Iteration.ipynb">here</a></p>
 </div>
 </div>
 </div>
