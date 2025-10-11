@@ -23,8 +23,8 @@ parts:
       - file: src/P04/P04-Python-Functions.ipynb
       - file: src/E01/E01-Python-Errors.ipynb
       - file: src/P05/P05-Python-Iteration.ipynb
-  #     - file: src/P06/P06-Python-Strings.ipynb
-  #     - file: src/P07/P07-Python-Lists.ipynb
+      - file: src/P06/P06-Python-Strings.ipynb
+      - file: src/P07/P07-Python-Lists.ipynb
   #     - file: src/P08/P08-Python-Dictionaries-Tuples-Sets.ipynb
   #     - file: src/P09/P09-Python-Classes.ipynb
   #     - file: src/P10/P10-Python-Recursion.ipynb
