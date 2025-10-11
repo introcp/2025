@@ -76,6 +76,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -6836,6 +6841,11 @@ div.jp-Cell-Placeholder-content-3 {
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -7268,6 +7278,11 @@ all of MD as it is not optimized for dense, information rich UIs.
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 a.anchor-link {
@@ -7296,6 +7311,11 @@ a.anchor-link {
 .reveal .controls button {
   padding: 2px 4px !important;
   font-size: 8px !important;
+}
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
 }
 </style>
 <style type="text/css">
@@ -7427,6 +7447,11 @@ main {
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <!-- Load mathjax -->
 <!-- Load mathjax -->
@@ -7461,7 +7486,11 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Strings"><b style="font-family: 'LUISS', 'Lato'">Strings</b><a class="anchor-link" href="#Strings">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2><h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3><br/><img alt="No description has been provided for this image" src="https://introcp.github.io/dist/img/logo2.png" width="200px"/><br/><br/><br/>
+<h1 id="Strings"><b style="font-family: 'LUISS', 'Lato'">Strings</b><a class="anchor-link" href="#Strings">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
+<br/>
+<img alt="No description has been provided for this image" src="https://introcp.github.io/dist/img/logo2.png" width="200px"/>
+<p><br/><br/><br/></p>
 </div>
 </div>
 </div>
@@ -7472,21 +7501,31 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Introduction-to-Strings">Introduction to Strings<a class="anchor-link" href="#Introduction-to-Strings">¶</a></h2><p>Recall from past lectures that:</p>
+<h2 id="Recap-on-Strings">Recap on Strings<a class="anchor-link" href="#Recap-on-Strings">¶</a></h2><p>Recall from past lectures that:</p>
 <ul>
 <li>Strings are objects that can host letters, numbers, spaces, special characters.</li>
 </ul>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>More in detail:</p>
 <ul>
 <li>strings are among the most popular types in Python</li>
 <li>we can create strings simply by enclosing characters in quotes</li>
-<li>Python treats single quotes as the same as double quotes (<em>Caveat: if your string contains a quote (e.g., <code>let's dance</code>), enclose the string in double quotes. Similarly, if your string contains double quotes (e.g., <code>I say \"hello\"</code>), enclose the string in single quotes.</em>)</li>
+<li>Python treats single quotes as the same as double quotes (<em>Caveat: if your string contains a quote (e.g., <code>let's dance</code>), enclose the string in double quotes. Similarly, if your string contains double quotes (e.g., <code>I say "hello"</code>), enclose the string in single quotes.</em>)</li>
 <li>to create a string, just perform a variable assignment</li>
 </ul>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7536,15 +7575,369 @@ Python is cool! (hopefully)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Length">Length<a class="anchor-link" href="#Length">¶</a></h2><p>To get the length of a string, we can use the <code>len()</code> function:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"Hello World"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The string s is:"</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>The string s is: Hello World
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The string is"</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">"characters long"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>The string is 11 characters long
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="No-Python-data-type-for-single-characters">No Python data type for single characters<a class="anchor-link" href="#No-Python-data-type-for-single-characters">¶</a></h2><p>Differently from other programming languages, Python does not have a data type for characters.</p>
+<p>Hence, when dealing with single characters, Python will treat them as strings of length 1:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="s1">'A'</span>         <span class="c1"># single character...</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>  <span class="c1"># ...still a string</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>&lt;class 'str'&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Indexing">Indexing<a class="anchor-link" href="#Indexing">¶</a></h2><p>Using indexing, we can access a specific character of a string:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"Hello</span><span class="se">\n</span><span class="s2">World!"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>         <span class="c1"># we access the first character</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>         <span class="c1"># we access the fifth character</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># we access the last character</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>         <span class="c1"># we access the (i+1)-th character</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>H
+o
+l
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="alert alert-block alert-warning"><b>WARNING</b>: The first valid index is <code>0</code>, not <code>1</code>. The last valid index is <code>len(s) - 1</code>, not <code>len(s)</code>. This is called <b><i>zero-based indexing</i></b> or <b><i>0-indexing</i></b>.</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Negative-indexing">Negative indexing<a class="anchor-link" href="#Negative-indexing">¶</a></h2><p>Quite strangely but conviniently, Python supports negative indexes:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"Hello</span><span class="se">\n</span><span class="s2">World!"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>        <span class="c1"># we access the last character</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>        <span class="c1"># we access the second last character</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)])</span>   <span class="c1"># we access the first character</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>!
+d
+H
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="alert alert-block alert-warning"><b>WARNING</b>: The <i>first</i> negative index is <code>-1</code>, while the <i>last</i> is <code>-len(s)</code>.</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Using-an-invalid-index">Using an invalid index<a class="anchor-link" href="#Using-an-invalid-index">¶</a></h2><p>When using an invalid index, Python will raise an error:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"Hello World"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">20</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">IndexError</span>                                Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[10], line 2</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> s <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">Hello World</span><span style="color: rgb(175,0,0)">"</span>
+<span class="ansi-green-fg">----&gt; 2</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">s</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">20</span><span class="ansi-yellow-bg">]</span>)
+
+<span class="ansi-red-fg">IndexError</span>: string index out of range</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="alert alert-block alert-warning"><b>WARNING</b>: <b>Read</b> the error from Python to fix your code issues!</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Strings-are-immutable">Strings are immutable<a class="anchor-link" href="#Strings-are-immutable">¶</a></h2><p>A string is an immutable object, i.e., we cannot change its internal data. Hence, we cannot change an existing string:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">"Hello</span><span class="se">\n</span><span class="s2">World!"</span>
+<span class="n">s1</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s2">", "</span> <span class="c1"># this will raise an exception</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[11], line 2</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> s1 <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">Hello</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span style="color: rgb(175,0,0)">World!</span><span style="color: rgb(175,0,0)">"</span>
+<span class="ansi-green-fg">----&gt; 2</span> <span class="ansi-yellow-bg">s1</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">5</span><span class="ansi-yellow-bg">]</span> <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">, </span><span style="color: rgb(175,0,0)">"</span> <span style="color: rgb(95,135,135)"># this will raise an exception</span>
+
+<span class="ansi-red-fg">TypeError</span>: 'str' object does not support item assignment</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="alert alert-block alert-info"><b>NOTE</b>: <i>item assignment</i> means that you can't change a character in a string</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-<ul>
-<li>Python <font color="red">does not support a character type</font>: chars are treated as strings of length 1, thus also considered a substring</li>
-<li>To access substrings, use the <font color="red">square brackets for slicing</font> along with the <font color="red">index or indices</font> to obtain your substring</li>
-</ul>
-<p><strong>Definition</strong>
-The slice is a segment of the string. It can be gathered as <code>string_name[start:stop]</code></p>
-<p><strong>NOTE:</strong>
-Note that we include <code>start</code> in the slice, but we only go up to (and <font color="red">not including</font>) <code>stop</code>. Further, indexing is <font color="red">0-based</font> (the 1st element has index 0, the 2nd element has index 1 and so on ...).</p>
+<p>Notheless, we can always create a new string:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">"Hello</span><span class="se">\n</span><span class="s2">World!"</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="n">s1</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span> <span class="c1"># concatenation gives a new string</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Slicing">Slicing<a class="anchor-link" href="#Slicing">¶</a></h2><p>To access a substring (segment), i.e., a slice, use the <font color="red">square brackets for slicing</font> along with the <font color="red">index or indices</font> to obtain your substring. In particular, a <strong>slice</strong> can be gathered as:</p>
+<div class="highlight"><pre><span></span><span class="n">string_name</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">]</span>
+</pre></div>
+<br/>
+<div class="alert alert-block alert-info"><b>NOTE</b>: We include <code>start</code> in the slice, but we only go up to (and <font color="red"><b>not</b> including</font>) <code>stop</code>. Further, indexing is <code>0</code>-based (the 1st element has index 0, the 2nd element has index 1 and so on ...).</div>
 </div>
 </div>
 </div>
@@ -7564,17 +7957,13 @@ Note that we include <code>start</code> in the slice, but we only go up to (and 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">var1</span> <span class="o">=</span> <span class="s1">'Hello World!'</span>
-<span class="n">var2</span> <span class="o">=</span> <span class="s2">"Python is cool! (hopefully)"</span>
-
-<span class="c1"># indexing</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'var1[0] = </span><span class="si">{</span><span class="n">var1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"Python is cool! (hopefully)"</span>
 
 <span class="c1"># slicing</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'var2[1:5] = </span><span class="si">{</span><span class="n">var2</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'s[1:5] = </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span> <span class="c1"># from second to fifth character</span>
 </pre></div>
 </div>
 </div>
@@ -7587,10 +7976,20 @@ Note that we include <code>start</code> in the slice, but we only go up to (and 
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>var1[0] = H
-var2[1:5] = ytho
+<pre>s[1:5] = ytho
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="alert alert-block alert-info"><b>NOTE</b>: The <code>stop</code> index is the first character that is <b>not</b> included in the slice.</div>
 </div>
 </div>
 </div>
@@ -7601,7 +8000,7 @@ var2[1:5] = ytho
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Slicing">Slicing<a class="anchor-link" href="#Slicing">¶</a></h2><p>Syntax of slicing:</p>
+<h2 id="The-many-shades-of-string-slicing">The many shades of string slicing<a class="anchor-link" href="#The-many-shades-of-string-slicing">¶</a></h2><p>Syntax of slicing:</p>
 <ul>
 <li><code>s[start:stop]</code>: chars <code>start</code> through <code>stop-1</code></li>
 <li><code>s[start:]</code>: chars <code>start</code> through the rest of the string</li>
@@ -7612,7 +8011,7 @@ var2[1:5] = ytho
 <ul>
 <li><code>s[start:stop:step]</code>: <code>start</code> through not past <code>stop</code>, by <code>step</code></li>
 </ul>
-<p><code>start</code> and <code>stop</code> can be negative numbers: this means that Python starts counting from the end of the string</p>
+<p><code>start</code> and <code>stop</code> can be negative numbers: this means that Python starts counting from the end of the string:</p>
 <ul>
 <li><code>s[-1]</code>: last char in the string</li>
 <li><code>s[-2:]</code>: last two chars in the string</li>
@@ -7637,11 +8036,10 @@ var2[1:5] = ytho
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Some examples on slicing:</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s1">'hello'</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">'hello'</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"s[1:4] -&gt; </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"s[1:] -&gt; </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"s[:] -&gt; </span><span class="si">{</span><span class="n">s</span><span class="p">[:]</span><span class="si">}</span><span class="s2"> (overestimating the upper bound)"</span><span class="p">)</span>
@@ -7680,7 +8078,7 @@ s[:-3] -&gt; he (everything except the last three chars)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Operations-on-Strings">Operations on Strings<a class="anchor-link" href="#Operations-on-Strings">¶</a></h2><p>Recall from Lecture 4 the two operators:</p>
+<h2 id="Operations-on-Strings">Operations on Strings<a class="anchor-link" href="#Operations-on-Strings">¶</a></h2><p>Recall from past lectures the two operators:</p>
 <ul>
 <li><strong>Concatenate:</strong> with the <code>+</code> operator</li>
 <li><strong>Replicate:</strong> with the <code>*</code> operator</li>
@@ -7771,6 +8169,11 @@ s[:-3] -&gt; he (everything except the last three chars)
 <td><code>"Hello" == a</code> yields <code>True</code></td>
 </tr>
 <tr>
+<td><code>!=</code></td>
+<td>Inequality check: yields <code>True</code> if two strings are not equal</td>
+<td><code>"Hello" != a</code> yields <code>False</code></td>
+</tr>
+<tr>
 <td><code>in</code></td>
 <td>Membership: yields <code>True</code> if a substring appears in the string</td>
 <td><code>"He" in a</code> yields <code>True</code></td>
@@ -7793,8 +8196,9 @@ s[:-3] -&gt; he (everything except the last three chars)
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Iterating-over-Strings">Iterating over Strings<a class="anchor-link" href="#Iterating-over-Strings">¶</a></h2><p>You can iterate over strings (i.e., get one character at the time) via <code>for</code> or <code>while</code> loops:</p>
-<p><strong>Note</strong>
-<code>len(s)</code> is a built-in function that returns the length of the string <code>s</code>.</p>
+<ul>
+<li>Print each letter of <code>s</code> using a <code>for</code> loop:</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7806,8 +8210,7 @@ s[:-3] -&gt; he (everything except the last three chars)
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Example: print each letter of s</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">"Python Program"</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"Python Program"</span>
 <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
 </pre></div>
@@ -7827,6 +8230,19 @@ s[:-3] -&gt; he (everything except the last three chars)
 </div>
 </div>
 </div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>Print each letter of <code>s</code> using <code>while</code> loop:</li>
+</ul>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7835,8 +8251,7 @@ s[:-3] -&gt; he (everything except the last three chars)
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Example: print each letter of s using while loop</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">"Python Program"</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"Python Program"</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
@@ -7865,7 +8280,9 @@ s[:-3] -&gt; he (everything except the last three chars)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<br/>
+<ul>
+<li>Count the number of times <code>'a'</code> appears in a string <code>s</code> using a <code>for</code> loop:</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7874,11 +8291,10 @@ s[:-3] -&gt; he (everything except the last three chars)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Example: count the number of times 'a' appears in s</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">"Python Program"</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"Python Program"</span>
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="s1">'a'</span><span class="p">:</span>
@@ -7902,16 +8318,28 @@ s[:-3] -&gt; he (everything except the last three chars)
 </div>
 </div>
 </div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>Count the number of times <code>'p'</code> appears in <code>s</code> using a <code>while</code> loop:</li>
+</ul>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Example: count the number of times 'p' appears in s</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">"Python Program"</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"Python Program"</span>
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
@@ -7944,134 +8372,9 @@ s[:-3] -&gt; he (everything except the last three chars)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Changing-Strings">Changing Strings<a class="anchor-link" href="#Changing-Strings">¶</a></h2><p>Strings are <font color="red">immutable</font> sets of characters:</p>
-<ul>
-<li>we cannot change any character within a string once it is created</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Example: strings are immutable</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">"Python Program"</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>y
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"a"</span> <span class="c1"># ERROR!!!</span>
-<span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>'str' object does not support item assignment
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="So,-how-can-we-update-strings?">So, how can we update strings?<a class="anchor-link" href="#So,-how-can-we-update-strings?">¶</a></h2><ul>
-<li>(re)assign a variable with a new string</li>
-<li>the new value can be related to the previous value or to a completely different string altogether</li>
-</ul>
-<p>For instance:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">var1</span> <span class="o">=</span> <span class="s2">"Hello World"</span>
-<span class="n">var2</span> <span class="o">=</span> <span class="n">var1</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"Python"</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'var1 = </span><span class="si">{</span><span class="n">var1</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'var2 = </span><span class="si">{</span><span class="n">var2</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="n">var1</span> <span class="o">=</span> <span class="n">var2</span> <span class="o">+</span> <span class="s2">"!"</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'var1 (updated) = </span><span class="si">{</span><span class="n">var1</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'var2 (unchanged) = </span><span class="si">{</span><span class="n">var2</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>var1 = Hello World
-var2 = Hello Python
-var1 (updated) = Hello Python!
-var2 (unchanged) = Hello Python
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Built-in-String-Methods">Built-in String Methods<a class="anchor-link" href="#Built-in-String-Methods">¶</a></h2><p>Python has a set of built-in methods that you can use on strings.</p>
 <p>You can find the full list at <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">https://docs.python.org/3/library/stdtypes.html#string-methods</a></p>
-<p><strong>Warning</strong>
-All string methods return new values. They do not change the original string.</p>
+<div class="alert alert-block alert-warning"><b>WARNING</b>: All string methods return new values. They do not change the original string.</div>
 </div>
 </div>
 </div>
@@ -8082,11 +8385,11 @@ All string methods return new values. They do not change the original string.</p
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="str.capitalize()"><code>str.capitalize()</code><a class="anchor-link" href="#str.capitalize()">¶</a></h3><p><code>s.capitalize()</code> returns a copy of the string with its first character capitalised and the rest lowercased.</p>
+<h3 id="str.capitalize()"><code>str.capitalize()</code><a class="anchor-link" href="#str.capitalize()">¶</a></h3><p><code>s.capitalize()</code> returns a copy of the string with its first character capitalised and the rest lowercased:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8114,12 +8417,12 @@ All string methods return new values. They do not change the original string.</p
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"SupercaliFragilisTicexpialidOciouS"</span>
@@ -8142,7 +8445,7 @@ All string methods return new values. They do not change the original string.</p
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8171,7 +8474,7 @@ All string methods return new values. They do not change the original string.</p
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8183,7 +8486,7 @@ All string methods return new values. They do not change the original string.</p
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8213,12 +8516,12 @@ upper: SUPERCALIFRAGILISTICEXPIALIDOCIOUS
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"supercalifragilisticexpialidocious"</span>
@@ -8241,7 +8544,7 @@ upper: SUPERCALIFRAGILISTICEXPIALIDOCIOUS
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8269,7 +8572,7 @@ upper: SUPERCALIFRAGILISTICEXPIALIDOCIOUS
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8280,7 +8583,7 @@ upper: SUPERCALIFRAGILISTICEXPIALIDOCIOUS
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8308,7 +8611,7 @@ upper: SUPERCALIFRAGILISTICEXPIALIDOCIOUS
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8335,7 +8638,7 @@ upper: SUPERCALIFRAGILISTICEXPIALIDOCIOUS
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8362,7 +8665,7 @@ upper: SUPERCALIFRAGILISTICEXPIALIDOCIOUS
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8389,19 +8692,18 @@ upper: SUPERCALIFRAGILISTICEXPIALIDOCIOUS
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="str.startswith()"><code>str.startswith()</code><a class="anchor-link" href="#str.startswith()">¶</a></h3><p><code>s.startswith(sub, [start, end])</code> returns <code>True</code> if the string <em>starts</em> with the specified <code>sub</code>, otherwise returns <code>False</code>.</p>
-<p>Use optional parameters <code>start</code> and <code>end</code> to test a slice of <code>s</code>.</p>
+<h3 id="str.startswith()"><code>str.startswith()</code><a class="anchor-link" href="#str.startswith()">¶</a></h3><p><code>s.startswith(sub, [start, end])</code> returns <code>True</code> if the string <em>starts</em> with the specified <code>sub</code>, otherwise returns <code>False</code>:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8429,15 +8731,26 @@ upper: SUPERCALIFRAGILISTICEXPIALIDOCIOUS
 </div>
 </div>
 </div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Use optional parameters <code>start</code> and <code>end</code> to test a slice of <code>s</code>:</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"s.startswith('super', 1, 10): </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'super'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2"> (slice is 'upercalif')"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"s.startswith('super', 1, 10): </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'super'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2"> (slice is 'upercalif')"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8456,15 +8769,15 @@ upper: SUPERCALIFRAGILISTICEXPIALIDOCIOUS
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"s.startswith('uper', 1, 10): </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'uper'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"s.startswith('uper', 1, 10): </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'uper'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8483,18 +8796,18 @@ upper: SUPERCALIFRAGILISTICEXPIALIDOCIOUS
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="str.endswith()"><code>str.endswith()</code><a class="anchor-link" href="#str.endswith()">¶</a></h3><p><code>s.endswith(sub, [start, end])</code> returns <code>True</code> if the string <em>ends</em> with the specified <code>sub</code>, otherwise returns <code>False</code>.</p>
+<h3 id="str.endswith()"><code>str.endswith()</code><a class="anchor-link" href="#str.endswith()">¶</a></h3><p><code>s.endswith(sub, [start, end])</code> returns <code>True</code> if the string <em>ends</em> with the specified <code>sub</code>, otherwise returns <code>False</code>:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8521,7 +8834,7 @@ upper: SUPERCALIFRAGILISTICEXPIALIDOCIOUS
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8548,21 +8861,18 @@ upper: SUPERCALIFRAGILISTICEXPIALIDOCIOUS
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="str.find()-and-str.index()"><code>str.find()</code> and <code>str.index()</code><a class="anchor-link" href="#str.find()-and-str.index()">¶</a></h3><p><code>s.find(sub, [start, end])</code> returns the lowest index in the string <code>s</code> where substring <code>sub</code>. If <code>sub</code> is not found, it returns <code>-1</code>.
-<code>s.index(sub, [start, end])</code> works like <code>s.find()</code>, but raises <code>ValueError</code> when the substring is not found.</p>
-<p><strong>HINT:</strong>
-Use <code>find()</code> or <code>index()</code> if you need the position of the substring. To check if <code>sub</code> exists in <code>s</code>, you may use the <code>in</code> operator.</p>
+<h3 id="str.find()-and-str.index()"><code>str.find()</code> and <code>str.index()</code><a class="anchor-link" href="#str.find()-and-str.index()">¶</a></h3><p><code>s.find(sub, [start, end])</code> returns the lowest index in the string <code>s</code> where substring <code>sub</code>. If <code>sub</code> is not found, it returns <code>-1</code>:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8590,12 +8900,23 @@ Use <code>find()</code> or <code>index()</code> if you need the position of the 
 </div>
 </div>
 </div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><code>s.index(sub, [start, end])</code> works like <code>s.find()</code>, but raises <code>ValueError</code> when the substring is not found:</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"s.index('calif'): </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">'calif'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -8617,7 +8938,7 @@ Use <code>find()</code> or <code>index()</code> if you need the position of the 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8644,29 +8965,15 @@ Use <code>find()</code> or <code>index()</code> if you need the position of the 
 </div>
 </div>
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<br/>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div></div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">s</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">'calio'</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"s.index('calio'): </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">'calio'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8678,10 +8985,26 @@ Use <code>find()</code> or <code>index()</code> if you need the position of the 
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>s.index('calio'): substring not found
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[18], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">s</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">index</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">calio</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-red-fg">ValueError</span>: substring not found</pre>
 </div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="alert alert-block alert-success"><b>HINT</b>: Use <code>find()</code> or <code>index()</code> if you need the position of the substring. To check if <code>sub</code> exists in <code>s</code>, you may use the <code>in</code> operator..</div>
 </div>
 </div>
 </div>
@@ -8739,7 +9062,7 @@ Use <code>find()</code> or <code>index()</code> if you need the position of the 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Exercise-Session">Exercise Session<a class="anchor-link" href="#Exercise-Session">¶</a></h2><p>After covering the lists, check out the exercises: <a href="../E06/E06-Python-Exercises-Strings-Lists.ipynb">here</a>.</p>
+<h2 id="Exercise-Session">Exercise Session<a class="anchor-link" href="#Exercise-Session">¶</a></h2><p>After covering the lists, check out the exercises: <a href="https://introcp.github.io/src/E06/E06-Python-Exercises-Strings-Lists.html">here</a>.</p>
 </div>
 </div>
 </div>
