@@ -79,4 +79,10 @@ for filename in glob.glob(sys.argv[1] + '/src/*/*.html'):
             jupyterlite_button.replace("<PATH>", filename.replace("docs", "").replace(".html", ".ipynb"))
         )
 
+
+    a = '<li><a href="../../_sources/<PATH>}" target="_blank'
+    a = a.replace("<PATH>", filename.replace("docs", ""))
+    a_force_download = a.replace('target="_blank', 'download target="_blank')
+    data = data.replace(a, a_force_download)
+
     open(filename, 'w').write(data)
