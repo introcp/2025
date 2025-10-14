@@ -16,7 +16,7 @@ for filename in glob.glob('docs/_sources/src/*/*.ipynb'):
     data = data.replace('"img/', '"https://introcp.github.io/src/' + d + '/img/')
     open(filename, 'w').write(data)
 
-for filename in glob.glob(sys.argv[1] + '/src/*/*.html'):
+for filename in sorted(glob.glob(sys.argv[1] + '/src/*/*.html')):
     if 'slides' in filename:
         continue
     if not os.path.basename(filename)[1].isdigit():
@@ -80,9 +80,9 @@ for filename in glob.glob(sys.argv[1] + '/src/*/*.html'):
         )
 
 
-    a = '<li><a href="../../_sources/<PATH>}" target="_blank'
-    a = a.replace("<PATH>", filename.replace("docs", ""))
-    a_force_download = a.replace('target="_blank', 'download target="_blank')
+    a = '<li><a href="../../_sources<PATH>" target="_blank'
+    a = a.replace("<PATH>", filename.replace("docs", "").replace(".html", ".ipynb"))
+    a_force_download = a.replace('href="../..', 'href="https://introcp.github.io/src/download.html?file=')
     data = data.replace(a, a_force_download)
 
     open(filename, 'w').write(data)

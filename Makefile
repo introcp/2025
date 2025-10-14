@@ -28,7 +28,7 @@ docker-build-book:
 			bash -c "make build-book"
 
 build-book:
-	rm -rf _build/html || echo "nothing to clean"
+	# rm -rf _build/html || echo "nothing to clean"
 	# generate website with jupyterbook
 	. ~/.venv/bin/activate; jupyter-book build --config _config.jupyterbook.yml .
 	# generate slides in HTML and PDF
