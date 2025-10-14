@@ -418,13 +418,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-list-is-a-sequence-of-items">A List is a Sequence of Items</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-and-ordering">Indices and Ordering</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mutability">Mutability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating">Iterating</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-by-index-or-by-element">Iterating by index or by element</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating">Iterating</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-compute-the-sum-of-elements-of-a-list">Example: compute the sum of elements of a list</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-elements-while-iterating">Updating elements while iterating</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">Basic Operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#append"><code class="docutils literal notranslate"><span class="pre">append()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-extend"><code class="docutils literal notranslate"><span class="pre">+</span></code> vs. <code class="docutils literal notranslate"><span class="pre">extend()</span></code></a></li>
@@ -433,11 +436,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-lists">Strings &amp; Lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-operations">Other Operations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-mutate-or-not-to-mutate-that-is-the-question"><em>To mutate or not to mutate, that is the question.</em></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing-cloning">Aliasing &amp; Cloning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-operations">Other Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-mutate-or-not-to-mutate-that-is-the-question"><em>To mutate or not to mutate, that is the question.</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing">Aliasing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing-mutable-vs-immutable-objects">Aliasing: Mutable vs Immutable Objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning">Cloning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nesting">Nesting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-session">Exercise Session</a></li>
 </ul>
@@ -453,19 +456,24 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lists">
 <h1><b style="font-family: 'LUISS', 'Lato'">Lists</b><a class="headerlink" href="#lists" title="Link to this heading">#</a></h1>
-<h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2><h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3><br><img src="https://introcp.github.io/dist/img/logo2.png" width="200px"><br><br><br><section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
+<br>
+<img src="https://introcp.github.io/dist/img/logo2.png" width="200px">
+<p><br><br><br></p>
+<section id="a-list-is-a-sequence-of-items">
+<h2>A List is a Sequence of Items<a class="headerlink" href="#a-list-is-a-sequence-of-items" title="Link to this heading">#</a></h2>
 <p>In Python, lists:</p>
 <ul class="simple">
-<li><p>are ordered <font color='red'>sequences</font> of items that can be accessed via index (remember: Python is 0-based!)</p></li>
-<li><p>are denoted by <font color='red'>square brackets</font>, i.e. <code class="docutils literal notranslate"><span class="pre">[]</span></code></p></li>
+<li><p>are ordered <font color='red'><b>sequences</b></font> of items that can be accessed via index (remember: Python is 0-based!)</p></li>
+<li><p>are denoted by <font color='red'><b>square brackets</b></font>, i.e. <code class="docutils literal notranslate"><span class="pre">[]</span></code></p></li>
 </ul>
-<p>A list contains <font color='red'>elements</font>, that can either be:</p>
+<p>A list contains <font color='red'><b>elements</b></font>, that can either be:</p>
 <ul class="simple">
-<li><p>homogeneous (e.g., all integers, all strings, …)</p></li>
-<li><p>heterogeneous (less common)</p></li>
+<li><p><em>homogeneous</em> (e.g., all integers, all strings, …)</p></li>
+<li><p><em>heterogeneous</em> (less common)</p></li>
 </ul>
-<p>Conversely to strings, lists are <font color='red'>mutable</font>:</p>
+<p>Conversely to strings, lists are <font color='red'><b>mutable</b></font>:</p>
 <ul class="simple">
 <li><p>elements can be changed</p></li>
 </ul>
@@ -473,13 +481,13 @@ document.write(`
 <h3>Indices and Ordering<a class="headerlink" href="#indices-and-ordering" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># an empty list</span>
-<span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>  <span class="c1"># an heterogeneous list</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[]</span>                     <span class="c1"># an empty list</span>
+<span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>         <span class="c1"># an heterogeneous list</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;len(L) = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;L[0] = </span><span class="si">{</span><span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;L[2] + 1 = </span><span class="si">{</span><span class="n">L</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;L[3] = </span><span class="si">{</span><span class="n">L</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># another list</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;L[3] = </span><span class="si">{</span><span class="n">L</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>         <span class="c1"># another list</span>
 </pre></div>
 </div>
 </div>
@@ -492,17 +500,19 @@ L[3] = [1, 2]
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="alert alert-block alert-info"><b>NOTE</b>: List elements are indexed from <code>0</code> to <code>len(L)-1</code>.</div><div class="alert alert-block alert-success"><b>HINT</b>: Use <code>range(len(L))</code> to get the valid indices of a list <code>L</code>.</div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
-<span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;L[4] throws an error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L[4] throws an error: list index out of range
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+
+<span class="ne">IndexError</span>: list index out of range
 </pre></div>
 </div>
 </div>
@@ -560,15 +570,30 @@ Modified L: [2, 5, 3]
 </div></section>
 <section id="iterating">
 <h2>Iterating<a class="headerlink" href="#iterating" title="Link to this heading">#</a></h2>
-<p>Example: compute the sum of elements of a list.</p>
-<p><b>Common strategy?</b> Iterate over the elements of the list.</p>
+<p>Common strategies:</p>
+<ol class="arabic simple">
+<li><p>Iterate over the elements of the list:</p>
+<ul class="simple">
+<li><p>Simpler: no need to mess with indices</p></li>
+<li><p>We can only read the elements but we cannot update them</p></li>
+</ul>
+</li>
+<li><p>Iterate over the indices of the list:</p>
+<ul class="simple">
+<li><p>Slightly harder: we need to use the indices</p></li>
+<li><p>We can both read and update the elements.</p></li>
+</ul>
+</li>
+</ol>
+<section id="example-compute-the-sum-of-elements-of-a-list">
+<h3>Example: compute the sum of elements of a list<a class="headerlink" href="#example-compute-the-sum-of-elements-of-a-list" title="Link to this heading">#</a></h3>
+<p>Approach #1: Iterate by element</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using range(len(L))</span>
-<span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
-    <span class="n">total</span> <span class="o">+=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>         <span class="c1"># Extract each element of the list</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">e</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sum: </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -579,13 +604,13 @@ Modified L: [2, 5, 3]
 </div>
 </div>
 </div>
+<p>Approach #2: Iterate by index</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Iterating directly over the list</span>
-<span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
-    <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span> <span class="c1"># Using range(len(L)) to get valid indexes</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>       <span class="c1"># extract element at index i</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sum: </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -597,20 +622,48 @@ Modified L: [2, 5, 3]
 </div>
 </div>
 </section>
-<section id="iterating-by-index-or-by-element">
-<h2>Iterating by index or by element<a class="headerlink" href="#iterating-by-index-or-by-element" title="Link to this heading">#</a></h2>
-<p>A few important notes:</p>
-<ul class="simple">
-<li><p>just like strings, you can iterate over list elements directly</p></li>
-<li><p>list elements are indexed from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">len(L)-1</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">range(n)</span></code> goes from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">n-1</span></code></p></li>
-</ul>
+</section>
+<section id="updating-elements-while-iterating">
+<h2>Updating elements while iterating<a class="headerlink" href="#updating-elements-while-iterating" title="Link to this heading">#</a></h2>
+<p>Suppose we want to increment by 1 each element of a list while iterating over it.</p>
+<p>Approach #2: Iterate by index</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span> <span class="c1"># Using range(len(L)) to get valid indexes</span>
+    <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>           <span class="c1"># we update the original element through indexing</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;L: </span><span class="si">{</span><span class="n">L</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>        <span class="c1"># OK: the list has been updated</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L: [3, 6, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Approach #1: Iterate by element</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>         <span class="c1"># Extract each element of the list</span>
+    <span class="n">e</span> <span class="o">+=</span> <span class="mi">1</span>          <span class="c1"># We only get a copy of the element</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;L: </span><span class="si">{</span><span class="n">L</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>    <span class="c1"># KO: the list was NOT updated!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L: [2, 5, 3]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="basic-operations">
 <h2>Basic Operations<a class="headerlink" href="#basic-operations" title="Link to this heading">#</a></h2>
 <section id="append">
 <h3><code class="docutils literal notranslate"><span class="pre">append()</span></code><a class="headerlink" href="#append" title="Link to this heading">#</a></h3>
-<p><font color='red'>Add</font> elements to the end of a list <code class="docutils literal notranslate"><span class="pre">L</span></code> with:<br></p>
+<p><font color='red'><b>Add</b></font> elements to the end of a list <code class="docutils literal notranslate"><span class="pre">L</span></code> with:<br></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -634,7 +687,7 @@ L after append: [2, 1, 3, 5]
 <div class="alert alert-block alert-info"><b>NOTE</b>: Like methods in strings, methods in lists also use the dot notation.</div></section>
 <section id="vs-extend">
 <h3><code class="docutils literal notranslate"><span class="pre">+</span></code> vs. <code class="docutils literal notranslate"><span class="pre">extend()</span></code><a class="headerlink" href="#vs-extend" title="Link to this heading">#</a></h3>
-<p><font color='red'>Concatenate</font> lists <code class="docutils literal notranslate"><span class="pre">L1</span></code> and <code class="docutils literal notranslate"><span class="pre">L2</span></code> together with:</p>
+<p><font color='red'><b>Concatenate</b></font> lists <code class="docutils literal notranslate"><span class="pre">L1</span></code> and <code class="docutils literal notranslate"><span class="pre">L2</span></code> together with:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">L2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -671,11 +724,11 @@ L1 after extend: [2, 1, 3, 4, 5, 6]
 <div class="alert alert-block alert-info"><b>NOTE</b>: <code>extend()</code> mutates the list, whereas the <code>+</code> operator returns a new list.</div></section>
 <section id="pop-vs-remove-vs-del">
 <h3><code class="docutils literal notranslate"><span class="pre">pop()</span></code> vs. <code class="docutils literal notranslate"><span class="pre">remove()</span></code> vs. <code class="docutils literal notranslate"><span class="pre">del()</span></code><a class="headerlink" href="#pop-vs-remove-vs-del" title="Link to this heading">#</a></h3>
-<p>You can <font color='red'>remove</font> item(s) from a list using three different strategies:</p>
+<p>You can <font color='red'><b>remove</b></font> item(s) from a list using three different strategies:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">del()</span></code>: delete element at a <font color='red'>specific index</font> <code class="docutils literal notranslate"><span class="pre">i</span></code> with <code class="docutils literal notranslate"><span class="pre">del(L[i])</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pop()</span></code>: delete element at a <font color='red'>specific index</font> <code class="docutils literal notranslate"><span class="pre">i</span></code> (and return the removed element) with <code class="docutils literal notranslate"><span class="pre">L.pop(i)</span></code>. If index is not provided, <code class="docutils literal notranslate"><span class="pre">L.pop()</span></code> deletes the last element of the list by default.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">remove()</span></code>: remove a <font color='red'>specific element</font> <code class="docutils literal notranslate"><span class="pre">x</span></code> with <code class="docutils literal notranslate"><span class="pre">L.remove(x)</span></code>.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">del()</span></code>: delete element at a <font color='red'><b>specific index</b></font> <code class="docutils literal notranslate"><span class="pre">i</span></code> with <code class="docutils literal notranslate"><span class="pre">del(L[i])</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop()</span></code>: delete element at a <font color='red'><b>specific index</b></font> <code class="docutils literal notranslate"><span class="pre">i</span></code> (and return the removed element) with <code class="docutils literal notranslate"><span class="pre">L.pop(i)</span></code>. If index is not provided, <code class="docutils literal notranslate"><span class="pre">L.pop()</span></code> deletes the last element of the list by default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">remove()</span></code>: remove a <font color='red'><b>specific element</b></font> <code class="docutils literal notranslate"><span class="pre">x</span></code> with <code class="docutils literal notranslate"><span class="pre">L.remove(x)</span></code>.</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">L.remove(x)</span></code> looks for the element <code class="docutils literal notranslate"><span class="pre">x</span></code> in <code class="docutils literal notranslate"><span class="pre">L</span></code> and, if found, removes it</p></li>
 <li><p>if <code class="docutils literal notranslate"><span class="pre">x</span></code> occurs multiple times, removes first occurrence only</p></li>
@@ -683,7 +736,7 @@ L1 after extend: [2, 1, 3, 4, 5, 6]
 </ul>
 </li>
 </ul>
-<div class="alert alert-block alert-info"><b>NOTE</b>: <i>All</i> of the three methods <font color='red'>mutate</font> the list.</div><br><div class="cell docutils container">
+<div class="alert alert-block alert-info"><b>NOTE</b>: <i>All</i> of the three methods <font color='red'><b>mutate</b></font> the list.</div><br><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Original L: </span><span class="si">{</span><span class="n">L</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -716,11 +769,65 @@ a = 0
 </div>
 <br>
 <div class="alert alert-block alert-info"><b>NOTE</b>: 
+<br>
 <ol>
-<li> when running <code>L.remove(3)</code>, only the first `3` is gone</li>
+<li> when running <code>L.remove(3)</code>, only the first <code>3</code> is gone</li>
 <li> when using <code>L.pop()</code>, the assignment of the returned value is not mandatory</li>
 </ol>
-</div></section>
+</div><br>
+<div class="alert alert-warning">
+<b>WARNING:</b>
+Never mutate a list as you iterate through it.
+</div><p><strong>Example</strong>: write a function that removes duplicates from a list <code class="docutils literal notranslate"><span class="pre">L1</span></code> that are present in <code class="docutils literal notranslate"><span class="pre">L2</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">remove_dups_buggy</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">L1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">L2</span><span class="p">:</span>
+            <span class="n">L1</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">L1</span>
+
+<span class="n">L1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">L2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Result (buggy): </span><span class="si">{</span><span class="n">remove_dups_buggy</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span><span class="w"> </span><span class="n">L2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Result (buggy): [2, 3, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is incorrect. Why?</p>
+<ul class="simple">
+<li><p>Python uses an internal counter to keep track of the position in the loop</p></li>
+<li><p>Mutation changes the length, but Python does not update the counter</p></li>
+<li><p>The loop never visits element <code class="docutils literal notranslate"><span class="pre">2</span></code> in <code class="docutils literal notranslate"><span class="pre">L1</span></code></p></li>
+</ul>
+<p>The correct way:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">remove_dups_correct</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">):</span>
+    <span class="n">L1copy</span> <span class="o">=</span> <span class="n">L1</span><span class="p">[:]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">L1copy</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">L2</span><span class="p">:</span>
+            <span class="n">L1</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">L1</span>
+
+<span class="n">L1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">L2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Result (correct): </span><span class="si">{</span><span class="n">remove_dups_correct</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span><span class="w"> </span><span class="n">L2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Result (correct): [3, 4]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="strings-lists">
 <h2>Strings &amp; Lists<a class="headerlink" href="#strings-lists" title="Link to this heading">#</a></h2>
@@ -730,19 +837,7 @@ a = 0
 <li><p>this yields a list where each element is a character from <code class="docutils literal notranslate"><span class="pre">s</span></code></p></li>
 </ul>
 </li>
-<li><p>Split a string <code class="docutils literal notranslate"><span class="pre">s</span></code> on a character parameter* using <code class="docutils literal notranslate"><span class="pre">s.split()</span></code> (splits on whitespace if called with no parameters)</p>
-<ul>
-<li><p>this yields a list where each element is a portion of <code class="docutils literal notranslate"><span class="pre">s</span></code></p></li>
 </ul>
-</li>
-<li><p>Merge a list of characters/strings <code class="docutils literal notranslate"><span class="pre">L</span></code> using <code class="docutils literal notranslate"><span class="pre">''.join(L)</span></code></p>
-<ul>
-<li><p>this yields a string which sees the concatenation of items in <code class="docutils literal notranslate"><span class="pre">L</span></code> with a given character** in-between (you can specify a character between quotes to add between every element)</p></li>
-</ul>
-</li>
-</ul>
-<p><small>* Splits on whitespace if called with no parameters</small><br>
-<small>** You can specify a character (between quotes) to add between every element</small></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I &lt;3 Python&quot;</span>
@@ -757,6 +852,13 @@ a = 0
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>Split a string <code class="docutils literal notranslate"><span class="pre">s</span></code> on a character parameter* using <code class="docutils literal notranslate"><span class="pre">s.split()</span></code> (splits on whitespace if called with no parameters)</p>
+<ul>
+<li><p>this yields a list where each element is a portion of <code class="docutils literal notranslate"><span class="pre">s</span></code></p></li>
+</ul>
+</li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L_split</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -783,6 +885,14 @@ a = 0
 </div>
 </div>
 </div>
+<p><small>* Splits on whitespace if called with no parameters</small><br></p>
+<ul class="simple">
+<li><p>Merge a list of characters/strings <code class="docutils literal notranslate"><span class="pre">L</span></code> using <code class="docutils literal notranslate"><span class="pre">''.join(L)</span></code></p>
+<ul>
+<li><p>this yields a string which sees the concatenation of items in <code class="docutils literal notranslate"><span class="pre">L</span></code> with a given character** in-between (you can specify a character between quotes to add between every element)</p></li>
+</ul>
+</li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L_join</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;World&#39;</span><span class="p">]</span>
@@ -810,6 +920,7 @@ a = 0
 </div>
 </div>
 </div>
+<p><small>** You can specify a character (between quotes) to add between every element</small></p>
 </section>
 <section id="other-operations">
 <h2>Other Operations<a class="headerlink" href="#other-operations" title="Link to this heading">#</a></h2>
@@ -824,7 +935,6 @@ a = 0
 <li><p>sort elements in a list: <code class="docutils literal notranslate"><span class="pre">sort()</span></code> and <code class="docutils literal notranslate"><span class="pre">sorted()</span></code></p></li>
 <li><p>flip elements last-to-first in a list: <code class="docutils literal notranslate"><span class="pre">reverse()</span></code></p></li>
 </ul>
-<p>Examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -879,8 +989,9 @@ L1: [0, 3, 6, 9]
 </div>
 </div>
 </div>
+</section>
 <section id="to-mutate-or-not-to-mutate-that-is-the-question">
-<h3><em>To mutate or not to mutate, that is the question.</em><a class="headerlink" href="#to-mutate-or-not-to-mutate-that-is-the-question" title="Link to this heading">#</a></h3>
+<h2><em>To mutate or not to mutate, that is the question.</em><a class="headerlink" href="#to-mutate-or-not-to-mutate-that-is-the-question" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>calling <code class="docutils literal notranslate"><span class="pre">sort()</span></code> mutates the list, returns nothing (<code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
 <li><p>calling <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> does not mutate the list, must assign to a new variable</p></li>
@@ -926,12 +1037,11 @@ L1: [0, 3, 6, 9]
 </tr>
 </table>
 </section>
-</section>
-<section id="aliasing-cloning">
-<h2>Aliasing &amp; Cloning<a class="headerlink" href="#aliasing-cloning" title="Link to this heading">#</a></h2>
+<section id="aliasing">
+<h2>Aliasing<a class="headerlink" href="#aliasing" title="Link to this heading">#</a></h2>
 <p><strong>Aliasing</strong>: if <code class="docutils literal notranslate"><span class="pre">a</span></code> refers to an object and you assign <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">a</span></code>, then both variables refer to the same object.</p>
 <div align="center">
-<img src="img/aliasing.png">
+<img src="img/aliasing.png" width="250px">
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -1014,7 +1124,31 @@ warm after sort: [&#39;orange&#39;, &#39;pink&#39;, &#39;red&#39;, &#39;yellow&#
         </div>
         </td>
     </tr>
-</table><p><strong>Cloning</strong>: create a new list (different object) by copying every element via assignment <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">a[:]</span></code></p>
+</table></section>
+<section id="aliasing-mutable-vs-immutable-objects">
+<h2>Aliasing: Mutable vs Immutable Objects<a class="headerlink" href="#aliasing-mutable-vs-immutable-objects" title="Link to this heading">#</a></h2>
+<p>Immutable data types, such as int, float, str, and tuple, are never aliased:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>                       <span class="c1"># this is NOT an alias</span>
+<span class="n">b</span> <span class="o">-=</span> <span class="mi">1</span>                      <span class="c1"># this operation does not affect a</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original value:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modified value:&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Original value: 1000
+Modified value: 999
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cloning">
+<h2>Cloning<a class="headerlink" href="#cloning" title="Link to this heading">#</a></h2>
+<p><strong>Cloning</strong>: create a new list (different object) by copying every element via assignment <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">a[:]</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cool</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;grey&#39;</span><span class="p">]</span>
@@ -1034,61 +1168,7 @@ chill: [&#39;blue&#39;, &#39;green&#39;, &#39;grey&#39;, &#39;black&#39;]
 </div>
 <div align="center">
 <img src="img/clone.png" style="height: 50%;">
-</div><br>
-<div class="alert alert-warning">
-<b>WARNING:</b>
-Never mutate a list as you iterate through it.
-</div>
-<p>Example: write a function that removes duplicates from a list <code class="docutils literal notranslate"><span class="pre">L1</span></code> that are present in <code class="docutils literal notranslate"><span class="pre">L2</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">remove_dups_buggy</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">L1</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">L2</span><span class="p">:</span>
-            <span class="n">L1</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">L1</span>
-
-<span class="n">L1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">L2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Result (buggy): </span><span class="si">{</span><span class="n">remove_dups_buggy</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span><span class="w"> </span><span class="n">L2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Result (buggy): [2, 3, 4]
-</pre></div>
-</div>
-</div>
-</div>
-<p>This is incorrect. Why?</p>
-<ul class="simple">
-<li><p>Python uses an internal counter to keep track of the position in the loop</p></li>
-<li><p>Mutation changes the length, but Python does not update the counter</p></li>
-<li><p>The loop never visits element <code class="docutils literal notranslate"><span class="pre">2</span></code> in <code class="docutils literal notranslate"><span class="pre">L1</span></code></p></li>
-</ul>
-<p>The correct way:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">remove_dups_correct</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">):</span>
-    <span class="n">L1copy</span> <span class="o">=</span> <span class="n">L1</span><span class="p">[:]</span>
-    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">L1copy</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">L2</span><span class="p">:</span>
-            <span class="n">L1</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">L1</span>
-
-<span class="n">L1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">L2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Result (correct): </span><span class="si">{</span><span class="n">remove_dups_correct</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span><span class="w"> </span><span class="n">L2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Result (correct): [3, 4]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
+</div></section>
 <section id="nesting">
 <h2>Nesting<a class="headerlink" href="#nesting" title="Link to this heading">#</a></h2>
 <div style="display: flex; flex-direction: row;">
@@ -1183,13 +1263,16 @@ Mutation and aliasing affect also nested lists.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-list-is-a-sequence-of-items">A List is a Sequence of Items</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-and-ordering">Indices and Ordering</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mutability">Mutability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating">Iterating</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-by-index-or-by-element">Iterating by index or by element</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating">Iterating</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-compute-the-sum-of-elements-of-a-list">Example: compute the sum of elements of a list</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-elements-while-iterating">Updating elements while iterating</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">Basic Operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#append"><code class="docutils literal notranslate"><span class="pre">append()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-extend"><code class="docutils literal notranslate"><span class="pre">+</span></code> vs. <code class="docutils literal notranslate"><span class="pre">extend()</span></code></a></li>
@@ -1198,11 +1281,11 @@ Mutation and aliasing affect also nested lists.
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-lists">Strings &amp; Lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-operations">Other Operations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-mutate-or-not-to-mutate-that-is-the-question"><em>To mutate or not to mutate, that is the question.</em></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing-cloning">Aliasing &amp; Cloning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-operations">Other Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-mutate-or-not-to-mutate-that-is-the-question"><em>To mutate or not to mutate, that is the question.</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing">Aliasing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aliasing-mutable-vs-immutable-objects">Aliasing: Mutable vs Immutable Objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning">Cloning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nesting">Nesting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-session">Exercise Session</a></li>
 </ul>
