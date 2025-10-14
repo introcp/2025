@@ -425,9 +425,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing">Indexing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-indexing">Negative indexing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-an-invalid-index">Using an invalid index</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-are-immutable">Strings are immutable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-many-shades-of-string-slicing">The many shades of string slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-are-immutable">Strings are immutable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-on-strings">Operations on Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-operations-on-strings">More operations on strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-over-strings">Iterating over Strings</a></li>
@@ -609,45 +609,6 @@ H
 </div>
 </div>
 <div class="alert alert-block alert-warning"><b>WARNING</b>: <b>Read</b> the error from Python to fix your code issues!</div></section>
-<section id="strings-are-immutable">
-<h2>Strings are immutable<a class="headerlink" href="#strings-are-immutable" title="Link to this heading">#</a></h2>
-<p>A string is an immutable object, i.e., we cannot change its internal data. Hence, we cannot change an existing string:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2">World!&quot;</span>
-<span class="n">s1</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span> <span class="c1"># this will raise an exception</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2">World!&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">s1</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span> <span class="c1"># this will raise an exception</span>
-
-<span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
-</pre></div>
-</div>
-</div>
-</div>
-<div class="alert alert-block alert-info"><b>NOTE</b>: <i>item assignment</i> means that you can't change a character in a string</div><br>
-<p>Nonetheless, we can always create a new string:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2">World!&quot;</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">s1</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span> <span class="c1"># concatenation gives a new string</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World!
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="slicing">
 <h2>Slicing<a class="headerlink" href="#slicing" title="Link to this heading">#</a></h2>
 <p>To access a substring (segment), i.e., a slice, use the <font color='red'>square brackets for slicing</font> along with the <font color='red'>index or indices</font> to obtain your substring. In particular, a <strong>slice</strong> can be gathered as:</p>
@@ -713,6 +674,51 @@ s[1:1000] -&gt; ello
 s[-1] -&gt; o (reverse indexing)
 s[::] -&gt; hello
 s[:-3] -&gt; he (everything except the last three chars)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="strings-are-immutable">
+<h2>Strings are immutable<a class="headerlink" href="#strings-are-immutable" title="Link to this heading">#</a></h2>
+<p>A string is an immutable object, i.e., we cannot change its internal data. Hence, we cannot change an existing string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2">World!&quot;</span>
+<span class="n">s1</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span> <span class="c1"># this will raise an exception</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2">World!&quot;</span>
+
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">s1</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span> <span class="c1"># this will raise an exception</span>
+
+
+
+<span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-info"><b>NOTE</b>: <i>item assignment</i> means that you can't change a character in a string</div><br>
+<p>Nonetheless, we can always create a new string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2">World!&quot;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">s1</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span> <span class="c1"># concatenation gives a new string</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World!
 </pre></div>
 </div>
 </div>
@@ -1248,9 +1254,9 @@ upper: SUPERCALIFRAGILISTICEXPIALIDOCIOUS
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing">Indexing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-indexing">Negative indexing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-an-invalid-index">Using an invalid index</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-are-immutable">Strings are immutable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-many-shades-of-string-slicing">The many shades of string slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-are-immutable">Strings are immutable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-on-strings">Operations on Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-operations-on-strings">More operations on strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-over-strings">Iterating over Strings</a></li>
