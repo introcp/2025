@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Force Notebook Download</title>
+</head>
+<body>
+  <p id="status">Preparing your download...</p>
+  <script>
+    (async () => {
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get("file");
+
+      if (!file) {
+        document.getElementById("status").textContent = "❌ No ?file parameter given.";
+        return;
+      }
+
+      // Determine if we’re local or hosted
+      const isLocal = window.location.protocol === "file:";
+      const fileUrl = isLocal
+        ? file
+        : `${window.location.origin}/${file.replace(/^\//, '')}`;
+
+      try {
+        // Fetch as a blob
+        const response = await fetch(fileUrl);
+        if (!response.ok) throw new Error(`Fetch failed: ${response.status}`);
+
+        const blob = await response.blob();
+
+        // Create a downloadable object
+        const blobUrl = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = blobUrl;
+        a.download = file.split("/").pop(); // filename only
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(blobUrl);
+
+        document.getElementById("status").textContent = "✅ Download started.";
+      } catch (err) {
+        console.error(err);
+        document.getElementById("status").innerHTML = `
+          ⚠️ Could not auto-download. 
+          <a href="${fileUrl}">Click here to open manually</a>.<br>
+          <small>${err.message}</small>
+        `;
+      }
+    })();
+  </script>
+</body>
+</html>
