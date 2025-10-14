@@ -40,6 +40,7 @@ build-book:
 	rm -rf docs/dist; cp -a src/dist docs/
 	cp -a src/dist/plugin docs/src/
 	cp _static/robots.txt docs/
+	cp src/download.html docs/src/
 	rm -rf docs/docs
 
 publish:
