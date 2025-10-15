@@ -37,6 +37,7 @@
   - [E09: Python Exercises Classes](E09/E09-Python-Exercises-Classes.ipynb)
   - [E10: Python Exercises Recursion](E10/E10-Python-Exercises-Recursion.ipynb)
   - [E11: Python Exercises Files](E11/E11-Python-Exercises-Files.ipynb)
+  - [E12: Python Exercises on Loops with Strings and Lists](E12/E12-Python-Exercises-Loops-Strings-Lists.ipynb)
 
 ### Homework
   - [H00: Exercises Binary Numbers and Boolean Logic](H00/H00-Exercises-Binary-Boolean.ipynb)
