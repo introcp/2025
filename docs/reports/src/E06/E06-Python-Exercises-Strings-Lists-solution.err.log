@@ -30,7 +30,7 @@ assert result == hello   world"
 ------------------
 
 
-  [36mCell[39m[36m [39m[32mIn[118][39m[32m, line 1[39m
+  [36mCell[39m[36m [39m[32mIn[115][39m[32m, line 1[39m
 [31m    [39m[31massert result == hello   world"[39m
                                   ^
 [31mSyntaxError[39m[31m:[39m unterminated string literal (detected at line 1)
