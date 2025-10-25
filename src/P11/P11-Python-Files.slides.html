@@ -76,6 +76,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -6836,6 +6841,11 @@ div.jp-Cell-Placeholder-content-3 {
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -7268,6 +7278,11 @@ all of MD as it is not optimized for dense, information rich UIs.
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 a.anchor-link {
@@ -7296,6 +7311,11 @@ a.anchor-link {
 .reveal .controls button {
   padding: 2px 4px !important;
   font-size: 8px !important;
+}
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
 }
 </style>
 <style type="text/css">
@@ -7427,6 +7447,11 @@ main {
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <!-- Load mathjax -->
 <!-- Load mathjax -->
@@ -7461,7 +7486,11 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Files"><b style="font-family: 'LUISS', 'Lato'">Files</b><a class="anchor-link" href="#Files">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2><h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3><br/><img alt="No description has been provided for this image" src="https://introcp.github.io/dist/img/logo2.png" width="200px"/><br/><br/><br/>
+<h1 id="Files"><b style="font-family: 'LUISS', 'Lato'">Files</b><a class="anchor-link" href="#Files">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
+<br/>
+<img alt="No description has been provided for this image" src="https://introcp.github.io/dist/img/logo2.png" width="200px"/>
+<p><br/><br/><br/></p>
 </div>
 </div>
 </div>
@@ -7511,10 +7540,7 @@ main {
 <p>Focus on:</p>
 <ol>
 <li>Text files, such as the ones we can create with a simple text editor</li>
-<li>Pickle files<ul>
-<li>Compressed Pickle files</li>
-</ul>
-</li>
+<li>Pickle files, i.e., files that store Python data</li>
 </ol>
 </div>
 </div>
@@ -7533,14 +7559,62 @@ main {
 <p>The <code>open()</code> function takes the following inputs:</p>
 <ol>
 <li>the path on your disk pointing to the file to be opened (i.e., <code>myFile.txt</code>);</li>
-<li>the <code>"r"</code> flag, that means that file has to be opened in <em>read mode</em>.
-and returns</li>
-<li>the file handle (i.e., <code>fID</code>).</li>
+<li>the <code>"r"</code> flag, that means that file has to be opened in <em>read mode</em>.</li>
 </ol>
-<br/>
-<br/>
+<p>and returns the file <em>handle</em> (i.e., <code>fID</code>).</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="alert alert-block alert-info">
-<b>NOTE</b>: The file handle is not the actual data contained in the file, but instead it is a "handle" that we can use to read the data.
+<b>NOTE</b>: The file handle is not the actual data contained in the file, but instead it is a <i>handle</i> that we can use to read the data.
+</div>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'stuff.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[2], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> f <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">open</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">stuff.txt</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">r</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/.local/lib/python3.12/site-packages/IPython/core/interactiveshell.py:324</span>, in <span class="ansi-cyan-fg">_modified_open</span><span class="ansi-blue-fg">(file, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    317</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> file <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> {<span style="color: rgb(98,98,98)">0</span>, <span style="color: rgb(98,98,98)">1</span>, <span style="color: rgb(98,98,98)">2</span>}:
+<span class="ansi-green-intense-fg ansi-bold">    318</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ValueError</span>(
+<span class="ansi-green-intense-fg ansi-bold">    319</span>         <span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">IPython won</span><span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">t let you open fd=</span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>file<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)"> by default </span><span style="color: rgb(175,0,0)">"</span>
+<span class="ansi-green-intense-fg ansi-bold">    320</span>         <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">as it is likely to crash IPython. If you know what you are doing, </span><span style="color: rgb(175,0,0)">"</span>
+<span class="ansi-green-intense-fg ansi-bold">    321</span>         <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">you can use builtins</span><span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)"> open.</span><span style="color: rgb(175,0,0)">"</span>
+<span class="ansi-green-intense-fg ansi-bold">    322</span>     )
+<span class="ansi-green-fg">--&gt; 324</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">io_open</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">file</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: 'stuff.txt'</pre>
 </div>
 </div>
 </div>
@@ -7552,9 +7626,8 @@ and returns</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<br/>
 <div class="alert alert-block alert-warning">
-<b>WARNING</b>: If the file does not exist, `open()` throws an error and will not return any file handle. The current Python version has a dedicated error:
+<b>WARNING</b>: If the file does not exist, <i>open()</i> throws an error and will not return any file handle. The current Python version has a dedicated error:
 <br/>
 <span style="color:red"><code>FileNotFoundError: [Errno 2] No such file or directory: 'stuff.txt'</code></span>
 <br/>
@@ -7562,7 +7635,16 @@ or, in some older Python versions:
 <br/>
 <span style="color:red"><code>IOError: [Errno 2] No such file or directory: 'stuff.txt'</code></span>
 </div>
-<br/>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="alert alert-block alert-success">
 <b>HINT</b>: Make sure that the file exists in the input path and/or make sure that you have set the input path correctly. The filename (with extension) must be included.
 </div>
@@ -7636,7 +7718,6 @@ or, in some older Python versions:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<br/>
 <div class="alert alert-block alert-info">
 <b>NOTE</b>: In the previous slide, the first call of <code>fID.read()</code> scanned the entire file until the end. 
 
@@ -7648,7 +7729,16 @@ or, in some older Python versions:
 </ul>
 <p>use an internal header to keep track of the position within the file.</p>
 </div>
-<br/>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="alert alert-block alert-warning">
 <b>WARNING</b>: <code>fID.read()</code> loads the entire content of your file in the main memory. 
 
@@ -7662,7 +7752,7 @@ or, in some older Python versions:
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7704,7 +7794,6 @@ or, in some older Python versions:
 <li>if <code>size</code> is not given, it goes up until EOF (end-of-file)</li>
 </ul>
 <br/>
-<br/>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">fID</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"/path/to/file/words.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">fileData</span> <span class="o">=</span> <span class="n">fID</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">fileData</span><span class="p">)</span>
@@ -7715,7 +7804,6 @@ or, in some older Python versions:
     <span class="err">’</span><span class="n">aahing</span>\<span class="n">n</span><span class="err">’</span><span class="p">,</span> <span class="c1"># fourth line in fID</span>
     <span class="err">’</span><span class="n">aahs</span>\<span class="n">n</span><span class="err">’</span><span class="p">,</span>   <span class="c1"># fourth line in fID</span>
     <span class="err">’</span><span class="n">aal</span>\<span class="n">n</span><span class="err">’</span><span class="p">,</span>    <span class="c1"># fifth line in fID</span>
-    <span class="err">’</span><span class="n">aal</span>\<span class="n">n</span><span class="err">’</span><span class="p">,</span>    <span class="c1"># sixth line in fID</span>
     <span class="o">...</span><span class="ow">and</span> <span class="n">so</span> <span class="n">on</span> <span class="n">until</span><span class="o">...</span>
     <span class="err">’</span><span class="n">zymurgy</span>\<span class="n">n</span><span class="err">’</span> <span class="c1"># last line in fID</span>
 <span class="p">]</span>
@@ -7737,8 +7825,18 @@ or, in some older Python versions:
 </pre></div>
 <p>At each loop iteration, a new line from the text file is fetched into <code>line</code>.
 The <code>for</code> loop automatically stops when it reaches EOF.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="alert alert-block alert-info">
-<b>NOTE</b>:<br/> This is (possibly) the most efficient solution, especially when dealing with large text files since:
+<b>NOTE</b>: This is (possibly) the most efficient solution, especially when dealing with large text files since:
 <ul>
 <li>it's fully automatic</li>
 <li>each line is read, processed and then discarded.</li>
@@ -7747,14 +7845,14 @@ The <code>for</code> loop automatically stops when it reaches EOF.</p>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Final-Remarks">Final Remarks<a class="anchor-link" href="#Final-Remarks">¶</a></h3><p>It is customary to close the file after processing:</p>
+<h3 id="Manually-closing-files-vs-with-block">Manually closing files vs <code>with</code> block<a class="anchor-link" href="#Manually-closing-files-vs-with-block">¶</a></h3><p>It is customary to close the file after processing:</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">fID</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"/path/to/file/words.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="c1"># do something with fID</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">fID</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -7765,13 +7863,23 @@ If you feel you may forget to close the file, use the <code>with</code> statemen
 <span class="o">...</span>     <span class="c1"># do something with fID</span>
 </pre></div>
 <p>and <code>fID</code> is automatically closed at the end of the <code>with</code> block.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="alert alert-block alert-info">
 <b>NOTE</b>: The <code>with</code> keyword is powerful. It can create context managers for several resources: scheduling threads for parallel processing, reading/writing data, exception handling and others. Yet it's quite an advanced topic.
 </div>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7808,19 +7916,26 @@ If you feel you may forget to close the file, use the <code>with</code> statemen
 <p>The <code>open()</code> function takes the following inputs:</p>
 <ol>
 <li>the path on your disk where you file will be saved (i.e., <code>myFile.txt</code>);</li>
-<li>the <code>"w"</code> flag, that means that file has to be opened in <em>write mode</em>.
-and returns:</li>
-<li>the file handle (i.e., <code>fID</code>).</li>
+<li>the <code>"w"</code> flag, that means that file has to be opened in <em>write mode</em>.</li>
 </ol>
-<br/>
-<br/>
+<p>and returns the file handle (i.e., <code>fID</code>).</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="alert alert-block alert-warning">
 <b>WARNING</b>: If <code>/path/to/file/myFile.txt</code> already exists and you open it in write mode, all of its former contents are gone!
 </div>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7894,10 +8009,8 @@ Not to mention that in order to load them again, you have also to write a quite 
 <p>The <em><strong>serialisation</strong></em> process is a way to convert a data structure into a linear form that can be stored on disk or transmitted over a network.</p>
 <p>The Python <code>pickle</code> module allows you to serialise objects in a <em><strong>binary</strong></em> format:</p>
 <ul>
-<li><p>✓ the Pickle protocol allows to easily read (<em>unpickle</em>) and write (<em>pickle</em>) Python data objects with 1 line of code</p>
-</li>
-<li><p>✓ you can serialise the vast majority of Python objects, including:</p>
-<ul>
+<li>✓ the Pickle protocol allows to easily read (<em>unpickle</em>) and write (<em>pickle</em>) Python data objects with 1 line of code</li>
+<li>✓ you can serialise the vast majority of Python objects, including:<ul>
 <li>booleans</li>
 <li>integers, floats, complex numbers</li>
 <li>strings</li>
@@ -7905,12 +8018,21 @@ Not to mention that in order to load them again, you have also to write a quite 
 <li>instances of user-defined classes</li>
 </ul>
 </li>
-<li><p>✗ Pickle file contents are not human-readable: you can only read a Pickle file thanks to the <code>pickle</code> module in Python</p>
-</li>
-<li><p>✗ Pickle files are only Python-related: cannot be used in other programming languages</p>
-</li>
-<li><p>✗ the Pickle protocol changed across Python versions: unpickling a file that was pickled in a different version of Python may not always work properly</p>
-</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>✗ Pickle file contents are not human-readable: you can only read a Pickle file thanks to the <code>pickle</code> module in Python</li>
+<li>✗ Pickle files are only Python-related: cannot be used in other programming languages</li>
+<li>✗ the Pickle protocol changed across Python versions: unpickling a file that was pickled in a different version of Python may not always work properly</li>
 </ul>
 </div>
 </div>
@@ -7925,22 +8047,30 @@ Not to mention that in order to load them again, you have also to write a quite 
 <h3 id="Writing-pickles">Writing <code>pickle</code>s<a class="anchor-link" href="#Writing-pickles">¶</a></h3><p>In order to write a Pickle file, you must first <code>import</code> the <code>pickle</code> module:</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
 </pre></div>
-<p>Then, choose the object(s) that you want to save, e.g. <code>Lnew</code>:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">Lnew</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
-<span class="o">...</span>     <span class="n">Lnew</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<p>Then, choose the object(s) that you want to save, e.g. <code>L</code>:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">L</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="o">...</span>     <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
-<p>and then, the magic happens:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile.pkl'</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">Lnew</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>And then, the magic happens:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile.pkl'</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+<span class="o">&gt;&gt;&gt;</span>     <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
 </pre></div>
 <p>What's going on in the last code snippet?</p>
 <ol>
 <li>we <code>open()</code> a file named <code>myfile.pkl</code> in <code>wb</code> mode (<em>write binary</em>) and let <code>outfile</code> be its file handle</li>
-<li>we write <code>Lnew</code> to the file</li>
-<li>we close the file</li>
+<li>we write <code>L</code> to the file</li>
+<li>the context manager from <code>with</code> closes the file for us</li>
 </ol>
 </div>
 </div>
@@ -7953,24 +8083,52 @@ Not to mention that in order to load them again, you have also to write a quite 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>You can also save multiple objects by "packing" them into a list or tuple, e.g.:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile2.pkl'</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">([</span><span class="n">Lnew</span><span class="p">,</span> <span class="n">L</span><span class="p">],</span> <span class="n">outfile</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile2.pkl'</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+<span class="o">&gt;&gt;&gt;</span>     <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">([</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">n1</span><span class="p">],</span> <span class="n">outfile</span><span class="p">)</span>
 </pre></div>
-<br/>
-<div class="alert alert-block alert-warning">
-<b>WARNING</b>: When you read a file with a list/tuple that contains multiple items, you must remember their order!
 </div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="alert alert-block alert-warning">
+<b>WARNING</b>: When you read back the pickle file with a list/tuple that contains multiple items, you must remember their order!
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="alert alert-block alert-info">
 <b>NOTE</b>: The <code>wb</code> flag is mandatory to tell Python to write a (serialised) binary file. Do not confuse <code>w</code> with <code>wb</code>!
 </div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="alert alert-block alert-info">
 <b>NOTE</b>: The file can be saved also without extension (i.e., <code>myfile</code> instead of <code>myfile.pkl</code>) and in principle you can also use the extension you prefer (i.e., <code>myfile.pickle</code> instead of <code>myfile.pkl</code>): Python will still understand that's a Pickle file.
 </div>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7981,15 +8139,14 @@ Not to mention that in order to load them again, you have also to write a quite 
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
 </pre></div>
 <p>and then, the magic happens:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile.pkl'</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">X</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">infile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile.pkl'</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+<span class="o">&gt;&gt;&gt;</span>     <span class="n">X</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
 </pre></div>
 <p>What's going on in the last code snippet?</p>
 <ol>
 <li>we <code>open()</code> a file named <code>myfile.pkl</code> in <code>rb</code> mode (<em>read binary</em>) and let <code>infile</code> be its file handle</li>
 <li>we read the contents of <code>infile</code> into variable <code>X</code></li>
-<li>we close the file</li>
+<li>the context manager from <code>with</code> closes the file for us</li>
 </ol>
 </div>
 </div>
@@ -8002,11 +8159,41 @@ Not to mention that in order to load them again, you have also to write a quite 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Compressing-Pickle-Files">Compressing Pickle Files<a class="anchor-link" href="#Compressing-Pickle-Files">¶</a></h2><p>If you have to save large data structures, Pickle files may take a lot of space on your hard drive.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Workaround? <strong>Compression</strong>.</p>
 <p>Compression is the art of encoding (hence, saving) data with fewer bits in order to save disk space.</p>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="alert alert-block alert-warning">
 <b>WARNING</b>: Do not confuse serialisation with compression!
 </div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Since there is no free lunch, compression is driven by a trade-off:</p>
 <ul>
 <li>saves disk space by encoding data with fewer bits</li>
@@ -8015,7 +8202,7 @@ Not to mention that in order to load them again, you have also to write a quite 
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8048,17 +8235,15 @@ Not to mention that in order to load them again, you have also to write a quite 
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">bz2</span>
 </pre></div>
 <p>Let's consider a big list:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">fID</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"words.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">fileData</span> <span class="o">=</span> <span class="n">fID</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="c1"># fileData is a list with 113783 words</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">fID</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>                <span class="c1"># we don't need words.txt anymore</span>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"words.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fID</span><span class="p">:</span>
+<span class="o">&gt;&gt;&gt;</span>     <span class="n">fileData</span> <span class="o">=</span> <span class="n">fID</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="c1"># fileData is a list with 113783 words</span>
 </pre></div>
 <p>Now, let's save the list with <code>pickle</code>:</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fileData</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"words.pkl"</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">))</span>
 </pre></div>
 <p>Now, let's save the list with a <code>bz2</code>-compressed <code>pickle</code>:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">bz2file</span> <span class="o">=</span> <span class="n">bz2</span><span class="o">.</span><span class="n">BZ2File</span><span class="p">(</span><span class="s2">"words.bz2"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fileData</span><span class="p">,</span> <span class="n">bz2file</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">bz2file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">bz2</span><span class="o">.</span><span class="n">BZ2File</span><span class="p">(</span><span class="s2">"words.bz2"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">bz2file</span><span class="p">:</span>
+<span class="o">&gt;&gt;&gt;</span>     <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fileData</span><span class="p">,</span> <span class="n">bz2file</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8074,7 +8259,7 @@ Not to mention that in order to load them again, you have also to write a quite 
 <ol>
 <li>from the <code>bz2</code> module, we call <code>BZ2File</code> to create a file called <code>words.bz2</code> in <em>write mode</em> (flag <code>w</code>). This yields a file handle named <code>bz2file</code>.</li>
 <li>we use the already-known <code>pickle.dump()</code> to save our variable <code>fileData</code>. However, instead of passing as argument a file handle obtained via <code>open()</code>, we pass the file handle obtained via <code>bz2.BZ2File()</code></li>
-<li>we close the <code>bzip2</code> file.</li>
+<li>the context manager from <code>with</code> closes the <code>bzip2</code> file for us</li>
 </ol>
 <p>Result?</p>
 <ul>
@@ -8097,27 +8282,15 @@ Not to mention that in order to load them again, you have also to write a quite 
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">bz2</span>
 </pre></div>
 <p>and then:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">bz2file</span> <span class="o">=</span> <span class="n">bz2</span><span class="o">.</span><span class="n">BZ2File</span><span class="p">(</span><span class="s2">"words.bz2"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">X</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">bz2file</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">bz2file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">bz2</span><span class="o">.</span><span class="n">BZ2File</span><span class="p">(</span><span class="s2">"words.bz2"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">bz2file</span><span class="p">:</span>
+<span class="o">&gt;&gt;&gt;</span>     <span class="n">X</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">bz2file</span><span class="p">)</span>
 </pre></div>
 <p>What's going on in the last code snippet?</p>
 <ol>
 <li>from the <code>bz2</code> module, we call <code>BZ2File</code> to read a file called <code>words.bz2</code> in <em>read mode</em> (flag <code>r</code>). This yields a file handle named <code>bz2file</code>.</li>
 <li>we use the already-known <code>pickle.load()</code> to import the contents of <code>bz2file</code> into a variable <code>X</code>. However, instead of passing as argument a file handle obtained via <code>open()</code>, we pass the file handle obtained via <code>bz2.BZ2File()</code></li>
-<li>we close the <code>bzip2</code> file.</li>
+<li>the context manager from <code>with</code> closes the <code>bzip2</code> file for us</li>
 </ol>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Exercise-session">Exercise session<a class="anchor-link" href="#Exercise-session">¶</a></h2><p>Find the exercises for the exam session: <a href="../E11/E11-Python-Exercises-Files.ipynb">here</a></p>
 </div>
 </div>
 </div>
