@@ -1661,19 +1661,7 @@ document.write(`
 <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">target_sum</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">find_unique_pairs</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">target_sum</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">62</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">target_sum</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">result</span> <span class="o">=</span> <span class="n">find_unique_pairs</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">target_sum</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
-
-<span class="ne">AssertionError</span>: 
+<span class="k">assert</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="nb">sorted</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
 </pre></div>
 </div>
 </div>
@@ -1705,6 +1693,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">64</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">target_sum</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">result</span> <span class="o">=</span> <span class="n">find_unique_pairs</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">target_sum</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+
+<span class="ne">AssertionError</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="id74">
@@ -1712,7 +1712,7 @@ document.write(`
 <p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;a href=&quot;https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false&quot; target=&quot;_blank&quot; style=&quot;font-size:16px;color:blue;text-decoration:underline;&quot;&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2"># Test case 1: Find pairs that sum to target</span><span class="se">\n</span><span class="s2">lst = [1, 3, 2, 2, 4, 5, 3]</span><span class="se">\n</span><span class="s2">target_sum = 5</span><span class="se">\n</span><span class="s2">result = find_unique_pairs(lst, target_sum)</span><span class="se">\n</span><span class="s2">assert result == [(1, 4), (2, 3)]</span><span class="se">\n\n</span><span class="s2"># Test case 2: No pairs found</span><span class="se">\n</span><span class="s2">lst = [1, 2, 3]</span><span class="se">\n</span><span class="s2">target_sum = 10</span><span class="se">\n</span><span class="s2">result = find_unique_pairs(lst, target_sum)</span><span class="se">\n</span><span class="s2">assert result == []</span><span class="se">\n\n</span><span class="s2"># Test case 3: Multiple pairs</span><span class="se">\n</span><span class="s2">lst = [1, 2, 3, 4, 5, 6]</span><span class="se">\n</span><span class="s2">target_sum = 7</span><span class="se">\n</span><span class="s2">result = find_unique_pairs(lst, target_sum)</span><span class="se">\n</span><span class="s2">assert result == [(1, 6), (2, 5), (3, 4)]&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;assert&quot;</span><span class="p">,</span><span class="s2">&quot;print(&quot;</span><span class="p">,</span><span class="s2">&quot;HTML(&quot;</span><span class="p">,</span><span class="s2">&quot;display(&quot;</span><span class="p">,</span><span class="s2">&quot;import&quot;</span><span class="p">,</span><span class="s2">&quot;from IPython&quot;</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;# No code&quot;</span><span class="p">)))))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;a href=&quot;https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false&quot; target=&quot;_blank&quot; style=&quot;font-size:16px;color:blue;text-decoration:underline;&quot;&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2"># Test case 1: Find pairs that sum to target</span><span class="se">\n</span><span class="s2">lst = [1, 3, 2, 2, 4, 5, 3]</span><span class="se">\n</span><span class="s2">target_sum = 5</span><span class="se">\n</span><span class="s2">result = find_unique_pairs(lst, target_sum)</span><span class="se">\n</span><span class="s2">assert sorted(result) == sorted([(1, 4), (2, 3)])</span><span class="se">\n\n</span><span class="s2"># Test case 2: No pairs found</span><span class="se">\n</span><span class="s2">lst = [1, 2, 3]</span><span class="se">\n</span><span class="s2">target_sum = 10</span><span class="se">\n</span><span class="s2">result = find_unique_pairs(lst, target_sum)</span><span class="se">\n</span><span class="s2">assert result == []</span><span class="se">\n\n</span><span class="s2"># Test case 3: Multiple pairs</span><span class="se">\n</span><span class="s2">lst = [1, 2, 3, 4, 5, 6]</span><span class="se">\n</span><span class="s2">target_sum = 7</span><span class="se">\n</span><span class="s2">result = find_unique_pairs(lst, target_sum)</span><span class="se">\n</span><span class="s2">assert result == [(1, 6), (2, 5), (3, 4)]&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;assert&quot;</span><span class="p">,</span><span class="s2">&quot;print(&quot;</span><span class="p">,</span><span class="s2">&quot;HTML(&quot;</span><span class="p">,</span><span class="s2">&quot;display(&quot;</span><span class="p">,</span><span class="s2">&quot;import&quot;</span><span class="p">,</span><span class="s2">&quot;from IPython&quot;</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;# No code&quot;</span><span class="p">)))))</span>
 </pre></div>
 </div>
 </div>
@@ -2521,14 +2521,10 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">squares</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="c1"># Method 1: Using dictionary comprehension</span>
-    <span class="k">return</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)}</span>
-    
-    <span class="c1"># Method 2: Manual implementation</span>
-    <span class="c1"># result = {}</span>
-    <span class="c1"># for i in range(1, n+1):</span>
-    <span class="c1">#     result[i] = i * i</span>
-    <span class="c1"># return result</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">result</span>
 
 <span class="c1"># Example usage</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}</span>
@@ -2725,17 +2721,13 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">find_max</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
-    <span class="c1"># Method 1: Using max() with key parameter</span>
-    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
-    
-    <span class="c1"># Method 2: Manual implementation</span>
-    <span class="c1"># max_key = None</span>
-    <span class="c1"># max_value = float(&#39;-inf&#39;)</span>
-    <span class="c1"># for key, value in d.items():</span>
-    <span class="c1">#     if value &gt; max_value:</span>
-    <span class="c1">#         max_value = value</span>
-    <span class="c1">#         max_key = key</span>
-    <span class="c1"># return max_key</span>
+    <span class="n">max_key</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">max_value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-inf&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="n">max_value</span><span class="p">:</span>
+            <span class="n">max_value</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="n">max_key</span> <span class="o">=</span> <span class="n">key</span>
+    <span class="k">return</span> <span class="n">max_key</span>
 
 <span class="c1"># Example usage</span>
 <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
@@ -2853,14 +2845,10 @@ document.write(`
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">multiply_keys</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">factor</span><span class="p">):</span>
-    <span class="c1"># Create new dictionary with keys multiplied by factor</span>
-    <span class="k">return</span> <span class="p">{</span><span class="n">key</span> <span class="o">*</span> <span class="n">factor</span><span class="p">:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
-    
-    <span class="c1"># Alternative manual implementation:</span>
-    <span class="c1"># result = {}</span>
-    <span class="c1"># for key, value in d.items():</span>
-    <span class="c1">#     result[key * factor] = value</span>
-    <span class="c1"># return result</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">result</span><span class="p">[</span><span class="n">key</span> <span class="o">*</span> <span class="n">factor</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="k">return</span> <span class="n">result</span>
 
 <span class="c1"># Example usage</span>
 <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">200</span><span class="p">}</span>
