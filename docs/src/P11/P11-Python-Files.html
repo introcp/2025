@@ -426,7 +426,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fid-readline"><code class="docutils literal notranslate"><span class="pre">fID.readline()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fid-readlines"><code class="docutils literal notranslate"><span class="pre">fID.readlines()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-over-a-file">Iterating Over a File</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-remarks">Final Remarks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manually-closing-files-vs-with-block">Manually closing files vs <code class="docutils literal notranslate"><span class="pre">with</span></code> block</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-text-data">Writing Text Data</a></li>
@@ -454,7 +454,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="files">
 <h1><b style="font-family: 'LUISS', 'Lato'">Files</b><a class="headerlink" href="#files" title="Link to this heading">#</a></h1>
-<h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2><h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3><br><img src="https://introcp.github.io/dist/img/logo2.png" width="200px"><br><br><br><section id="persistence">
+<h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
+<br>
+<img src="https://introcp.github.io/dist/img/logo2.png" width="200px">
+<p><br><br><br></p>
+<section id="persistence">
 <h2>Persistence<a class="headerlink" href="#persistence" title="Link to this heading">#</a></h2>
 <p>So far…</p>
 <ul class="simple">
@@ -487,11 +492,7 @@ document.write(`
 <p>Focus on:</p>
 <ol class="arabic simple">
 <li><p>Text files, such as the ones we can create with a simple text editor</p></li>
-<li><p>Pickle files</p>
-<ul class="simple">
-<li><p>Compressed Pickle files</p></li>
-</ul>
-</li>
+<li><p>Pickle files, i.e., files that store Python data</p></li>
 </ol>
 </section>
 <section id="reading-text-data">
@@ -504,26 +505,46 @@ document.write(`
 <p>The <code class="docutils literal notranslate"><span class="pre">open()</span></code> function takes the following inputs:</p>
 <ol class="arabic simple">
 <li><p>the path on your disk pointing to the file to be opened (i.e., <code class="docutils literal notranslate"><span class="pre">myFile.txt</span></code>);</p></li>
-<li><p>the <code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code> flag, that means that file has to be opened in <em>read mode</em>.
-and returns</p></li>
-<li><p>the file handle (i.e., <code class="docutils literal notranslate"><span class="pre">fID</span></code>).</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code> flag, that means that file has to be opened in <em>read mode</em>.</p></li>
 </ol>
-<br>
-<br>
+<p>and returns the file <em>handle</em> (i.e., <code class="docutils literal notranslate"><span class="pre">fID</span></code>).</p>
 <div class="alert alert-block alert-info">
-<b>NOTE</b>: The file handle is not the actual data contained in the file, but instead it is a "handle" that we can use to read the data.
-</div><br>
+<b>NOTE</b>: The file handle is not the actual data contained in the file, but instead it is a <i>handle</i> that we can use to read the data.
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;stuff.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;stuff.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="nn">File /home/user/.venv/lib/python3.12/site-packages/IPython/core/interactiveshell.py:343,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">336</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">343</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;stuff.txt&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <div class="alert alert-block alert-warning">
-<b>WARNING</b>: If the file does not exist, `open()` throws an error and will not return any file handle. The current Python version has a dedicated error:
+<b>WARNING</b>: If the file does not exist, <i>open()</i> throws an error and will not return any file handle. The current Python version has a dedicated error:
 <br>
 <span style="color:red"><code>FileNotFoundError: [Errno 2] No such file or directory: 'stuff.txt'</code></span>
 <br>
 or, in some older Python versions:
 <br>
 <span style="color:red"><code>IOError: [Errno 2] No such file or directory: 'stuff.txt'</code></span>
-</div>
-<br>
-<div class="alert alert-block alert-success">
+</div><div class="alert alert-block alert-success">
 <b>HINT</b>: Make sure that the file exists in the input path and/or make sure that you have set the input path correctly. The filename (with extension) must be included.
 </div><section id="fid-read">
 <h3><code class="docutils literal notranslate"><span class="pre">fID.read()</span></code><a class="headerlink" href="#fid-read" title="Link to this heading">#</a></h3>
@@ -570,7 +591,6 @@ or, in some older Python versions:
 <span class="go">&#39;ed\naahing\n&#39; # 10 more characters from fID</span>
 </pre></div>
 </div>
-<br>
 <div class="alert alert-block alert-info">
 <b>NOTE</b>: In the previous slide, the first call of <code>fID.read()</code> scanned the entire file until the end. 
 <p>The second call sees nothing!</p>
@@ -580,9 +600,7 @@ or, in some older Python versions:
 <li><p><code>fID.readline()</code></p></li>
 </ul>
 <p>use an internal header to keep track of the position within the file.</p>
-</div>
-<br>
-<div class="alert alert-block alert-warning">
+</div><div class="alert alert-block alert-warning">
 <b>WARNING</b>: <code>fID.read()</code> loads the entire content of your file in the main memory. 
 <p>Use it if at least one of the following holds:<br></p>
 <ul class="simple">
@@ -622,7 +640,6 @@ or, in some older Python versions:
 <li><p>if <code class="docutils literal notranslate"><span class="pre">size</span></code> is not given, it goes up until EOF (end-of-file)</p></li>
 </ul>
 <br>
-<br>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/path/to/file/words.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fileData</span> <span class="o">=</span> <span class="n">fID</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">fileData</span><span class="p">)</span>
@@ -633,7 +650,6 @@ or, in some older Python versions:
 <span class="go">    ’aahing\n’, # fourth line in fID</span>
 <span class="go">    ’aahs\n’,   # fourth line in fID</span>
 <span class="go">    ’aal\n’,    # fifth line in fID</span>
-<span class="go">    ’aal\n’,    # sixth line in fID</span>
 <span class="go">    ...and so on until...</span>
 <span class="go">    ’zymurgy\n’ # last line in fID</span>
 <span class="go">]</span>
@@ -651,14 +667,14 @@ or, in some older Python versions:
 <p>At each loop iteration, a new line from the text file is fetched into <code class="docutils literal notranslate"><span class="pre">line</span></code>.
 The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop automatically stops when it reaches EOF.</p>
 <div class="alert alert-block alert-info">
-<b>NOTE</b>:<br> This is (possibly) the most efficient solution, especially when dealing with large text files since:
+<b>NOTE</b>: This is (possibly) the most efficient solution, especially when dealing with large text files since:
 <ul>
     <li>it's fully automatic</li>
     <li>each line is read, processed and then discarded.</li>
 </ul>
 </div></section>
-<section id="final-remarks">
-<h3>Final Remarks<a class="headerlink" href="#final-remarks" title="Link to this heading">#</a></h3>
+<section id="manually-closing-files-vs-with-block">
+<h3>Manually closing files vs <code class="docutils literal notranslate"><span class="pre">with</span></code> block<a class="headerlink" href="#manually-closing-files-vs-with-block" title="Link to this heading">#</a></h3>
 <p>It is customary to close the file after processing:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/path/to/file/words.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># do something with fID</span>
@@ -699,12 +715,9 @@ If you feel you may forget to close the file, use the <code class="docutils lite
 <p>The <code class="docutils literal notranslate"><span class="pre">open()</span></code> function takes the following inputs:</p>
 <ol class="arabic simple">
 <li><p>the path on your disk where you file will be saved (i.e., <code class="docutils literal notranslate"><span class="pre">myFile.txt</span></code>);</p></li>
-<li><p>the <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> flag, that means that file has to be opened in <em>write mode</em>.
-and returns:</p></li>
-<li><p>the file handle (i.e., <code class="docutils literal notranslate"><span class="pre">fID</span></code>).</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> flag, that means that file has to be opened in <em>write mode</em>.</p></li>
 </ol>
-<br>
-<br>
+<p>and returns the file handle (i.e., <code class="docutils literal notranslate"><span class="pre">fID</span></code>).</p>
 <div class="alert alert-block alert-warning">
 <b>WARNING</b>: If <code>/path/to/file/myFile.txt</code> already exists and you open it in write mode, all of its former contents are gone!
 </div><p>Writing some data to a text file is just as easy as doing:</p>
@@ -760,6 +773,8 @@ Not to mention that in order to load them again, you have also to write a quite 
 <li><p>instances of user-defined classes</p></li>
 </ul>
 </li>
+</ul>
+<ul class="simple">
 <li><p>✗ Pickle file contents are not human-readable: you can only read a Pickle file thanks to the <code class="docutils literal notranslate"><span class="pre">pickle</span></code> module in Python</p></li>
 <li><p>✗ Pickle files are only Python-related: cannot be used in other programming languages</p></li>
 <li><p>✗ the Pickle protocol changed across Python versions: unpickling a file that was pickled in a different version of Python may not always work properly</p></li>
@@ -770,39 +785,33 @@ Not to mention that in order to load them again, you have also to write a quite 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
 </pre></div>
 </div>
-<p>Then, choose the object(s) that you want to save, e.g. <code class="docutils literal notranslate"><span class="pre">Lnew</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Lnew</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
-<span class="gp">... </span>    <span class="n">Lnew</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<p>Then, choose the object(s) that you want to save, e.g. <code class="docutils literal notranslate"><span class="pre">L</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>and then, the magic happens:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">Lnew</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<p>And then, the magic happens:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>What’s going on in the last code snippet?</p>
 <ol class="arabic simple">
 <li><p>we <code class="docutils literal notranslate"><span class="pre">open()</span></code> a file named <code class="docutils literal notranslate"><span class="pre">myfile.pkl</span></code> in <code class="docutils literal notranslate"><span class="pre">wb</span></code> mode (<em>write binary</em>) and let <code class="docutils literal notranslate"><span class="pre">outfile</span></code> be its file handle</p></li>
-<li><p>we write <code class="docutils literal notranslate"><span class="pre">Lnew</span></code> to the file</p></li>
-<li><p>we close the file</p></li>
+<li><p>we write <code class="docutils literal notranslate"><span class="pre">L</span></code> to the file</p></li>
+<li><p>the context manager from <code class="docutils literal notranslate"><span class="pre">with</span></code> closes the file for us</p></li>
 </ol>
 <p>You can also save multiple objects by “packing” them into a list or tuple, e.g.:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile2.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">([</span><span class="n">Lnew</span><span class="p">,</span> <span class="n">L</span><span class="p">],</span> <span class="n">outfile</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile2.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">([</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">n1</span><span class="p">],</span> <span class="n">outfile</span><span class="p">)</span>
 </pre></div>
 </div>
-<br>
 <div class="alert alert-block alert-warning">
-<b>WARNING</b>: When you read a file with a list/tuple that contains multiple items, you must remember their order!
-</div>
-<div class="alert alert-block alert-info">
+<b>WARNING</b>: When you read back the pickle file with a list/tuple that contains multiple items, you must remember their order!
+</div><div class="alert alert-block alert-info">
 <b>NOTE</b>: The <code>wb</code> flag is mandatory to tell Python to write a (serialised) binary file. Do not confuse <code>w</code> with <code>wb</code>!
-</div>
-<div class="alert alert-block alert-info">
+</div><div class="alert alert-block alert-info">
 <b>NOTE</b>: The file can be saved also without extension (i.e., <code>myfile</code> instead of <code>myfile.pkl</code>) and in principle you can also use the extension you prefer (i.e., <code>myfile.pickle</code> instead of <code>myfile.pkl</code>): Python will still understand that's a Pickle file.
 </div></section>
 <section id="reading-pickles">
@@ -812,16 +821,15 @@ Not to mention that in order to load them again, you have also to write a quite 
 </pre></div>
 </div>
 <p>and then, the magic happens:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">infile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">X</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>What’s going on in the last code snippet?</p>
 <ol class="arabic simple">
 <li><p>we <code class="docutils literal notranslate"><span class="pre">open()</span></code> a file named <code class="docutils literal notranslate"><span class="pre">myfile.pkl</span></code> in <code class="docutils literal notranslate"><span class="pre">rb</span></code> mode (<em>read binary</em>) and let <code class="docutils literal notranslate"><span class="pre">infile</span></code> be its file handle</p></li>
 <li><p>we read the contents of <code class="docutils literal notranslate"><span class="pre">infile</span></code> into variable <code class="docutils literal notranslate"><span class="pre">X</span></code></p></li>
-<li><p>we close the file</p></li>
+<li><p>the context manager from <code class="docutils literal notranslate"><span class="pre">with</span></code> closes the file for us</p></li>
 </ol>
 </section>
 </section>
@@ -832,8 +840,7 @@ Not to mention that in order to load them again, you have also to write a quite 
 <p>Compression is the art of encoding (hence, saving) data with fewer bits in order to save disk space.</p>
 <div class="alert alert-block alert-warning">
 <b>WARNING</b>: Do not confuse serialisation with compression!
-</div>
-<p>Since there is no free lunch, compression is driven by a trade-off:</p>
+</div><p>Since there is no free lunch, compression is driven by a trade-off:</p>
 <ul class="simple">
 <li><p>saves disk space by encoding data with fewer bits</p></li>
 <li><p>the encoding stage can be costly (i.e., in terms of running times)</p></li>
@@ -857,9 +864,8 @@ Not to mention that in order to load them again, you have also to write a quite 
 </pre></div>
 </div>
 <p>Let’s consider a big list:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;words.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fileData</span> <span class="o">=</span> <span class="n">fID</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="c1"># fileData is a list with 113783 words</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fID</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>                <span class="c1"># we don&#39;t need words.txt anymore</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;words.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fID</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">fileData</span> <span class="o">=</span> <span class="n">fID</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="c1"># fileData is a list with 113783 words</span>
 </pre></div>
 </div>
 <p>Now, let’s save the list with <code class="docutils literal notranslate"><span class="pre">pickle</span></code>:</p>
@@ -867,16 +873,15 @@ Not to mention that in order to load them again, you have also to write a quite 
 </pre></div>
 </div>
 <p>Now, let’s save the list with a <code class="docutils literal notranslate"><span class="pre">bz2</span></code>-compressed <code class="docutils literal notranslate"><span class="pre">pickle</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bz2file</span> <span class="o">=</span> <span class="n">bz2</span><span class="o">.</span><span class="n">BZ2File</span><span class="p">(</span><span class="s2">&quot;words.bz2&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fileData</span><span class="p">,</span> <span class="n">bz2file</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">bz2file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">bz2</span><span class="o">.</span><span class="n">BZ2File</span><span class="p">(</span><span class="s2">&quot;words.bz2&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">bz2file</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fileData</span><span class="p">,</span> <span class="n">bz2file</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>What’s going on in the last code snippet?</p>
 <ol class="arabic simple">
 <li><p>from the <code class="docutils literal notranslate"><span class="pre">bz2</span></code> module, we call <code class="docutils literal notranslate"><span class="pre">BZ2File</span></code> to create a file called <code class="docutils literal notranslate"><span class="pre">words.bz2</span></code> in <em>write mode</em> (flag <code class="docutils literal notranslate"><span class="pre">w</span></code>). This yields a file handle named <code class="docutils literal notranslate"><span class="pre">bz2file</span></code>.</p></li>
 <li><p>we use the already-known <code class="docutils literal notranslate"><span class="pre">pickle.dump()</span></code> to save our variable <code class="docutils literal notranslate"><span class="pre">fileData</span></code>. However, instead of passing as argument a file handle obtained via <code class="docutils literal notranslate"><span class="pre">open()</span></code>, we pass the file handle obtained via <code class="docutils literal notranslate"><span class="pre">bz2.BZ2File()</span></code></p></li>
-<li><p>we close the <code class="docutils literal notranslate"><span class="pre">bzip2</span></code> file.</p></li>
+<li><p>the context manager from <code class="docutils literal notranslate"><span class="pre">with</span></code> closes the <code class="docutils literal notranslate"><span class="pre">bzip2</span></code> file for us</p></li>
 </ol>
 <p>Result?</p>
 <ul class="simple">
@@ -893,22 +898,21 @@ Not to mention that in order to load them again, you have also to write a quite 
 </pre></div>
 </div>
 <p>and then:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bz2file</span> <span class="o">=</span> <span class="n">bz2</span><span class="o">.</span><span class="n">BZ2File</span><span class="p">(</span><span class="s2">&quot;words.bz2&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">bz2file</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">bz2file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">bz2</span><span class="o">.</span><span class="n">BZ2File</span><span class="p">(</span><span class="s2">&quot;words.bz2&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">bz2file</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">X</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">bz2file</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>What’s going on in the last code snippet?</p>
 <ol class="arabic simple">
 <li><p>from the <code class="docutils literal notranslate"><span class="pre">bz2</span></code> module, we call <code class="docutils literal notranslate"><span class="pre">BZ2File</span></code> to read a file called <code class="docutils literal notranslate"><span class="pre">words.bz2</span></code> in <em>read mode</em> (flag <code class="docutils literal notranslate"><span class="pre">r</span></code>). This yields a file handle named <code class="docutils literal notranslate"><span class="pre">bz2file</span></code>.</p></li>
 <li><p>we use the already-known <code class="docutils literal notranslate"><span class="pre">pickle.load()</span></code> to import the contents of <code class="docutils literal notranslate"><span class="pre">bz2file</span></code> into a variable <code class="docutils literal notranslate"><span class="pre">X</span></code>. However, instead of passing as argument a file handle obtained via <code class="docutils literal notranslate"><span class="pre">open()</span></code>, we pass the file handle obtained via <code class="docutils literal notranslate"><span class="pre">bz2.BZ2File()</span></code></p></li>
-<li><p>we close the <code class="docutils literal notranslate"><span class="pre">bzip2</span></code> file.</p></li>
+<li><p>the context manager from <code class="docutils literal notranslate"><span class="pre">with</span></code> closes the <code class="docutils literal notranslate"><span class="pre">bzip2</span></code> file for us</p></li>
 </ol>
 </section>
 </section>
 <section id="exercise-session">
 <h2>Exercise session<a class="headerlink" href="#exercise-session" title="Link to this heading">#</a></h2>
-<p>Find the exercises for the exam session: <a class="reference internal" href="../E11/E11-Python-Exercises-Files.html"><span class="std std-doc">here</span></a></p>
+<p>Find the exercises for the exam session: <a class="reference external" href="https://introcp.github.io/src/E11/E11-Python-Exercises-Files.html">here</a></p>
 </section>
 </section>
 
@@ -964,7 +968,7 @@ Not to mention that in order to load them again, you have also to write a quite 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fid-readline"><code class="docutils literal notranslate"><span class="pre">fID.readline()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fid-readlines"><code class="docutils literal notranslate"><span class="pre">fID.readlines()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-over-a-file">Iterating Over a File</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-remarks">Final Remarks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manually-closing-files-vs-with-block">Manually closing files vs <code class="docutils literal notranslate"><span class="pre">with</span></code> block</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-text-data">Writing Text Data</a></li>
