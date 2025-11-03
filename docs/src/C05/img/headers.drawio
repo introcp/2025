@@ -1,0 +1,101 @@
+<mxfile host="app.diagrams.net" modified="2024-11-03T17:22:00.000Z" agent="5.0" version="21.0.0" etag="drawio" type="device">
+  <diagram name="Page-1" id="network-headers">
+    <mxGraphModel dx="1434" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Application Layer -->
+        <mxCell id="app-layer" value="Application Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;align=center;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="200" y="80" width="450" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="app-data" value="HTTP Request: &quot;GET /index.html&quot;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="220" y="110" width="410" height="25" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow 1 -->
+        <mxCell id="arrow1" value="Add TCP header" style="endArrow=classic;html=1;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="app-layer" target="transport-layer">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint" />
+            <mxPoint x="450" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Transport Layer -->
+        <mxCell id="transport-layer" value="Transport Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;align=center;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="200" y="200" width="450" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tcp-header" value="TCP Header:&lt;br&gt;Port 80" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="220" y="230" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="transport-data" value="HTTP Request" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="320" y="230" width="310" height="25" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow 2 -->
+        <mxCell id="arrow2" value="Add IP header" style="endArrow=classic;html=1;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="transport-layer" target="internet-layer">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint" />
+            <mxPoint x="450" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Internet Layer -->
+        <mxCell id="internet-layer" value="Internet Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1;align=center;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="200" y="320" width="450" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ip-header" value="IP Header:&lt;br&gt;192.168.1.1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="220" y="350" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="internet-tcp" value="TCP" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="320" y="350" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="internet-data" value="HTTP Request" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="400" y="350" width="230" height="25" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow 3 -->
+        <mxCell id="arrow3" value="Add Ethernet header" style="endArrow=classic;html=1;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="internet-layer" target="network-layer">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint" />
+            <mxPoint x="450" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Network Access Layer -->
+        <mxCell id="network-layer" value="Network Access Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1;align=center;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="200" y="440" width="450" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eth-header" value="Ethernet" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="220" y="470" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="network-ip" value="IP" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="290" y="470" width="50" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="network-tcp" value="TCP" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="340" y="470" width="50" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="network-data" value="HTTP Request" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="390" y="470" width="160" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="eth-fcs" value="Ethernet FCS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="550" y="470" width="80" height="25" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow 4 -->
+        <mxCell id="arrow4" value="Transmit as bits" style="endArrow=classic;html=1;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="network-layer">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="550" as="sourcePoint" />
+            <mxPoint x="425" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Physical transmission -->
+        <mxCell id="physical" value="═══════════" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="560" width="150" height="30" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

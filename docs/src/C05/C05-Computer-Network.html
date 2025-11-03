@@ -1,0 +1,1393 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Computer Networks &#8212; Introduction to computer programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7faeedcc" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/C05/C05-Computer-Network';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Getting Started" href="../P00/P00-Python-Getting-Started.html" />
+    <link rel="prev" title="Operating System Essentials" href="../C04/C04-OS-Essentials.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Introduction to computer programming - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Introduction to computer programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    <b style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</b>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../A00/A00-Introduction.html"><b style="font-family: 'LUISS', 'Lato'">Course overview</b></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computer Systems</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../C00/C00-Bits-and-Bytes.html"><b style="font-family: 'LUISS', 'Lato'">Bits and Bytes</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C01/C01-Boolean-Logic.html"><b style="font-family: 'LUISS', 'Lato'">Boolean Logic</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C02/C02-Hardware.html"><b style="font-family: 'LUISS', 'Lato'">Hardware</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C03/C03-Software.html"><b style="font-family: 'LUISS', 'Lato'">Software</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C04/C04-OS-Essentials.html"><b style="font-family: 'LUISS', 'Lato'">Operating System Essentials</b></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><b style="font-family: 'LUISS', 'Lato'">Computer Networks</b></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../P00/P00-Python-Getting-Started.html"><b style="font-family: 'LUISS', 'Lato'">Getting Started</b></a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../P01/P01-Python-Expressions-and-Types.html"><b style="font-family: 'LUISS', 'Lato'">Expressions and Data Types</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P02/P02-Python-Types-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Variables and Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P03/P03-Python-Branching.html"><b style="font-family: 'LUISS', 'Lato'">Branching</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P04/P04-Python-Functions.html"><b style="font-family: 'LUISS', 'Lato'">Functions</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../E01/E01-Python-Errors.html"><b style="font-family: 'LUISS', 'Lato'">Types of Errors</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P05/P05-Python-Iteration.html"><b style="font-family: 'LUISS', 'Lato'">Iteration</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P06/P06-Python-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P07/P07-Python-Lists.html"><b style="font-family: 'LUISS', 'Lato'">Lists</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P08/P08-Python-Dictionaries-Tuples-Sets.html"><b style="font-family: 'LUISS', 'Lato'">Dictionaries, Tuples, and Sets</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P11/P11-Python-Files.html"><b style="font-family: 'LUISS', 'Lato'">Files</b></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/introcp/introcp.github.io/blob/2025/src/C05/C05-Computer-Network.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+
+<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://introcp.github.io/_sources//src/C05/C05-Computer-Network.ipynb" target="_blank"
+  class="btn btn-sm dropdown-item"
+  title="Launch on JupyterLite"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+ 
+
+<span class="btn__icon-container">
+ 
+   <img alt="JupyterLite logo" src="https://avatars.githubusercontent.com/u/81094398?s=200&v=4">
+ </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+    
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://introcp.github.io/src/download.html?file=/_sources/src/C05/C05-Computer-Network.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.open(window.location.pathname.replace('.html', '.pdf'));"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+    <button onclick="window.open(window.location.pathname.replace('.html', '.slides.html'));"
+    class="btn btn-sm btn-fullscreen-button"
+    title="Slide"
+    data-bs-placement="bottom" data-bs-toggle="tooltip"
+    >
+    
+    <span class="btn__icon-container">
+        <i class="fa-brands fa-slideshare"></i>
+    </span>
+
+    </button>
+
+    <button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><b style="font-family: 'LUISS', 'Lato'">Computer Networks</b></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Computer Networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-computer-network">What is a Computer Network?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-networks">Types of Networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-internet-a-network-of-networks">The Internet: A Network of Networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-network-protocols">Why Do We Need Network Protocols?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-osi-model-a-conceptual-framework">The OSI Model: A Conceptual Framework</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-tcp-ip-model-the-internet-s-foundation">The TCP/IP Model: The Internet’s Foundation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-of-each-layer">Goals of each layer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-1-network-access-layer">Layer 1: Network Access Layer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-physical-network-links">Comparison of Physical Network Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-2-internet-layer">Layer 2: Internet Layer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ip-addressing">IP Addressing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ip-addressing-public-vs-private">IP Addressing: Public vs Private</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-my-ip-in-luiss-ethernet">What is my IP in LUISS? [Ethernet]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-my-ip-in-luiss-luisswpa">What is my IP in LUISS? [LUISSWpa]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-my-ip-in-luiss-eduroam">What is my IP in LUISS? [Eduroam]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#public-ip-ranges">Public IP ranges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dhcp-dynamic-host-configuration-protocol">DHCP: Dynamic Host Configuration Protocol</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-internet-layer-protocols">Other Internet Layer Protocols</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-3-transport-layer">Layer 3: Transport Layer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-from-devices-to-applications">Moving from devices to applications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ports-addressing-applications">Ports: Addressing Applications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-well-known-ports">Common Well-Known Ports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nat-network-address-translation-and-ports">NAT (Network Address Translation) and Ports</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-4-application-layer">Layer 4: Application Layer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-data-flows-through-the-stack">How Data Flows Through the Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-loading-a-web-page">Example: Loading a Web Page</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="computer-networks">
+<h1><b style="font-family: 'LUISS', 'Lato'">Computer Networks</b><a class="headerlink" href="#computer-networks" title="Link to this heading">#</a></h1>
+<h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
+<br>
+<img src="https://introcp.github.io/dist/img/logo2.png" width="200px">
+<p><br><br><br></p>
+<section id="id1">
+<h2>Computer Networks<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Understanding computer networks is essential in today’s interconnected world:</p>
+<ul class="simple">
+<li><p><strong>Communication</strong>: How devices exchange data across the internet</p></li>
+<li><p><strong>Protocol Stack</strong>: The layered architecture that makes networking possible</p></li>
+<li><p><strong>TCP/IP</strong>: The fundamental protocols powering the internet</p></li>
+<li><p><strong>Applications</strong>: From web browsing to video streaming</p></li>
+<li><p><strong>Security</strong>: Understanding vulnerabilities and protection mechanisms</p></li>
+</ul>
+<p>We’ll explore the <strong>TCP/IP stack</strong> and see how your computer communicates with the world!</p>
+</section>
+<section id="what-is-a-computer-network">
+<h2>What is a Computer Network?<a class="headerlink" href="#what-is-a-computer-network" title="Link to this heading">#</a></h2>
+<p>A <strong>computer network</strong> is a collection of interconnected devices that can exchange data and share resources.</p>
+<p>Key Components:</p>
+<ul class="simple">
+<li><p><strong>Nodes</strong>: Devices connected to the network (computers, phones, servers, routers)</p></li>
+<li><p><strong>Links</strong>: Physical or wireless connections between nodes</p></li>
+<li><p><strong>Protocols</strong>: Rules governing how data is transmitted</p></li>
+<li><p><strong>Data</strong>: Information being exchanged between nodes</p></li>
+</ul>
+<p><strong>Example</strong>: When you browse a website, your computer (node) connects through WiFi (link) using HTTP protocol to fetch data from a web server (another node).</p>
+</section>
+<section id="types-of-networks">
+<h2>Types of Networks<a class="headerlink" href="#types-of-networks" title="Link to this heading">#</a></h2>
+<p>Networks can be classified by their <strong>scale</strong> and <strong>coverage</strong>:</p>
+<ul class="simple">
+<li><p>Local Area Network (<strong>LAN</strong>)</p>
+<ul>
+<li><p><em>Coverage</em>: Small geographic area (home, office, building)</p></li>
+<li><p><em>Examples</em>: Your home WiFi, office network</p></li>
+<li><p><em>Characteristics</em>: High speed, low cost, private ownership</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Wide Area Network (<strong>WAN</strong>)</p>
+<ul>
+<li><p><em>Coverage</em>: Large geographic area (cities, countries, continents)</p></li>
+<li><p><em>Examples</em>: The Internet, corporate networks across multiple cities</p></li>
+<li><p><em>Characteristics</em>: Lower speed than LAN, uses public infrastructure</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Other Types:</p>
+<ul>
+<li><p>Metropolitan Area Network (<strong>MAN</strong>): City-wide coverage</p></li>
+<li><p>Personal Area Network (<strong>PAN</strong>): Very small area (Bluetooth devices)</p></li>
+</ul>
+</li>
+</ul>
+<div style="text-align: center;">
+<a class="reference internal image-reference" href="../../_images/lan-wan.drawio.png"><img alt="../../_images/lan-wan.drawio.png" src="../../_images/lan-wan.drawio.png" style="width: 400px;" />
+</a>
+</div></section>
+<section id="the-internet-a-network-of-networks">
+<h2>The Internet: A Network of Networks<a class="headerlink" href="#the-internet-a-network-of-networks" title="Link to this heading">#</a></h2>
+<p>The <strong>Internet</strong> is the largest WAN, connecting billions of devices worldwide:</p>
+<div style="text-align: center;">
+<a class="reference internal image-reference" href="../../_images/lan-lan-wan.drawio.png"><img alt="../../_images/lan-lan-wan.drawio.png" src="../../_images/lan-lan-wan.drawio.png" style="width: 400px;" />
+</a>
+</div>
+<p><strong>Internet Service Provider (ISP)</strong>: Companies that provide internet access and maintain the infrastructure connecting networks together.</p>
+</section>
+<section id="why-do-we-need-network-protocols">
+<h2>Why Do We Need Network Protocols?<a class="headerlink" href="#why-do-we-need-network-protocols" title="Link to this heading">#</a></h2>
+<p>Imagine trying to have a conversation where:</p>
+<ul class="simple">
+<li><p>Everyone speaks at once</p></li>
+<li><p>Messages arrive out of order</p></li>
+<li><p>Some words get lost in transmission</p></li>
+<li><p>No one knows who is speaking</p></li>
+</ul>
+<p><strong>Protocols</strong> are standardized rules that solve these problems by defining:</p>
+<ul class="simple">
+<li><p>How to establish connections</p></li>
+<li><p>How to format and transmit data</p></li>
+<li><p>How to detect and correct errors</p></li>
+<li><p>How to manage network traffic</p></li>
+<li><p>How to terminate connections</p></li>
+</ul>
+<p>Without protocols, network communication would be <strong>chaos</strong>!</p>
+</section>
+<section id="the-osi-model-a-conceptual-framework">
+<h2>The OSI Model: A Conceptual Framework<a class="headerlink" href="#the-osi-model-a-conceptual-framework" title="Link to this heading">#</a></h2>
+<p>The <strong>OSI (Open Systems Interconnection)</strong> model is a conceptual framework with <strong>7 layers</strong>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Layer</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Function</p></th>
+<th class="head"><p>Examples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>7</strong></p></td>
+<td><p>Application</p></td>
+<td><p>User-facing applications</p></td>
+<td><p>HTTP, FTP, SMTP, DNS</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>6</strong></p></td>
+<td><p>Presentation</p></td>
+<td><p>Data format translation, encryption</p></td>
+<td><p>SSL/TLS, JPEG, MPEG</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>5</strong></p></td>
+<td><p>Session</p></td>
+<td><p>Session management</p></td>
+<td><p>NetBIOS, RPC</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>4</strong></p></td>
+<td><p>Transport</p></td>
+<td><p>End-to-end communication</p></td>
+<td><p>TCP, UDP</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>3</strong></p></td>
+<td><p>Network</p></td>
+<td><p>Routing and addressing</p></td>
+<td><p>IP, ICMP</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2</strong></p></td>
+<td><p>Data Link</p></td>
+<td><p>Physical addressing, error detection</p></td>
+<td><p>Ethernet, WiFi, ARP</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>1</strong></p></td>
+<td><p>Physical</p></td>
+<td><p>Raw bit transmission</p></td>
+<td><p>Cables, fiber, radio waves</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>NOTE</strong>: The OSI model is <strong>theoretical</strong>. In practice, we use the <strong>TCP/IP model</strong>, simpler and more practical.</p>
+<div style="text-align: center;">
+<a class="reference internal image-reference" href="../../_images/iso-osi-to-tcpip.png"><img alt="../../_images/iso-osi-to-tcpip.png" src="../../_images/iso-osi-to-tcpip.png" style="width: 600px;" />
+</a>
+</div></section>
+<section id="the-tcp-ip-model-the-internet-s-foundation">
+<h2>The TCP/IP Model: The Internet’s Foundation<a class="headerlink" href="#the-tcp-ip-model-the-internet-s-foundation" title="Link to this heading">#</a></h2>
+<p>The <strong>TCP/IP model</strong> has <strong>4 layers</strong> and is the actual protocol suite used on the internet:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Layer</p></th>
+<th class="head"><p>OSI Equivalent</p></th>
+<th class="head"><p>Function</p></th>
+<th class="head"><p>Key Protocols</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Application</strong></p></td>
+<td><p>5-7</p></td>
+<td><p>User applications and services</p></td>
+<td><p>HTTP, HTTPS, FTP, SMTP, DNS, SSH</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Transport</strong></p></td>
+<td><p>4</p></td>
+<td><p>End-to-end data delivery</p></td>
+<td><p>TCP, UDP</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Internet</strong></p></td>
+<td><p>3</p></td>
+<td><p>Routing across networks</p></td>
+<td><p>IP, ICMP</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Network Access</strong></p></td>
+<td><p>1-2</p></td>
+<td><p>Physical transmission</p></td>
+<td><p>Ethernet, WiFi, PPP, ARP</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Each layer adds its own <strong>header</strong> to the data, creating a <strong>protocol stack</strong>.</p>
+<div style="text-align: center;">
+<a class="reference internal image-reference" href="../../_images/tcpip.drawio.png"><img alt="../../_images/tcpip.drawio.png" src="../../_images/tcpip.drawio.png" style="width: 800px;" />
+</a>
+</div><section id="goals-of-each-layer">
+<h3>Goals of each layer<a class="headerlink" href="#goals-of-each-layer" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Network Access Layer</strong>: transfer data between devices on the same physical network</p>
+<ul>
+<li><p>two devices connected to the same WiFi or Ethernet can communicate directly</p></li>
+</ul>
+</li>
+<li><p><strong>Internet Layer</strong>: route packets across multiple networks</p>
+<ul>
+<li><p>transfer data from your home network to a web server across the internet</p></li>
+</ul>
+</li>
+<li><p><strong>Transport Layer</strong>: provide reliable or unreliable delivery of data between applications</p>
+<ul>
+<li><p>allows multiple applications on the same device to communicate over the network</p></li>
+</ul>
+</li>
+<li><p><strong>Application Layer</strong>: enable user-level applications to communicate over the network</p>
+<ul>
+<li><p>specific protocols for web browsing, email, file transfer, etc.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="layer-1-network-access-layer">
+<h2>Layer 1: Network Access Layer<a class="headerlink" href="#layer-1-network-access-layer" title="Link to this heading">#</a></h2>
+<p>The <strong>Network Access Layer</strong> handles physical transmission of data:</p>
+<ul class="simple">
+<li><p>Converting digital data to electrical/optical/radio signals</p></li>
+<li><p>Physical addressing (MAC addresses)</p></li>
+<li><p>Accessing the physical medium (cables, wireless)</p></li>
+<li><p>Error detection at the hardware level</p></li>
+<li><p>Nodes are identified by their <strong>MAC addresses</strong></p></li>
+</ul>
+<p><strong>MAC Address</strong>: A unique 48-bit identifier assigned to every network interface card (NIC)</p>
+<ul class="simple">
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">00:1A:2B:3C:4D:5E</span></code></p></li>
+<li><p>Used for local network communication</p></li>
+</ul>
+<section id="comparison-of-physical-network-links">
+<h3>Comparison of Physical Network Links<a class="headerlink" href="#comparison-of-physical-network-links" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Technology</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Max Speed</p></th>
+<th class="head"><p>Max Distance</p></th>
+<th class="head"><p>Pros</p></th>
+<th class="head"><p>Cons</p></th>
+<th class="head"><p>Use Cases</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Fiber Optic</strong></p></td>
+<td><p>Wired (Light)</p></td>
+<td><p>100+ Gbps</p></td>
+<td><p>100+ km</p></td>
+<td><p>Very fast, immune to EMI, secure</p></td>
+<td><p>Expensive, fragile</p></td>
+<td><p>Backbone, data centers</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Copper (Ethernet)</strong></p></td>
+<td><p>Wired (Electrical)</p></td>
+<td><p>10 Gbps</p></td>
+<td><p>100m</p></td>
+<td><p>Cost-effective, easy setup</p></td>
+<td><p>Limited distance, EMI-prone</p></td>
+<td><p>LANs, home networks</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>WiFi (802.11)</strong></p></td>
+<td><p>Wireless (Radio)</p></td>
+<td><p>1-10 Gbps</p></td>
+<td><p>50-100m</p></td>
+<td><p>No cables, mobile</p></td>
+<td><p>Interference, security risks</p></td>
+<td><p>Home, offices, hotspots</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>4G/5G</strong></p></td>
+<td><p>Wireless (Cellular)</p></td>
+<td><p>100 Mbps - 10 Gbps</p></td>
+<td><p>Several km</p></td>
+<td><p>Wide coverage, mobile</p></td>
+<td><p>Expensive, variable speed</p></td>
+<td><p>Mobile, remote areas, IoT</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>EMI</strong>: Electromagnetic Interference</p>
+<div style="text-align: center;">
+<a class="reference internal image-reference" href="../../_images/ethernet-optic.drawio.png"><img alt="../../_images/ethernet-optic.drawio.png" src="../../_images/ethernet-optic.drawio.png" style="width: 80%;" />
+</a>
+</div><div style="text-align: center;">
+<img alt="../../_images/spectrum.png" src="../../_images/spectrum.png" />
+</div><div style="text-align: center;">
+<a class="reference internal image-reference" href="../../_images/wifi.png"><img alt="../../_images/wifi.png" src="../../_images/wifi.png" style="width: 100%;" />
+</a>
+</div></section>
+</section>
+<section id="layer-2-internet-layer">
+<h2>Layer 2: Internet Layer<a class="headerlink" href="#layer-2-internet-layer" title="Link to this heading">#</a></h2>
+<p>The <strong>Internet Layer</strong> is responsible for routing data across networks:</p>
+<ul class="simple">
+<li><p>Routes packets from source to destination</p></li>
+<li><p>Works across different types of networks</p></li>
+<li><p>Provides logical addressing (IP addresses)</p></li>
+<li><p>Key Protocol: <strong>Internet Protocol (IP)</strong></p></li>
+<li><p>Nodes are identified by their <strong>IP addresses</strong></p></li>
+</ul>
+<p>We are using IPv4 but (slowly) moving to IPv6: extremely costly to change entire infrastructure!</p>
+<section id="ip-addressing">
+<h3>IP Addressing<a class="headerlink" href="#ip-addressing" title="Link to this heading">#</a></h3>
+<p><strong>IP Address</strong>: A unique numerical identifier for each device on a network</p>
+<ul class="simple">
+<li><p><strong>IPv4</strong>: 32-bit address (e.g., <code class="docutils literal notranslate"><span class="pre">192.168.1.1</span></code>)</p>
+<ul>
+<li><p>Format: Four numbers (0-255) separated by dots</p></li>
+<li><p>Problem: Only ~4.3 billion addresses (running out!)</p></li>
+</ul>
+</li>
+<li><p><strong>IPv6</strong>: 128-bit address (e.g., <code class="docutils literal notranslate"><span class="pre">2001:0db8:85a3:0000:0000:8a2e:0370:7334</span></code>)</p>
+<ul>
+<li><p>Format: Eight groups of hexadecimal numbers</p></li>
+<li><p>Solution: 340 undecillion addresses (virtually unlimited)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="ip-addressing-public-vs-private">
+<h3>IP Addressing: Public vs Private<a class="headerlink" href="#ip-addressing-public-vs-private" title="Link to this heading">#</a></h3>
+<p><strong>Public</strong> IP Addresses:</p>
+<ul class="simple">
+<li><p>Globally unique and routable on the internet</p></li>
+<li><p>Assigned by ISPs</p></li>
+<li><p>Required for direct internet communication</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">8.8.8.8</span></code> (Google’s DNS server)</p></li>
+</ul>
+<p><strong>Private</strong> IP Addresses:</p>
+<ul class="simple">
+<li><p>Used within local networks (LANs)</p></li>
+<li><p>Not routable on the internet</p></li>
+<li><p>Can be reused in different networks</p></li>
+<li><p>Ranges:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">10.0.0.0</span></code> to <code class="docutils literal notranslate"><span class="pre">10.255.255.255</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">172.16.0.0</span></code> to <code class="docutils literal notranslate"><span class="pre">172.31.255.255</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">192.168.0.0</span></code> to <code class="docutils literal notranslate"><span class="pre">192.168.255.255</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>To allow multiple devices with private IPs to share a single public IP address when accessing the internet, we use <strong>NAT (Network Address Translation)</strong> (see later).</p>
+</section>
+<section id="what-is-my-ip-in-luiss-ethernet">
+<h3>What is my IP in LUISS? [Ethernet]<a class="headerlink" href="#what-is-my-ip-in-luiss-ethernet" title="Link to this heading">#</a></h3>
+<div style="text-align: center;">
+<a class="reference internal image-reference" href="../../_images/whatismyip.png"><img alt="../../_images/whatismyip.png" src="../../_images/whatismyip.png" style="width: 600px;" />
+</a>
+</div></section>
+<section id="what-is-my-ip-in-luiss-luisswpa">
+<h3>What is my IP in LUISS? [LUISSWpa]<a class="headerlink" href="#what-is-my-ip-in-luiss-luisswpa" title="Link to this heading">#</a></h3>
+<div style="text-align: center;">
+<a class="reference internal image-reference" href="../../_images/whatismyip-4.png"><img alt="../../_images/whatismyip-4.png" src="../../_images/whatismyip-4.png" style="width: 600px;" />
+</a>
+</div></section>
+<section id="what-is-my-ip-in-luiss-eduroam">
+<h3>What is my IP in LUISS? [Eduroam]<a class="headerlink" href="#what-is-my-ip-in-luiss-eduroam" title="Link to this heading">#</a></h3>
+<div style="text-align: center;">
+<a class="reference internal image-reference" href="../../_images/whatismyip-3.png"><img alt="../../_images/whatismyip-3.png" src="../../_images/whatismyip-3.png" style="width: 600px;" />
+</a>
+</div></section>
+<section id="public-ip-ranges">
+<h3>Public IP ranges<a class="headerlink" href="#public-ip-ranges" title="Link to this heading">#</a></h3>
+<p>Universities use the GARR network:</p>
+<ul class="simple">
+<li><p>Sapienza Università di Roma: from 151.100.0.0 to 151.100.255.255</p></li>
+<li><p>LUISS Guido Carli: 193.204.154.0 - 193.204.154.255 (also other ranges)</p></li>
+</ul>
+<p>Some IP ranges used by italian ISPs:</p>
+<ul class="simple">
+<li><p>Vodafone Italia S.p.A. (AS30722): 5.88.0.0-5.95.255.255</p></li>
+<li><p>Fastweb SpA (AS12874): 93.32.0.0-93.47.255.255</p></li>
+<li><p>WIND TRE S.P.A. (AS1267): 151.48.0.0-151.63.255.255</p></li>
+<li><p>Telecom Italia S.p.A. (AS16232): 2.192.0.0-2.199.255.255</p></li>
+</ul>
+</section>
+<section id="dhcp-dynamic-host-configuration-protocol">
+<h3>DHCP: Dynamic Host Configuration Protocol<a class="headerlink" href="#dhcp-dynamic-host-configuration-protocol" title="Link to this heading">#</a></h3>
+<p><strong>DHCP</strong> automatically assigns IP addresses to devices on a network:</p>
+<ol class="arabic simple">
+<li><p>Device connects to network and broadcasts: “I need an IP address!”</p></li>
+<li><p>DHCP server responds with available IP address and configuration</p></li>
+<li><p>Device accepts and uses the assigned IP address for a lease period</p></li>
+<li><p>When lease expires, device must renew or get a new address</p></li>
+</ol>
+<p>What DHCP Provides:</p>
+<ul class="simple">
+<li><p>IP address: the unique identifier for the device</p></li>
+<li><p>Subnet mask: defines the network segment</p></li>
+<li><p>Default gateway (router): the path to external networks</p></li>
+<li><p>DNS servers: for domain name resolution (see later)</p></li>
+<li><p>Lease duration (typically 24 hours to 7 days)</p></li>
+</ul>
+</section>
+<section id="other-internet-layer-protocols">
+<h3>Other Internet Layer Protocols<a class="headerlink" href="#other-internet-layer-protocols" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>ICMP (Internet Control Message Protocol)</strong>: Error reporting and diagnostics</p>
+<ul>
+<li><p>Used by tools like <code class="docutils literal notranslate"><span class="pre">ping</span></code> and <code class="docutils literal notranslate"><span class="pre">traceroute</span></code></p></li>
+<li><p>Reports unreachable hosts, network congestion, timeouts</p></li>
+<li><p>Example: “Destination Host Unreachable” error messages</p></li>
+</ul>
+</li>
+<li><p><strong>ARP (Address Resolution Protocol)</strong>: Maps IP addresses to MAC addresses</p>
+<ul>
+<li><p>Operates between Internet Layer and Network Access Layer</p></li>
+<li><p>When a device knows an IP address but needs the MAC address</p></li>
+<li><p>Example: Router needs to know MAC address of <code class="docutils literal notranslate"><span class="pre">192.168.1.10</span></code> to deliver packet on local network</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="layer-3-transport-layer">
+<h2>Layer 3: Transport Layer<a class="headerlink" href="#layer-3-transport-layer" title="Link to this heading">#</a></h2>
+<p><strong>Transport Layer</strong> provides end-to-end communication between applications through two main protocols:</p>
+<ul class="simple">
+<li><p><strong>TCP (Transmission Control Protocol)</strong>:</p>
+<ul>
+<li><p>Connection-oriented: Establishes connection before sending data</p></li>
+<li><p>Reliable: Guarantees delivery, order, and error-free transmission</p></li>
+<li><p>Flow control: Manages data rate to prevent overwhelming receiver</p></li>
+<li><p>Use cases: Web browsing, email, file transfer (when reliability matters)</p></li>
+</ul>
+</li>
+<li><p><strong>UDP (User Datagram Protocol)</strong>:</p>
+<ul>
+<li><p>Connectionless: No connection establishment</p></li>
+<li><p>Unreliable: No delivery guarantees, packets may be lost or arrive out of order</p></li>
+<li><p>Fast: Lower overhead, minimal delay</p></li>
+<li><p>Use cases: Video streaming, online gaming, DNS queries.</p></li>
+</ul>
+</li>
+</ul>
+<p>TCP is more reliable but slower, while UDP is faster but less reliable. The choice depends on application requirements.</p>
+<section id="moving-from-devices-to-applications">
+<h3>Moving from devices to applications<a class="headerlink" href="#moving-from-devices-to-applications" title="Link to this heading">#</a></h3>
+<p><strong>The Problem</strong>: Multiple applications can run on the same device simultaneously (web browser, email client, video call, etc.), each needing its own communication channel. How does the device know which incoming packet belongs to which application?</p>
+<p><strong>The Solution</strong>: <strong>Ports</strong> and <strong>Sockets</strong></p>
+<ul class="simple">
+<li><p><strong>Port</strong>: A numerical identifier (0-65535) assigned to a specific application or service</p></li>
+<li><p><strong>Socket</strong>: The combination of an IP address and a port number, creating a unique endpoint for communication</p>
+<ul>
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">IP:Port</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">192.168.1.10:54321</span></code>)</p></li>
+<li><p>A socket uniquely identifies a specific application on a specific device</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="ports-addressing-applications">
+<h3>Ports: Addressing Applications<a class="headerlink" href="#ports-addressing-applications" title="Link to this heading">#</a></h3>
+<p><strong>Port numbers</strong> identify specific applications or services on a device:</p>
+<ul class="simple">
+<li><p>Range: 0-65535</p></li>
+<li><p>Combined with IP: creates a unique <em>socket</em> (e.g., <code class="docutils literal notranslate"><span class="pre">192.168.1.1:80</span></code>)</p></li>
+</ul>
+<p>Port Categories:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Range</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Usage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0-1023</p></td>
+<td><p>Well-known ports</p></td>
+<td><p>Standard services</p></td>
+</tr>
+<tr class="row-odd"><td><p>1024-49151</p></td>
+<td><p>Registered ports</p></td>
+<td><p>Application-specific</p></td>
+</tr>
+<tr class="row-even"><td><p>49152-65535</p></td>
+<td><p>Dynamic/Private ports</p></td>
+<td><p>Temporary client connections</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="common-well-known-ports">
+<h3>Common Well-Known Ports<a class="headerlink" href="#common-well-known-ports" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>80</strong>: HTTP (web browsing)</p></li>
+<li><p><strong>443</strong>: HTTPS (secure web browsing)</p></li>
+<li><p><strong>22</strong>: SSH (secure remote access)</p></li>
+<li><p><strong>21</strong>: FTP (file transfer)</p></li>
+<li><p><strong>25</strong>: SMTP (email sending)</p></li>
+<li><p><strong>53</strong>: DNS (domain name resolution)</p></li>
+<li><p><strong>3389</strong>: RDP (Remote Desktop Protocol)</p></li>
+</ul>
+<div align="center">
+<a class="reference internal image-reference" href="../../_images/ports.drawio.png"><img alt="../../_images/ports.drawio.png" src="../../_images/ports.drawio.png" style="width: 600px;" />
+</a>
+</div></section>
+<section id="nat-network-address-translation-and-ports">
+<h3>NAT (Network Address Translation) and Ports<a class="headerlink" href="#nat-network-address-translation-and-ports" title="Link to this heading">#</a></h3>
+<p>NAT allows multiple devices with private IPs to share a single public IP address when accessing the internet. It exploits ports to differentiate between multiple internal devices.</p>
+<p>When a device sends a request to the internet:</p>
+<ol class="arabic simple">
+<li><p>The NAT device replaces the private IP address with its own public IP address.</p></li>
+<li><p>It assigns a unique port number to the request.</p></li>
+<li><p>The NAT device keeps track of the mapping between the internal IP address/port and the external IP address/port.</p></li>
+</ol>
+<p>When a response comes back:</p>
+<ol class="arabic simple">
+<li><p>The NAT device uses the port number to identify the correct internal device.</p></li>
+<li><p>It forwards the response to the appropriate internal IP address.</p></li>
+</ol>
+<p>This way, multiple devices can share a single public IP address while maintaining separate connections.</p>
+<div style="text-align: center;">
+<a class="reference internal image-reference" href="../../_images/NAT.png"><img alt="../../_images/NAT.png" src="../../_images/NAT.png" style="width: 800px;" />
+</a>
+</div></section>
+</section>
+<section id="layer-4-application-layer">
+<h2>Layer 4: Application Layer<a class="headerlink" href="#layer-4-application-layer" title="Link to this heading">#</a></h2>
+<p>The <strong>Application Layer</strong> contains protocols that applications use directly:</p>
+<ul class="simple">
+<li><p><strong>HTTP/HTTPS</strong> (Web Browsing)</p>
+<ul>
+<li><p>HTTP: Hypertext Transfer Protocol (TCP port 80)</p></li>
+<li><p>HTTPS: HTTP Secure with TLS/SSL encryption (TCP port 443)</p></li>
+<li><p>Used for web pages, APIs, and web services</p></li>
+</ul>
+</li>
+<li><p><strong>DNS</strong> (Domain Name System)</p>
+<ul>
+<li><p>Translates human-readable domain names to IP addresses</p></li>
+<li><p>Reason why we do not need to remember IPs of websites!</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">www.google.com</span></code> → <code class="docutils literal notranslate"><span class="pre">142.250.185.46</span></code></p></li>
+<li><p>UDP Port 53</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p><strong>SMTP/POP3/IMAP</strong> (Email when using an email client)</p>
+<ul>
+<li><p>SMTP: Sending emails (TCP port 25, 587)</p></li>
+<li><p>POP3: Retrieving emails, downloads and deletes (TCP port 110)</p></li>
+<li><p>IMAP: Retrieving emails, keeps on server (TCP port 143)</p></li>
+</ul>
+</li>
+<li><p><strong>FTP/SFTP</strong> (File Transfer)</p>
+<ul>
+<li><p>FTP: File Transfer Protocol (TCP ports 20, 21)</p></li>
+<li><p>SFTP: Secure FTP over SSH (TCP port 22)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="how-data-flows-through-the-stack">
+<h2>How Data Flows Through the Stack<a class="headerlink" href="#how-data-flows-through-the-stack" title="Link to this heading">#</a></h2>
+<p>When you send data, each layer adds its own <strong>header</strong> (encapsulation):</p>
+<div style="display: flex; justify-content: center;">
+    <img src="img/headers.drawio.png" width="300px">
+</div>
+<p>On the receiving side, each layer <strong>removes</strong> its header (decapsulation) and passes data up.</p>
+</section>
+<section id="example-loading-a-web-page">
+<h2>Example: Loading a Web Page<a class="headerlink" href="#example-loading-a-web-page" title="Link to this heading">#</a></h2>
+<p>Let’s trace what happens when you visit <code class="docutils literal notranslate"><span class="pre">https://www.example.com</span></code>:</p>
+<ol class="arabic simple">
+<li><p><strong>DNS Resolution</strong> (finding the IP address):</p>
+<ul class="simple">
+<li><p><strong>Your computer</strong>:</p>
+<ol class="arabic simple">
+<li><p>The user types <code class="docutils literal notranslate"><span class="pre">www.example.com</span></code> in the browser</p></li>
+<li><p>Browser checks if IP is cached locally; if not, sends DNS query</p></li>
+<li><p><strong>Application Layer</strong>: DNS query “What is the IP address of <a class="reference external" href="http://www.example.com">www.example.com</a>?”</p></li>
+<li><p><strong>Transport Layer</strong>: Wraps query in UDP packet (UDP is fast, suitable for DNS)</p>
+<ul>
+<li><p>Source Port: random high-numbered port (e.g., 54321)</p></li>
+<li><p>Destination Port: 53 (DNS)</p></li>
+</ul>
+</li>
+<li><p><strong>Internet Layer</strong>: Adds IP header</p>
+<ul>
+<li><p>Source IP: your computer’s private IP (e.g., 192.168.1.10)</p></li>
+<li><p>Destination IP: DNS server’s IP (e.g., 8.8.8.8 - Google’s DNS)</p></li>
+</ul>
+</li>
+<li><p><strong>Network Access Layer</strong>: Wraps in Ethernet/WiFi frame and sends to your router (default gateway)</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p><strong>Your router</strong>:</p>
+<ol class="arabic simple">
+<li><p>Receives the frame, extracts the UDP/IP packet</p></li>
+<li><p><strong>NAT</strong>: Replaces your private IP with router’s public IP and tracks the mapping</p>
+<ul>
+<li><p>Source IP: router’s public IP (e.g., 203.0.113.45)</p></li>
+<li><p>Source Port: new port number for tracking (e.g., 12345)</p></li>
+</ul>
+</li>
+<li><p>Forwards the packet to the internet</p></li>
+</ol>
+</li>
+</ul>
+<ul class="simple">
+<li><p><strong>The Internet</strong>:</p>
+<ol class="arabic simple">
+<li><p>Multiple routers forward the packet hop-by-hop based on destination IP (8.8.8.8)</p></li>
+<li><p>Each router examines the IP header and forwards to the next router</p></li>
+</ol>
+</li>
+<li><p><strong>DNS Server</strong> (e.g., 8.8.8.8):</p>
+<ol class="arabic simple">
+<li><p>Receives the UDP/IP packet on port 53</p></li>
+<li><p>Extracts the DNS query from the UDP payload</p></li>
+<li><p>Looks up <code class="docutils literal notranslate"><span class="pre">www.example.com</span></code> in its database</p></li>
+<li><p>Finds the IP address: <code class="docutils literal notranslate"><span class="pre">93.184.216.34</span></code></p></li>
+<li><p>Builds DNS response packet with the IP address</p></li>
+<li><p>Sends UDP/IP packet back:</p>
+<ul>
+<li><p>Source IP: 8.8.8.8, Source Port: 53</p></li>
+<li><p>Destination IP: 203.0.113.45 (your router’s public IP)</p></li>
+<li><p>Destination Port: 12345 (the port NAT assigned)</p></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ul class="simple">
+<li><p><strong>The Internet</strong>:</p>
+<ol class="arabic simple">
+<li><p>Routers forward the response packet back to your router</p></li>
+</ol>
+</li>
+<li><p><strong>Your router</strong>:</p>
+<ol class="arabic simple">
+<li><p>Receives the packet on port 12345</p></li>
+<li><p><strong>NAT</strong>: Looks up the port mapping and translates back</p>
+<ul>
+<li><p>Destination IP: 192.168.1.10 (your computer’s private IP)</p></li>
+<li><p>Destination Port: 54321 (original port)</p></li>
+</ul>
+</li>
+<li><p>Forwards packet to your computer on the local network</p></li>
+</ol>
+</li>
+<li><p><strong>Your computer</strong>:</p>
+<ol class="arabic simple">
+<li><p>Receives the UDP/IP packet on port 54321</p></li>
+<li><p>Extracts the DNS response: <code class="docutils literal notranslate"><span class="pre">www.example.com</span></code> = <code class="docutils literal notranslate"><span class="pre">93.184.216.34</span></code></p></li>
+<li><p>Browser now knows the server’s IP address!</p></li>
+</ol>
+</li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>HTTPS Connection and Request</strong>:</p>
+<ul class="simple">
+<li><p><strong>Your computer</strong>:</p>
+<ol class="arabic simple">
+<li><p>Browser initiates connection to <code class="docutils literal notranslate"><span class="pre">93.184.216.34</span></code> on port 443 (HTTPS)</p></li>
+<li><p><strong>Transport Layer - TCP 3-way handshake</strong> (establishing reliable connection):</p>
+<ul>
+<li><p>Your computer → Server: SYN (synchronize)</p></li>
+<li><p>Server → Your computer: SYN-ACK (synchronize-acknowledge)</p></li>
+<li><p>Your computer → Server: ACK (acknowledge)</p></li>
+</ul>
+</li>
+<li><p><strong>Application Layer - TLS/SSL handshake</strong> (establishing secure connection):</p>
+<ul>
+<li><p>Negotiate encryption algorithms</p></li>
+<li><p>Exchange certificates</p></li>
+<li><p>Generate session keys</p></li>
+</ul>
+</li>
+<li><p><strong>Application Layer</strong>: Browser builds HTTPS GET request</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/</span> <span class="pre">HTTP/1.1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Host:</span> <span class="pre">www.example.com</span></code></p></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p><strong>Your computer</strong>:</p>
+<ol class="arabic simple" start="5">
+<li><p><strong>Transport Layer</strong>: Wraps in TCP segment</p>
+<ul>
+<li><p>Source Port: random high-numbered port (e.g., 54322)</p></li>
+<li><p>Destination Port: 443 (HTTPS)</p></li>
+</ul>
+</li>
+<li><p><strong>Internet Layer</strong>: Adds IP header</p>
+<ul>
+<li><p>Source IP: 192.168.1.10 (your private IP)</p></li>
+<li><p>Destination IP: 93.184.216.34</p></li>
+</ul>
+</li>
+<li><p><strong>Network Access Layer</strong>: Sends to router</p></li>
+</ol>
+</li>
+<li><p><strong>Your router</strong>:</p>
+<ol class="arabic simple">
+<li><p>Receives the frame, extracts TCP/IP packet</p></li>
+<li><p><strong>NAT</strong>: Translates addresses</p>
+<ul>
+<li><p>Source IP: 203.0.113.45 (router’s public IP)</p></li>
+<li><p>Source Port: 23456 (new tracking port)</p></li>
+</ul>
+</li>
+<li><p>Forwards to the internet</p></li>
+</ol>
+</li>
+</ul>
+<ul class="simple">
+<li><p><strong>The Internet</strong>:</p>
+<ol class="arabic simple">
+<li><p>Routers forward the packet hop-by-hop to destination IP (93.184.216.34)</p></li>
+</ol>
+</li>
+<li><p><strong>Web Server</strong> (93.184.216.34):</p>
+<ol class="arabic simple">
+<li><p>Receives TCP/IP packet on port 443</p></li>
+<li><p>Decrypts the HTTPS request using TLS session keys</p></li>
+<li><p>Processes the HTTP GET request</p></li>
+<li><p>Retrieves the web page content (HTML, CSS, JavaScript, images)</p></li>
+<li><p>Builds HTTPS response with the content</p></li>
+<li><p>Encrypts the response</p></li>
+<li><p>Sends TCP/IP packet back:</p>
+<ul>
+<li><p>Source IP: 93.184.216.34, Source Port: 443</p></li>
+<li><p>Destination IP: 203.0.113.45 (your router’s public IP)</p></li>
+<li><p>Destination Port: 23456 (NAT tracking port)</p></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ul class="simple">
+<li><p><strong>The Internet</strong>:</p>
+<ol class="arabic simple">
+<li><p>Routers forward the response back to your router</p></li>
+</ol>
+</li>
+<li><p><strong>Your router</strong>:</p>
+<ol class="arabic simple">
+<li><p>Receives the packet on port 23456</p></li>
+<li><p><strong>NAT</strong>: Translates back using port mapping</p>
+<ul>
+<li><p>Destination IP: 192.168.1.10 (your computer)</p></li>
+<li><p>Destination Port: 54322 (original port)</p></li>
+</ul>
+</li>
+<li><p>Forwards to your computer</p></li>
+</ol>
+</li>
+<li><p><strong>Your computer</strong>:</p>
+<ol class="arabic simple">
+<li><p>Receives TCP/IP packet on port 54322</p></li>
+<li><p><strong>Transport Layer</strong>: TCP ensures data arrived correctly and in order</p></li>
+<li><p><strong>Application Layer</strong>: Browser decrypts HTTPS response</p></li>
+<li><p>Browser parses HTML, loads CSS/JavaScript, renders images</p></li>
+<li><p><strong>You see the web page!</strong></p></li>
+</ol>
+</li>
+</ul>
+<p><strong>Note</strong>: This is simplified. In reality, modern web pages require dozens or hundreds of additional requests for resources (images, scripts, stylesheets, fonts, etc.), each following a similar process.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src/C05"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../C04/C04-OS-Essentials.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Operating System Essentials</b></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../P00/P00-Python-Getting-Started.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Getting Started</b></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Computer Networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-computer-network">What is a Computer Network?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-networks">Types of Networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-internet-a-network-of-networks">The Internet: A Network of Networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-network-protocols">Why Do We Need Network Protocols?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-osi-model-a-conceptual-framework">The OSI Model: A Conceptual Framework</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-tcp-ip-model-the-internet-s-foundation">The TCP/IP Model: The Internet’s Foundation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-of-each-layer">Goals of each layer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-1-network-access-layer">Layer 1: Network Access Layer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-physical-network-links">Comparison of Physical Network Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-2-internet-layer">Layer 2: Internet Layer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ip-addressing">IP Addressing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ip-addressing-public-vs-private">IP Addressing: Public vs Private</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-my-ip-in-luiss-ethernet">What is my IP in LUISS? [Ethernet]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-my-ip-in-luiss-luisswpa">What is my IP in LUISS? [LUISSWpa]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-my-ip-in-luiss-eduroam">What is my IP in LUISS? [Eduroam]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#public-ip-ranges">Public IP ranges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dhcp-dynamic-host-configuration-protocol">DHCP: Dynamic Host Configuration Protocol</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-internet-layer-protocols">Other Internet Layer Protocols</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-3-transport-layer">Layer 3: Transport Layer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-from-devices-to-applications">Moving from devices to applications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ports-addressing-applications">Ports: Addressing Applications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-well-known-ports">Common Well-Known Ports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nat-network-address-translation-and-ports">NAT (Network Address Translation) and Ports</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-4-application-layer">Layer 4: Application Layer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-data-flows-through-the-stack">How Data Flows Through the Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-loading-a-web-page">Example: Loading a Web Page</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Emilio Coppa and Alessio Martino
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
