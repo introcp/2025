@@ -25,6 +25,7 @@
   - [P09: Python Classes](P09/P09-Python-Classes.ipynb)
   - [P10: Python Recursion](P10/P10-Python-Recursion.ipynb)
   - [P11: Python Files](P11/P11-Python-Files.ipynb)
+  - [P12: Python Sockets and HTTP](P12/P12-Python-Sockets-HTTP.ipynb)
 
 ### Exercises
   - [E00: Exercises Binary Numbers and Boolean Logic](E00/E00-Exercises-Binary-Boolean.ipynb)
