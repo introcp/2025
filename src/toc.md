@@ -9,6 +9,7 @@
   - [C02: Hardware](C02/C02-Hardware.ipynb)
   - [C03: Software](C03/C03-Software.ipynb)
   - [C04: OS Essentials](C04/C04-OS-Essentials.ipynb)
+  - [C05: Computer Network](C05/C05-Computer-Network.ipynb)
 
 ### Python
   - [P00: Python Getting Started](P00/P00-Python-Getting-Started.ipynb)
