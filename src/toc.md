@@ -43,3 +43,4 @@
 
 ### Homework
   - [H00: Exercises Binary Numbers and Boolean Logic](H00/H00-Exercises-Binary-Boolean.ipynb)
+  - [H01: Python Recap](H01/H01-Python-Recap.ipynb)
