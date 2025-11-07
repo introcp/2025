@@ -76,6 +76,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -6836,6 +6841,11 @@ div.jp-Cell-Placeholder-content-3 {
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -7268,6 +7278,11 @@ all of MD as it is not optimized for dense, information rich UIs.
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 a.anchor-link {
@@ -7296,6 +7311,11 @@ a.anchor-link {
 .reveal .controls button {
   padding: 2px 4px !important;
   font-size: 8px !important;
+}
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
 }
 </style>
 <style type="text/css">
@@ -7427,6 +7447,11 @@ main {
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <!-- Load mathjax -->
 <!-- Load mathjax -->
@@ -7499,12 +7524,42 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Python is an <strong>object-oriented programming language</strong>: the programmer can define its own data types, that are known as <strong>classes</strong>.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>If C is a class, a value of a class C is called an <em>object</em>. In other words, an object is an <em>instance</em> of the class C and C can be seen as a blueprint for that object.</p>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Each object contains:</p>
 <ul>
 <li><strong>instance variables</strong>: i.e., variables that are used to represent a domain value;</li>
 <li><strong>methods</strong>: i.e., functions through which domain elements can be manipulated.</li>
 </ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>For example, in Python we have seen:</p>
 <ul>
 <li><strong>lists:</strong> a bunch of items with methods like <code>sort()</code>, <code>reverse()</code>, <code>extend()</code></li>
@@ -7514,7 +7569,7 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7522,7 +7577,7 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div align="center">
-<img alt="No description has been provided for this image" src="img/Screenshot 2021-11-08 at 4.10.55 PM.png">
+<img alt="No description has been provided for this image" src="img/Screenshot 2021-11-08 at 4.10.55 PM.png" width="75%">
 </img></div>
 <p>Where possible methods may include:</p>
 <ul>
@@ -7550,13 +7605,15 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">""" Docstring of the class """</span>
+    
     <span class="c1"># place here all variables</span>
     <span class="n">age</span> <span class="o">=</span> <span class="mi">10</span>
+
     <span class="c1"># place here all methods</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">)</span>
@@ -7572,7 +7629,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>As soon as we define a class, a new "class object" is created with the same name. This special "class object" allows us to see the attributes of the class (variables and/or methods) and, of course, to create new objects for that class.</p>
+<p>As soon as we define a class, a new <em>class object</em> is created with the same name. This special <em>class object</em> allows us to see the attributes of the class (variables and/or methods) and, of course, to create new objects for that class.</p>
 </div>
 </div>
 </div>
@@ -7615,14 +7672,14 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>And we can also access to its attributes (methods and/or variable) via the well-known dot notation.</p>
+<p>And we can also access to its attributes (methods and/or variable) via the well-known dot notation:</p>
 </div>
 </div>
 </div>
@@ -7655,7 +7712,7 @@ Hello
 </div>
 </div>
 </div>
-</div>
+</div></div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7668,7 +7725,7 @@ Hello
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7734,16 +7791,16 @@ Hello
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Complete-Examples">Complete Examples<a class="anchor-link" href="#Complete-Examples">¶</a></h2>
+<h2 id="Complete-Example">Complete Example<a class="anchor-link" href="#Complete-Example">¶</a></h2>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
@@ -7757,8 +7814,20 @@ Hello
         <span class="nb">print</span><span class="p">(</span><span class="s2">"My name is"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"I am"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">,</span> <span class="s2">"years old"</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"I live in"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="p">)</span>
-
-<span class="n">person1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">"Alessio"</span><span class="p">,</span> <span class="s2">"Martino"</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">"Viale Romania"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">person1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">"Alessio"</span><span class="p">,</span> <span class="s2">"Martino"</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">"Viale Romania"</span><span class="p">)</span>
 <span class="n">person2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">"Giorgio"</span><span class="p">,</span> <span class="s2">"Piccardo"</span><span class="p">)</span>
 
 <span class="n">person1</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>
@@ -7852,8 +7921,8 @@ Miles says Bow Wow
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Modifying-Objects">Modifying Objects<a class="anchor-link" href="#Modifying-Objects">¶</a></h2><p>So far we have seen:</p>
 <ul>
-<li>"static" classes, e.g. <code>Person</code>: we initialise it with some values and that's it;</li>
-<li>"less static" classes, e.g. <code>Dog</code>: we initialise it with some values, but we can also change the behaviour of methods at run-time.</li>
+<li><em>static</em> classes, e.g. <code>Person</code>: we initialise it with some values and that's it;</li>
+<li><em>less static</em> classes, e.g. <code>Dog</code>: we initialise it with some values, but we can also change the behaviour of methods at run-time.</li>
 </ul>
 <p>Now, the big question is: <em>can we change the inner variables of an object?</em></p>
 <p>Short answer? <strong>Yes!</strong></p>
@@ -7868,6 +7937,16 @@ Miles says Bow Wow
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Example">Example<a class="anchor-link" href="#Example">¶</a></h3><p>Let's define a data type to count events. Think for example of a physical object, with a button: every time you press the button, the counter increases by 1. How can we model it?</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>The <em>domain</em> of our data type is the set of natural numbers</li>
 <li>The <em>constant</em> is 0 (i.e., a counter that has not counted anything yet)</li>
@@ -7878,6 +7957,16 @@ Miles says Bow Wow
 </ul>
 </li>
 </ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>In order to represent the domain value (i.e., the counter internal state) we define a variable called <code>_count</code>.</p>
 </div>
 </div>
@@ -7895,7 +7984,7 @@ Miles says Bow Wow
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">

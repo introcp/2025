@@ -30,5 +30,6 @@ parts:
   #     - file: src/P09/P09-Python-Classes.ipynb
   #     - file: src/P10/P10-Python-Recursion.ipynb
       - file: src/P11/P11-Python-Files.ipynb
+      - file: src/P12/P12-Python-Sockets-HTTP.ipynb
 
 
