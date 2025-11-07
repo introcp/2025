@@ -441,7 +441,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-apis-interacting-with-web-services">REST APIs: Interacting with Web Services</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fetching-data-from-a-public-api">Fetching Data from a Public API</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-requests-with-parameters">GET Requests with Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-5-json-deserialization">Example 5: JSON Deserialization</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-requests-sending-data">POST Requests: Sending Data</a><ul class="nav section-nav flex-column">
@@ -579,7 +578,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 200 OK
-Date: Fri, 07 Nov 2025 10:34:51 GMT
+Date: Fri, 07 Nov 2025 11:35:22 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Last-Modified: Sat, 13 May 2017 11:22:22 GMT
 ETag: &quot;a7-54f6609245537&quot;
@@ -951,57 +950,6 @@ Punchline: A maybe.
 <li><p><strong>Authentication</strong> - Include API keys or tokens (e.g., <code class="docutils literal notranslate"><span class="pre">api_key=YOUR_KEY</span></code>)</p></li>
 </ol>
 <p>Without parameters, you’d get a generic or default response. With parameters, you can ask for exactly what you need!</p>
-</section>
-<section id="example-5-json-deserialization">
-<h3>Example 5: JSON Deserialization<a class="headerlink" href="#example-5-json-deserialization" title="Link to this heading">#</a></h3>
-<p>Let’s fetch and process public holidays data:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">get_public_holidays</span><span class="p">(</span><span class="n">country_code</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get public holidays for a country and year&quot;&quot;&quot;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://date.nager.at/api/v3/PublicHolidays/</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">country_code</span><span class="si">}</span><span class="s1">&#39;</span>
-    
-    <span class="k">try</span><span class="p">:</span>
-        <span class="c1"># Make GET request</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-        
-        <span class="c1"># Check if request was successful</span>
-        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">[]</span>
-        
-        <span class="c1"># Deserialize JSON response</span>
-        <span class="n">holidays_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-        
-        <span class="c1"># Extract name and date for each holiday</span>
-        <span class="n">holidays</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">holiday</span> <span class="ow">in</span> <span class="n">holidays_data</span><span class="p">:</span>
-            <span class="n">holidays</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
-                <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">holiday</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
-                <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="n">holiday</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
-            <span class="p">})</span>
-        
-        <span class="c1"># Sort by date</span>
-        <span class="n">holidays</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
-        
-        <span class="k">return</span> <span class="n">holidays</span>
-        
-    <span class="k">except</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">[]</span>
-
-<span class="c1"># Test the function</span>
-<span class="n">holidays</span> <span class="o">=</span> <span class="n">get_public_holidays</span><span class="p">(</span><span class="s1">&#39;IT&#39;</span><span class="p">,</span> <span class="mi">2024</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of holidays in Italy 2024: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">holidays</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">holidays</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;First holiday: </span><span class="si">{</span><span class="n">holidays</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> on </span><span class="si">{</span><span class="n">holidays</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">All holidays:&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">holidays</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>  <span class="c1"># Show first 5</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - </span><span class="si">{</span><span class="n">h</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">h</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 <section id="post-requests-sending-data">
@@ -1623,7 +1571,6 @@ These books cater to a range of skill levels and areas of interest within Python
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-apis-interacting-with-web-services">REST APIs: Interacting with Web Services</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fetching-data-from-a-public-api">Fetching Data from a Public API</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-requests-with-parameters">GET Requests with Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-5-json-deserialization">Example 5: JSON Deserialization</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-requests-sending-data">POST Requests: Sending Data</a><ul class="nav section-nav flex-column">
