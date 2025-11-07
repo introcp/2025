@@ -456,7 +456,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sdks-even-higher-level-abstractions">SDKs: Even Higher-Level Abstractions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-openai-sdk">Example: OpenAI SDK</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-openai-sdk">Example: OpenAI SDK</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#get-an-api-token">Get an API token</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-each-component">Understanding Each Component</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-client">1. Creating the Client</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-request">2. Making a Request</a></li>
@@ -565,9 +568,8 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Receive data</span>
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">mysock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span> 
+    <span class="n">data</span> <span class="o">=</span> <span class="n">mysock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span> <span class="c1"># Receive data</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">break</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
@@ -578,7 +580,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 200 OK
-Date: Fri, 07 Nov 2025 11:35:22 GMT
+Date: Fri, 07 Nov 2025 13:33:27 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Last-Modified: Sat, 13 May 2017 11:22:22 GMT
 ETag: &quot;a7-54f6609245537&quot;
@@ -1154,7 +1156,7 @@ Punchline: A maybe.
 </div>
 </div>
 <div class="alert alert-block alert-success">
-<b>BEST PRACTICES</b> for error handling:
+<b>BEST PRACTICES</b> for error handling:<br>
 <ul>
     <li>Always check status codes before processing data</li>
     <li>Provide user-friendly error messages</li>
@@ -1250,12 +1252,17 @@ Punchline: A maybe.
 </div>
 </div>
 </div>
+<section id="get-an-api-token">
+<h4>Get an API token<a class="headerlink" href="#get-an-api-token" title="Link to this heading">#</a></h4>
+<p>To use most of the OpenAI API, you need to get an API token from OpenAI.</p>
+<p>In this case, we will use a free API token offered by <a class="reference external" href="https://github.com/selfsff/GPT4ALL-Free-GPT-API">gpt4all.xyz</a>: you can get one from their <a class="reference external" href="https://t.me/gpt4all_robot">Telegram bot</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
 
 <span class="c1"># Initialize the client with your API key</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;API_KEY_HERE&quot;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://api.gpt4-all.xyz/v1&quot;</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;g4a-H4FGnkOh5tj5DiL1TgOL6HdezWrNlQlBICt&quot;</span><span class="p">,</span> 
+                                <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://api.gpt4-all.xyz/v1&quot;</span><span class="p">)</span>
 
 <span class="c1"># Make a chat completion request</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
@@ -1263,8 +1270,13 @@ Punchline: A maybe.
     <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;List the best 5 books for a python developer&quot;</span><span class="p">}],</span>
     <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <span class="p">)</span>
-
-<span class="c1"># Print the response</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the response</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1293,6 +1305,7 @@ These books cater to a range of skill levels and areas of interest within Python
 </div>
 </div>
 </section>
+</section>
 <section id="understanding-each-component">
 <h3>Understanding Each Component<a class="headerlink" href="#understanding-each-component" title="Link to this heading">#</a></h3>
 <p>Let’s break down what each part does and <strong>why</strong> it’s needed:</p>
@@ -1301,6 +1314,7 @@ These books cater to a range of skill levels and areas of interest within Python
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;API_KEY_HERE&quot;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://api.gpt4-all.xyz/v1&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<br>
 <ul class="simple">
 <li><p>Creates an object that knows how to talk to the OpenAI API</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">api_key</span></code>: Your authentication key (like a password)</p></li>
@@ -1313,6 +1327,7 @@ These books cater to a range of skill levels and areas of interest within Python
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
+<br>
 <p>This structure tells the API what you want:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">chat</span></code>: Use the chat feature</p></li>
@@ -1325,6 +1340,7 @@ These books cater to a range of skill levels and areas of interest within Python
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o-mini&quot;</span>
 </pre></div>
 </div>
+<br>
 <ul class="simple">
 <li><p>Different models have different capabilities and speeds</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">gpt-4o-mini</span></code> is fast and good for most tasks</p></li>
@@ -1335,6 +1351,7 @@ These books cater to a range of skill levels and areas of interest within Python
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Your question here&quot;</span><span class="p">}]</span>
 </pre></div>
 </div>
+<br>
 <ul class="simple">
 <li><p><strong>List of dictionaries</strong>: The API needs the conversation history</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">role</span></code>: Who’s speaking (<code class="docutils literal notranslate"><span class="pre">&quot;user&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;assistant&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;system&quot;</span></code>)</p></li>
@@ -1355,6 +1372,7 @@ These books cater to a range of skill levels and areas of interest within Python
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stream</span><span class="o">=</span><span class="kc">False</span>
 </pre></div>
 </div>
+<br>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">False</span></code>: Wait for the complete answer (simpler)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>: Get the response word-by-word as it’s typed</p></li>
@@ -1365,12 +1383,10 @@ These books cater to a range of skill levels and areas of interest within Python
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
 </pre></div>
 </div>
-<p>The response contains lots of information. We navigate to the part we want:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">choices[0]</span></code>: First answer (usually there’s only one)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">message.content</span></code>: The actual text response</p></li>
-</ul>
-</section>
+<br>
+The response contains lots of information. We navigate to the part we want:
+- `choices[0]`: First answer (usually there's only one)
+- `message.content`: The actual text response</section>
 </section>
 <section id="comparing-with-raw-requests">
 <h3>Comparing with Raw Requests<a class="headerlink" href="#comparing-with-raw-requests" title="Link to this heading">#</a></h3>
@@ -1395,8 +1411,13 @@ These books cater to a range of skill levels and areas of interest within Python
     <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;List the best 5 books for a python developer&quot;</span><span class="p">}],</span>
     <span class="s2">&quot;stream&quot;</span><span class="p">:</span> <span class="kc">False</span>
 <span class="p">}</span>
-
-<span class="c1"># Make the POST request</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make the POST request</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
 <span class="c1"># Check if the request was successful</span>
@@ -1586,7 +1607,10 @@ These books cater to a range of skill levels and areas of interest within Python
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sdks-even-higher-level-abstractions">SDKs: Even Higher-Level Abstractions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-openai-sdk">Example: OpenAI SDK</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-openai-sdk">Example: OpenAI SDK</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#get-an-api-token">Get an API token</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-each-component">Understanding Each Component</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-client">1. Creating the Client</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-request">2. Making a Request</a></li>
