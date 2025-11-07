@@ -7486,7 +7486,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Python:-Sockets-and-HTTP-Requests"><b style="font-family: 'LUISS', 'Lato'">Python: Sockets and HTTP Requests</b><a class="anchor-link" href="#Python:-Sockets-and-HTTP-Requests">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h1 id="Python:-HTTP-and-API-Calls"><b style="font-family: 'LUISS', 'Lato'">Python: HTTP and API Calls</b><a class="anchor-link" href="#Python:-HTTP-and-API-Calls">¶</a></h1><h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
 <h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
 <br/>
 <img alt="No description has been provided for this image" src="https://introcp.github.io/dist/img/logo2.png" width="200px"/>
@@ -7494,7 +7494,7 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7503,9 +7503,9 @@ main {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Network-Communication">Network Communication<a class="anchor-link" href="#Network-Communication">¶</a></h2><p>So far...</p>
 <ul>
-<li>we know how to read and write files on our local disk;</li>
-<li>we know how to process data stored in our computer;</li>
-<li>we know how to make our programs persistent.</li>
+<li>we know how to read and write files on our local disk</li>
+<li>we know how to process data stored in our computer</li>
+<li>we know how to make our programs persistent</li>
 </ul>
 <p>However, in the modern world, most applications need to communicate over the network:</p>
 <ul>
@@ -7517,7 +7517,7 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7529,7 +7529,9 @@ main {
 <li>What are sockets and how do they enable network communication?</li>
 <li>How can we make HTTP requests to fetch data from the web?</li>
 <li>What is JSON and why is it so popular for data exchange?</li>
-<li>How can we use REST APIs to interact with web services?</li>
+<li>How can we handle errors when working with APIs?</li>
+<li>How do we authenticate with APIs?</li>
+<li>How can we structure our code using model classes?</li>
 </ol>
 <p>Focus on:</p>
 <ol>
@@ -7541,14 +7543,14 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Sockets">Sockets<a class="anchor-link" href="#Sockets">¶</a></h2><p>A <strong>socket</strong> is an endpoint for sending or receiving data across a network.</p>
+<h2 id="Sockets:-The-Foundation">Sockets: The Foundation<a class="anchor-link" href="#Sockets:-The-Foundation">¶</a></h2><p>A <strong>socket</strong> is an endpoint for sending or receiving data across a network.</p>
 <p>Think of it as a "phone connection" between two computers:</p>
 <ul>
 <li>One computer (server) listens for incoming connections</li>
@@ -7559,7 +7561,7 @@ main {
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7572,7 +7574,7 @@ main {
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7588,7 +7590,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">socket</span>
@@ -7611,15 +7613,15 @@ main {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>47</pre>
 </div>
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7669,7 +7671,7 @@ Who is already sick and pale with grief
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7689,20 +7691,20 @@ Who is already sick and pale with grief
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="HTTP-Requests">HTTP Requests<a class="anchor-link" href="#HTTP-Requests">¶</a></h2><p>Making HTTP requests with raw sockets is complex. We have to manually format the HTTP request, handle headers, decode responses, etc.</p>
+<h2 id="The-Requests-Library:-Simplifying-HTTP">The Requests Library: Simplifying HTTP<a class="anchor-link" href="#The-Requests-Library:-Simplifying-HTTP">¶</a></h2><p>Making HTTP requests with raw sockets is complex. We have to manually format the HTTP request, handle headers, decode responses, etc.</p>
 <p>Luckily, Python has libraries that make this much easier!</p>
 <p>The most popular is the <code>requests</code> library, which provides a simple, intuitive interface for making HTTP requests.</p>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7713,7 +7715,7 @@ Who is already sick and pale with grief
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7727,7 +7729,25 @@ Who is already sick and pale with grief
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Requirement already satisfied: requests in c:\users\ector\miniconda3\lib\site-packages (2.32.5)
+Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in c:\users\ector\miniconda3\lib\site-packages (from requests) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in c:\users\ector\miniconda3\lib\site-packages (from requests) (3.7)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in c:\users\ector\miniconda3\lib\site-packages (from requests) (2.5.0)
+Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\ector\miniconda3\lib\site-packages (from requests) (2025.10.5)
+Note: you may need to restart the kernel to use updated packages.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7752,23 +7772,23 @@ Who is already sick and pale with grief
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Making-GET-Requests">Making GET Requests<a class="anchor-link" href="#Making-GET-Requests">¶</a></h3><p>The most common HTTP operation is GET - fetching data from a server.</p>
+<h3 id="Making-HTTP-GET-Request">Making HTTP GET Request<a class="anchor-link" href="#Making-HTTP-GET-Request">¶</a></h3><p>The most common HTTP operation is GET - fetching data from a server. The same functionality as our socket example, but much simpler:</p>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -7801,7 +7821,7 @@ I
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7820,7 +7840,7 @@ I
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7831,7 +7851,7 @@ I
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7848,7 +7868,7 @@ I
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7893,7 +7913,7 @@ I
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7927,7 +7947,7 @@ I
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7938,12 +7958,12 @@ I
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
@@ -7981,26 +8001,7 @@ I
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="alert alert-block alert-info">
-<b>NOTE</b>: Remember the key functions:<br/>
-<ul>
-<li><code>json.dumps()</code>: Python object → JSON string (dumps = "dump string")</li>
-<li><code>json.loads()</code>: JSON string → Python object (loads = "load string")</li>
-<li><code>json.dump()</code>: Python object → JSON file</li>
-<li><code>json.load()</code>: JSON file → Python object</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8035,7 +8036,26 @@ I
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="alert alert-block alert-info">
+<b>NOTE</b>: Remember the key functions:<br/>
+<ul>
+<li><code>json.dumps()</code>: Python object → JSON string (dumps = "dump string")</li>
+<li><code>json.loads()</code>: JSON string → Python object (loads = "load string")</li>
+<li><code>json.dump()</code>: Python object → JSON file</li>
+<li><code>json.load()</code>: JSON file → Python object</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8053,7 +8073,7 @@ I
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8069,7 +8089,7 @@ I
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -8103,7 +8123,7 @@ Punchline: A maybe.
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8116,14 +8136,566 @@ Punchline: A maybe.
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Working-with-APIs-that-Require-Authentication">Working with APIs that Require Authentication<a class="anchor-link" href="#Working-with-APIs-that-Require-Authentication">¶</a></h3>
+<h3 id="GET-Requests-with-Parameters">GET Requests with Parameters<a class="anchor-link" href="#GET-Requests-with-Parameters">¶</a></h3><p>Parameters (also called query parameters or query strings) are used when you need to customize or filter the data you're requesting from an API. Think of them as "options" or "settings" for your request.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_weather</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">'metric'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Get weather data for a city using Open-Meteo API"""</span>
+    
+    <span class="c1"># Step 1: Get coordinates for the city</span>
+    <span class="n">geocoding_url</span> <span class="o">=</span> <span class="s1">'https://geocoding-api.open-meteo.com/v1/search'</span>
+    <span class="n">geocoding_params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'name'</span><span class="p">:</span> <span class="n">city</span><span class="p">,</span>
+        <span class="s1">'count'</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+    
+    <span class="n">geo_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">geocoding_url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">geocoding_params</span><span class="p">)</span>
+    <span class="n">geo_data</span> <span class="o">=</span> <span class="n">geo_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    
+    <span class="c1"># Check if city was found</span>
+    <span class="k">if</span> <span class="s1">'results'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">geo_data</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">geo_data</span><span class="p">[</span><span class="s1">'results'</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    
+    <span class="c1"># Extract coordinates</span>
+    <span class="n">latitude</span> <span class="o">=</span> <span class="n">geo_data</span><span class="p">[</span><span class="s1">'results'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'latitude'</span><span class="p">]</span>
+    <span class="n">longitude</span> <span class="o">=</span> <span class="n">geo_data</span><span class="p">[</span><span class="s1">'results'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'longitude'</span><span class="p">]</span>
+    <span class="n">city_name</span> <span class="o">=</span> <span class="n">geo_data</span><span class="p">[</span><span class="s1">'results'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span>
+    
+    <span class="c1"># Step 2: Get weather data</span>
+    <span class="n">weather_url</span> <span class="o">=</span> <span class="s1">'https://api.open-meteo.com/v1/forecast'</span>
+    <span class="n">temp_unit</span> <span class="o">=</span> <span class="s1">'celsius'</span> <span class="k">if</span> <span class="n">units</span> <span class="o">==</span> <span class="s1">'metric'</span> <span class="k">else</span> <span class="s1">'fahrenheit'</span>
+    
+    <span class="n">weather_params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'latitude'</span><span class="p">:</span> <span class="n">latitude</span><span class="p">,</span>
+        <span class="s1">'longitude'</span><span class="p">:</span> <span class="n">longitude</span><span class="p">,</span>
+        <span class="s1">'current_weather'</span><span class="p">:</span> <span class="s1">'true'</span><span class="p">,</span>
+        <span class="s1">'temperature_unit'</span><span class="p">:</span> <span class="n">temp_unit</span>
+    <span class="p">}</span>
+    
+    <span class="n">weather_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">weather_url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">weather_params</span><span class="p">)</span>
+    <span class="n">weather_data</span> <span class="o">=</span> <span class="n">weather_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    
+    <span class="c1"># Extract temperature</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">weather_data</span><span class="p">[</span><span class="s1">'current_weather'</span><span class="p">][</span><span class="s1">'temperature'</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">'city'</span><span class="p">:</span> <span class="n">city_name</span><span class="p">,</span>
+        <span class="s1">'temperature'</span><span class="p">:</span> <span class="n">temperature</span><span class="p">,</span>
+        <span class="s1">'units'</span><span class="p">:</span> <span class="n">units</span>
+    <span class="p">}</span>
+
+<span class="c1"># Test the function</span>
+<span class="n">weather</span> <span class="o">=</span> <span class="n">get_weather</span><span class="p">(</span><span class="s1">'Rome'</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">weather</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"City: </span><span class="si">{</span><span class="n">weather</span><span class="p">[</span><span class="s1">'city'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Temperature: </span><span class="si">{</span><span class="n">weather</span><span class="p">[</span><span class="s1">'temperature'</span><span class="p">]</span><span class="si">}</span><span class="s2">°C"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Units: </span><span class="si">{</span><span class="n">weather</span><span class="p">[</span><span class="s1">'units'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>When are parameters used in GET requests?</strong></p>
+<p>Common use cases for parameters:</p>
+<ol>
+<li><strong>Filtering data</strong> - Narrow down results (e.g., searching for a specific city: <code>name=Rome</code>)</li>
+<li><strong>Customizing the response</strong> - Control how data is returned (e.g., choosing temperature units: <code>temperature_unit=celsius</code>)</li>
+<li><strong>Specifying what to retrieve</strong> - Tell the API exactly what data you want (e.g., <code>current_weather=true</code>)</li>
+<li><strong>Providing identifiers</strong> - Pass coordinates, IDs, or other identifiers (e.g., <code>latitude=41.9</code>, <code>longitude=12.5</code>)</li>
+<li><strong>Pagination</strong> - Request specific chunks of data (e.g., <code>page=2</code>, <code>limit=10</code>)</li>
+<li><strong>Authentication</strong> - Include API keys or tokens (e.g., <code>api_key=YOUR_KEY</code>)</li>
+</ol>
+<p>Without parameters, you'd get a generic or default response. With parameters, you can ask for exactly what you need!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Example-5:-JSON-Deserialization">Example 5: JSON Deserialization<a class="anchor-link" href="#Example-5:-JSON-Deserialization">¶</a></h3><p>Let's fetch and process public holidays data:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_public_holidays</span><span class="p">(</span><span class="n">country_code</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Get public holidays for a country and year"""</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'https://date.nager.at/api/v3/PublicHolidays/</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">country_code</span><span class="si">}</span><span class="s1">'</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Make GET request</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        
+        <span class="c1"># Check if request was successful</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        
+        <span class="c1"># Deserialize JSON response</span>
+        <span class="n">holidays_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        
+        <span class="c1"># Extract name and date for each holiday</span>
+        <span class="n">holidays</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">holiday</span> <span class="ow">in</span> <span class="n">holidays_data</span><span class="p">:</span>
+            <span class="n">holidays</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s1">'name'</span><span class="p">:</span> <span class="n">holiday</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span>
+                <span class="s1">'date'</span><span class="p">:</span> <span class="n">holiday</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span>
+            <span class="p">})</span>
+        
+        <span class="c1"># Sort by date</span>
+        <span class="n">holidays</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">'date'</span><span class="p">])</span>
+        
+        <span class="k">return</span> <span class="n">holidays</span>
+        
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+<span class="c1"># Test the function</span>
+<span class="n">holidays</span> <span class="o">=</span> <span class="n">get_public_holidays</span><span class="p">(</span><span class="s1">'IT'</span><span class="p">,</span> <span class="mi">2024</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of holidays in Italy 2024: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">holidays</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">holidays</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"First holiday: </span><span class="si">{</span><span class="n">holidays</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2"> on </span><span class="si">{</span><span class="n">holidays</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'date'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">All holidays:"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">holidays</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>  <span class="c1"># Show first 5</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  - </span><span class="si">{</span><span class="n">h</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">h</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="POST-Requests:-Sending-Data">POST Requests: Sending Data<a class="anchor-link" href="#POST-Requests:-Sending-Data">¶</a></h2><p>While GET requests fetch data, POST requests send data to servers.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Creating-Data-with-POST">Creating Data with POST<a class="anchor-link" href="#Creating-Data-with-POST">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_bin</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Create a JSON storage bin using JSONBin.io API"""</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.jsonbin.io/v3/b'</span>
+    
+    <span class="c1"># Set headers</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span>
+    <span class="p">}</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Make POST request with JSON data</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+        
+        <span class="c1"># Check if successful</span>
+        <span class="n">success</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">201</span><span class="p">]</span>
+        
+        <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+            <span class="c1"># Parse response</span>
+            <span class="n">response_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            
+            <span class="c1"># Extract bin ID</span>
+            <span class="n">bin_id</span> <span class="o">=</span> <span class="n">response_data</span><span class="p">[</span><span class="s1">'metadata'</span><span class="p">][</span><span class="s1">'id'</span><span class="p">]</span>
+            
+            <span class="c1"># Build URL</span>
+            <span class="n">bin_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'https://api.jsonbin.io/v3/b/</span><span class="si">{</span><span class="n">bin_id</span><span class="si">}</span><span class="s1">'</span>
+            
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">'success'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s1">'bin_id'</span><span class="p">:</span> <span class="n">bin_id</span><span class="p">,</span>
+                <span class="s1">'url'</span><span class="p">:</span> <span class="n">bin_url</span>
+            <span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">'success'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s1">'bin_id'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s1">'url'</span><span class="p">:</span> <span class="kc">None</span>
+            <span class="p">}</span>
+    
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">'success'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s1">'bin_id'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">'url'</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="p">}</span>
+
+<span class="c1"># Test the function</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'John Doe'</span><span class="p">,</span>
+    <span class="s1">'age'</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s1">'city'</span><span class="p">:</span> <span class="s1">'Rome'</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">create_bin</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Success: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'success'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="s1">'success'</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Bin ID: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'bin_id'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"URL: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'url'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="alert alert-block alert-info">
+<b>NOTE</b>: When using <code>requests.post()</code> with the <code>json</code> parameter:
+<ul>
+<li>The data is automatically serialized to JSON</li>
+<li>The Content-Type header is automatically set to application/json</li>
+<li>You don't need to call <code>json.dumps()</code> manually</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Error-Handling">Error Handling<a class="anchor-link" href="#Error-Handling">¶</a></h2><p>Robust applications must handle various types of errors when working with APIs.</p>
+<h3 id="Example-8:-Comprehensive-Error-Handling">Example 8: Comprehensive Error Handling<a class="anchor-link" href="#Example-8:-Comprehensive-Error-Handling">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_weather_safe</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">api_key</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Fetch weather data with comprehensive error handling"""</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.openweathermap.org/data/2.5/weather'</span>
+    
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'q'</span><span class="p">:</span> <span class="n">city</span><span class="p">,</span>
+        <span class="s1">'appid'</span><span class="p">:</span> <span class="n">api_key</span><span class="p">,</span>
+        <span class="s1">'units'</span><span class="p">:</span> <span class="s1">'metric'</span>
+    <span class="p">}</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Make GET request with timeout</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        
+        <span class="c1"># Get status code</span>
+        <span class="n">status_code</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span>
+        
+        <span class="c1"># Handle different status codes</span>
+        <span class="k">if</span> <span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="c1"># Success - parse data</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+                <span class="k">return</span> <span class="p">{</span>
+                    <span class="s1">'success'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                    <span class="s1">'error'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="s1">'status_code'</span><span class="p">:</span> <span class="n">status_code</span><span class="p">,</span>
+                    <span class="s1">'data'</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">'city'</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span>
+                        <span class="s1">'temperature'</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">'main'</span><span class="p">][</span><span class="s1">'temp'</span><span class="p">],</span>
+                        <span class="s1">'description'</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">'weather'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'description'</span><span class="p">]</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+                <span class="k">return</span> <span class="p">{</span>
+                    <span class="s1">'success'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="s1">'error'</span><span class="p">:</span> <span class="s1">'Failed to parse API response'</span><span class="p">,</span>
+                    <span class="s1">'status_code'</span><span class="p">:</span> <span class="n">status_code</span><span class="p">,</span>
+                    <span class="s1">'data'</span><span class="p">:</span> <span class="kc">None</span>
+                <span class="p">}</span>
+        
+        <span class="k">elif</span> <span class="n">status_code</span> <span class="o">==</span> <span class="mi">401</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">'success'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s1">'error'</span><span class="p">:</span> <span class="s1">'Invalid API key. Please check your credentials.'</span><span class="p">,</span>
+                <span class="s1">'status_code'</span><span class="p">:</span> <span class="n">status_code</span><span class="p">,</span>
+                <span class="s1">'data'</span><span class="p">:</span> <span class="kc">None</span>
+            <span class="p">}</span>
+        
+        <span class="k">elif</span> <span class="n">status_code</span> <span class="o">==</span> <span class="mi">404</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">'success'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s1">'error'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'City "</span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s1">" not found. Please check the spelling.'</span><span class="p">,</span>
+                <span class="s1">'status_code'</span><span class="p">:</span> <span class="n">status_code</span><span class="p">,</span>
+                <span class="s1">'data'</span><span class="p">:</span> <span class="kc">None</span>
+            <span class="p">}</span>
+        
+        <span class="k">elif</span> <span class="n">status_code</span> <span class="o">==</span> <span class="mi">429</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">'success'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s1">'error'</span><span class="p">:</span> <span class="s1">'Too many requests. Please wait and try again later.'</span><span class="p">,</span>
+                <span class="s1">'status_code'</span><span class="p">:</span> <span class="n">status_code</span><span class="p">,</span>
+                <span class="s1">'data'</span><span class="p">:</span> <span class="kc">None</span>
+            <span class="p">}</span>
+        
+        <span class="k">elif</span> <span class="n">status_code</span> <span class="o">&gt;=</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">'success'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s1">'error'</span><span class="p">:</span> <span class="s1">'Server error. Please try again later.'</span><span class="p">,</span>
+                <span class="s1">'status_code'</span><span class="p">:</span> <span class="n">status_code</span><span class="p">,</span>
+                <span class="s1">'data'</span><span class="p">:</span> <span class="kc">None</span>
+            <span class="p">}</span>
+        
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">'success'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s1">'error'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'Unexpected error (status code: </span><span class="si">{</span><span class="n">status_code</span><span class="si">}</span><span class="s1">)'</span><span class="p">,</span>
+                <span class="s1">'status_code'</span><span class="p">:</span> <span class="n">status_code</span><span class="p">,</span>
+                <span class="s1">'data'</span><span class="p">:</span> <span class="kc">None</span>
+            <span class="p">}</span>
+    
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">Timeout</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">'success'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s1">'error'</span><span class="p">:</span> <span class="s1">'Request timeout. Please check your internet connection.'</span><span class="p">,</span>
+            <span class="s1">'status_code'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">'data'</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="p">}</span>
+    
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">'success'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s1">'error'</span><span class="p">:</span> <span class="s1">'Connection error. Please check your internet connection.'</span><span class="p">,</span>
+            <span class="s1">'status_code'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">'data'</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="p">}</span>
+    
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">'success'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s1">'error'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'Unexpected error: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+            <span class="s1">'status_code'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">'data'</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="p">}</span>
+
+<span class="c1"># Test with invalid API key (401 error)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">get_weather_safe</span><span class="p">(</span><span class="s1">'London'</span><span class="p">,</span> <span class="s1">'invalid_api_key_12345'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Success: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'success'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Status Code: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'status_code'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'error'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="alert alert-block alert-success">
+<b>BEST PRACTICES</b> for error handling:
+<ul>
+<li>Always check status codes before processing data</li>
+<li>Provide user-friendly error messages</li>
+<li>Handle network errors (timeout, connection failures)</li>
+<li>Use try-except blocks for JSON parsing</li>
+<li>Set timeouts for requests to prevent hanging</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="API-Authentication">API Authentication<a class="anchor-link" href="#API-Authentication">¶</a></h2><p>Many APIs require authentication to prevent abuse and track usage.</p>
+<h3 id="API-Key-Authentication">API Key Authentication<a class="anchor-link" href="#API-Key-Authentication">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_weather_with_api_key</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">api_key</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Get weather data using OpenWeatherMap API with authentication"""</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">'https://api.openweathermap.org/data/2.5/weather'</span>
+    
+    <span class="c1"># Set up parameters including API key</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'q'</span><span class="p">:</span> <span class="n">city</span><span class="p">,</span>
+        <span class="s1">'appid'</span><span class="p">:</span> <span class="n">api_key</span><span class="p">,</span>  <span class="c1"># API key authentication</span>
+        <span class="s1">'units'</span><span class="p">:</span> <span class="s1">'metric'</span>
+    <span class="p">}</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Make GET request with API key in parameters</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        
+        <span class="c1"># Check if request was successful</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        
+        <span class="c1"># Parse JSON response</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        
+        <span class="c1"># Extract weather information</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">'city'</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span>
+            <span class="s1">'temperature'</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">'main'</span><span class="p">][</span><span class="s1">'temp'</span><span class="p">],</span>
+            <span class="s1">'description'</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">'weather'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'description'</span><span class="p">],</span>
+            <span class="s1">'humidity'</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">'main'</span><span class="p">][</span><span class="s1">'humidity'</span><span class="p">]</span>
+        <span class="p">}</span>
+    
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<span class="n">API_KEY</span> <span class="o">=</span> <span class="s1">'YOUR_OPENWEATHER_API_KEY_HERE'</span>
+
+<span class="n">weather</span> <span class="o">=</span> <span class="n">get_weather_with_api_key</span><span class="p">(</span><span class="s1">'Rome'</span><span class="p">,</span> <span class="n">API_KEY</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">weather</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"City: </span><span class="si">{</span><span class="n">weather</span><span class="p">[</span><span class="s1">'city'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Temperature: </span><span class="si">{</span><span class="n">weather</span><span class="p">[</span><span class="s1">'temperature'</span><span class="p">]</span><span class="si">}</span><span class="s2">°C"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Description: </span><span class="si">{</span><span class="n">weather</span><span class="p">[</span><span class="s1">'description'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Humidity: </span><span class="si">{</span><span class="n">weather</span><span class="p">[</span><span class="s1">'humidity'</span><span class="p">]</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="alert alert-block alert-warning">
+<b>SECURITY NOTE</b>: Never hardcode API keys in your code!
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="SDKs:-Even-Higher-Level-Abstractions">SDKs: Even Higher-Level Abstractions<a class="anchor-link" href="#SDKs:-Even-Higher-Level-Abstractions">¶</a></h2><p>Many popular web services provide <strong>SDKs</strong> (Software Development Kits) that wrap their APIs.</p>
+<p><strong>Why use SDKs instead of direct HTTP requests?</strong></p>
+<ul>
+<li><strong>Simpler code</strong>: No need to construct URLs, headers, or handle raw JSON</li>
+<li><strong>Type safety</strong>: Many SDKs provide type hints and autocomplete</li>
+<li><strong>Better error handling</strong>: SDKs often provide meaningful exceptions</li>
+<li><strong>Built-in features</strong>: Automatic retries, rate limiting, pagination</li>
+<li><strong>Easier to use</strong>: You work with objects and methods instead of HTTP verbs</li>
+</ul>
+<p>Think of it as another level of abstraction:</p>
+<ol>
+<li><strong>Sockets</strong> (lowest level): You handle everything manually</li>
+<li><strong>requests library</strong>: Simplifies HTTP operations</li>
+<li><strong>SDKs</strong> (highest level): Service-specific, easy-to-use interfaces</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Example:-OpenAI-SDK">Example: OpenAI SDK<a class="anchor-link" href="#Example:-OpenAI-SDK">¶</a></h3><p>The OpenAI SDK is a great example of how SDKs simplify working with APIs. Instead of manually constructing HTTP requests to the OpenAI API, you can use the SDK's intuitive interface.</p>
+<p><strong>Installation:</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">openai</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -8135,7 +8707,20 @@ Punchline: A maybe.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="c1"># Initialize the client with your API key</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">"API_KEY_HERE"</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">"https://api.gpt4-all.xyz/v1"</span><span class="p">)</span>
+
+<span class="c1"># Make a chat completion request</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">"gpt-4o-mini"</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"List the best 5 books for a python developer"</span><span class="p">}],</span>
+    <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Print the response</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8148,9 +8733,251 @@ Punchline: A maybe.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Error: 429
+<pre>Certainly! Here are five highly regarded books for Python developers that cover various aspects of the language, its ecosystem, and best practices:
+
+1. **"Fluent Python: Clear, Concise Programming" by Luciano Ramalho**
+   - This book deep dives into the nuances of Python, focusing on its most powerful features. It covers data structures, functions, concurrency, and metaprogramming, making it a must-read for developers looking to master Python.
+
+2. **"Python Crash Course: A Hands-On, Project-Based Introduction to Programming" by Eric Matthes**
+   - Ideal for beginners, this book presents a practical introduction to Python and programming concepts. It includes projects to build a solid foundation and encourages hands-on practice.
+
+3. **"Effective Python: 90 Specific Ways to Write Better Python" by Brett Slatkin**
+   - This book provides actionable guidelines and best practices to improve your Python coding. It covers topics from appropriate use of Python's built-in features to advanced techniques that can enhance performance and readability.
+
+4. **"Automate the Boring Stuff with Python: Practical Programming for Total Beginners" by Al Sweigart**
+   - A fantastic resource for those new to programming, this book teaches how to use Python for everyday tasks, such as web scraping, working with spreadsheets, and automating repetitive tasks.
+
+5. **"Learning Python" by Mark Lutz**
+   - A comprehensive introduction to Python, this book covers fundamentals and advanced topics in a detailed manner. It's great for those who prefer an in-depth exploration of the language and want a solid reference.
+
+These books cater to a range of skill levels and areas of interest within Python development, making them essential reads for any developer looking to enhance their skills.
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Understanding-Each-Component">Understanding Each Component<a class="anchor-link" href="#Understanding-Each-Component">¶</a></h3><p>Let's break down what each part does and <strong>why</strong> it's needed:</p>
+<h4 id="1.-Creating-the-Client">1. Creating the Client<a class="anchor-link" href="#1.-Creating-the-Client">¶</a></h4><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">"API_KEY_HERE"</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">"https://api.gpt4-all.xyz/v1"</span><span class="p">)</span>
+</pre></div>
+<ul>
+<li>Creates an object that knows how to talk to the OpenAI API</li>
+<li><code>api_key</code>: Your authentication key (like a password)</li>
+<li><code>base_url</code>: The server address where requests are sent</li>
+<li>You create this once and reuse it for multiple requests</li>
+</ul>
+<h4 id="2.-Making-a-Request">2. Making a Request<a class="anchor-link" href="#2.-Making-a-Request">¶</a></h4><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+<p>This structure tells the API what you want:</p>
+<ul>
+<li><code>chat</code>: Use the chat feature</li>
+<li><code>completions</code>: Get a response/completion</li>
+<li><code>create()</code>: Make a new request</li>
+</ul>
+<h4 id="3.-Specifying-the-Model">3. Specifying the Model<a class="anchor-link" href="#3.-Specifying-the-Model">¶</a></h4><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">=</span><span class="s2">"gpt-4o-mini"</span>
+</pre></div>
+<ul>
+<li>Different models have different capabilities and speeds</li>
+<li><code>gpt-4o-mini</code> is fast and good for most tasks</li>
+</ul>
+<h4 id="4.-The-Messages-Format">4. The Messages Format<a class="anchor-link" href="#4.-The-Messages-Format">¶</a></h4><div class="highlight"><pre><span></span><span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"Your question here"</span><span class="p">}]</span>
+</pre></div>
+<ul>
+<li><strong>List of dictionaries</strong>: The API needs the conversation history</li>
+<li><code>role</code>: Who's speaking (<code>"user"</code>, <code>"assistant"</code>, or <code>"system"</code>)</li>
+<li><code>content</code>: The actual message text</li>
+</ul>
+<p><strong>Example multi-turn conversation:</strong></p>
+<div class="highlight"><pre><span></span><span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"system"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"You are a helpful Python tutor"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"What's a list?"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"assistant"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"A list is a collection..."</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"Show me an example"</span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+<h4 id="5.-Stream-Parameter">5. Stream Parameter<a class="anchor-link" href="#5.-Stream-Parameter">¶</a></h4><div class="highlight"><pre><span></span><span class="n">stream</span><span class="o">=</span><span class="kc">False</span>
+</pre></div>
+<ul>
+<li><code>False</code>: Wait for the complete answer (simpler)</li>
+<li><code>True</code>: Get the response word-by-word as it's typed</li>
+</ul>
+<h4 id="6.-Getting-the-Response">6. Getting the Response<a class="anchor-link" href="#6.-Getting-the-Response">¶</a></h4><div class="highlight"><pre><span></span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+</pre></div>
+<p>The response contains lots of information. We navigate to the part we want:</p>
+<ul>
+<li><code>choices[0]</code>: First answer (usually there's only one)</li>
+<li><code>message.content</code>: The actual text response</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Comparing-with-Raw-Requests">Comparing with Raw Requests<a class="anchor-link" href="#Comparing-with-Raw-Requests">¶</a></h3><p>To appreciate why the SDK is useful, let's see how you'd do the <strong>same thing</strong> using the <code>requests</code> library directly:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="c1"># You have to manually construct the URL</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://api.gpt4-all.xyz/v1/chat/completions"</span>
+
+<span class="c1"># You have to manually create the headers with authentication</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"Bearer API_KEY_HERE"</span><span class="p">,</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+<span class="p">}</span>
+
+<span class="c1"># You have to manually structure the request body as a dictionary</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"model"</span><span class="p">:</span> <span class="s2">"gpt-4o-mini"</span><span class="p">,</span>
+    <span class="s2">"messages"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"List the best 5 books for a python developer"</span><span class="p">}],</span>
+    <span class="s2">"stream"</span><span class="p">:</span> <span class="kc">False</span>
+<span class="p">}</span>
+
+<span class="c1"># Make the POST request</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Check if the request was successful</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="c1"># You have to manually parse the JSON response</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="c1"># You have to know the exact structure of the response</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">"choices"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"message"</span><span class="p">][</span><span class="s2">"content"</span><span class="p">])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="What-the-SDK-Does-for-You">What the SDK Does for You<a class="anchor-link" href="#What-the-SDK-Does-for-You">¶</a></h3><p>Notice the differences? The SDK handles all these details automatically:</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Raw Requests</th>
+<th>SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>URL Construction</strong></td>
+<td>Manual string building</td>
+<td>Handled automatically</td>
+</tr>
+<tr>
+<td><strong>Authentication</strong></td>
+<td>Create headers dictionary</td>
+<td>Pass <code>api_key</code> parameter</td>
+</tr>
+<tr>
+<td><strong>Request Formatting</strong></td>
+<td>Build JSON dictionary manually</td>
+<td>Use method parameters</td>
+</tr>
+<tr>
+<td><strong>Error Handling</strong></td>
+<td>Check status codes manually</td>
+<td>Raises meaningful exceptions</td>
+</tr>
+<tr>
+<td><strong>Response Parsing</strong></td>
+<td>Navigate raw JSON dictionary</td>
+<td>Access response object properties</td>
+</tr>
+<tr>
+<td><strong>Type Hints</strong></td>
+<td>No autocomplete</td>
+<td>IDE suggests valid parameters</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lines of code:</strong> ~30 lines with requests vs. ~5 lines with SDK!</p>
+<div class="alert alert-block alert-success">
+<b>BEST PRACTICE</b>: When a service provides an official SDK, use it! The SDK:
+<ul>
+<li>Saves you time and reduces errors</li>
+<li>Handles API changes automatically (just update the SDK)</li>
+<li>Provides better error messages</li>
+<li>Includes documentation and examples</li>
+<li>Often includes helpful features like automatic retries</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Common-HTTP-Status-Codes">Common HTTP Status Codes<a class="anchor-link" href="#Common-HTTP-Status-Codes">¶</a></h2><p>Understanding HTTP status codes is essential for debugging API issues:</p>
+<h3 id="Success-Codes-(2xx)">Success Codes (2xx)<a class="anchor-link" href="#Success-Codes-(2xx)">¶</a></h3><ul>
+<li><strong>200 OK</strong>: Request succeeded</li>
+<li><strong>201 Created</strong>: Resource successfully created</li>
+<li><strong>204 No Content</strong>: Success, but no content to return</li>
+</ul>
+<h3 id="Client-Error-Codes-(4xx)">Client Error Codes (4xx)<a class="anchor-link" href="#Client-Error-Codes-(4xx)">¶</a></h3><ul>
+<li><strong>400 Bad Request</strong>: Invalid request syntax</li>
+<li><strong>401 Unauthorized</strong>: Authentication required or failed</li>
+<li><strong>403 Forbidden</strong>: Server understood request but refuses</li>
+<li><strong>404 Not Found</strong>: Resource doesn't exist</li>
+<li><strong>429 Too Many Requests</strong>: Rate limit exceeded</li>
+</ul>
+<h3 id="Server-Error-Codes-(5xx)">Server Error Codes (5xx)<a class="anchor-link" href="#Server-Error-Codes-(5xx)">¶</a></h3><ul>
+<li><strong>500 Internal Server Error</strong>: Generic server error</li>
+<li><strong>502 Bad Gateway</strong>: Invalid response from upstream server</li>
+<li><strong>503 Service Unavailable</strong>: Server temporarily unavailable</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Additional-Resources">Additional Resources<a class="anchor-link" href="#Additional-Resources">¶</a></h2><ul>
+<li><a href="https://requests.readthedocs.io/">Requests Documentation</a></li>
+<li><a href="https://httpstatuses.com/">HTTP Status Codes</a></li>
+<li><a href="https://restfulapi.net/">REST API Tutorial</a></li>
+<li><a href="https://www.json.org/">JSON Documentation</a></li>
+<li><a href="https://github.com/public-apis/public-apis">Public APIs List</a></li>
+<li><a href="https://platform.openai.com/docs">OpenAI API Documentation</a></li>
+</ul>
 </div>
 </div>
 </div>

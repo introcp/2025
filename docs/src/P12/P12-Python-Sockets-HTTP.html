@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python: Sockets and HTTP Requests &#8212; Introduction to computer programming</title>
+    <title>Python: HTTP and API Calls &#8212; Introduction to computer programming</title>
   
   
   
@@ -412,7 +412,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><b style="font-family: 'LUISS', 'Lato'">Python: Sockets and HTTP Requests</b></h1>
+    <h1><b style="font-family: 'LUISS', 'Lato'">Python: HTTP and API Calls</b></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -423,13 +423,13 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-communication">Network Communication</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sockets">Sockets</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sockets-the-foundation">Sockets: The Foundation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-socket-example">Simple Socket Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#http-requests">HTTP Requests</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-requests-library-simplifying-http">The Requests Library: Simplifying HTTP</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-requests">Installing <code class="docutils literal notranslate"><span class="pre">requests</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-get-requests">Making GET Requests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-http-get-request">Making HTTP GET Request</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-the-universal-data-format">JSON: The Universal Data Format</a><ul class="nav section-nav flex-column">
@@ -440,9 +440,44 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-apis-interacting-with-web-services">REST APIs: Interacting with Web Services</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fetching-data-from-a-public-api">Fetching Data from a Public API</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-apis-that-require-authentication">Working with APIs that Require Authentication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-requests-with-parameters">GET Requests with Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-5-json-deserialization">Example 5: JSON Deserialization</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-requests-sending-data">POST Requests: Sending Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-data-with-post">Creating Data with POST</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling">Error Handling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-8-comprehensive-error-handling">Example 8: Comprehensive Error Handling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-authentication">API Authentication</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-key-authentication">API Key Authentication</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sdks-even-higher-level-abstractions">SDKs: Even Higher-Level Abstractions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-openai-sdk">Example: OpenAI SDK</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-each-component">Understanding Each Component</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-client">1. Creating the Client</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-request">2. Making a Request</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-the-model">3. Specifying the Model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-messages-format">4. The Messages Format</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stream-parameter">5. Stream Parameter</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-response">6. Getting the Response</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-with-raw-requests">Comparing with Raw Requests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-sdk-does-for-you">What the SDK Does for You</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-http-status-codes">Common HTTP Status Codes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#success-codes-2xx">Success Codes (2xx)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#client-error-codes-4xx">Client Error Codes (4xx)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#server-error-codes-5xx">Server Error Codes (5xx)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a></li>
 </ul>
             </nav>
         </div>
@@ -454,8 +489,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="python-sockets-and-http-requests">
-<h1><b style="font-family: 'LUISS', 'Lato'">Python: Sockets and HTTP Requests</b><a class="headerlink" href="#python-sockets-and-http-requests" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="python-http-and-api-calls">
+<h1><b style="font-family: 'LUISS', 'Lato'">Python: HTTP and API Calls</b><a class="headerlink" href="#python-http-and-api-calls" title="Link to this heading">#</a></h1>
 <h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
 <h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
 <br>
@@ -465,9 +500,9 @@ document.write(`
 <h2>Network Communication<a class="headerlink" href="#network-communication" title="Link to this heading">#</a></h2>
 <p>So far…</p>
 <ul class="simple">
-<li><p>we know how to read and write files on our local disk;</p></li>
-<li><p>we know how to process data stored in our computer;</p></li>
-<li><p>we know how to make our programs persistent.</p></li>
+<li><p>we know how to read and write files on our local disk</p></li>
+<li><p>we know how to process data stored in our computer</p></li>
+<li><p>we know how to make our programs persistent</p></li>
 </ul>
 <p>However, in the modern world, most applications need to communicate over the network:</p>
 <ul class="simple">
@@ -481,7 +516,9 @@ document.write(`
 <li><p>What are sockets and how do they enable network communication?</p></li>
 <li><p>How can we make HTTP requests to fetch data from the web?</p></li>
 <li><p>What is JSON and why is it so popular for data exchange?</p></li>
-<li><p>How can we use REST APIs to interact with web services?</p></li>
+<li><p>How can we handle errors when working with APIs?</p></li>
+<li><p>How do we authenticate with APIs?</p></li>
+<li><p>How can we structure our code using model classes?</p></li>
 </ol>
 <p>Focus on:</p>
 <ol class="arabic simple">
@@ -491,8 +528,8 @@ document.write(`
 <li><p>Practical examples with real-world APIs</p></li>
 </ol>
 </section>
-<section id="sockets">
-<h2>Sockets<a class="headerlink" href="#sockets" title="Link to this heading">#</a></h2>
+<section id="sockets-the-foundation">
+<h2>Sockets: The Foundation<a class="headerlink" href="#sockets-the-foundation" title="Link to this heading">#</a></h2>
 <p>A <strong>socket</strong> is an endpoint for sending or receiving data across a network.</p>
 <p>Think of it as a “phone connection” between two computers:</p>
 <ul class="simple">
@@ -542,7 +579,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 200 OK
-Date: Thu, 06 Nov 2025 13:53:54 GMT
+Date: Fri, 07 Nov 2025 09:20:01 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Last-Modified: Sat, 13 May 2017 11:22:22 GMT
 ETag: &quot;a7-54f6609245537&quot;
@@ -571,11 +608,10 @@ Who is already sick and pale with grief
     <li>The <code>.encode()</code> method converts strings to bytes (sockets work with bytes)</li>
     <li>The <code>.decode()</code> method converts bytes to strings</li>
 </ul>
-</div>
+</div></section>
 </section>
-</section>
-<section id="http-requests">
-<h2>HTTP Requests<a class="headerlink" href="#http-requests" title="Link to this heading">#</a></h2>
+<section id="the-requests-library-simplifying-http">
+<h2>The Requests Library: Simplifying HTTP<a class="headerlink" href="#the-requests-library-simplifying-http" title="Link to this heading">#</a></h2>
 <p>Making HTTP requests with raw sockets is complex. We have to manually format the HTTP request, handle headers, decode responses, etc.</p>
 <p>Luckily, Python has libraries that make this much easier!</p>
 <p>The most popular is the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library, which provides a simple, intuitive interface for making HTTP requests.</p>
@@ -646,9 +682,9 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /home/user/.venv/lib/pyt
 </div>
 </div>
 </section>
-<section id="making-get-requests">
-<h3>Making GET Requests<a class="headerlink" href="#making-get-requests" title="Link to this heading">#</a></h3>
-<p>The most common HTTP operation is GET - fetching data from a server.</p>
+<section id="making-http-get-request">
+<h3>Making HTTP GET Request<a class="headerlink" href="#making-http-get-request" title="Link to this heading">#</a></h3>
+<p>The most common HTTP operation is GET - fetching data from a server. The same functionality as our socket example, but much simpler:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -772,15 +808,7 @@ I
 </div>
 </div>
 </div>
-<div class="alert alert-block alert-info">
-<b>NOTE</b>: Remember the key functions:<br>
-<ul>
-    <li><code>json.dumps()</code>: Python object → JSON string (dumps = "dump string")</li>
-    <li><code>json.loads()</code>: JSON string → Python object (loads = "load string")</li>
-    <li><code>json.dump()</code>: Python object → JSON file</li>
-    <li><code>json.load()</code>: JSON file → Python object</li>
-</ul>
-</div></section>
+</section>
 <section id="reading-and-writing-json-files">
 <h3>Reading and Writing JSON Files<a class="headerlink" href="#reading-and-writing-json-files" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
@@ -800,7 +828,15 @@ I
 </div>
 </div>
 </div>
-</section>
+<div class="alert alert-block alert-info">
+<b>NOTE</b>: Remember the key functions:<br>
+<ul>
+    <li><code>json.dumps()</code>: Python object → JSON string (dumps = "dump string")</li>
+    <li><code>json.loads()</code>: JSON string → Python object (loads = "load string")</li>
+    <li><code>json.dump()</code>: Python object → JSON file</li>
+    <li><code>json.load()</code>: JSON file → Python object</li>
+</ul>
+</div></section>
 </section>
 <section id="rest-apis-interacting-with-web-services">
 <h2>REST APIs: Interacting with Web Services<a class="headerlink" href="#rest-apis-interacting-with-web-services" title="Link to this heading">#</a></h2>
@@ -842,9 +878,683 @@ Punchline: A maybe.
 <div class="alert alert-block alert-success">
 <b>HINT</b>: The <code>requests</code> library makes it incredibly easy to work with JSON APIs! The <code>.json()</code> method automatically converts the JSON response into a Python dictionary.
 </div></section>
-<section id="working-with-apis-that-require-authentication">
-<h3>Working with APIs that Require Authentication<a class="headerlink" href="#working-with-apis-that-require-authentication" title="Link to this heading">#</a></h3>
+<section id="get-requests-with-parameters">
+<h3>GET Requests with Parameters<a class="headerlink" href="#get-requests-with-parameters" title="Link to this heading">#</a></h3>
+<p>Parameters (also called query parameters or query strings) are used when you need to customize or filter the data you’re requesting from an API. Think of them as “options” or “settings” for your request.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_weather</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;metric&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get weather data for a city using Open-Meteo API&quot;&quot;&quot;</span>
+    
+    <span class="c1"># Step 1: Get coordinates for the city</span>
+    <span class="n">geocoding_url</span> <span class="o">=</span> <span class="s1">&#39;https://geocoding-api.open-meteo.com/v1/search&#39;</span>
+    <span class="n">geocoding_params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">city</span><span class="p">,</span>
+        <span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+    
+    <span class="n">geo_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">geocoding_url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">geocoding_params</span><span class="p">)</span>
+    <span class="n">geo_data</span> <span class="o">=</span> <span class="n">geo_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    
+    <span class="c1"># Check if city was found</span>
+    <span class="k">if</span> <span class="s1">&#39;results&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">geo_data</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">geo_data</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    
+    <span class="c1"># Extract coordinates</span>
+    <span class="n">latitude</span> <span class="o">=</span> <span class="n">geo_data</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;latitude&#39;</span><span class="p">]</span>
+    <span class="n">longitude</span> <span class="o">=</span> <span class="n">geo_data</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span>
+    <span class="n">city_name</span> <span class="o">=</span> <span class="n">geo_data</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+    
+    <span class="c1"># Step 2: Get weather data</span>
+    <span class="n">weather_url</span> <span class="o">=</span> <span class="s1">&#39;https://api.open-meteo.com/v1/forecast&#39;</span>
+    <span class="n">temp_unit</span> <span class="o">=</span> <span class="s1">&#39;celsius&#39;</span> <span class="k">if</span> <span class="n">units</span> <span class="o">==</span> <span class="s1">&#39;metric&#39;</span> <span class="k">else</span> <span class="s1">&#39;fahrenheit&#39;</span>
+    
+    <span class="n">weather_params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;latitude&#39;</span><span class="p">:</span> <span class="n">latitude</span><span class="p">,</span>
+        <span class="s1">&#39;longitude&#39;</span><span class="p">:</span> <span class="n">longitude</span><span class="p">,</span>
+        <span class="s1">&#39;current_weather&#39;</span><span class="p">:</span> <span class="s1">&#39;true&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;temperature_unit&#39;</span><span class="p">:</span> <span class="n">temp_unit</span>
+    <span class="p">}</span>
+    
+    <span class="n">weather_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">weather_url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">weather_params</span><span class="p">)</span>
+    <span class="n">weather_data</span> <span class="o">=</span> <span class="n">weather_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    
+    <span class="c1"># Extract temperature</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">weather_data</span><span class="p">[</span><span class="s1">&#39;current_weather&#39;</span><span class="p">][</span><span class="s1">&#39;temperature&#39;</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="n">city_name</span><span class="p">,</span>
+        <span class="s1">&#39;temperature&#39;</span><span class="p">:</span> <span class="n">temperature</span><span class="p">,</span>
+        <span class="s1">&#39;units&#39;</span><span class="p">:</span> <span class="n">units</span>
+    <span class="p">}</span>
+
+<span class="c1"># Test the function</span>
+<span class="n">weather</span> <span class="o">=</span> <span class="n">get_weather</span><span class="p">(</span><span class="s1">&#39;Rome&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">weather</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;City: </span><span class="si">{</span><span class="n">weather</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperature: </span><span class="si">{</span><span class="n">weather</span><span class="p">[</span><span class="s1">&#39;temperature&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">°C&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Units: </span><span class="si">{</span><span class="n">weather</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>When are parameters used in GET requests?</strong></p>
+<p>Common use cases for parameters:</p>
+<ol class="arabic simple">
+<li><p><strong>Filtering data</strong> - Narrow down results (e.g., searching for a specific city: <code class="docutils literal notranslate"><span class="pre">name=Rome</span></code>)</p></li>
+<li><p><strong>Customizing the response</strong> - Control how data is returned (e.g., choosing temperature units: <code class="docutils literal notranslate"><span class="pre">temperature_unit=celsius</span></code>)</p></li>
+<li><p><strong>Specifying what to retrieve</strong> - Tell the API exactly what data you want (e.g., <code class="docutils literal notranslate"><span class="pre">current_weather=true</span></code>)</p></li>
+<li><p><strong>Providing identifiers</strong> - Pass coordinates, IDs, or other identifiers (e.g., <code class="docutils literal notranslate"><span class="pre">latitude=41.9</span></code>, <code class="docutils literal notranslate"><span class="pre">longitude=12.5</span></code>)</p></li>
+<li><p><strong>Pagination</strong> - Request specific chunks of data (e.g., <code class="docutils literal notranslate"><span class="pre">page=2</span></code>, <code class="docutils literal notranslate"><span class="pre">limit=10</span></code>)</p></li>
+<li><p><strong>Authentication</strong> - Include API keys or tokens (e.g., <code class="docutils literal notranslate"><span class="pre">api_key=YOUR_KEY</span></code>)</p></li>
+</ol>
+<p>Without parameters, you’d get a generic or default response. With parameters, you can ask for exactly what you need!</p>
 </section>
+<section id="example-5-json-deserialization">
+<h3>Example 5: JSON Deserialization<a class="headerlink" href="#example-5-json-deserialization" title="Link to this heading">#</a></h3>
+<p>Let’s fetch and process public holidays data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_public_holidays</span><span class="p">(</span><span class="n">country_code</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get public holidays for a country and year&quot;&quot;&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://date.nager.at/api/v3/PublicHolidays/</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">country_code</span><span class="si">}</span><span class="s1">&#39;</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Make GET request</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        
+        <span class="c1"># Check if request was successful</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        
+        <span class="c1"># Deserialize JSON response</span>
+        <span class="n">holidays_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        
+        <span class="c1"># Extract name and date for each holiday</span>
+        <span class="n">holidays</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">holiday</span> <span class="ow">in</span> <span class="n">holidays_data</span><span class="p">:</span>
+            <span class="n">holidays</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">holiday</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="n">holiday</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
+            <span class="p">})</span>
+        
+        <span class="c1"># Sort by date</span>
+        <span class="n">holidays</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+        
+        <span class="k">return</span> <span class="n">holidays</span>
+        
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+<span class="c1"># Test the function</span>
+<span class="n">holidays</span> <span class="o">=</span> <span class="n">get_public_holidays</span><span class="p">(</span><span class="s1">&#39;IT&#39;</span><span class="p">,</span> <span class="mi">2024</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of holidays in Italy 2024: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">holidays</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">holidays</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;First holiday: </span><span class="si">{</span><span class="n">holidays</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> on </span><span class="si">{</span><span class="n">holidays</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">All holidays:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">holidays</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>  <span class="c1"># Show first 5</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - </span><span class="si">{</span><span class="n">h</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">h</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="post-requests-sending-data">
+<h2>POST Requests: Sending Data<a class="headerlink" href="#post-requests-sending-data" title="Link to this heading">#</a></h2>
+<p>While GET requests fetch data, POST requests send data to servers.</p>
+<section id="creating-data-with-post">
+<h3>Creating Data with POST<a class="headerlink" href="#creating-data-with-post" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_bin</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a JSON storage bin using JSONBin.io API&quot;&quot;&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.jsonbin.io/v3/b&#39;</span>
+    
+    <span class="c1"># Set headers</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
+    <span class="p">}</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Make POST request with JSON data</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+        
+        <span class="c1"># Check if successful</span>
+        <span class="n">success</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">201</span><span class="p">]</span>
+        
+        <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+            <span class="c1"># Parse response</span>
+            <span class="n">response_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            
+            <span class="c1"># Extract bin ID</span>
+            <span class="n">bin_id</span> <span class="o">=</span> <span class="n">response_data</span><span class="p">[</span><span class="s1">&#39;metadata&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+            
+            <span class="c1"># Build URL</span>
+            <span class="n">bin_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.jsonbin.io/v3/b/</span><span class="si">{</span><span class="n">bin_id</span><span class="si">}</span><span class="s1">&#39;</span>
+            
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s1">&#39;bin_id&#39;</span><span class="p">:</span> <span class="n">bin_id</span><span class="p">,</span>
+                <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">bin_url</span>
+            <span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s1">&#39;bin_id&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="kc">None</span>
+            <span class="p">}</span>
+    
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s1">&#39;bin_id&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="p">}</span>
+
+<span class="c1"># Test the function</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John Doe&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Rome&#39;</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">create_bin</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Success: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bin ID: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;bin_id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;URL: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-info">
+<b>NOTE</b>: When using <code>requests.post()</code> with the <code>json</code> parameter:
+<ul>
+    <li>The data is automatically serialized to JSON</li>
+    <li>The Content-Type header is automatically set to application/json</li>
+    <li>You don't need to call <code>json.dumps()</code> manually</li>
+</ul>
+</div></section>
+</section>
+<section id="error-handling">
+<h2>Error Handling<a class="headerlink" href="#error-handling" title="Link to this heading">#</a></h2>
+<p>Robust applications must handle various types of errors when working with APIs.</p>
+<section id="example-8-comprehensive-error-handling">
+<h3>Example 8: Comprehensive Error Handling<a class="headerlink" href="#example-8-comprehensive-error-handling" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_weather_safe</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">api_key</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch weather data with comprehensive error handling&quot;&quot;&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.openweathermap.org/data/2.5/weather&#39;</span>
+    
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="n">city</span><span class="p">,</span>
+        <span class="s1">&#39;appid&#39;</span><span class="p">:</span> <span class="n">api_key</span><span class="p">,</span>
+        <span class="s1">&#39;units&#39;</span><span class="p">:</span> <span class="s1">&#39;metric&#39;</span>
+    <span class="p">}</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Make GET request with timeout</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        
+        <span class="c1"># Get status code</span>
+        <span class="n">status_code</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span>
+        
+        <span class="c1"># Handle different status codes</span>
+        <span class="k">if</span> <span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="c1"># Success - parse data</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+                <span class="k">return</span> <span class="p">{</span>
+                    <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                    <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="s1">&#39;status_code&#39;</span><span class="p">:</span> <span class="n">status_code</span><span class="p">,</span>
+                    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                        <span class="s1">&#39;temperature&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;main&#39;</span><span class="p">][</span><span class="s1">&#39;temp&#39;</span><span class="p">],</span>
+                        <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;weather&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;description&#39;</span><span class="p">]</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+                <span class="k">return</span> <span class="p">{</span>
+                    <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Failed to parse API response&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;status_code&#39;</span><span class="p">:</span> <span class="n">status_code</span><span class="p">,</span>
+                    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="kc">None</span>
+                <span class="p">}</span>
+        
+        <span class="k">elif</span> <span class="n">status_code</span> <span class="o">==</span> <span class="mi">401</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Invalid API key. Please check your credentials.&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;status_code&#39;</span><span class="p">:</span> <span class="n">status_code</span><span class="p">,</span>
+                <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="kc">None</span>
+            <span class="p">}</span>
+        
+        <span class="k">elif</span> <span class="n">status_code</span> <span class="o">==</span> <span class="mi">404</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;City &quot;</span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s1">&quot; not found. Please check the spelling.&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;status_code&#39;</span><span class="p">:</span> <span class="n">status_code</span><span class="p">,</span>
+                <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="kc">None</span>
+            <span class="p">}</span>
+        
+        <span class="k">elif</span> <span class="n">status_code</span> <span class="o">==</span> <span class="mi">429</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Too many requests. Please wait and try again later.&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;status_code&#39;</span><span class="p">:</span> <span class="n">status_code</span><span class="p">,</span>
+                <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="kc">None</span>
+            <span class="p">}</span>
+        
+        <span class="k">elif</span> <span class="n">status_code</span> <span class="o">&gt;=</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Server error. Please try again later.&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;status_code&#39;</span><span class="p">:</span> <span class="n">status_code</span><span class="p">,</span>
+                <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="kc">None</span>
+            <span class="p">}</span>
+        
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Unexpected error (status code: </span><span class="si">{</span><span class="n">status_code</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;status_code&#39;</span><span class="p">:</span> <span class="n">status_code</span><span class="p">,</span>
+                <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="kc">None</span>
+            <span class="p">}</span>
+    
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">Timeout</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Request timeout. Please check your internet connection.&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;status_code&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="p">}</span>
+    
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Connection error. Please check your internet connection.&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;status_code&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="p">}</span>
+    
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Unexpected error: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;status_code&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="p">}</span>
+
+<span class="c1"># Test with invalid API key (401 error)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">get_weather_safe</span><span class="p">(</span><span class="s1">&#39;London&#39;</span><span class="p">,</span> <span class="s1">&#39;invalid_api_key_12345&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Success: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status Code: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;status_code&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-success">
+<b>BEST PRACTICES</b> for error handling:
+<ul>
+    <li>Always check status codes before processing data</li>
+    <li>Provide user-friendly error messages</li>
+    <li>Handle network errors (timeout, connection failures)</li>
+    <li>Use try-except blocks for JSON parsing</li>
+    <li>Set timeouts for requests to prevent hanging</li>
+</ul>
+</div></section>
+</section>
+<section id="api-authentication">
+<h2>API Authentication<a class="headerlink" href="#api-authentication" title="Link to this heading">#</a></h2>
+<p>Many APIs require authentication to prevent abuse and track usage.</p>
+<section id="api-key-authentication">
+<h3>API Key Authentication<a class="headerlink" href="#api-key-authentication" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_weather_with_api_key</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">api_key</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get weather data using OpenWeatherMap API with authentication&quot;&quot;&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.openweathermap.org/data/2.5/weather&#39;</span>
+    
+    <span class="c1"># Set up parameters including API key</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="n">city</span><span class="p">,</span>
+        <span class="s1">&#39;appid&#39;</span><span class="p">:</span> <span class="n">api_key</span><span class="p">,</span>  <span class="c1"># API key authentication</span>
+        <span class="s1">&#39;units&#39;</span><span class="p">:</span> <span class="s1">&#39;metric&#39;</span>
+    <span class="p">}</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Make GET request with API key in parameters</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        
+        <span class="c1"># Check if request was successful</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        
+        <span class="c1"># Parse JSON response</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        
+        <span class="c1"># Extract weather information</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;temperature&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;main&#39;</span><span class="p">][</span><span class="s1">&#39;temp&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;weather&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;description&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;humidity&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;main&#39;</span><span class="p">][</span><span class="s1">&#39;humidity&#39;</span><span class="p">]</span>
+        <span class="p">}</span>
+    
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<span class="n">API_KEY</span> <span class="o">=</span> <span class="s1">&#39;YOUR_OPENWEATHER_API_KEY_HERE&#39;</span>
+
+<span class="n">weather</span> <span class="o">=</span> <span class="n">get_weather_with_api_key</span><span class="p">(</span><span class="s1">&#39;Rome&#39;</span><span class="p">,</span> <span class="n">API_KEY</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">weather</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;City: </span><span class="si">{</span><span class="n">weather</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Temperature: </span><span class="si">{</span><span class="n">weather</span><span class="p">[</span><span class="s1">&#39;temperature&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">°C&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Description: </span><span class="si">{</span><span class="n">weather</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Humidity: </span><span class="si">{</span><span class="n">weather</span><span class="p">[</span><span class="s1">&#39;humidity&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<b>SECURITY NOTE</b>: Never hardcode API keys in your code!
+</div></section>
+</section>
+<section id="sdks-even-higher-level-abstractions">
+<h2>SDKs: Even Higher-Level Abstractions<a class="headerlink" href="#sdks-even-higher-level-abstractions" title="Link to this heading">#</a></h2>
+<p>Many popular web services provide <strong>SDKs</strong> (Software Development Kits) that wrap their APIs.</p>
+<p><strong>Why use SDKs instead of direct HTTP requests?</strong></p>
+<ul class="simple">
+<li><p><strong>Simpler code</strong>: No need to construct URLs, headers, or handle raw JSON</p></li>
+<li><p><strong>Type safety</strong>: Many SDKs provide type hints and autocomplete</p></li>
+<li><p><strong>Better error handling</strong>: SDKs often provide meaningful exceptions</p></li>
+<li><p><strong>Built-in features</strong>: Automatic retries, rate limiting, pagination</p></li>
+<li><p><strong>Easier to use</strong>: You work with objects and methods instead of HTTP verbs</p></li>
+</ul>
+<p>Think of it as another level of abstraction:</p>
+<ol class="arabic simple">
+<li><p><strong>Sockets</strong> (lowest level): You handle everything manually</p></li>
+<li><p><strong>requests library</strong>: Simplifies HTTP operations</p></li>
+<li><p><strong>SDKs</strong> (highest level): Service-specific, easy-to-use interfaces</p></li>
+</ol>
+<section id="example-openai-sdk">
+<h3>Example: OpenAI SDK<a class="headerlink" href="#example-openai-sdk" title="Link to this heading">#</a></h3>
+<p>The OpenAI SDK is a great example of how SDKs simplify working with APIs. Instead of manually constructing HTTP requests to the OpenAI API, you can use the SDK’s intuitive interface.</p>
+<p><strong>Installation:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">openai</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="c1"># Initialize the client with your API key</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;API_KEY_HERE&quot;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://api.gpt4-all.xyz/v1&quot;</span><span class="p">)</span>
+
+<span class="c1"># Make a chat completion request</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o-mini&quot;</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;List the best 5 books for a python developer&quot;</span><span class="p">}],</span>
+    <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Print the response</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Certainly! Here are five highly regarded books for Python developers that cover various aspects of the language, its ecosystem, and best practices:
+
+1. **&quot;Fluent Python: Clear, Concise Programming&quot; by Luciano Ramalho**
+   - This book deep dives into the nuances of Python, focusing on its most powerful features. It covers data structures, functions, concurrency, and metaprogramming, making it a must-read for developers looking to master Python.
+
+2. **&quot;Python Crash Course: A Hands-On, Project-Based Introduction to Programming&quot; by Eric Matthes**
+   - Ideal for beginners, this book presents a practical introduction to Python and programming concepts. It includes projects to build a solid foundation and encourages hands-on practice.
+
+3. **&quot;Effective Python: 90 Specific Ways to Write Better Python&quot; by Brett Slatkin**
+   - This book provides actionable guidelines and best practices to improve your Python coding. It covers topics from appropriate use of Python&#39;s built-in features to advanced techniques that can enhance performance and readability.
+
+4. **&quot;Automate the Boring Stuff with Python: Practical Programming for Total Beginners&quot; by Al Sweigart**
+   - A fantastic resource for those new to programming, this book teaches how to use Python for everyday tasks, such as web scraping, working with spreadsheets, and automating repetitive tasks.
+
+5. **&quot;Learning Python&quot; by Mark Lutz**
+   - A comprehensive introduction to Python, this book covers fundamentals and advanced topics in a detailed manner. It&#39;s great for those who prefer an in-depth exploration of the language and want a solid reference.
+
+These books cater to a range of skill levels and areas of interest within Python development, making them essential reads for any developer looking to enhance their skills.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="understanding-each-component">
+<h3>Understanding Each Component<a class="headerlink" href="#understanding-each-component" title="Link to this heading">#</a></h3>
+<p>Let’s break down what each part does and <strong>why</strong> it’s needed:</p>
+<section id="creating-the-client">
+<h4>1. Creating the Client<a class="headerlink" href="#creating-the-client" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;API_KEY_HERE&quot;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://api.gpt4-all.xyz/v1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Creates an object that knows how to talk to the OpenAI API</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">api_key</span></code>: Your authentication key (like a password)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base_url</span></code>: The server address where requests are sent</p></li>
+<li><p>You create this once and reuse it for multiple requests</p></li>
+</ul>
+</section>
+<section id="making-a-request">
+<h4>2. Making a Request<a class="headerlink" href="#making-a-request" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This structure tells the API what you want:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">chat</span></code>: Use the chat feature</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">completions</span></code>: Get a response/completion</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">create()</span></code>: Make a new request</p></li>
+</ul>
+</section>
+<section id="specifying-the-model">
+<h4>3. Specifying the Model<a class="headerlink" href="#specifying-the-model" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o-mini&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Different models have different capabilities and speeds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gpt-4o-mini</span></code> is fast and good for most tasks</p></li>
+</ul>
+</section>
+<section id="the-messages-format">
+<h4>4. The Messages Format<a class="headerlink" href="#the-messages-format" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Your question here&quot;</span><span class="p">}]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>List of dictionaries</strong>: The API needs the conversation history</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">role</span></code>: Who’s speaking (<code class="docutils literal notranslate"><span class="pre">&quot;user&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;assistant&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;system&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The actual message text</p></li>
+</ul>
+<p><strong>Example multi-turn conversation:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;You are a helpful Python tutor&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;What&#39;s a list?&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;assistant&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;A list is a collection...&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Show me an example&quot;</span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="stream-parameter">
+<h4>5. Stream Parameter<a class="headerlink" href="#stream-parameter" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stream</span><span class="o">=</span><span class="kc">False</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code>: Wait for the complete answer (simpler)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>: Get the response word-by-word as it’s typed</p></li>
+</ul>
+</section>
+<section id="getting-the-response">
+<h4>6. Getting the Response<a class="headerlink" href="#getting-the-response" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+</pre></div>
+</div>
+<p>The response contains lots of information. We navigate to the part we want:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">choices[0]</span></code>: First answer (usually there’s only one)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">message.content</span></code>: The actual text response</p></li>
+</ul>
+</section>
+</section>
+<section id="comparing-with-raw-requests">
+<h3>Comparing with Raw Requests<a class="headerlink" href="#comparing-with-raw-requests" title="Link to this heading">#</a></h3>
+<p>To appreciate why the SDK is useful, let’s see how you’d do the <strong>same thing</strong> using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library directly:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="c1"># You have to manually construct the URL</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.gpt4-all.xyz/v1/chat/completions&quot;</span>
+
+<span class="c1"># You have to manually create the headers with authentication</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer API_KEY_HERE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># You have to manually structure the request body as a dictionary</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4o-mini&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;List the best 5 books for a python developer&quot;</span><span class="p">}],</span>
+    <span class="s2">&quot;stream&quot;</span><span class="p">:</span> <span class="kc">False</span>
+<span class="p">}</span>
+
+<span class="c1"># Make the POST request</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Check if the request was successful</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="c1"># You have to manually parse the JSON response</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="c1"># You have to know the exact structure of the response</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;choices&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;content&quot;</span><span class="p">])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-the-sdk-does-for-you">
+<h3>What the SDK Does for You<a class="headerlink" href="#what-the-sdk-does-for-you" title="Link to this heading">#</a></h3>
+<p>Notice the differences? The SDK handles all these details automatically:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Task</p></th>
+<th class="head"><p>Raw Requests</p></th>
+<th class="head"><p>SDK</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>URL Construction</strong></p></td>
+<td><p>Manual string building</p></td>
+<td><p>Handled automatically</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Authentication</strong></p></td>
+<td><p>Create headers dictionary</p></td>
+<td><p>Pass <code class="docutils literal notranslate"><span class="pre">api_key</span></code> parameter</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Request Formatting</strong></p></td>
+<td><p>Build JSON dictionary manually</p></td>
+<td><p>Use method parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Error Handling</strong></p></td>
+<td><p>Check status codes manually</p></td>
+<td><p>Raises meaningful exceptions</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Response Parsing</strong></p></td>
+<td><p>Navigate raw JSON dictionary</p></td>
+<td><p>Access response object properties</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Type Hints</strong></p></td>
+<td><p>No autocomplete</p></td>
+<td><p>IDE suggests valid parameters</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Lines of code:</strong> ~30 lines with requests vs. ~5 lines with SDK!</p>
+<div class="alert alert-block alert-success">
+<b>BEST PRACTICE</b>: When a service provides an official SDK, use it! The SDK:
+<ul>
+<li>Saves you time and reduces errors</li>
+<li>Handles API changes automatically (just update the SDK)</li>
+<li>Provides better error messages</li>
+<li>Includes documentation and examples</li>
+<li>Often includes helpful features like automatic retries</li>
+</ul>
+</div></section>
+</section>
+<section id="common-http-status-codes">
+<h2>Common HTTP Status Codes<a class="headerlink" href="#common-http-status-codes" title="Link to this heading">#</a></h2>
+<p>Understanding HTTP status codes is essential for debugging API issues:</p>
+<section id="success-codes-2xx">
+<h3>Success Codes (2xx)<a class="headerlink" href="#success-codes-2xx" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>200 OK</strong>: Request succeeded</p></li>
+<li><p><strong>201 Created</strong>: Resource successfully created</p></li>
+<li><p><strong>204 No Content</strong>: Success, but no content to return</p></li>
+</ul>
+</section>
+<section id="client-error-codes-4xx">
+<h3>Client Error Codes (4xx)<a class="headerlink" href="#client-error-codes-4xx" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>400 Bad Request</strong>: Invalid request syntax</p></li>
+<li><p><strong>401 Unauthorized</strong>: Authentication required or failed</p></li>
+<li><p><strong>403 Forbidden</strong>: Server understood request but refuses</p></li>
+<li><p><strong>404 Not Found</strong>: Resource doesn’t exist</p></li>
+<li><p><strong>429 Too Many Requests</strong>: Rate limit exceeded</p></li>
+</ul>
+</section>
+<section id="server-error-codes-5xx">
+<h3>Server Error Codes (5xx)<a class="headerlink" href="#server-error-codes-5xx" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>500 Internal Server Error</strong>: Generic server error</p></li>
+<li><p><strong>502 Bad Gateway</strong>: Invalid response from upstream server</p></li>
+<li><p><strong>503 Service Unavailable</strong>: Server temporarily unavailable</p></li>
+</ul>
+</section>
+</section>
+<section id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://requests.readthedocs.io/">Requests Documentation</a></p></li>
+<li><p><a class="reference external" href="https://httpstatuses.com/">HTTP Status Codes</a></p></li>
+<li><p><a class="reference external" href="https://restfulapi.net/">REST API Tutorial</a></p></li>
+<li><p><a class="reference external" href="https://www.json.org/">JSON Documentation</a></p></li>
+<li><p><a class="reference external" href="https://github.com/public-apis/public-apis">Public APIs List</a></p></li>
+<li><p><a class="reference external" href="https://platform.openai.com/docs">OpenAI API Documentation</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -895,13 +1605,13 @@ Punchline: A maybe.
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-communication">Network Communication</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sockets">Sockets</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sockets-the-foundation">Sockets: The Foundation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-socket-example">Simple Socket Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#http-requests">HTTP Requests</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-requests-library-simplifying-http">The Requests Library: Simplifying HTTP</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-requests">Installing <code class="docutils literal notranslate"><span class="pre">requests</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-get-requests">Making GET Requests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-http-get-request">Making HTTP GET Request</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-the-universal-data-format">JSON: The Universal Data Format</a><ul class="nav section-nav flex-column">
@@ -912,9 +1622,44 @@ Punchline: A maybe.
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-apis-interacting-with-web-services">REST APIs: Interacting with Web Services</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fetching-data-from-a-public-api">Fetching Data from a Public API</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-apis-that-require-authentication">Working with APIs that Require Authentication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-requests-with-parameters">GET Requests with Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-5-json-deserialization">Example 5: JSON Deserialization</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-requests-sending-data">POST Requests: Sending Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-data-with-post">Creating Data with POST</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling">Error Handling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-8-comprehensive-error-handling">Example 8: Comprehensive Error Handling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-authentication">API Authentication</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-key-authentication">API Key Authentication</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sdks-even-higher-level-abstractions">SDKs: Even Higher-Level Abstractions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-openai-sdk">Example: OpenAI SDK</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-each-component">Understanding Each Component</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-client">1. Creating the Client</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-request">2. Making a Request</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-the-model">3. Specifying the Model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-messages-format">4. The Messages Format</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stream-parameter">5. Stream Parameter</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-response">6. Getting the Response</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-with-raw-requests">Comparing with Raw Requests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-sdk-does-for-you">What the SDK Does for You</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-http-status-codes">Common HTTP Status Codes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#success-codes-2xx">Success Codes (2xx)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#client-error-codes-4xx">Client Error Codes (4xx)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#server-error-codes-5xx">Server Error Codes (5xx)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a></li>
 </ul>
   </nav></div>
 
