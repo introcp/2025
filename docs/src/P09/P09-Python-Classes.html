@@ -213,7 +213,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../P07/P07-Python-Lists.html"><b style="font-family: 'LUISS', 'Lato'">Lists</b></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../P08/P08-Python-Dictionaries-Tuples-Sets.html"><b style="font-family: 'LUISS', 'Lato'">Dictionaries, Tuples, and Sets</b></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../P11/P11-Python-Files.html"><b style="font-family: 'LUISS', 'Lato'">Files</b></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../P12/P12-Python-Sockets-HTTP.html"><b style="font-family: 'LUISS', 'Lato'">Python: HTTP and API Calls</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P12/P12-Python-Sockets-HTTP.html"><b style="font-family: 'LUISS', 'Lato'">Sockets, HTTP and REST API</b></a></li>
 </ul>
 
     </div>
@@ -606,8 +606,8 @@ Hello
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Alessio&quot;</span><span class="p">,</span> <span class="s2">&quot;Martino&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Viale Romania&quot;</span><span class="p">)</span>
-<span class="n">person2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Giorgio&quot;</span><span class="p">,</span> <span class="s2">&quot;Piccardo&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Francesco&quot;</span><span class="p">,</span> <span class="s2">&quot;Totti&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Viale Romania&quot;</span><span class="p">)</span>
+<span class="n">person2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Daniele&quot;</span><span class="p">,</span> <span class="s2">&quot;De Rossi&quot;</span><span class="p">)</span>
 
 <span class="n">person1</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>
 <span class="n">person2</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>
@@ -616,11 +616,11 @@ Hello
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello!
-My name is Alessio Martino
+My name is Francesco Totti
 I am 30 years old
 I live in Viale Romania
 Hello!
-My name is Giorgio Piccardo
+My name is Daniele De Rossi
 I am None years old
 I live in None
 </pre></div>
@@ -698,12 +698,11 @@ Miles says Bow Wow
 </div>
 </div>
 <div class="alert alert-block alert-info">
-<b>RECALL:</b> Methods are defined exactly like ordinary functions, but inside the `class` block:
+<b>RECALL:</b> Methods are defined exactly like ordinary functions, but inside the <code>class</code> block:
 - they can have any number of parameters
-- the first parameter, that by convention is called `self`, has a special meaning as it contains a reference to the instance.
-</div>
-<div class="alert alert-block alert-info">
-<b>RECALL:</b> As `self` refers to the instance, we can access its variables via `self.<variable>`.
+- the first parameter, that by convention is called <code>self</code>, has a special meaning as it contains a reference to the instance.
+</div><div class="alert alert-block alert-info">
+<b>RECALL:</b> As <code>self</code> refers to the instance, we can access its variables via <code>self.<variable></code>.
 </div><p>And here’s how to use it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -724,8 +723,14 @@ Miles says Bow Wow
 <p>What’s going on here?</p>
 <ol class="arabic simple">
 <li><p>on line 1, we create a new <code class="docutils literal notranslate"><span class="pre">Counter</span></code> object. Instantiation automatically calls the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method, which initialises the <code class="docutils literal notranslate"><span class="pre">_count</span></code> variable to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+</ol>
+<ol class="arabic simple" start="2">
 <li><p>on line 2, we trigger the <code class="docutils literal notranslate"><span class="pre">increase</span></code> method, which increments <code class="docutils literal notranslate"><span class="pre">c._counter</span></code> by 1.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
 <li><p>on line 3, we trigger the <code class="docutils literal notranslate"><span class="pre">increase</span></code> method, which increments <code class="docutils literal notranslate"><span class="pre">c._counter</span></code> by 1.</p></li>
+</ol>
+<ol class="arabic simple" start="4">
 <li><p>on lines 4 and 5, we trigger the <code class="docutils literal notranslate"><span class="pre">get_count</span></code> method, which returns the current state of the counter (i.e., <code class="docutils literal notranslate"><span class="pre">c._counter</span></code>) and then we print it.</p></li>
 </ol>
 </section>
@@ -759,7 +764,13 @@ Should we do it? <strong>No</strong>.</p>
 <li><p>the new class is called <em>derived class</em> (or <em>child class</em>);</p></li>
 <li><p>the one from which it inherits is called the <em>base class</em> (or <em>parent class</em>).</p></li>
 </ul>
-<div class="cell docutils container">
+<p><strong>Example</strong>: we want to create a class <code class="docutils literal notranslate"><span class="pre">Student</span></code> to represent university students. We want to represent data such as the student ID, the university name and the average grade using instance variables.</p>
+<div class="alert alert-block alert-info">
+<b>NOTE:</b>
+<p>But a student has also a last name, a first name, etc., like any person; because a student is a person! Name, surname, age and address are already available in the <code>Person</code> class.</p>
+<p>Can we reinvent the wheel? <strong>Yes</strong>.
+Should we do it? <strong>Nah</strong>.</p>
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">firstName</span><span class="p">,</span> <span class="n">lastName</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -775,13 +786,6 @@ Should we do it? <strong>No</strong>.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<p><strong>Example</strong>: we want to create a class <code class="docutils literal notranslate"><span class="pre">Student</span></code> to represent university students. We want to represent data such as the student ID, the university name and the average grade using instance variables.</p>
-<div class="alert alert-block alert-info">
-<b>NOTE:</b>
-<p>But a student has also a last name, a first name, etc., like any person; because a student is a person! Name, surname, age and address are already available in the <code>Person</code> class.</p>
-<p>Can we reinvent the wheel? <strong>Yes</strong>.
-Should we do it? <strong>Nah</strong>.</p>
 </div>
 <p>We would like to define class <code class="docutils literal notranslate"><span class="pre">Student</span></code>, so that the following property holds:</p>
 <p><em>Every instance of class <code class="docutils literal notranslate"><span class="pre">Student</span></code> is also an instance of class <code class="docutils literal notranslate"><span class="pre">Person</span></code>.</em></p>
@@ -815,11 +819,9 @@ I live in Viale Romania
 <b>NOTE:</b> You can inherit from multiple classes, e.g.:<br>
     <code>UniversityTeamPlayer(Student, Athlete)</code><br>
 Every instance of <code>UniversityTeamPlayer</code> inherits from <code>Student</code> and <code>Athlete</code>. This is a slightly more advanced topic, yet it's good to know.
-</div><br>
-<div class="alert alert-block alert-info">
+</div><div class="alert alert-block alert-info">
 <b>HINT:</b> You can surely use the <code>type()</code> function to check the class of an object. A clever alternative, which accounts for inheritance, is the <code>isinstance()</code> function.
-</div>
-<p>The <code>isinstance(obj, c)</code> function is a predicate that tests whether an object <code>obj</code> is an instance of class <code>c</code>.</p>
+</div><p>The <code>isinstance(obj, c)</code> function is a predicate that tests whether an object <code>obj</code> is an instance of class <code>c</code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Mary</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Stuart&#39;</span><span class="p">,</span> <span class="s1">&#39;Mary&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
@@ -846,11 +848,9 @@ True
 <li><p>we defined Mark as a <code class="docutils literal notranslate"><span class="pre">Student</span></code>, but a student is a person, so both of his
 <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> calls yield <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
 </ul>
-<br>
 <div class="alert alert-block alert-danger">
 <b>PROBLEM:</b> There is still no difference between <code>Student</code> and <code>Person</code>.
-</div>
-<p>Indeed, we still have to enrich the class <code>Student</code> in order to accomodate student ID, university name and grades.</p>
+</div><p>Indeed, we still have to enrich the class <code>Student</code> in order to accomodate student ID, university name and grades.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
@@ -891,7 +891,7 @@ The is-a relation is a one-way relation: in our case, all students are persons, 
 </div><p>Let’s see our brand new <code class="docutils literal notranslate"><span class="pre">Student</span></code> class in action.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Alessio&quot;</span><span class="p">,</span> <span class="s2">&quot;Martino&quot;</span><span class="p">,</span> <span class="s2">&quot;LUISS&quot;</span><span class="p">,</span> <span class="s2">&quot;123456&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Viale Romania&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Francesco&quot;</span><span class="p">,</span> <span class="s2">&quot;Totti&quot;</span><span class="p">,</span> <span class="s2">&quot;LUISS&quot;</span><span class="p">,</span> <span class="s2">&quot;123456&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Viale Romania&quot;</span><span class="p">)</span>
 
 <span class="c1"># what we inherited from Person</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">first_name</span><span class="p">)</span>
@@ -906,9 +906,9 @@ The is-a relation is a one-way relation: in our case, all students are persons, 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alessio
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Francesco
 Hello!
-My name is Alessio Martino
+My name is Francesco Totti
 I am 30 years old
 I live in Viale Romania
 24.333333333333332
@@ -921,15 +921,14 @@ I live in Viale Romania
 <h2>Polymorphism<a class="headerlink" href="#polymorphism" title="Link to this heading">#</a></h2>
 <div class="alert alert-block alert-info">
 <b>NOTE:</b> In the child class you can overwrite any methods, not just <code>__init__()</code>.
-</div>
-<p>This aspect introduces us to the concept of <strong>polymorphism</strong>.</p>
+</div><p>This aspect introduces us to the concept of <strong>polymorphism</strong>.</p>
 <p>Broadly speaking, in computer programming, polymorphism means the same function name (but different signatures) being used for different types.</p>
 <p>In Python, common polymorphic functions include:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">len()</span></code>, that returns the number of characters in a string, the number of items in a tuple/list, the number of key-value pairs in a dictionary</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sum()</span></code>, which adds the elements of a sequence as long as the elements of the sequence support addition.</p></li>
 </ul>
-<p>Let’s suppose that our <code class="docutils literal notranslate"><span class="pre">greet()</span></code> does not look nice in the context of a university student. In its “standard form” (i.e., derived from the <code class="docutils literal notranslate"><span class="pre">Person</span></code> class), it reads as:</p>
+<p>Let’s suppose that our <code class="docutils literal notranslate"><span class="pre">greet()</span></code> does not look nice in the context of a university student. In its <em>standard form</em> (i.e., derived from the <code class="docutils literal notranslate"><span class="pre">Person</span></code> class), it reads as:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -959,7 +958,7 @@ I live in Viale Romania
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assuming the Student class is updated with the new greet method</span>
-<span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Alessio&quot;</span><span class="p">,</span> <span class="s2">&quot;Martino&quot;</span><span class="p">,</span> <span class="s2">&quot;LUISS&quot;</span><span class="p">,</span> <span class="s2">&quot;123456&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Viale Romania&quot;</span><span class="p">)</span>
+<span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Francesco&quot;</span><span class="p">,</span> <span class="s2">&quot;Totti&quot;</span><span class="p">,</span> <span class="s2">&quot;LUISS&quot;</span><span class="p">,</span> <span class="s2">&quot;123456&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Viale Romania&quot;</span><span class="p">)</span>
 <span class="n">student1</span><span class="o">.</span><span class="n">add_exam</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="n">student1</span><span class="o">.</span><span class="n">add_exam</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
 <span class="n">student1</span><span class="o">.</span><span class="n">add_exam</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
@@ -969,7 +968,7 @@ I live in Viale Romania
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello!
-My name is Alessio Martino
+My name is Francesco Totti
 I am 30 years old
 I live in Viale Romania
 </pre></div>
@@ -984,13 +983,13 @@ remains untouched.</p>
 <p>What does this code do?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Alessio&quot;</span><span class="p">,</span> <span class="s2">&quot;Martino&quot;</span><span class="p">,</span> <span class="s2">&quot;LUISS&quot;</span><span class="p">,</span> <span class="s2">&quot;123456&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Viale Romania&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Francesco&quot;</span><span class="p">,</span> <span class="s2">&quot;Totti&quot;</span><span class="p">,</span> <span class="s2">&quot;LUISS&quot;</span><span class="p">,</span> <span class="s2">&quot;123456&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Viale Romania&quot;</span><span class="p">)</span>
 
 <span class="n">student1</span><span class="o">.</span><span class="n">add_exam</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>   <span class="c1"># we have student1.exam_grades = [30]</span>
 <span class="n">student1</span><span class="o">.</span><span class="n">add_exam</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>   <span class="c1"># we have student1.exam_grades = [30, 25]</span>
 <span class="n">student1</span><span class="o">.</span><span class="n">add_exam</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>   <span class="c1"># we have student1.exam_grades = [30, 25, 18]</span>
 
-<span class="n">person1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Giorgio&quot;</span><span class="p">,</span> <span class="s2">&quot;Piccardo&quot;</span><span class="p">)</span>
+<span class="n">person1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Daniele&quot;</span><span class="p">,</span> <span class="s2">&quot;De Rossi&quot;</span><span class="p">)</span>
 <span class="n">list_of_persons</span> <span class="o">=</span> <span class="p">[</span><span class="n">student1</span><span class="p">,</span> <span class="n">person1</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">list_of_persons</span><span class="p">:</span>
     <span class="n">item</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>
@@ -999,11 +998,11 @@ remains untouched.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello!
-My name is Alessio Martino
+My name is Francesco Totti
 I am 30 years old
 I live in Viale Romania
 Hello!
-My name is Giorgio Piccardo
+My name is Daniele De Rossi
 I am None years old
 I live in None
 </pre></div>
@@ -1013,7 +1012,7 @@ I live in None
 </section>
 <section id="exercise-session">
 <h2>Exercise session<a class="headerlink" href="#exercise-session" title="Link to this heading">#</a></h2>
-<p>Find the exercises for the exam session: <a class="reference internal" href="../E09/E09-Python-Exercises-Classes.html"><span class="std std-doc">here</span></a></p>
+<p>Find the exercises for the exam session: <a class="reference external" href="https://introcp.github.io/src/E09/E09-Python-Exercises-Classes.html">here</a></p>
 </section>
 </section>
 
