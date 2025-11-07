@@ -213,6 +213,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../P07/P07-Python-Lists.html"><b style="font-family: 'LUISS', 'Lato'">Lists</b></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../P08/P08-Python-Dictionaries-Tuples-Sets.html"><b style="font-family: 'LUISS', 'Lato'">Dictionaries, Tuples, and Sets</b></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../P11/P11-Python-Files.html"><b style="font-family: 'LUISS', 'Lato'">Files</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P12/P12-Python-Sockets-HTTP.html"><b style="font-family: 'LUISS', 'Lato'">Python: HTTP and API Calls</b></a></li>
 </ul>
 
     </div>
@@ -426,7 +427,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-class">Defining a Class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self"><code class="docutils literal notranslate"><span class="pre">self</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructor">Constructor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-examples">Complete Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-example">Complete Example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-objects">Modifying Objects</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation">Encapsulation</a></li>
@@ -481,7 +482,7 @@ document.write(`
 <li><p><strong>strings:</strong> a bunch of characters with methods like <code class="docutils literal notranslate"><span class="pre">split()</span></code>, <code class="docutils literal notranslate"><span class="pre">index()</span></code>, <code class="docutils literal notranslate"><span class="pre">find()</span></code></p></li>
 </ul>
 <div align="center">
-<img src="img/Screenshot 2021-11-08 at 4.10.55 PM.png"/>
+<img src="img/Screenshot 2021-11-08 at 4.10.55 PM.png" width="75%"/>
 </div>
 <p>Where possible methods may include:</p>
 <ul class="simple">
@@ -498,8 +499,10 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Docstring of the class &quot;&quot;&quot;</span>
+    
     <span class="c1"># place here all variables</span>
     <span class="n">age</span> <span class="o">=</span> <span class="mi">10</span>
+
     <span class="c1"># place here all methods</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
@@ -507,7 +510,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>As soon as we define a class, a new “class object” is created with the same name. This special “class object” allows us to see the attributes of the class (variables and/or methods) and, of course, to create new objects for that class.</p>
+<p>As soon as we define a class, a new <em>class object</em> is created with the same name. This special <em>class object</em> allows us to see the attributes of the class (variables and/or methods) and, of course, to create new objects for that class.</p>
 <p>We can therefore now create new objects for that class:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -522,7 +525,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>And we can also access to its attributes (methods and/or variable) via the well-known dot notation.</p>
+<p>And we can also access to its attributes (methods and/or variable) via the well-known dot notation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">charlie</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
@@ -582,8 +585,8 @@ Hello
 </div>
 </div>
 </section>
-<section id="complete-examples">
-<h2>Complete Examples<a class="headerlink" href="#complete-examples" title="Link to this heading">#</a></h2>
+<section id="complete-example">
+<h2>Complete Example<a class="headerlink" href="#complete-example" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
@@ -597,8 +600,13 @@ Hello
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">,</span> <span class="s2">&quot;years old&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I live in&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="p">)</span>
-
-<span class="n">person1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Alessio&quot;</span><span class="p">,</span> <span class="s2">&quot;Martino&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Viale Romania&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Alessio&quot;</span><span class="p">,</span> <span class="s2">&quot;Martino&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Viale Romania&quot;</span><span class="p">)</span>
 <span class="n">person2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Giorgio&quot;</span><span class="p">,</span> <span class="s2">&quot;Piccardo&quot;</span><span class="p">)</span>
 
 <span class="n">person1</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>
@@ -653,8 +661,8 @@ Miles says Bow Wow
 <h2>Modifying Objects<a class="headerlink" href="#modifying-objects" title="Link to this heading">#</a></h2>
 <p>So far we have seen:</p>
 <ul class="simple">
-<li><p>“static” classes, e.g. <code class="docutils literal notranslate"><span class="pre">Person</span></code>: we initialise it with some values and that’s it;</p></li>
-<li><p>“less static” classes, e.g. <code class="docutils literal notranslate"><span class="pre">Dog</span></code>: we initialise it with some values, but we can also change the behaviour of methods at run-time.</p></li>
+<li><p><em>static</em> classes, e.g. <code class="docutils literal notranslate"><span class="pre">Person</span></code>: we initialise it with some values and that’s it;</p></li>
+<li><p><em>less static</em> classes, e.g. <code class="docutils literal notranslate"><span class="pre">Dog</span></code>: we initialise it with some values, but we can also change the behaviour of methods at run-time.</p></li>
 </ul>
 <p>Now, the big question is: <em>can we change the inner variables of an object?</em></p>
 <p>Short answer? <strong>Yes!</strong></p>
@@ -1059,7 +1067,7 @@ I live in None
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-class">Defining a Class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self"><code class="docutils literal notranslate"><span class="pre">self</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructor">Constructor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-examples">Complete Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-example">Complete Example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-objects">Modifying Objects</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation">Encapsulation</a></li>
