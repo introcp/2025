@@ -27,9 +27,8 @@ parts:
       - file: src/P06/P06-Python-Strings.ipynb
       - file: src/P07/P07-Python-Lists.ipynb
       - file: src/P08/P08-Python-Dictionaries-Tuples-Sets.ipynb
-  #     - file: src/P10/P10-Python-Recursion.ipynb
       - file: src/P11/P11-Python-Files.ipynb
       - file: src/P12/P12-Python-Sockets-HTTP.ipynb
-      - file: src/P13/P13-Python-Exceptions.ipynb
       - file: src/P09/P09-Python-Classes.ipynb
-
+      - file: src/P13/P13-Python-Exceptions.ipynb
+      - file: src/P10/P10-Python-Recursion.ipynb
