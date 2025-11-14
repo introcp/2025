@@ -64,6 +64,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Exceptions and Error Handling" href="../P13/P13-Python-Exceptions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +126,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -197,7 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../C05/C05-Computer-Network.html"><b style="font-family: 'LUISS', 'Lato'">Computer Networks</b></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../P00/P00-Python-Getting-Started.html"><b style="font-family: 'LUISS', 'Lato'">Getting Started</b></a></li>
 
 
@@ -216,8 +215,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../P08/P08-Python-Dictionaries-Tuples-Sets.html"><b style="font-family: 'LUISS', 'Lato'">Dictionaries, Tuples, and Sets</b></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../P11/P11-Python-Files.html"><b style="font-family: 'LUISS', 'Lato'">Files</b></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../P12/P12-Python-Sockets-HTTP.html"><b style="font-family: 'LUISS', 'Lato'">Sockets, HTTP and REST API</b></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../P13/P13-Python-Exceptions.html"><b style="font-family: 'LUISS', 'Lato'">Exceptions and Error Handling</b></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../P09/P09-Python-Classes.html"><b style="font-family: 'LUISS', 'Lato'">Classes and Objects</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P13/P13-Python-Exceptions.html"><b style="font-family: 'LUISS', 'Lato'">Exceptions and Error Handling</b></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><b style="font-family: 'LUISS', 'Lato'">Recursion</b></a></li>
 </ul>
 
     </div>
@@ -427,22 +427,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stacks">Stacks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-a-stack">Simulating a Stack</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queues">Queues</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-a-queue">Simulating a Queue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminaries">Preliminaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stacks">Stacks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-a-stack-in-python">Simulating a Stack in Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queues">Queues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-a-queue-in-python">Simulating a Queue in Python</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queue-vs-stack">Queue vs. Stack</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Recursion</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-and-problem-solving">Recursion and Problem Solving</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-recursion">Real-world recursion</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-and-problem-solving-cont-d">Recursion and Problem Solving (cont’d)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#approach-for-problem-decomposition">Approach for Problem Decomposition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-with-recursion">Issues with Recursion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keeping-track-of-recursive-calls">Keeping track of recursive calls</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management">Memory Management</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-countdown">Case Study: <code class="docutils literal notranslate"><span class="pre">countdown</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-countdown">Example: <code class="docutils literal notranslate"><span class="pre">countdown</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial"><code class="docutils literal notranslate"><span class="pre">factorial</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#palindrome"><code class="docutils literal notranslate"><span class="pre">palindrome</span></code></a></li>
@@ -468,10 +472,19 @@ document.write(`
 <br>
 <img src="https://introcp.github.io/dist/img/logo2.png" width="200px">
 <p><br><br><br></p>
+<section id="preliminaries">
+<h2>Preliminaries<a class="headerlink" href="#preliminaries" title="Link to this heading">#</a></h2>
+<p><em><strong>Recursion</strong></em> is a powerful programming technique where a function calls itself to <strong>solve smaller instances of the same problem</strong>. It’s a fundamental concept in computer science and programming, enabling the creation of elegant and efficient solutions to complex problems.</p>
+<p>To understand recursion properly, we need to first explore two fundamental data structures:</p>
+<ol class="arabic simple">
+<li><p><strong>Stacks</strong>: Essential for tracking recursive function calls</p></li>
+<li><p><strong>Queues</strong>: Similar to Stacks, but with a different order of operations</p></li>
+</ol>
+</section>
 <section id="stacks">
 <h2>Stacks<a class="headerlink" href="#stacks" title="Link to this heading">#</a></h2>
 <p>The <strong>stack</strong> is one of the most popular abstract data types in computer science.</p>
-<p>A stack is a sequence (collection) of elements where only the “last” element (i.e., the one at the “top” of the stack) can be accessed.</p>
+<p>A stack is a sequence (collection) of elements where only the <em>last</em> element (i.e., the one at the <em>top</em> of the stack) can be accessed.</p>
 <p>The allowed operations on a stack <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> are the following:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">push(</span></code><span class="math notranslate nohighlight">\(e\)</span><code class="docutils literal notranslate"><span class="pre">,</span> </code><span class="math notranslate nohighlight">\(\mathcal{S}\)</span><code class="docutils literal notranslate"><span class="pre">)</span></code>: adds a new element <span class="math notranslate nohighlight">\(e \in V\)</span>, for any domain <span class="math notranslate nohighlight">\(V\)</span>, at the top of the stack <span class="math notranslate nohighlight">\(\mathcal{S}\)</span></p></li>
@@ -495,9 +508,8 @@ document.write(`
 <p>Effect of <code>push()</code> and <code>pop()</code> over a stack:</p>
 <div align="center">
     <img src="img/Lifo_stack.png" width="80%">
-</div></section>
-<section id="simulating-a-stack">
-<h2>Simulating a Stack<a class="headerlink" href="#simulating-a-stack" title="Link to this heading">#</a></h2>
+</div><section id="simulating-a-stack-in-python">
+<h3>Simulating a Stack in Python<a class="headerlink" href="#simulating-a-stack-in-python" title="Link to this heading">#</a></h3>
 <p>You can simulate the behaviour of a stack with lists.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -557,6 +569,7 @@ document.write(`
 </div>
 </div>
 </section>
+</section>
 <section id="queues">
 <h2>Queues<a class="headerlink" href="#queues" title="Link to this heading">#</a></h2>
 <p>The <strong>queue</strong> is another popular abstract data type in computer science.</p>
@@ -584,9 +597,8 @@ document.write(`
 <p>Visual representation of a queue:</p>
 <div align="center">
     <img src="img/Data_Queue.svg.png" width="80%">
-</div></section>
-<section id="simulating-a-queue">
-<h2>Simulating a Queue<a class="headerlink" href="#simulating-a-queue" title="Link to this heading">#</a></h2>
+</div><section id="simulating-a-queue-in-python">
+<h3>Simulating a Queue in Python<a class="headerlink" href="#simulating-a-queue-in-python" title="Link to this heading">#</a></h3>
 <p>You can simulate the behaviour of a queue with lists.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -617,6 +629,7 @@ document.write(`
 <div class="alert alert-block alert-info">
 <b>NOTE</b>: Here we suppose that the head of the list is the beginning (back) of the queue and that the tail of the list is the end (front) of the queue.
 </div></section>
+</section>
 <section id="queue-vs-stack">
 <h2>Queue vs. Stack<a class="headerlink" href="#queue-vs-stack" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -659,12 +672,10 @@ document.write(`
 <p>When designing the solution of a problem</p>
 <div align="center">
     <span style="color:red">...try to solve the problem assuming that you have <i>already solved it</i>!</span>
-</div>
-<p>How is that possible?</p>
+</div><p>How is that possible?</p>
 <div align="center">
     <span style="color:red">Define the solution of a problem instance in terms of the solution of <i>smaller</i> problem instances.</span>
-</div>
-<p>Practically speaking:</p>
+</div><p>Practically speaking:</p>
 <div align="center">
     <span style="color:red">The function that computes the solution will <i>invoke itself</i> (once or more than once) from inside its body.</span>
 </div></section>
@@ -689,7 +700,7 @@ document.write(`
         <img src="img/Infinity_Mirror_Effect.jpg" width="200px">
         <figcaption>Parallel Mirrors</figcaption>
     </figure>
-</div><p>A more practical example? Computing the factorial of a number <span class="math notranslate nohighlight">\(n\)</span>.</p>
+</div><p>A more practical example? Computing the factorial of a number <span class="math notranslate nohighlight">\(n\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ n! = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 1 \]</div>
 <p>Back-of-the-envelope calculation: <span class="math notranslate nohighlight">\(5!\)</span></p>
@@ -710,15 +721,34 @@ document.write(`
 <h3>Recursion and Problem Solving (cont’d)<a class="headerlink" href="#recursion-and-problem-solving-cont-d" title="Link to this heading">#</a></h3>
 <p>In order to use a recursive approach:</p>
 <ol class="arabic simple">
-<li><p>you must be able to <span style="color:red">decompose</span> the problem into problems of the same type</p></li>
-<li><p>you must find a <span style="color:red">relation</span> that connects a given problem to the solution of similar subproblems</p></li>
-<li><p>you need to know the solution of a special case of the problem (the <span style="color:red">base case</span>, where the recursion terminates).</p></li>
+<li><p>you must be able to <span style="color:red"><b>decompose</b></span> the problem into problems of the same type</p></li>
+<li><p>you must find a <span style="color:red"><b>relation</b></span> that connects a given problem to the solution of similar subproblems</p></li>
+<li><p>you need to know the solution of a special case of the problem (the <span style="color:red"><b>base case</b></span>, where the recursion terminates).</p></li>
 </ol>
 <p>Take the factorial example:</p>
 <ol class="arabic simple">
 <li><p>multiplication between two numbers</p></li>
 <li><p>multiplication between <span class="math notranslate nohighlight">\(n\)</span> and the already-known <span class="math notranslate nohighlight">\((n-1)!\)</span></p></li>
 <li><p>the base case is <span class="math notranslate nohighlight">\(0!=1\)</span></p></li>
+</ol>
+</section>
+<section id="approach-for-problem-decomposition">
+<h3>Approach for Problem Decomposition<a class="headerlink" href="#approach-for-problem-decomposition" title="Link to this heading">#</a></h3>
+<p>When solving a task with a recursive approach:</p>
+<ol class="arabic simple">
+<li><p><strong>Identify the base case(s)</strong>: Determine the simplest version of the problem that can be solved directly. For instance: we know that the factorial of 0 is 1, i.e. <span class="math notranslate nohighlight">\(0! = 1\)</span></p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p><strong>Define the recursive case</strong>: Break down the problem into a smaller version of the same problem. For instance, the factorial of a number <span class="math notranslate nohighlight">\(n\)</span> can be computed by computing <span class="math notranslate nohighlight">\(factorial(n-1)\)</span>.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p><strong>Ensure progress toward the base case</strong>: Make sure each recursive call moves closer to the base case. For instance, the recursive call in the factorial function moves closer to the base case by decreasing the value of n by 1 in each recursive call.</p></li>
+</ol>
+<ol class="arabic simple" start="4">
+<li><p><strong>Combine the results</strong>: Determine how to combine the result of the recursive call with any additional processing needed. For instance, in the factorial function, we need to multiply the result of the recursive call by the current value of <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p></li>
+</ol>
+<ol class="arabic simple" start="5">
+<li><p><strong>Verify correctness</strong>: Test with simple examples to ensure your recursive solution works properly.</p></li>
 </ol>
 </section>
 <section id="issues-with-recursion">
@@ -730,29 +760,45 @@ document.write(`
 <li><p>missing base case?</p></li>
 <li><p>function called with wrong arguments?
 For example, what happens if we do <code class="docutils literal notranslate"><span class="pre">(-1)!</span></code>?
-… more on this later</p></li>
+<br>…more on this later</p></li>
 </ul>
 </li>
+</ol>
+<ol class="arabic simple" start="2">
 <li><p><span style="color:red"><b>Un-responsiveness</b></span></p>
 <ul class="simple">
-<li><p>your code can easily become very slow, also with “easy” input parameters</p></li>
+<li><p>your code can easily become very slow, also with <em>easy</em> input parameters</p></li>
 <li><p>… more on memory management later</p></li>
 </ul>
 </li>
 </ol>
-<br>
-<br>
 <div class="alert alert-block alert-info">
 <b>NOTE</b>: Python is quite good at catching infinite recursions: it has a dedicated error:
 <br>
 <span style="color:red"><b><code>RecursionError: maximum recursion depth exceeded in comparison</code></b></span>
 </div></section>
+<section id="keeping-track-of-recursive-calls">
+<h3>Keeping track of recursive calls<a class="headerlink" href="#keeping-track-of-recursive-calls" title="Link to this heading">#</a></h3>
+<p>To trace recursive function calls, we need to use a <strong>stack</strong> data structure:</p>
+<ul class="simple">
+<li><p>Each time a recursive function is called, a new frame is pushed onto the call stack, containing the function’s parameters and local variables.</p></li>
+<li><p>When a function returns, its frame is popped off the stack.</p></li>
+</ul>
+<p>This stack-based mechanism allows the program to <em>remember</em> where to return after each recursive call completes.</p>
 </section>
-<section id="memory-management">
-<h2>Memory Management<a class="headerlink" href="#memory-management" title="Link to this heading">#</a></h2>
-<section id="case-study-countdown">
-<h3>Case Study: <code class="docutils literal notranslate"><span class="pre">countdown</span></code><a class="headerlink" href="#case-study-countdown" title="Link to this heading">#</a></h3>
+</section>
+<section id="example-countdown">
+<h2>Example: <code class="docutils literal notranslate"><span class="pre">countdown</span></code><a class="headerlink" href="#example-countdown" title="Link to this heading">#</a></h2>
 <p>Write a recursive function <code class="docutils literal notranslate"><span class="pre">countdown(n)</span></code> that takes a positive integer <code class="docutils literal notranslate"><span class="pre">n</span></code> and prints the countdown. As the countdown reaches 0, prints <code class="docutils literal notranslate"><span class="pre">Blastoff!</span></code> and quits.</p>
+<ol class="arabic simple">
+<li><p><strong>Identify the base case(s)</strong>: when <span class="math notranslate nohighlight">\(n=0\)</span>, print <code class="docutils literal notranslate"><span class="pre">Blastoff!</span></code></p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p><strong>Identify the recursive case(s)</strong>: when <span class="math notranslate nohighlight">\(n&gt;0\)</span>, print <span class="math notranslate nohighlight">\(n\)</span> and call the function with <span class="math notranslate nohighlight">\(n-1\)</span></p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p><strong>Ensure progress toward the base case</strong>: the recursive call is with <span class="math notranslate nohighlight">\(n-1\)</span>, which is smaller than <span class="math notranslate nohighlight">\(n\)</span> and will eventually reach <span class="math notranslate nohighlight">\(0\)</span>, our base case.</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -799,11 +845,11 @@ And we are back into the <code class="docutils literal notranslate"><span class=
 <div class="alert alert-block alert-info">
 <b>RECALL</b>: Every time a function gets called, Python creates a new function frame, which contains the function's local variables and parameters.
 </div>
-<p>For a recursive function, there might be more than one frame at the same time. Python organises those frames as a <span style="color:red">stack</span>.</p>
+<p>For a recursive function, there might be more than one frame at the same time. Python organises those frames as a <span style="color:red"><b>stack</b></span>.</p>
 <p>For instance, the stack diagram for <code>countdown(3)</code> is:</p>
 <div align="center">
     <img src="img/book007.png" width="30%">
-</div><p>How does the stack in Figure 10 works?</p>
+</div><p>How does the stack in the figure works?</p>
 <ol class="arabic simple">
 <li><p>(as usual) at the top of the stack is the frame for the <code class="docutils literal notranslate"><span class="pre">main</span></code>*</p></li>
 <li><p>we call <code class="docutils literal notranslate"><span class="pre">countdown(3)</span></code>, so there is a new frame in the stack</p></li>
@@ -812,6 +858,7 @@ And we are back into the <code class="docutils literal notranslate"><span class=
 <li><p><code class="docutils literal notranslate"><span class="pre">countdown(1)</span></code> calls <code class="docutils literal notranslate"><span class="pre">countdown(0)</span></code>, so there is a new frame in the stack</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">countdown(0)</span></code> does not make any further calls, so no more frames</p></li>
 </ol>
+<p><small>* In our case, it is empty because we did not create any variables in main or pass any arguments to it.</small></p>
 <p>We did a bunch of <code class="docutils literal notranslate"><span class="pre">push</span></code>es, now we must do some <code class="docutils literal notranslate"><span class="pre">pop</span></code>s:</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">countdown(0)</span></code> finishes its execution (i.e., prints <code class="docutils literal notranslate"><span class="pre">Blastoff!</span></code> without doing anything else). Its frame is erased.</p></li>
@@ -820,14 +867,32 @@ And we are back into the <code class="docutils literal notranslate"><span class=
 <li><p>the control goes back to <code class="docutils literal notranslate"><span class="pre">countdown(3)</span></code>, which finishes its execution. Its frame is erased.</p></li>
 <li><p>the control goes back to the <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
 </ol>
-<p><small>* In our case, it is empty because we did not create any variables in main or pass any arguments to it.</small></p>
-</section>
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <section id="factorial">
 <h3><code class="docutils literal notranslate"><span class="pre">factorial</span></code><a class="headerlink" href="#factorial" title="Link to this heading">#</a></h3>
 <p>Write a recursive function <code class="docutils literal notranslate"><span class="pre">factorial(n)</span></code> that takes as input a positive integer <code class="docutils literal notranslate"><span class="pre">n</span></code> and returns <span class="math notranslate nohighlight">\(n!\)</span></p>
+<p>Computing the factorial of a number <span class="math notranslate nohighlight">\(n\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ n! = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 1 \]</div>
+<p>Hence:</p>
+<ul class="simple">
+<li><p><strong>Base case</strong>:</p>
+<ul>
+<li><p>When <span class="math notranslate nohighlight">\(n=0\)</span>, then <span class="math notranslate nohighlight">\(1\)</span></p></li>
+<li><p>This comes from: <span class="math notranslate nohighlight">\(0! = 1\)</span></p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p><strong>Recursive case</strong>:</p>
+<ul>
+<li><p>otherwise we know that the factorial of <span class="math notranslate nohighlight">\(n\)</span> is <span class="math notranslate nohighlight">\(n\)</span> times the factorial of <span class="math notranslate nohighlight">\(n-1\)</span></p></li>
+<li><p>This comes from <span class="math notranslate nohighlight">\(n! = n \cdot (n-1)!\)</span></p></li>
+</ul>
+</li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -848,7 +913,7 @@ And we are back into the <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 <div class="alert alert-block alert-danger">
-<b>WARNING</b>: What happens when calling `factorial(-1)`?
+<b>WARNING</b>: What happens when calling <code>factorial(-1)</code>?
 </div><p>Stack diagram for <code class="docutils literal notranslate"><span class="pre">factorial(3)</span></code>:</p>
 <div align="center">
     <img src="img/stackframes_factorial.png" width="50%">
@@ -870,6 +935,23 @@ And we are back into the <code class="docutils literal notranslate"><span class=
 <li><p><span style="color:magenta">d</span>ivi<span style="color:magenta">u</span> -&gt; different letter ✗</p></li>
 </ul>
 <p>Hence, <code class="docutils literal notranslate"><span class="pre">&quot;racecar&quot;</span></code> is palindrome, but <code class="docutils literal notranslate"><span class="pre">&quot;rediviuer&quot;</span></code> it’s not.</p>
+<p>From what we have seen so far:</p>
+<ul class="simple">
+<li><p><strong>Base case</strong>:</p>
+<ul>
+<li><p>when the string is empty or 1 character long, it is a palindrome</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p><strong>Recursive case</strong>:</p>
+<ul>
+<li><p>otherwise, check if the first and last characters are the same</p></li>
+<li><p>if they are, remove the first and last characters and recursively check the remaining string</p></li>
+<li><p>if they are not, it is not a palindrome</p></li>
+</ul>
+</li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">palindrome</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
@@ -902,13 +984,13 @@ False
 <section id="fibonacci">
 <h3><code class="docutils literal notranslate"><span class="pre">fibonacci</span></code><a class="headerlink" href="#fibonacci" title="Link to this heading">#</a></h3>
 <p>Write a recursive function <code class="docutils literal notranslate"><span class="pre">fibonacci(n)</span></code> that takes as input a positive integer <code class="docutils literal notranslate"><span class="pre">n</span></code> and returns the <span class="math notranslate nohighlight">\(n\)</span>-th Fibonacci number.</p>
-<br>
 <div class="alert alert-block alert-info">
-<b>RECALL</b>: Each number in the Fibonacci sequence is given by the sum of the two preceding ones:<br>
-0 1 <span style="color:blue">1 2 3 5 8 13 ...</span>
-</div>
-<br>
-<p>Decomposition strategy: <code class="docutils literal notranslate"><span class="pre">fibonacci(n)</span></code> with <code class="docutils literal notranslate"><span class="pre">n=5</span></code>*:</p>
+<b>RECALL</b>: Each number in the Fibonacci sequence is given by the sum of the two preceding ones:
+<div class="math notranslate nohighlight">
+\[ F(n) = F(n-1) + F(n-2) \]</div>
+<p>where <span class="math notranslate nohighlight">\(F(0) = 0\)</span> and <span class="math notranslate nohighlight">\(F(1) = 1\)</span>.</p>
+<p>Hence: 0 1 <span style="color:blue">1 2 3 5 8 13 …</span></p>
+</div><p>Decomposition strategy: <code class="docutils literal notranslate"><span class="pre">fibonacci(n)</span></code> with <code class="docutils literal notranslate"><span class="pre">n=5</span></code>*:</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation*}
@@ -916,7 +998,23 @@ False
 \end{equation*}
 \]</div>
 <p><small>* By coincidence, the 5th Fibonacci number is 5.</small></p>
-<br><div class="cell docutils container">
+<p>From what we have seen so far:</p>
+<ul class="simple">
+<li><p><strong>Base case</strong>:</p>
+<ul>
+<li><p>When <span class="math notranslate nohighlight">\(n=0\)</span>, then <span class="math notranslate nohighlight">\(f(0) = 0\)</span></p></li>
+<li><p>When <span class="math notranslate nohighlight">\(n=1\)</span>, then <span class="math notranslate nohighlight">\(f(1) = 1\)</span></p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p><strong>Recursive case</strong>:</p>
+<ul>
+<li><p>Otherwise the fibonacci number is the sum of the previous two numbers, i.e., <span class="math notranslate nohighlight">\(f(n) = f(n-1) + f(n-2)\)</span></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
@@ -979,6 +1077,15 @@ False
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../P13/P13-Python-Exceptions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><b style="font-family: 'LUISS', 'Lato'">Exceptions and Error Handling</b></p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -995,22 +1102,26 @@ False
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stacks">Stacks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-a-stack">Simulating a Stack</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queues">Queues</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-a-queue">Simulating a Queue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminaries">Preliminaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stacks">Stacks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-a-stack-in-python">Simulating a Stack in Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queues">Queues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-a-queue-in-python">Simulating a Queue in Python</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queue-vs-stack">Queue vs. Stack</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Recursion</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-and-problem-solving">Recursion and Problem Solving</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-recursion">Real-world recursion</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-and-problem-solving-cont-d">Recursion and Problem Solving (cont’d)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#approach-for-problem-decomposition">Approach for Problem Decomposition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-with-recursion">Issues with Recursion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keeping-track-of-recursive-calls">Keeping track of recursive calls</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management">Memory Management</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-countdown">Case Study: <code class="docutils literal notranslate"><span class="pre">countdown</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-countdown">Example: <code class="docutils literal notranslate"><span class="pre">countdown</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial"><code class="docutils literal notranslate"><span class="pre">factorial</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#palindrome"><code class="docutils literal notranslate"><span class="pre">palindrome</span></code></a></li>

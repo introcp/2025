@@ -76,6 +76,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -6836,6 +6841,11 @@ div.jp-Cell-Placeholder-content-3 {
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 /*-----------------------------------------------------------------------------
@@ -7268,6 +7278,11 @@ all of MD as it is not optimized for dense, information rich UIs.
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <style type="text/css">
 a.anchor-link {
@@ -7296,6 +7311,11 @@ a.anchor-link {
 .reveal .controls button {
   padding: 2px 4px !important;
   font-size: 8px !important;
+}
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
 }
 </style>
 <style type="text/css">
@@ -7427,6 +7447,11 @@ main {
   padding: 2px 4px !important;
   font-size: 8px !important;
 }
+/* Fix inline code styling */
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: transparent !important;
+  padding: 0px 2px !important;
+}
 </style>
 <!-- Load mathjax -->
 <!-- Load mathjax -->
@@ -7476,13 +7501,71 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Preliminaries">Preliminaries<a class="anchor-link" href="#Preliminaries">¶</a></h2><p><em><strong>Recursion</strong></em> is a powerful programming technique where a function calls itself to <strong>solve smaller instances of the same problem</strong>. It's a fundamental concept in computer science and programming, enabling the creation of elegant and efficient solutions to complex problems.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>To understand recursion properly, we need to first explore two fundamental data structures:</p>
+<ol>
+<li><p><strong>Stacks</strong>: Essential for tracking recursive function calls</p>
+</li>
+<li><p><strong>Queues</strong>: Similar to Stacks, but with a different order of operations</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Stacks">Stacks<a class="anchor-link" href="#Stacks">¶</a></h2><p>The <strong>stack</strong> is one of the most popular abstract data types in computer science.</p>
-<p>A stack is a sequence (collection) of elements where only the "last" element (i.e., the one at the "top" of the stack) can be accessed.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>A stack is a sequence (collection) of elements where only the <em>last</em> element (i.e., the one at the <em>top</em> of the stack) can be accessed.</p>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>The allowed operations on a stack $\mathcal{S}$ are the following:</p>
 <ul>
 <li><code>push(</code>$e$<code>, </code>$\mathcal{S}$<code>)</code>: adds a new element $e \in V$, for any domain $V$, at the top of the stack $\mathcal{S}$</li>
 <li><code>pop(</code>$\mathcal{S}$<code>)</code>: returns and removes the current element at the top of the stack $\mathcal{S}$.</li>
 </ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Optionally, it is possible to define an additional operation:</p>
 <ul>
 <li><code>peek(</code>$\mathcal{S}$<code>)</code>: reads the top element without modifying the stack.</li>
@@ -7490,7 +7573,7 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7498,11 +7581,31 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>A special domain value is $\mathcal{S}_\emptyset$, namely the empty stack.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>As $\mathcal{S}_{\emptyset}$ has no elements:</p>
 <ul>
 <li><code>pop()</code> is not allowed</li>
 <li><code>peek()</code> is not allowed.</li>
 </ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>The stack is a <strong>LIFO</strong> (<strong>L</strong>ast-<strong>I</strong>n, <strong>F</strong>irst-<strong>O</strong>ut) data structure, because:</p>
 <ul>
 <li>the last element that entered the stack (i.e., via <code>push()</code>)</li>
@@ -7511,7 +7614,7 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7532,7 +7635,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Simulating-a-Stack">Simulating a Stack<a class="anchor-link" href="#Simulating-a-Stack">¶</a></h2><p>You can simulate the behaviour of a stack with lists.</p>
+<h3 id="Simulating-a-Stack-in-Python">Simulating a Stack in Python<a class="anchor-link" href="#Simulating-a-Stack-in-Python">¶</a></h3><p>You can simulate the behaviour of a stack with lists.</p>
 </div>
 </div>
 </div>
@@ -7653,12 +7756,42 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Queues">Queues<a class="anchor-link" href="#Queues">¶</a></h2><p>The <strong>queue</strong> is another popular abstract data type in computer science.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>A queue is a sequence (collection) of elements where only the "oldest" element can be accessed.</p>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>The allowed operations on a queue $\mathcal{Q}$ are the following:</p>
 <ul>
 <li><code>enqueue(</code>$e$<code>,</code>$\mathcal{Q}$<code>)</code>: adds a new element $e \in V$, for any domain $V$, at the beginning (back) of the queue $\mathcal{Q}$</li>
 <li><code>dequeue(</code>$\mathcal{Q}$<code>)</code>: returns and removes the current element at the end (front) of the queue $\mathcal{Q}$.</li>
 </ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Optionally, it is possible to define an additional operation:</p>
 <ul>
 <li><code>peek(</code>$\mathcal{Q}$<code>)</code>: reads the last element without modifying the queue.</li>
@@ -7666,7 +7799,7 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7674,11 +7807,31 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>A special domain value is $\mathcal{Q}_\emptyset$, namely the empty queue.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>As $\mathcal{Q}_\emptyset$ has no elements:</p>
 <ul>
 <li><code>dequeue()</code> is not allowed</li>
 <li><code>peek()</code> is not allowed.</li>
 </ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>The queue is a <strong>FIFO</strong> (<strong>F</strong>irst-<strong>I</strong>n, <strong>F</strong>irst-<strong>O</strong>ut) data structure, because:</p>
 <ul>
 <li>the first element that entered the queue (i.e., via <code>enqueue()</code>)</li>
@@ -7687,7 +7840,7 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7708,7 +7861,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Simulating-a-Queue">Simulating a Queue<a class="anchor-link" href="#Simulating-a-Queue">¶</a></h2><p>You can simulate the behaviour of a queue with lists.</p>
+<h3 id="Simulating-a-Queue-in-Python">Simulating a Queue in Python<a class="anchor-link" href="#Simulating-a-Queue-in-Python">¶</a></h3><p>You can simulate the behaviour of a queue with lists.</p>
 </div>
 </div>
 </div>
@@ -7840,13 +7993,53 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Recursion-and-Problem-Solving">Recursion and Problem Solving<a class="anchor-link" href="#Recursion-and-Problem-Solving">¶</a></h3><p>When designing the solution of a problem</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div align="center">
 <span style="color:red">...try to solve the problem assuming that you have <i>already solved it</i>!</span>
 </div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>How is that possible?</p>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div align="center">
 <span style="color:red">Define the solution of a problem instance in terms of the solution of <i>smaller</i> problem instances.</span>
 </div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Practically speaking:</p>
 <div align="center">
 <span style="color:red">The function that computes the solution will <i>invoke itself</i> (once or more than once) from inside its body.</span>
@@ -7854,7 +8047,7 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7891,14 +8084,34 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>A more practical example? Computing the factorial of a number $n$.</p>
+<p>A more practical example? Computing the factorial of a number $n$:</p>
 <p>$$ n! = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 1 $$</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Back-of-the-envelope calculation: $5!$</p>
 <p>$$
 \begin{equation*}
 	5! = \underbrace{5 \cdot \underbrace{4 \cdot \underbrace{3 \cdot \underbrace{2 \cdot \underbrace{1}_\text{$1!$}}_\text{$2 \cdot 1!$}}_\text{$3 \cdot 2!$}}_\text{$4 \cdot 3!$}}_\text{$5 \cdot 4!$}
 \end{equation*}
 $$</p>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>We can spot the following pattern:</p>
 <p>$$ n! = n \cdot (n-1)! $$</p>
 <p>with base case:</p>
@@ -7906,7 +8119,7 @@ $$</p>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7915,10 +8128,20 @@ $$</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Recursion-and-Problem-Solving-(cont'd)">Recursion and Problem Solving (cont'd)<a class="anchor-link" href="#Recursion-and-Problem-Solving-(cont'd)">¶</a></h3><p>In order to use a recursive approach:</p>
 <ol>
-<li>you must be able to <span style="color:red">decompose</span> the problem into problems of the same type</li>
-<li>you must find a <span style="color:red">relation</span> that connects a given problem to the solution of similar subproblems</li>
-<li>you need to know the solution of a special case of the problem (the <span style="color:red">base case</span>, where the recursion terminates).</li>
+<li>you must be able to <span style="color:red"><b>decompose</b></span> the problem into problems of the same type</li>
+<li>you must find a <span style="color:red"><b>relation</b></span> that connects a given problem to the solution of similar subproblems</li>
+<li>you need to know the solution of a special case of the problem (the <span style="color:red"><b>base case</b></span>, where the recursion terminates).</li>
 </ol>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Take the factorial example:</p>
 <ol>
 <li>multiplication between two numbers</li>
@@ -7928,7 +8151,83 @@ $$</p>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Approach-for-Problem-Decomposition">Approach for Problem Decomposition<a class="anchor-link" href="#Approach-for-Problem-Decomposition">¶</a></h3><p>When solving a task with a recursive approach:</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol>
+<li><strong>Identify the base case(s)</strong>: Determine the simplest version of the problem that can be solved directly. For instance: we know that the factorial of 0 is 1, i.e. $0! = 1$</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="2">
+<li><strong>Define the recursive case</strong>: Break down the problem into a smaller version of the same problem. For instance, the factorial of a number $n$ can be computed by computing $factorial(n-1)$.</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="3">
+<li><strong>Ensure progress toward the base case</strong>: Make sure each recursive call moves closer to the base case. For instance, the recursive call in the factorial function moves closer to the base case by decreasing the value of n by 1 in each recursive call.</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="4">
+<li><strong>Combine the results</strong>: Determine how to combine the result of the recursive call with any additional processing needed. For instance, in the factorial function, we need to multiply the result of the recursive call by the current value of <code>n</code>.</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="5">
+<li><strong>Verify correctness</strong>: Test with simple examples to ensure your recursive solution works properly.</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7936,22 +8235,52 @@ $$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Issues-with-Recursion">Issues with Recursion<a class="anchor-link" href="#Issues-with-Recursion">¶</a></h3><p>There are two major issues with recursion:</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol>
 <li><span style="color:red"><b>Infinite recursion</b></span><ul>
 <li>missing base case?</li>
 <li>function called with wrong arguments?
 For example, what happens if we do <code>(-1)!</code>?
-... more on this later</li>
+<br/>...more on this later</li>
 </ul>
 </li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="2">
 <li><span style="color:red"><b>Un-responsiveness</b></span><ul>
-<li>your code can easily become very slow, also with "easy" input parameters</li>
+<li>your code can easily become very slow, also with <em>easy</em> input parameters</li>
 <li>... more on memory management later</li>
 </ul>
 </li>
 </ol>
-<br/>
-<br/>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="alert alert-block alert-info">
 <b>NOTE</b>: Python is quite good at catching infinite recursions: it has a dedicated error:
 <br/>
@@ -7960,6 +8289,22 @@ For example, what happens if we do <code>(-1)!</code>?
 </div>
 </div>
 </div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Keeping-track-of-recursive-calls">Keeping track of recursive calls<a class="anchor-link" href="#Keeping-track-of-recursive-calls">¶</a></h3><p>To trace recursive function calls, we need to use a <strong>stack</strong> data structure:</p>
+<ul>
+<li>Each time a recursive function is called, a new frame is pushed onto the call stack, containing the function's parameters and local variables.</li>
+<li>When a function returns, its frame is popped off the stack.</li>
+</ul>
+<p>This stack-based mechanism allows the program to <em>remember</em> where to return after each recursive call completes.</p>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7967,7 +8312,7 @@ For example, what happens if we do <code>(-1)!</code>?
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Memory-Management">Memory Management<a class="anchor-link" href="#Memory-Management">¶</a></h2>
+<h2 id="Example:-countdown">Example: <code>countdown</code><a class="anchor-link" href="#Example:-countdown">¶</a></h2><p>Write a recursive function <code>countdown(n)</code> that takes a positive integer <code>n</code> and prints the countdown. As the countdown reaches 0, prints <code>Blastoff!</code> and quits.</p>
 </div>
 </div>
 </div>
@@ -7978,11 +8323,39 @@ For example, what happens if we do <code>(-1)!</code>?
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Case-Study:-countdown">Case Study: <code>countdown</code><a class="anchor-link" href="#Case-Study:-countdown">¶</a></h3><p>Write a recursive function <code>countdown(n)</code> that takes a positive integer <code>n</code> and prints the countdown. As the countdown reaches 0, prints <code>Blastoff!</code> and quits.</p>
+<ol>
+<li><strong>Identify the base case(s)</strong>: when $n=0$, print <code>Blastoff!</code></li>
+</ol>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="2">
+<li><strong>Identify the recursive case(s)</strong>: when $n&gt;0$, print $n$ and call the function with $n-1$</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="3">
+<li><strong>Ensure progress toward the base case</strong>: the recursive call is with $n-1$, which is smaller than $n$ and will eventually reach $0$, our base case.</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8057,7 +8430,7 @@ And we are back into the <code>main</code> script.</li>
 <div class="alert alert-block alert-info">
 <b>RECALL</b>: Every time a function gets called, Python creates a new function frame, which contains the function's local variables and parameters.
 </div>
-<p>For a recursive function, there might be more than one frame at the same time. Python organises those frames as a <span style="color:red">stack</span>.</p>
+<p>For a recursive function, there might be more than one frame at the same time. Python organises those frames as a <span style="color:red"><b>stack</b></span>.</p>
 <p>For instance, the stack diagram for <code>countdown(3)</code> is:</p>
 <div align="center">
 <img alt="No description has been provided for this image" src="img/book007.png" width="30%"/>
@@ -8072,7 +8445,7 @@ And we are back into the <code>main</code> script.</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>How does the stack in Figure 10 works?</p>
+<p>How does the stack in the figure works?</p>
 <ol>
 <li>(as usual) at the top of the stack is the frame for the <code>main</code>*</li>
 <li>we call <code>countdown(3)</code>, so there is a new frame in the stack</li>
@@ -8081,6 +8454,17 @@ And we are back into the <code>main</code> script.</li>
 <li><code>countdown(1)</code> calls <code>countdown(0)</code>, so there is a new frame in the stack</li>
 <li><code>countdown(0)</code> does not make any further calls, so no more frames</li>
 </ol>
+<p><small>* In our case, it is empty because we did not create any variables in main or pass any arguments to it.</small></p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>We did a bunch of <code>push</code>es, now we must do some <code>pop</code>s:</p>
 <ol>
 <li><code>countdown(0)</code> finishes its execution (i.e., prints <code>Blastoff!</code> without doing anything else). Its frame is erased.</li>
@@ -8089,11 +8473,10 @@ And we are back into the <code>main</code> script.</li>
 <li>the control goes back to <code>countdown(3)</code>, which finishes its execution. Its frame is erased.</li>
 <li>the control goes back to the <code>main</code>.</li>
 </ol>
-<p><small>* In our case, it is empty because we did not create any variables in main or pass any arguments to it.</small></p>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8115,7 +8498,64 @@ And we are back into the <code>main</code> script.</li>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Computing the factorial of a number $n$:</p>
+<p>$$ n! = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 1 $$</p>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Hence:</p>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong>Base case</strong>:<ul>
+<li>When $n=0$, then $1$</li>
+<li>This comes from: $0! = 1$</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong>Recursive case</strong>:<ul>
+<li>otherwise we know that the factorial of $n$ is $n$ times the factorial of $n-1$</li>
+<li>This comes from $n! = n \cdot (n-1)!$</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8149,7 +8589,7 @@ And we are back into the <code>main</code> script.</li>
 </div>
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8157,12 +8597,12 @@ And we are back into the <code>main</code> script.</li>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="alert alert-block alert-danger">
-<b>WARNING</b>: What happens when calling `factorial(-1)`?
+<b>WARNING</b>: What happens when calling <code>factorial(-1)</code>?
 </div>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8184,6 +8624,16 @@ And we are back into the <code>main</code> script.</li>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="palindrome"><code>palindrome</code><a class="anchor-link" href="#palindrome">¶</a></h3><p>Write a recursive function <code>palindrome(s)</code> that takes as input a string <code>s</code> and returns <code>True</code> if <code>s</code> is palindrome and <code>False</code> otherwise.</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Decomposition strategy: let <code>s</code> be <code>"racecar"</code></p>
 <ul>
 <li><span style="color:red">r</span>aceca<span style="color:red">r</span> -&gt; same letter ✓</li>
@@ -8191,6 +8641,16 @@ And we are back into the <code>main</code> script.</li>
 <li><span style="color:magenta">c</span>e<span style="color:magenta">c</span> -&gt; same letter ✓</li>
 <li>e -&gt; trivial ✓</li>
 </ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>and now let <code>s</code> be <code>"rediviuer"</code></p>
 <ul>
 <li><span style="color:red">r</span>ediviue<span style="color:red">r</span> -&gt; same letter ✓</li>
@@ -8201,7 +8661,52 @@ And we are back into the <code>main</code> script.</li>
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>From what we have seen so far:</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong>Base case</strong>:<ul>
+<li>when the string is empty or 1 character long, it is a palindrome</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong>Recursive case</strong>:<ul>
+<li>otherwise, check if the first and last characters are the same</li>
+<li>if they are, remove the first and last characters and recursively check the remaining string</li>
+<li>if they are not, it is not a palindrome</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8274,12 +8779,33 @@ False
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="fibonacci"><code>fibonacci</code><a class="anchor-link" href="#fibonacci">¶</a></h3><p>Write a recursive function <code>fibonacci(n)</code> that takes as input a positive integer <code>n</code> and returns the $n$-th Fibonacci number.</p>
-<br/>
-<div class="alert alert-block alert-info">
-<b>RECALL</b>: Each number in the Fibonacci sequence is given by the sum of the two preceding ones:<br/>
-0 1 <span style="color:blue">1 2 3 5 8 13 ...</span>
 </div>
-<br/>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="alert alert-block alert-info">
+<b>RECALL</b>: Each number in the Fibonacci sequence is given by the sum of the two preceding ones:
+
+<p>$$ F(n) = F(n-1) + F(n-2) $$</p>
+<p>where $F(0) = 0$ and $F(1) = 1$.</p>
+<p>Hence: 0 1 <span style="color:blue">1 2 3 5 8 13 ...</span></p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Decomposition strategy: <code>fibonacci(n)</code> with <code>n=5</code>*:</p>
 <p>$$
 \begin{equation*}
@@ -8290,18 +8816,51 @@ $$</p>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<br/>
+<p>From what we have seen so far:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong>Base case</strong>:<ul>
+<li>When $n=0$, then $f(0) = 0$</li>
+<li>When $n=1$, then $f(1) = 1$</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong>Recursive case</strong>:<ul>
+<li>Otherwise the fibonacci number is the sum of the previous two numbers, i.e., $f(n) = f(n-1) + f(n-2)$</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8360,17 +8919,6 @@ $$</p>
 <div align="center">
 <img alt="No description has been provided for this image" src="img/stackframes_fibonacci2.png" width="100%"/>
 </div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Exercise-session">Exercise session<a class="anchor-link" href="#Exercise-session">¶</a></h2><p>Find the exercises for the exam session: <a href="../E10/E10-Python-Exercises-Recursion.ipynb">here</a></p>
 </div>
 </div>
 </div>
