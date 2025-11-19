@@ -1,0 +1,1036 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Multiprocessing &#8212; Introduction to computer programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7faeedcc" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/P14/P14-Python-Multiprocessing';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Introduction to computer programming - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Introduction to computer programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    <b style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</b>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../A00/A00-Introduction.html"><b style="font-family: 'LUISS', 'Lato'">Course overview</b></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computer Systems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../C00/C00-Bits-and-Bytes.html"><b style="font-family: 'LUISS', 'Lato'">Bits and Bytes</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C01/C01-Boolean-Logic.html"><b style="font-family: 'LUISS', 'Lato'">Boolean Logic</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C02/C02-Hardware.html"><b style="font-family: 'LUISS', 'Lato'">Hardware</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C03/C03-Software.html"><b style="font-family: 'LUISS', 'Lato'">Software</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C04/C04-OS-Essentials.html"><b style="font-family: 'LUISS', 'Lato'">Operating System Essentials</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C05/C05-Computer-Network.html"><b style="font-family: 'LUISS', 'Lato'">Computer Networks</b></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../P00/P00-Python-Getting-Started.html"><b style="font-family: 'LUISS', 'Lato'">Getting Started</b></a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../P01/P01-Python-Expressions-and-Types.html"><b style="font-family: 'LUISS', 'Lato'">Expressions and Data Types</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P02/P02-Python-Types-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Variables and Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P03/P03-Python-Branching.html"><b style="font-family: 'LUISS', 'Lato'">Branching</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P04/P04-Python-Functions.html"><b style="font-family: 'LUISS', 'Lato'">Functions</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../E01/E01-Python-Errors.html"><b style="font-family: 'LUISS', 'Lato'">Types of Errors</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P05/P05-Python-Iteration.html"><b style="font-family: 'LUISS', 'Lato'">Iteration</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P06/P06-Python-Strings.html"><b style="font-family: 'LUISS', 'Lato'">Strings</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P07/P07-Python-Lists.html"><b style="font-family: 'LUISS', 'Lato'">Lists</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P08/P08-Python-Dictionaries-Tuples-Sets.html"><b style="font-family: 'LUISS', 'Lato'">Dictionaries, Tuples, and Sets</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P11/P11-Python-Files.html"><b style="font-family: 'LUISS', 'Lato'">Files</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P12/P12-Python-Sockets-HTTP.html"><b style="font-family: 'LUISS', 'Lato'">Sockets, HTTP and REST API</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P09/P09-Python-Classes.html"><b style="font-family: 'LUISS', 'Lato'">Classes and Objects</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P13/P13-Python-Exceptions.html"><b style="font-family: 'LUISS', 'Lato'">Exceptions and Error Handling</b></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../P10/P10-Python-Recursion.html"><b style="font-family: 'LUISS', 'Lato'">Recursion</b></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/introcp/introcp.github.io/blob/2025/src/P14/P14-Python-Multiprocessing.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+
+<li><a href="https://ercoppa.github.io/jupyterlite/lab/?fromURL=https://introcp.github.io/_sources//src/P14/P14-Python-Multiprocessing.ipynb" target="_blank"
+  class="btn btn-sm dropdown-item"
+  title="Launch on JupyterLite"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+ 
+
+<span class="btn__icon-container">
+ 
+   <img alt="JupyterLite logo" src="https://avatars.githubusercontent.com/u/81094398?s=200&v=4">
+ </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+    
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://introcp.github.io/src/download.html?file=/_sources/src/P14/P14-Python-Multiprocessing.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.open(window.location.pathname.replace('.html', '.pdf'));"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+    <button onclick="window.open(window.location.pathname.replace('.html', '.slides.html'));"
+    class="btn btn-sm btn-fullscreen-button"
+    title="Slide"
+    data-bs-placement="bottom" data-bs-toggle="tooltip"
+    >
+    
+    <span class="btn__icon-container">
+        <i class="fa-brands fa-slideshare"></i>
+    </span>
+
+    </button>
+
+    <button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><b style="font-family: 'LUISS', 'Lato'">Multiprocessing</b></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-computer-execute-code">How does a computer execute code?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-transistors-more-speed-20-years-ago">More transistors, more speed (20 years ago)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-lunch-is-over-more-transistors-more-cores">Free lunch is over: more transistors, more cores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-task-execution-single-core">Single Task Execution [single core]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-task-execution-single-core">Multi Task Execution [single core]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-task-execution-multi-core">Multi Task Execution [multi core]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelism">Parallelism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#processes">Processes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#threads">Threads</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#threads-vs-processes">Threads vs. Processes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-python-program-likely-uses-a-single-core">A Python program likely uses a single core</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelism-in-python">Parallelism in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#threads-in-python-the-gil-problem">Threads in Python: the GIL Problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-is-not-threading">Multiprocessing is not threading</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-small-cpu-bound-task">A small CPU-bound task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-bound-tasks-sequential-execution">CPU-bound tasks: sequential execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#threading-parallel-function-execution"><code class="docutils literal notranslate"><span class="pre">threading</span></code>: parallel function execution?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-parallel-function-execution"><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>: parallel function execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-bound-task-parallel-execution">CPU-bound task: parallel execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-work-assignment"><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>: work assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-issues-about-sharing-data"><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>: issues about sharing data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelism-versus-artificial-intelligence">Parallelism versus Artificial Intelligence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="multiprocessing">
+<h1><b style="font-family: 'LUISS', 'Lato'">Multiprocessing</b><a class="headerlink" href="#multiprocessing" title="Link to this heading">#</a></h1>
+<h2 style="font-family: 'LUISS', 'Lato'">Introduction to computer programming</h2>
+<h3 style="font-family: 'LUISS', 'Lato'">Management and Artificial Intelligence</h3>
+<br>
+<img src="https://introcp.github.io/dist/img/logo2.png" width="200px">
+<p><br><br><br></p>
+<section id="how-does-a-computer-execute-code">
+<h2>How does a computer execute code?<a class="headerlink" href="#how-does-a-computer-execute-code" title="Link to this heading">#</a></h2>
+<p>The code of a program is executed by a CPU. A CPU has <strong>one or more cores</strong>, each of which can execute a single instruction at a time.</p>
+<p>How can make our code run faster?</p>
+</section>
+<section id="more-transistors-more-speed-20-years-ago">
+<h2>More transistors, more speed (20 years ago)<a class="headerlink" href="#more-transistors-more-speed-20-years-ago" title="Link to this heading">#</a></h2>
+<p>Moore’s Law (1965) states that the number of transistors on a microchip doubles about every two years with a minimal cost increase. For a long time, <strong>more transistors meant more speed</strong>.</p>
+<center>
+<img src="img/moore.png" width="600">
+</center></section>
+<section id="free-lunch-is-over-more-transistors-more-cores">
+<h2>Free lunch is over: more transistors, more cores<a class="headerlink" href="#free-lunch-is-over-more-transistors-more-cores" title="Link to this heading">#</a></h2>
+<center>
+<img src="img/moore.png" width="500">
+</center>
+<p>In the past, we could rely on the fact that the CPU speed would double every two years. This is no longer the case. The CPU speed has not increased significantly in the last decade. Instead, the <strong>number of cores has increased</strong>. The problem is that <strong>most of the software is not designed to take advantage of multiple cores</strong>.</p>
+</section>
+<section id="single-task-execution-single-core">
+<h2>Single Task Execution [single core]<a class="headerlink" href="#single-task-execution-single-core" title="Link to this heading">#</a></h2>
+<p>If we run our Python program, the CPU will execute the code sequentially, i.e., one instruction at a time. This is known as <em>single task execution</em>:</p>
+<center>
+<img src="img/single-task.png">
+</center>
+<p>The line in yellow is the execution of our Python program.</p>
+</section>
+<section id="multi-task-execution-single-core">
+<h2>Multi Task Execution [single core]<a class="headerlink" href="#multi-task-execution-single-core" title="Link to this heading">#</a></h2>
+<p>Modern operating systems allow for <em>multi task execution</em>. This means that the CPU can execute multiple tasks at the same time. This is achieved by rapidly switching between tasks. This is known as <em>time sharing</em>:</p>
+<center>
+<img src="img/multi-task.png">
+</center>
+<p>The line in yellow is the execution of our Python program. It is not a continuous line because the CPU is executing other tasks.</p>
+</section>
+<section id="multi-task-execution-multi-core">
+<h2>Multi Task Execution [multi core]<a class="headerlink" href="#multi-task-execution-multi-core" title="Link to this heading">#</a></h2>
+<p>When we have multiple cores, we can execute multiple tasks at the same time. This is known as <em>multi core execution</em>:</p>
+<center>
+<img src="img/multi-task-multi-core.png">
+</center>
+<p>The line in yellow is the execution of our Python program. It could be not a continuous line when the CPU is executing other tasks on the same core.</p>
+</section>
+<section id="parallelism">
+<h2>Parallelism<a class="headerlink" href="#parallelism" title="Link to this heading">#</a></h2>
+<p>Parallelism is the ability to execute multiple tasks at the same time:</p>
+<center>
+<img src="img/parallelism.png">
+</center></section>
+<section id="processes">
+<h2>Processes<a class="headerlink" href="#processes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>A <strong>process</strong> is an instance of a program in execution</p></li>
+<li><p>Each process has its own:</p>
+<ul>
+<li><p><strong>memory space</strong> (variables, heap, stack)</p></li>
+<li><p><strong>file descriptors</strong>, environment, etc.</p></li>
+</ul>
+</li>
+<li><p>The operating system schedules processes on available <strong>CPU cores</strong></p></li>
+</ul>
+<p>Relation to parallelism &amp; concurrency:</p>
+<ul class="simple">
+<li><p>On <strong>one core</strong>, multiple processes are <em>concurrent</em> (time-shared)</p></li>
+<li><p>On <strong>multiple cores</strong>, different processes can truly run in <strong>parallel</strong></p></li>
+</ul>
+<p>In Python:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module creates <strong>child processes</strong></p></li>
+<li><p>Each process has its own Python interpreter and its own GIL (Global Interpreter Lock)</p></li>
+</ul>
+</section>
+<section id="threads">
+<h2>Threads<a class="headerlink" href="#threads" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>A <strong>thread</strong> is a lighter unit of execution <strong>inside a process</strong></p></li>
+<li><p>Threads in the same process share:</p>
+<ul>
+<li><p>the same <strong>address space</strong> (global variables, objects)</p></li>
+<li><p>open files, sockets, etc.</p></li>
+</ul>
+</li>
+</ul>
+<p>Relation to concurrency &amp; parallelism:</p>
+<ul class="simple">
+<li><p>Threads are often used to express <strong>concurrency</strong>:</p>
+<ul>
+<li><p>many activities <em>in progress</em> within the <strong>same process</strong></p></li>
+</ul>
+</li>
+<li><p>On multi-core CPUs, different threads <em>could</em> run in <strong>parallel</strong></p></li>
+</ul>
+</section>
+<section id="threads-vs-processes">
+<h2>Threads vs. Processes<a class="headerlink" href="#threads-vs-processes" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Characteristics</p></th>
+<th class="head"><p>Threads</p></th>
+<th class="head"><p>Processes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Creation</p></td>
+<td><p>Lightweight</p></td>
+<td><p>Heavyweight</p></td>
+</tr>
+<tr class="row-odd"><td><p>Communication</p></td>
+<td><p>Shared memory</p></td>
+<td><p>IPC</p></td>
+</tr>
+<tr class="row-even"><td><p>Overhead</p></td>
+<td><p>Low</p></td>
+<td><p>High</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parallelism</p></td>
+<td><p>Within a process</p></td>
+<td><p>Inter-process</p></td>
+</tr>
+<tr class="row-even"><td><p>Scalability</p></td>
+<td><p>Good</p></td>
+<td><p>Better</p></td>
+</tr>
+<tr class="row-odd"><td><p>Code complexity</p></td>
+<td><p>Simpler</p></td>
+<td><p>More complex</p></td>
+</tr>
+<tr class="row-even"><td><p>System resources</p></td>
+<td><p>Shared</p></td>
+<td><p>Independent</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data race issues</p></td>
+<td><p>Possible</p></td>
+<td><p>Less likely</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="a-python-program-likely-uses-a-single-core">
+<h2>A Python program likely uses a single core<a class="headerlink" href="#a-python-program-likely-uses-a-single-core" title="Link to this heading">#</a></h2>
+<p>Most Python code is designed to run on a single core. Up to now, we have we have written code that runs on a single core.
+Besides technical reasons, the main problem is that writing code that works on different cores is complex and error-prone. For instance:</p>
+<ol class="arabic simple">
+<li><p>How do we split a larger task into multiple subtasks?</p></li>
+<li><p>How do we synchronize the subtasks?</p></li>
+<li><p>How do we collect the results?</p></li>
+</ol>
+<p>These problems are not easy to solve. After 50 years, there is still no general solution to these problems. In other words, we cannot take a traditional program designed to run over a single core and make it run over multiple cores without rewriting it.</p>
+</section>
+<section id="parallelism-in-python">
+<h2>Parallelism in Python<a class="headerlink" href="#parallelism-in-python" title="Link to this heading">#</a></h2>
+<p>There are several ways to write parallel code in Python. The most common ways are:</p>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">threading</span></code></strong>: the <code class="docutils literal notranslate"><span class="pre">threading</span></code> module allows us to run multiple <em><strong>threads</strong></em> within a single process. Different <strong>threads can easily share data becuase the share their memory space</strong>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code></strong>: the <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module allows us to run multiple processes. <strong>Each process has its own memory space</strong> and runs in its own memory space. Hence, <strong>sharing data is expensive</strong>.</p></li>
+</ol>
+</section>
+<section id="threads-in-python-the-gil-problem">
+<h2>Threads in Python: the GIL Problem<a class="headerlink" href="#threads-in-python-the-gil-problem" title="Link to this heading">#</a></h2>
+<p>In CPython, i.e., the reference implementation of Python:</p>
+<ul class="simple">
+<li><p>The <strong>Global Interpreter Lock (GIL)</strong> is a mutex that protects access to Python objects, preventing multiple threads from executing Python bytecode simultaneously</p></li>
+</ul>
+<ul class="simple">
+<li><p>Pratical implications:</p>
+<ul>
+<li><p>For <strong>CPU-bound tasks</strong>: threads provide <strong>no performance benefit</strong> and may even add overhead due to context switching</p></li>
+<li><p>For <strong>I/O-bound tasks</strong>: threads remain useful since the GIL is released during I/O operations</p></li>
+</ul>
+</li>
+<li><p><strong>Result</strong>: Python threads cannot leverage multiple CPU cores for parallel computation</p></li>
+</ul>
+<p><strong>Workaround</strong>: Use <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> for true parallelism in CPU-intensive workloads</p>
+<section id="multiprocessing-is-not-threading">
+<h3>Multiprocessing is not threading<a class="headerlink" href="#multiprocessing-is-not-threading" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>We use the <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module to create <strong>separate processes</strong></p></li>
+<li><p>Each process has its own Python interpreter and memory space</p>
+<ul>
+<li><p>No GIL issues</p></li>
+<li><p>True parallelism on multiple CPU cores</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Major challenge</strong>: Sharing Data Between Processes</p>
+<ul class="simple">
+<li><p>Different processes <strong>do not share memory</strong> by default</p></li>
+<li><p>We need special mechanisms to share data across processes:</p>
+<ul>
+<li><p>Shared memory objects</p></li>
+<li><p>Queues and Pipes</p></li>
+<li><p>Manager objects</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="a-small-cpu-bound-task">
+<h2>A small CPU-bound task<a class="headerlink" href="#a-small-cpu-bound-task" title="Link to this heading">#</a></h2>
+<p>Let us consider a syntetic CPU-intensive task: executing 2 times <code class="docutils literal notranslate"><span class="pre">compute_something(2500000)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_something</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># this is just a synthetic computation</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">200</span> <span class="o">**</span> <span class="mi">200</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">r</span>  <span class="c1"># not a very useful computation</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>  <span class="c1"># get the current time</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">compute_something</span><span class="p">(</span><span class="mi">2500000</span><span class="p">)</span>  <span class="c1"># first computation</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">compute_something</span><span class="p">(</span><span class="mi">2500000</span><span class="p">)</span>  <span class="c1"># second computation</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>  <span class="c1"># get the current time</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elapsed time:&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="s2">&quot;seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time: 6.517977476119995 seconds
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cpu-bound-tasks-sequential-execution">
+<h2>CPU-bound tasks: sequential execution<a class="headerlink" href="#cpu-bound-tasks-sequential-execution" title="Link to this heading">#</a></h2>
+<p>We are executing <code class="docutils literal notranslate"><span class="pre">compute_something</span></code> twice sequentially. This is a CPU-bound task.</p>
+<p>Only one core is used:</p>
+<center>
+<img src="https://ercoppa.github.io/labds/05/img/example-cpu-usage.png">
+</center></section>
+<section id="threading-parallel-function-execution">
+<h2><code class="docutils literal notranslate"><span class="pre">threading</span></code>: parallel function execution?<a class="headerlink" href="#threading-parallel-function-execution" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">worker</span><span class="w"> </span><span class="kn">import</span> <span class="n">compute_something</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">compute_something</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">2500000</span><span class="p">,))</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">compute_something</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">2500000</span><span class="p">,))</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">t2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="c1"># wait for the process to finish</span>
+<span class="n">t1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+<span class="n">t2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>  
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elapsed time:&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="s2">&quot;seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time: 5.1023900508880615 seconds
+</pre></div>
+</div>
+</div>
+</div>
+<p>BUT WAIT… <strong>IT IS NOT FASTER!</strong></p>
+<p><em><strong>WHY?</strong></em></p>
+<p>As we already said, the GIL prevents parallel execution of Python code.</p>
+</section>
+<section id="multiprocessing-parallel-function-execution">
+<h2><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>: parallel function execution<a class="headerlink" href="#multiprocessing-parallel-function-execution" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">worker</span><span class="w"> </span><span class="kn">import</span> <span class="n">compute_something</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">compute_something</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">2500000</span><span class="p">,))</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">compute_something</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">2500000</span><span class="p">,))</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="c1"># wait for the process to finish</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elapsed time:&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="s2">&quot;seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time: 3.496157169342041 seconds
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cpu-bound-task-parallel-execution">
+<h2>CPU-bound task: parallel execution<a class="headerlink" href="#cpu-bound-task-parallel-execution" title="Link to this heading">#</a></h2>
+<p>We are executing one <code class="docutils literal notranslate"><span class="pre">compute_something</span></code> on each core.</p>
+<p>Two cores are used:</p>
+<center>
+<img src="img/example-cpu-usage-2-cores.png">
+</center></section>
+<section id="multiprocessing-work-assignment">
+<h2><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>: work assignment<a class="headerlink" href="#multiprocessing-work-assignment" title="Link to this heading">#</a></h2>
+<p>What if we have more tasks than processes?</p>
+<p><code class="docutils literal notranslate"><span class="pre">multiprocessing.Pool</span></code> allows us to create a pool of processes. We can then assign tasks to the pool. The pool will take care of assigning the tasks to the processes.</p>
+<p>For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">worker</span><span class="w"> </span><span class="kn">import</span> <span class="n">compute_something</span>
+
+<span class="n">pool</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2500000</span><span class="p">,</span> <span class="mi">2500000</span><span class="p">,</span> <span class="mi">2500000</span><span class="p">]</span>  <span class="c1"># we want to compute the same thing three times</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">compute_something</span><span class="p">,</span> <span class="n">inputs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1561361386212, 1561361386212, 1561361386212]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="multiprocessing-issues-about-sharing-data">
+<h2><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>: issues about sharing data<a class="headerlink" href="#multiprocessing-issues-about-sharing-data" title="Link to this heading">#</a></h2>
+<p>The processes do not share memory. By default, <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> takes care of:</p>
+<ol class="arabic simple">
+<li><p>Transfering the data related to arguments (in our example: <code class="docutils literal notranslate"><span class="pre">n=2500000</span></code>)</p></li>
+<li><p>Transfering the data related to the return value (in our example: <code class="docutils literal notranslate"><span class="pre">r</span></code>)</p></li>
+</ol>
+<p>These operations can be expensive when the data to move around is large.</p>
+<p>Depending on what we are doing, we may find a way to avoid such a data transfer. For instance, when our function needs to process a file and compute the results, instead of passing the data of the file and get back the data of the processed file, we can just read and write the file from the disk and pass to the function only the file name.</p>
+<p>There are several cases when we would like to share data between processes. For instance, we may want to share a large dataset between processes. In such cases, we can use the <code class="docutils literal notranslate"><span class="pre">multiprocessing.Manager</span></code> class to build data structures (such as lists) that are shared.</p>
+<p>However, sharing data is expensive and should be avoided when possible.</p>
+<p>Suppose we want to use a list between processes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compute_something_with_index</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">200</span> <span class="o">**</span> <span class="mi">200</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">l</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>  <span class="c1"># we store the result in the list</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">worker</span><span class="w"> </span><span class="kn">import</span> <span class="n">compute_something_with_index</span>
+
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>  <span class="c1"># list</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">compute_something_with_index</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="mi">2500000</span><span class="p">))</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">compute_something_with_index</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="mi">2500000</span><span class="p">))</span>
+
+<span class="n">p1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>  <span class="c1"># start the process</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>  <span class="c1"># start the process</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>  <span class="c1"># wait for the process to finish</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>  <span class="c1"># wait for the process to finish</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[None, None]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The list <code class="docutils literal notranslate"><span class="pre">l</span></code> has not changed! This is because the list <code class="docutils literal notranslate"><span class="pre">l</span></code> is not shared between the processes. Instead, each process has its own copy of the list <code class="docutils literal notranslate"><span class="pre">l</span></code>.</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">multiprocessing.Manager</span></code> class to create a shared list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">worker</span><span class="w"> </span><span class="kn">import</span> <span class="n">compute_something_with_index</span>
+
+<span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Manager</span><span class="p">()</span> <span class="k">as</span> <span class="n">manager</span><span class="p">:</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">manager</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>  <span class="c1"># create a shared list</span>
+    <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">compute_something_with_index</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="mi">2500000</span><span class="p">))</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">compute_something_with_index</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="mi">2500000</span><span class="p">))</span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1561361386212, 1561361386212]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">multiprocessing.Manager</span></code> class offers several data structures that can be shared between processes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dict</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Value</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Array</span></code></p></li>
+<li><p>…</p></li>
+</ul>
+<p>They work like the normal data structures but they are shared between processes. However, sharing data is expensive and should be avoided when possible.</p>
+</section>
+<section id="parallelism-versus-artificial-intelligence">
+<h2>Parallelism versus Artificial Intelligence<a class="headerlink" href="#parallelism-versus-artificial-intelligence" title="Link to this heading">#</a></h2>
+<p>Should you use parallelism in your data science projects?</p>
+<p>Most of the time, unlikely. At least, not directly. What it may happen is that you may use a library that uses parallelism under the hood. For instance, <code class="docutils literal notranslate"><span class="pre">parallel_pandas</span></code> uses parallelism when you apply a function to a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<p><strong>Hence, you should have an idea of what we mean by parallelism and how it works.</strong></p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Modern CPUs have <strong>multiple cores</strong> → potential for <strong>parallel</strong> execution</p></li>
+<li><p><strong>Concurrency</strong> vs <strong>parallelism</strong>:</p>
+<ul>
+<li><p>concurrency = many tasks in progress (may be interleaved)</p></li>
+<li><p>parallelism = tasks running at the same time on different cores</p></li>
+</ul>
+</li>
+<li><p><strong>Threads</strong> (<code class="docutils literal notranslate"><span class="pre">threading</span></code>):</p>
+<ul>
+<li><p>good for <strong>I/O-bound</strong> tasks</p></li>
+<li><p>limited for <strong>CPU-bound</strong> tasks in CPython due to the <strong>GIL</strong></p></li>
+</ul>
+</li>
+<li><p><strong>Multiprocessing</strong> (<code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>):</p>
+<ul>
+<li><p>separate processes can use multiple cores</p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">Process</span></code>, <code class="docutils literal notranslate"><span class="pre">Pool</span></code>, and data-sharing tools (<code class="docutils literal notranslate"><span class="pre">Value</span></code>, <code class="docutils literal notranslate"><span class="pre">Array</span></code>, <code class="docutils literal notranslate"><span class="pre">Manager</span></code>, <code class="docutils literal notranslate"><span class="pre">Queue</span></code>) to structure parallel programs.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src/P14"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-computer-execute-code">How does a computer execute code?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-transistors-more-speed-20-years-ago">More transistors, more speed (20 years ago)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-lunch-is-over-more-transistors-more-cores">Free lunch is over: more transistors, more cores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-task-execution-single-core">Single Task Execution [single core]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-task-execution-single-core">Multi Task Execution [single core]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-task-execution-multi-core">Multi Task Execution [multi core]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelism">Parallelism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#processes">Processes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#threads">Threads</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#threads-vs-processes">Threads vs. Processes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-python-program-likely-uses-a-single-core">A Python program likely uses a single core</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelism-in-python">Parallelism in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#threads-in-python-the-gil-problem">Threads in Python: the GIL Problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-is-not-threading">Multiprocessing is not threading</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-small-cpu-bound-task">A small CPU-bound task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-bound-tasks-sequential-execution">CPU-bound tasks: sequential execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#threading-parallel-function-execution"><code class="docutils literal notranslate"><span class="pre">threading</span></code>: parallel function execution?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-parallel-function-execution"><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>: parallel function execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-bound-task-parallel-execution">CPU-bound task: parallel execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-work-assignment"><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>: work assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-issues-about-sharing-data"><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>: issues about sharing data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelism-versus-artificial-intelligence">Parallelism versus Artificial Intelligence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Emilio Coppa and Alessio Martino
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
