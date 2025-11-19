@@ -46,3 +46,4 @@
   - [H00: Exercises Binary Numbers and Boolean Logic](H00/H00-Exercises-Binary-Boolean.ipynb)
   - [H01: Python Recap](H01/H01-Python-Recap.ipynb)
   - [H02: Python Recap II](H02/H02-Python-Recap-II.ipynb)
+  - [H03: Python Recap III](H03/H03-Python-Recap-III.ipynb)
