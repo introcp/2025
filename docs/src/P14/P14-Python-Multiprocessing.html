@@ -622,7 +622,7 @@ Besides technical reasons, the main problem is that writing code that works on d
 <h2>Parallelism in Python<a class="headerlink" href="#parallelism-in-python" title="Link to this heading">#</a></h2>
 <p>There are several ways to write parallel code in Python. The most common ways are:</p>
 <ol class="arabic simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">threading</span></code></strong>: the <code class="docutils literal notranslate"><span class="pre">threading</span></code> module allows us to run multiple <em><strong>threads</strong></em> within a single process. Different <strong>threads can easily share data becuase the share their memory space</strong>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">threading</span></code></strong>: the <code class="docutils literal notranslate"><span class="pre">threading</span></code> module allows us to run multiple <em><strong>threads</strong></em> within a single process. Different <strong>threads can easily share data because the share their memory space</strong>.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code></strong>: the <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module allows us to run multiple processes. <strong>Each process has its own memory space</strong> and runs in its own memory space. Hence, <strong>sharing data is expensive</strong>.</p></li>
 </ol>
 </section>
@@ -690,7 +690,7 @@ Besides technical reasons, the main problem is that writing code that works on d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time: 6.517977476119995 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time: 6.523406267166138 seconds
 </pre></div>
 </div>
 </div>
@@ -725,7 +725,7 @@ Besides technical reasons, the main problem is that writing code that works on d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time: 5.1023900508880615 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time: 5.120981693267822 seconds
 </pre></div>
 </div>
 </div>
@@ -756,7 +756,7 @@ Besides technical reasons, the main problem is that writing code that works on d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time: 3.496157169342041 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time: 3.3153629302978516 seconds
 </pre></div>
 </div>
 </div>
@@ -795,10 +795,10 @@ Besides technical reasons, the main problem is that writing code that works on d
 </section>
 <section id="multiprocessing-issues-about-sharing-data">
 <h2><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>: issues about sharing data<a class="headerlink" href="#multiprocessing-issues-about-sharing-data" title="Link to this heading">#</a></h2>
-<p>The processes do not share memory. By default, <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> takes care of:</p>
+<p>The processes do not share memory. By default, <code class="docutils literal notranslate"><span class="pre">multiprocessing.Pool</span></code> takes care of:</p>
 <ol class="arabic simple">
-<li><p>Transfering the data related to arguments (in our example: <code class="docutils literal notranslate"><span class="pre">n=2500000</span></code>)</p></li>
-<li><p>Transfering the data related to the return value (in our example: <code class="docutils literal notranslate"><span class="pre">r</span></code>)</p></li>
+<li><p>Transfering the data related to arguments (in our example: <code class="docutils literal notranslate"><span class="pre">inputs</span></code>)</p></li>
+<li><p>Transfering the data related to the return value (in our example: <code class="docutils literal notranslate"><span class="pre">results</span></code>)</p></li>
 </ol>
 <p>These operations can be expensive when the data to move around is large.</p>
 <p>Depending on what we are doing, we may find a way to avoid such a data transfer. For instance, when our function needs to process a file and compute the results, instead of passing the data of the file and get back the data of the processed file, we can just read and write the file from the disk and pass to the function only the file name.</p>
