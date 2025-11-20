@@ -1043,27 +1043,20 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id349">Debug your solution</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-87-sum-of-upper-triangular-matrix">Exercise 87: Sum of upper triangular matrix</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-87-max-upper-diagonal-minus-min-lower-diagonal">Exercise 87: Max upper diagonal minus min lower diagonal</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id350">Exercise Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id351">Your solution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id352">Test your solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id353">Debug your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id353">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id354">Debug your solution</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-88-max-upper-diagonal-minus-min-lower-diagonal">Exercise 88: Max upper diagonal minus min lower diagonal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id354">Exercise Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id355">Your solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id356">Test your solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-88-max-upper-triangular-minus-min-lower-triangular">Exercise 88: Max upper triangular minus min lower triangular</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id355">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id356">Your solution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id357">Test your solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id358">Debug your solution</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-89-max-upper-triangular-minus-min-lower-triangular">Exercise 89: Max upper triangular minus min lower triangular</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id359">Exercise Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id360">Your solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id361">Test your solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id362">Test your solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id363">Debug your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id358">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id359">Debug your solution</a></li>
 </ul>
 </li>
 </ul>
@@ -6738,80 +6731,10 @@ assume that all sublists have the same length and that the number of rows equals
 </section>
 </section>
 <hr class="docutils" />
-<section id="exercise-87-sum-of-upper-triangular-matrix">
-<h2>Exercise 87: Sum of upper triangular matrix<a class="headerlink" href="#exercise-87-sum-of-upper-triangular-matrix" title="Link to this heading">#</a></h2>
+<section id="exercise-87-max-upper-diagonal-minus-min-lower-diagonal">
+<h2>Exercise 87: Max upper diagonal minus min lower diagonal<a class="headerlink" href="#exercise-87-max-upper-diagonal-minus-min-lower-diagonal" title="Link to this heading">#</a></h2>
 <section id="id350">
 <h3>Exercise Description<a class="headerlink" href="#id350" title="Link to this heading">#</a></h3>
-<p>Let <code class="docutils literal notranslate"><span class="pre">M</span></code> be an ( n \times m ) matrix of numbers organized as a list-of-lists with ( n ) lists where each inner list has length ( m ). You can assume that all inner lists have the same size ( m ) and you can assume <code class="docutils literal notranslate"><span class="pre">M</span></code> to be non-empty.</p>
-<p>Write a Python function called <code class="docutils literal notranslate"><span class="pre">my_function(M)</span></code> that, given a matrix <code class="docutils literal notranslate"><span class="pre">M</span></code>, returns the sum of its upper triangular part.</p>
-<p>Keep in mind the following caveats and definitions:</p>
-<ul class="simple">
-<li><p>the upper triangular of a matrix is defined as the portion of the matrix composed by only elements lying above (and including) the main diagonal</p></li>
-<li><p>normally, triangular matrices are special cases of square matrices (namely matrices whose number of rows is equal to the number of columns): if ( n ) is not equal to ( m ), the function must return <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
-<li><p>if the matrix is a square matrix but there is at least one negative element (regardless of its position), the function must return <code class="docutils literal notranslate"><span class="pre">-2</span></code></p></li>
-</ul>
-</section>
-<section id="id351">
-<h3>Your solution<a class="headerlink" href="#id351" title="Link to this heading">#</a></h3>
-<div class="cell tag_student_solution docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
-    <span class="c1"># compute number of rows n</span>
-    <span class="c1"># compute number of columns m using the length of the first row</span>
-    <span class="c1"># if n is not equal to m, return -1 (matrix is not square)</span>
-    <span class="c1"># for each row index i from 0 to n-1</span>
-        <span class="c1"># for each column index j from 0 to m-1</span>
-            <span class="c1"># if M[i][j] is negative, return -2</span>
-    <span class="c1"># create a variable s to store the sum of the upper triangle, initialised to 0</span>
-    <span class="c1"># for each row index i from 0 to n-1</span>
-        <span class="c1"># for each column index j from i to m-1 (only elements on and above the main diagonal)</span>
-            <span class="c1"># add M[i][j] to s</span>
-    <span class="c1"># return s as the final result</span>
-    <span class="k">pass</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id352">
-<h3>Test your solution<a class="headerlink" href="#id352" title="Link to this heading">#</a></h3>
-<div class="cell tag_tests docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test case 1 (Example)</span>
-<span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span>
-<span class="k">assert</span> <span class="n">my_function</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="mi">26</span>
-
-<span class="c1"># Additional tests</span>
-<span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]]</span>
-<span class="k">assert</span> <span class="n">my_function</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
-
-<span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span>
-<span class="k">assert</span> <span class="n">my_function</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">2</span>
-
-<span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
-<span class="k">assert</span> <span class="n">my_function</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="mi">38</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id353">
-<h3>Debug your solution<a class="headerlink" href="#id353" title="Link to this heading">#</a></h3>
-<p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">;</span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span><span class="p">;</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;a href=&quot;https://pythontutor.com/visualize.html#code=</span><span class="si">{}</span><span class="s1">&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false&quot; target=&quot;_blank&quot; style=&quot;font-size:16px;color:blue;text-decoration:underline;&quot;&gt;🔗 Visualize YOUR solution in Python Tutor&lt;/a&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2"># Test case 1 (Example)</span><span class="se">\n</span><span class="s2">M = [[1,2,3], [4,5,6], [7,8,9]]</span><span class="se">\n</span><span class="s2">assert my_function(M) == 26</span><span class="se">\n\n</span><span class="s2"># Additional tests</span><span class="se">\n</span><span class="s2">M = [[1,2,3], [4,5,6], [7,8,9], [10, 11, 12]]</span><span class="se">\n</span><span class="s2">assert my_function(M) == -1</span><span class="se">\n\n</span><span class="s2">M = [[1,2,3], [-0.01,5,6], [7,8,9]]</span><span class="se">\n</span><span class="s2">assert my_function(M) == -2</span><span class="se">\n\n</span><span class="s2">M = [[1, 2, 3, 0, 4], [3, 3, 1, 0, 3], [7, 3, 8, 4, 0], [1, 6, 7, 9, 0], [2, 4, 6, 9, 0]]</span><span class="se">\n</span><span class="s2">assert my_function(M) == 38&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;assert&quot;</span><span class="p">,</span><span class="s2">&quot;print(&quot;</span><span class="p">,</span><span class="s2">&quot;HTML(&quot;</span><span class="p">,</span><span class="s2">&quot;display(&quot;</span><span class="p">,</span><span class="s2">&quot;import&quot;</span><span class="p">,</span><span class="s2">&quot;from IPython&quot;</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">))),</span> <span class="p">(</span><span class="n">_ih</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_ih</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;# No code&quot;</span><span class="p">)))))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<hr class="docutils" />
-<section id="exercise-88-max-upper-diagonal-minus-min-lower-diagonal">
-<h2>Exercise 88: Max upper diagonal minus min lower diagonal<a class="headerlink" href="#exercise-88-max-upper-diagonal-minus-min-lower-diagonal" title="Link to this heading">#</a></h2>
-<section id="id354">
-<h3>Exercise Description<a class="headerlink" href="#id354" title="Link to this heading">#</a></h3>
 <p>Let <code class="docutils literal notranslate"><span class="pre">M</span></code> be an ( n \times m ) matrix of numbers organized as a list-of-lists with ( n ) lists where each inner list has length ( m ). You can assume that all inner lists have the same size ( m ) and you can assume <code class="docutils literal notranslate"><span class="pre">M</span></code> to be non-empty.</p>
 <p>Write a Python function called <code class="docutils literal notranslate"><span class="pre">my_function(M)</span></code> that, given a matrix <code class="docutils literal notranslate"><span class="pre">M</span></code>, returns the difference between the maximum value inside the upper diagonal and the minimum value of the lower diagonal:</p>
 <ul class="simple">
@@ -6821,8 +6744,8 @@ assume that all sublists have the same length and that the number of rows equals
 <li><p>if ( n ) is equal to ( m ) but there is at least one negative element (regardless of its position), the function must return <code class="docutils literal notranslate"><span class="pre">-2</span></code></p></li>
 </ul>
 </section>
-<section id="id355">
-<h3>Your solution<a class="headerlink" href="#id355" title="Link to this heading">#</a></h3>
+<section id="id351">
+<h3>Your solution<a class="headerlink" href="#id351" title="Link to this heading">#</a></h3>
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
@@ -6849,8 +6772,8 @@ assume that all sublists have the same length and that the number of rows equals
 </div>
 </div>
 </section>
-<section id="id356">
-<h3>Test your solution<a class="headerlink" href="#id356" title="Link to this heading">#</a></h3>
+<section id="id352">
+<h3>Test your solution<a class="headerlink" href="#id352" title="Link to this heading">#</a></h3>
 <div class="cell tag_tests docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test case 1 (Example)</span>
@@ -6861,8 +6784,8 @@ assume that all sublists have the same length and that the number of rows equals
 </div>
 </div>
 </section>
-<section id="id357">
-<h3>Test your solution<a class="headerlink" href="#id357" title="Link to this heading">#</a></h3>
+<section id="id353">
+<h3>Test your solution<a class="headerlink" href="#id353" title="Link to this heading">#</a></h3>
 <div class="cell tag_tests docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Additional tests</span>
@@ -6879,8 +6802,8 @@ assume that all sublists have the same length and that the number of rows equals
 </div>
 </div>
 </section>
-<section id="id358">
-<h3>Debug your solution<a class="headerlink" href="#id358" title="Link to this heading">#</a></h3>
+<section id="id354">
+<h3>Debug your solution<a class="headerlink" href="#id354" title="Link to this heading">#</a></h3>
 <p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -6892,10 +6815,10 @@ assume that all sublists have the same length and that the number of rows equals
 </section>
 </section>
 <hr class="docutils" />
-<section id="exercise-89-max-upper-triangular-minus-min-lower-triangular">
-<h2>Exercise 89: Max upper triangular minus min lower triangular<a class="headerlink" href="#exercise-89-max-upper-triangular-minus-min-lower-triangular" title="Link to this heading">#</a></h2>
-<section id="id359">
-<h3>Exercise Description<a class="headerlink" href="#id359" title="Link to this heading">#</a></h3>
+<section id="exercise-88-max-upper-triangular-minus-min-lower-triangular">
+<h2>Exercise 88: Max upper triangular minus min lower triangular<a class="headerlink" href="#exercise-88-max-upper-triangular-minus-min-lower-triangular" title="Link to this heading">#</a></h2>
+<section id="id355">
+<h3>Exercise Description<a class="headerlink" href="#id355" title="Link to this heading">#</a></h3>
 <p>Let <code class="docutils literal notranslate"><span class="pre">M</span></code> be an ( n \times m ) matrix of numbers organized as a list-of-lists with ( n ) lists where each inner list has length ( m ). You can assume that all inner lists have the same size ( m ) and you can assume <code class="docutils literal notranslate"><span class="pre">M</span></code> to be non-empty.</p>
 <p>Write a Python function called <code class="docutils literal notranslate"><span class="pre">my_function(M)</span></code> that, given a matrix <code class="docutils literal notranslate"><span class="pre">M</span></code>, returns the difference between the maximum value of its upper triangular matrix and the minimum value of its lower triangular matrix.</p>
 <p>Keep in mind the following caveats and definitions:</p>
@@ -6906,8 +6829,8 @@ assume that all sublists have the same length and that the number of rows equals
 <li><p>if the matrix is a square matrix but there is at least one negative element (regardless of its position), the function must return <code class="docutils literal notranslate"><span class="pre">-2</span></code></p></li>
 </ul>
 </section>
-<section id="id360">
-<h3>Your solution<a class="headerlink" href="#id360" title="Link to this heading">#</a></h3>
+<section id="id356">
+<h3>Your solution<a class="headerlink" href="#id356" title="Link to this heading">#</a></h3>
 <div class="cell tag_student_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
@@ -6934,8 +6857,8 @@ assume that all sublists have the same length and that the number of rows equals
 </div>
 </div>
 </section>
-<section id="id361">
-<h3>Test your solution<a class="headerlink" href="#id361" title="Link to this heading">#</a></h3>
+<section id="id357">
+<h3>Test your solution<a class="headerlink" href="#id357" title="Link to this heading">#</a></h3>
 <div class="cell tag_tests docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test case 1 (Example)</span>
@@ -6946,8 +6869,8 @@ assume that all sublists have the same length and that the number of rows equals
 </div>
 </div>
 </section>
-<section id="id362">
-<h3>Test your solution<a class="headerlink" href="#id362" title="Link to this heading">#</a></h3>
+<section id="id358">
+<h3>Test your solution<a class="headerlink" href="#id358" title="Link to this heading">#</a></h3>
 <div class="cell tag_tests docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Additional tests</span>
@@ -6964,8 +6887,8 @@ assume that all sublists have the same length and that the number of rows equals
 </div>
 </div>
 </section>
-<section id="id363">
-<h3>Debug your solution<a class="headerlink" href="#id363" title="Link to this heading">#</a></h3>
+<section id="id359">
+<h3>Debug your solution<a class="headerlink" href="#id359" title="Link to this heading">#</a></h3>
 <p>The following cells contain code to generate links to Python Tutor for debugging your code when running the tests. <strong>You need to first run the cell containing your solution code before running the cell containing the Python Tutor link.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7641,27 +7564,20 @@ assume that all sublists have the same length and that the number of rows equals
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id349">Debug your solution</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-87-sum-of-upper-triangular-matrix">Exercise 87: Sum of upper triangular matrix</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-87-max-upper-diagonal-minus-min-lower-diagonal">Exercise 87: Max upper diagonal minus min lower diagonal</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id350">Exercise Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id351">Your solution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id352">Test your solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id353">Debug your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id353">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id354">Debug your solution</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-88-max-upper-diagonal-minus-min-lower-diagonal">Exercise 88: Max upper diagonal minus min lower diagonal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id354">Exercise Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id355">Your solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id356">Test your solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-88-max-upper-triangular-minus-min-lower-triangular">Exercise 88: Max upper triangular minus min lower triangular</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id355">Exercise Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id356">Your solution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id357">Test your solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id358">Debug your solution</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-89-max-upper-triangular-minus-min-lower-triangular">Exercise 89: Max upper triangular minus min lower triangular</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id359">Exercise Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id360">Your solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id361">Test your solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id362">Test your solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id363">Debug your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id358">Test your solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id359">Debug your solution</a></li>
 </ul>
 </li>
 </ul>
