@@ -7749,7 +7749,7 @@ Besides technical reasons, the main problem is that writing code that works on d
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Parallelism-in-Python">Parallelism in Python<a class="anchor-link" href="#Parallelism-in-Python">¶</a></h2><p>There are several ways to write parallel code in Python. The most common ways are:</p>
 <ol>
-<li><p><strong><code>threading</code></strong>: the <code>threading</code> module allows us to run multiple <em><strong>threads</strong></em> within a single process. Different <strong>threads can easily share data becuase the share their memory space</strong>.</p>
+<li><p><strong><code>threading</code></strong>: the <code>threading</code> module allows us to run multiple <em><strong>threads</strong></em> within a single process. Different <strong>threads can easily share data because the share their memory space</strong>.</p>
 </li>
 <li><p><strong><code>multiprocessing</code></strong>: the <code>multiprocessing</code> module allows us to run multiple processes. <strong>Each process has its own memory space</strong> and runs in its own memory space. Hence, <strong>sharing data is expensive</strong>.</p>
 </li>
@@ -8108,11 +8108,11 @@ Besides technical reasons, the main problem is that writing code that works on d
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="multiprocessing:-issues-about-sharing-data"><code>multiprocessing</code>: issues about sharing data<a class="anchor-link" href="#multiprocessing:-issues-about-sharing-data">¶</a></h2><p>The processes do not share memory. By default, <code>multiprocessing</code> takes care of:</p>
+<h2 id="multiprocessing:-issues-about-sharing-data"><code>multiprocessing</code>: issues about sharing data<a class="anchor-link" href="#multiprocessing:-issues-about-sharing-data">¶</a></h2><p>The processes do not share memory. By default, <code>multiprocessing.Pool</code> takes care of:</p>
 <ol>
-<li><p>Transfering the data related to arguments (in our example: <code>n=2500000</code>)</p>
+<li><p>Transfering the data related to arguments (in our example: <code>inputs</code>)</p>
 </li>
-<li><p>Transfering the data related to the return value (in our example: <code>r</code>)</p>
+<li><p>Transfering the data related to the return value (in our example: <code>results</code>)</p>
 </li>
 </ol>
 <p>These operations can be expensive when the data to move around is large.</p>
@@ -8290,7 +8290,7 @@ Besides technical reasons, the main problem is that writing code that works on d
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3d3c28a3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
