@@ -6295,11 +6295,11 @@ document.write(`
 <h2>Exercise 76: Difference between main and anti-diagonal<a class="headerlink" href="#exercise-76-difference-between-main-and-anti-diagonal" title="Link to this heading">#</a></h2>
 <section id="id297">
 <h3>Exercise Description<a class="headerlink" href="#id297" title="Link to this heading">#</a></h3>
-<p>Let <code class="docutils literal notranslate"><span class="pre">M</span></code> be an ( n \times m ) matrix of numbers organized as a list-of-lists with ( n ) lists where each inner list has length ( m ). You can assume that all inner lists have the same size ( m ) and you can assume <code class="docutils literal notranslate"><span class="pre">M</span></code> to be non-empty.</p>
+<p>Let <code class="docutils literal notranslate"><span class="pre">M</span></code> be an <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">×</span> <span class="pre">m</span></code> matrix of numbers organized as a list-of-lists with <code class="docutils literal notranslate"><span class="pre">n</span></code> lists where each inner list has length <code class="docutils literal notranslate"><span class="pre">m</span></code>. You can assume that all inner lists have the same size <code class="docutils literal notranslate"><span class="pre">m</span></code> and you can assume <code class="docutils literal notranslate"><span class="pre">M</span></code> to be non-empty.</p>
 <p>Write a Python function called <code class="docutils literal notranslate"><span class="pre">my_function(M)</span></code> that, given a matrix <code class="docutils literal notranslate"><span class="pre">M</span></code>, returns the absolute value of the difference between the sum of its main diagonal and the sum of its anti-diagonal.</p>
 <p>Keep in mind the following caveats and definitions:</p>
 <ul class="simple">
-<li><p>normally, main diagonal and anti-diagonal are defined for square matrices only (namely matrices whose number of rows is equal to the number of columns): if ( n ) is not equal to ( m ), the function must return <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
+<li><p>normally, main diagonal and anti-diagonal are defined for square matrices only (namely matrices whose number of rows is equal to the number of columns): if <code class="docutils literal notranslate"><span class="pre">n</span></code> is not equal to <code class="docutils literal notranslate"><span class="pre">m</span></code>, the function must return <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
 <li><p>the main diagonal of a matrix is defined as the list of entries lying from the top left to the bottom right corner of the matrix</p></li>
 <li><p>the anti-diagonal of a matrix is defined as the list of entries lying from the top right to the bottom left corner of the matrix</p></li>
 </ul>
@@ -7055,13 +7055,13 @@ assume that all sublists have the same length and that the number of rows equals
 <h2>Exercise 86: Matrix transpose<a class="headerlink" href="#exercise-86-matrix-transpose" title="Link to this heading">#</a></h2>
 <section id="id346">
 <h3>Exercise Description<a class="headerlink" href="#id346" title="Link to this heading">#</a></h3>
-<p>Let <code class="docutils literal notranslate"><span class="pre">M</span></code> be an ( n \times m ) matrix of numbers organized as a list-of-lists with ( n ) lists where each inner list has length ( m ).</p>
+<p>Let <code class="docutils literal notranslate"><span class="pre">M</span></code> be an <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">×</span> <span class="pre">m</span></code> matrix of numbers organized as a list-of-lists with <code class="docutils literal notranslate"><span class="pre">n</span></code> lists where each inner list has length <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">my_function(M)</span></code> that takes as input a matrix <code class="docutils literal notranslate"><span class="pre">M</span></code> and returns its transpose.</p>
 <p>Keep in mind the following caveats and definitions:</p>
 <ul class="simple">
 <li><p>if the input matrix is empty, the function must return <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
-<li><p>the input list-of-lists must indeed be a valid matrix where all rows have the same length ( m ): if this does not hold, the function must return <code class="docutils literal notranslate"><span class="pre">-2</span></code></p></li>
-<li><p>the transpose of an ( n \times m ) matrix is a new ( m \times n ) matrix where the item in position ( (i,j) ) of the original matrix lies in position ( (j,i) ) in the transposed matrix</p></li>
+<li><p>the input list-of-lists must indeed be a valid matrix where all rows have the same length <code class="docutils literal notranslate"><span class="pre">m</span></code>: if this does not hold, the function must return <code class="docutils literal notranslate"><span class="pre">-2</span></code></p></li>
+<li><p>the transpose of an <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">×</span> <span class="pre">m</span></code> matrix is a new <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">×</span> <span class="pre">n</span></code> matrix where the item in position <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">j)</span></code> of the original matrix lies in position <code class="docutils literal notranslate"><span class="pre">(j,</span> <span class="pre">i)</span></code> in the transposed matrix</p></li>
 </ul>
 </section>
 <section id="id347">
@@ -7153,13 +7153,13 @@ assume that all sublists have the same length and that the number of rows equals
 <h2>Exercise 87: Max upper diagonal minus min lower diagonal<a class="headerlink" href="#exercise-87-max-upper-diagonal-minus-min-lower-diagonal" title="Link to this heading">#</a></h2>
 <section id="id350">
 <h3>Exercise Description<a class="headerlink" href="#id350" title="Link to this heading">#</a></h3>
-<p>Let <code class="docutils literal notranslate"><span class="pre">M</span></code> be an ( n \times m ) matrix of numbers organized as a list-of-lists with ( n ) lists where each inner list has length ( m ). You can assume that all inner lists have the same size ( m ) and you can assume <code class="docutils literal notranslate"><span class="pre">M</span></code> to be non-empty.</p>
+<p>Let <code class="docutils literal notranslate"><span class="pre">M</span></code> be an <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">×</span> <span class="pre">m</span></code> matrix of numbers organized as a list-of-lists with <code class="docutils literal notranslate"><span class="pre">n</span></code> lists where each inner list has length <code class="docutils literal notranslate"><span class="pre">m</span></code>. You can assume that all inner lists have the same size <code class="docutils literal notranslate"><span class="pre">m</span></code> and you can assume <code class="docutils literal notranslate"><span class="pre">M</span></code> to be non-empty.</p>
 <p>Write a Python function called <code class="docutils literal notranslate"><span class="pre">my_function(M)</span></code> that, given a matrix <code class="docutils literal notranslate"><span class="pre">M</span></code>, returns the difference between the maximum value inside the upper diagonal and the minimum value of the lower diagonal:</p>
 <ul class="simple">
 <li><p>the upper diagonal is defined as the diagonal of the matrix directly above the main diagonal</p></li>
 <li><p>the lower diagonal is defined as the diagonal of the matrix directly below the main diagonal</p></li>
-<li><p>if ( n ) is not equal to ( m ), the function must return <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
-<li><p>if ( n ) is equal to ( m ) but there is at least one negative element (regardless of its position), the function must return <code class="docutils literal notranslate"><span class="pre">-2</span></code></p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">n</span></code> is not equal to <code class="docutils literal notranslate"><span class="pre">m</span></code>, the function must return <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">n</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">m</span></code> but there is at least one negative element (regardless of its position), the function must return <code class="docutils literal notranslate"><span class="pre">-2</span></code></p></li>
 </ul>
 </section>
 <section id="id351">
@@ -7247,13 +7247,13 @@ assume that all sublists have the same length and that the number of rows equals
 <h2>Exercise 88: Max upper triangular minus min lower triangular<a class="headerlink" href="#exercise-88-max-upper-triangular-minus-min-lower-triangular" title="Link to this heading">#</a></h2>
 <section id="id355">
 <h3>Exercise Description<a class="headerlink" href="#id355" title="Link to this heading">#</a></h3>
-<p>Let <code class="docutils literal notranslate"><span class="pre">M</span></code> be an ( n \times m ) matrix of numbers organized as a list-of-lists with ( n ) lists where each inner list has length ( m ). You can assume that all inner lists have the same size ( m ) and you can assume <code class="docutils literal notranslate"><span class="pre">M</span></code> to be non-empty.</p>
+<p>Let <code class="docutils literal notranslate"><span class="pre">M</span></code> be an <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">×</span> <span class="pre">m</span></code> matrix of numbers organized as a list-of-lists with <code class="docutils literal notranslate"><span class="pre">n</span></code> lists where each inner list has length <code class="docutils literal notranslate"><span class="pre">m</span></code>. You can assume that all inner lists have the same size <code class="docutils literal notranslate"><span class="pre">m</span></code> and you can assume <code class="docutils literal notranslate"><span class="pre">M</span></code> to be non-empty.</p>
 <p>Write a Python function called <code class="docutils literal notranslate"><span class="pre">my_function(M)</span></code> that, given a matrix <code class="docutils literal notranslate"><span class="pre">M</span></code>, returns the difference between the maximum value of its upper triangular matrix and the minimum value of its lower triangular matrix.</p>
 <p>Keep in mind the following caveats and definitions:</p>
 <ul class="simple">
 <li><p>the upper triangular matrix is defined as the portion of the matrix composed by only elements lying above (and including) the main diagonal</p></li>
 <li><p>the lower triangular is defined as the portion of the matrix composed by only elements lying below (and excluding in this case) the main diagonal</p></li>
-<li><p>normally, triangular matrices are special cases of square matrices (namely matrices whose number of rows is equal to the number of columns): if ( n ) is not equal to ( m ), the function must return <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
+<li><p>normally, triangular matrices are special cases of square matrices (namely matrices whose number of rows is equal to the number of columns): if <code class="docutils literal notranslate"><span class="pre">n</span></code> is not equal to <code class="docutils literal notranslate"><span class="pre">m</span></code>, the function must return <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
 <li><p>if the matrix is a square matrix but there is at least one negative element (regardless of its position), the function must return <code class="docutils literal notranslate"><span class="pre">-2</span></code></p></li>
 </ul>
 </section>
