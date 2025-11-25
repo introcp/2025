@@ -438,7 +438,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation">Encapsulation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">Inheritance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">Inheritance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-super-in-child-classes">Using <code class="docutils literal notranslate"><span class="pre">super()</span></code> in child classes</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorphism">Polymorphism</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overriding-built-in-methods">Overriding built-in methods</a></li>
 </ul>
@@ -1006,6 +1009,45 @@ I live in Viale Romania
 </div>
 </div>
 </div>
+<section id="using-super-in-child-classes">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">super()</span></code> in child classes<a class="headerlink" href="#using-super-in-child-classes" title="Link to this heading">#</a></h3>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Student</span></code> constructor we called the parent constructor explicitly:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">uni</span><span class="p">,</span> <span class="n">studID</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">Person</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">addr</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">university</span> <span class="o">=</span> <span class="n">uni</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studentID</span> <span class="o">=</span> <span class="n">studID</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exam_grades</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A more idiomatic way in Python is to use the built‑in <code class="docutils literal notranslate"><span class="pre">super()</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">uni</span><span class="p">,</span> <span class="n">studID</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">addr</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">university</span> <span class="o">=</span> <span class="n">uni</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studentID</span> <span class="o">=</span> <span class="n">studID</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exam_grades</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">super()</span></code> returns an object that represents the parent class <em>for this specific class</em>.</p></li>
+<li><p>Calling <code class="docutils literal notranslate"><span class="pre">super().__init__(...)</span></code> automatically finds and calls the right parent constructor (<code class="docutils literal notranslate"><span class="pre">Person.__init__</span></code> here).</p></li>
+</ul>
+<p>Why is <code class="docutils literal notranslate"><span class="pre">super()</span></code> preferred over <code class="docutils literal notranslate"><span class="pre">Person.__init__(self,</span> <span class="pre">...)</span></code>?</p>
+<ul class="simple">
+<li><p><strong>Less repetition:</strong> you don’t have to hard‑code the parent class name.</p></li>
+<li><p><strong>Easier to change hierarchy:</strong> if you later rename <code class="docutils literal notranslate"><span class="pre">Person</span></code> or change the parent class, <code class="docutils literal notranslate"><span class="pre">super()</span></code> keeps working.</p></li>
+<li><p><strong>Multiple inheritance friendly:</strong> with more than one parent, <code class="docutils literal notranslate"><span class="pre">super()</span></code> follows Python’s method resolution order (MRO) and cooperates with other parent classes.</p></li>
+</ul>
+</section>
 </section>
 <section id="polymorphism">
 <h2>Polymorphism<a class="headerlink" href="#polymorphism" title="Link to this heading">#</a></h2>
@@ -1057,10 +1099,16 @@ I live in Viale Romania
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello!
-My name is Francesco Totti
-I am 30 years old
-I live in Viale Romania
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Assuming the Student class is updated with the new greet method</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Francesco&quot;</span><span class="p">,</span> <span class="s2">&quot;Totti&quot;</span><span class="p">,</span> <span class="s2">&quot;LUISS&quot;</span><span class="p">,</span> <span class="s2">&quot;123456&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Viale Romania&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">student1</span><span class="o">.</span><span class="n">add_exam</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">student1</span><span class="o">.</span><span class="n">add_exam</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">student1</span><span class="o">.</span><span class="n">add_exam</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: &#39;Student&#39; object has no attribute &#39;add_exam&#39;
 </pre></div>
 </div>
 </div>
@@ -1233,7 +1281,10 @@ Point(4, 6)
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation">Encapsulation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">Inheritance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">Inheritance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-super-in-child-classes">Using <code class="docutils literal notranslate"><span class="pre">super()</span></code> in child classes</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorphism">Polymorphism</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overriding-built-in-methods">Overriding built-in methods</a></li>
 </ul>
