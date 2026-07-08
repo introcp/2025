@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ercoppa/introcp:latest
-      options: --user root --workdir /__w/introcp.github.io/introcp.github.io
+      options: --user root --workdir /__w/2025/introcp.github.io
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -47,7 +47,7 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git config --global --add safe.directory /__w/introcp.github.io/introcp.github.io
+          git config --global --add safe.directory /__w/2025/2025
           git add src
           git add docs
           git commit -m "Update pages [action]" . || true
