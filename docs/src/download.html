@@ -20,7 +20,7 @@
       const isLocal = window.location.protocol === "file:";
       const fileUrl = isLocal
         ? file
-        : `${window.location.origin}/2026/${file.replace(/^\//, '')}`;
+        : `${window.location.origin}/${file.replace(/^\//, '')}`;
 
       try {
         // Fetch as a blob
