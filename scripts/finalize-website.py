@@ -82,7 +82,7 @@ for filename in sorted(glob.glob(sys.argv[1] + '/src/*/*.html')):
 
     a = '<li><a href="../../_sources<PATH>" target="_blank'
     a = a.replace("<PATH>", filename.replace("docs", "").replace(".html", ".ipynb"))
-    a_force_download = a.replace('href="../..', 'href="https://introcp.github.io/src/download.html?file=')
+    a_force_download = a.replace('href="../..', 'href="https://introcp.github.io/2025/src/download.html?file=')
     data = data.replace(a, a_force_download)
 
     open(filename, 'w').write(data)
